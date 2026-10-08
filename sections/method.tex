@@ -8,10 +8,6 @@
 \subsection{Predicate-Based Skill Routing}
 % DOCX-P023-END
 
-% DOCX-P024-BEGIN
-RouterBSI recursively updates predicates to maximize selection of relevant skills while minimizing selection of irrelevant skills. To reduce catastrophic forgetting, it incorporates seen tasks into the prompt for updating each predicate. It uses Minimum Bayes Risk (MBR) and replay to select the update that leads to the least routing error. The original predicate is also included in MBR in case all updates have higher error. A held-out validation gate discards updates to predicates that do not improve performance on unseen tasks. The approach monotonically improves performance while minimizing errors (Figure~\ref{fig:routerbsi-overview}).
-% DOCX-P024-END
-
 % DOCX-P025-BEGIN
 Skills are selected according to whether the task aligns with the type of task each skill is intended to handle. This is determined by evaluating the skill's predicate statement for the given task. The predicate evaluates to true when the task aligns with the intended task type and to false otherwise.
 % DOCX-P025-END
