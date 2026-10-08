@@ -1,0 +1,15 @@
+SkillSight recall as the cutoff decreases
+
+Source: historical-project/BayesGSI/tables/routing_recall/results.csv
+Source SHA256: d400e6b28ee2f6cb7ee26947fd103b92f822d7ce174fcdd282c14e472069e58b
+Source rows: 126; selected rows: 5.
+Selection: source Dataset=Average overall summary rows only; no new aggregation; Method=Tool-REX temporarily excluded from paper artifact; Retriever=SkillSight and Method != SkillSight; absolute recall, categorical cutoffs 50,25,10,5,1; separate model panels
+Metrics: Recall@1, Recall@5, Recall@10, Recall@25, Recall@50
+Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+Missing recall fields or values fail closed; no missing recall cells are rendered.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
+Source Dataset=Average rows only, with Retriever=SkillSight and Method != SkillSight. R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Lines show absolute recall (not normalized loss) at equally spaced categorical cutoffs 50, 25, 10, 5, 1. Each source model has a separate panel; no averaging across models, recomputation, or uncertainty is added.
+
+Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.

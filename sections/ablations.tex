@@ -1,0 +1,47 @@
+% Authoritative RouterBSI_Draft_Appendix.docx; zero-based direct body paragraph IDs.
+
+% DOCX-P065-BEGIN
+\section{Ablations}
+% DOCX-P065-END
+
+% DOCX-P066-BEGIN
+\subsection{Impact of MBR based on Replay and Held-out Validation Gate}
+% DOCX-P066-END
+
+% DOCX-P067-BEGIN
+Across three runs for each retriever, MBR with bounded replay alone achieved higher final performance on test dataset than the held-out validation gate alone: F1 increased from 0.440 to 0.527 and nDCG@10 from 0.683 to 0.736, relative improvements of 19.8\% and 7.8\%, respectively. Combining MBR with the held-out gate further improved final performance on unseen test tasks, increasing F1 by 3.47\% and nDCG@10 by 0.32\% compared with MBR alone. Disabling both only increases F1 and nDCG@10 by 11.4\% and 6.1\% which is much lower than the 81.8\% and 18.7\% increase when both are enabled. This supports empirical update selection without implying that unchecked updates invariably worsen performance. With both components enabled, diminishing returns appeared around iteration 5, by which point 96.8\% of the final F1 gain and 96.1\% of the final nDCG@10 gain had accrued. Later iterations added only 0.008 F1 and 0.005 nDCG@10, indicating an approximate plateau. This suggest diminishing opportunities for useful predicate refinement on the plateau: early iterations correct broad, frequent routing errors, while later iterations encounter harder or less common cases (Figure~\ref{fig:mbr_replay_validation_std}).
+% DOCX-P067-END
+
+% DOCX-P068-BEGIN
+Combining replay and the gate provides the strongest final routing quality, while MBR alone reduces known run-local token usage by 10.8\% at the cost of a 3.4\% relative decrease in nDCG@10 compared with Both Enabled. Across configurations with and without the gate, enabling replay improves final routing performance by 11.6\% to 12.4\%, while increasing known run-local token usage by 40.6\% to 52.9\% (Figure~\ref{fig:performance_token_usage}).
+% DOCX-P068-END
+
+% INTEGRATION-BEGIN
+\begin{pairedarchivedfigures}
+\input{figs/mbr_replay_validation_std/table}
+\input{figs/performance_token_usage/table}
+\end{pairedarchivedfigures}
+% INTEGRATION-END
+
+% DOCX-P069-BEGIN
+\subsection{Candidate Selection Performance as Size of Bounded Replay Increases}
+% DOCX-P069-END
+
+% DOCX-P070-BEGIN
+A moderate replay history gives the strongest routing result among the tested capacities. In the figure, the nDCG@10 improves as capacity increases from 1 through 3 to 5, rising from 0.705 to 0.759 between the smallest setting and size 5. Capacity 10 reaches 0.748, still above the two smaller settings but below size 5. The cause of this behavior is likely the replay error becoming more unbalanced as replay size increases leading to misleading update selections. It becomes unbalanced because most skills have 4 tasks where they are required, so their replay becomes unbalanced at capacity 10, containing 10 irrelevant tasks but only 4 relevant ones. High irrelevant-to-relevant ratios can lead to a prioritization of narrow updates that maximize rejection of tasks (Figure~\ref{fig:replay_size_performance}).
+% DOCX-P070-END
+
+% DOCX-P071-BEGIN
+\subsection{Skill Routing Performance across LLM Backbones}
+% DOCX-P071-END
+
+% DOCX-P072-BEGIN
+RouterBSI improves aggregate routing quality with every evaluated backbone. In the cross-LLM figure, Qwen3.5 4B, Qwen3.8 27B, and GPT-OSS 120B all exceed the shared SkillSight baseline of 0.599 nDCG@10. Qwen3.8 27B performs best at 0.800, while Qwen3.5 4B and GPT-OSS 120B achieve similar scores of 0.759 and 0.761. Substantial routing gains are therefore available without the largest evaluated model. The non-monotonic ordering suggests that parameter count alone is insufficient for choosing a backbone. These results favor selecting the routing backbone by measured performance rather than model size alone (Figure~\ref{fig:routing_performance_across_llms}).
+% DOCX-P072-END
+
+% INTEGRATION-BEGIN
+\begin{pairedarchivedfigures}
+\input{figs/replay_size_performance/table}
+\input{figs/routing_performance_across_llms/table}
+\end{pairedarchivedfigures}
+% INTEGRATION-END

@@ -1,0 +1,1 @@
+Skill routing performance. N@1 and N@10 denote nDCG@1 and nDCG@10. Average gives equal weight to each dataset. Bold and underlined entries indicate the highest and second-highest distinct scores within each model–retriever group and metric column; ties share formatting. Scores are fractions, with a dash denoting exact zero and three dashes denoting an unavailable value.

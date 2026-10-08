@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times,latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype,inconsolata}
+\usepackage{amsmath,amssymb,dsfont}
+\usepackage{booktabs,graphicx,adjustbox}
+\usepackage{placeins}
+\usepackage{stfloats}
+
+% Membership signs outside the 60 original Word OMML expressions.
+\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}
+
+% Integrate complete immutable floats without nesting or editing their assets.
+% Both kinds of inherited tables use ACL's full text width; only tabular
+% content is scaled by the archived files themselves, never the captions.
+\newenvironment{archivedtables}[1][!t]{%
+  \expandafter\let\expandafter\archivedwide\csname table*\endcsname
+  \expandafter\let\expandafter\endarchivedwide\csname endtable*\endcsname
+  \let\archivedcaption\caption
+  \let\archivedlabel\label
+  \renewenvironment{table}[1][]{%
+    \archivedwide[#1]%
+    \renewcommand{\caption}[1]{\def\archivedcaptiontext{####1}}%
+    \renewcommand{\label}[1]{\def\archivedlabeltext{####1}}%
+  }{%
+    \par\archivedcaption{\archivedcaptiontext}%
+    \archivedlabel{\archivedlabeltext}\endarchivedwide}%
+}{}
+% Keep each diagnostic pair together, with one wide top float per page.
+\setcounter{dbltopnumber}{1}
+\newenvironment{pairedarchivedfigures}{%
+  \begin{figure*}[t]\centering
+  \renewenvironment{figure}[1][]{\begin{minipage}[t]{0.48\textwidth}}{\end{minipage}\hfill}%
+}{\end{figure*}}
+\newenvironment{widearchivedfigures}{%
+  \expandafter\let\expandafter\archivedwidefigure\csname figure*\endcsname
+  \expandafter\let\expandafter\endarchivedwidefigure\csname endfigure*\endcsname
+  \renewenvironment{figure}[1][]{\archivedwidefigure[!t]}{\endarchivedwidefigure}%
+}{}
+% Keep a small final diagnostic figure in the wide-float queue, so it can
+% share a page with the two multi-panel appendix figures instead of orphaning.
+\newenvironment{compactwidearchivedfigure}{%
+  \begin{widearchivedfigures}%
+  \let\archivedincludegraphics\includegraphics
+  \renewcommand{\includegraphics}[2][]{%
+    \archivedincludegraphics[width=0.48\linewidth]{##2}}%
+}{\end{widearchivedfigures}}
+
+% The supplied draft has no title or author metadata.
+\title{Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk and Validation Gates}
+\author{Anonymous authors}
+\hypersetup{pdftitle={Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk and Validation Gates},pdfauthor={Anonymous authors}}
+% The authoritative DOCX has no bibliography/appendix; citations are audited separately.
+% Preserve the current section switches; do not restore stale sections.
+
+\begin{document}
+\maketitle
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/related_works}
+\input{sections/problem_definition}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/ablations}
+\input{sections/limitations}
+\input{sections/conclusion}
+\input{sections/citations}
+\end{document}

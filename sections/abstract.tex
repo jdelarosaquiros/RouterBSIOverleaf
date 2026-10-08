@@ -1,0 +1,11 @@
+% Authoritative RouterBSI_Draft_Appendix.docx; zero-based direct body paragraph IDs.
+
+% DOCX-P000-BEGIN
+\begin{abstract}
+% DOCX-P000-END
+
+% DOCX-P001-BEGIN
+As agents are expected to solve broader and more complex tasks, they rely on external knowledge saved as skills to handle tasks beyond the LLM's parametric capabilities. As the skill corpora grows into hundreds or thousands of skills, skill routing becomes a bottleneck, where the agent must efficiently retrieve and select the appropriate skills to complete a task. Recent skill routing approaches leverage task feedback to improve skill routing performance online. However, feedback-driven updates to routing criteria can regress performance, and accumulating task feedback at scale requires efficient experience management. We introduce a recursive self-improving algorithm for skill routing in a black-box setting called RouterBSI. It refines task applicability predicates using Minimum Bayes Risk (MBR) with bounded replay to minimize errors on seen tasks and a held-out validation gate to reduce regressions on unseen tasks. The router evaluates predicates for top-k retrieved skills then selects skills if the task satisfies their respective predicate. RouterBSI improves its cold-start top-k recall of required skills by an average of 22.3\% across tasks from TheoremQA, LogicBench, ToolQA, MedCalc-Bench, CHAMP, BigCodeBench sharing a 26k skill corpus. Its top-5 recall is 79.8\%, which is 13.8\% to 22.3\% higher than baselines.
+% DOCX-P001-END
+
+\end{abstract}

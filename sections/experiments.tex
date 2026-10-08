@@ -1,0 +1,45 @@
+% Authoritative RouterBSI_Draft_Appendix.docx; zero-based direct body paragraph IDs.
+
+% DOCX-P048-BEGIN
+\section{Experiments}
+% DOCX-P048-END
+
+% DOCX-P049-BEGIN
+\subsection{Benchmarks and Skill Corpus.}
+% DOCX-P049-END
+
+% DOCX-P050-BEGIN
+We conduct experiments on SRA-Bench, which comprises six capability-intensive benchmarks: TheoremQA~\citep{chen-etal-2023-theoremqa}, LogicBench~\citep{parmar-etal-2024-logicbench}, ToolQA~\citep{NEURIPS2023_9cb2a749}, CHAMP~\citep{mao-etal-2024-champ}, MedCalc-Bench~\citep{NEURIPS2024_99e81750}, and BigCodeBench~\citep{ICLR2025_a6a90bcc}. These datasets cover diverse task settings, including mathematical reasoning, formal logic, tool use, and code generation. Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus, enabling decomposed analysis of retrieval, incorporation, and end-task execution. We split each dataset into train, validation, and test splits with ratios of 70\%, 15\%, 15\%, respectively. To evaluate the learning capabilities of baselines, we further filter and balance splits such that each split has at least one task that share the same required skill.
+% DOCX-P050-END
+
+% DOCX-P051-BEGIN
+\subsection{Evaluation Metrics.}
+% DOCX-P051-END
+
+% DOCX-P052-BEGIN
+We evaluate the SRA pipeline from both retrieval and end-task perspectives. For skill retrieval, we report Recall@\(k\) and nDCG@\(k\). We additionally report F1@\(k\) to compare filtering capabilities. For end-task performance, each benchmark follows its standard evaluation protocol: rule-based exact match or accuracy for reasoning and QA datasets, and pass@1 based on unit-test execution for BigCodeBench.
+% DOCX-P052-END
+
+% DOCX-P053-BEGIN
+\subsection{Selected Models.}
+% DOCX-P053-END
+
+% DOCX-P054-BEGIN
+We evaluate five models spanning four open-weight checkpoints and one proprietary frontier model: Qwen3.5-4B \citep{qwen2026qwen35}, Qwen3.8-27B \citep{qwen2026qwen38}, Llama-3.3-70B-Instruct \citep{meta2024llama33}, gpt-oss-120b \citep{openai2025gptoss}, and GPT-5.4 \citep{openai2026gpt54}.
+% DOCX-P054-END
+
+% DOCX-P055-BEGIN
+\subsection{Baselines}
+% DOCX-P055-END
+
+% DOCX-P056-BEGIN
+We study retrieval, reranker, and selection baselines. The retrievers include sparse and dense retrievers \citep{su2026skillretrieval} and SkillSight, a hybrid retriever. They are trained on training split and frozen on validation and test splits. LLM Select and Progressive disclosure are static router baselines, and LLM Direct and LLM Oracle are downstream performance baselines representing without skills and with ground-truth skill set, respectively \citep{su2026skillretrieval}. The non-parametric optimization baselines are SkillDag and Skill-Pro \citep{pmlr-v306-mi26d,bai2026skilldag}. RouterBSI\_init and RouterBSI refer to the cold-start and final iteration performance. RouterBSI\_strict selects skills only when their predicate evaluates to true. RouterBSI\_topk are the top k skills using the sum of their predicate label and the retrieval score.
+% DOCX-P056-END
+
+% DOCX-P057-BEGIN
+\subsection{Implementation Details.}
+% DOCX-P057-END
+
+% DOCX-P058-BEGIN
+The retrievers use either pretrained embedding models or lexical matching, so they do not require training. Candidate skills are retrieved from the shared external skill corpus in response to the input query. The reranking and selection baselines are conditioned on the top 50 retrieved skills and use an optimization method to improve performance. SkillSight is the default retriever for reranking and selection baselines. The non-parametric baselines, including ours, do not output a continuous score like rerankers, so we rank them by the sum of their binary label and the retrieval score, where 1 is the label for selected skills and 0 otherwise. We use a temperature of 1 for proposing candidate predicates and 0 for evaluating predicates and downstream performance. RouterBSI is optimized over 10 iterations. Qwen3.5-4B is the default model used in our experiments.
+% DOCX-P058-END

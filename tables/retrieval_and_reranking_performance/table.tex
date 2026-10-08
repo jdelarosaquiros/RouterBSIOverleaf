@@ -1,0 +1,40 @@
+% Generated from read-only CSV; do not edit numeric cells.
+\begin{table}[!htbp]
+\centering
+\caption{Retrieval and reranking at different cutoffs. R@k denotes Recall@k, averaged equally across datasets. Bold and underlined entries mark the highest and second-highest distinct values within each model--retriever group and cutoff, retaining ties; a dash denotes exact zero. Red method labels flag rows awaiting correction. These comparisons do not establish a controlled, shared-candidate evaluation.}
+\label{tab:retrieval_and_reranking_performance}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & R@1 & R@5 & R@10 & R@25 & R@50 \\
+\midrule
+\multicolumn{6}{l}{\textit{BM25}} \\
+\midrule
+BM25 & 0.253 & 0.451 & 0.561 & 0.682 & \underline{0.765} \\
+LLM Select & \underline{0.389} & \underline{0.566} & 0.638 & 0.709 & 0.764 \\
+Progressive Disclosure & 0.274 & 0.464 & 0.567 & 0.682 & 0.764 \\
+SkillDAG & 0.252 & 0.451 & \underline{0.658} & \textbf{0.862} & \textbf{0.929} \\
+Skill-Pro & 0.252 & 0.451 & 0.561 & 0.680 & 0.764 \\
+RouterBSI & \textbf{0.479} & \textbf{0.658} & \textbf{0.700} & \underline{0.736} & 0.764 \\
+\midrule
+\multicolumn{6}{l}{\textit{Vector}} \\
+\midrule
+\textcolor{red}{Vector} & 0.320 & 0.442 & 0.488 & 0.554 & 0.603 \\
+LLM Select & 0.403 & \textbf{0.615} & \underline{0.674} & \underline{0.741} & \underline{0.799} \\
+Progressive Disclosure & \underline{0.417} & \underline{0.586} & 0.652 & 0.737 & \underline{0.799} \\
+SkillDAG & 0.414 & 0.583 & \textbf{0.825} & \textbf{0.933} & \textbf{0.961} \\
+Skill-Pro & \textbf{0.417} & 0.578 & 0.649 & 0.737 & 0.799 \\
+\textcolor{red}{RouterBSI} & 0.375 & 0.508 & 0.530 & 0.569 & 0.603 \\
+\midrule
+\multicolumn{6}{l}{\textit{SkillSight}} \\
+\midrule
+SkillSight & 0.378 & 0.652 & 0.747 & 0.847 & 0.904 \\
+LLM Select & \underline{0.436} & \underline{0.701} & 0.779 & 0.857 & 0.904 \\
+Progressive Disclosure & 0.388 & 0.661 & 0.751 & 0.847 & 0.904 \\
+SkillDAG & 0.378 & 0.652 & \underline{0.803} & \textbf{0.933} & \textbf{0.968} \\
+Skill-Pro & 0.378 & 0.653 & 0.746 & 0.847 & \underline{0.905} \\
+RouterBSI & \textbf{0.564} & \textbf{0.798} & \textbf{0.840} & \underline{0.886} & 0.904 \\
+\bottomrule
+\end{tabular}
+\end{table}

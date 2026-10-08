@@ -1,0 +1,15 @@
+Routing performance and known token usage
+
+Source: historical-project/BayesGSI/tables/routing_token_usage/results.csv
+Source SHA256: 8d5666e3a5ce2e83369e4f40354e6b46061de3b2616c3d67877fd71449f1f760
+Source rows: 4; selected rows: 4.
+Selection: all source rows
+Metrics: nDCG@10, Total Tokens
+Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+Missing table values are ---; missing plotted values fail closed, never imputed.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
+Analysis-only known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.
+
+Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.

@@ -1,0 +1,15 @@
+Replay and validation-gate ablation: F1
+
+Source: historical-project/BayesGSI/tables/routing_performance_by_iteration/results.csv
+Source SHA256: 72a40a9f31462afc7b8601c2d5d05cbcf00e8c04fd2ad23aba7105e1fd1d20be
+Source rows: 308; selected rows: 44.
+Selection: source Dataset=Average rows only; never average these with dataset rows
+Metrics: F1
+Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+Missing table values are ---; missing plotted values fail closed, never imputed.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
+Source Average rows; full selected-set task-macro test F1, not a train/validation trajectory or the harmonic mean of macro precision and recall. Initial is plotted at iteration 0.
+
+Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
