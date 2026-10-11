@@ -1,7 +1,7 @@
 Routing performance and known token usage
 
-Source: historical-project/BayesGSI/tables/routing_token_usage/results.csv
-Source SHA256: 8d5666e3a5ce2e83369e4f40354e6b46061de3b2616c3d67877fd71449f1f760
+Source: BayesGSI/tables/routing_token_usage/results.csv
+Source SHA256: ba0fc6824888296f67d550a1a579254728eb13e1a3705203bfb448ad82f48e67
 Source rows: 4; selected rows: 4.
 Selection: all source rows
 Metrics: nDCG@10, Total Tokens
@@ -12,4 +12,4 @@ Source reportability: non-reportable
 Analysis-only: source provenance does not certify publication validity.
 Analysis-only known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Aggregation: Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.

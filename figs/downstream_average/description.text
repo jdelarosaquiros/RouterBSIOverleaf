@@ -1,0 +1,1 @@
+Downstream performance comparison using Qwen3.5 4B. Bars show task-weighted success rates averaged equally across BM25 and SkillSight. Horizontal lines show the LLM Direct and LLM Oracle references.

@@ -1,15 +1,14 @@
 % Generated from read-only CSV; do not edit numeric cells.
 \begin{table}[!htbp]
 \centering
-\caption{Skill routing performance. N@1 and N@10 denote nDCG@1 and nDCG@10. Average gives equal weight to each dataset. Bold and underlined entries indicate the highest and second-highest distinct scores within each model--retriever group and metric column; ties share formatting. Scores are fractions, with a dash denoting exact zero and three dashes denoting an unavailable value.}
+\caption{Skill routing performance comparison using Qwen3.5 4B with BM25, Vector, and SkillSight. Columns show test nDCG@1 (N@1) and nDCG@10 (N@10) for each benchmark and the task-weighted average. Bold and underlined values indicate the best and second-best scores within each retriever group.}
 \label{tab:skill_routing_performance}
-\scriptsize
-\setlength{\tabcolsep}{2pt}
+\fontsize{8.95pt}{10.8pt}\selectfont
+\setlength{\tabcolsep}{1.4pt}
 \renewcommand{\arraystretch}{1.06}
-\begin{adjustbox}{max width=\linewidth}
-\begin{tabular}{lrrrrrrrrrrrrrr}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrrrrrrrrrrr}
 \toprule
-Method & \multicolumn{2}{c}{bigcodebench} & \multicolumn{2}{c}{champ} & \multicolumn{2}{c}{logicbench} & \multicolumn{2}{c}{medcalcbench} & \multicolumn{2}{c}{theoremqa} & \multicolumn{2}{c}{toolqa} & \multicolumn{2}{c}{Average} \\
+Method & \multicolumn{2}{c}{\shortstack{bigcode\\bench}} & \multicolumn{2}{c}{champ} & \multicolumn{2}{c}{logicbench} & \multicolumn{2}{c}{\shortstack{medcalc\\bench}} & \multicolumn{2}{c}{theoremqa} & \multicolumn{2}{c}{toolqa} & \multicolumn{2}{c}{Average} \\
 \cmidrule(lr){2-3}
 \cmidrule(lr){4-5}
 \cmidrule(lr){6-7}
@@ -21,26 +20,36 @@ Method & \multicolumn{2}{c}{bigcodebench} & \multicolumn{2}{c}{champ} & \multico
 \midrule
 \multicolumn{15}{l}{\textit{BM25}} \\
 \midrule
-BM25 & 0.610 & 0.544 & 0.423 & 0.410 & 0.158 & 0.220 & 0.315 & 0.462 & 0.524 & 0.659 & 0.070 & 0.271 & 0.350 & 0.428 \\
-LLM Select & 0.504 & 0.534 & \underline{0.462} & 0.439 & \underline{0.202} & 0.309 & 0.533 & 0.633 & \textbf{0.695} & \textbf{0.791} & \underline{0.507} & \underline{0.595} & \underline{0.484} & \underline{0.550} \\
-Progressive Disclosure & \underline{0.691} & 0.570 & 0.423 & 0.410 & 0.175 & 0.234 & 0.388 & 0.509 & 0.524 & 0.657 & 0.084 & 0.281 & 0.381 & 0.444 \\
-SkillDAG & 0.610 & \underline{0.589} & 0.423 & \underline{0.442} & 0.158 & \underline{0.315} & 0.309 & 0.461 & 0.524 & 0.663 & 0.070 & 0.303 & 0.349 & 0.462 \\
-Skill-Pro & 0.610 & 0.543 & 0.423 & 0.410 & 0.158 & 0.221 & 0.309 & 0.458 & 0.524 & 0.659 & 0.070 & 0.271 & 0.349 & 0.427 \\
-RouterBSI\_init & 0.431 & 0.447 & 0.308 & 0.367 & 0.158 & 0.281 & \underline{0.642} & \underline{0.720} & 0.448 & 0.627 & 0.256 & 0.413 & 0.374 & 0.476 \\
-RouterBSI & \textbf{0.878} & \textbf{0.729} & \textbf{0.500} & \textbf{0.498} & \textbf{0.281} & \textbf{0.371} & \textbf{0.818} & \textbf{0.842} & \underline{0.638} & \underline{0.748} & \textbf{0.577} & \textbf{0.665} & \textbf{0.615} & \textbf{0.642} \\
+BM25 & \underline{0.610} & 0.544 & 0.423 & 0.410 & 0.158 & 0.220 & 0.315 & 0.462 & 0.524 & 0.659 & 0.070 & 0.271 & 0.302 & 0.410 \\
+LLM Select & 0.504 & 0.534 & \underline{0.462} & 0.439 & 0.202 & 0.309 & 0.533 & 0.633 & \underline{0.695} & \underline{0.791} & 0.507 & 0.595 & 0.491 & 0.572 \\
+SkillRouter & 0.358 & 0.292 & 0.423 & 0.410 & \underline{0.228} & \underline{0.357} & \textbf{0.945} & \textbf{0.953} & \textbf{0.810} & \textbf{0.843} & \textbf{0.600} & \textbf{0.696} & \underline{0.603} & \underline{0.645} \\
+SkillDAG & \underline{0.610} & \underline{0.589} & 0.423 & \underline{0.442} & 0.158 & 0.315 & 0.309 & 0.461 & 0.524 & 0.663 & 0.070 & 0.303 & 0.301 & 0.442 \\
+Skill-Pro & 0.244 & 0.464 & 0.231 & 0.358 & 0.149 & 0.262 & 0.679 & 0.776 & 0.438 & 0.643 & 0.465 & 0.554 & 0.416 & 0.549 \\
+RouterBSI\_init & 0.431 & 0.447 & 0.308 & 0.367 & 0.158 & 0.281 & 0.642 & 0.720 & 0.448 & 0.627 & 0.256 & 0.413 & 0.384 & 0.495 \\
+RouterBSI & \textbf{0.878} & \textbf{0.729} & \textbf{0.500} & \textbf{0.498} & \textbf{0.281} & \textbf{0.371} & \underline{0.818} & \underline{0.842} & 0.638 & 0.748 & \underline{0.577} & \underline{0.665} & \textbf{0.640} & \textbf{0.675} \\
+\addlinespace[2pt]
+\midrule
+\multicolumn{15}{l}{\textit{Vector}} \\
+\midrule
+\textcolor{black}{Vector} & \underline{0.504} & 0.407 & 0.346 & 0.463 & 0.105 & 0.248 & \underline{0.988} & 0.992 & \underline{0.695} & 0.833 & 0.312 & 0.413 & 0.516 & 0.575 \\
+LLM Select & 0.496 & 0.432 & 0.308 & 0.459 & 0.237 & 0.337 & 0.861 & 0.945 & 0.686 & \underline{0.839} & 0.363 & 0.463 & 0.519 & 0.598 \\
+SkillRouter & 0.350 & 0.272 & \underline{0.462} & \underline{0.515} & \underline{0.272} & \textbf{0.382} & \underline{0.988} & \underline{0.996} & \textbf{0.819} & \textbf{0.866} & \underline{0.549} & \underline{0.657} & \underline{0.606} & 0.651 \\
+SkillDAG & \underline{0.504} & \underline{0.544} & 0.346 & 0.469 & 0.105 & 0.364 & \underline{0.988} & 0.990 & \underline{0.695} & 0.830 & 0.312 & 0.563 & 0.516 & \underline{0.658} \\
+Skill-Pro & 0.220 & 0.360 & 0.231 & 0.432 & 0.096 & 0.248 & 0.715 & 0.892 & 0.419 & 0.726 & 0.335 & 0.451 & 0.372 & 0.540 \\
+\textcolor{black}{RouterBSI\_init} & 0.382 & 0.338 & 0.269 & 0.428 & 0.184 & 0.291 & 0.970 & 0.985 & 0.581 & 0.747 & 0.298 & 0.442 & 0.481 & 0.564 \\
+\textcolor{black}{RouterBSI} & \textbf{0.756} & \textbf{0.620} & \textbf{0.577} & \textbf{0.611} & \textbf{0.289} & \underline{0.367} & \textbf{0.994} & \textbf{0.997} & 0.667 & 0.819 & \textbf{0.614} & \textbf{0.673} & \textbf{0.678} & \textbf{0.707} \\
 \addlinespace[2pt]
 \midrule
 \multicolumn{15}{l}{\textit{SkillSight}} \\
 \midrule
-SkillSight & \underline{0.724} & 0.616 & 0.308 & 0.429 & 0.167 & 0.406 & 0.830 & 0.903 & \underline{0.733} & \underline{0.852} & 0.102 & 0.390 & 0.477 & 0.599 \\
-LLM Select & 0.439 & 0.563 & 0.385 & 0.475 & \underline{0.360} & \underline{0.536} & 0.842 & 0.924 & 0.667 & 0.828 & \underline{0.442} & \underline{0.582} & \underline{0.522} & \underline{0.651} \\
-Progressive Disclosure & 0.707 & 0.623 & 0.308 & 0.429 & 0.211 & 0.438 & 0.842 & 0.908 & \underline{0.733} & \underline{0.852} & 0.116 & 0.395 & 0.486 & 0.608 \\
-SkillDAG & \underline{0.724} & \underline{0.668} & 0.308 & 0.449 & 0.167 & 0.455 & 0.830 & 0.905 & \underline{0.733} & 0.849 & 0.102 & 0.398 & 0.477 & 0.621 \\
-Skill-Pro & \underline{0.724} & 0.614 & 0.308 & 0.429 & 0.167 & 0.406 & 0.830 & 0.903 & \underline{0.733} & 0.852 & 0.107 & 0.392 & 0.478 & 0.599 \\
-RouterBSI\_init & 0.585 & 0.465 & \underline{0.462} & \underline{0.510} & 0.211 & 0.449 & \underline{0.879} & \underline{0.927} & 0.648 & 0.804 & 0.316 & 0.505 & 0.517 & 0.610 \\
-RouterBSI & \textbf{0.862} & \textbf{0.771} & \textbf{0.577} & \textbf{0.558} & \textbf{0.439} & \textbf{0.608} & \textbf{0.933} & \textbf{0.960} & \textbf{0.752} & \textbf{0.857} & \textbf{0.702} & \textbf{0.797} & \textbf{0.711} & \textbf{0.759} \\
+SkillSight & \underline{0.724} & 0.616 & 0.308 & 0.429 & 0.167 & 0.406 & 0.830 & 0.903 & 0.733 & 0.852 & 0.102 & 0.390 & 0.471 & 0.609 \\
+LLM Select & 0.439 & 0.563 & 0.385 & 0.475 & \underline{0.360} & \underline{0.536} & 0.842 & 0.924 & 0.667 & 0.828 & 0.442 & 0.582 & 0.547 & 0.678 \\
+SkillRouter & 0.390 & 0.332 & \underline{0.462} & 0.503 & 0.307 & 0.509 & \textbf{0.988} & \textbf{0.996} & \textbf{0.819} & \textbf{0.870} & \underline{0.651} & \underline{0.782} & \underline{0.647} & \underline{0.716} \\
+SkillDAG & \underline{0.724} & \underline{0.668} & 0.308 & 0.449 & 0.167 & 0.455 & 0.830 & 0.905 & 0.733 & 0.849 & 0.102 & 0.398 & 0.471 & 0.628 \\
+Skill-Pro & 0.252 & 0.513 & 0.192 & 0.394 & 0.237 & 0.442 & 0.721 & 0.883 & 0.524 & 0.768 & 0.405 & 0.576 & 0.433 & 0.634 \\
+RouterBSI\_init & 0.585 & 0.465 & \underline{0.462} & \underline{0.510} & 0.211 & 0.449 & 0.879 & 0.927 & 0.648 & 0.804 & 0.316 & 0.505 & 0.520 & 0.625 \\
+RouterBSI & \textbf{0.862} & \textbf{0.771} & \textbf{0.577} & \textbf{0.558} & \textbf{0.439} & \textbf{0.608} & \underline{0.933} & \underline{0.960} & \underline{0.752} & \underline{0.857} & \textbf{0.702} & \textbf{0.797} & \textbf{0.742} & \textbf{0.800} \\
 \addlinespace[2pt]
 \bottomrule
-\end{tabular}
-\end{adjustbox}
+\end{tabular*}
 \end{table}

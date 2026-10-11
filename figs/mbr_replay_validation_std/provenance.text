@@ -1,7 +1,7 @@
 Replay and validation-gate ablation across runs
 
-Source: historical-project/BayesGSI/tables/routing_performance_by_iteration_std/results.csv
-Source SHA256: 9a263d35e5eacc424aab258348fa6957e02e1280d01b33a63973b6345794c94a
+Source: BayesGSI/tables/routing_performance_by_iteration_std/results.csv
+Source SHA256: 6a865c8ed32715f335b4ac630eacae46cc2e7496bcde9da273f5889c9b07ad48
 Source rows: 308; selected rows: 44.
 Selection: source Dataset=Average rows only; never average these with dataset rows
 Metrics: nDCG@10_mean, nDCG@10_variance
@@ -10,7 +10,7 @@ Scores are fractions, not percentages. Table cells use three decimals; ranking u
 Missing table values are ---; missing plotted values fail closed, never imputed.
 Source reportability: non-reportable
 Analysis-only: source provenance does not certify publication validity.
-Source Average rows; checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.
+Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.
 Run counts come from direct run_i directories in input_runs.json; source generator requires matching checkpoints across those runs and computes population variance with denominator n. CSV contains no run counts. Missing mapped run metadata remains unknown.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Aggregation: Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.

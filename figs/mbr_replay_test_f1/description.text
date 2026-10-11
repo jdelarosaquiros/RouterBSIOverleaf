@@ -1,0 +1,1 @@
+Test-split selected-set F1 over successive updates. The selector uses source Dataset=Average rows with Split=test and accepted checkpoint evaluation; curves show only the latest common contiguous measured range. No initial-test score is available for the refreshed RouterBSI runs. Those runs remain in progress and non-reportable, so this is an analysis-only artifact.

@@ -8,6 +8,7 @@
 \usepackage{booktabs,graphicx,adjustbox}
 \usepackage{placeins}
 \usepackage{stfloats}
+\usepackage{afterpage}
 
 % Membership signs outside the 60 original Word OMML expressions.
 \DeclareUnicodeCharacter{2208}{\ensuremath{\in}}
@@ -28,10 +29,10 @@
     \par\archivedcaption{\archivedcaptiontext}%
     \archivedlabel{\archivedlabeltext}\endarchivedwide}%
 }{}
-% Keep each diagnostic pair together, with one wide top float per page.
-\setcounter{dbltopnumber}{1}
+% Keep diagnostic pairs together without delaying later numbered figures.
+\setcounter{dbltopnumber}{2}
 \newenvironment{pairedarchivedfigures}{%
-  \begin{figure*}[t]\centering
+  \begin{figure*}[!t]\centering
   \renewenvironment{figure}[1][]{\begin{minipage}[t]{0.48\textwidth}}{\end{minipage}\hfill}%
 }{\end{figure*}}
 \newenvironment{widearchivedfigures}{%
@@ -65,7 +66,7 @@
 \input{sections/experiments}
 \input{sections/results}
 \input{sections/ablations}
-\input{sections/limitations}
 \input{sections/conclusion}
+\input{sections/limitations}
 \input{sections/citations}
 \end{document}

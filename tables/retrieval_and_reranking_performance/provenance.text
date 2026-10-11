@@ -1,17 +1,20 @@
 Retrieval and reranking performance
 
-Source: historical-project/BayesGSI/tables/routing_recall/results.csv
-Source SHA256: d400e6b28ee2f6cb7ee26947fd103b92f822d7ce174fcdd282c14e472069e58b
-Source rows: 126; selected rows: 18.
-Selection: source Dataset=Average overall summary rows only; no new aggregation; Method=Tool-REX temporarily excluded from paper artifact
+Source: ../BayesGSI/tables/routing_recall/results.csv
+Source SHA256: 171044c95856fb2894ba944d05d36ce2c60d691b551af77bc2063a2b30263f45
+Source rows: 168; selected rows: 21.
+Selection: source Dataset=Average overall summary rows only; no new aggregation; Method=Tool-REX and Progressive Disclosure excluded from paper artifact
 Metrics: Recall@1, Recall@5, Recall@10, Recall@25, Recall@50
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing recall fields or values fail closed; no missing recall cells are rendered.
 Source reportability: non-reportable
 Analysis-only: source provenance does not certify publication validity.
-R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.
+R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Average is the task-weighted mean across test instances, equivalently dataset scores weighted by task count. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.
 Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
 Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Regenerate from any working directory:
+  uv run --script paper/tables/retrieval_and_reranking_performance/generate.py
+Optional fixture arguments: --source /path/results.csv --output /path/output
+Shared selection/provenance manifest: paper/artifact_manifest.json.

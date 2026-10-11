@@ -1,0 +1,10 @@
+Downstream average across BM25 and SkillSight (Vector excluded)
+
+Paths relative to project_skill_selection.
+CSV: BayesGSI/tables/downstream_performance/results.csv
+SHA256: 3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690
+Model: Qwen3.5 4B; retrievers: BM25, SkillSight.
+Methods: Retriever baseline, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI strict, RouterBSI top-5.
+Aggregation: one bar per method, arithmetic mean of BM25 and SkillSight task-weighted accuracies; each underlying score is pooled Correct/n_tasks over six datasets and 748 tasks. Retriever baseline averages native BM25 and SkillSight baselines. LLM Direct and LLM Oracle are non-retrieval reference lines.
+All 14 included retriever-method input values were reconciled to constituent counts and Average rows; Vector excluded.
+No uncertainty estimates supplied; analysis-only and run reportability unresolved. No inference/evaluation run.

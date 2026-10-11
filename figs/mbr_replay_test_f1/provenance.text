@@ -1,0 +1,11 @@
+Artifact: mbr_replay_test_f1
+Source artifact: ../BayesGSI/tables/routing_performance_by_iteration/results.csv (external to this standalone package)
+Source SHA256: 717efdc9ac49bb5ed0958392cb6327a977443d8952c11da19f32c171a4157995
+Source rows: 455; selected rows: 20.
+Selection: Dataset=Average; Split=test; Evaluation=accepted; latest common contiguous checkpoints 1–5; no initial-test point is available.
+Metric: F1. F1 of the full selected set, not a ranked cutoff.
+Series: Both Enabled, Only Gate, Both Disabled, Only MBR.
+Task counts for refreshed runs: train=3491; validation=748; test=748.
+Source-run status: sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1: in_progress, passed=False, reportable=False; sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1: in_progress, passed=False, reportable=False
+Analysis-only: refreshed runs are in progress/non-reportable; four-series comparison mixes those runs with pre-existing source runs.
+snapshot-manifest.json remains the historical packaging manifest and was intentionally not rewritten.

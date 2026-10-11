@@ -1,0 +1,38 @@
+{
+  "artifact": "RouterBSIPaper/tables/skill_routing_performance_average",
+  "source": {
+    "path": "BayesGSI/tables/routing_performance/results.csv",
+    "sha256": "d3bad67c2d0a27132e38bb28dd1389a7167c02ec4f2d9b870e43d4c0fcfa8f9b"
+  },
+  "generator": {
+    "path": ".wisc/scripts/generate-routing-average-table.py",
+    "sha256": "fc72d99d5306c6337da5f464a52be1d7185cdd22354ea913bfd8f3e2a81aacc9"
+  },
+  "rows": 9,
+  "cells": 126,
+  "source_rows_selected": 147,
+  "reportable": false,
+  "outputs": {
+    "table.tex": "3d090c3ce41fa3efca397f444902c67b4ad2f2aa51505284f8da188c92a83fef",
+    "description.text": "40aa4f1e8a472cad43f079fe8acc4ca6740a2e7f4418d94d7b141d8ebbd7c837",
+    "provenance.text": "80ec2910c52c64615ae129f9bf3c2ac6e8674629a9675561e5d0c9bdd8eb120d",
+    "selection.json": "b8ea4f9ae9fd8698d16044144977ba0d894007b6a019c636a1367550fd0c1a8e",
+    "preview.pdf": "18225bc6f59ec012c5743f4f50c4de1589c033da8d8f218f9508ecc56b2e55e5",
+    "preview.png": "44f35a3ceee51c62a4030077912112e796c2121425f33adba812a055f790f937"
+  },
+  "row_groups": {
+    "Retrievers": [
+      "BM25",
+      "Vector",
+      "SkillSight"
+    ],
+    "Routers": [
+      "LLM Select",
+      "SkillRouter",
+      "SkillDAG",
+      "Skill-Pro",
+      "RouterBSI_init",
+      "RouterBSI"
+    ]
+  }
+}

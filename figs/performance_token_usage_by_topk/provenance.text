@@ -1,7 +1,7 @@
 Performance and token usage by Top-K
 
-Source: historical-project/BayesGSI/tables/routing_token_usage_by_topk/results.csv
-Source SHA256: 6f808a5ee94cfe789dcc1b0893f69f2df71fd06e41aa02e589522a66a326250a
+Source: BayesGSI/tables/routing_token_usage_by_topk/results.csv
+Source SHA256: e6b252afcb85b19b90faf9431dd20479dabe698f72b0f20bc40f7c83376eb807
 Source rows: 3; selected rows: 3.
 Selection: all source rows
 Metrics: nDCG@10, Total Tokens
@@ -12,4 +12,4 @@ Source reportability: non-reportable
 Analysis-only: source provenance does not certify publication validity.
 Analysis-only known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10 for each source Top-K setting. Distinct blue shades identify Top-K; labels are source Method values. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Aggregation: Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.

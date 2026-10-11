@@ -1,6 +1,6 @@
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/performance_token_usage_by_topk/preview.pdf}
-\caption{Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K settings, which specify how many retrieved candidates are evaluated rather than how many skills are ultimately selected. Coordinates show known run-local tokens in millions and final dataset-average test nDCG@10. These incomplete totals exclude external or shared initialization and do not measure per-query serving cost.}
+\caption{Performance and token usage by Top-K. Analysis-only (non-reportable or unknown source provenance). Analysis-only known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10 for each source Top-K setting. Distinct blue shades identify Top-K; labels are source Method values. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting. Task-weighted source Dataset=Average values weight individual test tasks, not datasets.}
 \label{fig:performance_token_usage_by_topk}
 \end{figure}

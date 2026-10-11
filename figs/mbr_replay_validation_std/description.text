@@ -1,1 +1,3 @@
-Between-run variation in test routing performance. Lines show mean nDCG@10, and shaded bands span one population standard deviation on either side of the mean across three observed runs; they are not confidence intervals. Each run contributes its unweighted dataset average. Iteration 0 denotes initialization.
+Performance comparison of enabling and disabling MBR Replay and Held-out Validation Gate across 10 iterations on the test split. The chart shows the standard deviation of the average nDCG@10 across 3 runs where the line is the mean and area is the variation. Iteration 0 denotes initialization.
+
+Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.

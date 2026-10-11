@@ -1,6 +1,6 @@
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/mbr_replay_validation_f1_all_splits/preview.pdf}
-\caption{Selected-set F1 trajectories by evaluation split. Lines show three-run means of unweighted dataset averages; shading denotes \ensuremath{\pm}1 population standard deviation rather than a confidence interval. Positions 0 and 11 are initialization and final snapshots. Intermediate training scores are prequential, validation scores use ledger-accepted candidates, and test scores use accepted candidates. F1 concerns the full selected set, not a top-k subset.}
+\caption{Replay and validation-gate F1 across train, validation, and test splits. Analysis-only (non-reportable or unknown source provenance). Task-weighted source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
 \label{fig:mbr_replay_validation_f1_all_splits}
 \end{figure}

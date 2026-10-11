@@ -1,8 +1,8 @@
 Downstream performance
 
-Source: historical-project/BayesGSI/tables/downstream_performance/results.csv
-Source SHA256: e57c9206c1ea8c72f2b957caf7883b03a85db21108b0625b2a00c0d38603b355
-Source rows: 161; selected rows: 161.
+Source: ../BayesGSI/tables/downstream_performance/results.csv
+Source SHA256: 3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690
+Source rows: 182; selected rows: 161.
 Selection: all source rows
 Metrics: Accuracy
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
@@ -14,4 +14,7 @@ Success Rate is source Accuracy, a fraction. The average is computed over all in
 Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
 Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Regenerate from any working directory:
+  uv run --script paper/tables/downstream_performance/generate.py
+Optional fixture arguments: --source /path/results.csv --output /path/output
+Shared selection/provenance manifest: paper/artifact_manifest.json.

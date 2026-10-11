@@ -30,8 +30,8 @@ Upload the repository files (excluding `.git`), select `main.tex` as the main do
 
 - `main.tex`: current manuscript entrypoint and ACL review settings.
 - `sections/`: ten authoritative editable sections; `appendix.tex` and `citations.tex` contain only source-absence comments.
-- `figs/`: supplied figure snapshots and the two hero images, retained unchanged.
-- `tables/`: three supplied table snapshots with supporting assets; only the skill-routing and downstream tables are active.
+- `figs/`: refreshed data-backed result figures and the two hero images.
+- `tables/`: three refreshed result tables with previews and provenance; only the skill-routing and downstream tables are active.
 - `acl.sty`, `acl_natbib.bst`: unchanged supplied ACL style files.
 - `references.bib`: existing empty bibliography placeholder; no bibliography is rendered.
 - `snapshot-manifest.json`: historical packaging hashes, not a current manuscript-content manifest.
@@ -49,7 +49,7 @@ Conversion evidence and the pre-edit dirty-tree backup are outside this standalo
 
 ## Scope and caveats
 
-This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating result snapshots. External-data generators, their historical tests/manifests, caches, build intermediates, and conversion archives are intentionally omitted. The preserved table/figure snapshots are the build inputs. Historical source labels/hashes in provenance notes are documentation, not required filesystem paths; unavailable regeneration commands and machine-specific prefixes were removed from those notes.
+This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating the full result set. The `mbr_replay_test_f1` and `mbr_replay_test_ndcg` snapshots were refreshed from the split-labelled routing table; the other snapshots remain unchanged. External-data generators and experiment data are omitted. Each refreshed figure's `provenance.text` records its external CSV path and hash, test/accepted-row selection, source-run status, and analysis-only caveat. `snapshot-manifest.json` remains the historical packaging manifest and was intentionally not rewritten.
 
 Scientific caveats remain intact: some result snapshots are analysis-only/non-reportable or have unresolved provenance, and token costs are incomplete. The authoritative prose contains literal author-year citations but supplies no bibliography; citation identity/support still needs author review. Source grammatical inconsistencies, the duplicated parametric-routing sentence, and potentially conflicting empirical claims are preserved rather than scientifically rewritten. The source's training description also says both that retrievers are trained and that they do not require training. Snapshot captions/caveats are preserved even when stronger claims appear in the source prose. This package does not certify submission readiness, citation accuracy, or page-limit compliance.
 

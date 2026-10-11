@@ -1,7 +1,7 @@
 Replay size and checkpoint test performance
 
-Source: historical-project/BayesGSI/tables/routing_performance_by_iteration_across_replay_size/results.csv
-Source SHA256: 969e2ea5f60945995533b116da989a50d1d3a5ded3541face3446e877946a89a
+Source: ../BayesGSI/tables/routing_performance_by_iteration_across_replay_size/results.csv
+Source SHA256: acd87a509738b9d1e90f3a874903826d2d66e160ccd2589acdced5a2caf3352b
 Source rows: 308; selected rows: 4.
 Selection: Dataset=Average; last common numeric completed checkpoint across every available size/run
 Metrics: nDCG@10
@@ -12,4 +12,7 @@ Source reportability: non-reportable
 Analysis-only: source provenance does not certify publication validity.
 Source Average rows at matched completed iteration 10; mean over available runs (1: n=1, 3: n=1, 5: n=1, 10: n=1), no imputation. Checkpoint test performance, not unseen pre-acceptance candidate quality.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Regenerate from any working directory:
+  uv run --script paper/figs/replay_size_performance/generate.py
+Optional fixture arguments: --source /path/results.csv --output /path/output
+Shared selection/provenance manifest: paper/artifact_manifest.json.

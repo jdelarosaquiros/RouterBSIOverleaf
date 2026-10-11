@@ -1,15 +1,12 @@
-Replay and validation-gate ablation: nDCG@10
+Replay and gate ablation: test nDCG@10
 
-Source: historical-project/BayesGSI/tables/routing_performance_by_iteration/results.csv
-Source SHA256: 72a40a9f31462afc7b8601c2d5d05cbcf00e8c04fd2ad23aba7105e1fd1d20be
-Source rows: 308; selected rows: 44.
-Selection: source Dataset=Average rows only; never average these with dataset rows
-Metrics: nDCG@10
-Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
-Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
-Missing table values are ---; missing plotted values fail closed, never imputed.
-Source reportability: non-reportable
-Analysis-only: source provenance does not certify publication validity.
-Source Average rows; checkpoint test nDCG@10, not validation-split performance. Initial is plotted at iteration 0.
-
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Source: ../BayesGSI/tables/routing_performance_by_iteration/results.csv
+Source SHA256: d3d9461a1ace7e6296b8a9177016396c454f71b4b45f1ceb6261e2a7b703beaf
+Source rows: 245; selected rows/points: 20.
+Selection: Dataset=Average; Qwen3.5 4B / SkillSight; test nDCG@10; four series; common contiguous measured iterations 1–5; no initial-test point.
+Aggregation: task-weighted average over test instances; dataset scores weighted by n_tasks. Scores are fractions.
+Evaluation: accepted-policy checkpoint test nDCG@10, not validation performance.
+Latest validated accepted-test checkpoints when staged: Both Enabled iteration 8; Only Gate iteration 5. Plot range is truncated to common support 1–5.
+Completion/reportability: refreshed runs are in_progress, passed=false, reportable=false; derived values are analysis-only and non-reportable.
+Both Enabled and Only Gate use the refreshed RouterBSI runs; Both Disabled and Only MBR retain their previous source runs. The four-series plot therefore mixes source runs and is not a fully controlled single-run-family ablation.
+Other source methods: Both Disabled and Only MBR retain their pre-existing input mappings/results.

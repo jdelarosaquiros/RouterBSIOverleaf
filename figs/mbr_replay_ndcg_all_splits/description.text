@@ -1,0 +1,1 @@
+nDCG@10 trajectories across train, validation, and test. Lines show source means; shading denotes ±1 population standard deviation, not a confidence interval. Training uses prequential scores, validation uses ledger-accepted candidates, and test uses accepted candidates. Initial/final are snapshots.

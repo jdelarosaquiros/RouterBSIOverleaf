@@ -1,17 +1,26 @@
-Skill routing performance
+tables/skill_routing_performance
 
-Source: historical-project/BayesGSI/tables/routing_performance/results.csv
-Source SHA256: 35fef8afcb20db04fdc4dbea130f032b30f075d79f10225f9cf4aa9e7f6e5e65
-Source rows: 147; selected rows: 98.
-Selection: all source rows; Method=Tool-REX and Retriever=Vector excluded from paper artifact
-Metrics: nDCG@1, nDCG@10
-Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
-Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
-Missing table values are ---; missing plotted values fail closed, never imputed.
-Source reportability: non-reportable
-Analysis-only: source provenance does not certify publication validity.
-nDCG@1 and nDCG@10 are supplied source metrics.
-Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
-Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
+Source: BayesGSI/tables/routing_performance/results.csv
+Source SHA256: d3bad67c2d0a27132e38bb28dd1389a7167c02ec4f2d9b870e43d4c0fcfa8f9b
+Source rows: 168; selected rows: 147.
+Selection: Exact original table identity/order contract; values refreshed from current authoritative CSV.
+Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
+Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
+Source status: completed_noncanonical; reportable=false; analysis-only.
+Nonreportable reason: SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
+Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
+Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.
+SkillRouter: archived top-1 selected-set F1; full 50-candidate reranking for rank metrics; downstream top-5 is outside this refresh.
+Task-weighted Dataset=Average source rows are retained, not re-averaged across datasets.
+Historical snapshot-manifest.json is unchanged. No inference, training, or downstream refresh.
+Generator: .wisc/scripts/refresh-vector-final-discussion-artifacts.py
+Generator SHA256: ee10093173bd4a8a47e2d8d6e54a175d50a5f681afacbbb08debec0a7b46a885
+Regenerate: uv run .wisc/scripts/refresh-vector-final-discussion-artifacts.py --apply
+Current bindings and exact values: artifact-manifest.json and selection.json.
 
-Packaging note: source paths above are historical provenance identifiers, not bundled inputs. This repository compiles the supplied snapshot; experiment/result regeneration is outside its scope. Original source hashes and evidence caveats are retained.
+Table 1 metric transformation: Binary relevance and nonempty gold sets: DCG@1 is the top-ranked relevance indicator and IDCG@1=1. Thus per-task nDCG@1 equals Hit@1, and identical task-weighted means preserve equality.
+Display columns: N@1 and N@10. Source CSV is unchanged.
+Apply after base regeneration: python -B .wisc/scripts/update-table1-ndcg1.py
+
+Manuscript layout update: top of physical page 6, two-column width, unscaled body font. Preview extracted from compiled manuscript. Numeric cells and source CSV unchanged.

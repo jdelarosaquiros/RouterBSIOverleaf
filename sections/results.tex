@@ -1,34 +1,21 @@
-% Authoritative RouterBSI_Draft_Appendix.docx; zero-based direct body paragraph IDs.
+% Author attachment: pasted-text-2026-10-10_23-16-35-189.md
 
-% DOCX-P059-BEGIN
+% Wording and values preserved; only LaTeX escaping and reference integration.
+
 \section{Results}
-% DOCX-P059-END
 
-% Queue the full-width bottom float before the first result paragraph.
-% INTEGRATION-BEGIN
-\begin{archivedtables}[!b]\input{tables/skill_routing_performance/table}\end{archivedtables}
-% INTEGRATION-END
-
-% DOCX-P060-BEGIN
 \subsection{Skill Routing Performance}
-% DOCX-P060-END
 
-% DOCX-P061-BEGIN
-RouterBSI improves aggregate routing performance with both BM25 and SkillSight, achieving the highest dataset-averaged nDCG@10 and Hit@1. LLM Select is the strongest aggregate comparator, but RouterBSI increases mean nDCG@10 by approximately 16.7\% with BM25 and 16.5\% with SkillSight relative to it. SkillDAG provides smaller aggregate nDCG@10 improvements over retrieval alone, while Skill-Pro remains close to the retrieval baselines. RouterBSI achieves the best nDCG@10 on all six datasets with SkillSight and five of six with BM25, showing that its aggregate advantage extends across most datasets rather than depending on a single benchmark (Table~\ref{tab:skill_routing_performance}).
-% DOCX-P061-END
+RouterBSI improves routing performance of base retrievers by an average nDCG@1 and nDCG@10 across retrievers of 67.0\% and 39.7\%, respectively Table~\ref{tab:skill_routing_performance_average}. SkillRouter is the strongest routing baseline, yet RouterBSI the nDCG@1 and nDCG@10 is 10.9\% and 8.4\% higher on average. Compared to the other non-parametric optimization baselines, RouterBSI has a mean 29.2\% and 26.7\% nDCG@10 score over SkillDAG and Skill-Pro, respectively.
 
-% DOCX-P062-BEGIN
-The exception is TheoremQA with BM25, where RouterBSI achieves 0.748 nDCG@10 versus 0.791 for LLM Select. Most failed cases of RouterBSI on TheoremQA were caused by failure to activate due to overly narrow predicates. RouterBSI could further improve its performance on these cases with more training iterations or relying on a human to directly edit the predicates.
-% DOCX-P062-END
+The exception is TheoremQA, where RouterBSI’s nDCG@10 is 1.4\% and 6.1\% lower on average than LLM Select and SkillRouter, respectively. Most failed cases of RouterBSI on TheoremQA were caused by failure to activate due to overly narrow predicates. RouterBSI could further improve its performance on these cases with more training iterations or relying on a human to directly edit the predicates.
 
-% DOCX-P063-BEGIN
+\subsection{Required Skill Retention}
+
+RouterBSI retains more required skills more required skills than other baselines as we reduce the max k of skills loaded into LLM Agent. For instance, Figure~\ref{fig:average_recall_degradation} shows that RouterBSI retained 90.5\% of the required skills in top 5 from the top 50 skills retrieved, whereas the retention of baselines ranged from 59.5\% to 83.9\% on average across retrievers. Despite SkillDAG’s low recall in top 10 and below compared to other methods, it retains 22.2\% and 16.6\% more required skills on average than retrievers in top 25 and 50, respectively. The higher coverage in top 25 and 50 of SkillDAG’s expansion combined with retrieval ranking can be a better alternative than the relying on the retriever alone. On the other hand, RouterBSI retains more required skills in top 10 or less, so combining it with the higher coverage of SkillDAG in top 25 or 50 could lead to better routing performance.
+
 \subsection{Downstream Performance}
-% DOCX-P063-END
 
-% DOCX-P064-BEGIN
-Results demonstrate that combining RouterBSI labels with some additional skills as RouterBSI\_top5 has a 2.49\% to 5.59\% higher downstream performance compared to RouterBSI\_strict. RouterBSI improves average downstream task success over the no skills and LLM as selector baselines by average of 17.52\% and 6.62\%, respectively. RouterBSI\_top5's success rate is only 0.38 to 1.80 lower than the oracle which uses the ground-truth skills set. A notable result is SkilDAG's success rate exceeding oracle by an average of 4.75\%, which suggest expanding selected skills to include dependent skills improves downstream performance even if it doesn't improve routing performance (Table~\ref{tab:downstream_performance}).
-% DOCX-P064-END
+Figure~\ref{fig:downstream_average} demonstrates that combining RouterBSI labels with some additional retrieved skills leads to higher downstream performance as RouterBSI\_top5’s average performance across retrievers is of 4.7\% higher than RouterBSI\_strict. RouterBSI\_top5 improves average downstream task success over the no skills and LLM as selector baselines by average of 16.3\% and 4.8\%, respectively. RouterBSI\_top5’s average success rate across retrievers reaches 96.7\% the oracle performance which uses the ground-truth skills set. A notable result is SkilDAG’s success rate reaches 99.0\% of  oracle despite having only 78.8\% recall of required skills, which suggest expanding selected skills to include dependent skills improves downstream performance even if the dependent skills are not required.
 
-% INTEGRATION-BEGIN
-\begin{archivedtables}\input{tables/downstream_performance/table}\end{archivedtables}
-% INTEGRATION-END
+
