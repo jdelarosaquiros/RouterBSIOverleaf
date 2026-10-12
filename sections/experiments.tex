@@ -17,7 +17,7 @@ We conduct experiments on SRA-Bench, which comprises six capability-intensive be
 % DOCX-P051-END
 
 % DOCX-P052-BEGIN
-We evaluate skill routing and downstream performance conditioned on the selected skills. For skill routing, we report Recall@\(k\) and nDCG@\(k\). We additionally report F1@\(k\) to compare filtering capabilities. For downstream performance, each benchmark follows its standard evaluation protocol to measure success rate: rule-based exact match or accuracy for reasoning and QA datasets, and pass@1 based on unit-test execution for BigCodeBench. Averages are measured across task instances.
+We evaluate skill routing and downstream performance conditioned on the selected skills. For skill routing, we report Recall@\(k\) and nDCG@\(k\). We additionally report F1@\(k\) to compare filtering capabilities. We also report retention as Ret@\(k\) to compare the percentage of required skills retained in top k from the retrieved skills. For downstream performance, each benchmark follows its standard evaluation protocol to measure success rate: rule-based exact match or accuracy for reasoning and QA datasets, and pass@1 based on unit-test execution for BigCodeBench. Averages are measured across task instances.
 % DOCX-P052-END
 
 % Queue the full-width Results table early; let text fill both columns.
@@ -44,7 +44,7 @@ We study retrieval, reranker, and selection baselines. The retrievers include sp
 % DOCX-P057-END
 
 % DOCX-P058-BEGIN
-The retrievers use either pretrained embedding models and/or lexical matching, so they do not require training. Candidate skills are retrieved from the shared external skill corpus in response to the input query. The reranking and selection baselines are conditioned on the top 50 retrieved skills and use some optimization method to improve performance. SkillSight is the default retriever for reranking and selection baselines. Qwen3.5-4B is the default model used in our experiments. The non-parametric baselines, including ours, do not output a continuous score like rerankers, so we rank them by the sum of their binary label and the retrieval score, where 1 is the label for selected skills and 0 otherwise. We use a temperature of 1 for proposing candidate predicates and 0 for evaluating predicates and downstream performance. RouterBSI is optimized for 10 iterations. 
+The retrievers use either pretrained embedding models and/or lexical matching, so they do not require training. Candidate skills are retrieved from the shared external skill corpus in response to the input query. The skill routing baselines are conditioned on the top 50 retrieved skills and use some optimization method to improve performance. The exception is SkillDAG where it first retrieves top 5 skills then expands them until reaching top k. Its skills are ranked based on graph depth from top 5 retrieved skills and retrieval score. SkillSight is the default retriever. Qwen3.5-4B is the default model used in our experiments. The non-parametric baselines, including ours, do not output a continuous score like rerankers, so we rank them by the sum of their binary label and the retrieval score, where 1 is the label for selected skills and 0 otherwise. We use a temperature of 1 for proposing candidate predicates and 0 for evaluating predicates and downstream performance. RouterBSI is optimized for 10 iterations. In downstream tasks, we use k = 5 skills for SkillRouter and $\mathrm{RouterBSI}_{\mathrm{top}k}$, and we set k = 10 for SkillDAG because k = 5 would match the retriever's performance.
 % DOCX-P058-END
 
 % Reserve the next page's floats while allowing this page's prose to flow.
@@ -52,7 +52,7 @@ The retrievers use either pretrained embedding models and/or lexical matching, s
 \begingroup
 \let\resultstopfigure\figure
 \renewcommand{\figure}[1][]{\resultstopfigure[!ht]}
-\input{figs/average_recall_degradation/table}
+\input{figs/average_retention_degradation/table}
 \endgroup
 % Full-width bottom float; leave the remaining page area for flowing text.
 \begingroup

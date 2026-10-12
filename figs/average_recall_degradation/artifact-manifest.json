@@ -87,11 +87,11 @@
   "selected_row_count": 18,
   "exact_value_evidence": "selection.json: points and retention",
   "outputs": {
-    "table.tex": "714197bf1e30416b544c4816aa7ad63d3bc38fdd43a1c8173388ecd2fd34873d",
+    "table.tex": "7b359f3f830b7b005741b098238f8d54c717403bdc49d4e4fb6c976e6bf1610a",
     "preview.pdf": "5d6f599105f1aafd867d45ea741aaa8fcb151fca059061358914e5c9ef143fce",
     "preview.png": "f3073f95950246eca8b6eac52b5807527e9af2446f6e10062d38969eff5a2ae9",
-    "description.text": "d3c7ea4074668b1b49dcebf503ceffbd31443cfcc44b3b93f4519c8f53d07294",
+    "description.text": "4f4685051e45aece99b7dd2d73257fe1a1e3227c7f8df90378e5bcd2a6a51ffb",
     "provenance.text": "5ca3fa252a7ba5c647a7ac2d0458b40a83beae920732f5e2ef3f433ff2a337eb",
-    "selection.json": "67cdff811386aff75a01afb88389bae7ba0d3b5ba4022be8d3aa45820b828d34"
+    "selection.json": "53a40a9d894ddd899f90f224581bbd2f7f07cacae195b3682a70cc02d1f71fa0"
   }
 }

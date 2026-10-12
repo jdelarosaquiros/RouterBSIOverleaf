@@ -6,33 +6,18 @@
   },
   "generator": {
     "path": ".wisc/scripts/generate-routing-average-table.py",
-    "sha256": "fc72d99d5306c6337da5f464a52be1d7185cdd22354ea913bfd8f3e2a81aacc9"
+    "sha256": "93bb4257068799279fd541251f041db5e61a61f9fddf5483b846f5b4be988d9e"
   },
-  "rows": 9,
-  "cells": 126,
-  "source_rows_selected": 147,
+  "rows": 6,
+  "cells": 84,
+  "source_rows_selected": 126,
   "reportable": false,
   "outputs": {
-    "table.tex": "80c8d196aff24764c2409d28b9a3e2e6fa2d0081dddbdcfe4657ba0a29ae709e",
-    "description.text": "40aa4f1e8a472cad43f079fe8acc4ca6740a2e7f4418d94d7b141d8ebbd7c837",
-    "provenance.text": "80ec2910c52c64615ae129f9bf3c2ac6e8674629a9675561e5d0c9bdd8eb120d",
-    "selection.json": "b8ea4f9ae9fd8698d16044144977ba0d894007b6a019c636a1367550fd0c1a8e",
-    "preview.pdf": "a6b0c822e1fd8128ae132f275565f79683adf42e6ddc0ec974d80163e03e19ae",
-    "preview.png": "e8cf94a0b424bb9cb9e1c401e5672e168a5fc0dce95ffce40c5f078adfa733ab"
-  },
-  "row_groups": {
-    "Retrievers": [
-      "BM25",
-      "Vector",
-      "SkillSight"
-    ],
-    "Routers": [
-      "LLM Select",
-      "SkillRouter",
-      "SkillDAG",
-      "Skill-Pro",
-      "RouterBSI_init",
-      "RouterBSI"
-    ]
+    "table.tex": "9c182b8532cd5aec3f00afb3cb37d9bda3070ff36c5875b3ff09edfefe0a3291",
+    "description.text": "3e7f6af33b6e0855eea41305438c95df5ec2b43e10ada0a9e3b09384d3fbecc5",
+    "provenance.text": "54d9a700bdfbf5242941c45907a03892edf8a3d7ddf1dd5b78d69d0d25d62817",
+    "selection.json": "a177c3d38d86576450f1998cd1308d6a443930a7e6c2de182d3c0038b7b1eb7c",
+    "preview.pdf": "f381ff3dbe26b641bb89881e0b760d59fafdc8df95971e8bf3aeb0aa0a5c3516",
+    "preview.png": "4a68e0a1b706e604259e91abfb0290338a683c628bdd06d73861109548ee8808"
   }
 }

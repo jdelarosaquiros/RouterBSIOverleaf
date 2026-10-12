@@ -1,7 +1,7 @@
 % Generated from read-only source CSV.
 \begin{table}[!htbp]
 \centering
-\caption{Skill routing performance using Qwen3.5 4B. BM25, Vector, and SkillSight are shown first as native retrieval baselines. Each remaining row is the equal-weight mean across those three retrievers. Columns report nDCG@1 (N@1) and nDCG@10 (N@10) for each benchmark; Average uses each retriever's task-weighted scores over 748 tasks. Bold and underlined values mark the best and second-best distinct scores in each column.}
+\caption{Skill routing performance using Qwen3.5 4B. Each router row is the equal-weight mean across BM25, Vector, and SkillSight. Columns report nDCG@1 (N@1) and nDCG@10 (N@10) for each benchmark; Average uses each retriever's task-weighted scores over 748 tasks. Bold and underlined values mark the best and second-best distinct scores in each column.}
 \label{tab:skill_routing_performance_average}
 \fontsize{8.95pt}{10.8pt}\selectfont
 \setlength{\tabcolsep}{1.4pt}
@@ -18,20 +18,12 @@ Method & \multicolumn{2}{c}{\shortstack{BigCode\\Bench}} & \multicolumn{2}{c}{CH
 \cmidrule(lr){14-15}
  & N@1 & N@10 & N@1 & N@10 & N@1 & N@10 & N@1 & N@10 & N@1 & N@10 & N@1 & N@10 & N@1 & N@10 \\
 \midrule
-\multicolumn{15}{l}{\textit{Retrievers}} \\
-\midrule
-BM25 & 0.610 & 0.544 & 0.423 & 0.410 & 0.158 & 0.220 & 0.315 & 0.462 & 0.524 & 0.659 & 0.070 & 0.271 & 0.302 & 0.410 \\
-Vector & 0.504 & 0.407 & 0.346 & 0.463 & 0.105 & 0.248 & \textbf{0.988} & \textbf{0.992} & 0.695 & 0.833 & 0.312 & 0.413 & 0.516 & 0.575 \\
-SkillSight & \underline{0.724} & \underline{0.616} & 0.308 & 0.429 & 0.167 & 0.406 & 0.830 & 0.903 & \underline{0.733} & \underline{0.852} & 0.102 & 0.390 & 0.471 & 0.609 \\
-\midrule
-\multicolumn{15}{l}{\textit{Routers}} \\
-\midrule
-LLM Select & 0.480 & 0.510 & 0.385 & 0.458 & 0.266 & 0.394 & 0.745 & 0.834 & 0.683 & 0.819 & 0.437 & 0.547 & 0.519 & 0.616 \\
-SkillRouter & 0.366 & 0.299 & \underline{0.449} & \underline{0.476} & \underline{0.269} & \underline{0.416} & \underline{0.974} & \underline{0.981} & \textbf{0.816} & \textbf{0.860} & \underline{0.600} & \underline{0.711} & \underline{0.619} & \underline{0.671} \\
-SkillDAG & 0.612 & 0.600 & 0.359 & 0.453 & 0.143 & 0.378 & 0.709 & 0.785 & 0.651 & 0.781 & 0.161 & 0.421 & 0.429 & 0.576 \\
+LLM Select & 0.480 & 0.510 & 0.385 & 0.458 & 0.266 & 0.394 & 0.745 & 0.834 & 0.683 & \underline{0.819} & 0.437 & 0.547 & 0.519 & 0.616 \\
+SkillRouter & 0.366 & 0.299 & \underline{0.449} & \underline{0.476} & \underline{0.269} & \underline{0.416} & \textbf{0.974} & \textbf{0.981} & \textbf{0.816} & \textbf{0.860} & \underline{0.600} & \underline{0.711} & \underline{0.619} & \underline{0.671} \\
+SkillDAG & \underline{0.612} & \underline{0.600} & 0.359 & 0.453 & 0.143 & 0.378 & 0.709 & 0.785 & 0.651 & 0.781 & 0.161 & 0.421 & 0.429 & 0.576 \\
 Skill-Pro & 0.238 & 0.446 & 0.218 & 0.395 & 0.161 & 0.317 & 0.705 & 0.850 & 0.460 & 0.712 & 0.402 & 0.527 & 0.407 & 0.574 \\
 $\mathrm{RouterBSI}_{\mathrm{init}}$ & 0.466 & 0.417 & 0.346 & 0.435 & 0.184 & 0.341 & 0.830 & 0.877 & 0.559 & 0.726 & 0.290 & 0.453 & 0.462 & 0.561 \\
-RouterBSI & \textbf{0.832} & \textbf{0.707} & \textbf{0.551} & \textbf{0.556} & \textbf{0.336} & \textbf{0.449} & 0.915 & 0.933 & 0.686 & 0.808 & \textbf{0.631} & \textbf{0.712} & \textbf{0.687} & \textbf{0.728} \\
+RouterBSI & \textbf{0.832} & \textbf{0.707} & \textbf{0.551} & \textbf{0.556} & \textbf{0.336} & \textbf{0.449} & \underline{0.915} & \underline{0.933} & \underline{0.686} & 0.808 & \textbf{0.631} & \textbf{0.712} & \textbf{0.687} & \textbf{0.728} \\
 \bottomrule
 \end{tabular*}
 \end{table}

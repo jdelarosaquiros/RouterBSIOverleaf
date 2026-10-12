@@ -87,12 +87,12 @@
   "selected_row_count": 147,
   "exact_value_evidence": "selection.json: cells",
   "outputs": {
-    "table.tex": "5e26898e3b8bbf18a475057f7fc8092cbd336356a4dc457f3675eaeac551b9da",
+    "table.tex": "f8180de202a7b3688930bec8bda4ddd3b1d82d9939a98bef730c18500ac1828f",
     "preview.pdf": "6120cde18ec709c8f2b97638de2a46b57a54482edebf1897a5a0ebed1a57366d",
     "preview.png": "a3371b53fa460fa7e4fd0a00dea38cfa6cd5e09c15d7d8af821bd586f619daa0",
     "description.text": "d903e3f2df21fe257707a747062694a48035e35118efa1b14c3167d5dde3a47f",
     "provenance.text": "7351e9f72e33f4ed4c75e04aac9b163a2e7fde048732e7785cdc449299be3de4",
-    "selection.json": "1e07329a09dca6339bff918f8026cc96dd5d0ca2b24b141dded00f88fc440d77"
+    "selection.json": "d64d41a3b68e73dbc2e14c1f7ae0082ae49c990cfad987969dbd50892b49b84b"
   },
   "caption_source": "description.text",
   "metric_transformations": [
