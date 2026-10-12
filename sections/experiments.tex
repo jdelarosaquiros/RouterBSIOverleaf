@@ -17,7 +17,7 @@ We conduct experiments on SRA-Bench, which comprises six capability-intensive be
 % DOCX-P051-END
 
 % DOCX-P052-BEGIN
-We evaluate the SRA pipeline from both retrieval and end-task perspectives. For skill retrieval, we report Recall@\(k\) and nDCG@\(k\). We additionally report F1@\(k\) to compare filtering capabilities. For end-task performance, each benchmark follows its standard evaluation protocol: rule-based exact match or accuracy for reasoning and QA datasets, and pass@1 based on unit-test execution for BigCodeBench. Averages are measured across task instances.
+We evaluate skill routing and downstream performance conditioned on the selected skills. For skill routing, we report Recall@\(k\) and nDCG@\(k\). We additionally report F1@\(k\) to compare filtering capabilities. For downstream performance, each benchmark follows its standard evaluation protocol to measure success rate: rule-based exact match or accuracy for reasoning and QA datasets, and pass@1 based on unit-test execution for BigCodeBench. Averages are measured across task instances.
 % DOCX-P052-END
 
 % Queue the full-width Results table early; let text fill both columns.
@@ -36,7 +36,7 @@ We evaluate five models spanning four open-weight checkpoints and one proprietar
 % DOCX-P055-END
 
 % DOCX-P056-BEGIN
-We study retrieval, reranker, and selection baselines. The retrievers include sparse and dense retrievers \citep{su2026skillretrieval} and SkillSight, a hybrid retriever. They are trained on training split and frozen on validation and test splits. LLM Select is a static router, and LLM Direct and LLM Oracle are downstream performance baselines representing without skills and with ground-truth skill set, respectively \citep{su2026skillretrieval}. The non-parametric optimization baselines are SkillDag and Skill-Pro \citep{pmlr-v306-mi26d,bai2026skilldag}. RouterBSI\_init and RouterBSI refer to the cold-start and final iteration performance. RouterBSI\_strict selects skills only when their predicate evaluates to true. RouterBSI\_topk are the top k skills using the sum of their predicate label and the retrieval score.
+We study retrieval, reranker, and selection baselines. The retrievers include sparse and dense retrievers \citep{su2026skillretrieval} and SkillSight, a hybrid retriever. They are trained on training split and frozen on validation and test splits. LLM Select is a static router, and LLM Direct and LLM Oracle are downstream performance baselines representing without skills and with ground-truth skill set, respectively \citep{su2026skillretrieval}. The non-parametric optimization baselines are SkillDag and Skill-Pro \citep{pmlr-v306-mi26d,bai2026skilldag}. $\mathrm{RouterBSI}_{\mathrm{init}}$ and RouterBSI refer to the cold-start and final iteration performance. $\mathrm{RouterBSI}_{\mathrm{strict}}$ selects skills only when their predicate evaluates to true. $\mathrm{RouterBSI}_{\mathrm{top}k}$ are the top k skills using the sum of their predicate label and the retrieval score.
 % DOCX-P056-END
 
 % DOCX-P057-BEGIN
@@ -44,7 +44,7 @@ We study retrieval, reranker, and selection baselines. The retrievers include sp
 % DOCX-P057-END
 
 % DOCX-P058-BEGIN
-The retrievers use either pretrained embedding models or lexical matching, so they do not require training. Candidate skills are retrieved from the shared external skill corpus in response to the input query. The reranking and selection baselines are conditioned on the top 50 retrieved skills and use an optimization method to improve performance. SkillSight is the default retriever for reranking and selection baselines. The non-parametric baselines, including ours, do not output a continuous score like rerankers, so we rank them by the sum of their binary label and the retrieval score, where 1 is the label for selected skills and 0 otherwise. We use a temperature of 1 for proposing candidate predicates and 0 for evaluating predicates and downstream performance. RouterBSI is optimized over 10 iterations. Qwen3.5-4B is the default model used in our experiments.
+The retrievers use either pretrained embedding models and/or lexical matching, so they do not require training. Candidate skills are retrieved from the shared external skill corpus in response to the input query. The reranking and selection baselines are conditioned on the top 50 retrieved skills and use some optimization method to improve performance. SkillSight is the default retriever for reranking and selection baselines. Qwen3.5-4B is the default model used in our experiments. The non-parametric baselines, including ours, do not output a continuous score like rerankers, so we rank them by the sum of their binary label and the retrieval score, where 1 is the label for selected skills and 0 otherwise. We use a temperature of 1 for proposing candidate predicates and 0 for evaluating predicates and downstream performance. RouterBSI is optimized for 10 iterations. 
 % DOCX-P058-END
 
 % Reserve the next page's floats while allowing this page's prose to flow.

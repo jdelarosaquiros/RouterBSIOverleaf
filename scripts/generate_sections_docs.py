@@ -21,6 +21,7 @@ from docx.shared import Inches, Pt
 WRAPPERS = 'archivedtables|pairedarchivedfigures|widearchivedfigures|compactwidearchivedfigure'
 MACROS = r'''\newcommand{\mathds}[1]{\mathbb{#1}}
 \newcommand{\rotatebox}[2]{#2}
+\newcommand{\afterpage}[1]{#1}
 '''
 
 
@@ -52,9 +53,20 @@ def expand(path, root, dependencies, stack=()):
 
 
 def prepare(text, root, labels, dependencies):
+    # Figure placement overrides affect PDF layout only and can confuse
+    # Pandoc's LaTeX reader when it parses the corresponding float.
+    text = re.sub(r'\\let\\\w+figure\\figure\s*', '', text)
+    text = re.sub(r'\\renewcommand\{\\figure\}\[1\]\[\]\{\\\w+figure\[[^]]*\]\}\s*', '', text)
+    # Full-width float aliases are also PDF-only; preserve their figure bodies.
+    text = re.sub(r'\\expandafter\\let\\expandafter\\\w+figure\\csname (?:end)?figure\*\\endcsname\s*', '', text)
+    text = re.sub(r'\\renewenvironment\{figure\}\[1\]\[\]\{\\\w+figure\[[^]]*\]\}\{\\end\w+figure\}\s*', '', text)
     text = re.sub(r'\\begin\{(?:' + WRAPPERS + r')\}(?:\[[^\]]*\])?', '', text)
     text = re.sub(r'\\end\{(?:' + WRAPPERS + r')\}', '', text)
     text = re.sub(r'\\begin\{adjustbox\}\{[^{}]*\}|\\end\{adjustbox\}', '', text)
+    # Flatten simple stacked headers before Pandoc mistakes their line breaks
+    # for table row boundaries (which can silently discard an entire table).
+    text = re.sub(r'\\shortstack(?:\[[lcr]\])?\{([^{}]*)\}',
+                  lambda m: m[1].replace(r'\\', ' '), text)
     text = text.replace(r'\begin{abstract}', r'\section*{Abstract}').replace(r'\end{abstract}', '')
     text = re.sub(r'\\bibliography\{[^}]*\}', '', text)
     text = re.sub(r'\\addlinespace(?:\[[^\]]*\])?', '', text)

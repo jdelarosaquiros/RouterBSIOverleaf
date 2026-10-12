@@ -1,1 +1,1 @@
-Routing performance and optimization token usage with replay and validation gating enabled or disabled. Points show task-weighted test nDCG@10 against recorded run-local tokens in millions. These exploratory results use incomplete token totals that exclude shared initialization.
+Impact of MBR replay and held-out validation gate on routing performance (nDCG@1) and token usage. Both enabled gives the strongest performance. MBR alone uses fewer tokens at a performance cost.

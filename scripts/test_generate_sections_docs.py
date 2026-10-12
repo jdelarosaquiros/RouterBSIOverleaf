@@ -104,5 +104,69 @@ class SectionExportTests(unittest.TestCase):
             doc = Document(str(root / 'sections_docs/results.docx'))
             self.assertTrue(any(p.text.startswith('Table 7: A nested caption.') for p in doc.paragraphs))
 
+    def test_figure_placement_overrides_do_not_break_float_export(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'sections').mkdir()
+            (root / 'figs').mkdir()
+            import base64
+            (root / 'figs/pixel.png').write_bytes(base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aD1sAAAAASUVORK5CYII='))
+            (root / 'sections/ablations.tex').write_text(
+                r'\begingroup\let\ablationfigure\figure\renewcommand{\figure}[1][]{\ablationfigure[!t]}'
+                r'\begin{figure}[!htbp]\includegraphics{figs/pixel.png}\caption{A figure.}\end{figure}\endgroup'
+            )
+            result = subprocess.run([sys.executable, str(SCRIPT), '--paper-dir', str(root)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            doc = Document(str(root / 'sections_docs/ablations.docx'))
+            self.assertEqual(len(doc.inline_shapes), 1)
+            self.assertTrue(any('A figure.' in p.text for p in doc.paragraphs))
+
+    def test_deferred_figures_preserve_images_captions_and_following_prose(self):
+        import base64
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'sections').mkdir()
+            (root / 'pixel.png').write_bytes(base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aD1sAAAAASUVORK5CYII='))
+            (root / 'main.aux').write_text(r'\newlabel{fig:a}{{3}{1}}' + r'\newlabel{fig:b}{{4}{1}}')
+            source = (
+                r'\section{Deferred} Before. \afterpage{'
+                r'\begingroup\let\backbonepagefigure\figure'
+                r'\renewcommand{\figure}[1][]{\backbonepagefigure[!ht]}'
+                r'\begin{figure}\includegraphics{pixel.png}\caption{Nested \textbf{caption} with \{braces\}.}\label{fig:a}\end{figure}\endgroup'
+                r'\begingroup'
+                r'\expandafter\let\expandafter\resultsbottomfigure\csname figure*\endcsname'
+                r'\expandafter\let\expandafter\endresultsbottomfigure\csname endfigure*\endcsname'
+                r'\renewenvironment{figure}[1][]{\resultsbottomfigure[!b]}{\endresultsbottomfigure}'
+                r'\begin{figure}\includegraphics{pixel.png}\caption{Second caption.}\label{fig:b}\end{figure}\endgroup'
+                r'} After. See Figure~\ref{fig:b}.'
+            )
+            (root / 'sections/deferred.tex').write_text(source)
+            result = subprocess.run([sys.executable, str(SCRIPT), '--paper-dir', str(root)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            doc = Document(root / 'sections_docs/deferred.docx')
+            self.assertEqual(len(doc.inline_shapes), 2)
+            text = '\n'.join(p.text for p in doc.paragraphs)
+            for expected in ['Before.', 'After.', 'Figure 3: Nested caption with {braces}.', 'Figure 4: Second caption.']:
+                self.assertIn(expected, text)
+            self.assertEqual((root / 'sections/deferred.tex').read_text(), source)
+
+    def test_stretched_table_remains_editable_with_group_rows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'sections').mkdir()
+            (root / 'sections/results.tex').write_text(
+                r'\section{Results}\begin{table}\caption{Routing.}'
+                r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}'
+                r'Method & \shortstack{N@10\\Score} \\ \multicolumn{2}{l}{\textit{Retrievers}} \\ BM25 & 0.410 \\ '
+                r'\multicolumn{2}{l}{\textit{Routers}} \\ RouterBSI & 0.728 \\ '
+                r'\end{tabular*}\end{table}'
+            )
+            result = subprocess.run([sys.executable, str(SCRIPT), '--paper-dir', str(root)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            doc = Document(str(root / 'sections_docs/results.docx'))
+            self.assertEqual(len(doc.tables), 1)
+            rows = [[c.text for c in row.cells] for row in doc.tables[0].rows]
+            self.assertEqual(rows, [['Method', 'N@10 Score'], ['Retrievers'] * 2, ['BM25', '0.410'], ['Routers'] * 2, ['RouterBSI', '0.728']])
+
 if __name__ == '__main__':
     unittest.main()

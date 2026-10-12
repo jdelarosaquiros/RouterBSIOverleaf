@@ -1128,8 +1128,8 @@
     }
   ],
   "output_sha256": {
-    "preview.pdf": "61516d04182bdd25a5116132882607e0e3d1ac995cc6ef685eeb4d16d341838c",
-    "preview.png": "e6b70ffcd91764501775614b2b8c6bb97ebcd12859827521738d0ecbe2ba58f1",
+    "preview.pdf": "47abadc1b7727238cab4d398f8175628b2e98a99baf567136ea050957b4b23b0",
+    "preview.png": "bea283a9e2a92c630e6c51ee17037d08f6a4e8826e0b5833f80eab9ad0c08fdd",
     "description.text": "99a2c315745201ef039efd82abf1ae8fe5c20ab0532005bf0c96b6c2f850eafd",
     "table.tex": "77a383073c24f9ef4aeab6016f3ca7804a91ca532f3af06e5fdded7ad92fd870"
   },

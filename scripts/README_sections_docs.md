@@ -34,6 +34,9 @@ files if you intend to regenerate them; save edited copies elsewhere.
   manuscript structure, run `make rebuild` before exporting. The script never runs
   a LaTeX build or edits source files itself. Missing references fail the export.
 - Layout is Word-friendly, not a pixel-identical copy of the two-column PDF.
+  PDF-only figure-placement aliases are stripped; `\\afterpage{...}` content
+  is exported in source order rather than discarded. Simple `\\shortstack`
+  table headers are flattened to spaces to preserve editable table cells.
 - All conversions are staged and checked before publishing. A conversion warning,
   missing dependency, missing citation, or source mutation aborts generation.
   Publishing uses per-file atomic replacement, not a directory-wide transaction.

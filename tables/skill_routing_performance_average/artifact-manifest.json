@@ -13,12 +13,12 @@
   "source_rows_selected": 147,
   "reportable": false,
   "outputs": {
-    "table.tex": "3d090c3ce41fa3efca397f444902c67b4ad2f2aa51505284f8da188c92a83fef",
+    "table.tex": "80c8d196aff24764c2409d28b9a3e2e6fa2d0081dddbdcfe4657ba0a29ae709e",
     "description.text": "40aa4f1e8a472cad43f079fe8acc4ca6740a2e7f4418d94d7b141d8ebbd7c837",
     "provenance.text": "80ec2910c52c64615ae129f9bf3c2ac6e8674629a9675561e5d0c9bdd8eb120d",
     "selection.json": "b8ea4f9ae9fd8698d16044144977ba0d894007b6a019c636a1367550fd0c1a8e",
-    "preview.pdf": "18225bc6f59ec012c5743f4f50c4de1589c033da8d8f218f9508ecc56b2e55e5",
-    "preview.png": "44f35a3ceee51c62a4030077912112e796c2121425f33adba812a055f790f937"
+    "preview.pdf": "a6b0c822e1fd8128ae132f275565f79683adf42e6ddc0ec974d80163e03e19ae",
+    "preview.png": "e8cf94a0b424bb9cb9e1c401e5672e168a5fc0dce95ffce40c5f078adfa733ab"
   },
   "row_groups": {
     "Retrievers": [
