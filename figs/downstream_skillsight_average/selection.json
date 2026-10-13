@@ -1,7 +1,5 @@
 {
   "schema_version": 1,
-  "analysis_only": true,
-  "source_reportability": "unknown",
   "sources": {
     "csv": {
       "path": "BayesGSI/tables/downstream_performance/results.csv",
@@ -64,7 +62,6 @@
   "accuracy_source": "CSV Average Accuracy at source precision",
   "count_accuracy_tolerance": 5e-07,
   "uncertainty_policy": "none supplied; no error bars",
-  "caveat": "Inherited unresolved run provenance; not a publication-validity certification.",
   "selected_rows": [
     {
       "kind": "bar",

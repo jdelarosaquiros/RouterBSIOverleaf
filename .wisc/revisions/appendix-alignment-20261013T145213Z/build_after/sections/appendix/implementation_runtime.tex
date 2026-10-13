@@ -1,0 +1,9 @@
+\subsection{Requests, Caching, and Reproducibility}
+\label{app:implementation-runtime}
+Initialization, proposals, and predicate evaluation use a single user message and a separate structured-output schema. The effective temperatures are one for initialization and proposal generation, and zero for predicate evaluation.
+
+For Qwen, requests disable thinking in the chat template and specify low reasoning effort. Predicate evaluation additionally supplies a 512-token thinking-budget parameter. GPT-OSS predicate evaluation instead uses low reasoning effort without treating it as a hard 512-token cap. We use a 4096-token completion allowance and a 120-second ordinary request timeout. Initialization can use a separate 240-second timeout in configurations enabling that override.
+
+Each call permits at most five application-level attempts; hidden SDK retries are disabled. Invalid structured responses receive a schema reminder and, when available, trusted local validation feedback. Exhaustion terminates the call rather than creating a fabricated predicate or Boolean judgment. If the provider explicitly rejects an initialization request for context overflow, the context-recovery path can shorten the skill body to a prefix while preserving the name, description, instructions and response schema.
+
+Initialization and frozen-set evaluation each allow up to 48 workers, and repairs allow up to 48 distinct-skill jobs for the current task. These settings do not change the sequential training-task order. Exact-request responses and task--predicate judgments can be cached; generated proposals bypass the response cache. Reusing an initial library preserves its catalog and prompt binding. Reproducibility therefore requires matching the initial predicates, split order, replay seed, effective prompts and evaluator settings, not only the model name.

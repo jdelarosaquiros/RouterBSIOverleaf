@@ -8,8 +8,6 @@ Metrics: nDCG@10
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing table values are ---; missing plotted values fail closed, never imputed.
-Source reportability: non-reportable
-Analysis-only: source provenance does not certify publication validity.
 Source Average rows at matched completed iteration 10; mean over available runs (1: n=1, 3: n=1, 5: n=1, 10: n=1), no imputation. Checkpoint test performance, not unseen pre-acceptance candidate quality.
 
 Regenerate from any working directory:

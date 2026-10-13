@@ -1,0 +1,601 @@
+{
+  "artifact_type": "independent_science_scout_for_parent_review_not_full_arr_review",
+  "paper_id": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk Replay and Held-out Gates",
+  "review_directory": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0",
+  "revision_mode": "unknown",
+  "scope": "Read-only empirical/method review of immutable PDF snapshot; proposals only. No manuscript edits, model calls, experiments, reruns or statistics beyond narrow artifact comparison.",
+  "venue_context": {
+    "target_venue": "unknown",
+    "arr_cycle": "unknown",
+    "paper_type": "long",
+    "paper_type_confirmed": false,
+    "current_instructions_verified": false,
+    "pdf_revision_permission": "unknown"
+  },
+  "summary": "The strongest new issue is verified heterogeneous initialization in the nominally common-initialization three-run ablation. Baseline reconstruction and headline uncertainty remain substantive reporting limitations. Many prior alleged omissions are already addressed in the appendix and must not be repeated.",
+  "issues": [
+    {
+      "id": "SCI-001",
+      "severity": "major",
+      "category": "ablations",
+      "title": "The claimed common-initialization control fails across repeats",
+      "location": {
+        "page": 20,
+        "pdf_review_lines": "1632–1635",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/ablation_components.tex",
+        "line_range": "25",
+        "quoted_text": "All four configurations start from the same initial predicates at iteration 0",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The common-initialization claim for the three-run component ablation conflicts with the initial libraries at the paths bound by its figure manifest.",
+      "evidence": [
+        "PDF p20 and Figure 5 p7 claim common initial predicates. Table 10 p23 has unequal initial means; that alone would not prove unequal predicate strings.",
+        "Fresh read-only audit of all 12 manifest-named conditions_initial.json files: all nine component-disabled runs and Both Enabled/run_1 share predicate hash c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287. Both Enabled/run_2 differs on all 26,262 predicates (hash d3c9bc36c17e93d86a6867f38c961ffad8a40a2edb1277a75415a93cee1b89e5); run_3 differs on 26,261 (hash db60f926ebcddb2a053bab12bd482575aa88eccef068dee1ffbd28c404ab5277). Canonical hashing includes conditions.sra only, excluding metadata.",
+        "The arms therefore do not vary the same factors across repeats, weakening controlled attribution and comparability of the reported SD."
+      ],
+      "counterevidence": [
+        "Run_1 shares initialization across all four arms. Table 12 p24 reports the existing single-run nDCG@1 contrast 0.742 (Both Enabled) versus 0.684 (Only MBR). The qualitative component benefit is not disproved.",
+        "The local run audit is external unpublished evidence, not content printed in the PDF; the runs might have changed since the PDF snapshot."
+      ],
+      "reasoning_chain": [
+        "1. The common-initialization claim for the three-run component ablation conflicts with the initial libraries at the paths bound by its figure manifest.",
+        "2. Evidence: PDF p20 and Figure 5 p7 claim common initial predicates. Table 10 p23 has unequal initial means; that alone would not prove unequal predicate strings.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "The common-initialization claim for the three-run component ablation conflicts with the initial libraries at the paths bound by its figure manifest.",
+      "fix": {
+        "instruction": "Reconcile all plotted runs with their initial-policy hashes. If these are the plotted runs, remove the all-repeats common-initialization claim, disclose the heterogeneous repeat design, and distinguish the already available shared-initialization run_1 descriptive comparison from the unmatched three-run means. Do not call the latter paired seeds.",
+        "required_inputs": [
+          "Author confirmation that the manifest-named local runs are the plotted snapshot runs, or immutable historical initial-policy bindings if not."
+        ],
+        "acceptance_criteria": [
+          "Map each of the 12 plotted runs to an initial-policy digest and evaluation protocol.",
+          "Restrict common-initialization language to sets with equal predicate payloads.",
+          "Figure 5, §7.1, Appendix G.1/Table 10 disclose matched versus unmatched repetitions; no score is changed to hide the difference."
+        ],
+        "estimated_effort": "medium",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Reconcile all plotted runs with their initial-policy hashes. If these are the plotted runs, remove the all-repeats common-initialization claim, disclose the heterogeneous repeat design, and distinguish the already available shared-initialization run_1 descriptive comparison from the unmatched three-run means. Do not call the latter paired seeds.",
+        "optional": [
+          "A future matched-initialization repeat study could restore stronger controlled attribution; not required for honest narrowing and not authorized here."
+        ]
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-002",
+      "severity": "major",
+      "category": "baselines",
+      "title": "Baseline identities and adaptation/training protocols are under-specified",
+      "location": {
+        "page": 5,
+        "pdf_review_lines": "315–350",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/experiments.tex",
+        "line_range": "39",
+        "quoted_text": "They are trained on training split and frozen on validation and test splits.",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The baseline section contradicts the training-free retriever description and does not establish how the strongest learned baseline or the adapted optimization baselines were instantiated.",
+      "evidence": [
+        "§5.4 p5 lines 315–325 says retrievers are trained; §5.5 lines 332–334 says pretrained/lexical retrievers require no training.",
+        "SkillRouter is the strongest routing comparator, but the main setup and inspected appendices do not give its actual checkpoint, task-supervision/fitting protocol, validation selection or adaptation. The detailed RouterBSI prompts/settings do not substitute for baseline configurations.",
+        "The current snapshot Table 1 provenance says archived candidate rankings are retained and the comparison is not a controlled shared-candidate comparison. Its selection.json binds the current final Vector run and explicitly overrides the stale input map; no obsolete nonreportable-run blocker is asserted."
+      ],
+      "counterevidence": [
+        "The paper specifies default model, generally top-50 routing, SkillDAG expansion and downstream budgets. Appendix H.3 verifies identical SkillRouter/RouterBSI candidate lists for the two diagnosed datasets, but not for every comparator and dataset."
+      ],
+      "reasoning_chain": [
+        "1. The baseline section contradicts the training-free retriever description and does not establish how the strongest learned baseline or the adapted optimization baselines were instantiated.",
+        "2. Evidence: §5.4 p5 lines 315–325 says retrievers are trained; §5.5 lines 332–334 says pretrained/lexical retrievers require no training.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "The baseline section contradicts the training-free retriever description and does not establish how the strongest learned baseline or the adapted optimization baselines were instantiated.",
+      "fix": {
+        "instruction": "Add a compact baseline record naming each actual checkpoint/code revision, frozen versus trained components, supervision/splits, tuning/optimization budget, validation selection, and candidate/ranking deviations. Resolve the retriever training contradiction from actual configurations. Scope headline comparisons to the archived configurations unless matching is verified.",
+        "required_inputs": [
+          "Actual configuration and training/selection records for SkillRouter, Skill-Pro, SkillDAG, LLM Select, Vector and SkillSight."
+        ],
+        "acceptance_criteria": [
+          "Every Table 1 method has an unambiguous implementation identity and tuning/training protocol.",
+          "No retriever is simultaneously called task-split-trained and training-free.",
+          "Only verified comparisons are labeled shared-candidate; deviations are disclosed."
+        ],
+        "estimated_effort": "medium",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Add a compact baseline record naming each actual checkpoint/code revision, frozen versus trained components, supervision/splits, tuning/optimization budget, validation selection, and candidate/ranking deviations. Resolve the retriever training contradiction from actual configurations. Scope headline comparisons to the archived configurations unless matching is verified.",
+        "optional": [
+          "A same-feedback, same-budget reflective predicate optimizer is a useful optional baseline, not an automatic mandatory experiment."
+        ]
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-003",
+      "severity": "major",
+      "category": "methodology",
+      "title": "Comparison-level uncertainty is missing for headline advantages",
+      "location": {
+        "page": 5,
+        "pdf_review_lines": "358–362",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/results.tex",
+        "line_range": "9",
+        "quoted_text": "SkillRouter is the strongest routing baseline",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The main inter-method routing and downstream advantages are point estimates without comparison-level uncertainty; component SD does not establish the reliability of these advantages.",
+      "evidence": [
+        "Table 1 p5 has point-estimate nDCG; Figure 4 p6 shows 0.611 RouterBSI_top5, 0.602 SkillRouter, and 0.596 strict. Appendix Table 21 p29 supplies the downstream retriever breakdown but no uncertainty.",
+        "source/figs/downstream_average/provenance.text explicitly says no uncertainty estimates supplied. Three retrievers reuse the same 748 task IDs and are not independent task replicates.",
+        "Three-run population SD exists in Table 10 for component ablations, not main competitor contrasts; SCI-001 further qualifies that design."
+      ],
+      "counterevidence": [
+        "Task-weighted within-retriever and equal-weight across-retriever aggregation is already correctly defined in Table 1 and Appendix E.1. Descriptive ordering remains valid without statistical significance."
+      ],
+      "reasoning_chain": [
+        "1. The main inter-method routing and downstream advantages are point estimates without comparison-level uncertainty; component SD does not establish the reliability of these advantages.",
+        "2. Evidence: Table 1 p5 has point-estimate nDCG; Figure 4 p6 shows 0.611 RouterBSI_top5, 0.602 SkillRouter, and 0.596 strict. Appendix Table 21 p29 supplies the downstream retriever breakdown but no uncertainty.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "The main inter-method routing and downstream advantages are point estimates without comparison-level uncertainty; component SD does not establish the reliability of these advantages.",
+      "fix": {
+        "instruction": "Minimally identify actual repeat counts and state that headline differences are descriptive without comparison-level confidence estimates. If inferential claims are desired, propose a paired analysis from saved task outputs, preserving each task across retrievers and separately acknowledging unmeasured training-run variability; do not run it under this task.",
+        "required_inputs": [
+          "Actual repeat count and run-selection protocol for Table 1 and Figure 4."
+        ],
+        "acceptance_criteria": [
+          "Main captions state run/task units and whether uncertainty is available.",
+          "Retrievers are not treated as independent training repeats.",
+          "Small downstream gaps and backbone proximity are not called statistically significant or equivalent without a suitable analysis."
+        ],
+        "estimated_effort": "medium",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Minimally identify actual repeat counts and state that headline differences are descriptive without comparison-level confidence estimates. If inferential claims are desired, propose a paired analysis from saved task outputs, preserving each task across retrievers and separately acknowledging unmeasured training-run variability; do not run it under this task.",
+        "optional": [
+          "With separate authorization, stratified paired bootstrap over task IDs keeping all retriever outcomes together can estimate test-sample uncertainty conditional on trained policies; it cannot establish training-seed robustness."
+        ]
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-004",
+      "severity": "minor",
+      "category": "self_containment",
+      "title": "Main protocol obscures global allocation and represented-skill filtering",
+      "location": {
+        "page": 4,
+        "pdf_review_lines": "283–292",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/experiments.tex",
+        "line_range": "12",
+        "quoted_text": "We split each dataset into train, validation, and test splits with ratios",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The main paper describes per-dataset 70/15/15 splits, whereas the appendix documents a constrained global allocation and a filtered shared-skill evaluation.",
+      "evidence": [
+        "Appendix C.1 p16/Table 3 p17 report 5,400 tasks reduced to 4,987, gold vocabulary reduced from 636 to 306, and a global 3,491/748/748 split. BigCodeBench is 813/123/123 and TheoremQA 259/106/105, not per-dataset 70/15/15.",
+        "All retained gold skills occur in every split. This material scope is stated clearly only in Appendix C.1."
+      ],
+      "counterevidence": [
+        "Appendix C.1 explicitly scopes generalization to new tasks involving represented skills; task IDs are disjoint. This is not evidence of leakage. Appendix C.2 already says annotations need not exhaust helpful skills."
+      ],
+      "reasoning_chain": [
+        "1. The main paper describes per-dataset 70/15/15 splits, whereas the appendix documents a constrained global allocation and a filtered shared-skill evaluation.",
+        "2. Evidence: Appendix C.1 p16/Table 3 p17 report 5,400 tasks reduced to 4,987, gold vocabulary reduced from 636 to 306, and a global 3,491/748/748 split. BigCodeBench is 813/123/123 and TheoremQA 259/106/105, not per-dataset 70/15/15.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "The main paper describes per-dataset 70/15/15 splits, whereas the appendix documents a constrained global allocation and a filtered shared-skill evaluation.",
+      "fix": {
+        "instruction": "Replace per-dataset ratio wording with the actual global constrained allocation; summarize filtering and all-306-skill overlap in §5.1. State that routing metrics measure recovery of released skill annotations on held-out tasks, not unseen-skill acquisition or exhaustive downstream necessity.",
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "§5.1 agrees with Table 3 on global versus per-dataset allocation.",
+          "The main paper communicates filtered represented-skill scope and released annotation targets."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Replace per-dataset ratio wording with the actual global constrained allocation; summarize filtering and all-306-skill overlap in §5.1. State that routing metrics measure recovery of released skill annotations on held-out tasks, not unseen-skill acquisition or exhaustive downstream necessity.",
+        "optional": [
+          "Unseen-skill/tail-skill or independently audited-label evaluations are optional extensions if broader claims are sought."
+        ]
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-005",
+      "severity": "minor",
+      "category": "claims",
+      "title": "Downstream dependency interpretation is confounded by budget",
+      "location": {
+        "page": 6,
+        "pdf_review_lines": "394–412",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/results.tex",
+        "line_range": "19",
+        "quoted_text": "This finding suggests expanding selected skills to include dependent skills could improve downstream performance even if the dependent skills are not required.",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The dependency explanation is not isolated because SkillDAG receives a different number and pool of skills, and top-five versus strict is not purely an addition-only intervention.",
+      "evidence": [
+        "§5.5 p5 lines 352–355 gives SkillDAG ten skills versus five for fixed-budget RouterBSI/SkillRouter; Figure 4 p6 displays their observed means.",
+        "Appendix E.1 and H.5 explain that top-five may pad or truncate the predicate-selected set."
+      ],
+      "counterevidence": [
+        "The text calls the mechanism a suggestion and reports SkillDAG as best downstream. Appendix H.5 already rejects inferring causal harm merely from non-gold context."
+      ],
+      "reasoning_chain": [
+        "1. The dependency explanation is not isolated because SkillDAG receives a different number and pool of skills, and top-five versus strict is not purely an addition-only intervention.",
+        "2. Evidence: §5.5 p5 lines 352–355 gives SkillDAG ten skills versus five for fixed-budget RouterBSI/SkillRouter; Figure 4 p6 displays their observed means.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "The dependency explanation is not isolated because SkillDAG receives a different number and pool of skills, and top-five versus strict is not purely an addition-only intervention.",
+      "fix": {
+        "instruction": "Label §6.3/Figure 4 as an unequal-budget deployment comparison; annotate SkillDAG=10, fixed methods=5, strict=variable. Recast dependency expansion as an untested hypothesis, and describe top-five as padding or truncating strict selection.",
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "The caption or adjacent text shows relevant budgets.",
+          "The dependency mechanism is explicitly untested and top-five is not presented as addition-only."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Label §6.3/Figure 4 as an unequal-budget deployment comparison; annotate SkillDAG=10, fixed methods=5, strict=variable. Recast dependency expansion as an untested hypothesis, and describe top-five as padding or truncating strict selection.",
+        "optional": [
+          "A future matched-skill-budget or matched-token-budget comparison could test the dependency mechanism; optional when the current claim is narrowed."
+        ]
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-006",
+      "severity": "minor",
+      "category": "methodology",
+      "title": "Main ranking rule differs from implemented lexicographic ordering",
+      "location": {
+        "page": 5,
+        "pdf_review_lines": "329–350",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/experiments.tex",
+        "line_range": "47",
+        "quoted_text": "we rank them by the sum of their binary label and the retrieval score",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The main rule is an arithmetic sum, while Appendix A.1 specifies selected-first lexicographic ordering and explicitly excludes a general unnormalized sum.",
+      "evidence": [
+        "PDF p5 lines 345–350 says sum; Appendix A.1 p11 lines 821–832 orders by label, retrieval score, then original order and explains sum equivalence only for SkillSight reciprocal-rank scores."
+      ],
+      "counterevidence": [
+        "The operational rule is present in the appendix. This is not an absent-algorithm claim or proof of wrong code."
+      ],
+      "reasoning_chain": [
+        "1. The main rule is an arithmetic sum, while Appendix A.1 specifies selected-first lexicographic ordering and explicitly excludes a general unnormalized sum.",
+        "2. Evidence: PDF p5 lines 345–350 says sum; Appendix A.1 p11 lines 821–832 orders by label, retrieval score, then original order and explains sum equivalence only for SkillSight reciprocal-rank scores.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "The main rule is an arithmetic sum, while Appendix A.1 specifies selected-first lexicographic ordering and explicitly excludes a general unnormalized sum.",
+      "fix": {
+        "instruction": "Use the existing Appendix A.1 lexicographic rule in §5.4–5.5. Keep score-sum equivalence only as a retriever-specific explanation.",
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Main definitions specify selected-first lexicographic ordering with retrieval tie breaking, with no universal unnormalized-sum claim."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Use the existing Appendix A.1 lexicographic rule in §5.4–5.5. Keep score-sum equivalence only as a retriever-specific explanation.",
+        "optional": []
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-007",
+      "severity": "minor",
+      "category": "claims",
+      "title": "Backbone plateau claim is broader than three measured runs",
+      "location": {
+        "page": 7,
+        "pdf_review_lines": "454–473",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/ablations.tex",
+        "line_range": "24",
+        "quoted_text": "They also suggest that predicates reach a plateau that cannot be overcomed with more capable LLMs",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "Three heterogeneous single-run backbones do not establish that more capable models cannot improve the predicates.",
+      "evidence": [
+        "§7.3 p7 reports 0.742, 0.802, 0.745 final nDCG@1; Appendix Table 14 p25 states one run per backbone. The middle-sized model improves over both others.",
+        "A ten-iteration optimization plateau is not a capability ceiling. Appendix H.3 p28 already reports mixed late changes and says more training is not an established remedy."
+      ],
+      "counterevidence": [
+        "Nonmonotonic observed scores and smaller-model proximity are supported descriptive findings."
+      ],
+      "reasoning_chain": [
+        "1. Three heterogeneous single-run backbones do not establish that more capable models cannot improve the predicates.",
+        "2. Evidence: §7.3 p7 reports 0.742, 0.802, 0.745 final nDCG@1; Appendix Table 14 p25 states one run per backbone. The middle-sized model improves over both others.",
+        "3. Scientific consequence: the tested conditions and descriptive results must not be conflated with stronger controlled or general claims."
+      ],
+      "predicted_reviewer_objection": "Three heterogeneous single-run backbones do not establish that more capable models cannot improve the predicates.",
+      "fix": {
+        "instruction": "Retain the observed ranking and remove the impossibility/ceiling inference. State that these runs do not identify whether constraints come from representation, checking, proposal search or budget. Mark additional iterations/human editing in §6.1 as untested possible interventions, consistent with Appendix H.3.",
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "No general inability of stronger models is inferred.",
+          "Potential remedies for MedCalc/TheoremQA are labeled untested."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Retain the observed ranking and remove the impossibility/ceiling inference. State that these runs do not identify whether constraints come from representation, checking, proposal search or budget. Mark additional iterations/human editing in §6.1 as untested possible interventions, consistent with Appendix H.3.",
+        "optional": []
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    },
+    {
+      "id": "SCI-008",
+      "severity": "minor",
+      "category": "reproducibility",
+      "title": "PDF/source scientific wording is not fully bound",
+      "location": {
+        "page": 2,
+        "pdf_review_lines": "147–150; Figure 2 p3",
+        "tex_file": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/related_works.tex",
+        "line_range": "8,14",
+        "quoted_text": "RouterBSI ensures non-decreasing em-\n147\npirical error on the retained set",
+        "anchor_source": "reviewed_main.pdf via pages.json",
+        "anchor_kind": "existing_span"
+      },
+      "problem": "The primary PDF says non-decreasing error where supplied source says non-increasing; Figure 2 gate wording also differs.",
+      "evidence": [
+        "PDF p2 lines 147–148 says non-decreasing; source/sections/related_works.tex:14 says non-increasing. The correctly scoped average replay inequality itself is correct.",
+        "PDF Figure 2 p3 says higher than the initial predicate; source related_works.tex:8 says higher or equal. PDF §4.3 p4 and Appendix A.4 already specify strict improvement."
+      ],
+      "counterevidence": [
+        "Source already corrects these strings, but that does not mean the reviewed PDF contains the fixes. This is a binding/wording issue, not an error in the replay inequality or initial-predicate comparator."
+      ],
+      "reasoning_chain": [
+        "1. Primary PDF differs from supplied source.",
+        "2. Existing source corrections must not be credited to the reviewed PDF.",
+        "3. Later authorized build/binding should resolve only the actual mismatch."
+      ],
+      "predicted_reviewer_objection": "Which manuscript version describes the evaluated method?",
+      "fix": {
+        "instruction": "For a future authorized build, use the already-correct source wording and bind the compiled PDF to exact source hashes. Verify both PDF strings; retain the correct scoped replay/gate definitions unchanged. No build or edit is authorized here.",
+        "required_inputs": [
+          "Author-confirmed source/PDF build binding."
+        ],
+        "acceptance_criteria": [
+          "The future reviewed PDF contains non-increasing error and a caption consistent with strict gate admission.",
+          "The source binding and PDF hash are recorded without claiming this PDF already includes corrections."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "required_vs_optional": {
+        "required": "Resolve source/PDF mismatch in a future authorized build only.",
+        "optional": []
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "status": "proposal_only_not_executed"
+    }
+  ],
+  "initial_policy_audit": {
+    "evidence_status": "Fresh local unpublished artifact inspection; paths are bound by snapshot Figure 5 manifest, but author should confirm historical immutability.",
+    "method": "SHA256 of json.dumps(conditions.sra, sort_keys=True, separators=(comma, colon)).encode(); compared exact per-skill predicate values. No model execution.",
+    "source_manifest": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/figs/mbr_replay_test_ndcg@1_std/selection_manifest.json",
+    "runs": [
+      {
+        "method": "Both Enabled",
+        "run": "run_1",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Both Enabled",
+        "run": "run_2",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/conditions_initial.json",
+        "predicates_sha256": "d3c9bc36c17e93d86a6867f38c961ffad8a40a2edb1277a75415a93cee1b89e5",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 26262
+      },
+      {
+        "method": "Both Enabled",
+        "run": "run_3",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/conditions_initial.json",
+        "predicates_sha256": "db60f926ebcddb2a053bab12bd482575aa88eccef068dee1ffbd28c404ab5277",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 26261
+      },
+      {
+        "method": "Both Disabled",
+        "run": "run_1",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Both Disabled",
+        "run": "run_2",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_2/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Both Disabled",
+        "run": "run_3",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_3/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Only MBR",
+        "run": "run_1",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Only MBR",
+        "run": "run_2",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_2/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Only MBR",
+        "run": "run_3",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_3/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Only Gate",
+        "run": "run_1",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_1/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Only Gate",
+        "run": "run_2",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_2/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      },
+      {
+        "method": "Only Gate",
+        "run": "run_3",
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_3/conditions_initial.json",
+        "predicates_sha256": "c4944010690969b90761102333978ac8dfbd14a649435f4b6710e656f4b90287",
+        "skills": 26262,
+        "changed_vs_both_enabled_run1": 0
+      }
+    ]
+  },
+  "non_findings_and_existing_strengths": [
+    "The average replay-risk inequality is correctly scoped; no per-example preservation guarantee is required or inferred.",
+    "The gate explicitly compares with the initial predicate and the appendix warns it is not monotonic against the previous predicate. Do not reissue that as a missing caveat.",
+    "Test-only evaluation/no test checkpoint selection is stated in Appendix A.4. Repeated use of validation is optimization, not demonstrated test leakage.",
+    "Appendix C gives exact split/filtering counts, labels, skill corpus and license; the critique is main-text scope consistency, not total absence.",
+    "Appendix A–D provide replay replacement rule, current-task inclusion, prompts, parameters, caching, retries and failure behavior; no generic missing-prompts critique.",
+    "Appendix E/F define task weighting, nDCG/recall/F1, ratio-of-means retention and own-pool SkillDAG normalization. Aggregation is not mathematically erroneous.",
+    "The evaluator diagnostic is explicitly model-adjudicated agreement, not human accuracy; it reports class imbalance, low positive agreement/recall, always-False reference, non-blinding and audit limitations. Do not claim these caveats are absent.",
+    "Matched MedCalc/TheoremQA error analysis separates retrieval misses, predicate design, checker mistakes and annotation mismatch; reported causal interpretations are qualified.",
+    "Current Table 1 selection.json binds a final Vector run and documents stale input-map override; no old analysis-only/nonreportable blocker is carried forward."
+  ],
+  "optional_only_research_extensions": [
+    "Human validation of gold skill completeness and positive predicate decisions would strengthen external validity, but existing annotation and AI-audit limitations are already explicitly acknowledged.",
+    "Unseen-skill or unfiltered-tail evaluation is useful only if broader generalization is claimed.",
+    "The global seen-task history remains unbounded (Appendix A.2 p11); preserve the distinction between bounded per-skill replay evaluation and total storage. No blanket constant-memory claim is established here.",
+    "Deployment latency/token cost, a same-budget reflective optimizer, and controlled dependency expansion are useful extensions, not mandatory reruns for the narrowed present claims."
+  ],
+  "inspected_paths": [
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/reviewed_main.pdf (through supplied pages.json/paper.txt; no visual/layout audit)",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/pages.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/paper.txt",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/method.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/experiments.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/results.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/ablations.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/related_works.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/procedure_routing.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/procedure_replay.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/procedure_mbr.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/procedure_validation.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/data_splits.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/data_labels.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/data_corpus.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/implementation_settings.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/implementation_variants.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/implementation_runtime.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/ablation_components.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/ablation_cost_capacity.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/ablation_backbones.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/ablation_candidate_pool.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/routing_results.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/routing_metrics.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/retention_definition.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/error_routing_gap.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/error_counts.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/error_examples.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/error_downstream.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/error_downstream_results.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/evaluator_validation.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/evaluator_validation_table.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/prompts_trace.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/prompts_evaluator.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/sections/appendix/appendix.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/figs/mbr_replay_test_ndcg@1_std/selection_manifest.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/figs/mbr_replay_test_ndcg@1_std/provenance.text",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/figs/mbr_replay_test_ndcg@1_std/table.tex",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/tables/skill_routing_performance_average/selection.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/tables/skill_routing_performance_average/provenance.text",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/figs/downstream_average/selection.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/source/figs/downstream_average/provenance.text",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_2/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_3/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_2/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_3/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_1/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_2/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_3/conditions_initial.json",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.temp/acl_requirements/requirements_and_examples.md",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.temp/acl_requirements/appendix_requirements.md",
+    "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.temp/acl_requirements/appendix_outline.md"
+  ],
+  "inspection_limits": [
+    "All scientific findings concern PDF text and actual source anchors; no independent visual/layout review was performed.",
+    "Remaining section sources were searched for baseline/statistical details rather than all read verbatim; main PDF text and detailed relevant appendix files were inspected.",
+    "No fresh literature or policy verification, code execution study, human annotation audit, or experimental rerun was performed.",
+    "External policy files may not be immutable; hashes are reported for exact bytes/predicate payloads read during this scout."
+  ],
+  "execution_order": [
+    "SCI-001",
+    "SCI-002",
+    "SCI-003",
+    "SCI-004",
+    "SCI-005",
+    "SCI-006",
+    "SCI-007",
+    "SCI-008"
+  ],
+  "verified_issue_counts": {
+    "major": 3,
+    "minor": 5
+  }
+}

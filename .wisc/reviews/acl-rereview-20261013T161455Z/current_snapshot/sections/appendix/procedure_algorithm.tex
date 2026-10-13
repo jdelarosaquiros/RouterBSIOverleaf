@@ -1,0 +1,12 @@
+\subsection{Optimization Procedure}
+\label{app:procedure-algorithm}
+The update loop below expands the main minimum-average-risk formulation, with candidate selection detailed in Appendix~\ref{app:procedure-mbr}. The retrieval corpus and task partitions remain fixed throughout optimization.
+\begin{enumerate}
+\item Initialize one predicate $p_{si}$ per skill, set $p_s\leftarrow p_{si}$, and evaluate the initial predicates on their retrieved validation tasks.
+\item For iteration $i=1,\ldots,I$, save the iteration-start library $p^{(i)}$.
+\item For each training task $q$ in fixed order, register it in the global seen-task history if it is new. Retrieve its candidates and evaluate their predicates. Materialize the bounded buckets for all retrieved or required catalog skills in sorted identifier order, then identify $\mathcal F_q$.
+\item For each $s\in\mathcal F_q$, form the current-inclusive replay set, generate $M_p$ replacements, and evaluate all structurally valid replacements together with the unchanged predicate. Select an option with minimum average replay risk over this full set; the unchanged predicate ensures non-increase in average risk.
+\item Commit the task's provisional repairs in deterministic skill order before processing the next task.
+\item After the training pass, evaluate the candidate library on validation. For each changed skill, retain its candidate only if its validation error is strictly below the initial predicate's error; otherwise restore its iteration-start predicate.
+\item Continue to the next iteration with this partially updated library. After iteration $I$, freeze the retained predicates for the final routing and downstream evaluations.
+\end{enumerate}

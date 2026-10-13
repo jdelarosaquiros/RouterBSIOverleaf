@@ -1,0 +1,31 @@
+{
+  "presentation_files_scanned": 130,
+  "changed_files": 88,
+  "change_counts": {
+    "remove_json": 207,
+    "replace_text": 90,
+    "replace_json_text": 8
+  },
+  "artifact_files_bound": 216,
+  "protected_csv_files": 55,
+  "remaining_flags": 0,
+  "numeric_invariance": true,
+  "source_hash_invariance": true,
+  "csv_invariance": true,
+  "preview_and_other_artifact_invariance_except_declared": true,
+  "intentional_mutable_preview_exceptions": [
+    "tables/retrieval_and_reranking_performance/preview.pdf",
+    "tables/retrieval_and_reranking_performance/preview.png"
+  ],
+  "preview_refresh_observed": {
+    "tables/retrieval_and_reranking_performance/preview.pdf": {
+      "before": "00f7443d022b0ab17a379dd9d8a3d26203552d7ebf4fdcbe70232d67b36e3d2b",
+      "after": "a1f6331ad0e7d66eeae8dbce9334c974e96695941d9c5e4cbc67e01364c3023f"
+    },
+    "tables/retrieval_and_reranking_performance/preview.png": {
+      "before": "98a14d677dcc2c7694c340da07492ca62ae856f8e64a67339ac8217e6c5cdac6",
+      "after": "30f1f54cdcd217c392f3c646e3670a54897ca154bba5063d50e488162fff08e0"
+    }
+  },
+  "idempotent": true
+}

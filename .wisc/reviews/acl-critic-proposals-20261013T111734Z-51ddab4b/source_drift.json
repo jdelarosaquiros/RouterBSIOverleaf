@@ -1,0 +1,19 @@
+{
+  "reviewed_sha256": "51ddab4b827e211879ecf8c936083ea5fa2a03f6b34a32d230f98b90f5910d6b",
+  "later_sha256": "0401ac8acbac22ecefdd7b50d0582895aaa105ea094fa5e23cd42a569b0a27c7",
+  "later_pages": 28,
+  "changed_baseline_paths": [
+    "main.out",
+    "main.fdb_latexmk",
+    "main.log",
+    "main.aux",
+    "main.fls",
+    "main.pdf",
+    "scripts/render_acl_readable_figures.py",
+    "figs/average_retention_degradation/preview.png",
+    "figs/average_retention_degradation/readability_manifest.json",
+    "figs/average_retention_degradation/preview.pdf"
+  ],
+  "source_pdf_mismatch_at_baseline": "sections/results.tex already lacks erroneous 94.68/93.75 attribution present in frozen PDF; matched baseline hash",
+  "policy": "Review bound to frozen PDF; do not reapply already resolved changes; no claim whole worktree unchanged"
+}

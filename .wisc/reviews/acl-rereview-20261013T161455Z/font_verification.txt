@@ -1,0 +1,30 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+YOQBDJ+NimbusRomNo9L-Medi            Type 1            Custom           yes yes yes    271  0
+ALVSVR+NimbusSanL-Bold               Type 1            Custom           yes yes yes    273  0
+VPHYOX+NimbusRomNo9L-Regu            Type 1            Custom           yes yes yes    274  0
+CDOLMI+CMMI10                        Type 1            Builtin          yes yes yes    276  0
+TZAJFL+CMR7                          Type 1            Builtin          yes yes yes    277  0
+CVYXQY+CMMI7                         Type 1            Builtin          yes yes yes    386  0
+NANJPJ+CMR10                         Type 1            Builtin          yes yes yes    387  0
+RDCCYQ+CMMI8                         Type 1            Builtin          yes yes yes    392  0
+LFWDZZ+CMSY10                        Type 1            Builtin          yes yes yes    393  0
+SOVMGT+CMR8                          Type 1            Builtin          yes yes yes    425  0
+LQZCMJ+CMSY8                         Type 1            Builtin          yes yes yes    426  0
+XNNWCZ+dsrom10                       Type 1            Builtin          yes yes yes    427  0
+WBNUBV+CMEX10                        Type 1            Builtin          yes yes yes    428  0
+UMQDST+CMMI6                         Type 1            Builtin          yes yes yes    429  0
+WXCOOJ+CMR9                          Type 1            Builtin          yes yes yes    461  0
+KFUGLS+CMR6                          Type 1            Builtin          yes yes yes    462  0
+DCGJNN+DejaVuSans-Oblique            Type 3            Custom           yes yes yes    481  0
+FDLVKF+DejaVuSans                    Type 3            Custom           yes yes yes    482  0
+BXGEVL+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes    548  0
+BNDIZG+DejaVuSerif                   Type 3            Custom           yes yes yes    578  0
+CVKYRF+DejaVuSerif                   Type 3            Custom           yes yes yes    621  0
+HCYPCG+DejaVuSerif                   Type 3            Custom           yes yes yes    664  0
+YZJGLU+NimbusRomNo9L-ReguItal        Type 1            Custom           yes yes yes    735  0
+CDUSZQ+Inconsolatazi4-Regular        Type 1            Custom           yes yes yes    813  0
+JKSUUE+CMSY6                         Type 1            Builtin          yes yes yes    894  0
+DCATAM+Inconsolatazi4-Bold           Type 1            Custom           yes yes yes    916  0
+GYMFNO+CMMI9                         Type 1            Builtin          yes yes yes    949  0
+BXGEVL+DejaVuSerif                   CID TrueType      Identity-H       yes yes yes   1015  0

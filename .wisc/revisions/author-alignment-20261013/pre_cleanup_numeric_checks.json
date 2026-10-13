@@ -1,0 +1,37 @@
+[
+  {
+    "command": [
+      "python",
+      "scripts/generate_result_figure_tables.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "Verified retention_mean_table.tex\nVerified downstream_mean_table.tex\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/generate_ablation_figure_tables.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "PASS: 44 trajectory means + population SDs; 7 backbone rows; 4 token x/y pairs; frozen selections and authoritative sources match.\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/generate_extended_routing_tables.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "Verified routing_table_1.tex\nVerified routing_table_2.tex\nVerified routing_table_3.tex\nVerified retention_table.tex\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/verify_figure_table_coverage.py"
+    ],
+    "returncode": 0,
+    "output": "{\n  \"figures\": [\n    {\n      \"figure\": \"average_retention_degradation\",\n      \"table\": \"tab:app-retention-mean\",\n      \"points\": 30,\n      \"metric\": \"100 * Recall@k / Recall@50 per retriever; arithmetic mean of three ratios\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"figure\": \"downstream_average\",\n      \"table\": \"tab:app-downstream-mean\",\n      \"points\": 9,\n      \"metric\": \"pooled task success per retriever; equal-weight mean of three retrievers; two independent references\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"figure\": \"mbr_replay_test_ndcg@1_std\",\n      \"table\": \"tab:app-ablation-trajectory\",\n      \"points\": 44,\n      \"uncertainty_values\": 44,\n      \"metric\": \"nDCG@1 (source Hit@1), task-weighted test means then three-run mean; population SD from plotted variance\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"figure\": \"performance_token_usage\",\n      \"table\": \"tab:app-ablation-tokens\",\n      \"points\": 4,\n      \"coordinates_per_point\": 2,\n      \"metric\": \"final-test nDCG@1 (source Hit@1) and known run-local total tokens / 1e6; one run\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"figure\": \"routing_performance_across_llms_init\",\n      \"table\": \"tab:app-backbone\",\n      \"points\": 7,\n      \"metric\": \"nDCG@1 (source Hit@1); task-weighted test rate per model/stage, no averaging between models\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"figure_count\": 5,\n  \"plotted_points_and_references\": 94,\n  \"scope\": \"All active numerical result/ablation figures; excludes two conceptual diagrams and inactive archived figures.\"\n}\n"
+  }
+]

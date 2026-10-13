@@ -1,0 +1,675 @@
+{
+  "table_sha256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3",
+  "table_rows": 560,
+  "run_map": {
+    "Both Enabled": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1",
+    "Both Disabled": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1",
+    "Only MBR": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1",
+    "Only Gate": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1"
+  },
+  "run_map_sha256": "5693aa31b1bbd07ed699034e345386ef79f92aa5307334136edb549e988052c8",
+  "initial_points": [
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5881608367628242,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "f14ebb84202cde6d09890f5b815e27c58a77ab2e0903454964d4320429143a5d"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5943991792625151,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "959d81a6f07a240d1392eecbae1495689369f3f38863411bedc5217cc5a03038"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5926161586276988,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "38ff469a7b1a843d6e6c06ae6039b552278371880fa70488a661e32e6ac89a7b"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5936592436479738,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "384daa354c6ddcaf96bf0930ec8f53cae2b83b22ab460cc6a72ac492c075d70e"
+    }
+  ],
+  "unavailable_initial_test": [
+    "Only Gate"
+  ],
+  "initial_metric": "task-macro nDCG@5 computed from ranked_ids/required_ids",
+  "initial_prediction_sha256": {
+    "Both Enabled": "f14ebb84202cde6d09890f5b815e27c58a77ab2e0903454964d4320429143a5d",
+    "Both Disabled": "959d81a6f07a240d1392eecbae1495689369f3f38863411bedc5217cc5a03038",
+    "Only MBR": "38ff469a7b1a843d6e6c06ae6039b552278371880fa70488a661e32e6ac89a7b",
+    "Only MBR Alt": "384daa354c6ddcaf96bf0930ec8f53cae2b83b22ab460cc6a72ac492c075d70e"
+  },
+  "alternate_run": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1",
+  "completion_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+  "completion_sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766",
+  "completion": {
+    "accepted_changed_iteration_count": 10,
+    "accepted_count": 10,
+    "analysis_ready": true,
+    "artifact_manifest_hash": "ea96ee2d3265dcc91927b57d5ae60d3b7bbda26baf76826eda02689140f61ae4",
+    "audit_hash": "8c2aabf665c5563efc8b1efc188e8702a0ba74dc839f2ae520fc18cf5e36c0e5",
+    "catalog_counts": {
+      "sra": 26262
+    },
+    "learned_policy_changed": true,
+    "passed": true,
+    "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
+    "split_counts": {
+      "test": 748,
+      "train": 3491,
+      "validation": 748
+    }
+  },
+  "alternate_metric_files": [
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/01/metrics.json",
+      "sha256": "644be6211a1b15015dfddc78606149980300346ca6526008be3f97553be6f12c"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/02/metrics.json",
+      "sha256": "81f824303ce2fdb79c685458414c5e5517810b4ad9f9c0e53c8a132a1461eac3"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/03/metrics.json",
+      "sha256": "1375f1c743f545a9574cec66e86366dd2beba5d277a3bfcb1931e14172c798f4"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/04/metrics.json",
+      "sha256": "4143d3d7d4d2b40fab248424f22fe2d31c1a92b31e6df1cc59b21640fc93513e"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/05/metrics.json",
+      "sha256": "80e8f0ada1502577c8708a864d6ac99d5c33c2ad8ac2993a2212b2e875e528c4"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/06/metrics.json",
+      "sha256": "e768f5fb15df83dd21412bf540f2b668061d6040464510fd933de080dc9fc1d7"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/07/metrics.json",
+      "sha256": "97e49adc411c72253ee5de7c295f46539105658443cbe083be861603ef635cba"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/08/metrics.json",
+      "sha256": "e0014c2cb9680cbfdc429c8375851493903f368d5168c97667d6b35cf7682a1c"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/09/metrics.json",
+      "sha256": "15afa1be0a7ab571f2a739d24154812939675d784bfa8b32ade27544c000e6fa"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/10/metrics.json",
+      "sha256": "b6f432f370a0a7ba5bfa7f4ee65c24e66f1d7932cb969dd8f46dba6330bf0375"
+    }
+  ],
+  "alternate_ledger_files": [
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/01/ledger.json",
+      "sha256": "03541e349ac0935df614d27151f5a605235db325b24039cdefc4d13068f5a1a2",
+      "accepted": true,
+      "accepted_hash": "74a907954be261f1847e8191f73e5290d8a93f4f80e9e6e77338c2d091d368b2"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/02/ledger.json",
+      "sha256": "ea8159c7acec2bb6c4d16efd2d3f39912c2cb508b2a66cd8c0853bec72378a10",
+      "accepted": true,
+      "accepted_hash": "c45502423720b0578d7df68668c48d747ad554188a10e5fd09c3e932c84f3c09"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/03/ledger.json",
+      "sha256": "1fd610fc7396c2ea4c9e0bf41a8f6095671bdc45a90101c5301674d5459d3d46",
+      "accepted": true,
+      "accepted_hash": "07e27cb124b444a8b7434f9ddc182cb0075ec06532b89bea8899147fdaf4dd34"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/04/ledger.json",
+      "sha256": "981012a9cf177eafb66023616d79d30126269cbfc79deccbe6130d60ffa370ea",
+      "accepted": true,
+      "accepted_hash": "ab7a3c0e79a948525d8801fbc9663d2943e8f8348801bf62dd98693ab515fab4"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/05/ledger.json",
+      "sha256": "c5750f2acb6bb7f654868354fdb57d1b7813c8348deacc89a4495d1e2a844a8e",
+      "accepted": true,
+      "accepted_hash": "15fc2ab708d1f9d97dfb926bccd837609a3b142f2eff0e557db84d65d6a27c04"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/06/ledger.json",
+      "sha256": "b5dce56fb4ac2ffba21608a7aca229b7ce161651d102dd099d8ff17a97da180a",
+      "accepted": true,
+      "accepted_hash": "ea5b8c5fd4869481bcfbe2427de80dad1cdcb9947770f94ad6c17465cb8f28c5"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/07/ledger.json",
+      "sha256": "be52d8d79d085d92d5e37e52288efd8048fe4ac22855b71adc0079a5966785e2",
+      "accepted": true,
+      "accepted_hash": "47c7c7e44588373098af266e62a0153d600a7a6fad06a08b381f4d5a7a53b6ad"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/08/ledger.json",
+      "sha256": "dcb95ea72ff1aa6c75c5dbd92003ef4eb2a776d9e55b3556c62488b7fc6a11a8",
+      "accepted": true,
+      "accepted_hash": "ebb810f193fa8a0e16b411e1e74d138228479decd14ae4b496a4bb192f5824bf"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/09/ledger.json",
+      "sha256": "23e1b27748cab20c522ea3bd6ab322157676a25966a688956e31c8fde9f07cd1",
+      "accepted": true,
+      "accepted_hash": "6ef73d730a3682eba6e73d9fde5e4fba840c8ebb2a9e79bae400e59224b6a76d"
+    },
+    {
+      "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/10/ledger.json",
+      "sha256": "182aa7fb1b2ea0df0f860603c377f858e314325e9ee1f3d3dd45012fc7e8c12f",
+      "accepted": true,
+      "accepted_hash": "c2df4f2600dd8ec54febfe66f4f92b3b6c95a4c43eab7d92b33b2ba5b4aafdef"
+    }
+  ],
+  "artifact": "mbr_replay_test_ndcg@5_temp",
+  "metric": "nDCG@5",
+  "panels": [
+    "test"
+  ],
+  "coverage": {
+    "Both Enabled": 8,
+    "Only Gate": 8,
+    "Both Disabled": 8,
+    "Only MBR": 8,
+    "Only MBR Alt": 10
+  },
+  "n_tasks": {
+    "test": 748
+  },
+  "selected_row_count": 46,
+  "points": [
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5881608367628242,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "f14ebb84202cde6d09890f5b815e27c58a77ab2e0903454964d4320429143a5d"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 1,
+      "n_tasks": 748,
+      "nDCG@5": 0.725179,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 2,
+      "n_tasks": 748,
+      "nDCG@5": 0.747044,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 3,
+      "n_tasks": 748,
+      "nDCG@5": 0.75265,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 4,
+      "n_tasks": 748,
+      "nDCG@5": 0.762732,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 5,
+      "n_tasks": 748,
+      "nDCG@5": 0.77244,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 6,
+      "n_tasks": 748,
+      "nDCG@5": 0.772172,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 7,
+      "n_tasks": 748,
+      "nDCG@5": 0.773879,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Enabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 8,
+      "n_tasks": 748,
+      "nDCG@5": 0.778753,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 1,
+      "n_tasks": 748,
+      "nDCG@5": 0.730147,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 2,
+      "n_tasks": 748,
+      "nDCG@5": 0.744633,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 3,
+      "n_tasks": 748,
+      "nDCG@5": 0.748567,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 4,
+      "n_tasks": 748,
+      "nDCG@5": 0.75304,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 5,
+      "n_tasks": 748,
+      "nDCG@5": 0.756973,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 6,
+      "n_tasks": 748,
+      "nDCG@5": 0.762548,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 7,
+      "n_tasks": 748,
+      "nDCG@5": 0.761647,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only Gate",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 8,
+      "n_tasks": 748,
+      "nDCG@5": 0.763633,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5943991792625151,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "959d81a6f07a240d1392eecbae1495689369f3f38863411bedc5217cc5a03038"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 1,
+      "n_tasks": 748,
+      "nDCG@5": 0.602567,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 2,
+      "n_tasks": 748,
+      "nDCG@5": 0.616969,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 3,
+      "n_tasks": 748,
+      "nDCG@5": 0.607668,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 4,
+      "n_tasks": 748,
+      "nDCG@5": 0.616724,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 5,
+      "n_tasks": 748,
+      "nDCG@5": 0.630726,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 6,
+      "n_tasks": 748,
+      "nDCG@5": 0.608759,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 7,
+      "n_tasks": 748,
+      "nDCG@5": 0.606318,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Both Disabled",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 8,
+      "n_tasks": 748,
+      "nDCG@5": 0.617704,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5926161586276988,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "38ff469a7b1a843d6e6c06ae6039b552278371880fa70488a661e32e6ac89a7b"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 1,
+      "n_tasks": 748,
+      "nDCG@5": 0.662683,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 2,
+      "n_tasks": 748,
+      "nDCG@5": 0.702883,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 3,
+      "n_tasks": 748,
+      "nDCG@5": 0.723239,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 4,
+      "n_tasks": 748,
+      "nDCG@5": 0.722439,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 5,
+      "n_tasks": 748,
+      "nDCG@5": 0.717881,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 6,
+      "n_tasks": 748,
+      "nDCG@5": 0.720445,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 7,
+      "n_tasks": 748,
+      "nDCG@5": 0.714127,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 8,
+      "n_tasks": 748,
+      "nDCG@5": 0.713206,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_performance_by_iteration/results.csv",
+      "Source_SHA256": "cab4b69ccab1e9f6be5af1e95606420a1c4485c4c6eb374f7fdd5eefc9120af3"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "initial_snapshot",
+      "Iteration": 0,
+      "n_tasks": 748,
+      "nDCG@5": 0.5936592436479738,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/predictions/initial_test.jsonl",
+      "Source_SHA256": "384daa354c6ddcaf96bf0930ec8f53cae2b83b22ab460cc6a72ac492c075d70e"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 1,
+      "n_tasks": 748,
+      "nDCG@5": 0.7033632005665017,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/01/metrics.json",
+      "Source_SHA256": "644be6211a1b15015dfddc78606149980300346ca6526008be3f97553be6f12c"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 2,
+      "n_tasks": 748,
+      "nDCG@5": 0.7390114534246484,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/02/metrics.json",
+      "Source_SHA256": "81f824303ce2fdb79c685458414c5e5517810b4ad9f9c0e53c8a132a1461eac3"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 3,
+      "n_tasks": 748,
+      "nDCG@5": 0.7604203547643413,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/03/metrics.json",
+      "Source_SHA256": "1375f1c743f545a9574cec66e86366dd2beba5d277a3bfcb1931e14172c798f4"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 4,
+      "n_tasks": 748,
+      "nDCG@5": 0.7466487421471925,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/04/metrics.json",
+      "Source_SHA256": "4143d3d7d4d2b40fab248424f22fe2d31c1a92b31e6df1cc59b21640fc93513e"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 5,
+      "n_tasks": 748,
+      "nDCG@5": 0.7600884085224341,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/05/metrics.json",
+      "Source_SHA256": "80e8f0ada1502577c8708a864d6ac99d5c33c2ad8ac2993a2212b2e875e528c4"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 6,
+      "n_tasks": 748,
+      "nDCG@5": 0.7669088237413705,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/06/metrics.json",
+      "Source_SHA256": "e768f5fb15df83dd21412bf540f2b668061d6040464510fd933de080dc9fc1d7"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 7,
+      "n_tasks": 748,
+      "nDCG@5": 0.7754511418540367,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/07/metrics.json",
+      "Source_SHA256": "97e49adc411c72253ee5de7c295f46539105658443cbe083be861603ef635cba"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 8,
+      "n_tasks": 748,
+      "nDCG@5": 0.7740859013914747,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/08/metrics.json",
+      "Source_SHA256": "e0014c2cb9680cbfdc429c8375851493903f368d5168c97667d6b35cf7682a1c"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 9,
+      "n_tasks": 748,
+      "nDCG@5": 0.7809884758626631,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/09/metrics.json",
+      "Source_SHA256": "15afa1be0a7ab571f2a739d24154812939675d784bfa8b32ade27544c000e6fa"
+    },
+    {
+      "Method": "Only MBR Alt",
+      "Split": "test",
+      "Evaluation": "accepted",
+      "Iteration": 10,
+      "n_tasks": 748,
+      "nDCG@5": 0.7857112069668976,
+      "Source": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/10/metrics.json",
+      "Source_SHA256": "b6f432f370a0a7ba5bfa7f4ee65c24e66f1d7932cb969dd8f46dba6330bf0375"
+    }
+  ],
+  "aggregation": "task-macro nDCG@5 from each source run; 748 test tasks",
+  "uncertainty": "not estimated; no bands",
+  "output_sha256": {
+    "preview.pdf": "92077618dd235d1b52ed1a69a6a76a1cec7ad3b9bce979d595cf113db6bcf7da",
+    "preview.png": "7a9a8a925505eda11b0e26145c1fdea47c26a03c4106d84224f33b498cb4ffaa",
+    "description.text": "92292ab3fc56a57f25c51767ba8fd78dde2b0f5e2fdd32ae327521b700f947ad",
+    "table.tex": "23732d18d0b5803cb9a81f1bb12452241cfa25c10173bbda92b15bfc53b3ad78",
+    "selected_data.csv": "b24cd2283b2e54068da170514600a6238300c06b4ca37da9c1612906f1ed3d6b"
+  }
+}

@@ -1,0 +1,1463 @@
+{
+  "paper_id": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk Replay and Held-out Gates",
+  "review_type": "Independent presentation, figure and physical/policy compliance audit; not a full scientific review",
+  "review_date": "2026-10-13",
+  "revision_mode": "unknown",
+  "manuscript_edits": false,
+  "experiments_run": false,
+  "target": {
+    "pdf": "source/main.pdf",
+    "sha256": "ddd4e45dcc8920cde89966c50e5a12598d73eee2dda1701b67f783057aeb1e63",
+    "immutable_snapshot_verified": true,
+    "source_manifest_entries_checked": 169,
+    "source_hash_mismatches": []
+  },
+  "venue_context": {
+    "target_venue": "unknown",
+    "year": null,
+    "track": "unknown",
+    "arr_cycle": "unknown",
+    "paper_type": "long",
+    "paper_type_confirmed": false,
+    "paper_type_basis": "Delegated assumption: long research review paper, 8 content pages",
+    "stage": "unknown",
+    "pdf_revision_permission": "unknown",
+    "policy_source": [
+      "policy/1.txt (ARR CFP)",
+      "policy/2.txt (ARR authors)",
+      "policy/3.txt (ARR authorchecklist)",
+      "policy/4.txt (ACLPUB formatting)"
+    ],
+    "general_policy_text_available": true,
+    "target_cycle_applicability_verified": false,
+    "official_arr_scales_verified": false
+  },
+  "headline_verdict": "The immutable PDF is physically well formed: 31 total pages but 8 content-bearing pages, with all 8 figures inspected. The main presentational weaknesses are incomplete figure semantics, a backbone-ceiling overclaim, and copy-editing/label-size defects, not an overlength or unembedded-font violation. Venue-specific submission compliance remains conditional on the unknown target and stage.",
+  "internal_scores": {
+    "rubric": "internal_1_to_5_not_official_arr",
+    "official_arr_scales_verified": false,
+    "presentation": {
+      "score": 3,
+      "justification": "Clean layout and recoverable method, offset by ambiguous main captions, small downstream chart labels and grammar defects."
+    },
+    "figure_quality": {
+      "score": 3,
+      "justification": "All eight figures render and carry interpretable evidence; statistics, normalization and cost scopes need main-caption clarification."
+    },
+    "narrative": {
+      "score": 3,
+      "justification": "Predicate→replay→gate thesis is recoverable and Figure 2 conveys it; Figure 1 is motivation only, and Section 7.3 overstates its three-backbone comparison."
+    },
+    "confidence": {
+      "score": 4,
+      "justification": "All 31 pages rendered/text-checked; all eight figures inspected at detail scale; source anchors/hash manifest verified. No fresh experiments, style-file provenance comparison, portal or venue/cycle validation."
+    },
+    "not_scored": [
+      "soundness",
+      "contribution",
+      "overall acceptance recommendation"
+    ]
+  },
+  "acl_arr_compliance": {
+    "confirmed_physical_properties": {
+      "total_pdf_pages": 31,
+      "content_bearing_pages": 8,
+      "main_prose_conclusion_page": 7,
+      "last_main_figure_page": 8,
+      "main_figures": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "appendix_figures": [
+        8
+      ],
+      "limitations_starts": {
+        "page": 8,
+        "column": "left",
+        "y_points": 687.263
+      },
+      "references_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "appendix_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "appendix_section_labels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "a4_all_pages": true,
+      "page_size_points": [
+        595.276,
+        841.89
+      ],
+      "page_numbers_present": true,
+      "review_line_numbers_present": true,
+      "line_number_note": "Rulers accompany prose; float-only pp29–31 have page numbers but no prose rulers. This is not a failure of review mode.",
+      "two_column_prose": true,
+      "wide_floats_allowed": true,
+      "all_fonts_embedded_pdffonts": true,
+      "font_records": 28,
+      "type3_records": 5,
+      "searchable_text_all_pages": true,
+      "text_outside_page_boxes": 0,
+      "tagged_pdf": false,
+      "title_and_author_metadata": "Anonymous author metadata; PDF title omits the word Replay from the rendered title. No identity leak observed.",
+      "review_template_source": "source/main.tex:1–2: documentclass[11pt]{article}; usepackage[review]{acl}",
+      "abstract_word_count_whitespace": 200,
+      "limitations_before_references": true,
+      "limitations_has_no_new_results_or_floats": true,
+      "ethics_section_before_references": true,
+      "ai_only_acknowledgment_present": true,
+      "appendix_after_references_same_pdf": true,
+      "no_obvious_identity_leak_in_reviewed_pdf": true
+    },
+    "conditional_policy_assessment": {
+      "assumed_review_limit": 8,
+      "pages_remaining_under_assumption": 0,
+      "fits_assumed_long_review_limit": true,
+      "active_confirmed_limit": null,
+      "page_count_compliant_for_actual_submission": "unknown",
+      "template_compliance": "needs_human_check",
+      "template_note": "Observed class/mode and physical layout match ACL review expectations; official acl.sty byte provenance was not compared here. Snapshot immutability is separately verified.",
+      "font_embedding": "verified",
+      "anonymity": "No observed PDF identity leak; supplements and author history remain unverified.",
+      "ai_acknowledgment": "Allowed by fresh ARR authorchecklist; do not flag it as an anonymity violation.",
+      "ai_disclosure_adequacy": "needs_human_check: current CFP requires scope in Responsible NLP Checklist and details in acknowledgments. Existing p8 statement is generic; actual use, checklist entry and sufficiency cannot be verified from PDF alone.",
+      "responsible_nlp_checklist": "needs_human_check",
+      "ethics": "Relevant corpus/model licenses, sensitive external-service data, medical non-validity and untrusted skill execution are discussed on p8; this is not proof of license or privacy compliance.",
+      "supplementary_anonymity": "unknown",
+      "source_style_unchanged_from_official_release": "unknown",
+      "submission_logistics": "unknown"
+    },
+    "policy_anchors": [
+      {
+        "file": "policy/4.txt",
+        "line_range": [
+          3,
+          7
+        ],
+        "supports": "Eight content pages for long review papers, all body figures/tables count."
+      },
+      {
+        "file": "policy/4.txt",
+        "line_range": [
+          11,
+          16
+        ],
+        "supports": "Use pdffonts emb column; Type3 does not imply unembedded."
+      },
+      {
+        "file": "policy/4.txt",
+        "line_range": [
+          22,
+          26
+        ],
+        "supports": "Two-column prose with allowed full-width figures/tables; readable figure/table text."
+      },
+      {
+        "file": "policy/4.txt",
+        "line_range": [
+          57,
+          64
+        ],
+        "supports": "Limitations before references, appendix afterwards, two-column appendix."
+      },
+      {
+        "file": "policy/3.txt",
+        "quoted_text": "The acknowledgements section contains only disclosures of generative AI use.",
+        "supports": "AI-only acknowledgment is permitted in review."
+      },
+      {
+        "file": "policy/1.txt",
+        "quoted_text": "Their use for writing or coding, as well as its scope, must be disclosed in the Responsible NLP Checklist. Details should be included in the Acknowledgements section.",
+        "supports": "Checklist and disclosure scope need author verification."
+      }
+    ],
+    "compliance_gaps": [
+      {
+        "requirement": "Actual venue, cycle, track, stage, paper type and upload permission",
+        "status": "unverified",
+        "required_action": "Human author confirms intended submission context and applicable live instructions."
+      },
+      {
+        "requirement": "Responsible NLP Checklist and actual AI assistance scope/details",
+        "status": "unverified",
+        "required_action": "Human author supplies truthful form responses and checks disclosure against actual writing/coding use; preserve permissible AI-only acknowledgment."
+      },
+      {
+        "requirement": "Supplementary anonymity, author approval, metadata, profiles, review service, eligibility, overlap, preprint and prior submissions",
+        "status": "unverified",
+        "required_action": "Inspect portal and supplements with author; do not infer compliance from the PDF."
+      },
+      {
+        "requirement": "Official style-file provenance",
+        "status": "unverified",
+        "required_action": "Compare acl.sty against the intended official style release; no visual defect or style-file tampering is established by this audit."
+      }
+    ],
+    "non_findings": [
+      "31 total pages is not 31 main-content pages.",
+      "Conclusion on p7 does not make this a seven-page main paper: Figures 5–7 occupy p8 before Limitations.",
+      "Full-width appendix table floats and sparse float pages are permitted exceptions to two-column prose.",
+      "pdffonts confirms embedded Type3 fonts; empty extraction of Type3 font bytes is not evidence of missing embedding.",
+      "No prior font warning is promoted to a new defect without a rendered problem.",
+      "The AI-only Acknowledgment is permitted, not a deanonymization finding."
+    ]
+  },
+  "figure_diagnostics": [
+    {
+      "figure_id": "Figure 1",
+      "page": 1,
+      "location": {
+        "tex_file": "source/sections/introduction.tex",
+        "line_range": [
+          15,
+          15
+        ],
+        "page": 1,
+        "section": "",
+        "figure_or_table": "Figure 1",
+        "quoted_text": "Skill routing with a task applicability predicate.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/routing_figure.png",
+      "render": "renders/figure-01.png",
+      "visually_inspected": true,
+      "current_state": "Single-day versus multi-year coffee-price tasks routed through one predicate.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 3,
+      "problems": [
+        "The 218.25 by 59.18 point raster diagram is high-resolution but its text is small at one-column print size.",
+        "It motivates applicability versus similarity; it does not show the replay/gate innovation. This is an editorial opportunity, not a mandatory teaser requirement."
+      ],
+      "linked_issues": [],
+      "recommendation": "Enlarge/reflow labels if revising; optionally add a small replay/gate cue, or retain this motivation figure and let Figure 2 carry the contribution.",
+      "redesign_priority": "minor"
+    },
+    {
+      "figure_id": "Figure 2",
+      "page": 3,
+      "location": {
+        "tex_file": "source/sections/related_works.tex",
+        "line_range": [
+          8,
+          8
+        ],
+        "page": 3,
+        "section": "",
+        "figure_or_table": "Figure 2",
+        "quoted_text": "RouterBSI’s bayes self-improvement algorithm",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/method_figure.png",
+      "render": "renders/figure-02.png",
+      "visually_inspected": true,
+      "current_state": "Three-stage route → failure-driven proposals → bounded-replay selection and held-out gate, with an iteration loop.",
+      "is_teaser_for_contribution": true,
+      "internal_quality_score": 4,
+      "problems": [
+        "The diagram correctly uses cold-start p_si and candidate validation error 0.45 < 0.60.",
+        "It writes predicates equal to numeric risks and has a duplicated phrase in its caption; color is reinforced by text labels."
+      ],
+      "linked_issues": [
+        "PRES-005"
+      ],
+      "recommendation": "Preserve cold-start semantics; label empirical risks explicitly and repair caption grammar. No algorithm redesign is necessary.",
+      "redesign_priority": "minor",
+      "complete_render": "renders/figure-02-complete.png"
+    },
+    {
+      "figure_id": "Figure 3",
+      "page": 6,
+      "location": {
+        "tex_file": "source/figs/average_retention_degradation/table.tex",
+        "line_range": [
+          4,
+          4
+        ],
+        "page": 6,
+        "section": "",
+        "figure_or_table": "Figure 3",
+        "quoted_text": "Retention of required skills averaged across retrievers: BM25, Vector, and SkillSight.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/average_retention_degradation/preview.pdf",
+      "render": "renders/figure-03.png",
+      "visually_inspected": true,
+      "current_state": "Six-series retention curve at categorical cutoffs 50,25,10,5,1, all normalized to 100 at 50.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 3,
+      "problems": [
+        "Distinct markers and line styles supplement colors.",
+        "Descending equally spaced categorical cutoffs are readable; the ratio and method-specific denominator are not defined in the main caption."
+      ],
+      "linked_issues": [
+        "PRES-001"
+      ],
+      "recommendation": "Add the exact Ret definition and own-pool normalization; preserve existing values and do not recast retention as recall.",
+      "redesign_priority": "major"
+    },
+    {
+      "figure_id": "Figure 4",
+      "page": 7,
+      "location": {
+        "tex_file": "source/figs/downstream_average/description.text",
+        "line_range": [
+          1,
+          1
+        ],
+        "page": 7,
+        "section": "",
+        "figure_or_table": "Figure 4",
+        "quoted_text": "Downstream success rates averaged equally across BM25, Vector, and SkillSight.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/downstream_average/preview.pdf",
+      "render": "renders/figure-04.png",
+      "visually_inspected": true,
+      "current_state": "Seven bars and direct/oracle horizontal reference lines; SkillDAG is highest at 0.631, RouterBSI top-5 0.611, strict 0.596.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 3,
+      "problems": [
+        "Numerical labels and reference lines make the rank ordering honest.",
+        "Small 6.44-pt names/values and 4.51-pt subscripts, truncated bar baseline, and malformed caption reduce polish.",
+        "No uncertainty is displayed; no significance can be inferred."
+      ],
+      "linked_issues": [
+        "PRES-004"
+      ],
+      "recommendation": "Fix caption and enlarge labels; use a dot plot or zero baseline.",
+      "redesign_priority": "minor",
+      "complete_render": "renders/figure-04-complete.png"
+    },
+    {
+      "figure_id": "Figure 5",
+      "page": 8,
+      "location": {
+        "tex_file": "source/figs/mbr_replay_test_ndcg@1_std/description.text",
+        "line_range": [
+          1,
+          1
+        ],
+        "page": 8,
+        "section": "",
+        "figure_or_table": "Figure 5",
+        "quoted_text": "Ablation of MBR replay and held-out validation gate comparing routing performance.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/mbr_replay_test_ndcg@1_std/preview.pdf",
+      "render": "renders/figure-05.png",
+      "visually_inspected": true,
+      "current_state": "Four nDCG@1 trajectories over iterations 0–10 with shaded variability bands; both enabled has best final three-run mean.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 3,
+      "problems": [
+        "Shapes/linestyles provide non-color encoding; curves are compact but legible.",
+        "“Standard mean and variation” fails to define bands; test split and population-SD meaning live in the appendix.",
+        "Starting from the same predicate text need not force numerically identical measured initialization; appendix values differ slightly and are not evidence of a plotted contradiction."
+      ],
+      "linked_issues": [
+        "PRES-002"
+      ],
+      "recommendation": "Specify mean ± population SD over three runs, 748 test tasks, and iteration-zero initialization. Do not claim confidence intervals or monotonic improvement.",
+      "redesign_priority": "major",
+      "complete_render": "renders/figures-05-07-complete.png"
+    },
+    {
+      "figure_id": "Figure 6",
+      "page": 8,
+      "location": {
+        "tex_file": "source/figs/performance_token_usage/table.tex",
+        "line_range": [
+          4,
+          4
+        ],
+        "page": 8,
+        "section": "",
+        "figure_or_table": "Figure 6",
+        "quoted_text": "Impact of MBR replay and held-out validation gate on routing performance (nDCG@1) and token usage.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/performance_token_usage/preview.pdf",
+      "render": "renders/figure-06.png",
+      "visually_inspected": true,
+      "current_state": "Four shape-coded nDCG@1 versus token-use points; both enabled has strongest quality and highest observed tokens.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 3,
+      "problems": [
+        "Shape-coded configuration legend is accessible.",
+        "It reports first-run outcomes, unlike neighboring Figure 5. “Total Token Usage” hides incomplete known-token scope."
+      ],
+      "linked_issues": [
+        "PRES-002"
+      ],
+      "recommendation": "State single-run scope, known input/output tokens and excluded unavailable usage; cite Table 12.",
+      "redesign_priority": "major",
+      "complete_render": "renders/figures-05-07-complete.png"
+    },
+    {
+      "figure_id": "Figure 7",
+      "page": 8,
+      "location": {
+        "tex_file": "source/figs/routing_performance_across_llms_init/description.text",
+        "line_range": [
+          1,
+          1
+        ],
+        "page": 8,
+        "section": "",
+        "figure_or_table": "Figure 7",
+        "quoted_text": "Initial and optimized routing performance (nDCG@1) comparison between different LLM-backbones using SkillSight as the retriever.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/routing_performance_across_llms_init/preview.pdf",
+      "render": "renders/figure-07.png",
+      "visually_inspected": true,
+      "current_state": "SkillSight reference plus hatched initialization/solid optimized pairs for three backbones, with numerical labels.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 4,
+      "problems": [
+        "Hatching makes initial/final distinction readable without color; caption correctly notes smaller-versus-largest proximity.",
+        "One-run scope is only in Table 14. The plotted non-monotonic final ordering does not support a universal capability ceiling."
+      ],
+      "linked_issues": [
+        "PRES-003"
+      ],
+      "recommendation": "Add run scope and final iteration; narrow Section 7.3 interpretation, not the chart values.",
+      "redesign_priority": "major",
+      "complete_render": "renders/figures-05-07-complete.png"
+    },
+    {
+      "figure_id": "Figure 8",
+      "page": 23,
+      "location": {
+        "tex_file": "source/figs/performance_token_usage_by_topk/description.text",
+        "line_range": [
+          1,
+          1
+        ],
+        "page": 23,
+        "section": "",
+        "figure_or_table": "Figure 8",
+        "quoted_text": "Recorded tokens and routing performance at different candidate-pool sizes.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "asset": "source/figs/performance_token_usage_by_topk/preview.pdf",
+      "render": "renders/figure-08.png",
+      "visually_inspected": true,
+      "current_state": "Three measured nDCG@10/token points for candidate pools 10,25,50, rendered at full width.",
+      "is_teaser_for_contribution": false,
+      "internal_quality_score": 4,
+      "problems": [
+        "Readable axes and sparse composition; three blue shades are the sole category cue.",
+        "Caption explicitly distinguishes candidate pool from selected budget. Adjacent Appendix G.3 states single-run, incomplete known-token and non-causal/budget-unmatched interpretation.",
+        "Axis still says total tokens although accompanying prose correctly qualifies recorded known usage."
+      ],
+      "linked_issues": [],
+      "recommendation": "Optional: directly label K=10/25/50 points or vary marker shapes, and call the horizontal axis Known recorded tokens. No new experiment needed for these presentation changes.",
+      "redesign_priority": "minor"
+    }
+  ],
+  "issues": [
+    {
+      "id": "PRES-001",
+      "severity": "major",
+      "category": "self_containment",
+      "location": {
+        "tex_file": "source/figs/average_retention_degradation/table.tex",
+        "line_range": [
+          4,
+          4
+        ],
+        "page": 6,
+        "section": "6.2 Required Skill Retention",
+        "figure_or_table": "Figure 3",
+        "quoted_text": "Retention of required skills averaged across retrievers: BM25, Vector, and SkillSight.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "additional_anchors": [
+        {
+          "tex_file": "source/sections/appendix/retention_definition.tex",
+          "line_range": [
+            9,
+            9
+          ],
+          "page": 20,
+          "section": "F.1",
+          "figure_or_table": null,
+          "quoted_text": "This is a ratio of task-averaged recalls, rather than an average of task-level retention ratios.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "tex_file": "source/sections/appendix/retention_definition.tex",
+          "line_range": [
+            9,
+            9
+          ],
+          "page": 20,
+          "section": "F.1",
+          "figure_or_table": null,
+          "quoted_text": "Each method is normalized by its own Recall@50. In particular, SkillDAG expands its initial retrieval set, so its normalization uses the expanded ranked pool.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "problem": "The headline retention figure does not define its ratio-of-mean-recalls denominator or disclose that SkillDAG uses its own expanded pool in the main caption.",
+      "reasoning_chain": [
+        "1. Figure 3 plots all methods at 100% for k=50; the caption describes retention but provides no formula.",
+        "2. Appendix F.1, p20, defines a ratio of task-averaged recalls and method-specific Recall@50; this is not mean per-task retention or a shared-pool controlled comparison.",
+        "3. Because the abstract headline is 90.5% retention, the exact quantity is load-bearing main-paper information rather than merely replication detail."
+      ],
+      "predicted_reviewer_objection": "Simulated reviewer: The headline retention figure does not define its ratio-of-mean-recalls denominator or disclose that SkillDAG uses its own expanded pool in the main caption.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Add Ret_{m,r}@k = 100 * mean-task Recall_{m,r}@k / mean-task Recall_{m,r}@50 to the main metric definition or Figure 3 caption; state that the three ratios are averaged equally and SkillDAG normalizes by its expanded pool. Preserve the current numerical results.",
+        "target_text": null,
+        "required_inputs": [
+          "Existing cited source passages and values; no new experiment required"
+        ],
+        "acceptance_criteria": [
+          "Main paper defines ratio of mean recalls, not mean task-level ratios.",
+          "Caption or adjacent main prose explicitly states per-method denominator and SkillDAG expanded pool.",
+          "Retention is not described as absolute recall or candidate-matched superiority."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-002",
+      "severity": "major",
+      "category": "self_containment",
+      "location": {
+        "tex_file": "source/figs/mbr_replay_test_ndcg@1_std/description.text",
+        "line_range": [
+          1,
+          1
+        ],
+        "page": 8,
+        "section": "7.1",
+        "figure_or_table": "Figure 5",
+        "quoted_text": "The lines and areas represent the standard mean and variation, respectively across three runs starting from the same initial predicates at iteration 0.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "additional_anchors": [
+        {
+          "tex_file": "source/sections/appendix/ablation_components.tex",
+          "line_range": [
+            21,
+            21
+          ],
+          "page": 26,
+          "section": "G.1",
+          "figure_or_table": "Table 10",
+          "quoted_text": "parentheses below each mean give population standard deviation across three runs.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "tex_file": "source/sections/appendix/ablation_cost_capacity.tex",
+          "line_range": [
+            2,
+            2
+          ],
+          "page": 21,
+          "section": "G.2",
+          "figure_or_table": null,
+          "quoted_text": "Table~\\ref{tab:app-ablation-tokens} uses the first run of each configuration; it is separate from the three-run means above.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "tex_file": "source/sections/appendix/ablation_cost_capacity.tex",
+          "line_range": [
+            2,
+            2
+          ],
+          "page": 21,
+          "section": "G.2",
+          "figure_or_table": null,
+          "quoted_text": "Attempts with unavailable token use are not assigned zero consumption: they are excluded from known totals and counted separately.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "problem": "The adjacent ablation figures leave the main reader unable to distinguish three-run mean/population-SD evidence from one-run final quality and incomplete known-token totals.",
+      "reasoning_chain": [
+        "1. Figure 5 says “standard mean and variation,” which does not define its shaded bands; Figure 6 says “token usage” without identifying one run or missing usage.",
+        "2. Appendix G.1/Table 10 defines three-run means and population SD, whereas G.2/Table 12 uses the first run with unavailable usage excluded and counted separately.",
+        "3. Figures 5 and 6 appear together on p8 with different final values (both enabled 0.724 mean versus 0.742 single run). Their interpretation requires a compact main-paper clarification."
+      ],
+      "predicted_reviewer_objection": "Simulated reviewer: The adjacent ablation figures leave the main reader unable to distinguish three-run mean/population-SD evidence from one-run final quality and incomplete known-token totals.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Rewrite Figure 5 caption to state task-weighted test nDCG@1 over 748 tasks, three runs, mean ± one population standard deviation (not CI). Rewrite Figure 6 caption/axis as first-run final-test nDCG@1 versus known recorded input+output tokens across run-local phases; explicitly exclude unavailable usage and cite Table 12. Identify initialization/final policies consistently without altering values.",
+        "target_text": null,
+        "required_inputs": [
+          "Existing cited source passages and values; no new experiment required"
+        ],
+        "acceptance_criteria": [
+          "Figure 5 bands and split are named exactly.",
+          "Figure 6 says single run and known recorded tokens, not complete cost or per-query serving cost.",
+          "Main captions explain why Figure 5 and Figure 6 endpoints differ."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-003",
+      "severity": "major",
+      "category": "claims",
+      "location": {
+        "tex_file": "source/sections/ablations.tex",
+        "line_range": [
+          24,
+          24
+        ],
+        "page": 7,
+        "section": "7.3 Skill Routing Performance across LLM Backbones",
+        "figure_or_table": "Figure 7",
+        "quoted_text": "They also suggest that predicates reach a plateau that cannot be overcomed with more capable LLMs, where it's difficult for the predicate to be narrow enough to be false for irrelevant tasks but broad enough to be true for all relevant tasks",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "additional_anchors": [
+        {
+          "tex_file": "source/sections/appendix/ablation_backbones.tex",
+          "line_range": [
+            21,
+            21
+          ],
+          "page": 28,
+          "section": "G.4",
+          "figure_or_table": "Table 14",
+          "quoted_text": "Each row averages the same 748 test tasks within one run; initial and final refer to the initialized and ten-iteration policies.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "problem": "The Figure 7 interpretation turns a three-backbone non-monotonic comparison into an unsupported capability-independent predicate ceiling.",
+      "reasoning_chain": [
+        "1. Figure 7 shows final nDCG@1 values 0.742, 0.802, and 0.745, with the middle-sized model best.",
+        "2. This supports improvement over each initialization and non-monotonic final performance by model size, not an intrinsic ceiling that more capable models cannot overcome.",
+        "3. Appendix Table 14 reports one run per backbone, so “significantly” should not imply an unreported significance test."
+      ],
+      "predicted_reviewer_objection": "Simulated reviewer: The Figure 7 interpretation turns a three-backbone non-monotonic comparison into an unsupported capability-independent predicate ceiling.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Replace the last two sentences of Section 7.3 with a bounded interpretation: all tested backbones improve; final quality is not monotonic in parameter count; Qwen3.5-4B approaches GPT-OSS-120B while Qwen3.8-27B is strongest. Describe the predicate expressivity explanation as an untested hypothesis or remove it. Name the one-run scope in Figure 7 caption.",
+        "target_text": null,
+        "required_inputs": [
+          "Existing cited source passages and values; no new experiment required"
+        ],
+        "acceptance_criteria": [
+          "No claim of a capability-independent ceiling remains.",
+          "No statistical-significance wording without a reported test.",
+          "Figure 7 caption identifies initial versus ten-iteration final policies and one run per model."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-004",
+      "severity": "minor",
+      "category": "figures",
+      "location": {
+        "tex_file": "source/figs/downstream_average/description.text",
+        "line_range": [
+          1,
+          1
+        ],
+        "page": 7,
+        "section": "6.3 Downstream Performance",
+        "figure_or_table": "Figure 4",
+        "quoted_text": "outperforms strict selection and most other approaches oracle performance.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "additional_anchors": [],
+      "problem": "Figure 4 has an ungrammatical headline caption and unnecessarily small labels for a full-width chart.",
+      "reasoning_chain": [
+        "1. The actual caption ends “most other approaches oracle performance,” obscuring the intended comparison.",
+        "2. PDF text spans measure method names/value labels at about 6.44 pt and strict/top-5 subscripts at 4.51 pt despite full-width placement.",
+        "3. The chart correctly shows SkillDAG (0.631) above RouterBSI top-5 (0.611); the caption should preserve that exception. Bars start at 0.4, visually magnifying absolute gaps."
+      ],
+      "predicted_reviewer_objection": "Simulated reviewer: Figure 4 has an ungrammatical headline caption and unnecessarily small labels for a full-width chart.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "Rewrite the caption to say RouterBSI top-5 exceeds strict selection and most evaluated alternatives, remains below SkillDAG, and approaches oracle success. Re-render with larger labels; use a zero-based bar axis or a dot plot for the zoomed scale. Keep all reported values unchanged.",
+        "target_text": null,
+        "required_inputs": [
+          "Existing cited source passages and values; no new experiment required"
+        ],
+        "acceptance_criteria": [
+          "Caption is grammatical and preserves SkillDAG exception.",
+          "Labels are clearly legible on A4 at normal viewing/printing size; review enlarged labels against current 6.44-pt baseline.",
+          "Zoomed scale is explicit or bars begin at zero."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-005",
+      "severity": "minor",
+      "category": "writing",
+      "location": {
+        "tex_file": "source/sections/method.tex",
+        "line_range": [
+          24,
+          24
+        ],
+        "page": 4,
+        "section": "4.2 MBR Update Selection with Bounded Replay",
+        "figure_or_table": null,
+        "quoted_text": "Compare difference between \\(P_{q}\\)with \\(G_{q}\\) and identify the any of the following failures:",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "additional_anchors": [
+        {
+          "tex_file": "source/sections/method.tex",
+          "line_range": [
+            37,
+            37
+          ],
+          "page": 4,
+          "section": "4.2",
+          "figure_or_table": null,
+          "quoted_text": "we limit each proposed candidate \\(m_{p} \\in M_{p}\\) must not exceeds a max length \\(l\\).",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "tex_file": "source/sections/related_works.tex",
+          "line_range": [
+            8,
+            8
+          ],
+          "page": 3,
+          "section": "Figure 2 caption",
+          "figure_or_table": "Figure 2",
+          "quoted_text": "Routing failures drive revisions selected which are selected based on their bounded replay error using Minimum Bayes Risk (MBR).",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "tex_file": "source/sections/conclusion.tex",
+          "line_range": [
+            8,
+            8
+          ],
+          "page": 7,
+          "section": "8 Conclusion",
+          "figure_or_table": null,
+          "quoted_text": "non-parametric optmization algorithm",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "problem": "Repeated copy-editing defects weaken an otherwise recoverable method narrative.",
+      "reasoning_chain": [
+        "1. The method opens with a malformed imperative and contains “must not exceeds”; Figure 2 says “drive revisions selected which are selected”; the conclusion has “optmization.”",
+        "2. These are observed textual defects, not evidence that the revised replay or ranking definitions are wrong.",
+        "3. Editing the grammar and using consistent predicate-versus-risk notation would make the contribution easier to audit without changing the algorithm."
+      ],
+      "predicted_reviewer_objection": "Simulated reviewer: Repeated copy-editing defects weaken an otherwise recoverable method narrative.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Copy-edit the anchored sentences: compare predicted and gold skill sets; constrain each candidate to maximum length; remove duplicated “selected” in Figure 2 caption; correct optmization. In Figure 2 label numerical examples R_replay(p_f)=0.50 and R_v(p_si)=0.60 rather than equating predicates with numbers. Preserve the cold-start validation comparator and strict inequality.",
+        "target_text": null,
+        "required_inputs": [
+          "Existing cited source passages and values; no new experiment required"
+        ],
+        "acceptance_criteria": [
+          "Anchored grammatical errors are removed without changing replay set, split, ranking normalization, tie rules or retriever training description.",
+          "Figure 2 numerical labels explicitly denote risks.",
+          "Figure 2 still compares candidate validation error with cold-start p_si, not previous accepted predicate."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    }
+  ],
+  "page_audit": [
+    {
+      "page": 1,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 5734,
+      "caption_starts": [
+        "Figure 1: Skill routing with a task applicability pred-"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-01.png",
+      "topic": "Title, abstract, Figure 1 and introduction",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 2,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8032,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-02.png",
+      "topic": "Contributions and related work",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 3,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 4715,
+      "caption_starts": [
+        "Figure 2: RouterBSI’s bayes self-improvement algorithm of predicate psk for the skill sk in top k. Routing failures"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-03.png",
+      "topic": "Figure 2, related work, problem definition and method",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 4,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7134,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-04.png",
+      "topic": "Method equations and experimental setup",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 5,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6464,
+      "caption_starts": [
+        "Table 1: Skill routing performance using Qwen3.5 4B. Each router row is the equal-weight mean across BM25,"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-05.png",
+      "topic": "Table 1 and experimental settings",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 6,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7400,
+      "caption_starts": [
+        "Figure 3: Retention of required skills averaged across"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-06.png",
+      "topic": "Figure 3, results and ablation opening",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 7,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 5191,
+      "caption_starts": [
+        "Figure 4: Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-07.png",
+      "topic": "Figure 4, ablations and conclusion",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 8,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7504,
+      "caption_starts": [
+        "Figure 5: Ablation of MBR replay and held-out vali-",
+        "Figure 6: Impact of MBR replay and held-out valida-",
+        "Figure 7:"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-08.png",
+      "topic": "Figures 5–7; Limitations, Ethical Considerations, AI-only Acknowledgment; References start",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 9,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8407,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-09.png",
+      "topic": "References",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 10,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8646,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-10.png",
+      "topic": "References",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 11,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8430,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-11.png",
+      "topic": "References end and Appendix A start",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 12,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7764,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-12.png",
+      "topic": "Appendix A replay, validation and optimization procedure",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 13,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 9380,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-13.png",
+      "topic": "Appendix A procedure and Appendix B initialization prompt",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense but structurally clean two-column monospaced prompts; principal prompt text about 8.97 pt. No clipping observed."
+    },
+    {
+      "page": 14,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 10482,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-14.png",
+      "topic": "Appendix B initialization and replacement prompts",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense but structurally clean two-column monospaced prompts; principal prompt text about 8.97 pt. No clipping observed."
+    },
+    {
+      "page": 15,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8861,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-15.png",
+      "topic": "Appendix B replacement/evaluation prompts and worked trace",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense but structurally clean two-column monospaced prompts; principal prompt text about 8.97 pt. No clipping observed."
+    },
+    {
+      "page": 16,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8078,
+      "caption_starts": [
+        "Table 2: One repair on five positive and five negative"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-16.png",
+      "topic": "Table 2 trace; Appendix C splits/labels",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 17,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7271,
+      "caption_starts": [
+        "Table 3: Task filtering and exact split sizes. Source counts refer to the SRA-Bench task collections before our"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-17.png",
+      "topic": "Table 3 split counts; data/corpus scope and Appendix D settings",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 18,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7048,
+      "caption_starts": [
+        "Table 4: Default RouterBSI optimization settings. The"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-18.png",
+      "topic": "Table 4 settings; requests/caching and variants",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 19,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8008,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-19.png",
+      "topic": "Implementation continuation and Appendix E metrics",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 20,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6971,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-20.png",
+      "topic": "Retention definition/results and Appendix G ablations",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 21,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6231,
+      "caption_starts": [
+        "Table 5: Test routing performance on TheoremQA and LogicBench with Qwen3.5-4B. N, R, and FC denote nDCG,"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-21.png",
+      "topic": "Table 5; gate caveats and token accounting",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense, readable full-width result table with about 8.97-pt principal entries. Figure 8 also checked individually on p23."
+    },
+    {
+      "page": 22,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6111,
+      "caption_starts": [
+        "Table 6: Test routing performance on ToolQA and MedCalc-Bench with Qwen3.5-4B. N, R, and FC denote nDCG,"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-22.png",
+      "topic": "Table 6; candidate pools/backbones and Appendix H evaluator",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense, readable full-width result table with about 8.97-pt principal entries. Figure 8 also checked individually on p23."
+    },
+    {
+      "page": 23,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 4655,
+      "caption_starts": [
+        "Table 7: Test routing performance on CHAMP and BigCodeBench with Qwen3.5-4B. N, R, and FC denote nDCG,",
+        "Figure 8: Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-23.png",
+      "topic": "Table 7; Figure 8 and evaluator continuation",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense, readable full-width result table with about 8.97-pt principal entries. Figure 8 also checked individually on p23."
+    },
+    {
+      "page": 24,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6967,
+      "caption_starts": [
+        "Table 8: Mean retention across BM25, Vector, and Skill-"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-24.png",
+      "topic": "Table 8; evaluator and error definitions",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 25,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7517,
+      "caption_starts": [
+        "Table 9: Required-skill coverage and retention by retriever. Recall@50 measures coverage before imposing the"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-25.png",
+      "topic": "Table 9; routing losses against SkillRouter",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 26,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7221,
+      "caption_starts": [
+        "Table 10: Component ablations with Qwen3.5 4B and SkillSight. Values are task-weighted test means over 748"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-26.png",
+      "topic": "Table 10; representative error cases",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 27,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6948,
+      "caption_starts": [
+        "Table 11: Test nDCG@1 at initialization and each optimization iteration, averaged over three runs. Parentheses",
+        "Table 12: Single-run final-test quality and known token use for the component configurations in Figure 6. Bold and"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-27.png",
+      "topic": "Tables 11–12; downstream disagreement diagnosis",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 28,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 3951,
+      "caption_starts": [
+        "Table 13: Replay-capacity sensitivity using one run per capacity, Qwen3.5 4B, SkillSight, and both components",
+        "Table 14: Backbone comparison with SkillSight, including the shared retriever reference in Figure 7. Each row"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-28.png",
+      "topic": "Tables 13–14; downstream outcomes",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 29,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 4313,
+      "caption_starts": [
+        "Table 15: Agreement between saved predicate decisions",
+        "Table 16: Final predicate-selected-set counts with the authors’ nonstandard FP/FN labels and standard relevance-",
+        "Table 17: Retrospective semantic categorization of all 331 TheoremQA task–skill selection errors across the three",
+        "Table 18: Matched nDCG@10 comparisons. Loss-case percentages use the 35 and 66 SkillRouter-better observa-"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-29.png",
+      "topic": "Tables 15–18 float-only appendix page",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Sparse float-only page with full-width tables; not evidence of noncompliant one-column appendix prose. No clipping observed."
+    },
+    {
+      "page": 30,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 3100,
+      "caption_starts": [
+        "Table 19: Retrospective semantic assessment of required-skill rejections within the ranking-loss subset. Percentages",
+        "Table 20: Conditional errors on tasks answered incorrectly by RouterBSItop5 and correctly by SkillRouter, using",
+        "Table 21: Downstream success rates underlying Figure 4. Each retriever column pools 748 test tasks; Mean averages"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-30.png",
+      "topic": "Tables 19–21 float-only appendix page",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Sparse float-only page with full-width tables; not evidence of noncompliant one-column appendix prose. No clipping observed."
+    },
+    {
+      "page": 31,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 3015,
+      "caption_starts": [
+        "Table 22: Downstream success rate with Qwen3.5-4B. Each benchmark column reports correct tasks divided by its"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-31.png",
+      "topic": "Table 22 float-only appendix page",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Sparse float-only page with full-width tables; not evidence of noncompliant one-column appendix prose. No clipping observed."
+    }
+  ],
+  "cold_start_and_validation_semantics": {
+    "verified": [
+      "Figure 2 passes candidate validation risk 0.45 against cold-start 0.60; it does not depict comparison with previous accepted risk.",
+      "Figure 2 caption and Section 4.3 p4 correctly reject higher-or-equal cold-start-relative error.",
+      "Section 5.1 pp4–5 explains held-out tasks using skills represented in training; not held-out-skill generalization.",
+      "Figure 7 initialization is the cold-start policy; final is ten-iteration policy (Table 14 p28).",
+      "The new replay set includes the current task, deduplicates identifiers and caps at 2N+1; no stale 2N-only critique is made."
+    ],
+    "important_caveat": {
+      "text": "Appendix G.1 p21 explicitly says admission need not beat the previous accepted predicate; 262 retained decisions score below the previous predicate while beating initialization. This limits a monotonic/generalization reading of “held-out gate” but is not a Figure 2 comparator error. A short main-paper caveat would help.",
+      "location": {
+        "tex_file": "source/sections/appendix/ablation_components.tex",
+        "line_range": [
+          29,
+          29
+        ],
+        "page": 21,
+        "section": "G.1",
+        "figure_or_table": null,
+        "quoted_text": "This rule does not require improvement over the previous predicate's validation score.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "recommendation": "Summarize in main method when space permits; retain separate held-out test evidence and do not call repeatedly used validation an untouched test."
+    }
+  },
+  "narrative_diagnostics": {
+    "recoverable_thesis": "Black-box skill routing uses editable applicability predicates, bounded replay empirical-risk selection and a cold-start-relative validation gate; routing quality improves over initial predicates without model-weight updates.",
+    "contribution_mapping": [
+      {
+        "claim": "Explicit editable applicability predicates",
+        "main_delivery": "Section 4.1 pp3–4; Figure 1 p1; Figure 2 p3",
+        "assessment": "Delivered as a mechanism, not validated human interpretability."
+      },
+      {
+        "claim": "Recursive improvement with replay and gate",
+        "main_delivery": "Section 4.2–4.3 p4; Figure 2 p3; Figure 5 p8",
+        "assessment": "Delivered; cold-start-relative comparator is explicit, but band/cost meanings require clarification."
+      },
+      {
+        "claim": "Six-benchmark routing gains and ablations",
+        "main_delivery": "Table 1 p5; Figure 3 p6; Figures 5–7 p8",
+        "assessment": "Delivered; retain routing/downstream distinction. Figure 4 p7 visibly shows SkillDAG downstream advantage."
+      }
+    ],
+    "space_budget": "No whole content page remains under assumed 8-page review limit. Replace vague captions/sentences with precise ones rather than adding a new full figure."
+  },
+  "verification": {
+    "pages_expected": 31,
+    "pages_checked": 31,
+    "figure_ids_from_pdf": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figures_inspected": 8,
+    "all_source_quote_anchors_verified": true,
+    "source_snapshot_unchanged": true,
+    "new_experiments": false,
+    "source_or_pdf_writes": false,
+    "evidence_files": [
+      "presentation_physical.json",
+      "pdffonts.txt",
+      "renders/page-01.png … renders/page-31.png",
+      "renders/sheet-01-04.png … renders/sheet-29-31.png",
+      "renders/figure-01.png … renders/figure-08.png"
+    ]
+  }
+}

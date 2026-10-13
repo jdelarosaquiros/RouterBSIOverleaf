@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+Method & BM25 & Vector & SkillSight & Mean \\
+\midrule
+Retriever & 0.575 & 0.536 & 0.628 & 0.580 \\
+LLM Select & 0.556 & 0.557 & 0.572 & 0.562 \\
+SkillRouter & 0.578 & 0.590 & \underline{0.638} & 0.602 \\
+SkillDAG & \textbf{0.639} & \textbf{0.615} & \textbf{0.640} & \textbf{0.631} \\
+Skill-Pro & 0.570 & 0.531 & 0.552 & 0.551 \\
+$\mathrm{RouterBSI}_{\mathrm{strict}}$ & 0.582 & \underline{0.610} & 0.596 & 0.596 \\
+$\mathrm{RouterBSI}_{\mathrm{top}5}$ & \underline{0.606} & 0.599 & 0.627 & \underline{0.611} \\
+\midrule
+LLM Direct & \multicolumn{4}{c}{0.507 (retriever-independent)} \\
+LLM Oracle & \multicolumn{4}{c}{0.638 (retriever-independent)} \\
+\bottomrule
+\end{tabular}
+\caption{Downstream success rates underlying Figure~\ref{fig:downstream_average}. Each retriever column pools 748 test tasks; Mean averages the three retriever rates equally, rather than averaging benchmark rates. Bold and underline identify the best and second-best methods within each column, excluding the retriever-independent reference conditions.}
+\label{tab:app-downstream-mean}
+\end{table*}

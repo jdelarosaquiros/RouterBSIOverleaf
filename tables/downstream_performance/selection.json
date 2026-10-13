@@ -1921,7 +1921,7 @@
   ],
   "points": [],
   "selection": "all source rows; Progressive Disclosure excluded; prior paper row order retained",
-  "caveat": "Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json; provenance is unresolved.",
+  "caveat": "Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json.",
   "rendering": {
     "renderer": "pdflatex; actual generated table.tex",
     "pages": 1,

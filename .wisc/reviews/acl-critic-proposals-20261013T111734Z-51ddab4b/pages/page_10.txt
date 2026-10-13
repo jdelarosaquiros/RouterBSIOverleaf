@@ -1,0 +1,222 @@
+Processing Systems, volume 36, pages 38154–38180.
+679
+Curran Associates, Inc.
+680
+Haochen Shi, Xingdi Yuan, and Bang Liu. 2026. Evolv-
+681
+ing programmatic skill networks. In Conference on
+682
+Language Modeling.
+683
+Weihang Su, Jianming Long, Qingyao Ai, Qiaozhi He,
+684
+Yichen Tang, Changyue Wang, Yiteng Tu, Yingbo
+685
+Wang, and Yiqun Liu. 2026. Skill retrieval augmen-
+686
+tation for agentic AI.
+687
+Yiqun Sun, Pengfei Wei, and Lawrence B. Hsieh. 2026.
+688
+Corpus2skill: Distilling enterprise knowledge into
+689
+navigable agent skills for QA and RAG.
+690
+Fali Wang, Chenglin Weng, Xianren Zhang, Siyuan
+691
+Hong, Hui Liu, and Suhang Wang. 2026a. Graph-
+692
+Skill: Documentation-guided agentic hierarchical
+693
+retrieval-augmented coding for complex graph rea-
+694
+soning. In Proceedings of the 32nd ACM SIGKDD
+695
+Conference on Knowledge Discovery and Data Min-
+696
+ing V.2, pages 4812–4823. ACM.
+697
+Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Man-
+698
+dlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and
+699
+Anima Anandkumar. 2024. Voyager: An open-ended
+700
+embodied agent with large language models. Trans-
+701
+actions on Machine Learning Research.
+702
+Jiongxiao Wang, Qiaojing Yan, Yawei Wang, Yijun Tian,
+703
+Soumya Smruti Mishra, Zhichao Xu, Megha Gandhi,
+704
+Panpan Xu, and Lin Lee Cheong. 2026b. Reinforce-
+705
+ment learning for self-improving agent with skill li-
+706
+brary. In Proceedings of the 64th Annual Meeting of
+707
+the Association for Computational Linguistics (Vol-
+708
+ume 1: Long Papers), pages 1529–1550, San Diego,
+709
+California, United States. Association for Computa-
+710
+tional Linguistics.
+711
+Renxi Wang, Xudong Han, Lei Ji, Shu Wang, Timothy
+712
+Baldwin, and Haonan Li. 2025a. ToolGen: Unified
+713
+tool retrieval and calling via generation. In Inter-
+714
+national Conference on Learning Representations,
+715
+volume 2025, pages 73473–73498.
+716
+Zifei Wang, Wei Wen, Qiang Ji, Keyu Chen, Ruizhi
+717
+Qiao, and Xing Sun. 2026c. Skill is not document:
+718
+Query-conditioned compatibility for LLM agent skill
+719
+routing.
+720
+Zora Zhiruo Wang, Jiayuan Mao, Daniel Fried, and
+721
+Graham Neubig. 2025b. Agent workflow memory.
+722
+In Proceedings of the 42nd International Conference
+723
+on Machine Learning, volume 267 of Proceedings
+724
+of Machine Learning Research, pages 63897–63911.
+725
+PMLR.
+726
+Jinyang Wu, Guocheng Zhai, Ruihan Jin, Yuhao Shen,
+727
+Zhengxi Lu, Fan Zhang, Haoran Luo, Zheng Lian,
+728
+Zhengqi Wen, and Jianhua Tao. 2026. Maestro: Rein-
+729
+forcement learning to orchestrate hierarchical model-
+730
+skill ensembles.
+731
+Peng Xia, Jianwen Chen, Hanyang Wang, Jiaqi Liu,
+732
+Kaide Zeng, Yu Wang, Siwei Han, Yiyang Zhou,
+733
+Xujiang Zhao, Haifeng Chen, Zeyu Zheng, Cihang
+734
+Xie, and Huaxiu Yao. 2026a.
+SkillRL: Evolving
+735
+agents via recursive skill-augmented reinforcement
+736
+learning.
+737
+Tianle Xia, Lingxiang Hu, Yiding Sun, Ming Xu, Lan
+738
+Xu, Siying Wang, Wei Xu, and Jie Jiang. 2026b.
+739
+GraSP: Graph-structured skill compositions for LLM
+740
+agents.
+741
+Jinying Xiao, Bin Li, Xiaopeng Li, Jianling Li, Ji-
+742
+acheng Jie, Xiaodong Liu, Ma Jun, Chao Wang, Ny-
+743
+ima Tashi, and Jie Yu. 2026. SkillSight: Calibrat-
+744
+ing generic content bias for skill retrieval. Preprint,
+745
+arXiv:2607.18785.
+746
+Haozhen Zhang, Quanyu Long, Jianzhu Bao, Tao Feng,
+747
+Weizhi Zhang, Haodong Yue, and Wenya Wang. 2026.
+748
+MemSkill: Learning and evolving memory skills for
+749
+self-evolving agents. In Advances in Neural Informa-
+750
+tion Processing Systems. Accepted at NeurIPS 2026;
+751
+proceedings forthcoming.
+752
+Zijing Zhang, Zhanpeng Chen, He Zhu, Ziyang Chen,
+753
+Nan Du, and Xiaolong Li. 2025. ToolExpNet: Op-
+754
+timizing multi-tool selection in LLMs with similar-
+755
+ity and dependency-aware experience networks. In
+756
+Findings of the Association for Computational Lin-
+757
+guistics: ACL 2025, pages 15706–15722, Vienna,
+758
+Austria. Association for Computational Linguistics.
+759
+YanZhao Zheng, ZhenTao Zhang, Chao Ma, YuanQiang
+760
+Yu, JiHuai Zhu, Yong Wu, Tianze Xu, Baohua Dong,
+761
+Hangcheng Zhu, Ruohui Huang, and Gang Yu. 2026.
+762
+SkillRouter: Skill routing for LLM agents at scale.
+763
+Huichi Zhou, Siyuan Guo, Anjie Liu, Zhongwei Yu,
+764
+Ziqin Gong, Bowen Zhao, Zhixun Chen, Menglong
+765
+Zhang, Yihang Chen, Jinsong Li, Runyu Yang, Qiang-
+766
+bin Liu, Xinlei Yu, Jianmin Zhou, Na Wang, Chun-
+767
+yang Sun, and Jun Wang. 2026. Memento-Skills: Let
+768
+agents design agents.
+769
+Pei Zhou, Jay Pujara, Xiang Ren, Xinyun Chen, Heng-
+770
+Tze Cheng, Quoc V. Le, Ed H. Chi, Denny Zhou,
+771
+Swaroop Mishra, and Huaixiu Steven Zheng. 2024.
+772
+SELF-DISCOVER: Large language models self-
+773
+compose reasoning structures. In Advances in Neural
+774
+Information Processing Systems, volume 37, pages
+775
+126032–126058. Curran Associates, Inc.
+776
+Yuchen Zhuang, Yue Yu, Kuan Wang, Haotian Sun, and
+777
+Chao Zhang. 2023. ToolQA: A dataset for LLM ques-
+778
+tion answering with external tools. In Advances in
+779
+Neural Information Processing Systems, volume 36,
+780
+pages 50117–50143. Curran Associates, Inc.
+781
+Terry Yue Zhuo, Minh Chien Vu, Jenny Chim, Han Hu,
+782
+Wenhao Yu, Ratnadira Widyasari, Imam Nur Bani
+783
+Yusuf, Haolan Zhan, Junda He, Indraneil Paul, Si-
+784
+mon Brunner, Chen GONG, James Hoang, Armel
+785
+Zebaze, Xiaoheng Hong, Wen-Ding Li, Jean Kad-
+786
+dour, Ming Xu, Zhihan Zhang, and 14 others. 2025.
+787
+BigCodeBench: Benchmarking code generation with
+788
+10

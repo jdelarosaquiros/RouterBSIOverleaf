@@ -1,0 +1,722 @@
+{
+  "artifact_type": "scoped_presentation_scout_not_full_paper_review",
+  "paper_id": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum\nBayes Risk Replay and Held-out Gates",
+  "review_date": "2026-10-13",
+  "revision_mode": "unknown",
+  "scope": "Read-only ACL/ARR PDF compliance, all eight figures, presentation and targeted proposals only. No compilation, manuscript edits, figure-asset edits, skills or memory writes. Not an independent audit of experimental raw data or a complete scientific review.",
+  "reviewed_pdf": {
+    "path": "reviewed_main.pdf",
+    "sha256": "a13feaa06ce9697e5d4d44119ea46f4403aff73a8743d3bb51bcc616dd3174e5",
+    "pages": 29,
+    "bytes": 1068750,
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk and Held-out Gates",
+      "author": "Anonymous authors",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.22",
+      "creationDate": "D:20261013123741Z",
+      "modDate": "D:20261013123741Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "xmp_present": false,
+    "attachments": []
+  },
+  "venue_context": {
+    "target_venue": "unknown",
+    "year": null,
+    "track": "unknown",
+    "arr_cycle": "unknown",
+    "paper_type": "long",
+    "paper_type_confirmed": false,
+    "stage": "unknown",
+    "pdf_revision_permission": "unknown",
+    "active_page_limit": null,
+    "assumed_review_limit": 8,
+    "conditional_accepted_limit": 9,
+    "policy_sources": [
+      {
+        "url": "https://aclrollingreview.org/cfp",
+        "local_copy": "policy/source-1.txt",
+        "status": "Live fetched by parent via requests; consulted exact AI policy excerpt",
+        "accessed": "2026-10-13"
+      },
+      {
+        "url": "https://aclrollingreview.org/authors",
+        "local_copy": "policy/source-2.txt",
+        "status": "Live fetched by parent; consulted relevant policy excerpts",
+        "accessed": "2026-10-13"
+      },
+      {
+        "url": "https://acl-org.github.io/ACLPUB/formatting.html",
+        "local_copy": "policy/source-3.txt",
+        "status": "Live fetched by parent; consulted layout/font/abstract/anonymity sections",
+        "accessed": "2026-10-13"
+      }
+    ],
+    "notes": "Supplied guides contain NAACL 2027 dates; not imported as deadlines for an unknown target."
+  },
+  "acl_arr_compliance": {
+    "main_text_ends_pdf_page": 8,
+    "total_pages": 29,
+    "page_budget": "Pass under unconfirmed 8-page long-review assumption; would not pass short-paper budget. No extra page assumed.",
+    "A4": "All 29 pages are 595.276 x 841.890 PDF points.",
+    "template": "source/main.tex uses documentclass[11pt]{article}, usepackage[review]{acl}. Snapshot acl.sty is byte-identical to bundled official-acl-style-files-master.zip acl.sty.",
+    "style_sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+    "template_freshness_caveat": "Verified bundled archive equality, not a live repository commit comparison; detected PDF/source caption mismatch means source equality alone cannot prove exact compilation inputs.",
+    "layout": "Two-column main and appendix prose; full-width floats are allowed, not one-column appendix violations. Figure pages inspected visually. No full all-page visual typography audit claimed.",
+    "fonts": "pdffonts reports emb=yes for all 28 font resources, including Type3 diagram fonts. Type3 extract_font returned no standalone bytes but embedded CharProcs and pdffonts confirm embedding; not a missing-font violation.",
+    "body_font": "Typical body spans approx. 10.8–11.02 PDF points due to TeX units/microtype; caption spans approx. 9.86–10.06. No numerical universal figure-font minimum invented.",
+    "line_and_page_numbers": "All 29 pages have correct bottom page numbers. Review marginal line numbers detected on pages 1–28; p29 contains only full-width tables and captions, with no marginal prose ruler lines, not treated as missing review mode.",
+    "metadata_anonymity": "Visible Anonymous ACL submission; DocInfo author Anonymous authors; XMP empty; no attachments. Title mismatch is PRES-008, not an identity leak.",
+    "links": "317 PDF link annotations, 46 unique external URIs. Inspected URI inventory consists of citations/model documentation, no Dropbox/Google Drive or obvious author repository URL. Link resolution and author identity relationships not verified.",
+    "limitations": "Distinct Limitations p8 before references; prose discusses compute, labels and checker limitations, with no new figure/table/experiment.",
+    "ethics": "Ethical Considerations p8 acknowledges reuse/bias, privacy/service risks, safety and lack of clinical validity. Adequacy of actual licenses/consent/approvals cannot be inferred from general prose.",
+    "ai_disclosure": "Anonymous Acknowledgment p8 discloses code generation and writing/editing assistance. Current ARR CFP explicitly requires use/scope in Responsible NLP Checklist and says details should be in Acknowledgements. Do not call the generic heading a confirmed anonymity violation. Actual scope accuracy and portal form remain unknown.",
+    "appendix": "Starts p11 after references in same PDF, with sequential lettered A–H sections in source. Appendix remains supplementary by policy; retention/cost/statistical caveats should be promoted for main-text interpretation.",
+    "responsible_nlp_checklist": "needs_human_check",
+    "portal_and_logistics": "Unknown: target/cycle/stage/deadline, PDF replacement permissions, author list/order/approval, profiles, reviewer/service contributor obligations/caps/exemptions, prior ARR disclosure, overlap/dual submission, preprint declaration, portal title/abstract and checklist. Unknown does not mean violation.",
+    "confirmed_policy_violations": [],
+    "policy_risks": [
+      "Figure1 print readability and Figure4 very small variant subscripts deserve checking against ACL legibility guidance; not asserted to be confirmed desk-rejection gates."
+    ],
+    "compliance_gaps": [
+      {
+        "requirement": "Confirm target and stage; verify active form requirements and upload permission",
+        "status": "unverified",
+        "owner": "human_author"
+      },
+      {
+        "requirement": "Verify truthful Responsible NLP Checklist and exact AI use/scope",
+        "status": "unverified",
+        "owner": "human_author"
+      },
+      {
+        "requirement": "Verify all submission eligibility, author/service/profile/overlap/preprint requirements",
+        "status": "unverified",
+        "owner": "human_author"
+      },
+      {
+        "requirement": "Verify separate supplemental files anonymity and presence",
+        "status": "unverified",
+        "owner": "human_author"
+      }
+    ]
+  },
+  "figure_coverage": {
+    "expected_from_pdf": 8,
+    "observed_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "visually_reviewed_count": 8,
+    "all_figures_reviewed": true,
+    "new_renders": [
+      "renders/page-3.png",
+      "renders/page-23.png"
+    ],
+    "exact_caption_method": "Verbatim PyMuPDF block text, retaining printed line-break hyphenation and flattened math subscripts. Captions are from reviewed PDF, not presumed from current source."
+  },
+  "figure_diagnostics": [
+    {
+      "figure_id": "Figure 1",
+      "page": 1,
+      "exact_caption_pdf_text": "Figure 1: Skill routing with a task applicability pred-\nicate. The skill is appropriately selected for task q1\nbecause the task asks about the price for a specific trad-\ning day. The skill is not accepted for task q2 because it\nasks for the price between a range of years.",
+      "render": "renders/page-1.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Column-width raster diagram: two coffee-price tasks flow through Coffee Price Data Single-Day Analysis and its predicate to green Selected/True and red Not Selected/False boxes. The single-day task asks whether May 19, 2021 was bullish or bearish; the multi-year task asks for the highest price between 2019 and 2021. Caption captures the single-day/range distinction. It illustrates applicability, not the proposed replay/gate update.",
+      "measured_fonts_pt": {
+        "exact_font_size": null,
+        "reason": "Raster text, not PDF text spans",
+        "placed_width_pt": 218.2541,
+        "placed_height_pt": 59.178,
+        "source_pixels": [
+          3098,
+          840
+        ]
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Internal task/predicate prose is visibly much smaller than the adjacent 10 pt caption at column width; zoom makes it decipherable but does not establish print readability.",
+        "Color is not the sole encoding: Selected/Not Selected and True/False are redundant labels.",
+        "The contribution is not explained here; making Figure 1 a method teaser is optional editorial advice, not ACL policy."
+      ],
+      "linked_issues": [
+        "PRES-001"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Shorten task and predicate labels; allocate more vertical space or redraw as a vector while retaining the same semantics. Optionally add an explicit link to the replay/gate mechanism rather than replacing this explanatory example."
+    },
+    {
+      "figure_id": "Figure 2",
+      "page": 3,
+      "exact_caption_pdf_text": "Figure 2: RouterBSI’s bayes self-improvement algorithm of predicate psk for the skill sk in top k. Routing failures\ndrive revisions selected which are selected based on their bounded replay error using Minimum Bayes Risk (MBR).\nSelected candidate is discarded by the held-out validation gate if its validation error is higher than the initial predicate\npsi.",
+      "render": "renders/page-3.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Full-width raster flowchart with Skill Routing, Update Proposal, and Update Selection. Markdown-table formatting falsely activates CSV Data Analysis; failure feedback generates three predicates. MBR box lists pf=0.50, m1=0.25, m2=0.00 selected, m3=0.25; gate displays psi=0.60 > m*=0.45 and Passed. Lower loop returns to predicate evaluation. Both Success and Failure paths are present.",
+      "measured_fonts_pt": {
+        "exact_font_size": null,
+        "reason": "Raster text, no extractable font size",
+        "placed_width_pt": 453.5463,
+        "placed_height_pt": 257.0265,
+        "source_pixels": [
+          3568,
+          2022
+        ]
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "The printed caption omits equality from gate rejection whereas PDF p4 states higher or equal and a strict less-than admission rule.",
+        "Numbers are written as predicates equal to scores instead of explicitly named replay/validation risks, and not identified as illustrative.",
+        "Routing success/failure edge conditions are not explicitly labeled; the shown True decision is not sufficient by itself to establish success.",
+        "Diagram is legible at full width; no clipping observed. Red/green states have text labels."
+      ],
+      "linked_issues": [
+        "PRES-002"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Align the caption with strict admission; label score expressions R_replay and R_v and mark the example illustrative. Optionally label branches correct/incorrect relative to required-skill labels."
+    },
+    {
+      "figure_id": "Figure 3",
+      "page": 6,
+      "exact_caption_pdf_text": "Figure 3: Retention of required skills averaged across\nretrievers: BM25, Vector, and SkillSight. The baseline\naverages the base retrievers used to retrieve the initial\ntop 50 skill. RouterBSI preserves the most required\nskills as the cutoff k decreases.",
+      "render": "renders/page-6.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Six normalized retention curves at equally spaced categorical cutoffs 50,25,10,5,1. RouterBSI stays highest; different colors, markers and line patterns aid identification. Legend above the plotting area, no error bands. All curves begin at 100%.",
+      "measured_fonts_pt": {
+        "tick_and_legend": 8.01,
+        "axis": 9.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Caption does not define Ret@k as a ratio of task-mean recalls normalized by each method/retriever own Recall@50; this definition is relegated to Appendix F.",
+        "SkillDAG uses an expanded pool: normalized retention does not mean a controlled common-candidate comparison or absolute recovery of the full gold set.",
+        "Legend/axes are readable at the reviewed render; no clipping observed."
+      ],
+      "linked_issues": [
+        "PRES-003"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Add the normalization and equal-across-retrievers aggregation in the caption or immediate main text; explicitly distinguish absolute recall and method-specific pool coverage. Keep categorical cutoffs labeled."
+    },
+    {
+      "figure_id": "Figure 4",
+      "page": 6,
+      "exact_caption_pdf_text": "Figure 4: Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct\nand Oracle. RouterBSItop-5 outperforms strict selection and most other approaches oracle performance.",
+      "render": "renders/page-6.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Full-width seven-bar downstream success plot with values 0.580,0.562,0.602,0.631,0.551,0.596,0.611. Dashed Direct=0.507 and dash-dot Oracle=0.638 lines; success-rate axis starts at 0.4. SkillDAG is the highest bar. All bars use the same blue; method identity uses text.",
+      "measured_fonts_pt": {
+        "category_and_value": 6.44,
+        "category_subscript": 4.51,
+        "tick_and_axis": 7.46,
+        "reference_legend": 6.78
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Despite full width, rotated category labels and especially strict/top-5 subscripts are small relative to surrounding body/caption. No clipping seen.",
+        "Truncated bar baseline visually amplifies differences; precise labels make the scale recoverable. A dot plot or zero-based bars would be clearer, but is an editorial recommendation, not a policy violation.",
+        "Caption ends with the malformed phrase most other approaches oracle performance. It should explicitly preserve the SkillDAG exception and not suggest exceeding oracle.",
+        "No uncertainty displayed; do not infer statistical significance from these bars."
+      ],
+      "linked_issues": [
+        "PRES-004"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Use a larger-font dot plot or larger-font zero-based bars, spell out strict/top-5 labels, and repair the caption with the displayed means and SkillDAG/oracle comparison."
+    },
+    {
+      "figure_id": "Figure 5",
+      "page": 7,
+      "exact_caption_pdf_text": "Figure 5: Ablation of MBR replay and held-out vali-\ndation gate comparing routing performance. The lines\nand areas represent the standard mean and variation,\nrespectively across three runs starting from the same\ninitial predicates at iteration 0. Combining replay and\ngating yields the strongest final routing performance.",
+      "render": "renders/page-7.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Four test nDCG@1 trajectories over iterations 0–10 with narrow shaded bands. Both Enabled finishes highest, Only MBR next, Only Gate next, Both Disabled lowest. Color, marker and line-style differences provide redundant distinctions. No clipping.",
+      "measured_fonts_pt": {
+        "tick_and_legend": 8.01,
+        "axis": 9.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Caption calls lines/areas standard mean and variation, not an identifiable uncertainty statistic. Source provenance and Appendix Table 11 establish mean ± one population standard deviation across three runs (not a CI).",
+        "Caption does not identify Qwen3.5 4B, SkillSight, test split or task weighting.",
+        "Same initial predicates does not establish identical initial measured outcomes or independently seeded runs; appendix reports differing initial scores and one recorded seed. No unsupported accusation of unequal predicate initialization is made."
+      ],
+      "linked_issues": [
+        "PRES-005"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "State test nDCG@1, backbone/retriever, 748-task within-run weighting, three-run mean and ±1 population SD using rounded source variance. Do not call bands confidence intervals or runs different seeds."
+    },
+    {
+      "figure_id": "Figure 6",
+      "page": 7,
+      "exact_caption_pdf_text": "Figure 6: Impact of MBR replay and held-out valida-\ntion gate on routing performance (nDCG@1) and token\nusage. Both enabled gives the strongest performance.\nMBR alone uses fewer tokens at a performance cost.",
+      "render": "renders/page-7.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Four-point performance/token scatter with distinct diamond, triangle, circle and square symbols. Both Enabled is top-right, Only MBR next in quality and cost; Both Disabled and Only Gate lower-left. No error bars; visibly legible 8/9 pt labels.",
+      "measured_fonts_pt": {
+        "tick_and_legend": 8.01,
+        "axis": 9.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Horizontal axis says Total Token Usage although provenance explicitly records known-only incomplete run-local costs excluding external/shared initialization.",
+        "Main caption does not explain this is a single-run comparison, unlike the three-run Figure 5; main text juxtaposes the two without the population distinction. Appendix Table 12 provides single-run status and unknown-attempt counts.",
+        "No uncertainty or complete economic-cost claim is established."
+      ],
+      "linked_issues": [
+        "PRES-006"
+      ],
+      "redesign_priority": "major",
+      "recommendation": "Rename axis Known recorded tokens (millions), state phase scope/exclusions and unknown usage, and label single-run endpoint evidence in main caption or prose."
+    },
+    {
+      "figure_id": "Figure 7",
+      "page": 8,
+      "exact_caption_pdf_text": "Figure 7:\nInitial and optimized routing perfor-\nmance (nDCG@1) comparison between different LLM-\nbackbones using SkillSight as the retriever. Stronger\nbackbones improve initialization, while optimization\nbrings smaller model Qwen3.5 4B close to the opti-\nmized performance of GPT-OSS 120B.",
+      "render": "renders/page-8.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Grouped initial/optimized bars for Qwen3.5 4B (0.520/0.742), Qwen3.8 27B (0.635/0.802), GPT-OSS 120B (0.686/0.745), plus shared gray SkillSight reference 0.471. Initial bars hatched, final bars solid; zero-based axis; value labels readable. No error bars.",
+      "measured_fonts_pt": {
+        "tick_category_and_value": 8.01,
+        "axis_and_legend": 9.01,
+        "init_subscript": 6.31
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "No uncertainty estimated; provenance says historical candidates are preserved, not a controlled common-candidate comparison.",
+        "The surrounding claim of a plateau that cannot be overcome by more capable LLMs exceeds what three uncontrolled model endpoints establish. Nonmonotonic optimized scores alone do not prove an inherent capacity ceiling.",
+        "Gray SkillSight reference visually resembles the generic solid optimized legend key; its separate x-axis label prevents a severe ambiguity but a baseline note would help."
+      ],
+      "linked_issues": [
+        "PRES-007"
+      ],
+      "redesign_priority": "major",
+      "recommendation": "Add single-run/existing-candidate qualification and reference-bar meaning. Replace the capacity-ceiling assertion with the observed nonmonotonicity and need for controlled comparison."
+    },
+    {
+      "figure_id": "Figure 8",
+      "page": 23,
+      "exact_caption_pdf_text": "Figure 8: Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K\nsettings, which specify how many retrieved candidates are evaluated rather than how many skills are ultimately\nselected.",
+      "render": "renders/page-23.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Full-width Appendix scatter: three candidate pool sizes (Top-K 10,25,50) shown by light-to-dark blue circles; larger pools have higher recorded tokens and final nDCG@10. Caption correctly distinguishes number of evaluated candidates from final selected skills. No clipping; comfortably larger labels than most main figures.",
+      "measured_fonts_pt": {
+        "tick_and_legend_title": 9.17,
+        "axis": 10.09,
+        "legend_entries": 8.26,
+        "plot_title": 11.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Same-color-family circles rely on shade to map Top-K identity; direct labels or distinct shapes would strengthen accessibility.",
+        "Axis Total Token Usage is stronger than caption Recorded tokens; provenance says incomplete known-only run-local totals excluding shared/external initialization.",
+        "No uncertainty displayed; three observed pool sizes do not establish a general scaling law."
+      ],
+      "linked_issues": [
+        "PRES-006"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Use known-recorded-token wording consistently, state single-run scope if confirmed by the associated result table, and directly label the three points or use three marker shapes."
+    }
+  ],
+  "issues": [
+    {
+      "id": "PRES-001",
+      "severity": "minor",
+      "finding_class": "optional_editorial",
+      "category": "figures",
+      "adversarial_pass": "F",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 1,
+        "figure_or_table": "Figure 1",
+        "tex_file": "source/sections/introduction.tex",
+        "line_range": "12-16",
+        "quoted_text": "The skill is appropriately selected for task q1",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Figure 1 task and predicate prose is too small for comfortable reading at its current column-width placement.",
+      "reasoning_chain": [
+        "Step 1: The entire diagram is only 59.18 PDF points tall, and internal prose is visibly much smaller than its caption.",
+        "Step 2: ACLPUB requires print-readable graphics but supplies no universal 8 pt minimum; no exact font size can be extracted from this raster.",
+        "Step 3: Zoom legibility does not prove paper-size legibility."
+      ],
+      "predicted_reviewer_objection": "Simulated: Figure 1 task and predicate prose is too small for comfortable reading at its current column-width placement.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "Propose a vector redraw or label shortening and taller layout; assess at actual A4 size. Preserve the single-day versus multi-year example and redundant True/False labels.",
+        "target_text": null,
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "Task, predicate and outcome text can be read at A4 print size by an independent reader.",
+          "No clipping or solely red/green distinction; no undocumented numerical font-size claim."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-002",
+      "severity": "minor",
+      "finding_class": "scientific",
+      "category": "figures",
+      "adversarial_pass": "F",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 3,
+        "figure_or_table": "Figure 2",
+        "tex_file": "source/sections/related_works.tex",
+        "line_range": "5-9",
+        "quoted_text": "Selected candidate is discarded by the held-out validation gate if its validation error is higher than the initial predicate",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The reviewed Figure 2 caption describes a different tie policy from the main equation.",
+      "reasoning_chain": [
+        "Step 1: Reviewed PDF p3 says reject if higher; p4 lines260–266 says higher or equal and admission requires strict lower error.",
+        "Step 2: The snapshot source caption already says higher or equal, so source and reviewed PDF disagree; this is not proof the PDF was rebuilt.",
+        "Step 3: A method overview must not imply ties survive the gate."
+      ],
+      "predicted_reviewer_objection": "Simulated: The reviewed Figure 2 caption describes a different tie policy from the main equation.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "For a future authorized revision, retain strict-improvement admission in the caption and verify against PDF output; do not blindly reapply the already-present source correction. Also replace the duplicated words drive revisions selected which are selected and label diagram risks/illustrative scores.",
+        "target_text": "RouterBSI refines skill applicability predicates from routing failures. Candidate revisions are selected by minimum replay error on bounded replay. The held-out gate accepts a revision only if its validation error is strictly lower than that of the initialized predicate; otherwise the previous accepted predicate is retained. Scores in the diagram are illustrative.",
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "PDF caption rejects ties consistently with Section 4.3 and Appendix G.1.",
+          "Caption does not conflate initialized reference with previous accepted fallback.",
+          "Source/PDF discrepancy is explicitly resolved after editing is authorized."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-003",
+      "severity": "minor",
+      "finding_class": "scientific",
+      "category": "figures",
+      "adversarial_pass": "F",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 6,
+        "figure_or_table": "Figure 3",
+        "tex_file": "source/figs/average_retention_degradation/table.tex",
+        "line_range": "4",
+        "quoted_text": "RouterBSI preserves the most required",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main retention caption omits the normalization required to interpret its headline curve.",
+      "reasoning_chain": [
+        "Step 1: All curves begin at 100%, whereas Appendix F defines Ret@k as a ratio of task-averaged recalls, per method/retriever, using that method own Recall@50.",
+        "Step 2: SkillDAG expands its pool, so curves do not share the same denominator/candidate coverage.",
+        "Step 3: Readers of the main paper can mistake relative retention for absolute gold-skill recall."
+      ],
+      "predicted_reviewer_objection": "Simulated: The main retention caption omits the normalization required to interpret its headline curve.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "Add the Appendix F definition to the main caption or adjacent main text, including per-method denominator and equal-across-retrievers averaging.",
+        "target_text": "Ret@k is 100 × Recall@k / Recall@50, using task-averaged recalls for each method and retriever, then averaged equally over BM25, Vector, and SkillSight. Each method uses its own Recall@50 denominator; SkillDAG uses its expanded pool. Thus these curves compare normalized retention rather than absolute recall.",
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "Caption/main text defines ratio-of-means, not mean per-task ratio.",
+          "Different initial candidate coverage is not hidden."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-004",
+      "severity": "minor",
+      "finding_class": "optional_editorial",
+      "category": "figures",
+      "adversarial_pass": "F",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 6,
+        "figure_or_table": "Figure 4",
+        "tex_file": "source/figs/downstream_average/description.text",
+        "line_range": "1",
+        "quoted_text": "outperforms strict selection and most other approaches oracle performance.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Figure 4 uses small category labels/subscripts, truncated bars, and an ungrammatical comparison caption.",
+      "reasoning_chain": [
+        "Step 1: Measured category/value text is 6.44 pt; strict/top-5 subscripts are 4.51 pt.",
+        "Step 2: Bars start at 0.4, amplifying the visible height difference, though values and ticks are provided.",
+        "Step 3: The malformed final caption clause can blur the stated SkillDAG exception and oracle relation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Figure 4 uses small category labels/subscripts, truncated bars, and an ungrammatical comparison caption.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "Propose a larger-font dot plot (or zero-based bars) with spelled-out variant labels. Repair caption to report observed means without implying statistical significance.",
+        "target_text": "Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct (0.507) and Oracle (0.638). RouterBSI top-5 (0.611) exceeds strict selection (0.596) and all other displayed routing approaches except SkillDAG (0.631).",
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "Caption explicitly preserves SkillDAG exception.",
+          "No claim of beating oracle or statistical significance is introduced.",
+          "Variant labels are readable at actual page size; no clipping."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-005",
+      "severity": "minor",
+      "finding_class": "scientific",
+      "category": "figures",
+      "adversarial_pass": "F",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 7,
+        "figure_or_table": "Figure 5",
+        "tex_file": "source/figs/mbr_replay_test_ndcg@1_std/description.text",
+        "line_range": "1",
+        "quoted_text": "and areas represent the standard mean and variation,",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Figure 5 does not specify the uncertainty statistic or aggregation population.",
+      "reasoning_chain": [
+        "Step 1: Caption says standard mean and variation.",
+        "Step 2: Provenance and Table 11 establish mean ± one population SD across three runs, task-weighted test metrics, with bands reconstructed from rounded variance.",
+        "Step 3: Without the statistic, bands could be mistaken for CI, SE or task variation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Figure 5 does not specify the uncertainty statistic or aggregation population.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "Replace the ambiguous phrase with measured aggregation/band semantics and identify the backbone/retriever/test split.",
+        "target_text": "Test nDCG@1 for Qwen3.5 4B with SkillSight, comparing MBR replay and the held-out gate. Each line is the mean over three runs, each evaluated with task weighting over 748 test tasks. Shaded bands show ± one population standard deviation across runs, reconstructed from rounded source variance, not confidence intervals. Iteration 0 denotes initialization.",
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "Mean, population SD, three runs and 748-task weighting are explicit.",
+          "No claim of independent seeds or identical initial scores is added."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-006",
+      "severity": "major",
+      "finding_class": "scientific",
+      "category": "figures",
+      "adversarial_pass": "F",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 7,
+        "figure_or_table": "Figure 6",
+        "tex_file": "source/figs/performance_token_usage/table.tex",
+        "line_range": "3-4",
+        "quoted_text": "Total Token Usage (millions)",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main performance–cost figure labels incomplete known usage as total and does not distinguish its single-run evidence from Figure 5.",
+      "reasoning_chain": [
+        "Step 1: Figure 6 axis says Total Token Usage; its provenance states Complete=False, Known Only=True and excludes external/shared initialization.",
+        "Step 2: Appendix Table 12 records unknown-token attempts and calls these single-run values; Figure 5 instead shows three-run means.",
+        "Step 3: The main caption/text can overstate full-cost knowledge and suggest a common population across ablation claims. Figure 8 has the same total-axis issue, although its caption already says recorded."
+      ],
+      "predicted_reviewer_objection": "Simulated: The main performance–cost figure labels incomplete known usage as total and does not distinguish its single-run evidence from Figure 5.",
+      "fix": {
+        "type": "redesign_figure",
+        "instruction": "Propose changing Figures 6/8 axes to Known recorded tokens (millions); add main caption wording specifying run-local scope, exclusions, unknown usage and single-run status. Retain only claims about observed recorded-token tradeoffs, or collect complete matched accounting before claiming full cost.",
+        "target_text": "Figure 6 reports single-run final-test nDCG@1 and known recorded run-local token usage. Counts exclude external/shared initialization and omit attempts with unavailable token usage; they are not complete cost totals. These runs are distinct from the three-run means in Figure 5.",
+        "required_inputs": [
+          "Author revision permission",
+          "Run/provenance confirmation if changing beyond the existing documented accounting scope"
+        ],
+        "acceptance_criteria": [
+          "Figures 6/8 do not label incomplete usage as complete total cost.",
+          "Main text identifies Figure 6 single-run versus Figure 5 three-run evidence.",
+          "Unknown usage is disclosed and no missing tokens are imputed."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-007",
+      "severity": "major",
+      "finding_class": "scientific",
+      "category": "claims",
+      "adversarial_pass": "W",
+      "location": {
+        "section": "Figure caption/associated discussion",
+        "page": 7,
+        "figure_or_table": "Figure 7",
+        "tex_file": "source/sections/ablations.tex",
+        "line_range": "24",
+        "quoted_text": "predicates reach a plateau that cannot be over-\ncomed with more capable LLMs",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The claim that more capable LLMs cannot overcome a predicate plateau is not established by Figure 7.",
+      "reasoning_chain": [
+        "Step 1: Figure 7 displays three model endpoints and no uncertainty; historical candidate pools were retained rather than controlled.",
+        "Step 2: The 27B endpoint exceeds both 4B and 120B endpoints, but nonmonotonic cross-model performance is not evidence of an inherent ceiling.",
+        "Step 3: The main caption/discussion should separate observed improvement from causal or universal model-capacity claims."
+      ],
+      "predicted_reviewer_objection": "Simulated: The claim that more capable LLMs cannot overcome a predicate plateau is not established by Figure 7.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Remove the untested ceiling assertion and qualify the figure as a single-run historical-candidate comparison. A capacity-limit claim would require controlled candidate pools, matched optimization budgets and replicated backbones.",
+        "target_text": "Optimized nDCG@1 is not monotonic across these three backbones: Qwen3.8 27B has the highest observed score. These single-run comparisons retain historical candidates and do not establish an inherent performance ceiling or a causal effect of model capacity.",
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "No cannot be overcome or equivalent universal-capacity assertion remains without new evidence.",
+          "Historical-candidate and uncertainty limitations are visible in main text/caption."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "PRES-008",
+      "severity": "minor",
+      "finding_class": "optional_editorial",
+      "category": "writing",
+      "adversarial_pass": "W",
+      "location": {
+        "section": "Front matter",
+        "page": 1,
+        "figure_or_table": null,
+        "tex_file": "source/main.tex",
+        "line_range": "53-55",
+        "quoted_text": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum\nBayes Risk Replay and Held-out Gates",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "PDF title metadata omits Replay while the visible title includes it.",
+      "reasoning_chain": [
+        "Step 1: Visible PDF title says Minimum Bayes Risk Replay; DocInfo title says Minimum Bayes Risk.",
+        "Step 2: The author field is Anonymous authors and XMP is empty: no identifying metadata leak is demonstrated.",
+        "Step 3: Matching local metadata is a small consistency fix; portal agreement remains unverified."
+      ],
+      "predicted_reviewer_objection": "Simulated: PDF title metadata omits Replay while the visible title includes it.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "When revision is allowed, synchronize pdftitle to the visible title and separately have an author verify portal title/abstract.",
+        "target_text": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk Replay and Held-out Gates",
+        "required_inputs": [
+          "Author confirmation of revision stage and permission before any manuscript edits"
+        ],
+        "acceptance_criteria": [
+          "DocInfo title matches visible title.",
+          "Anonymous author metadata remains non-identifying for review."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    }
+  ],
+  "writing_diagnostics": {
+    "abstract_word_count": 200,
+    "word_count_method": "Whitespace tokens of actual source abstract prose, hyphenated words counted as one; boundary-sensitive count.",
+    "abstract_assessment": "At ACLPUB 200-word guidance by this count; do not claim overlength. Optional tighten generic motivation and repair skill corpora grows -> skill corpus grows.",
+    "longest_paragraph_lines": null,
+    "specific_fixes": [
+      "Section 4.2 p4 lines225–227: Compare difference between Pqwith Gq and identify the any... -> Compare the predicted and required skill sets and identify missing required skills or selected irrelevant skills.",
+      "Section 4.2 p4 lines238–241: we limit each proposed candidate ... must not exceeds ... -> Limit each proposed predicate to at most l characters.",
+      "Section 6.1 p5–6: fragmented percentage comparisons need explicit metric and denominator; do not change numeric values without source validation.",
+      "Section 6.3 p6: SkilDAG -> SkillDAG; remove unsupported causal interpretation that dependent skills explain success without controlled evidence.",
+      "Section 7.1 p7: This suggest -> This suggests; distinguish observed plateau from unverified early/late error-type explanation.",
+      "Section 7.3 p7: overcomed -> overcome and missing final period; substantive capacity claim addressed in PRES-007."
+    ],
+    "editorial_status": "These grammar/paragraph recommendations are not official rejection rules.",
+    "title_and_thesis": "Title, abstract and Figure2 recover the thesis of externally editable predicates refined using bounded replay plus held-out admission. Figure1 explains applicability rather than novelty; no mandatory teaser rule.",
+    "space_budget": "Main content occupies through p8, so fixes should primarily replace compressed/unclear wording, not assume another content page."
+  },
+  "internal_scores": {
+    "scope": "presentation only, not overall venue recommendation",
+    "rubric": "internal_1_to_5_not_official_arr",
+    "official_arr_scales_verified": false,
+    "presentation": {
+      "score": 3,
+      "justification": "Strong recognizable structure and generally legible quantitative charts, but small raster teaser/text, ambiguous statistical/cost captions, gate caption mismatch and unsupported capacity interpretation."
+    },
+    "confidence": {
+      "score": 4,
+      "justification": "Every figure visually inspected and composed-PDF font/metadata checks run; raw-run data, portal and paper-stage evidence outside this scout scope."
+    }
+  },
+  "submission_readiness": {
+    "assessment": "unknown",
+    "reason": "No confirmed technical policy blocker in this scout; author-only gates remain unknown, and scientific caption/claim qualifications need attention. No permission to revise or upload inferred."
+  },
+  "execution_order": [
+    "Human confirms stage/permissions",
+    "PRES-006",
+    "PRES-007",
+    "PRES-002",
+    "PRES-003",
+    "PRES-005",
+    "PRES-001",
+    "PRES-004",
+    "PRES-008"
+  ],
+  "verification": {
+    "all_figure_ids_present": true,
+    "all_issue_anchors_checked_against_pdf": true,
+    "all_fixes_proposals_only": true,
+    "known_source_pdf_discrepancies": [
+      "Figure2 source caption already includes higher or equal; reviewed PDF says higher. Do not replace PDF silently or claim source edit reaches reviewed artifact."
+    ],
+    "tool_issue": "web_extract unavailable because backend is search-only; parent retrieved current official policy via requests. No policy fabricated."
+  }
+}

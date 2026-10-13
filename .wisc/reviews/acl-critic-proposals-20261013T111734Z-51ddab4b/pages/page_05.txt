@@ -1,0 +1,222 @@
+Method
+BigCode
+Bench
+CHAMP
+LogicBench
+MedCalc-
+Bench
+TheoremQA
+ToolQA
+Average
+N@1 N@10
+N@1 N@10
+N@1 N@10
+N@1 N@10
+N@1 N@10
+N@1 N@10
+N@1 N@10
+LLM Select
+0.480
+0.510 0.385
+0.458 0.266
+0.394 0.745
+0.834 0.683
+0.819 0.437
+0.547 0.519
+0.616
+SkillRouter
+0.366
+0.299 0.449
+0.476 0.269
+0.416 0.974
+0.981 0.816
+0.860 0.600
+0.711 0.619
+0.671
+SkillDAG
+0.612
+0.600 0.359
+0.453 0.143
+0.378 0.709
+0.785 0.651
+0.781 0.161
+0.421 0.429
+0.576
+Skill-Pro
+0.238
+0.446 0.218
+0.395 0.161
+0.317 0.705
+0.850 0.460
+0.712 0.402
+0.527 0.407
+0.574
+RouterBSIinit 0.466
+0.417 0.346
+0.435 0.184
+0.341 0.830
+0.877 0.559
+0.726 0.290
+0.453 0.462
+0.561
+RouterBSI
+0.832
+0.707 0.551
+0.556 0.336
+0.449 0.915
+0.933 0.686
+0.808 0.631
+0.712 0.687
+0.728
+Table 1: Skill routing performance using Qwen3.5 4B. Each router row is the equal-weight mean across BM25,
+Vector, and SkillSight. Columns report nDCG@1 (N@1) and nDCG@10 (N@10) for each benchmark; Average
+uses each retriever’s task-weighted scores over 748 tasks. Bold and underlined values mark the best and second-best
+distinct scores in each column.
+5.2
+Evaluation Metrics.
+293
+We evaluate skill routing and downstream perfor-
+294
+mance conditioned on the selected skills. For skill
+295
+routing, we report Recall@k and nDCG@k. We
+296
+additionally report F1@k to compare filtering ca-
+297
+pabilities. We also report retention as Ret@k to
+298
+compare the percentage of required skills retained
+299
+in top k from the retrieved skills. For downstream
+300
+performance, each benchmark follows its standard
+301
+evaluation protocol to measure success rate: rule-
+302
+based exact match or accuracy for reasoning and
+303
+QA datasets, and pass@1 based on unit-test exe-
+304
+cution for BigCodeBench. Averages are measured
+305
+across task instances.
+306
+5.3
+Selected Models.
+307
+We evaluate five models spanning four open-weight
+308
+checkpoints and one proprietary frontier model:
+309
+Qwen3.5-4B (Qwen Team, 2026a), Qwen3.8-27B
+310
+(Qwen Team, 2026b), Llama-3.3-70B-Instruct
+311
+(Meta, 2024), gpt-oss-120b (OpenAI, 2025), and
+312
+GPT-5.4 (OpenAI, 2026).
+313
+5.4
+Baselines
+314
+We study retrieval, reranker, and selection base-
+315
+lines. The retrievers include sparse and dense re-
+316
+trievers (Su et al., 2026) and SkillSight, a hybrid
+317
+retriever. They are trained on training split and
+318
+frozen on validation and test splits. LLM Select is
+319
+a static router, and LLM Direct and LLM Oracle
+320
+are downstream performance baselines represent-
+321
+ing without skills and with ground-truth skill set,
+322
+respectively (Su et al., 2026). The non-parametric
+323
+optimization baselines are SkillDag and Skill-Pro
+324
+(Mi et al., 2026; Bai et al., 2026). RouterBSIinit
+325
+and RouterBSI refer to the cold-start and final
+326
+iteration performance.
+RouterBSIstrict selects
+327
+skills only when their predicate evaluates to true.
+328
+RouterBSItopk are the top k skills using the sum
+329
+of their predicate label and the retrieval score.
+330
+5.5
+Implementation Details.
+331
+The retrievers use either pretrained embedding
+332
+models and/or lexical matching, so they do not re-
+333
+quire training. Candidate skills are retrieved from
+334
+the shared external skill corpus in response to the
+335
+input query. The skill routing baselines are condi-
+336
+tioned on the top 50 retrieved skills and use some
+337
+optimization method to improve performance. The
+338
+exception is SkillDAG where it first retrieves top 5
+339
+skills then expands them until reaching top k. Its
+340
+skills are ranked based on graph depth from top 5
+341
+retrieved skills and retrieval score. SkillSight is the
+342
+default retriever. Qwen3.5-4B is the default model
+343
+used in our experiments. The non-parametric base-
+344
+lines, including ours, do not output a continuous
+345
+score like rerankers, so we rank them by the sum
+346
+of their binary label and the retrieval score, where
+347
+1 is the label for selected skills and 0 otherwise.
+348
+We use a temperature of 1 for proposing candi-
+349
+date predicates and 0 for evaluating predicates and
+350
+downstream performance. RouterBSI is optimized
+351
+for 10 iterations. In downstream tasks, we use k
+352
+= 5 skills for SkillRouter and RouterBSItopk, and
+353
+we set k = 10 for SkillDAG because k = 5 would
+354
+match the retriever’s performance.
+355
+6
+Results
+356
+6.1
+Skill Routing Performance
+357
+RouterBSI improves routing performance of base
+358
+retrievers by an average nDCG@1 and nDCG@10
+359
+across retrievers of 67.0% and 39.7%, respectively
+360
+Table 1. SkillRouter is the strongest routing base-
+361
+line, yet RouterBSI the nDCG@1 and nDCG@10
+362
+5

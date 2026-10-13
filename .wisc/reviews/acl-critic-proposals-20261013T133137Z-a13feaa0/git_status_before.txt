@@ -1,0 +1,128 @@
+## main...origin/main
+ M README.md
+ M figs/average_recall_degradation/artifact-manifest.json
+ M figs/average_recall_degradation/provenance.text
+ M figs/average_recall_degradation/selection.json
+ M figs/average_retention_degradation/artifact-manifest.json
+ M figs/average_retention_degradation/preview.pdf
+ M figs/average_retention_degradation/preview.png
+ M figs/average_retention_degradation/provenance.text
+ M figs/average_retention_degradation/selection.json
+ M figs/downstream_average/provenance.text
+ M figs/downstream_average/selection.json
+ M figs/downstream_average_by_retriever/description.text
+ M figs/downstream_average_by_retriever/provenance.text
+ M figs/downstream_average_by_retriever/selection.json
+ M figs/downstream_bm25_average/description.text
+ M figs/downstream_bm25_average/provenance.text
+ M figs/downstream_bm25_average/selection.json
+ M figs/downstream_performance_across_llms/provenance.text
+ M figs/downstream_performance_across_llms/table.tex
+ M figs/downstream_skillsight_average/description.text
+ M figs/downstream_skillsight_average/provenance.text
+ M figs/downstream_skillsight_average/selection.json
+ M figs/mbr_replay_f1_all_splits/provenance.text
+ M figs/mbr_replay_f1_all_splits/table.tex
+ M figs/mbr_replay_ndcg_all_splits/description.text
+ M figs/mbr_replay_ndcg_all_splits/provenance.text
+ M figs/mbr_replay_ndcg_all_splits/selection.json
+ M figs/mbr_replay_test_f1/description.text
+ M figs/mbr_replay_test_f1/provenance.text
+ M figs/mbr_replay_test_f1/selection.json
+ M figs/mbr_replay_test_f1_std/description.text
+ M figs/mbr_replay_test_f1_std/provenance.text
+ M figs/mbr_replay_test_f1_std/selection_manifest.json
+ M figs/mbr_replay_test_ndcg/description.text
+ M figs/mbr_replay_test_ndcg/provenance.text
+ M figs/mbr_replay_test_ndcg/selection.json
+ M figs/mbr_replay_test_ndcg@1_std/preview.pdf
+ M figs/mbr_replay_test_ndcg@1_std/preview.png
+ M figs/mbr_replay_test_ndcg@1_std/provenance.text
+ M figs/mbr_replay_test_ndcg@1_std/selection_manifest.json
+ M figs/mbr_replay_test_ndcg@5/description.text
+ M figs/mbr_replay_test_ndcg@5/provenance.text
+ M figs/mbr_replay_test_ndcg@5/selection.json
+ M figs/mbr_replay_test_ndcg@5_temp/description.text
+ M figs/mbr_replay_test_ndcg@5_temp/provenance.text
+ M figs/mbr_replay_test_ndcg@5_temp/selection.json
+ M figs/mbr_replay_test_std/provenance.text
+ M figs/mbr_replay_test_std/table.tex
+ M figs/mbr_replay_validation_f1/provenance.text
+ M figs/mbr_replay_validation_f1/table.tex
+ M figs/mbr_replay_validation_f1_all_splits/provenance.text
+ M figs/mbr_replay_validation_f1_all_splits/table.tex
+ M figs/mbr_replay_validation_ndcg/provenance.text
+ M figs/mbr_replay_validation_ndcg/table.tex
+ M figs/mbr_replay_validation_std/provenance.text
+ M figs/mbr_replay_validation_std/table.tex
+ M figs/mbr_replay_validation_std_all_splits/provenance.text
+ M figs/mbr_replay_validation_std_all_splits/table.tex
+ M figs/method_figure.png
+ M figs/performance_token_usage/preview.pdf
+ M figs/performance_token_usage/preview.png
+ M figs/performance_token_usage/provenance.text
+ M figs/performance_token_usage/selection_manifest.json
+ M figs/performance_token_usage_by_topk/description.text
+ M figs/performance_token_usage_by_topk/provenance.text
+ M figs/performance_token_usage_by_topk/table.tex
+ M figs/replay_size_performance/provenance.text
+ M figs/routing_performance_across_llms/provenance.text
+ M figs/routing_performance_across_llms/table.tex
+ M figs/routing_performance_across_llms_average/provenance.text
+ M figs/routing_performance_across_llms_average/table.tex
+ M figs/routing_performance_across_llms_init/preview.pdf
+ M figs/routing_performance_across_llms_init/preview.png
+ M figs/routing_performance_across_llms_init/provenance.text
+ M figs/routing_performance_across_llms_init/selection_manifest.json
+ M figs/skillsight_recall_degradation/artifact-manifest.json
+ M figs/skillsight_recall_degradation/description.text
+ M figs/skillsight_recall_degradation/provenance.text
+ M figs/skillsight_recall_degradation/selection.json
+ M figs/skillsight_recall_degradation/table.tex
+ M main.tex
+ M scripts/check_repository.py
+ M sections/ablations.tex
+ D sections/appendix.tex
+ M sections/conclusion.tex
+ M sections/experiments.tex
+ M sections/introduction.tex
+ M sections/method.tex
+ M sections/problem_definition.tex
+ M sections/related_works.tex
+ M sections/results.tex
+ M tables/downstream_performance/description.text
+ M tables/downstream_performance/provenance.text
+ M tables/downstream_performance/selection.json
+ M tables/downstream_performance/table.tex
+ M tables/retrieval_and_reranking_performance/preview.pdf
+ M tables/retrieval_and_reranking_performance/preview.png
+ M tables/retrieval_and_reranking_performance/provenance.text
+ M tables/retrieval_and_reranking_performance/selection.json
+ M tables/retrieval_and_reranking_performance/table.tex
+ M tables/skill_routing_performance/artifact-manifest.json
+ M tables/skill_routing_performance/provenance.text
+ M tables/skill_routing_performance/selection.json
+ M tables/skill_routing_performance_average/artifact-manifest.json
+ M tables/skill_routing_performance_average/provenance.text
+ M tables/skill_routing_performance_average/selection.json
+ M tables/skill_routing_performance_average_includes_retriever/artifact-manifest.json
+ M tables/skill_routing_performance_average_includes_retriever/provenance.text
+ M tables/skill_routing_performance_average_includes_retriever/selection.json
+?? .wisc/
+?? figs/average_retention_degradation/readability_manifest.json
+?? figs/mbr_replay_test_ndcg@1_std/readability_manifest.json
+?? figs/method_figure_old_v3.png
+?? figs/performance_token_usage/readability_manifest.json
+?? figs/routing_performance_across_llms_init/readability_manifest.json
+?? scripts/README_publishing_cleanup.md
+?? scripts/generate_ablation_figure_tables.py
+?? scripts/generate_evaluator_validation_table.py
+?? scripts/generate_extended_routing_tables.py
+?? scripts/generate_result_figure_tables.py
+?? scripts/publishing_cleanup.py
+?? scripts/render_acl_readable_figures.py
+?? scripts/test_publishing_cleanup.py
+?? scripts/verify_figure_table_coverage.py
+?? sections/acknowledgment.tex
+?? sections/appendix/
+?? sections/ethics_statement.tex

@@ -1,0 +1,10 @@
+Analysis-only paired SkillSight routing comparison.
+
+Authoritative analysis: .wisc/analysis/skillsight-paired-appendix/paired_bootstrap.py (project-relative).
+Frozen results.csv is copied byte-for-byte from that analysis; input_binding.json records its SHA-256 and analysis manifest binding. generate.py regenerates table.tex and selection_manifest.json from this local copy, without experiment reruns. Only Dataset=Overall is displayed; six dataset-specific slices are retained in the CSV.
+
+Positive differences mean RouterBSI minus baseline, multiplied by 100 (percentage points, not relative percentages). Thirty displayed metric cells: two fixed-system summaries by five baselines by three metrics. No ranking marks, multiplicity correction, p-values, or significance claims. 50,000 paired stratified exact-question-cluster bootstrap samples, PCG64 seed 20261013, fixed original dataset weights; percentile intervals use linear interpolation. All 748 tasks / 747 clusters retained.
+
+RouterBSI sources remain completed_noncanonical, analysis_ready=true, reportable=false. The three-system mean averages per-task scores, not rankings; runs share a seed and have heterogeneous initialization/source configurations. This is conditional task uncertainty, not independent-seed or future-training uncertainty. Candidate pools differ across some methods. All fallbacks and empty selections are retained. Raw TopK output lacks question hashes and uses a verified annotation join; historical prompt identity is not newly established. Current LLMSelection retrieval implementation differs from recorded implementation; analysis uses saved outputs, not re-execution.
+
+Table preview is cropped from the rebuilt main.pdf by .wisc/analysis/skillsight-paired-appendix/verify_paper.py. The parent independently checked 17,952 task metric values, 210 result rows, 420 interval bounds, all RNG draw matrices, and 323 source hashes. See independent_validation.json and WISC_REPORT.md under the analysis directory. Source archives and other paper assets are unchanged.

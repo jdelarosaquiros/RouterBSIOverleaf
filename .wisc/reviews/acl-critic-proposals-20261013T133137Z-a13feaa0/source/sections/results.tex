@@ -1,0 +1,21 @@
+% Author attachment: pasted-text-2026-10-10_23-16-35-189.md
+
+% Wording and values preserved; only LaTeX escaping and reference integration.
+
+\section{Results}
+
+\subsection{Skill Routing Performance}
+
+RouterBSI improves routing performance of base retrievers by an average nDCG@1 and nDCG@10 across retrievers of 67.0\% and 39.7\%, respectively Table~\ref{tab:skill_routing_performance_average}. SkillRouter is the strongest routing baseline, yet RouterBSI the nDCG@1 and nDCG@10 is 10.9\% and 8.4\% higher on average. Compared to the other non-parametric optimization baselines, RouterBSI has a mean 29.2\% and 26.7\% nDCG@10 score over SkillDAG and Skill-Pro, respectively.
+
+The exception is MedCalc-Bench and TheoremQA, where RouterBSI underperforms SkillRouter by a mean of 5.01\% and 6.10\% respectively. RouterBSI could further improve its performance on these cases with more training iterations or relying on a human to directly edit the predicates.
+
+\subsection{Required Skill Retention}
+
+RouterBSI retains more required skills from initial top 50 retrieval than other baselines as we reduce the max k of skills loaded into LLM Agent. For instance, Figure~\ref{fig:average_recall_degradation} shows that RouterBSI retained 90.5\% of the required skills in top 5 from the top 50 skills retrieved, whereas the retention of baselines ranged from 59.5\% to 83.9\% on average across retrievers. Despite its low retention in top 5 of 59.5\%, SkillDAG has an average  16.1\% more recall of required skills in top 50 than the base retrievers with an average recall score of 96.86\% compared to 83.45\%, respectively. The higher coverage in top 50 of SkillDAG’s expansion plus the retrieval score can be a better alternative for initial retrieval than relying on the retrievers alone. Combining the higher coverage of SkillDAG in top 50 with better retention of RouterBSI could lead to better routing performance.
+
+\subsection{Downstream Performance}
+
+Figure~\ref{fig:downstream_average} demonstrates that combining RouterBSI selected skills with some additional retrieved skills leads to slightly higher mean downstream performance as $\mathrm{RouterBSI}_{\mathrm{top}5}$’s average performance across retrievers is 2.5\% higher than $\mathrm{RouterBSI}_{\mathrm{strict}}$. $\mathrm{RouterBSI}_{\mathrm{top}5}$’s average success rate across retrievers reaches 95.7\% of the oracle performance which is 1.5\% to 20.5\% higher downstream performance than other baselines except SkillDAG. SkilDAG reaches 99.0\% of oracle success rate despite having similar recall of required skills as $\mathrm{RouterBSI}_{\mathrm{top}5}$ with only a 4.41\% difference. This finding suggests expanding selected skills to include dependent skills could improve downstream performance even if the dependent skills are not required. Overall, results show that the higher RouterBSI retention of required skill in top 5 translates to a better average routing performance.
+
+

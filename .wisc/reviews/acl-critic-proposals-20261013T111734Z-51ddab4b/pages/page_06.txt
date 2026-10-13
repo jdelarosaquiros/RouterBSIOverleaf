@@ -1,0 +1,148 @@
+50
+25
+10
+5
+1
+Top k
+0
+50
+100
+Ret@k (%)
+Retriever
+baseline
+LLM Select
+SkillRouter
+SkillDAG
+Skill-Pro
+RouterBSI
+Figure 3: Retention of required skills averaged across
+retrievers: BM25, Vector, and SkillSight. The baseline
+averages the base retrievers used to retrieve the initial
+top 50 skill. RouterBSI preserves the most required
+skills as the cutoff k decreases.
+is 10.9% and 8.4% higher on average.
+Com-
+363
+pared to the other non-parametric optimization
+364
+baselines, RouterBSI has a mean 29.2% and 26.7%
+365
+nDCG@10 score over SkillDAG and Skill-Pro, re-
+366
+spectively.
+367
+The exception is MedCalc-Bench and Theo-
+368
+remQA, where RouterBSI underperforms Skill-
+369
+Router by a mean of 5.01% and 6.10% respectively.
+370
+From the samples where RouterBSItop5 failed and
+371
+SkillRouter succeed, 94.68% of TheoremQA and
+372
+93.75% of MedCalc-Bench were cases where pred-
+373
+icate failed to evaluate to true when the skill was
+374
+required. The cause of these failures was likely
+375
+overly narrow predicates leading to large percent-
+376
+ages of predicates failing to correctly describe all
+377
+applicable tasks. RouterBSI could further improve
+378
+its performance on these cases with more training
+379
+iterations or relying on a human to directly edit the
+380
+predicates.
+381
+6.2
+Required Skill Retention
+382
+RouterBSI retains more required skills from initial
+383
+top 50 retrieval than other baselines as we reduce
+384
+the max k of skills loaded into LLM Agent. For
+385
+instance, Figure 3 shows that RouterBSI retained
+386
+90.5% of the required skills in top 5 from the top 50
+387
+skills retrieved, whereas the retention of baselines
+388
+ranged from 59.5% to 83.9% on average across
+389
+retrievers. Despite its low retention in top 5 of
+390
+59.5%, SkillDAG has an average 16.1% more recall
+391
+of required skills in top 50 than the base retrievers
+392
+with an average recall score of 96.86% compared
+393
+to 83.45%, respectively. The higher coverage in
+394
+top 50 of SkillDAG’s expansion plus the retrieval
+395
+score can be a better alternative for initial retrieval
+396
+than relying on the retrievers alone. Combining the
+397
+higher coverage of SkillDAG in top 50 with better
+398
+retention of RouterBSI could lead to better routing
+399
+performance.
+400
+6.3
+Downstream Performance
+401
+Figure 4 demonstrates that combining RouterBSI
+402
+selected skills with some additional retrieved
+403
+skills leads to slightly higher mean downstream
+404
+performance as RouterBSItop5’s average per-
+405
+formance across retrievers is 2.5% higher than
+406
+RouterBSIstrict.
+RouterBSItop5’s average suc-
+407
+cess rate across retrievers reaches 95.7% of the
+408
+oracle performance which is 1.5% to 20.5% higher
+409
+downstream performance than other baselines ex-
+410
+cept SkillDAG. SkilDAG reaches 99.0% of ora-
+411
+Retriever baseline
+LLM Select
+SkillRouter
+SkillDAG
+Skill-Pro
+RouterBSIstrict
+RouterBSItop-5
+0.4
+0.5
+0.6
+0.7
+Success rate
+0.580
+0.562
+0.602
+0.631
+0.551
+0.596
+0.611
+LLM Direct (0.507)
+LLM Oracle (0.638)
+Figure 4: Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct
+and Oracle. RouterBSItop-5 outperforms strict selection and most other approaches oracle performance.
+6

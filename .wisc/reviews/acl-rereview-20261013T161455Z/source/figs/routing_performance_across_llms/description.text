@@ -1,0 +1,3 @@
+Routing performance by language-model backbone. The first bar is the shared SkillSight retrieval reference; subsequent bars correspond to RouterBSI with the labeled backbones.
+
+Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.

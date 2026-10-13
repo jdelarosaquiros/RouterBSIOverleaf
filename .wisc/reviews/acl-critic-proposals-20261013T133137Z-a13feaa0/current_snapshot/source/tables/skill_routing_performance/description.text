@@ -1,0 +1,1 @@
+Skill routing performance comparison using Qwen3.5 4B with BM25, Vector, and SkillSight. Columns show test nDCG@1 (N@1) and nDCG@10 (N@10) for each benchmark and the task-weighted average. Bold and underlined values indicate the best and second-best scores within each retriever group.

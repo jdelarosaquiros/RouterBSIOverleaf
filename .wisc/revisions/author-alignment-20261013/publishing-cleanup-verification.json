@@ -1,0 +1,23 @@
+{
+  "presentation_files_scanned": 130,
+  "changed_files": 88,
+  "change_counts": {
+    "remove_json": 207,
+    "replace_text": 90,
+    "replace_json_text": 8
+  },
+  "artifact_files_bound": 216,
+  "protected_csv_files": 55,
+  "remaining_flags": 0,
+  "numeric_invariance": true,
+  "source_hash_invariance": true,
+  "csv_invariance": true,
+  "preview_and_other_artifact_invariance_except_declared": true,
+  "intentional_mutable_preview_exceptions": [
+    "tables/retrieval_and_reranking_performance/preview.pdf",
+    "tables/retrieval_and_reranking_performance/preview.png"
+  ],
+  "preview_refresh_observed": {},
+  "idempotent": true,
+  "command": "python -B scripts/publishing_cleanup.py verify --record .wisc/revisions/author-alignment-20261013/publishing-cleanup-ledger.json --backup .wisc/revisions/author-alignment-20261013/backup --allow-preview-refresh"
+}

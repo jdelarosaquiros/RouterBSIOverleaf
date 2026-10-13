@@ -1,0 +1,675 @@
+{
+  "paper_id": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk Replay and Held-out Gates",
+  "review_type": "Independent narrative, claims, related-work and main/appendix self-containment subreview",
+  "scope": {
+    "review_root": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-rereview-20261013T161455Z",
+    "source_of_truth": "Frozen current source snapshot, corroborated against current PDF text; historical run bindings unconfirmed.",
+    "reviewed_pdf_sha256": "ddd4e45dcc8920cde89966c50e5a12598d73eee2dda1701b67f783057aeb1e63",
+    "prior_review": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/REVIEW_JSON.json",
+    "revision_mode": "unknown",
+    "manuscript_changes": false,
+    "new_experiments": false,
+    "policy_audit": "Out of delegated scope. Supplied guides read; exact venue/cycle/stage and submission permissions unverified. No confirmed compliance blocker asserted.",
+    "limitations": [
+      "Not an independent recalculation of all reported numbers or historical experiment audit.",
+      "No fresh visual typography/figure inspection.",
+      "Related-work verification is restricted to available saved primary-source evidence, not a broad literature survey."
+    ],
+    "historical_binding_score_policy": "ISSUE-005 is a conditional evidence request, excluded as a confirmed manuscript defect from the scores."
+  },
+  "headline_verdict": "The central language-agent routing contribution is clear and substantially more self-contained after the replay, ranking, split and frozen-baseline corrections. The strongest confirmed narrative overclaim remains the supposed model-capability ceiling. Single-evaluation superiority and cost claims need local scope qualifiers, and the common-initialization claim needs immutable historical confirmation before being treated as a proven design defect. Internal overall judgment is borderline, not an official ARR rating.",
+  "internal_scores": {
+    "rubric": "internal_1_to_5_not_official_arr",
+    "official_arr_scales_verified": false,
+    "contribution": {
+      "score": 3,
+      "justification": "Useful concrete combination of editable per-skill predicates, bounded empirical replay selection and cold-start validation admission, evaluated across six NLP-agent task settings. Novelty is this representation/update combination, not generic reflective optimization or a new Bayesian guarantee; close JTPRO work is acknowledged."
+    },
+    "presentation": {
+      "score": 3,
+      "justification": "Thesis, contributions and principal outcomes are recoverable, and important previous contradictions are fixed. Remaining gate/metric/statistical/cost qualifications require appendix consultation; unsupported ceiling language and visible copyediting defects prevent a strong score."
+    },
+    "overall": {
+      "score": 3,
+      "justification": "Borderline internal judgment from the manuscript alone: concrete routing improvements and candid downstream/benchmark exceptions support a substantive contribution, but the unsupported ceiling and missing primary-comparison precision prevent a strong score. The conditional historical-initialization question is not used as a confirmed flaw or an additional score penalty. Most narrative repairs need text or saved-output analysis rather than new sweeps."
+    }
+  },
+  "strengths": [
+    {
+      "claim": "A concrete NLP-agent thesis is recoverable from the title, abstract and introduction.",
+      "evidence": "Main §§1,3–4: route natural-language tasks into reusable procedural context through editable applicability predicates without weight updates."
+    },
+    {
+      "claim": "The replay-selection objective is explicit and modest.",
+      "evidence": "§4.2, p.4 averages Boolean error, includes the unchanged predicate and states a local non-increase inequality; current-task membership is now explicit."
+    },
+    {
+      "claim": "The setup now accurately states represented-skill generalization and frozen baselines.",
+      "evidence": "§5.1, pp.4–5 and §§5.4–5.5, pp.5–6; C.1 supplies exact counts without contradicting main."
+    },
+    {
+      "claim": "All contribution themes have actual delivery sections and conclusion revisits.",
+      "evidence": "§4 provides representation and update rules; Table 1 and §§6–7 provide routing/retention/ablation results; §8 revisits each."
+    },
+    {
+      "claim": "The manuscript does not hide the strongest counterresults.",
+      "evidence": "§6.1 names MedCalc-Bench and TheoremQA reversals; §6.3/Figure 4 acknowledge SkillDAG higher downstream success; dependency work remains future work."
+    },
+    {
+      "claim": "The supporting appendix is substantive and appropriately cautious about diagnostics.",
+      "evidence": "H.1 distinguishes 97.10% model-adjudicated agreement from human accuracy and reports positive-class weakness; H.3 separates restrictive predicates from likely checker errors and labels attribution retrospective."
+    }
+  ],
+  "issues": [
+    {
+      "id": "ISSUE-009",
+      "prior_issue_id": "ISSUE-009",
+      "severity": "major",
+      "evidence_status": "confirmed_manuscript_claim_gap",
+      "category": "claims",
+      "location": {
+        "section": "7.3 Skill Routing Performance across LLM Backbones",
+        "page": 7,
+        "figure_or_table": "Figure 7 (p.8)",
+        "tex_file": "source/sections/ablations.tex",
+        "line_range": [
+          24,
+          24
+        ],
+        "quoted_text": "They also suggest that predicates reach a plateau that cannot be overcomed with more capable LLMs, where it's difficult for the predicate to be narrow enough to be false for irrelevant tasks but broad enough to be true for all relevant tasks",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Three single-run backbone comparisons do not establish a predicate-capability ceiling.",
+      "reasoning_chain": [
+        "Step 1: Section 7.3 reports final nDCG@1 of 0.742, 0.802 and 0.745 and then says more capable LLMs cannot overcome a plateau.",
+        "Step 2: Appendix G.4 identifies one run per backbone; nonmonotonic endpoints and within-run diminishing returns are not evidence of an irreducible representational ceiling.",
+        "Step 3: The strong impossibility claim overstates an otherwise useful empirical result; this is a scientific interpretation problem, not a policy gate."
+      ],
+      "counterevidence": [
+        "The preceding endpoint summary is accurate and expressly identifies the 27B model as strongest.",
+        "The word suggest is tentative but does not make cannot be overcome supported."
+      ],
+      "supporting_evidence": [
+        {
+          "section": "G.4 Backbone Comparison",
+          "page": 28,
+          "figure_or_table": "Table 14",
+          "tex_file": "source/sections/appendix/ablation_backbones.tex",
+          "line_range": [
+            21,
+            21
+          ],
+          "quoted_text": "Each row averages the same 748 test tasks within one run; initial and final refer to the initialized and ten-iteration policies.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "predicted_reviewer_objection": "Simulated objection: Three single-run backbone comparisons do not establish a predicate-capability ceiling.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Delete the final plateau/expressivity sentence. Preserve the endpoint comparison and add, at most, a single-run caveat. Replace significantly improve with improve the reported scores unless a significance analysis supports it. No new backbone sweep is necessary for the narrower claim.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "No claim of an unovercomable model-capability ceiling remains.",
+          "Reported endpoints remain unchanged.",
+          "The comparison is identified as three single-run settings and does not imply tested statistical significance."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "ISSUE-005",
+      "prior_issue_id": "ISSUE-005",
+      "severity": "major",
+      "evidence_status": "conditional_historical_binding_question_not_confirmed_design_flaw",
+      "category": "claims",
+      "location": {
+        "section": "G.1 Replay and Held-Out Gate",
+        "page": 20,
+        "figure_or_table": "Figure 5 (p.8); Table 10",
+        "tex_file": "source/sections/appendix/ablation_components.tex",
+        "line_range": [
+          25,
+          25
+        ],
+        "quoted_text": "All four configurations start from the same initial predicates at iteration 0, as in Figure~\\ref{fig:mbr_replay_test_ndcg@1_std}.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The common-initialization premise behind the strong component-attribution wording still requires historical binding, not inference from current file paths.",
+      "reasoning_chain": [
+        "Step 1: The present manuscript still claims common initial predicates and says in contribution 3 that ablations establish the contributions of replay and validation.",
+        "Step 2: The supplied prior review reported differing predicate maps in manifest-linked repetitions, but explicitly left their binding to the plotted historical runs unconfirmed. This narrative review has not independently certified that binding.",
+        "Step 3: Different initial scores alone do not prove different predicate libraries. The appropriate action is a scoped evidence request before treating the attribution as controlled or declaring it invalid."
+      ],
+      "counterevidence": [
+        "Current source is the primary description and asserts common initialization.",
+        "All four component conditions and their initial/final means are present; the direction of the reported component gains is not disproved.",
+        "No initial-library letter aliases are introduced."
+      ],
+      "supporting_evidence": [
+        {
+          "section": "1 Introduction",
+          "page": 2,
+          "figure_or_table": null,
+          "tex_file": "source/sections/introduction.tex",
+          "line_range": [
+            52,
+            52
+          ],
+          "quoted_text": "while ablations establish the contributions of replay and validation.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "source": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/REVIEW_JSON.json",
+          "issue": "ISSUE-005",
+          "use": "Unresolved evidence request only; not a fresh independent historical audit."
+        }
+      ],
+      "predicted_reviewer_objection": "Simulated objection: The common-initialization premise behind the strong component-attribution wording still requires historical binding, not inference from current file paths.",
+      "fix": {
+        "type": "add_analysis",
+        "instruction": "Obtain an immutable run-to-initial-predicate map for the plotted repetitions. If common initialization is verified, close the question without rewriting the design. If the earlier audit maps to these exact runs, qualify the design and the words establish the contributions in the introduction and corresponding conclusion/caption text. Do not import obsolete artifact prose or mandate reruns before binding is settled.",
+        "target_text": null,
+        "required_inputs": [
+          "Author/experimental-audit confirmation of immutable historical bindings for the plotted component repetitions."
+        ],
+        "acceptance_criteria": [
+          "Every plotted arm/repetition maps to an immutable initial-predicate payload or hash.",
+          "Common-initialization claims agree with the bound run evidence.",
+          "Attribution wording is narrowed only if the confirmed design requires it; all observed values are preserved."
+        ],
+        "estimated_effort": "medium",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "ISSUE-007",
+      "prior_issue_id": "ISSUE-007",
+      "severity": "major",
+      "evidence_status": "confirmed_uncertainty_gap_not_invalid_point_estimates",
+      "category": "self_containment",
+      "location": {
+        "section": "6.1 Skill Routing Performance",
+        "page": 6,
+        "figure_or_table": "Table 1 (p.5); Figure 4 (p.7)",
+        "tex_file": "source/sections/results.tex",
+        "line_range": [
+          9,
+          9
+        ],
+        "quoted_text": "SkillRouter is the strongest routing baseline, yet RouterBSI the nDCG@1 and nDCG@10 is 10.9\\% and 8.4\\% higher on average.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Primary comparative gains remain single-evaluation point estimates, with the repetition and inferential limits disclosed only in the appendix.",
+      "reasoning_chain": [
+        "Step 1: The main paper presents headline superiority and cross-retriever averages without naming their single-evaluation status.",
+        "Step 2: Appendix E.1 explicitly says these are distinct retrieval conditions rather than repeated seeds, provides no run-to-run uncertainty for them, and reports no significance tests. Component-run dispersion is not uncertainty for the main baseline comparison.",
+        "Step 3: This limits how confidently a reviewer can generalize the reported superiority. It does not invalidate the displayed descriptive means or create an official minimum-seed requirement."
+      ],
+      "counterevidence": [
+        "The appendix is candid about the statistical scope.",
+        "The main already names dataset-level reversals and does not claim downstream leadership over SkillDAG."
+      ],
+      "supporting_evidence": [
+        {
+          "section": "E.1 Ranking and Selection Metrics",
+          "page": 19,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/routing_metrics.tex",
+          "line_range": [
+            25,
+            25
+          ],
+          "quoted_text": "The main routing, recall/retention, and downstream comparisons use one evaluation per method--retriever setting, rather than an average over repeated runs.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "section": "E.1 Statistical reporting",
+          "page": 20,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/routing_metrics.tex",
+          "line_range": [
+            25,
+            25
+          ],
+          "quoted_text": "We do not report statistical-significance tests.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "predicted_reviewer_objection": "Simulated objection: Primary comparative gains remain single-evaluation point estimates, with the repetition and inferential limits disclosed only in the appendix.",
+      "fix": {
+        "type": "add_analysis",
+        "instruction": "Promote a concise single-evaluation/no-significance scope sentence beside Table 1 and the primary-results interpretation. If exact matched task predictions are available, estimate paired task-sampling intervals with retriever observations for the same task clustered together and dataset stratification, explicitly conditional on the evaluated checkpoints. If unavailable, keep results descriptive and remove significance language; do not fabricate intervals or automatically launch training repeats.",
+        "target_text": null,
+        "required_inputs": [
+          "Exact matched per-task predictions and run/checkpoint identities, only if a paired uncertainty analysis is attempted."
+        ],
+        "acceptance_criteria": [
+          "Main readers can distinguish cross-retriever averaging from repeated training trials.",
+          "Any interval names its pairing unit, aggregation and checkpoint conditioning.",
+          "Claims remain descriptive if inferential evidence is unavailable."
+        ],
+        "estimated_effort": "medium",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "ISSUE-008",
+      "prior_issue_id": "ISSUE-008",
+      "severity": "minor",
+      "evidence_status": "confirmed_scope_qualification",
+      "category": "self_containment",
+      "location": {
+        "section": "7.2 Performance and Token Usage Tradeoff",
+        "page": 7,
+        "figure_or_table": "Figure 6 (p.8)",
+        "tex_file": "source/sections/ablations.tex",
+        "line_range": [
+          20,
+          20
+        ],
+        "quoted_text": "while MBR alone reduces token usage by 10.8\\% at the cost of a 7.7\\% relative decrease in nDCG@1 compared with using both.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main token-cost comparison omits the single-run and known-recorded-usage qualifications already supplied in the appendix.",
+      "reasoning_chain": [
+        "Step 1: Figure 6 is juxtaposed with the three-run component comparison but uses the first run of each configuration.",
+        "Step 2: Appendix G.2 excludes attempts with unavailable usage from known totals and states run-local phase coverage; these are not complete economic costs.",
+        "Step 3: A short local qualifier is enough to prevent main-only readers from confusing populations or complete versus recorded costs; this is not a demand for another experiment."
+      ],
+      "counterevidence": [
+        "The appendix already supplies total and iteration-only usage and unknown-attempt counts.",
+        "The main does not explicitly claim a controlled serving-cost advantage."
+      ],
+      "supporting_evidence": [
+        {
+          "section": "G.2 Token Accounting and Replay Capacity",
+          "page": 21,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/ablation_cost_capacity.tex",
+          "line_range": [
+            2,
+            2
+          ],
+          "quoted_text": "Table~\\ref{tab:app-ablation-tokens} uses the first run of each configuration; it is separate from the three-run means above.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "section": "G.2 Token Accounting and Replay Capacity",
+          "page": 21,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/ablation_cost_capacity.tex",
+          "line_range": [
+            2,
+            2
+          ],
+          "quoted_text": "Attempts with unavailable token use are not assigned zero consumption: they are excluded from known totals and counted separately.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "predicted_reviewer_objection": "Simulated objection: The main token-cost comparison omits the single-run and known-recorded-usage qualifications already supplied in the appendix.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Prefix the main comparison and Figure 6 caption with single-run known-recorded-token scope, point to G.2, and label the axis Known recorded tokens (millions). Keep percentages unchanged absent a separate arithmetic finding. State omitted unavailable usage; do not assert historical shared-initialization costs from unbound artifacts.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Main text/caption identify one run per configuration.",
+          "Known recorded usage is not labeled complete cost accounting.",
+          "The distinction from Figure 5 three-run means is explicit."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "ISSUE-011",
+      "prior_issue_id": "ISSUE-011",
+      "severity": "minor",
+      "evidence_status": "confirmed_terminology_and_definition_gap",
+      "category": "self_containment",
+      "location": {
+        "section": "5.2 Evaluation Metrics",
+        "page": 5,
+        "figure_or_table": "Figure 3 (p.6)",
+        "tex_file": "source/sections/experiments.tex",
+        "line_range": [
+          20,
+          20
+        ],
+        "quoted_text": "We additionally report F1@\\(k\\) to compare filtering capabilities. We also report retention as Ret@\\(k\\) to compare the percentage of required skills retained in top k from the retrieved skills.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main metric names obscure selected-set F1 and the method-specific ratio-of-means retention used for headline comparisons.",
+      "reasoning_chain": [
+        "Step 1: Appendix E.1 defines the ablation F1 on the predicate-selected set, not the first k entries of a possibly padded ranked list.",
+        "Step 2: Appendix F.1 defines Ret@k as a ratio of task-mean recalls, normalized by each method/retriever own Recall@50, then averaged across retrievers; SkillDAG uses its expanded pool.",
+        "Step 3: These distinctions are needed to interpret the main claims but can be promoted in two short sentences rather than all appendix equations."
+      ],
+      "counterevidence": [
+        "The definitions exist and no numerical error is established.",
+        "Section 6.2 already distinguishes SkillDAG coverage from retention.",
+        "Hit@1 equals nDCG@1 here, as the appendix explicitly notes; inconsistent naming is not an invented extra result."
+      ],
+      "supporting_evidence": [
+        {
+          "section": "E.1 Ranking and Selection Metrics",
+          "page": 19,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/routing_metrics.tex",
+          "line_range": [
+            20,
+            20
+          ],
+          "quoted_text": "The set-level F1 reported for predicate ablations therefore measures the selected set, rather than the first $k$ entries of the complete ranked list.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "section": "F.1 Coverage and Retention",
+          "page": 20,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/retention_definition.tex",
+          "line_range": [
+            9,
+            9
+          ],
+          "quoted_text": "Each method is normalized by its own Recall@50. In particular, SkillDAG expands its initial retrieval set, so its normalization uses the expanded ranked pool.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "predicted_reviewer_objection": "Simulated objection: The main metric names obscure selected-set F1 and the method-specific ratio-of-means retention used for headline comparisons.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Use selected-set F1 rather than F1@k for the predicate ablation metric. Define retention in main as the ratio of task-mean Recall@k to that method/retriever task-mean Recall@50, followed by equal averaging across retrievers; mention SkillDAG expanded coverage. Optionally unify Hit@1/nDCG@1 terminology without changing values.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Selected-set F1 is not described as a ranked-cutoff metric.",
+          "Retention states ratio of means and method-specific denominator.",
+          "No implication that normalized retention is unconditional gold-skill recall is introduced."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    },
+    {
+      "id": "ISSUE-002",
+      "prior_issue_id": "ISSUE-002",
+      "severity": "minor",
+      "evidence_status": "partly_resolved_residual_main_text_ambiguity",
+      "category": "self_containment",
+      "location": {
+        "section": "4.3 Held-Out Validation and Recursive Improvement",
+        "page": 4,
+        "figure_or_table": null,
+        "tex_file": "source/sections/method.tex",
+        "line_range": [
+          89,
+          89
+        ],
+        "quoted_text": "End the iteration by updating the next predicate \\(p_{sk}^{\\mathrm{(i+1)}}\\) of the skill \\(s\\) if the selected candidate update \\(\\partial\\)passed the held-out validation gate. Repeat this self-improvement loop until i iterations.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "After the replay correction, the remaining main-method gap is a compact operational description of gate timing, rollback state and absent validation support.",
+      "reasoning_chain": [
+        "Step 1: The current main correctly includes the current failed task, de-duplicates the replay set, and gives the 2N+1 bound. It also correctly compares validation error with the initial predicate and rejects ties.",
+        "Step 2: Appendix A.4 clarifies that all local training-task repairs are provisional until the full pass ends, and rejection or absent support restores the iteration-start predicate. The main otherwise state is not explicitly named as iteration-start, and the mean validation error is undefined for empty support without the appendix convention.",
+        "Step 3: This is now a minor self-containment clarification, not the old major replay-membership contradiction or evidence of a wrong historical implementation."
+      ],
+      "counterevidence": [
+        "The main says End the iteration, so it is not wholly silent about timing.",
+        "Appendix A.4 and A.5 give an internally coherent procedure.",
+        "No rewrite of the initial-predicate comparator, replay-average inequality, or normalized selected-first ranking is warranted."
+      ],
+      "supporting_evidence": [
+        {
+          "section": "A.4 Held-Out Gate and Partial Rollback",
+          "page": 12,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/procedure_validation.tex",
+          "line_range": [
+            3,
+            3
+          ],
+          "quoted_text": "After each full training pass, we evaluate the candidate library on $T_v$.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        },
+        {
+          "section": "A.4 Held-Out Gate and Partial Rollback",
+          "page": 12,
+          "figure_or_table": null,
+          "tex_file": "source/sections/appendix/procedure_validation.tex",
+          "line_range": [
+            19,
+            19
+          ],
+          "quoted_text": "Skills without measurable validation support are also reverted.",
+          "anchor_kind": "existing_span",
+          "insertion_point": null
+        }
+      ],
+      "predicted_reviewer_objection": "Simulated objection: After the replay correction, the remaining main-method gap is a compact operational description of gate timing, rollback state and absent validation support.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Replace the last method sentence with a compact statement: after each full training pass, gate each changed skill against its cold-start predicate; reject ties or absent support and restore the iteration-start predicate. If space permits, note that bounded replay refers to per-skill scoring buckets, while global seen-task history remains unbounded; do not characterize the existing replay definition as wrong.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "The main explicitly names full-pass gate timing, iteration-start rollback and no-support behavior.",
+          "The already-correct current-inclusive replay set and initial-predicate comparator remain intact.",
+          "No global fixed-memory guarantee is added."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": []
+    }
+  ],
+  "narrative_diagnostics": {
+    "recoverable_thesis": "Explicit per-skill applicability predicates can be refined from labeled routing failures using bounded replay selection and a cold-start validation gate, improving held-out-task routing without changing model weights.",
+    "front_page": "The title/abstract identify replay and validation; Figure 1 caption supplies a concrete applicability-versus-topical-relatedness example. Figure 2 carries the update overview. Requiring Figure 1 to depict the whole algorithm would be optional editorial advice.",
+    "contribution_ladder": [
+      {
+        "claimed_contribution": "We propose RouterBSI, a non-parametric skill-routing framework that evaluates explicit applicability predicates over retrieved candidates, making routing criteria interpretable and directly editable without updating the underlying language model.",
+        "delivery": "§4.1; Figures 1–2; Appendix B",
+        "conclusion_revisit": true,
+        "assessment": "Editable and inspectable are representation properties; no human-edit performance study is claimed or required for that narrow statement."
+      },
+      {
+        "claimed_contribution": "We develop a recursive self-improvement procedure that refines predicates from routing failures, selects updates through minimum Bayes risk over a bounded replay of relevant and irrelevant tasks, and rejects updates with higher held-out validation error than the cold-start predicate.",
+        "delivery": "§4.2–4.3; §7.1; Appendix A/G.1",
+        "conclusion_revisit": true,
+        "assessment": "Core mechanism is delivered; residual execution summary is ISSUE-002. No universal test or monotonic-across-iteration guarantee should be inferred."
+      },
+      {
+        "claimed_contribution": "We evaluate RouterBSI on six SRA-Bench datasets with a shared 26K-skill corpus, achieving the highest aggregate nDCG@10 and Hit@1 among evaluated methods while ablations establish the contributions of replay and validation.",
+        "delivery": "Table 1; §§6–7; Appendices E–G",
+        "conclusion_revisit": true,
+        "assessment": "Reported aggregate routing leadership is delivered, not universal per-dataset or downstream leadership. Ablation establishment is conditional on ISSUE-005; Hit@1 is nDCG@1 under these labels."
+      }
+    ],
+    "optional_not_major": [
+      "Replace the hypothetical extra-training/human-edit remedy in §6.1 with a short pointer to the existing H.3 diagnosis; do not claim intervention success.",
+      "Place the already-disclosed SkillDAG ten-skill versus RouterBSI five-skill budget beside the dependency hypothesis if space permits.",
+      "Targeted copyedit can remove repeated naming and grammatical/caption defects without broad restructuring."
+    ]
+  },
+  "related_work_assessment": {
+    "judgment": "No verified missing-citation or mandatory-new-baseline finding in this scoped review.",
+    "already_credited": [
+      "JTPRO is explicitly cited in §2.1 for sampled training minibatches and held-out validation.",
+      "SkillRouter is cited in §2.2, compared in Table 1, and now described as a frozen released reranker in §§5.4/D.4."
+    ],
+    "evidence_checked": [
+      {
+        "paper": "JTPRO: A Joint Tool–Prompt Reflective Optimization Framework for Language Agents",
+        "url": "https://aclanthology.org/2026.findings-acl.2017",
+        "local_evidence": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/external_narrative_sources/jtpro.txt",
+        "observed": "Saved primary PDF text pp.1–4 describes joint global-instruction/tool-schema editing, minibatch rollouts and validation-best context selection. The available evidence supports the current conceptual comparison; candidate-context pools are not per-skill replay-task buckets."
+      },
+      {
+        "paper": "SkillRouter: Skill Routing for LLM Agents at Scale",
+        "url": "https://arxiv.org/abs/2603.22455",
+        "local_evidence": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/external_narrative_sources/source3.txt",
+        "observed": "Saved abstract describes a body-aware retrieve-and-rerank pipeline. Its full-pipeline parameter total does not contradict the manuscript naming the reranker component size, and it cannot certify which historical checkpoint was run."
+      }
+    ],
+    "novelty_boundary": "Specific per-skill natural-language predicate state, per-label bounded replay scoring and strict validation admission relative to cold-start. Reflective editing and validation selection are not themselves newly invented here.",
+    "optional_positioning": "A short reflective-optimization connection could sharpen positioning; no new citation or forced MBR rename is needed to understand the explicit empirical-risk equation. Any generic claim that every parametric system requires large data should be kept modest, not treated as a proved taxonomy theorem.",
+    "missing_citations": [],
+    "not_claimed": "No full verification of every bibliography item or all taxonomy assignments; no broad literature-completeness verdict."
+  },
+  "self_containment_audit": {
+    "main_text_stands_alone": "Central thesis and primary evidence: yes. Precise execution and interpretation of metrics/cost/statistical scope: partly.",
+    "promote_concisely": [
+      {
+        "content": "Full-pass validation, iteration-start rollback, absent-support behavior",
+        "appendix": "A.4/A.5",
+        "issue": "ISSUE-002"
+      },
+      {
+        "content": "Single-evaluation statistical scope of main baseline comparisons",
+        "appendix": "E.1",
+        "issue": "ISSUE-007"
+      },
+      {
+        "content": "Selected-set F1 and ratio-of-means method-specific retention",
+        "appendix": "E.1/F.1",
+        "issue": "ISSUE-011"
+      },
+      {
+        "content": "Single-run known-recorded-token scope",
+        "appendix": "G.2",
+        "issue": "ISSUE-008"
+      },
+      {
+        "content": "MBR-disabled control uses first valid current-task proposal while retaining historical proposal context",
+        "appendix": "D.3/G.1",
+        "issue": "ISSUE-005",
+        "qualification": "One main sentence strengthens component interpretation; not a separate seventh finding."
+      }
+    ],
+    "acceptable_in_appendix": [
+      "Exact prompts, schemas, retry/cache details and worked repair.",
+      "Exact dataset counts and allocation constraints now that main explains global targets and shared-skill scope.",
+      "Full per-retriever/per-dataset routing and downstream tables, complete trajectories and extra sensitivity settings.",
+      "Model-adjudicated evaluator audit and retrospective semantic analyses; these are not required evidence for an unclaimed human-validation result."
+    ],
+    "resolved_dependencies": [
+      "Current-inclusive replay set and its capacity are in main.",
+      "Normalized selected-first ranking and tie treatment are in main.",
+      "Global allocation, represented-skill adaptation and retriever/SkillRouter training status are in main."
+    ],
+    "qualification": "Do not move all appendix detail into the body or inflate remaining small scope clarifications into a confirmed page-limit/self-containment policy violation."
+  },
+  "prior_review_reconciliation": [
+    {
+      "prior_id": "ISSUE-001",
+      "status": "resolved_stays_resolved",
+      "reason": "The prior final review resolved stale PDF wording. Current PDF/source both say non-increasing empirical error and limit regressions; no stale source/PDF complaint revived."
+    },
+    {
+      "prior_id": "ISSUE-002",
+      "status": "mostly_resolved_narrowed_minor",
+      "reason": "Current task inclusion, deduplication and 2N+1 bound are fixed in main. Only gate timing/rollback/no-support self-containment retained."
+    },
+    {
+      "prior_id": "ISSUE-003",
+      "status": "resolved",
+      "reason": "Main now explicitly normalizes retrieval scores to [0,1] and favors selected skills on ties; A.1 states equivalent selected-first ordering. No arbitrary-raw-sum contradiction remains."
+    },
+    {
+      "prior_id": "ISSUE-004",
+      "status": "resolved",
+      "reason": "Main now states global target proportions, varying dataset proportions, shared represented skills, update eligibility and cold-start retention for never-retrieved skills. Exact per-dataset counts may remain in C.1."
+    },
+    {
+      "prior_id": "ISSUE-005",
+      "status": "conditional_evidence_request",
+      "reason": "Same-initial-predicates claim persists, but historical binding of earlier inspected files is unconfirmed. Not a newly proven flaw."
+    },
+    {
+      "prior_id": "ISSUE-006",
+      "status": "training_status_resolved_model_roles_deferred",
+      "reason": "Frozen retrievers and released non-fine-tuned SkillRouter are explicit in main and D.4. Main still lists five models while backbone results show three; roles of Llama-3.3-70B-Instruct and GPT-5.4 remain an author question, not inferred missing experiments."
+    },
+    {
+      "prior_id": "ISSUE-007",
+      "status": "retained_with_descriptive_fallback",
+      "reason": "E.1 honestly discloses single evaluations but primary-comparison uncertainty remains absent. Narrow claims and promote scope if matched predictions are unavailable."
+    },
+    {
+      "prior_id": "ISSUE-008",
+      "status": "retained_minor",
+      "reason": "Single-run known-token scope remains appendix-only; no unbound historical cost asymmetry asserted."
+    },
+    {
+      "prior_id": "ISSUE-009",
+      "status": "retained_major",
+      "reason": "Unovercomable backbone/predicate ceiling sentence still present verbatim."
+    },
+    {
+      "prior_id": "ISSUE-010",
+      "status": "optional_not_retained_as_important_finding",
+      "reason": "Dependency suggestion remains tentative; unequal budgets are already stated in main. A local budget reminder is optional, not a mandatory causal experiment."
+    },
+    {
+      "prior_id": "ISSUE-011",
+      "status": "retained_minor",
+      "reason": "F1@k and retention-definition alignment still needed; no numerical invalidity inferred."
+    },
+    {
+      "prior_id": "ISSUE-012",
+      "status": "minor_editorial_not_in_six_priority_findings",
+      "reason": "Duplicate RouterBSI naming, malformed captions and grammar persist. They affect presentation but are not major scientific flaws."
+    },
+    {
+      "prior_id": "ISSUE-013",
+      "status": "deferred_visual_audit",
+      "reason": "No fresh rendered-figure inspection in this scoped narrative review; no inherited font or color finding asserted."
+    }
+  ],
+  "reconciliation_namespace_note": "IDs above refer to the supplied final REVIEW_JSON issues[] and resolved_during_review. Its nested prior_review_reconciliation refers to an older review with reused IDs; those are not conflated.",
+  "open_questions_for_parent_or_author": [
+    "Which immutable initial-predicate maps correspond to the plotted component repetitions?",
+    "Are matched task-level outputs available for primary-comparison uncertainty without new model calls?",
+    "What experiment roles, if any, do Llama-3.3-70B-Instruct and GPT-5.4 have in the evaluated-model list?",
+    "Any source-only operational concerns identified by a separate code audit need historical run binding before being asserted as manuscript-result defects."
+  ],
+  "required_new_experiments": [],
+  "verification": {
+    "all_issue_quotes_exact_source_matches": true,
+    "finding_limit": 6,
+    "manuscript_snapshot_hashes_match": true,
+    "scope": "Textual claims checked against frozen current main/appendix; no historical run reproduction or all-result arithmetic certification.",
+    "confirmed_finding_count": 5,
+    "conditional_question_count": 1
+  }
+}

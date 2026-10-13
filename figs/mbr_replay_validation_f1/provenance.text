@@ -8,8 +8,6 @@ Metrics: F1
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing table values are ---; missing plotted values fail closed, never imputed.
-Source reportability: non-reportable
-Analysis-only: source provenance does not certify publication validity.
 Source Average rows; full selected-set test F1. Only the latest common contiguous range, iterations 1–5, is plotted; no initial-test F1 is available for the refreshed runs. Both Enabled and Only Gate use refreshed RouterBSI runs, whereas Both Disabled and Only MBR retain their previous source runs; the four-series comparison therefore mixes source runs.
 
 From project_skill_selection/ root:

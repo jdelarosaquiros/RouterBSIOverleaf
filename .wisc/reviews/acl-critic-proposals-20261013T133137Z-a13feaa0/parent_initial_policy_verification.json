@@ -1,0 +1,110 @@
+[
+  {
+    "method": "Both Enabled",
+    "run": "run_1",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Both Enabled",
+    "run": "run_2",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/conditions_initial.json",
+    "file_sha256": "7fbb4c186dd22528940833b3216aae7a7662d6de0d4e6884b4df8656e7ac88d4",
+    "predicate_payload_sha256": "142325f8dc5e56a468ef4e039a6e44a55aace118e0f4228008cb323472e6e654",
+    "count": 26262,
+    "changed_vs_first": 26262
+  },
+  {
+    "method": "Both Enabled",
+    "run": "run_3",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/conditions_initial.json",
+    "file_sha256": "4c865ec39db8133de472b36a58971c2ce7c5e3ac5faef5cbcc0b5c1fae6901b1",
+    "predicate_payload_sha256": "5b4afbe256e155c872d94e4dbdd8f05bc0601e9759738f3519d19c865835fb6d",
+    "count": 26262,
+    "changed_vs_first": 26261
+  },
+  {
+    "method": "Both Disabled",
+    "run": "run_1",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Both Disabled",
+    "run": "run_2",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_2/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Both Disabled",
+    "run": "run_3",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_3/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Only MBR",
+    "run": "run_1",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Only MBR",
+    "run": "run_2",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_2/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Only MBR",
+    "run": "run_3",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_3/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Only Gate",
+    "run": "run_1",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_1/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Only Gate",
+    "run": "run_2",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_2/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  },
+  {
+    "method": "Only Gate",
+    "run": "run_3",
+    "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_val/run_3/conditions_initial.json",
+    "file_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+    "predicate_payload_sha256": "4a4af3584f04137c3fc15ec9d8812ea4729cb9ce3bfd964c67c0a16b9cf6b226",
+    "count": 26262,
+    "changed_vs_first": 0
+  }
+]

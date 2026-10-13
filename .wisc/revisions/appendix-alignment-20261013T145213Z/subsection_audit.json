@@ -1,0 +1,2212 @@
+{
+  "scope": "appendix-only source revisions; no new experiments; original main PDF not rebuilt",
+  "files": [
+    {
+      "file": "sections/appendix/appendix.tex",
+      "headings": [],
+      "main_anchors": [
+        "main.tex:74"
+      ],
+      "assessment": "All eight appendix section wrappers are active after references; no main-source edits needed.",
+      "action": "keep",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "parent"
+    },
+    {
+      "file": "sections/appendix/procedure.tex",
+      "headings": [
+        {
+          "level": "section",
+          "title": "Routing and Improvement Procedure",
+          "line": 1,
+          "assessment": "Section wrapper and its five subsection inputs match the main routing/replay/gating organization. Child-level conflicts are separately recorded; no wrapper change needed.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        }
+      ],
+      "assessment": "Section wrapper and its five subsection inputs match the main routing/replay/gating organization. Child-level conflicts are separately recorded; no wrapper change needed.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/procedure_routing.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Initialization and Online Routing",
+          "line": 1,
+          "assessment": "Single predicate, public inputs, no evaluator gold labels, top-k-limited failure set, retrieval misses, and deterministic online commit ordering elaborate the main without conflict. Public name/description/body explain initialization inputs, while main K_s is not sufficiently defined to prove an inconsistency. Strict versus fixed-size ranking is essential; keep the lexicographic-versus-arithmetic qualification because unconditional agreement across all retrieval score scales is not established.",
+          "action": "retain_blocked_contradiction"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/problem_definition.tex",
+          "lines": "8",
+          "evidence": "we only evaluate the predicates from skills in the top k based on retrieval score",
+          "excerpt_line": 8
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "47",
+          "evidence": "The skill routing baselines are conditioned on a pool of retrieved 50 skills",
+          "excerpt_line": 47
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "47",
+          "evidence": "we rank them by the sum of their binary label and the retrieval score",
+          "excerpt_line": 47
+        }
+      ],
+      "assessment": "Single predicate, public inputs, no evaluator gold labels, top-k-limited failure set, retrieval misses, and deterministic online commit ordering elaborate the main without conflict. Public name/description/body explain initialization inputs, while main K_s is not sufficiently defined to prove an inconsistency. Strict versus fixed-size ranking is essential; keep the lexicographic-versus-arithmetic qualification because unconditional agreement across all retrieval score scales is not established.",
+      "action": "retain_blocked_contradiction",
+      "proposed_edits": [],
+      "unresolved": [
+        {
+          "id": "A-RANKING",
+          "type": "blocked_generalization",
+          "issue": "Main claims binary-label-plus-retrieval-score ranking across methods/retrievers; appendix describes lexicographic selected-first ordering and gives equivalence only for SkillSight scores 1/j. Equivalence for arbitrary BM25/vector scores is not established.",
+          "evidence": [
+            "sections/experiments.tex:39,47",
+            "sections/appendix/procedure_routing.tex:18"
+          ],
+          "disposition": "Keep the scientific distinction and SkillSight qualification. Do not replace it with unconditional arithmetic-sum wording."
+        }
+      ],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/procedure_replay.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Bounded Replay Construction",
+          "line": 1,
+          "assessment": "The bounded per-skill buckets, unbounded global lazy-materialization history, uniform-slot replacement (not reservoir sampling), deterministic order, duplicate handling, and prompt-example/scoring distinction are useful mechanics. Current-inclusive replay and its 2N+1 bound do not equal the main historical-only definition. The sentence asserting that main bounds refer only to retained history is an interpretation, not an established reconciliation. Preserve the truthful distinction pending main authorization; do not remove it as a code caveat.",
+          "action": "retain_blocked_contradiction"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "28",
+          "evidence": "\\mathcal{R}_s = \\{q_{rs}\\}\\cup\\{q_{is}\\}",
+          "excerpt_line": 28
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "44",
+          "evidence": "across tasks where the skill is in the top \\(k\\)",
+          "excerpt_line": 44
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        }
+      ],
+      "assessment": "The bounded per-skill buckets, unbounded global lazy-materialization history, uniform-slot replacement (not reservoir sampling), deterministic order, duplicate handling, and prompt-example/scoring distinction are useful mechanics. Current-inclusive replay and its 2N+1 bound do not equal the main historical-only definition. The sentence asserting that main bounds refer only to retained history is an interpretation, not an established reconciliation. Preserve the truthful distinction pending main authorization; do not remove it as a code caveat.",
+      "action": "retain_blocked_contradiction",
+      "proposed_edits": [],
+      "unresolved": [
+        {
+          "id": "A-REPLAY-CURRENT",
+          "type": "blocked_scientific_contradiction",
+          "issue": "Main defines replay as historical positive/negative tasks with at most N each; appendix explicitly unions the current task and permits 2N+1 distinct tasks. Reusing the same R_s notation is not exact agreement.",
+          "evidence": [
+            "sections/method.tex:24-40",
+            "sections/appendix/procedure_replay.tex:7-11",
+            "sections/appendix/procedure_algorithm.tex:8"
+          ],
+          "disposition": "Retain current-inclusive equation and bounds; do not remove the current task or claim main agreement. Resolution requires authorized main-method clarification, outside this audit."
+        },
+        {
+          "id": "A-REPLAY-SUPPORT",
+          "type": "unresolved_scope_ambiguity",
+          "issue": "Main loss prose limits error to tasks where the skill is retrieved in top k; appendix lazy buckets replay global already-seen history, with no retrieval-support restriction stated. The appendix alone does not establish whether a further filter exists.",
+          "evidence": [
+            "sections/method.tex:44",
+            "sections/appendix/procedure_replay.tex:3"
+          ],
+          "disposition": "Preserve the described history mechanics; ask author to reconcile support definitions. No implementation exploration or silent filtering change."
+        }
+      ],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/procedure_mbr.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Candidate Admission and Minimum-Risk Selection",
+          "line": 1,
+          "assessment": "Candidate structural admission, separate unchanged candidate, binary mean-loss equation, and non-increasing average-risk argument agree with the main argmin. The qualifications that individual errors may trade off, ties need not improve, and no tie-break is prescribed accurately distinguish average-risk minimization from stronger per-example guarantees. Keep them: they are scientific, not saved-artifact caveats. Agreement of the loss formula does not settle the replay-set mismatch defined next door.",
+          "action": "retain_with_dependency"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "28",
+          "evidence": "\\mathcal{R}_s = \\{q_{rs}\\}\\cup\\{q_{is}\\}",
+          "excerpt_line": 28
+        }
+      ],
+      "assessment": "Candidate structural admission, separate unchanged candidate, binary mean-loss equation, and non-increasing average-risk argument agree with the main argmin. The qualifications that individual errors may trade off, ties need not improve, and no tie-break is prescribed accurately distinguish average-risk minimization from stronger per-example guarantees. Keep them: they are scientific, not saved-artifact caveats. Agreement of the loss formula does not settle the replay-set mismatch defined next door.",
+      "action": "retain_with_dependency",
+      "proposed_edits": [],
+      "unresolved": [
+        {
+          "id": "A-REPLAY-CURRENT",
+          "type": "blocked_scientific_contradiction",
+          "issue": "Main defines replay as historical positive/negative tasks with at most N each; appendix explicitly unions the current task and permits 2N+1 distinct tasks. Reusing the same R_s notation is not exact agreement.",
+          "evidence": [
+            "sections/method.tex:24-40",
+            "sections/appendix/procedure_replay.tex:7-11",
+            "sections/appendix/procedure_algorithm.tex:8"
+          ],
+          "disposition": "Retain current-inclusive equation and bounds; do not remove the current task or claim main agreement. Resolution requires authorized main-method clarification, outside this audit."
+        }
+      ],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/procedure_validation.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Held-Out Gate and Partial Rollback",
+          "line": 1,
+          "assessment": "Strict cold-start comparison and rejection of ties agree with the main equation and method caption. Mean Boolean correctness equals 1 minus error. Per-skill rollback to iteration-start state, unsupported-skill rejection, non-monotonicity relative to the previous retained state, test exclusion, and pre-/post-rollback score distinctions are scientifically useful clarifications, not artifact-quality disclaimers. Main introduction/related-work prose uses looser higher-error phrasing, but the explicit main gate equation resolves ties strictly; do not weaken the appendix rule.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        },
+        {
+          "file": "sections/related_works.tex",
+          "lines": "8",
+          "evidence": "Selected candidate is discarded by the held-out validation gate if its validation error is higher or equal to the initial predicate",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Strict cold-start comparison and rejection of ties agree with the main equation and method caption. Mean Boolean correctness equals 1 minus error. Per-skill rollback to iteration-start state, unsupported-skill rejection, non-monotonicity relative to the previous retained state, test exclusion, and pre-/post-rollback score distinctions are scientifically useful clarifications, not artifact-quality disclaimers. Main introduction/related-work prose uses looser higher-error phrasing, but the explicit main gate equation resolves ties strictly; do not weaken the appendix rule.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/procedure_algorithm.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Optimization Procedure",
+          "line": 1,
+          "assessment": "Optimization order, fixed corpus/partitions, task-level provisional commits, iteration-end gate and partial rollback are useful procedural details. The linked section is an appendix subsection, not the main text; delete only that erroneous adjective. Current-inclusive replay inherits the unresolved main-equation mismatch.",
+          "action": "propose_minimal_editorial_cleanup"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        },
+        {
+          "file": "sections/related_works.tex",
+          "lines": "8",
+          "evidence": "Selected candidate is discarded by the held-out validation gate if its validation error is higher or equal to the initial predicate",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Optimization order, fixed corpus/partitions, task-level provisional commits, iteration-end gate and partial rollback are useful procedural details. The linked section is an appendix subsection, not the main text; delete only that erroneous adjective. Current-inclusive replay inherits the unresolved main-equation mismatch.",
+      "action": "propose_minimal_editorial_cleanup",
+      "proposed_edits": [
+        {
+          "old": "The update loop below follows the main minimum-average-risk formulation in Section~\\ref{app:procedure-mbr}.",
+          "new": "The update loop below follows the minimum-average-risk formulation in Section~\\ref{app:procedure-mbr}.",
+          "reason": "The reference targets an appendix subsection; remove the misleading main designation without changing the algorithm."
+        }
+      ],
+      "unresolved": [
+        {
+          "id": "A-REPLAY-CURRENT",
+          "type": "blocked_scientific_contradiction",
+          "issue": "Main defines replay as historical positive/negative tasks with at most N each; appendix explicitly unions the current task and permits 2N+1 distinct tasks. Reusing the same R_s notation is not exact agreement.",
+          "evidence": [
+            "sections/method.tex:24-40",
+            "sections/appendix/procedure_replay.tex:7-11",
+            "sections/appendix/procedure_algorithm.tex:8"
+          ],
+          "disposition": "Retain current-inclusive equation and bounds; do not remove the current task or claim main agreement. Resolution requires authorized main-method clarification, outside this audit."
+        },
+        {
+          "id": "A-REPLAY-SUPPORT",
+          "type": "unresolved_scope_ambiguity",
+          "issue": "Main loss prose limits error to tasks where the skill is retrieved in top k; appendix lazy buckets replay global already-seen history, with no retrieval-support restriction stated. The appendix alone does not establish whether a further filter exists.",
+          "evidence": [
+            "sections/method.tex:44",
+            "sections/appendix/procedure_replay.tex:3"
+          ],
+          "disposition": "Preserve the described history mechanics; ask author to reconcile support definitions. No implementation exploration or silent filtering change."
+        }
+      ],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/prompts.tex",
+      "headings": [
+        {
+          "level": "section",
+          "title": "Prompts and a Worked Repair",
+          "line": 1,
+          "assessment": "Wrapper appropriately presents initialization, replacement, Boolean evaluation and a worked repair. All prompt bodies and example strings are immutable in this audit. No wrapper change needed.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/limitations.tex",
+          "lines": "8",
+          "evidence": "we keep the predicate checker's instructions fixed",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Wrapper appropriately presents initialization, replacement, Boolean evaluation and a worked repair. All prompt bodies and example strings are immutable in this audit. No wrapper change needed.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/prompts_initialization.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Initial Predicate Generation",
+          "line": 1,
+          "assessment": "Single-user-message structure, JSON encoding, public inputs, strict one-string schema and length limit add reproducible detail. The editorial statement about preserving prompt wording can be removed without changing the template. The exact template remains untouched, and no assertion of identical initialization across runs should be imported from the blocked figure caption.",
+          "action": "propose_minimal_editorial_cleanup"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "figs/mbr_replay_test_ndcg@1_std/description.text",
+          "lines": "1",
+          "evidence": "across three runs starting from the same initial predicates at iteration 0",
+          "excerpt_line": 1
+        }
+      ],
+      "assessment": "Single-user-message structure, JSON encoding, public inputs, strict one-string schema and length limit add reproducible detail. The editorial statement about preserving prompt wording can be removed without changing the template. The exact template remains untouched, and no assertion of identical initialization across runs should be imported from the blocked figure caption.",
+      "action": "propose_minimal_editorial_cleanup",
+      "proposed_edits": [
+        {
+          "old": "We preserve the prompt wording below, with paragraph wrapping for readability. ",
+          "new": "",
+          "reason": "Delete editorial provenance/formatting commentary outside the prompt; preserve the complete literal prompt and schema description."
+        }
+      ],
+      "unresolved": [
+        {
+          "id": "A-INITIALIZATION-CAPTION",
+          "type": "external_scope_blocked",
+          "issue": "The active replay-ablation caption says all three runs start from the same predicates. The parent handoff reports differences among the saved initial predicate libraries conflict with this shared-all-runs claim and requires leaving it blocked. No subsection in this group asserts cross-run identity.",
+          "evidence": [
+            "figs/mbr_replay_test_ndcg@1_std/description.text:1",
+            "parent task context (initial-predicate comparison not rerun in this audit)"
+          ],
+          "disposition": "Do not change the frozen caption or add shared-initialization claims to these prompts. Preserve template and distinguish per-run cold-start from cross-run identity."
+        }
+      ],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/prompts_proposal.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Replacement Proposals",
+          "line": 1,
+          "assessment": "Fields distinguish current relevance labels from prior predicate activations, immutable initial predicate from supplied current predicate, exact candidate schema, and trusted retry correction. Prompt instructions to correct the current case/preserve prior correct behavior are generation objectives, not extra hard eligibility constraints in the main average-risk argmin. Keep this distinction and every literal prompt/retry string; do not rewrite the prompt to imply the weaker selection guarantee.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "28",
+          "evidence": "\\mathcal{R}_s = \\{q_{rs}\\}\\cup\\{q_{is}\\}",
+          "excerpt_line": 28
+        }
+      ],
+      "assessment": "Fields distinguish current relevance labels from prior predicate activations, immutable initial predicate from supplied current predicate, exact candidate schema, and trusted retry correction. Prompt instructions to correct the current case/preserve prior correct behavior are generation objectives, not extra hard eligibility constraints in the main average-risk argmin. Keep this distinction and every literal prompt/retry string; do not rewrite the prompt to imply the weaker selection guarantee.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/prompts_evaluator.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Boolean Predicate Evaluation",
+          "line": 1,
+          "assessment": "Exact task/predicate pair, single-Boolean schema, no gold relevance input and same evaluator for routing/replay explain the main predicate checker. The prompt asks for predicate truth independently of desirability, while the router uses that truth for selection; these are distinct stages, not a contradiction. Preserve every prompt token and output example.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/limitations.tex",
+          "lines": "8",
+          "evidence": "we keep the predicate checker's instructions fixed",
+          "excerpt_line": 8
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        }
+      ],
+      "assessment": "Exact task/predicate pair, single-Boolean schema, no gold relevance input and same evaluator for routing/replay explain the main predicate checker. The prompt asks for predicate truth independently of desirability, while the router uses that truth for selection; these are distinct stages, not a contradiction. Preserve every prompt token and output example.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/prompts_trace.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "A Complete Replay Decision",
+          "line": 1,
+          "assessment": "Worked example instantiates mean replay risk and strict iteration-end cold-start gating; exact versus condensed material and current versus initial predicates are essential distinctions. Example is not a proof that all selected updates correct the current case.",
+          "action": "retain"
+        },
+        {
+          "level": "paragraph",
+          "title": "Predicate before repair.",
+          "line": 5,
+          "assessment": "Retain exact current predicate string. It is not the cold-start baseline used later by validation; the main separates p_f and p_si.",
+          "action": "retain"
+        },
+        {
+          "level": "paragraph",
+          "title": "Generated alternatives.",
+          "line": 12,
+          "assessment": "Retain all three exact candidate strings, ordering, and labels. Their content is observed example evidence, not prose to harmonize with ideal prompt instructions.",
+          "action": "retain"
+        },
+        {
+          "level": "paragraph",
+          "title": "Replay evidence.",
+          "line": 32,
+          "assessment": "Retain five relevant/five irrelevant tasks, table, caption, and risk explanation. All-candidates-correct/preserve claim is explicitly local to this example, not a general MBR guarantee. Condensed task descriptions versus exact question/predicates is scientifically useful disclosure.",
+          "action": "retain"
+        },
+        {
+          "level": "paragraph",
+          "title": "Held-out retention.",
+          "line": 55,
+          "assessment": "Retain exact cold-start predicate, same 44-task support, 33/44 to 39/44 correctness, and iteration-end timing. Distinct initial/current predicates and partial-pass timing clarify rather than contradict main strict gate.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        },
+        {
+          "file": "sections/related_works.tex",
+          "lines": "8",
+          "evidence": "Selected candidate is discarded by the held-out validation gate if its validation error is higher or equal to the initial predicate",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Useful complete repair example: Candidate 2 has least risk but leaves positive errors, then passes a separate iteration-end gate against cold-start. The current question, predicates, candidates, labels, table values and validation counts must remain unchanged. No provenance-quality caveat should be deleted here: exact-versus-condensed text and pre-repair-versus-cold-start labels protect interpretation.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/data.tex",
+      "headings": [
+        {
+          "level": "section",
+          "title": "Benchmark and Skill Corpus Details",
+          "line": 1,
+          "assessment": "Section wrapper correctly groups split construction, required-skill annotations, shared corpus, and dataset-reuse qualifications. All four included subsections are separately audited. No substantive wrapper text requires alignment.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "We split each dataset into train, validation, and test splits with ratios of 70\\%, 15\\%, 15\\%, respectively.",
+          "excerpt_line": 12
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        }
+      ],
+      "assessment": "Section wrapper correctly groups split construction, required-skill annotations, shared corpus, and dataset-reuse qualifications. All four included subsections are separately audited. No substantive wrapper text requires alignment.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/data_splits.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Task Filtering and Split Construction",
+          "line": 1,
+          "assessment": "Filtering whole tasks, iterative low-frequency removal, constrained allocation, split seed, exact table, and shared skill vocabulary are useful scientific/reproducibility detail. The table total agrees with the main routing-table caption (748 evaluation tasks), but global-versus-per-dataset allocation is a real unresolved textual mismatch; do not force the exact table to match a simplified main description.",
+          "action": "retain_blocked_contradiction"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "We split each dataset into train, validation, and test splits with ratios of 70\\%, 15\\%, 15\\%, respectively.",
+          "excerpt_line": 12
+        },
+        {
+          "file": "tables/skill_routing_performance_average/table.tex",
+          "lines": "4",
+          "evidence": "Average uses each retriever's task-weighted scores over 748 tasks.",
+          "excerpt_line": 4
+        }
+      ],
+      "assessment": "Filtering whole tasks, iterative low-frequency removal, constrained allocation, split seed, exact table, and shared skill vocabulary are useful scientific/reproducibility detail. The table total agrees with the main routing-table caption (748 evaluation tasks), but global-versus-per-dataset allocation is a real unresolved textual mismatch; do not force the exact table to match a simplified main description.",
+      "action": "retain_blocked_contradiction",
+      "proposed_edits": [],
+      "unresolved": [
+        {
+          "id": "A-SPLIT",
+          "type": "blocked_scientific_contradiction",
+          "issue": "Main describes a 70/15/15 split for each dataset; appendix describes a constrained global target with materially different individual ratios (e.g. BigCodeBench 813/123/123 and TheoremQA 259/106/105). Filtering/balancing in the main may explain a preliminary target but does not expressly resolve this final-ratio wording.",
+          "evidence": [
+            "sections/experiments.tex:12",
+            "sections/appendix/data_splits.tex:5,18-25"
+          ],
+          "disposition": "Preserve exact counts, global-target wording, and the represented-skill generalization boundary. Do not fabricate per-dataset 70/15/15 compliance."
+        }
+      ],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/data_labels.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Required-Skill Labels and Task Types",
+          "line": 1,
+          "assessment": "Useful elaboration: preserves whole multi-skill label sets; distinguishes annotation occurrences from unique skills and task counts; specifies precision/recall/F1 targets. Unannotated downstream usefulness is a necessary scientific distinction, not disposable artifact-quality language. No conflict with the main annotation-based evaluation description; no values changed.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "20",
+          "evidence": "Averages are measured across task instances.",
+          "excerpt_line": 20
+        }
+      ],
+      "assessment": "Useful elaboration: preserves whole multi-skill label sets; distinguishes annotation occurrences from unique skills and task counts; specifies precision/recall/F1 targets. Unannotated downstream usefulness is a necessary scientific distinction, not disposable artifact-quality language. No conflict with the main annotation-based evaluation description; no values changed.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/data_corpus.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Shared Skill Corpus and Data Access",
+          "line": 1,
+          "assessment": "Useful elaboration: exact 26,262 corpus entries distinguishes 636 original gold identifiers, 25,626 distractors, and 306 retained gold skills. The main rounded 26k statement is compatible. Access/package metadata and preservation of task-to-skill mappings support reproducibility, not caveats about saved result quality. Retain package MIT wording together with the component-license qualifications in data_scope; do not infer a uniformly MIT corpus.",
+          "action": "retain"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/introduction.tex",
+          "lines": "29",
+          "evidence": "sharing a 26k skill corpus",
+          "excerpt_line": 29
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        },
+        {
+          "file": "sections/ethics_statement.tex",
+          "lines": "3",
+          "evidence": "Reuse should respect dataset, skill, and model licenses",
+          "excerpt_line": 3
+        }
+      ],
+      "assessment": "Useful elaboration: exact 26,262 corpus entries distinguishes 636 original gold identifiers, 25,626 distractors, and 306 retained gold skills. The main rounded 26k statement is compatible. Access/package metadata and preservation of task-to-skill mappings support reproducibility, not caveats about saved result quality. Retain package MIT wording together with the component-license qualifications in data_scope; do not infer a uniformly MIT corpus.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/data_scope.tex",
+      "headings": [
+        {
+          "level": "subsection",
+          "title": "Artifact Coverage and Reuse",
+          "line": 1,
+          "assessment": "Language limits, component-specific licenses, identifying-information risks, and untrusted executable content usefully elaborate the main ethics statement. Keep these factual scope/safety boundaries. The credential-file archive sentence is unrelated packaging/provenance commentary and can be deleted without weakening dataset privacy review. Rename the heading to make its dataset focus explicit.",
+          "action": "propose_minimal_editorial_cleanup"
+        }
+      ],
+      "main_anchors": [
+        {
+          "file": "sections/ethics_statement.tex",
+          "lines": "3",
+          "evidence": "Bounded replay and held-out validation assess routing behavior rather than factual correctness, fairness, or safety.",
+          "excerpt_line": 3
+        },
+        {
+          "file": "sections/ethics_statement.tex",
+          "lines": "3",
+          "evidence": "Reuse should respect dataset, skill, and model licenses",
+          "excerpt_line": 3
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        }
+      ],
+      "assessment": "Language limits, component-specific licenses, identifying-information risks, and untrusted executable content usefully elaborate the main ethics statement. Keep these factual scope/safety boundaries. The credential-file archive sentence is unrelated packaging/provenance commentary and can be deleted without weakening dataset privacy review. Rename the heading to make its dataset focus explicit.",
+      "action": "propose_minimal_editorial_cleanup",
+      "proposed_edits": [
+        {
+          "old": "\\subsection{Artifact Coverage and Reuse}",
+          "new": "\\subsection{Dataset Coverage and Reuse}",
+          "reason": "Use dataset-focused heading; retain label app:artifact-scope and all scientific coverage/licensing statements."
+        },
+        {
+          "old": "Credential-file exclusion from a software archive is distinct from reviewing and de-identifying task content or model traces. ",
+          "new": "",
+          "reason": "Remove redundant code-archive caveat. Adjacent sentences still identify privacy risks and the need not to equate public access with absence of identifying information."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "A"
+    },
+    {
+      "file": "sections/appendix/implementation.tex",
+      "headings": [
+        "Implementation and Configuration"
+      ],
+      "main_anchors": [
+        "Experiments: Implementation Details",
+        "Method: MBR Update Selection with Bounded Replay and Held-Out Validation"
+      ],
+      "assessment": "RETAIN: active section wrapper includes Shared Configuration, Requests/Caching/Reproducibility, Controlled Method Variants, and Retrieval/Evaluation Software. All four children audited; no printed provenance narration.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/implementation_settings.tex",
+      "headings": [
+        "Shared Configuration",
+        "Embedded table: Default RouterBSI optimization settings (tab:appendix-settings)"
+      ],
+      "main_anchors": [
+        "Experiments: Implementation Details (SkillSight, Qwen3.5-4B, 50 candidates, downstream k=5, temperatures, 10 iterations)",
+        "Method: bounded replay N, generated candidates M_p, predicate limit l"
+      ],
+      "assessment": "RETAIN: shared settings, embedded table, unchanged-predicate option, character rather than token limit, current-inclusive replay bound, and distinct retrieval/downstream budgets are useful methodology. Preserve every setting and numeric value. Single-predicate validation specialization is explained by the referenced appendix; do not substitute a different objective.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [
+        "Unresolved main-text contradiction: sections/experiments.tex Baselines calls retrievers trained on the training split, whereas Implementation Details calls them training-free. Do not invent retriever training or alter the appendix to force agreement."
+      ],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/implementation_runtime.tex",
+      "headings": [
+        "Requests, Caching, and Reproducibility"
+      ],
+      "main_anchors": [
+        "Experiments: Implementation Details (proposal temperature 1; evaluation temperature 0)",
+        "Method: sequential recursive updates; Limitations: computational cost"
+      ],
+      "assessment": "EDIT: remove only the legacy-field/request-wrapper implementation-history sentence. KEEP request schema, effective temperatures, model-specific reasoning parameters, timeouts, retry exhaustion, overflow behavior, concurrency without task-order changes, cache semantics, and initial-library/prompt binding: these describe reproducibility-relevant behavior, not artifact-quality assurances.",
+      "action": "edit",
+      "proposed_edits": [
+        {
+          "old": " In the active proposal branch, the request wrapper sets temperature one explicitly; a legacy proposal-temperature configuration field does not override this branch.",
+          "new": "",
+          "reason": "The immediately preceding sentence already gives the effective temperature. Legacy configuration precedence is code-history narration, not needed to interpret the experiment."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/implementation_variants.tex",
+      "headings": [
+        "Controlled Method Variants"
+      ],
+      "main_anchors": [
+        "Ablations: Impact of MBR based on Replay and Held-out Validation Gate",
+        "Ablations: Performance and Token Usage Tradeoff",
+        "Method: bounded replay and held-out gate"
+      ],
+      "assessment": "RETAIN: capacity and candidate-budget settings; no-gate rollback semantics; no-MBR still uses historical context; replay-F1 zero-denominator convention and distinction from Boolean error; single-predicate validation equivalence. These prevent the ablations being misread as removing all history or changing the default loss.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [
+        "Blocked, outside group: the actual main ablation caption (figs/mbr_replay_test_ndcg@1_std/description.text) claims the same initial predicates. Parent-provided evidence distinguishes the saved initial predicate libraries across runs, whereas the requested wording describes shared initialization. No new equality claim or source alteration is proposed; preserve repetition/seed uncertainty and require author/evidence reconciliation."
+      ],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/implementation_software.tex",
+      "headings": [
+        "Retrieval and Evaluation Software",
+        "Retrieval and reranking.",
+        "Task evaluation.",
+        "Examples and split construction."
+      ],
+      "main_anchors": [
+        "Experiments: Baselines and Implementation Details",
+        "Experiments: Evaluation Metrics and Benchmarks and Skill Corpus"
+      ],
+      "assessment": "EDIT: neutralize three repository-local \"in-tree\" qualifiers. KEEP tokenizer, model, scoring, rank-score exposure, reranker input truncation, precision, task-specific evaluation rules/tolerances, resource limits, ToolQA demonstrations, and split solver details. These are useful operational methodology, not removable provenance. All three paragraphs explicitly covered: Retrieval and reranking; Task evaluation; Examples and split construction.",
+      "action": "edit",
+      "proposed_edits": [
+        {
+          "old": "The in-tree SRA BM25 implementation",
+          "new": "The SRA BM25 implementation",
+          "reason": "Remove repository-local positioning while retaining the specific retrieval implementation."
+        },
+        {
+          "old": "We use the in-tree SRA task evaluators",
+          "new": "We use the SRA task evaluators",
+          "reason": "Remove repository-local positioning; preserve benchmark-specific scoring rules."
+        },
+        {
+          "old": "ToolQA's in-tree ReAct prompt",
+          "new": "ToolQA's ReAct prompt",
+          "reason": "Remove repository-local positioning; preserve fixed demonstration counts, order, and inference path."
+        }
+      ],
+      "unresolved": [
+        "Unresolved main-text contradiction: sections/experiments.tex Baselines calls retrievers trained on the training split, whereas Implementation Details calls them training-free. Do not invent retriever training or alter the appendix to force agreement.",
+        "Unresolved main/implementation mismatch: sections/experiments.tex specifies binary label plus retrieval score, whereas sections/appendix/procedure_routing.tex describes lexicographic label/score/order ranking. Do not claim equivalence for arbitrary raw scores; reciprocal-rank SkillSight is the stated special case. Resolution belongs outside this audit group."
+      ],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/routing.tex",
+      "headings": [
+        "Extended Skill-Routing Results"
+      ],
+      "main_anchors": [
+        "Results: Skill Routing Performance",
+        "Experiments: Evaluation Metrics"
+      ],
+      "assessment": "RETAIN: active wrapper for Ranking and Selection Metrics and Results by Benchmark and Retriever, with three table leaves audited.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/routing_metrics.tex",
+      "headings": [
+        "Ranking and Selection Metrics",
+        "Statistical reporting."
+      ],
+      "main_anchors": [
+        "Experiments: Evaluation Metrics (per-task averages)",
+        "Experiments: Baselines/Implementation Details (strict versus top-k routing)",
+        "Main table tab:skill_routing_performance_average (task-weighted 748-task scores; equal retriever means)",
+        "Main ablation figure fig:mbr_replay_test_ndcg@1_std (three-run variation)"
+      ],
+      "assessment": "RETAIN: nDCG/recall/F1 definitions, ranked-versus-selected distinction, task weighting, and retriever averaging. Statistical reporting is required-useful uncertainty, not process narration: single evaluations, non-seed repetitions, common replay seed, population SD rather than SE/CI, absent run-to-run estimates and absent significance tests must remain. Do not rewrite set-level F1 as fixed-cutoff F1 merely because the main overview uses F1@k.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [
+        "Unresolved main/implementation mismatch: sections/experiments.tex specifies binary label plus retrieval score, whereas sections/appendix/procedure_routing.tex describes lexicographic label/score/order ranking. Do not claim equivalence for arbitrary raw scores; reciprocal-rank SkillSight is the stated special case. Resolution belongs outside this audit group.",
+        "Blocked, outside group: the actual main ablation caption (figs/mbr_replay_test_ndcg@1_std/description.text) claims the same initial predicates. Parent-provided evidence distinguishes the saved initial predicate libraries across runs, whereas the requested wording describes shared initialization. No new equality claim or source alteration is proposed; preserve repetition/seed uncertainty and require author/evidence reconciliation.",
+        "The table leaves include FC@5/FC@10, named Full Coverage in their captions, without an explicit definition in this metrics subsection. A definition could improve self-containment, but is not required provenance cleanup; no new metric implementation is asserted or replacement proposed here."
+      ],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/routing_results.tex",
+      "headings": [
+        "Results by Benchmark and Retriever"
+      ],
+      "main_anchors": [
+        "Results: Skill Routing Performance (TheoremQA and MedCalc-Bench exceptions)",
+        "Main table tab:skill_routing_performance_average"
+      ],
+      "assessment": "RETAIN: benchmark/retriever decomposition, exact illustrative endpoints, TheoremQA SkillRouter advantage and Vector MedCalc-Bench boundary. These qualify the aggregate claim and should not be removed as negative results. All three included routing tables explicitly covered.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/routing_table_1.tex",
+      "headings": [
+        "Table leaf: routing_table_1"
+      ],
+      "main_anchors": [
+        "Results: Skill Routing Performance",
+        "Main table tab:skill_routing_performance_average",
+        "Experiments: Evaluation Metrics"
+      ],
+      "assessment": "RETAIN: TheoremQA and LogicBench table leaf, all BM25/Vector/SkillSight groups and seven methods per group. Preserve every numeric cell, bold/underline marker, metric abbreviation and set-level-F1 caption. No printed provenance or code-quality commentary. These are per-retriever detail, not duplicate estimates of an independently repeated experiment.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/routing_table_2.tex",
+      "headings": [
+        "Table leaf: routing_table_2"
+      ],
+      "main_anchors": [
+        "Results: Skill Routing Performance",
+        "Main table tab:skill_routing_performance_average",
+        "Experiments: Evaluation Metrics"
+      ],
+      "assessment": "RETAIN: ToolQA and MedCalc-Bench table leaf, all BM25/Vector/SkillSight groups and seven methods per group. Preserve every numeric cell, bold/underline marker, metric abbreviation and set-level-F1 caption. No printed provenance or code-quality commentary. These are per-retriever detail, not duplicate estimates of an independently repeated experiment.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/routing_table_3.tex",
+      "headings": [
+        "Table leaf: routing_table_3"
+      ],
+      "main_anchors": [
+        "Results: Skill Routing Performance",
+        "Main table tab:skill_routing_performance_average",
+        "Experiments: Evaluation Metrics"
+      ],
+      "assessment": "RETAIN: CHAMP and BigCodeBench table leaf, all BM25/Vector/SkillSight groups and seven methods per group. Preserve every numeric cell, bold/underline marker, metric abbreviation and set-level-F1 caption. No printed provenance or code-quality commentary. These are per-retriever detail, not duplicate estimates of an independently repeated experiment.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/retention.tex",
+      "headings": [
+        "Retention Under a Skill-Budget Constraint"
+      ],
+      "main_anchors": [
+        "Results: Required Skill Retention",
+        "Abstract and Introduction: 90.5% top-5 retention",
+        "Main figure fig:average_recall_degradation"
+      ],
+      "assessment": "RETAIN: active wrapper for Coverage and Retention and Results Across Routing Budgets; both included table leaves audited.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/retention_definition.tex",
+      "headings": [
+        "Coverage and Retention"
+      ],
+      "main_anchors": [
+        "Experiments: Evaluation Metrics (Ret@k)",
+        "Results: Required Skill Retention",
+        "Main figure fig:average_recall_degradation (retention mean across retrievers)"
+      ],
+      "assessment": "RETAIN: ratio of task-mean recalls, then equal averaging of three retriever-specific ratios. Each method has its own Recall@50 denominator, including SkillDAG expanded ranking. Preserve the distinction from averaging task-level ratios and from end-to-end recall. These are essential estimand/candidate-pool qualifications that make the compressed main wording interpretable.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [
+        "Main results and figure describe retention from an initial top-50 retrieval pool too broadly. The appendix correctly qualifies SkillDAG normalization as its own expanded pool. Do not erase this qualification or claim all methods share the same denominator; any remaining main wording change is outside appendix-only scope."
+      ],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/retention_results.tex",
+      "headings": [
+        "Results Across Routing Budgets"
+      ],
+      "main_anchors": [
+        "Results: Required Skill Retention",
+        "Abstract/Introduction: RouterBSI 90.5% retention",
+        "Main figure fig:average_recall_degradation"
+      ],
+      "assessment": "RETAIN: RouterBSI 90.5%/94.6% and SkillRouter 83.9%/87.9% comparisons, SkillDAG coverage-versus-ordering boundary, and fixed-ranking-prefix interpretation. The statement that updater reruns are not required explains what varying k measures and is useful methodology, not removable process history.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/retention_mean_table.tex",
+      "headings": [
+        "Table leaf: retention_mean_table"
+      ],
+      "main_anchors": [
+        "Abstract/Introduction and Results: 90.5% top-5 retention",
+        "Main figure fig:average_recall_degradation"
+      ],
+      "assessment": "RETAIN: mean retention table, all methods/cutoffs, percentages and caption. Equal average of three task-mean-recall ratios is the correct stated estimand; do not replace it with pooled occurrence retention or a ratio of retriever means.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/retention_table.tex",
+      "headings": [
+        "Table leaf: retention_table"
+      ],
+      "main_anchors": [
+        "Results: Required Skill Retention (coverage and SkillDAG expansion)",
+        "Main figure fig:average_recall_degradation"
+      ],
+      "assessment": "RETAIN: all per-retriever coverage and retention rows, including initialization. Preserve Recall@50 as a fractional coverage score versus percentage retention, and Ret@50=100. No printed provenance or code-quality commentary; the own-pool definition in Coverage and Retention must remain.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/ablations.tex",
+      "headings": [
+        "Ablations and Sensitivity Analyses"
+      ],
+      "main_anchors": [
+        "sections/ablations.tex: all three subsections"
+      ],
+      "assessment": "Covered complete wrapper and all four input children. Order is components, cost/capacity, candidate pool, backbones. This supports the main ablations; candidate-pool and capacity sensitivity are useful additional detail.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/ablation_components.tex",
+      "headings": [
+        "Replay and Held-Out Gate"
+      ],
+      "main_anchors": [
+        "sections/ablations.tex: Impact of MBR based on Replay and Held-out Validation Gate",
+        "sections/method.tex: Held-Out Validation and Recursive Improvement",
+        "figs/mbr_replay_test_ndcg@1_std/description.text"
+      ],
+      "assessment": "Covered configuration definition, endpoint table/caption, initialization/trajectory paragraph, gate rule, and admission-count paragraph. Endpoint means support main ordering and gains. Preserve task-weighted test means, three-run population SD, selected-set F1 versus ranking metrics, strict improvement over initialization, rollback on ties/absent support, and possible worsening relative to previous policy. The admission counts sum to 12,390; these are decisions rather than distinct skills. No scientific qualification is merely artifact clutter.",
+      "action": "retain; initialization blocked",
+      "proposed_edits": [],
+      "unresolved": [
+        "Do not edit the sentence \"All four configurations start from the same initial predicates at iteration 0, as in Figure~\\ref{fig:mbr_replay_test_ndcg@1_std}.\" Parent handoff reports the requested shared-initialization wording conflicts with differences in the inspected saved predicate libraries. Main Figure 5 caption also claims the same initial predicates. Leave the sentence untouched and resolve experimentally documented initialization separately; do not falsely harmonize or hide this issue.",
+        "Only-MBR initial nDCG@1 SD is 0.001 here but 0.000 in trajectory_table.tex. The trajectory caption explicitly states reconstruction from six-decimal rounded variances. Preserve both values and the precision explanation; no numerical replacement is justified in this audit."
+      ],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/trajectory_table.tex",
+      "headings": [
+        "Table tab:app-ablation-trajectory"
+      ],
+      "main_anchors": [
+        "sections/ablations.tex: Impact of MBR based on Replay and Held-out Validation Gate",
+        "figs/mbr_replay_test_ndcg@1_std/description.text"
+      ],
+      "assessment": "Covered all eleven iteration rows and caption. Iteration 10 matches component endpoint means; intermediate values are nonmonotonic. Retain test-versus-validation distinction and rounded-variance reconstruction because it explains printed SD precision. Keep generated-file maintenance comment: it is nonrendered and helps prevent unsafe cell editing.",
+      "action": "minimal iteration terminology correction",
+      "proposed_edits": [
+        {
+          "old": "Test nDCG@1 at initialization and each accepted iteration, averaged over three runs.",
+          "new": "Test nDCG@1 at initialization and each optimization iteration, averaged over three runs.",
+          "reason": "The gate accepts per-skill updates, not entire iterations. This avoids suggesting every iteration is globally accepted or improves quality."
+        }
+      ],
+      "unresolved": [
+        "Only-MBR initial SD differs at printed precision from ablation_components.tex (0.000 versus 0.001); do not change numbers or remove the explicit rounded-variance reconstruction explanation."
+      ],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/ablation_cost_capacity.tex",
+      "headings": [
+        "Token Accounting and Replay Capacity"
+      ],
+      "main_anchors": [
+        "sections/ablations.tex: Performance and Token Usage Tradeoff of MBR Replay and Held-out Gate",
+        "figs/performance_token_usage/table.tex",
+        "sections/method.tex: MBR Update Selection with Bounded Replay"
+      ],
+      "assessment": "Covered accounting paragraph, single-run component table/caption, replay-capacity paragraph, and sensitivity table/caption. Main cost figure is a single-run comparison, not the three-run component means. Keep known-token scope, unavailable-usage counts, retry/cache treatment, phase definitions, and per-class capacity interpretation. Preserve all initialization wording unchanged. Sensitivity is metric-dependent and does not conflict with the main method.",
+      "action": "minimal terminology cleanup",
+      "proposed_edits": [
+        {
+          "old": "Quality is measured on the final-test snapshot over 748 tasks.",
+          "new": "Quality is measured for the final policy on the test set of 748 tasks.",
+          "reason": "Describe the measured policy and split directly, without snapshot/artifact terminology; retain sample size and all results."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/ablation_candidate_pool.tex",
+      "headings": [
+        "Candidate-Pool Size and Token Usage"
+      ],
+      "main_anchors": [
+        "sections/experiments.tex: Implementation Details.",
+        "sections/ablations.tex: Performance and Token Usage Tradeoff of MBR Replay and Held-out Gate",
+        "figs/performance_token_usage_by_topk/description.text"
+      ],
+      "assessment": "Covered candidate-versus-selected-budget definition, task-instance aggregation, all three measured endpoints, and token-accounting/comparison scope. K=10/25/50 is a sensitivity study around the default top-50 pool, not a contradiction. Keep known tokens versus full/per-query costs and the absence of a controlled budget-matched comparison. Do not alter initialization claims.",
+      "action": "minimal terminology cleanup",
+      "proposed_edits": [
+        {
+          "old": "quality is measured on the final-test snapshot over 748 tasks.",
+          "new": "quality is measured for the final policy on the test set of 748 tasks.",
+          "reason": "Replace artifact-oriented snapshot terminology while preserving the measured endpoint and task count."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/ablation_backbones.tex",
+      "headings": [
+        "Backbone Comparison"
+      ],
+      "main_anchors": [
+        "sections/ablations.tex: Skill Routing Performance across LLM Backbones",
+        "figs/routing_performance_across_llms_init/description.text"
+      ],
+      "assessment": "Covered full paragraph, all initial/final/reference rows, caption, and within-stage ranking marks. Main and appendix agree on all displayed nDCG@1 endpoints, improvement of every backbone, and nonmonotonic final performance. The appendix 99.64% and main 99.6% have compatible display precision; do not recompute from rounded endpoint cells. Keep single-run/748-task/ten-iteration scope.",
+      "action": "retain measured endpoint; flag protected-main overclaim",
+      "proposed_edits": [],
+      "unresolved": [
+        "Main ends with a predicate plateau that cannot be overcome with more capable LLMs. The three finite-backbone endpoint comparisons do not establish an irreducible representational ceiling. Keep appendix restricted to measured endpoints; no appendix wording can substantiate the protected main claim without new evidence."
+      ],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/error_analysis.tex",
+      "headings": [
+        "Error Analysis and Additional Downstream Outcomes"
+      ],
+      "main_anchors": [
+        "sections/results.tex: Skill Routing Performance and Downstream Performance",
+        "sections/limitations.tex: fixed predicate-checker instructions"
+      ],
+      "assessment": "Covered all six input children and ordering: evaluator validation, counts, ranking gap, examples, conditional downstream disagreements, complete downstream results. Wrapper requires no change. Evaluator-validation source and table were also read for cross-context; their detailed edits belong to the separate evaluator audit.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/evaluator_validation.tex",
+      "headings": [
+        "Predicate-Evaluator Validation"
+      ],
+      "main_anchors": [
+        "Limitations: fixed predicate-checker instructions and checking errors",
+        "Experiments: Evaluation Metrics; Method: predicate-based skill routing"
+      ],
+      "assessment": "EDIT: delete only the checksum/journal/request-payload verification sentence. This active subsection is H.1, not D.5. KEEP the named adjudicator, observed saved Boolean/non-blinding, predicate-satisfaction rather than relevance target, unique-review versus occurrence weighting, class imbalance, provisional-reference recall, always-False comparison, stratified second-pass design, previous-sample exclusion, blinded assessment, ambiguous/likely-incorrect outcomes, AI-not-human status, lack of True checks, and nonrepresentative-sample limits. These qualifications are necessary to prevent 97.10% agreement being presented as human accuracy.",
+      "action": "edit",
+      "proposed_edits": [
+        {
+          "old": " Source checksums, journal-record hashes, request payloads, and occurrence-weighted counts were verified before tabulation.",
+          "new": "",
+          "reason": "This is artifact-verification narration. The separate deduplication and occurrence-weighting sentences already preserve the scientifically necessary denominator semantics."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/evaluator_validation_table.tex",
+      "headings": [
+        "Table leaf: evaluator_validation_table"
+      ],
+      "main_anchors": [
+        "Limitations: predicate checker errors",
+        "Experiments: task-instance averaging"
+      ],
+      "assessment": "RETAIN: all six dataset rows plus pooled row and numeric cells. The caption correctly says model-adjudicated agreement, not human-validated accuracy; this caveat is required. The unprinted generated-file comment is not manuscript prose and need not be removed.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "B"
+    },
+    {
+      "file": "sections/appendix/error_counts.tex",
+      "headings": [
+        "False Positives and False Negatives"
+      ],
+      "main_anchors": [
+        "sections/problem_definition.tex: missing required or selected irrelevant skills",
+        "sections/results.tex: MedCalc-Bench and TheoremQA exceptions",
+        "sections/limitations.tex: annotation and checker limitations"
+      ],
+      "assessment": "Covered both set definitions, full confusion-count table/caption, error-direction paragraph, retrospective attribution definitions, and complete attribution table/caption. Explicit nonstandard FP/FN definitions are essential because numeric column labels use the authors' convention; do not silently standardize them. Preserve candidate rejection versus retrieval miss, pooled observations versus distinct tasks, and retrospective interpretation versus checker-generated explanation. Error shares reproduce 62.24% and 79.81%; attribution counts sum to 331. No change needed.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/error_routing_gap.tex",
+      "headings": [
+        "Why RouterBSI Trails SkillRouter on Two Datasets",
+        "Required-skill nonactivation.",
+        "Predicate design versus checker judgments.",
+        "Implications for refinement."
+      ],
+      "main_anchors": [
+        "sections/results.tex: Skill Routing Performance, 5.01%/6.10% deficits",
+        "sections/limitations.tex: annotation quality and checker interpretation",
+        "sections/ablations.tex: observed late-iteration plateau"
+      ],
+      "assessment": "Covered introduction, matched-ranking table/caption, Required-skill nonactivation, Predicate design versus checker judgments and attribution table, examples, and Implications for refinement. The diagnostic matches the main dataset exceptions and expands them without claiming downstream causality. Preserve task/retriever denominators, gross versus net loss, uncertainty in semantic assessments, and untested human-edit/training interventions. Late changes and restrictive-versus-checker distinctions are useful evidence, not artifact-quality caveats.",
+      "action": "remove provenance-only wording/comments",
+      "proposed_edits": [
+        {
+          "old": "% Evidence: ../.wisc/verification/routerbsi-exception-investigation/\n% analysis.json, independent_verification.json, theoremqa/summary.json,\n% medcalc/summary.json, and trajectory_spotcheck.json.\n",
+          "new": "",
+          "reason": "Nonrendered evidence-path inventory is workflow provenance, not scientific exposition; no results or interpretation removed."
+        },
+        {
+          "old": "These are retrospective archived-run diagnostics, not new intervention results.",
+          "new": "These are retrospective diagnostics, not new intervention results.",
+          "reason": "Remove the archive/provenance adjective while retaining the scientifically important observational-versus-interventional distinction."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/error_examples.tex",
+      "headings": [
+        "Representative Predicate Decisions",
+        "False-negative judgment (nonrequired skill accepted).",
+        "False-positive judgment (required skill rejected).",
+        "Restrictive predicate.",
+        "Medical-calculator judgment."
+      ],
+      "main_anchors": [
+        "sections/results.tex: MedCalc-Bench and TheoremQA exceptions",
+        "sections/limitations.tex: incorrect predicate interpretation"
+      ],
+      "assessment": "Covered Representative Predicate Decisions and all four paragraphs: nonrequired business skill accepted for Newton-Raphson, required de Broglie skill rejected, restrictive P/E predicate, and calcium-correction judgment. Preserve quoted predicates, saved Boolean observations, nonstandard labels explained in preceding subsection, and explicit excerpt qualification. These are useful distinct scientific examples, not documentation of code-artifact quality. No changes proposed.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/error_downstream.tex",
+      "headings": [
+        "Routing Errors Within Downstream Disagreements"
+      ],
+      "main_anchors": [
+        "sections/results.tex: Downstream Performance",
+        "sections/experiments.tex: Baselines and Implementation Details."
+      ],
+      "assessment": "Covered cohort definition, every conditional-table row and caption, extra-selection-share paragraph, and required-skill-coverage/comparator paragraph. It distinguishes actual supplied top-five skills from predicate decisions and routing correctness from downstream success. Keep noncausal interpretation, one-gold/five-supplied context, and conditioned/pooled denominators. Conditional shares reproduce 94.68% and 93.75%.",
+      "action": "remove provenance-only adjective",
+      "proposed_edits": [
+        {
+          "old": "These archived extra-selection shares",
+          "new": "These extra-selection shares",
+          "reason": "The archive adjective contributes nothing to the denominator or interpretation; retain all explanatory limitations."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/error_downstream_results.tex",
+      "headings": [
+        "Complete Downstream Results"
+      ],
+      "main_anchors": [
+        "sections/results.tex: Downstream Performance",
+        "sections/experiments.tex: Evaluation Metrics. and Baselines",
+        "figs/downstream_average/description.text"
+      ],
+      "assessment": "Covered subsection prose, strict/top-five/direct/oracle definitions, mean-versus-benchmark distinction, and both table inputs. Definitions agree with main; two tables follow, so singular introduction is stale.",
+      "action": "minimal table-reference cleanup",
+      "proposed_edits": [
+        {
+          "old": "The following table reports downstream task-success rates by benchmark and retriever,",
+          "new": "The following tables report downstream task-success rates by benchmark and retriever,",
+          "reason": "Two tables follow; update only singular/plural wording."
+        }
+      ],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/downstream_mean_table.tex",
+      "headings": [
+        "Table tab:app-downstream-mean"
+      ],
+      "main_anchors": [
+        "sections/results.tex: Downstream Performance",
+        "figs/downstream_average/description.text",
+        "sections/experiments.tex: Evaluation Metrics."
+      ],
+      "assessment": "Covered every method/reference row, column-ranking marks, and full caption. All 21 retriever-level method values exactly match the Average cells in downstream_table.tex. Equal-retriever means over each 748-task pooled rate match main caption aggregation. SkillDAG leads, RouterBSI top-five exceeds strict on the mean, and direct/oracle remain retriever-independent. Do not replace printed means or main relative ratios using calculations from already-rounded cells.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "C"
+    },
+    {
+      "file": "sections/appendix/downstream_table.tex",
+      "headings": [
+        "Table tab:app-downstream"
+      ],
+      "main_anchors": [
+        "sections/results.tex: Downstream Performance",
+        "sections/experiments.tex: Evaluation Metrics. and Implementation Details.",
+        "figs/downstream_average/description.text"
+      ],
+      "assessment": "Covered reference conditions, BM25, Vector, and SkillSight blocks (all benchmark rows and Average cells), ranking emphasis, and caption. Benchmark-specific reversals of aggregate rankings are useful breakdowns, not conflicts. Average is task pooled rather than an equal-dataset mean. No numbers or highlighting changes warranted. Main already supplies the SkillDAG ten-skill versus RouterBSI five-skill protocol; no new mandatory caveat is added.",
+      "action": "retain",
+      "proposed_edits": [],
+      "unresolved": [],
+      "reviewer_group": "C"
+    }
+  ],
+  "subsections": [
+    {
+      "id": "A.1",
+      "file": "sections/appendix/procedure_routing.tex",
+      "heading": "Initialization and Online Routing",
+      "heading_after": "Initialization and Online Routing",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/problem_definition.tex",
+          "lines": "8",
+          "evidence": "we only evaluate the predicates from skills in the top k based on retrieval score",
+          "excerpt_line": 8
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "47",
+          "evidence": "The skill routing baselines are conditioned on a pool of retrieved 50 skills",
+          "excerpt_line": 47
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "47",
+          "evidence": "we rank them by the sum of their binary label and the retrieval score",
+          "excerpt_line": 47
+        }
+      ],
+      "assessment": "Single predicate, public inputs, no evaluator gold labels, top-k-limited failure set, retrieval misses, and deterministic online commit ordering elaborate the main without conflict. Public name/description/body explain initialization inputs, while main K_s is not sufficiently defined to prove an inconsistency. Strict versus fixed-size ranking is essential; keep the lexicographic-versus-arithmetic qualification because unconditional agreement across all retrieval score scales is not established.",
+      "edits": [],
+      "unresolved_ids": [
+        "RANK"
+      ],
+      "status": "unresolved_alignment"
+    },
+    {
+      "id": "A.2",
+      "file": "sections/appendix/procedure_replay.tex",
+      "heading": "Bounded Replay Construction",
+      "heading_after": "Bounded Replay Construction",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "28",
+          "evidence": "\\mathcal{R}_s = \\{q_{rs}\\}\\cup\\{q_{is}\\}",
+          "excerpt_line": 28
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "44",
+          "evidence": "across tasks where the skill is in the top \\(k\\)",
+          "excerpt_line": 44
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        }
+      ],
+      "assessment": "The bounded per-skill buckets, unbounded global lazy-materialization history, uniform-slot replacement (not reservoir sampling), deterministic order, duplicate handling, and prompt-example/scoring distinction are useful mechanics. Current-inclusive replay and its 2N+1 bound do not equal the main historical-only definition. The sentence asserting that main bounds refer only to retained history is an interpretation, not an established reconciliation. Preserve the truthful distinction pending main authorization; do not remove it as a code caveat.",
+      "edits": [],
+      "unresolved_ids": [
+        "REPLAY"
+      ],
+      "status": "unresolved_alignment"
+    },
+    {
+      "id": "A.3",
+      "file": "sections/appendix/procedure_mbr.tex",
+      "heading": "Candidate Admission and Minimum-Risk Selection",
+      "heading_after": "Candidate Admission and Minimum-Risk Selection",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "28",
+          "evidence": "\\mathcal{R}_s = \\{q_{rs}\\}\\cup\\{q_{is}\\}",
+          "excerpt_line": 28
+        }
+      ],
+      "assessment": "Candidate structural admission, separate unchanged candidate, binary mean-loss equation, and non-increasing average-risk argument agree with the main argmin. The qualifications that individual errors may trade off, ties need not improve, and no tie-break is prescribed accurately distinguish average-risk minimization from stronger per-example guarantees. Keep them: they are scientific, not saved-artifact caveats. Agreement of the loss formula does not settle the replay-set mismatch defined next door.",
+      "edits": [],
+      "unresolved_ids": [
+        "REPLAY"
+      ],
+      "status": "unresolved_alignment"
+    },
+    {
+      "id": "A.4",
+      "file": "sections/appendix/procedure_validation.tex",
+      "heading": "Held-Out Gate and Partial Rollback",
+      "heading_after": "Held-Out Gate and Partial Rollback",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        },
+        {
+          "file": "sections/related_works.tex",
+          "lines": "8",
+          "evidence": "Selected candidate is discarded by the held-out validation gate if its validation error is higher or equal to the initial predicate",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Strict cold-start comparison and rejection of ties agree with the main equation and method caption. Mean Boolean correctness equals 1 minus error. Per-skill rollback to iteration-start state, unsupported-skill rejection, non-monotonicity relative to the previous retained state, test exclusion, and pre-/post-rollback score distinctions are scientifically useful clarifications, not artifact-quality disclaimers. Main introduction/related-work prose uses looser higher-error phrasing, but the explicit main gate equation resolves ties strictly; do not weaken the appendix rule.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "A.5",
+      "file": "sections/appendix/procedure_algorithm.tex",
+      "heading": "Optimization Procedure",
+      "heading_after": "Optimization Procedure",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        },
+        {
+          "file": "sections/related_works.tex",
+          "lines": "8",
+          "evidence": "Selected candidate is discarded by the held-out validation gate if its validation error is higher or equal to the initial predicate",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Optimization order, fixed corpus/partitions, task-level provisional commits, iteration-end gate and partial rollback are useful procedural details. The linked section is an appendix subsection, not the main text; delete only that erroneous adjective. Current-inclusive replay inherits the unresolved main-equation mismatch.",
+      "edits": [
+        {
+          "file": "sections/appendix/procedure_algorithm.tex",
+          "old": "The update loop below follows the main minimum-average-risk formulation in Section~\\ref{app:procedure-mbr}.",
+          "new": "The update loop below expands the main minimum-average-risk formulation, with candidate selection detailed in Appendix~\\ref{app:procedure-mbr}.",
+          "reason": "Correct a cross-reference that identifies an appendix subsection as the main formulation.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [
+        "REPLAY"
+      ],
+      "status": "edited_with_unresolved_alignment"
+    },
+    {
+      "id": "B.1",
+      "file": "sections/appendix/prompts_initialization.tex",
+      "heading": "Initial Predicate Generation",
+      "heading_after": "Initial Predicate Generation",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "figs/mbr_replay_test_ndcg@1_std/description.text",
+          "lines": "1",
+          "evidence": "across three runs starting from the same initial predicates at iteration 0",
+          "excerpt_line": 1
+        }
+      ],
+      "assessment": "Single-user-message structure, JSON encoding, public inputs, strict one-string schema and length limit add reproducible detail. The editorial statement about preserving prompt wording can be removed without changing the template. The exact template remains untouched, and no assertion of identical initialization across runs should be imported from the blocked figure caption.",
+      "edits": [
+        {
+          "file": "sections/appendix/prompts_initialization.tex",
+          "old": "We preserve the prompt wording below, with paragraph wrapping for readability. ",
+          "new": "",
+          "reason": "Remove manuscript-production narration; preserve exact prompt and schema.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "B.2",
+      "file": "sections/appendix/prompts_proposal.tex",
+      "heading": "Replacement Proposals",
+      "heading_after": "Replacement Proposals",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "36",
+          "evidence": "a max length \\(l\\)",
+          "excerpt_line": 36
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "28",
+          "evidence": "\\mathcal{R}_s = \\{q_{rs}\\}\\cup\\{q_{is}\\}",
+          "excerpt_line": 28
+        }
+      ],
+      "assessment": "Fields distinguish current relevance labels from prior predicate activations, immutable initial predicate from supplied current predicate, exact candidate schema, and trusted retry correction. Prompt instructions to correct the current case/preserve prior correct behavior are generation objectives, not extra hard eligibility constraints in the main average-risk argmin. Keep this distinction and every literal prompt/retry string; do not rewrite the prompt to imply the weaker selection guarantee.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "B.3",
+      "file": "sections/appendix/prompts_evaluator.tex",
+      "heading": "Boolean Predicate Evaluation",
+      "heading_after": "Boolean Predicate Evaluation",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "16",
+          "evidence": "The initial cold-start predicates \\(p_{si}\\) are generated from the skill key \\(K_{s}\\).",
+          "excerpt_line": 16
+        },
+        {
+          "file": "sections/limitations.tex",
+          "lines": "8",
+          "evidence": "we keep the predicate checker's instructions fixed",
+          "excerpt_line": 8
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        }
+      ],
+      "assessment": "Exact task/predicate pair, single-Boolean schema, no gold relevance input and same evaluator for routing/replay explain the main predicate checker. The prompt asks for predicate truth independently of desirability, while the router uses that truth for selection; these are distinct stages, not a contradiction. Preserve every prompt token and output example.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "B.4",
+      "file": "sections/appendix/prompts_trace.tex",
+      "heading": "A Complete Replay Decision",
+      "heading_after": "A Complete Replay Decision",
+      "main_anchors": [
+        {
+          "file": "sections/method.tex",
+          "lines": "56",
+          "evidence": "\\arg\\min}_{m_p\\in M_p\\cup\\{p_f\\}} R_{\\mathrm{replay}}(m_p\\mid s_{fk})",
+          "excerpt_line": 56
+        },
+        {
+          "file": "sections/method.tex",
+          "lines": "80",
+          "evidence": "R_v(m_p^*\\mid s_{fk})< R_v(p_{si}\\mid s_{fk})",
+          "excerpt_line": 80
+        },
+        {
+          "file": "sections/related_works.tex",
+          "lines": "8",
+          "evidence": "Selected candidate is discarded by the held-out validation gate if its validation error is higher or equal to the initial predicate",
+          "excerpt_line": 8
+        }
+      ],
+      "assessment": "Useful complete repair example: Candidate 2 has least risk but leaves positive errors, then passes a separate iteration-end gate against cold-start. The current question, predicates, candidates, labels, table values and validation counts must remain unchanged. No provenance-quality caveat should be deleted here: exact-versus-condensed text and pre-repair-versus-cold-start labels protect interpretation.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "C.1",
+      "file": "sections/appendix/data_splits.tex",
+      "heading": "Task Filtering and Split Construction",
+      "heading_after": "Task Filtering and Split Construction",
+      "main_anchors": [
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "We split each dataset into train, validation, and test splits with ratios of 70\\%, 15\\%, 15\\%, respectively.",
+          "excerpt_line": 12
+        },
+        {
+          "file": "tables/skill_routing_performance_average/table.tex",
+          "lines": "4",
+          "evidence": "Average uses each retriever's task-weighted scores over 748 tasks.",
+          "excerpt_line": 4
+        }
+      ],
+      "assessment": "Filtering whole tasks, iterative low-frequency removal, constrained allocation, split seed, exact table, and shared skill vocabulary are useful scientific/reproducibility detail. The table total agrees with the main routing-table caption (748 evaluation tasks), but global-versus-per-dataset allocation is a real unresolved textual mismatch; do not force the exact table to match a simplified main description.",
+      "edits": [
+        {
+          "file": "sections/appendix/data_splits.tex",
+          "old": "The constraints can shift an individual dataset away from the global proportions, particularly when many skills have few examples; the exact counts therefore take precedence over an assumed per-dataset ratio.",
+          "new": "The coverage constraints can shift individual datasets away from the target proportions, particularly when many skills have few examples.",
+          "reason": "Replace editorial precedence commentary with the actual allocation limitation; preserve counts and global-split definition.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [
+        "SPLIT"
+      ],
+      "status": "edited_with_unresolved_alignment"
+    },
+    {
+      "id": "C.2",
+      "file": "sections/appendix/data_labels.tex",
+      "heading": "Required-Skill Labels and Task Types",
+      "heading_after": "Required-Skill Labels and Task Types",
+      "main_anchors": [
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "20",
+          "evidence": "Averages are measured across task instances.",
+          "excerpt_line": 20
+        }
+      ],
+      "assessment": "Useful elaboration: preserves whole multi-skill label sets; distinguishes annotation occurrences from unique skills and task counts; specifies precision/recall/F1 targets. Unannotated downstream usefulness is a necessary scientific distinction, not disposable artifact-quality language. No conflict with the main annotation-based evaluation description; no values changed.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "C.3",
+      "file": "sections/appendix/data_corpus.tex",
+      "heading": "Shared Skill Corpus and Data Access",
+      "heading_after": "Shared Skill Corpus and Data Access",
+      "main_anchors": [
+        {
+          "file": "sections/introduction.tex",
+          "lines": "29",
+          "evidence": "sharing a 26k skill corpus",
+          "excerpt_line": 29
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        },
+        {
+          "file": "sections/ethics_statement.tex",
+          "lines": "3",
+          "evidence": "Reuse should respect dataset, skill, and model licenses",
+          "excerpt_line": 3
+        }
+      ],
+      "assessment": "Useful elaboration: exact 26,262 corpus entries distinguishes 636 original gold identifiers, 25,626 distractors, and 306 retained gold skills. The main rounded 26k statement is compatible. Access/package metadata and preservation of task-to-skill mappings support reproducibility, not caveats about saved result quality. Retain package MIT wording together with the component-license qualifications in data_scope; do not infer a uniformly MIT corpus.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "C.4",
+      "file": "sections/appendix/data_scope.tex",
+      "heading": "Artifact Coverage and Reuse",
+      "heading_after": "Dataset Coverage and Reuse",
+      "main_anchors": [
+        {
+          "file": "sections/ethics_statement.tex",
+          "lines": "3",
+          "evidence": "Bounded replay and held-out validation assess routing behavior rather than factual correctness, fairness, or safety.",
+          "excerpt_line": 3
+        },
+        {
+          "file": "sections/ethics_statement.tex",
+          "lines": "3",
+          "evidence": "Reuse should respect dataset, skill, and model licenses",
+          "excerpt_line": 3
+        },
+        {
+          "file": "sections/experiments.tex",
+          "lines": "12",
+          "evidence": "Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus",
+          "excerpt_line": 12
+        }
+      ],
+      "assessment": "Language limits, component-specific licenses, identifying-information risks, and untrusted executable content usefully elaborate the main ethics statement. Keep these factual scope/safety boundaries. The credential-file archive sentence is unrelated packaging/provenance commentary and can be deleted without weakening dataset privacy review. Rename the heading to make its dataset focus explicit.",
+      "edits": [
+        {
+          "file": "sections/appendix/data_scope.tex",
+          "old": "\\subsection{Artifact Coverage and Reuse}",
+          "new": "\\subsection{Dataset Coverage and Reuse}",
+          "reason": "Use a scientific coverage heading rather than an artifact-audit heading.",
+          "origin": "parent_read"
+        },
+        {
+          "file": "sections/appendix/data_scope.tex",
+          "old": "Credential-file exclusion from a software archive is distinct from reviewing and de-identifying task content or model traces. ",
+          "new": "",
+          "reason": "Remove software-packaging aside while retaining privacy, license and safety scope.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "D.1",
+      "file": "sections/appendix/implementation_settings.tex",
+      "heading": "Shared Configuration",
+      "heading_after": "Shared Configuration",
+      "main_anchors": [
+        "Experiments: Implementation Details (SkillSight, Qwen3.5-4B, 50 candidates, downstream k=5, temperatures, 10 iterations)",
+        "Method: bounded replay N, generated candidates M_p, predicate limit l"
+      ],
+      "assessment": "RETAIN: shared settings, embedded table, unchanged-predicate option, character rather than token limit, current-inclusive replay bound, and distinct retrieval/downstream budgets are useful methodology. Preserve every setting and numeric value. Single-predicate validation specialization is explained by the referenced appendix; do not substitute a different objective.",
+      "edits": [],
+      "unresolved_ids": [
+        "REPLAY"
+      ],
+      "status": "unresolved_alignment"
+    },
+    {
+      "id": "D.2",
+      "file": "sections/appendix/implementation_runtime.tex",
+      "heading": "Requests, Caching, and Reproducibility",
+      "heading_after": "Requests, Caching, and Reproducibility",
+      "main_anchors": [
+        "Experiments: Implementation Details (proposal temperature 1; evaluation temperature 0)",
+        "Method: sequential recursive updates; Limitations: computational cost"
+      ],
+      "assessment": "EDIT: remove only the legacy-field/request-wrapper implementation-history sentence. KEEP request schema, effective temperatures, model-specific reasoning parameters, timeouts, retry exhaustion, overflow behavior, concurrency without task-order changes, cache semantics, and initial-library/prompt binding: these describe reproducibility-relevant behavior, not artifact-quality assurances.",
+      "edits": [
+        {
+          "file": "sections/appendix/implementation_runtime.tex",
+          "old": " In the active proposal branch, the request wrapper sets temperature one explicitly; a legacy proposal-temperature configuration field does not override this branch.",
+          "new": "",
+          "reason": "Remove legacy-code commentary; effective temperature already stated.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "D.3",
+      "file": "sections/appendix/implementation_variants.tex",
+      "heading": "Controlled Method Variants",
+      "heading_after": "Controlled Method Variants",
+      "main_anchors": [
+        "Ablations: Impact of MBR based on Replay and Held-out Validation Gate",
+        "Ablations: Performance and Token Usage Tradeoff",
+        "Method: bounded replay and held-out gate"
+      ],
+      "assessment": "RETAIN: capacity and candidate-budget settings; no-gate rollback semantics; no-MBR still uses historical context; replay-F1 zero-denominator convention and distinction from Boolean error; single-predicate validation equivalence. These prevent the ablations being misread as removing all history or changing the default loss.",
+      "edits": [],
+      "unresolved_ids": [
+        "REPLAY"
+      ],
+      "status": "unresolved_alignment"
+    },
+    {
+      "id": "D.4",
+      "file": "sections/appendix/implementation_software.tex",
+      "heading": "Retrieval and Evaluation Software",
+      "heading_after": "Retrieval and Evaluation Software",
+      "main_anchors": [
+        "Experiments: Baselines and Implementation Details",
+        "Experiments: Evaluation Metrics and Benchmarks and Skill Corpus"
+      ],
+      "assessment": "EDIT: neutralize three repository-local \"in-tree\" qualifiers. KEEP tokenizer, model, scoring, rank-score exposure, reranker input truncation, precision, task-specific evaluation rules/tolerances, resource limits, ToolQA demonstrations, and split solver details. These are useful operational methodology, not removable provenance. All three paragraphs explicitly covered: Retrieval and reranking; Task evaluation; Examples and split construction.",
+      "edits": [
+        {
+          "file": "sections/appendix/implementation_software.tex",
+          "old": "The in-tree SRA BM25 implementation",
+          "new": "The SRA BM25 implementation",
+          "reason": "Remove repository-relative provenance adjective.",
+          "origin": "parent_read"
+        },
+        {
+          "file": "sections/appendix/implementation_software.tex",
+          "old": "We use the in-tree SRA task evaluators rather than a single exact-match rule for every benchmark.",
+          "new": "We use benchmark-specific SRA task evaluators.",
+          "reason": "State evaluation protocol positively; subsequent exact rules preserve the scientific distinction.",
+          "origin": "parent_read"
+        },
+        {
+          "file": "sections/appendix/implementation_software.tex",
+          "old": "ToolQA's in-tree ReAct prompt",
+          "new": "ToolQA's ReAct prompt",
+          "reason": "Remove repository-relative provenance adjective; retain demonstrations and citation.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [
+        "TRAIN"
+      ],
+      "status": "edited_with_unresolved_alignment"
+    },
+    {
+      "id": "E.1",
+      "file": "sections/appendix/routing_metrics.tex",
+      "heading": "Ranking and Selection Metrics",
+      "heading_after": "Ranking and Selection Metrics",
+      "main_anchors": [
+        "Experiments: Evaluation Metrics (per-task averages)",
+        "Experiments: Baselines/Implementation Details (strict versus top-k routing)",
+        "Main table tab:skill_routing_performance_average (task-weighted 748-task scores; equal retriever means)",
+        "Main ablation figure fig:mbr_replay_test_ndcg@1_std (three-run variation)"
+      ],
+      "assessment": "RETAIN: nDCG/recall/F1 definitions, ranked-versus-selected distinction, task weighting, and retriever averaging. Statistical reporting is required-useful uncertainty, not process narration: single evaluations, non-seed repetitions, common replay seed, population SD rather than SE/CI, absent run-to-run estimates and absent significance tests must remain. Do not rewrite set-level F1 as fixed-cutoff F1 merely because the main overview uses F1@k.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "E.2",
+      "file": "sections/appendix/routing_results.tex",
+      "heading": "Results by Benchmark and Retriever",
+      "heading_after": "Results by Benchmark and Retriever",
+      "main_anchors": [
+        "Results: Skill Routing Performance (TheoremQA and MedCalc-Bench exceptions)",
+        "Main table tab:skill_routing_performance_average"
+      ],
+      "assessment": "RETAIN: benchmark/retriever decomposition, exact illustrative endpoints, TheoremQA SkillRouter advantage and Vector MedCalc-Bench boundary. These qualify the aggregate claim and should not be removed as negative results. All three included routing tables explicitly covered.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "F.1",
+      "file": "sections/appendix/retention_definition.tex",
+      "heading": "Coverage and Retention",
+      "heading_after": "Coverage and Retention",
+      "main_anchors": [
+        "Experiments: Evaluation Metrics (Ret@k)",
+        "Results: Required Skill Retention",
+        "Main figure fig:average_recall_degradation (retention mean across retrievers)"
+      ],
+      "assessment": "RETAIN: ratio of task-mean recalls, then equal averaging of three retriever-specific ratios. Each method has its own Recall@50 denominator, including SkillDAG expanded ranking. Preserve the distinction from averaging task-level ratios and from end-to-end recall. These are essential estimand/candidate-pool qualifications that make the compressed main wording interpretable.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "F.2",
+      "file": "sections/appendix/retention_results.tex",
+      "heading": "Results Across Routing Budgets",
+      "heading_after": "Results Across Routing Budgets",
+      "main_anchors": [
+        "Results: Required Skill Retention",
+        "Abstract/Introduction: RouterBSI 90.5% retention",
+        "Main figure fig:average_recall_degradation"
+      ],
+      "assessment": "RETAIN: RouterBSI 90.5%/94.6% and SkillRouter 83.9%/87.9% comparisons, SkillDAG coverage-versus-ordering boundary, and fixed-ranking-prefix interpretation. The statement that updater reruns are not required explains what varying k measures and is useful methodology, not removable process history.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "G.1",
+      "file": "sections/appendix/ablation_components.tex",
+      "heading": "Replay and Held-Out Gate",
+      "heading_after": "Replay and Held-Out Gate",
+      "main_anchors": [
+        "sections/ablations.tex: Impact of MBR based on Replay and Held-out Validation Gate",
+        "sections/method.tex: Held-Out Validation and Recursive Improvement",
+        "figs/mbr_replay_test_ndcg@1_std/description.text"
+      ],
+      "assessment": "Covered configuration definition, endpoint table/caption, initialization/trajectory paragraph, gate rule, and admission-count paragraph. Endpoint means support main ordering and gains. Preserve task-weighted test means, three-run population SD, selected-set F1 versus ranking metrics, strict improvement over initialization, rollback on ties/absent support, and possible worsening relative to previous policy. The admission counts sum to 12,390; these are decisions rather than distinct skills. No scientific qualification is merely artifact clutter.",
+      "edits": [],
+      "unresolved_ids": [
+        "INIT"
+      ],
+      "status": "unresolved_alignment"
+    },
+    {
+      "id": "G.2",
+      "file": "sections/appendix/ablation_cost_capacity.tex",
+      "heading": "Token Accounting and Replay Capacity",
+      "heading_after": "Token Accounting and Replay Capacity",
+      "main_anchors": [
+        "sections/ablations.tex: Performance and Token Usage Tradeoff of MBR Replay and Held-out Gate",
+        "figs/performance_token_usage/table.tex",
+        "sections/method.tex: MBR Update Selection with Bounded Replay"
+      ],
+      "assessment": "Covered accounting paragraph, single-run component table/caption, replay-capacity paragraph, and sensitivity table/caption. Main cost figure is a single-run comparison, not the three-run component means. Keep known-token scope, unavailable-usage counts, retry/cache treatment, phase definitions, and per-class capacity interpretation. Preserve all initialization wording unchanged. Sensitivity is metric-dependent and does not conflict with the main method.",
+      "edits": [
+        {
+          "file": "sections/appendix/ablation_cost_capacity.tex",
+          "old": "Quality is measured on the final-test snapshot over 748 tasks.",
+          "new": "Quality is measured on the final policy over 748 test tasks.",
+          "reason": "Use experimental terminology instead of saved-snapshot terminology.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [
+        "REPLAY"
+      ],
+      "status": "edited_with_unresolved_alignment"
+    },
+    {
+      "id": "G.3",
+      "file": "sections/appendix/ablation_candidate_pool.tex",
+      "heading": "Candidate-Pool Size and Token Usage",
+      "heading_after": "Candidate-Pool Size and Token Usage",
+      "main_anchors": [
+        "sections/experiments.tex: Implementation Details.",
+        "sections/ablations.tex: Performance and Token Usage Tradeoff of MBR Replay and Held-out Gate",
+        "figs/performance_token_usage_by_topk/description.text"
+      ],
+      "assessment": "Covered candidate-versus-selected-budget definition, task-instance aggregation, all three measured endpoints, and token-accounting/comparison scope. K=10/25/50 is a sensitivity study around the default top-50 pool, not a contradiction. Keep known tokens versus full/per-query costs and the absence of a controlled budget-matched comparison. Do not alter initialization claims.",
+      "edits": [
+        {
+          "file": "sections/appendix/ablation_candidate_pool.tex",
+          "old": "quality is measured on the final-test snapshot over 748 tasks",
+          "new": "quality is measured on the final policy over 748 test tasks",
+          "reason": "Use experimental terminology instead of saved-snapshot terminology.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "G.4",
+      "file": "sections/appendix/ablation_backbones.tex",
+      "heading": "Backbone Comparison",
+      "heading_after": "Backbone Comparison",
+      "main_anchors": [
+        "sections/ablations.tex: Skill Routing Performance across LLM Backbones",
+        "figs/routing_performance_across_llms_init/description.text"
+      ],
+      "assessment": "Covered full paragraph, all initial/final/reference rows, caption, and within-stage ranking marks. Main and appendix agree on all displayed nDCG@1 endpoints, improvement of every backbone, and nonmonotonic final performance. The appendix 99.64% and main 99.6% have compatible display precision; do not recompute from rounded endpoint cells. Keep single-run/748-task/ten-iteration scope.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "H.1",
+      "file": "sections/appendix/evaluator_validation.tex",
+      "heading": "Predicate-Evaluator Validation",
+      "heading_after": "Predicate-Evaluator Validation",
+      "main_anchors": [
+        "Limitations: fixed predicate-checker instructions and checking errors",
+        "Experiments: Evaluation Metrics; Method: predicate-based skill routing"
+      ],
+      "assessment": "EDIT: delete only the checksum/journal/request-payload verification sentence. This active subsection is H.1, not D.5. KEEP the named adjudicator, observed saved Boolean/non-blinding, predicate-satisfaction rather than relevance target, unique-review versus occurrence weighting, class imbalance, provisional-reference recall, always-False comparison, stratified second-pass design, previous-sample exclusion, blinded assessment, ambiguous/likely-incorrect outcomes, AI-not-human status, lack of True checks, and nonrepresentative-sample limits. These qualifications are necessary to prevent 97.10% agreement being presented as human accuracy.",
+      "edits": [
+        {
+          "file": "sections/appendix/evaluator_validation.tex",
+          "old": " Source checksums, journal-record hashes, request payloads, and occurrence-weighted counts were verified before tabulation.",
+          "new": "",
+          "reason": "Remove artifact-integrity assurance from scientific results; preserve sampling, weighting, blinding and agreement scope.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "H.2",
+      "file": "sections/appendix/error_counts.tex",
+      "heading": "False Positives and False Negatives",
+      "heading_after": "False Positives and False Negatives",
+      "main_anchors": [
+        "sections/problem_definition.tex: missing required or selected irrelevant skills",
+        "sections/results.tex: MedCalc-Bench and TheoremQA exceptions",
+        "sections/limitations.tex: annotation and checker limitations"
+      ],
+      "assessment": "Covered both set definitions, full confusion-count table/caption, error-direction paragraph, retrospective attribution definitions, and complete attribution table/caption. Explicit nonstandard FP/FN definitions are essential because numeric column labels use the authors' convention; do not silently standardize them. Preserve candidate rejection versus retrieval miss, pooled observations versus distinct tasks, and retrospective interpretation versus checker-generated explanation. Error shares reproduce 62.24% and 79.81%; attribution counts sum to 331. No change needed.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "H.3",
+      "file": "sections/appendix/error_routing_gap.tex",
+      "heading": "Why RouterBSI Trails SkillRouter on Two Datasets",
+      "heading_after": "Why RouterBSI Trails SkillRouter on Two Datasets",
+      "main_anchors": [
+        "sections/results.tex: Skill Routing Performance, 5.01%/6.10% deficits",
+        "sections/limitations.tex: annotation quality and checker interpretation",
+        "sections/ablations.tex: observed late-iteration plateau"
+      ],
+      "assessment": "Covered introduction, matched-ranking table/caption, Required-skill nonactivation, Predicate design versus checker judgments and attribution table, examples, and Implications for refinement. The diagnostic matches the main dataset exceptions and expands them without claiming downstream causality. Preserve task/retriever denominators, gross versus net loss, uncertainty in semantic assessments, and untested human-edit/training interventions. Late changes and restrictive-versus-checker distinctions are useful evidence, not artifact-quality caveats.",
+      "edits": [
+        {
+          "file": "sections/appendix/error_routing_gap.tex",
+          "old": "% Evidence: ../.wisc/verification/routerbsi-exception-investigation/\n% analysis.json, independent_verification.json, theoremqa/summary.json,\n% medcalc/summary.json, and trajectory_spotcheck.json.\n",
+          "new": "",
+          "reason": "Move task-provenance out of manuscript source; original remains in revision snapshot.",
+          "origin": "parent_read"
+        },
+        {
+          "file": "sections/appendix/error_routing_gap.tex",
+          "old": "These are retrospective archived-run diagnostics, not new intervention results.",
+          "new": "These are retrospective diagnostics, not intervention results.",
+          "reason": "Remove archive/process qualifier; preserve noncausal status.",
+          "origin": "parent_read"
+        },
+        {
+          "file": "sections/appendix/error_routing_gap.tex",
+          "old": "Accepted-policy test snapshots show mixed late progress:",
+          "new": "Test results for the retained policies show mixed late progress:",
+          "reason": "Replace snapshot terminology with the measured policy state.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "H.4",
+      "file": "sections/appendix/error_examples.tex",
+      "heading": "Representative Predicate Decisions",
+      "heading_after": "Representative Predicate Decisions",
+      "main_anchors": [
+        "sections/results.tex: MedCalc-Bench and TheoremQA exceptions",
+        "sections/limitations.tex: incorrect predicate interpretation"
+      ],
+      "assessment": "Covered Representative Predicate Decisions and all four paragraphs: nonrequired business skill accepted for Newton-Raphson, required de Broglie skill rejected, restrictive P/E predicate, and calcium-correction judgment. Preserve quoted predicates, saved Boolean observations, nonstandard labels explained in preceding subsection, and explicit excerpt qualification. These are useful distinct scientific examples, not documentation of code-artifact quality. No changes proposed.",
+      "edits": [],
+      "unresolved_ids": [],
+      "status": "reviewed_unchanged"
+    },
+    {
+      "id": "H.5",
+      "file": "sections/appendix/error_downstream.tex",
+      "heading": "Routing Errors Within Downstream Disagreements",
+      "heading_after": "Routing Errors Within Downstream Disagreements",
+      "main_anchors": [
+        "sections/results.tex: Downstream Performance",
+        "sections/experiments.tex: Baselines and Implementation Details."
+      ],
+      "assessment": "Covered cohort definition, every conditional-table row and caption, extra-selection-share paragraph, and required-skill-coverage/comparator paragraph. It distinguishes actual supplied top-five skills from predicate decisions and routing correctness from downstream success. Keep noncausal interpretation, one-gold/five-supplied context, and conditioned/pooled denominators. Conditional shares reproduce 94.68% and 93.75%.",
+      "edits": [
+        {
+          "file": "sections/appendix/error_downstream.tex",
+          "old": "These archived extra-selection shares",
+          "new": "These extra-selection shares",
+          "reason": "Remove irrelevant archive qualifier while retaining denominators and interpretation.",
+          "origin": "parent_read"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    },
+    {
+      "id": "H.6",
+      "file": "sections/appendix/error_downstream_results.tex",
+      "heading": "Complete Downstream Results",
+      "heading_after": "Complete Downstream Results",
+      "main_anchors": [
+        "sections/results.tex: Downstream Performance",
+        "sections/experiments.tex: Evaluation Metrics. and Baselines",
+        "figs/downstream_average/description.text"
+      ],
+      "assessment": "Covered subsection prose, strict/top-five/direct/oracle definitions, mean-versus-benchmark distinction, and both table inputs. Definitions agree with main; two tables follow, so singular introduction is stale.",
+      "edits": [
+        {
+          "file": "sections/appendix/error_downstream_results.tex",
+          "old": "The following table reports downstream task-success rates by benchmark and retriever,",
+          "new": "The following tables report downstream task-success rates by benchmark and retriever,",
+          "reason": "Two included tables follow; correct the stale singular reference.",
+          "origin": "audit_C_parent_approved"
+        }
+      ],
+      "unresolved_ids": [],
+      "status": "edited"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "INIT",
+      "kind": "evidence conflict",
+      "appendix": [
+        "G.1"
+      ],
+      "main": "Figure 5 caption; sections/ablations.tex",
+      "description": "The main caption and appendix agree textually on shared initialization. The separate artifact audit found different saved initial predicate libraries across the three Both Enabled runs, while the other configurations reuse the first run's library. Their historical binding to Figure 5 remains unresolved. The existing manuscript sentence is unchanged.",
+      "needed": "Immutable historical initialization bindings demonstrating that different runs produced Figure 5, or authorization for a truthful correction of the main caption and appendix."
+    },
+    {
+      "id": "REPLAY",
+      "kind": "definition mismatch",
+      "appendix": [
+        "A.2",
+        "A.3",
+        "A.5",
+        "D.1",
+        "D.3",
+        "G.2"
+      ],
+      "main": "Section 4.2 replay-set equation and replay description",
+      "description": "Main defines the scoring set as two historical buckets, each bounded by N. Appendix includes the current task as well, with up to 2N+1 distinct tasks. Main also describes error over tasks retrieving the skill, while appendix history construction does not state that retrieval restriction. No scored task or bound was removed to force textual agreement.",
+      "needed": "Clarify the intended experimental definition and authorize any necessary main-text correction; no new run is automatically required."
+    },
+    {
+      "id": "RANK",
+      "kind": "general rule mismatch",
+      "appendix": [
+        "A.1"
+      ],
+      "main": "Sections 5.4 and 5.5 label-plus-retrieval-score rule",
+      "description": "Appendix specifies selected-first lexicographic ranking. It explains equivalence to additive labels for SkillSight reciprocal-rank scores, but arbitrary raw-score addition is not generally equivalent across retrievers.",
+      "needed": "Confirm per-retriever scoring transformations or authorize a main-rule clarification."
+    },
+    {
+      "id": "SPLIT",
+      "kind": "allocation-description mismatch",
+      "appendix": [
+        "C.1"
+      ],
+      "main": "Section 5.1 per-dataset 70/15/15 statement",
+      "description": "Appendix reports a constrained global 3491/748/748 allocation and non-70/15/15 per-dataset final counts. Numeric counts and coverage constraints were preserved.",
+      "needed": "Clarify target versus final per-dataset ratios in the main text; appendix wording now states the allocation without editorial precedence commentary."
+    },
+    {
+      "id": "TRAIN",
+      "kind": "main-internal inconsistency",
+      "appendix": [
+        "D.4"
+      ],
+      "main": "Section 5.4 trained retrievers versus Section 5.5 pretrained/lexical no-training statement",
+      "description": "The frozen main paper gives incompatible retriever-training descriptions. Appendix reports concrete retrieval/evaluation settings without inventing task-split training.",
+      "needed": "Confirm actual fitting scope and authorize resolution of the main-text inconsistency."
+    }
+  ],
+  "retained_interpretation_notes": [
+    {
+      "topic": "Backbone ceiling",
+      "appendix": "G.4",
+      "status": "supported numerical expansion retained; unsupported main inference not propagated",
+      "detail": "The appendix confirms the endpoint ordering and 99.64% ratio, consistent with rounded main values. These endpoints alone do not establish an irreducible capacity ceiling."
+    },
+    {
+      "topic": "F1 and fixed-budget outputs",
+      "appendix": "E.1 / H.5 / H.6",
+      "status": "useful metric and set distinctions retained",
+      "detail": "Selected-set F1 differs from F1@k; top-k can pad or truncate the selected set. These explanations prevent misreading simplified main wording."
+    },
+    {
+      "topic": "Token scope and uncertainty",
+      "appendix": "E.1 / G.2 / G.3",
+      "status": "scientifically material qualifications retained",
+      "detail": "Recorded token counts are not complete cost accounts, single-run results are distinct from three-run component means, and model adjudication is not human-validated accuracy."
+    }
+  ],
+  "counts": {
+    "active_tex_files": 49,
+    "active_subsections": 31,
+    "edited_files": 13,
+    "exact_replacements": 18,
+    "unresolved_items": 5
+  }
+}

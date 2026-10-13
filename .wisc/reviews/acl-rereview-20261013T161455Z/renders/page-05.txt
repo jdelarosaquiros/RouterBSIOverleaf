@@ -1,0 +1,59 @@
+                            BigCode                               MedCalc-
+             Method          Bench     CHAMP    LogicBench     Bench     TheoremQA    ToolQA       Average
+
+                   N@1 N@10 N@1 N@10 N@1 N@10 N@1 N@10 N@1 N@10 N@1 N@10 N@1 N@10
+
+         LLM Select     0.480   0.510  0.385   0.458  0.266   0.394  0.745   0.834  0.683   0.819  0.437   0.547  0.519   0.616
+                SkillRouter     0.366   0.299  0.449   0.476  0.269   0.416  0.974   0.981  0.816   0.860  0.600   0.711  0.619   0.671
+             SkillDAG      0.612   0.600  0.359   0.453  0.143   0.378  0.709   0.785  0.651   0.781  0.161   0.421  0.429   0.576
+                Skill-Pro       0.238   0.446  0.218   0.395  0.161   0.317  0.705   0.850  0.460   0.712  0.402   0.527  0.407   0.574
+              RouterBSIinit  0.466   0.417  0.346   0.435  0.184   0.341  0.830   0.877  0.559   0.726  0.290   0.453  0.462   0.561
+              RouterBSI      0.832   0.707  0.551   0.556  0.336   0.449  0.915   0.933  0.686   0.808  0.631   0.712  0.687   0.728
+
+             Table 1: Skill routing performance using Qwen3.5 4B. Each router row is the equal-weight mean across BM25,
+              Vector, and SkillSight. Columns report nDCG@1 (N@1) and nDCG@10 (N@10) for each benchmark; Average
+              uses each retriever’s task-weighted scores over 748 tasks. Bold and underlined values mark the best and second-best
+                distinct scores in each column.
+
+
+296          involving skills represented during training. Predi-   encoders and/or lexical scoring, with no training         330
+297          cate updates require a skill to appear in a training   on our task-training split, and remain unchanged         331
+298          task’s retrieved top-k pool and incur a routing er-   across task partitions. SkillRouter likewise uses its         332
+299           ror; skills never retrieved during training retain    released reranker checkpoint without fine-tuning         333
+300           their cold-start predicates. These coverage con-   on our task-training split. LLM Select is a static         334
+301           straints allow individual datasets’ proportions to    router, and LLM Direct and LLM Oracle are down-         335
+302           differ from the global targets; Appendix C.1 re-   stream performance baselines representing with-         336
+303          ports the exact counts.                             out skills and with ground-truth skill set, respec-         337
+                                                                       tively (Su et al., 2026). The non-parametric op-         338
+304          5.2  Evaluation Metrics.                          timization baselines are SkillDag and Skill-Pro         339
+305      We evaluate skill routing and downstream perfor-   (Mi et al., 2026; Bai et al., 2026). RouterBSIinit          340
+306        mance conditioned on the selected skills. For skill   and RouterBSI refer to the cold-start and final         341
+307          routing, we report Recall@k and nDCG@k. We    iteration performance.  RouterBSIstrict selects         342
+308          additionally report F1@k to compare filtering ca-    skills only when their predicate evaluates to true.         343
+309           pabilities. We also report retention as Ret@k to   RouterBSItopk are the top k skills using the sum         344
+310        compare the percentage of required skills retained    of their predicate label and the normalized retrieval         345
+311           in top k from the retrieved skills. For downstream    score.                                                     346
+312         performance, each benchmark follows its standard
+313          evaluation protocol to measure success rate: rule-   5.5  Implementation Details.                            347
+314         based exact match or accuracy for reasoning and                                                                    Retrieval uses pretrained embedding models and/or         348
+315      QA datasets, and pass@1 based on unit-test exe-                                                                      lexical matching without task-split training. Can-         349
+316          cution for BigCodeBench. Averages are measured                                                                  didate skills are retrieved from the shared external         350
+317          across task instances.                                                                             skill corpus in response to the input query. The         351
+                                                                             skill routing baselines are conditioned on a pool         352
+318          5.3  Selected Models.
+                                                               of retrieved 50 skills. The exception is SkillDAG         353
+319      We evaluate five models spanning four open-weight   where it first retrieves top 5 skills then expands         354
+320         checkpoints and one proprietary frontier model:   them until reaching top k.  Its skills are ranked         355
+321        Qwen3.5-4B (Qwen Team, 2026a), Qwen3.8-27B   based on graph depth from top 5 retrieved skills         356
+322       (Qwen Team, 2026b),  Llama-3.3-70B-Instruct   and retrieval score.  SkillSight is the default re-         357
+323         (Meta, 2024), gpt-oss-120b (OpenAI, 2025), and    triever. Qwen3.5-4B is the default model used in         358
+324         GPT-5.4 (OpenAI, 2026).                         our experiments. The non-parametric baselines,         359
+                                                               including ours, do not output a continuous score         360
+325          5.4  Baselines                                                                          like rerankers, so we rank them by the sum of their         361
+326      We study retrieval, reranker, and selection base-   binary label and the retrieval score normalized to         362
+327           lines.  The retrievers include sparse and dense    [0, 1], where 1 is the label for selected skills and 0         363
+328           retrievers (Su et al., 2026) and SkillSight, a hy-   otherwise. Ties favor selected skills. We use a tem-         364
+329          brid retriever. The retrievers use fixed pretrained    perature of 1 for proposing candidate predicates         365
+
+
+                                                    5

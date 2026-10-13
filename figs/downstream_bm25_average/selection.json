@@ -1,7 +1,5 @@
 {
   "schema_version": 1,
-  "analysis_only": true,
-  "source_reportability": "unknown",
   "source": {
     "path": "BayesGSI/tables/downstream_performance/results.csv",
     "sha256": "3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690"
@@ -572,5 +570,5 @@
     "description.text": "413552e7ee3fe29c3e1287ac8689fda7321379bd6298afb7ad6a76a39014e530",
     "table.tex": "bd74e9258454b1b37bd3c2a807f370263752b94bf4237000567d001ee5b52eef"
   },
-  "caveat": "Analysis-only; inherited unresolved run provenance; no inference or new evaluation."
+  "caveat": "No inference or new evaluation."
 }

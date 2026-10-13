@@ -1,0 +1,24 @@
+{
+  "observed_at_utc": "2026-10-13T11:42:46.765554+00:00",
+  "sha256": "856f39f7bf11594ee8689eff8a0b4bced019b8ce3cc59405693b259a356e4e6b",
+  "pages": 28,
+  "scope": "Not rereviewed or substituted for frozen review input; exact anchor presence only is not issue-resolution validation.",
+  "review_anchor_still_present": {
+    "ISSUE-001": false,
+    "ISSUE-002": true,
+    "ISSUE-003": true,
+    "ISSUE-004": true,
+    "ISSUE-005": true,
+    "ISSUE-006": true,
+    "ISSUE-007": true,
+    "ISSUE-008": true,
+    "ISSUE-009": true,
+    "ISSUE-010": true,
+    "ISSUE-011": true,
+    "ISSUE-012": true,
+    "ISSUE-013": true,
+    "ISSUE-014": true,
+    "ISSUE-015": true
+  },
+  "incorrect_percentage_attribution_present": false
+}

@@ -1,0 +1,68 @@
+              Method                  CHAMP                                  BigCodeBench
+
+                   N@1 N@10 R@5 R@10   F1 FC@5 FC@10 N@1 N@10 R@5 R@10   F1 FC@5 FC@10
+
+            BM25
+
+           BM25         0.423  0.410 0.401  0.429 0.050  0.231   0.231 0.610  0.544 0.475  0.578 0.107  0.106   0.179
+          LLM Select    0.462  0.439 0.442  0.462 0.306  0.231   0.231 0.504  0.534 0.498  0.592 0.222  0.089   0.187
+                 SkillRouter     0.423  0.410 0.429  0.439 0.271  0.269   0.269 0.358  0.292 0.231  0.322 0.164  0.033   0.049
+              SkillDAG      0.423  0.442 0.401  0.513 0.043  0.231   0.308 0.610  0.589 0.475  0.670 0.077  0.106   0.276
+                  Skill-Pro       0.231  0.358 0.394  0.442 0.124  0.231   0.231 0.244  0.464 0.463  0.573 0.035  0.081   0.171
+               RouterBSIinit  0.308  0.367 0.356  0.484 0.136  0.231   0.346 0.431  0.447 0.356  0.544 0.187  0.041   0.179
+               RouterBSI     0.500  0.498 0.481  0.542 0.349  0.346   0.423 0.878  0.729 0.652  0.715 0.586  0.236   0.333
+
+                 Vector
+
+                Vector         0.346  0.463 0.455  0.596 0.073  0.308   0.346 0.504  0.407 0.346  0.420 0.085  0.073   0.089
+          LLM Select    0.308  0.459 0.497  0.615 0.178  0.308   0.346 0.496  0.432 0.373  0.445 0.224  0.057   0.089
+                 SkillRouter     0.462  0.515 0.500  0.628 0.296  0.346   0.385 0.350  0.272 0.223  0.290 0.160  0.024   0.033
+              SkillDAG      0.346  0.469 0.455  0.619 0.054  0.308   0.385 0.504  0.544 0.346  0.697 0.070  0.073   0.252
+                  Skill-Pro       0.231  0.432 0.436  0.596 0.154  0.308   0.346 0.220  0.360 0.348  0.427 0.036  0.073   0.098
+               RouterBSIinit  0.269  0.428 0.452  0.609 0.189  0.269   0.423 0.382  0.338 0.252  0.392 0.158  0.024   0.089
+               RouterBSI     0.577  0.611 0.587  0.712 0.364  0.385   0.462 0.756  0.620 0.551  0.593 0.518  0.130   0.171
+
+                   SkillSight
+
+                  SkillSight      0.308  0.429 0.436  0.567 0.067  0.269   0.346 0.724  0.616 0.536  0.641 0.116  0.146   0.211
+          LLM Select    0.385  0.475 0.503  0.609 0.232  0.308   0.385 0.439  0.563 0.525  0.642 0.196  0.122   0.203
+                 SkillRouter     0.462  0.503 0.500  0.603 0.296  0.346   0.385 0.390  0.332 0.262  0.373 0.179  0.033   0.049
+              SkillDAG      0.308  0.449 0.436  0.628 0.054  0.269   0.462 0.724  0.668 0.536  0.747 0.075  0.146   0.341
+                  Skill-Pro       0.192  0.394 0.436  0.580 0.124  0.269   0.346 0.252  0.513 0.523  0.637 0.010  0.130   0.203
+               RouterBSIinit  0.462  0.510 0.526  0.606 0.233  0.423   0.462 0.585  0.465 0.357  0.518 0.162  0.049   0.130
+               RouterBSI     0.577  0.558 0.590  0.631 0.337  0.423   0.423 0.862  0.771 0.725  0.784 0.591  0.317   0.423
+
+              Table 7: Test routing performance on CHAMP and BigCodeBench with Qwen3.5-4B. N, R, and FC denote nDCG,
+               Recall, and Full Coverage, respectively; F1 is set-level F1. Bold and underlined values indicate the best and
+               second-best scores within each retriever group.
+
+                              Performance and token usage by Top-K
+
+
+                0.800
+
+                0.775
+
+                0.750
+
+                0.725                                        nDCG@10                0.700
+                                                                              Candidate Top-K
+                0.675                                                                      Top-K 50
+                                                                                            Top-K 25
+                0.650                                                                      Top-K 10
+
+                         700     800     900     1000    1100    1200    1300    1400
+                                              Total Token Usage (millions)
+
+
+               Figure 8: Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K
+                 settings, which specify how many retrieved candidates are evaluated rather than how many skills are ultimately
+                selected.
+
+
+1870       A separate model, gpt-6.1-sol, adjudicated   dard mode.  It also saw the saved Boolean, but        1873
+1871          the same public task,  predicate, and original   was instructed to determine the expected Boolean        1874
+1872         checker rules using high reasoning effort in stan-   independently and return a strict structured ver-        1875
+
+
+                                                    23

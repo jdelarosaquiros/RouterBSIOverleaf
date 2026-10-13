@@ -7,4 +7,4 @@ Model: Qwen3.5 4B; retrievers: BM25, Vector, SkillSight.
 Methods: Retriever baseline, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI strict, RouterBSI top-5.
 Aggregation: one bar per method, arithmetic mean of BM25, Vector, and SkillSight task-weighted accuracies; each underlying score is pooled Correct/n_tasks over six datasets and 748 tasks. Retriever baseline averages native BM25, Vector, and SkillSight baselines. LLM Direct and LLM Oracle are non-retrieval reference lines.
 All 21 included retriever-method input values were reconciled to constituent counts and Average rows; Vector included.
-No uncertainty estimates supplied; analysis-only. Fixed Vector RouterBSI source is completed_noncanonical, reportable=false; other run reportability unresolved. No inference/evaluation run.
+No uncertainty estimates supplied. No inference/evaluation run.

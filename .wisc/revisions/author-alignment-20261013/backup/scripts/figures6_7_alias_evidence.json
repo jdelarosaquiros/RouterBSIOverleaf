@@ -1,0 +1,62 @@
+{
+  "scope": "Complete benchmark universe used by both CSV generators; source load_annotations rejects empty gold and _routing_rows_from_selection rejects unknown tasks.",
+  "total_tasks": 5400,
+  "empty_gold_tasks": 0,
+  "annotations": [
+    {
+      "path": "BayesGSI/data/bench/instances/bigcodebench.json",
+      "sha256": "0ed01363e2c93134cf8696fea47b6d640f32f0d7ae9d7b478a05595c3f5ae788",
+      "tasks": 1140,
+      "empty_gold_tasks": 0
+    },
+    {
+      "path": "BayesGSI/data/bench/instances/champ.json",
+      "sha256": "d61346716cede953afb352e739e170b96d2bfb98824edd91b8783dc3526c7cec",
+      "tasks": 223,
+      "empty_gold_tasks": 0
+    },
+    {
+      "path": "BayesGSI/data/bench/instances/logicbench.json",
+      "sha256": "af5055caac041ea08cee47622f5d922b47b2ba0a8e3a60b87349599eeff1bdfe",
+      "tasks": 760,
+      "empty_gold_tasks": 0
+    },
+    {
+      "path": "BayesGSI/data/bench/instances/medcalcbench.json",
+      "sha256": "814f6b082f56cf89dd9c50be7ab87b5bcb0e41633138951e42b38d6923c3244e",
+      "tasks": 1100,
+      "empty_gold_tasks": 0
+    },
+    {
+      "path": "BayesGSI/data/bench/instances/theoremqa.json",
+      "sha256": "c969a7291e23361ba9f377e464be76093804deb628b964fb846c6eff6b28deeb",
+      "tasks": 747,
+      "empty_gold_tasks": 0
+    },
+    {
+      "path": "BayesGSI/data/bench/instances/toolqa.json",
+      "sha256": "e41eb4d4b67c1dd8e1178c88e9e8ff15525b31803694e9459d115c274fb04f0e",
+      "tasks": 1430,
+      "empty_gold_tasks": 0
+    }
+  ],
+  "source_evaluator_files": [
+    {
+      "path": "BayesGSI/tables/table_utils.py",
+      "sha256": "4b2d0cc9aed4c404e0d0b35a1aa5903d0ab969a46daeed44dd7c222af1e582bb"
+    },
+    {
+      "path": "BayesGSI/tables/routing_token_usage/generate.py",
+      "sha256": "572cda6108bf86a637b667e7e0b4a906c92d3e2a13041cad4a40c7288487ffaf"
+    },
+    {
+      "path": "BayesGSI/tables/routing_performance_by_LLM/generate.py",
+      "sha256": "c5186bf06036ce91d8cad3bc7983941f18dcf8aea2e1452f3e917520e55f2182"
+    }
+  ],
+  "evaluator_conventions": {
+    "Hit@1_empty_gold": 0,
+    "nDCG@1_empty_gold": 1,
+    "binary_relevance_nonempty_gold": "Both equal 1 iff the first ranked skill is relevant, else 0."
+  }
+}

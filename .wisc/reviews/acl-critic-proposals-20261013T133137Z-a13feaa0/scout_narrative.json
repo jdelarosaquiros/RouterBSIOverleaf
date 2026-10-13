@@ -1,0 +1,1058 @@
+{
+  "artifact_type": "focused_narrative_scout_not_full_REVIEW_JSON",
+  "paper_id": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk Replay and Held-out Gates",
+  "review_date": "2026-10-13",
+  "revision_mode": "unknown",
+  "scope": {
+    "authorization": "Read-only review and proposals; no manuscript edits, builds, experiments, commits or uploads.",
+    "primary_pdf": "reviewed_main.pdf",
+    "pdf_sha256": "a13feaa06ce9697e5d4d44119ea46f4403aff73a8743d3bb51bcc616dd3174e5",
+    "source_snapshot": "source/",
+    "read_order": "Current main paper pp.1–8 and appendices A–H pp.11–29 read before prior REVIEW_JSON; relevant reference records and exact source lines also inspected.",
+    "prior_review": "../acl-critic-proposals-20261013T111734Z-51ddab4b/REVIEW_JSON.json",
+    "venue_track_cycle_stage": "unknown",
+    "long_paper_assumption": true,
+    "policy_compliance_verdict": "Not assessed by this focused scout; no current venue instructions verified.",
+    "no_new_experiments": true
+  },
+  "headline_verdict": "The applicability-predicate thesis and contribution ladder are recoverable and delivered. The main remaining narrative risks are operational and split self-containment, an undefined strongest comparator, and the unsupported backbone ceiling. Several prior critiques are resolved, stale, or too broad; do not re-edit the correct replay/gate equations or repeat source fixes already present.",
+  "issues": [
+    {
+      "id": "NAR-001",
+      "severity": "major",
+      "category": "self_containment",
+      "adversarial_pass": "S",
+      "location": {
+        "section": "4.2 MBR Update Selection with Bounded Replay",
+        "page": 4,
+        "figure_or_table": null,
+        "tex_file": "source/sections/method.tex",
+        "line_range": [
+          24,
+          40
+        ],
+        "quoted_text": "For each skill, the replay set contains previously seen relevant and irrelevant tasks:",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Core operational details in Appendix A change the replay set, rank ordering, and update timing stated or left ambiguous in the main paper.",
+      "counterevidence_considered": [
+        "§4.2 explicitly defines average Boolean replay error, includes the current predicate in the argmin, and states the correct local non-increase inequality. No rewrite of those equations is requested.",
+        "§4.3 explicitly compares against the INITIAL predicate and rejects validation ties. The comparator is already correct; do not replace it with a previous-policy comparator or append blanket guarantee caveats.",
+        "§5.5 already gives the 50-candidate pool and five-skill downstream budget; Appendix D.1 makes their distinction explicit. The issue is not that these values are absent everywhere."
+      ],
+      "reasoning_chain": [
+        "1. Core operational details in Appendix A change the replay set, rank ordering, and update timing stated or left ambiguous in the main paper.",
+        "2. Appendix A.2 p.11 (procedure_replay.tex:3,7–13) scores deduplicated H+ union H- union {q}, permitting 2N+1 tasks, and retains an unbounded global seen-task history. A.1 p.11 (procedure_routing.tex:18) explicitly rejects the main unnormalized score-sum wording for arbitrary retrieval scores. A.4 p.12 (procedure_validation.tex:3,12–21) gates after a full training pass and restores iteration-start predicates. These details affect the actual scientific algorithm, not merely implementation convenience.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Core operational details in Appendix A change the replay set, rank ordering, and update timing stated or left ambiguous in the main paper.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Replace the main replay-set construction with the current-inclusive set and distinguish history capacity from total replay size. Replace the §5.4/5.5 arithmetic-sum wording with predicate-label-first lexicographic ranking. Add one sentence to §4.3 that gating occurs after a full training pass and restores the iteration-start predicate on rejection or absent support. Add one compact statement that the bounded objects are per-skill replay buckets/evaluations, not the global task history. Preserve the already-correct average-risk and initial-predicate gate equations.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Main replay set contains the current task once, historical class capacities are N, and the maximum scored size is 2N+1.",
+          "Ranked versus strict output is defined consistently with A.1; no arbitrary unnormalized score sum is claimed across all retrievers.",
+          "Main text specifies iteration-end gating and iteration-start rollback, without changing the cold-start comparator.",
+          "No claim implies all stored history has fixed memory size."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-003 survives in operational scope only; exclude the redundant guarantee expansion tied to prior ISSUE-002."
+    },
+    {
+      "id": "NAR-002",
+      "severity": "major",
+      "category": "self_containment",
+      "adversarial_pass": "S",
+      "location": {
+        "section": "5.1 Benchmarks and Skill Corpus",
+        "page": 4,
+        "figure_or_table": null,
+        "tex_file": "source/sections/experiments.tex",
+        "line_range": [
+          12,
+          12
+        ],
+        "quoted_text": "We split each dataset into train, validation, and test splits",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main per-dataset split statement does not match the global constrained split reported in Appendix C.",
+      "counterevidence_considered": [
+        "The next main-text sentence already discloses filtering/balancing for shared required skills. Therefore the represented-skill evaluation is not wholly hidden, and deliberate skill overlap is not evidence of task leakage.",
+        "Appendix C.1 p.16 explicitly states disjoint task identifiers and held-out tasks involving represented skills."
+      ],
+      "reasoning_chain": [
+        "1. The main per-dataset split statement does not match the global constrained split reported in Appendix C.",
+        "2. Appendix C.1 pp.16–17 (data_splits.tex:3–7,18–25) reports 4,987 retained tasks, global 3,491/748/748 partitions, and TheoremQA 259/106/105. It says individual dataset proportions differ. A reader relying on §5.1 would otherwise use the wrong protocol.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: The main per-dataset split statement does not match the global constrained split reported in Appendix C.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Replace the two split sentences, rather than add another paragraph: say that filtering retains 4,987 tasks; a constrained global 70/15/15 target yields 3,491/748/748 task-disjoint partitions; all 306 evaluated gold skills occur in each partition, with dataset-level proportions varying. Point to Table 3 for exact counts.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "No sentence asserts exact 70/15/15 splits for each benchmark.",
+          "The main text reports global counts and held-out-task/represented-skill scope.",
+          "No unsupported leakage or unseen-skill-generalization accusation is introduced."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-007 retained, narrowed to the actual contradiction and compact scope disclosure."
+    },
+    {
+      "id": "NAR-003",
+      "severity": "major",
+      "category": "self_containment",
+      "adversarial_pass": "S",
+      "location": {
+        "section": "5.4 Baselines",
+        "page": 5,
+        "figure_or_table": null,
+        "tex_file": "source/sections/experiments.tex",
+        "line_range": [
+          39,
+          47
+        ],
+        "quoted_text": "They are trained on training split and frozen on validation and test splits.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The strongest named comparator has no usable baseline specification, and the main setup contradicts itself on whether retrievers are trained.",
+      "counterevidence_considered": [
+        "SkillRouter is already cited in §2.2 and appears in Table 1; it is not a missing citation or an omitted comparison.",
+        "§5.5 does give candidate-pool and downstream-budget information; Appendix D provides extensive RouterBSI details, but not a corresponding SkillRouter training/checkpoint/input-field protocol.",
+        "External SkillRouter record verifies that the original system is a body-aware retrieve-and-rerank pipeline; this does not establish which checkpoint or adaptation this draft actually used."
+      ],
+      "reasoning_chain": [
+        "1. The strongest named comparator has no usable baseline specification, and the main setup contradicts itself on whether retrievers are trained.",
+        "2. §5.4 says the retrievers are trained, whereas §5.5 (experiments.tex:47) says pretrained/lexical retrievers do not require training. SkillRouter is called the strongest routing baseline in §6.1 (results.tex:9), but §5.4 never describes it by name. Without identifying its adaptation, training status and inputs, the main comparative claim is not independently interpretable.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: The strongest named comparator has no usable baseline specification, and the main setup contradicts itself on whether retrievers are trained.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Ask the authors for the actual SkillRouter checkpoint/version, input fields, training/adaptation split and candidate policy. Add one concise sentence defining this comparator and correct the antecedent of the train/freeze statement to the components actually optimized. Add extended baseline configuration in the appendix only where needed. Do not infer these settings from the upstream paper.",
+        "target_text": null,
+        "required_inputs": [
+          "Author-supplied baseline configuration/checkpoint and training-role evidence."
+        ],
+        "acceptance_criteria": [
+          "SkillRouter has an explicit method description and reference in the baseline section.",
+          "Trained, pretrained and frozen components are distinguished without contradiction.",
+          "Claimed comparator settings are backed by the actual run configuration, not copied unverified from the upstream paper."
+        ],
+        "estimated_effort": "medium",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-008 retained for narrative/protocol specification; model-role and run-provenance questions should merge with the experimental scout rather than create duplicate issues."
+    },
+    {
+      "id": "NAR-004",
+      "severity": "major",
+      "category": "claims",
+      "adversarial_pass": "N",
+      "location": {
+        "section": "7.3 Skill Routing Performance across LLM Backbones",
+        "page": 7,
+        "figure_or_table": null,
+        "tex_file": "source/sections/ablations.tex",
+        "line_range": [
+          24,
+          24
+        ],
+        "quoted_text": "They also suggest that predicates reach a plateau that cannot be overcomed with more capable LLMs",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Three non-monotonic backbone endpoints do not establish a ceiling that more capable LLMs cannot overcome.",
+      "counterevidence_considered": [
+        "The preceding sentences correctly report non-monotonic final scores and explicitly identify Qwen3.8-27B as strongest.",
+        "§7.1 supplies evidence for diminishing returns across iterations in one optimization setting; that is not evidence for a universal cross-model ceiling.",
+        "The word suggest weakens the sentence, but cannot overcome still asserts a strong impossibility; no such cause or limit is tested."
+      ],
+      "reasoning_chain": [
+        "1. Three non-monotonic backbone endpoints do not establish a ceiling that more capable LLMs cannot overcome.",
+        "2. Figure 7 p.8 and Appendix G.4/Table 14 p.25 report final nDCG@1 0.742/0.802/0.745, one run per backbone. The 27B endpoint itself exceeds the 4B endpoint. The main claim conflates observed endpoints, convergence over iterations, and predicate expressivity.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Three non-monotonic backbone endpoints do not establish a ceiling that more capable LLMs cannot overcome.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Delete the final plateau/expressivity sentence in §7.3, retaining the already-correct descriptive comparison immediately before it. Replace significantly improve with improve the reported routing scores unless an actual significance analysis is supplied. No replacement experiment or additional boilerplate is necessary.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "No universal model-capacity ceiling is inferred from these endpoints.",
+          "The existing non-monotonic endpoint summary remains.",
+          "Statistical significance is not implied without its analysis."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-010 still present verbatim; minimal deletion avoids a redundant second descriptive paragraph."
+    },
+    {
+      "id": "NAR-005",
+      "severity": "minor",
+      "category": "self_containment",
+      "adversarial_pass": "S",
+      "location": {
+        "section": "5.2 Evaluation Metrics",
+        "page": 5,
+        "figure_or_table": null,
+        "tex_file": "source/sections/experiments.tex",
+        "line_range": [
+          20,
+          20
+        ],
+        "quoted_text": "We additionally report F1@\\(k\\) to compare filtering capabilities.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main metric names and headline retention omit distinctions defined only in the appendix.",
+      "counterevidence_considered": [
+        "§5.2 already distinguishes routing from downstream success, and §6.2 explicitly discusses SkillDAG’s higher coverage; retention is not misrepresented as unconditional recall everywhere.",
+        "Appendix E.1 defines selected-set F1 and nDCG@1 clearly; Appendix F.1 defines the ratio-of-means normalization. Thus definitions exist and need only concise main-text alignment.",
+        "Hit@1 in the third contribution equals nDCG@1 under binary nonempty relevance, as Table 10 already notes; this is not an unsupported additional result."
+      ],
+      "reasoning_chain": [
+        "1. The main metric names and headline retention omit distinctions defined only in the appendix.",
+        "2. §5.2 announces F1@k while E.1 p.18 uses F1 of the predicate-selected set, not necessarily the first k ranked skills. F.1 pp.18–19 (retention_definition.tex) normalizes each method by its own task-mean Recall@50, including SkillDAG’s expanded pool; the distinction matters to Figure 3’s comparison.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: The main metric names and headline retention omit distinctions defined only in the appendix.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Change F1@k to selected-set F1 where describing the ablation metric; define Ret@k in one sentence as each method/retriever’s ratio of task-mean Recall@k to Recall@50 followed by equal averaging across retrievers. Replace contribution-list Hit@1 with nDCG@1 or state equivalence once. Do not duplicate all metric equations.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Selected-set F1 is not labelled a ranked-cutoff metric.",
+          "Main retention definition names method-specific coverage and ratio of task means.",
+          "Hit@1/nDCG@1 naming is consistent or explicitly equated."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Subset of prior ISSUE-011 retained and downgraded; explicit nonstandard appendix FP/FN mapping is not by itself a validity failure."
+    },
+    {
+      "id": "NAR-006",
+      "severity": "minor",
+      "category": "self_containment",
+      "adversarial_pass": "S",
+      "location": {
+        "section": "7.2 Performance and Token Usage Tradeoff",
+        "page": 7,
+        "figure_or_table": null,
+        "tex_file": "source/sections/ablations.tex",
+        "line_range": [
+          20,
+          20
+        ],
+        "quoted_text": "while MBR alone reduces token usage by 10.8\\% at the cost of a 7.7\\% relative decrease in nDCG@1 compared with using both.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "The main token comparison lacks the single-run and recorded-known-usage scope that makes the appendix accounting interpretable.",
+      "counterevidence_considered": [
+        "Appendix G.2 pp.20–21 now says all configurations use the same initial predicates and explicitly defines recorded totals and excluded unknown usage; do NOT repeat the prior review’s assertion that current prose reports asymmetric initialization.",
+        "Table 12 p.24 supplies total and iteration-only tokens and counts unknown-usage attempts.",
+        "§7.2 reports an observed comparison, not an explicit serving-cost claim or a theorem about efficiency; this warrants a compact qualifier rather than a major new experiment demand."
+      ],
+      "reasoning_chain": [
+        "1. The main token comparison lacks the single-run and recorded-known-usage scope that makes the appendix accounting interpretable.",
+        "2. G.2 distinguishes Figure 6’s first run per configuration from Figure 5’s three-run mean and excludes unavailable usage. That information changes interpretation of the main percentage and is not signposted in §7.2.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: The main token comparison lacks the single-run and recorded-known-usage scope that makes the appendix accounting interpretable.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Prefix the existing §7.2 comparison with: “For the first run of each configuration, Figure 6 compares recorded known token usage (excluding attempts with unavailable usage).” Add the same scope to the caption or point to Table 12. Leave all numbers unchanged unless the experimental audit identifies a separate error.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Main cost text identifies single-run rather than three-run aggregation.",
+          "Tokens are labelled recorded known usage, not full cost accounting.",
+          "No stale initialization-asymmetry assertion is added without current artifact evidence."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-005 narrowed; old asymmetry rationale is no longer supported by current manuscript wording."
+    }
+  ],
+  "optional_editorial_refinements": [
+    {
+      "id": "NAR-E01",
+      "severity": "minor",
+      "category": "citations",
+      "adversarial_pass": "N",
+      "location": {
+        "section": "2.1 Non-Parametric Routing Optimization",
+        "page": 2,
+        "figure_or_table": null,
+        "tex_file": "source/sections/related_works.tex",
+        "line_range": [
+          14,
+          14
+        ],
+        "quoted_text": "Similar to our approach, JTPRO evaluates candidates on sampled training minibatches and held-out validation but does not provide bounded experience management for online adaptation",
+        "anchor_kind": "adjacent_insertion",
+        "insertion_point": "After the JTPRO comparison sentence."
+      },
+      "problem": "Optional: the novelty contrast would be more precise if it named reflective prompt optimization and distinguished the optimized object, not merely bounded experience.",
+      "counterevidence_considered": [
+        "JTPRO is already cited and the minibatch/validation comparison is accurate; do not accuse the draft of omitting it.",
+        "The current paper does not claim that it invented all reflective updates or all validation gates.",
+        "GEPA is absent from references.bib, but a citation does not automatically make its full implementation a mandatory baseline."
+      ],
+      "reasoning_chain": [
+        "1. Optional: the novelty contrast would be more precise if it named reflective prompt optimization and distinguished the optimized object, not merely bounded experience.",
+        "2. Verified JTPRO full text pp.5–6 optimizes global instructions and per-tool schemas, uses Pareto candidate contexts, minibatch scoring and validation-best selection, and bounds its candidate-context pool. GEPA’s verified abstract describes reflected prompt updates and Pareto-frontier combination. These are close conceptual neighbors; RouterBSI’s per-skill applicability predicates and per-label replay buckets are the more useful distinction.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Optional: the novelty contrast would be more precise if it named reflective prompt optimization and distinguished the optimized object, not merely bounded experience.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Optionally add a short GEPA citation beside JTPRO and replace generic novelty language with the precise objects: per-skill applicability predicates, per-label replay histories, empirical Boolean-loss candidate selection, and strict admission against cold-start validation. Describe bounded replay evaluation, not globally bounded memory. No extra citation cluster or mandatory GEPA/JTPRO experiment is justified by this audit.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "JTPRO remains credited for reflective updates and train/validation candidate evaluation.",
+          "Any GEPA citation uses the verified arXiv record.",
+          "Bounded candidate-context pools are not confused with bounded replay-task buckets.",
+          "Any new optimizer baseline is explicitly conditional on a stronger algorithmic-superiority claim and separate authorization."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-012 narrowed to optional positioning; no mathematical defect in the explicit empirical-risk rule is asserted."
+    },
+    {
+      "id": "NAR-E02",
+      "severity": "minor",
+      "category": "writing",
+      "adversarial_pass": "N",
+      "location": {
+        "section": "4.2 MBR Update Selection",
+        "page": 4,
+        "figure_or_table": null,
+        "tex_file": "source/sections/method.tex",
+        "line_range": [
+          44,
+          44
+        ],
+        "quoted_text": "Our risk function is the average skill selection error on replayed tasks.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Optional: clarify the empirical sense of the title-level MBR label without recasting the method as posterior inference.",
+      "counterevidence_considered": [
+        "The risk, average, supervision, candidate set and inequality are already explicitly defined. A missing mathematical definition is not established.",
+        "The paper makes no posterior-inference theorem claim. A forced rename or invented Bayesian derivation would overcorrect."
+      ],
+      "reasoning_chain": [
+        "1. Optional: clarify the empirical sense of the title-level MBR label without recasting the method as posterior inference.",
+        "2. The title uses Minimum Bayes Risk whereas the body implements uniform empirical selection over labeled replay tasks. One compact naming clarification could preempt a conceptual reviewer question, but does not justify a major validity issue.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Optional: clarify the empirical sense of the title-level MBR label without recasting the method as posterior inference.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "If the authors retain the MBR label, optionally add “Here, minimum risk refers to mean empirical Boolean error on the replay tasks.” Do not add an invented posterior or change the selection equation. Otherwise leave the already-clear equation alone.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Any clarification preserves the existing risk equation and candidate inclusion.",
+          "No claim of Bayesian posterior inference is added.",
+          "No external MBR-decoding citation is treated as mandatory without an actual decoding connection."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Reject the blanket major framing of prior ISSUE-012; naming choice is optional editorial positioning."
+    },
+    {
+      "id": "NAR-E03",
+      "severity": "minor",
+      "category": "narrative",
+      "adversarial_pass": "N",
+      "location": {
+        "section": "6.1 Skill Routing Performance",
+        "page": 6,
+        "figure_or_table": null,
+        "tex_file": "source/sections/results.tex",
+        "line_range": [
+          11,
+          11
+        ],
+        "quoted_text": "RouterBSI could further improve its performance on these cases with more training iterations or relying on a human to directly edit the predicates.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Optional: the main exception paragraph speculates about remedies while omitting the newly added, more informative diagnosis in Appendix H.3.",
+      "counterevidence_considered": [
+        "Could is already hypothetical, not a claim that either intervention was tested.",
+        "Current H.3 pp.25–26 contains matched ranking-loss analysis and qualified semantic attribution; a critique that the paper lacks investigation of these exceptions is stale.",
+        "Neither the broad nonactivation explanation nor the narrower semantic category should be promoted as experimentally established causation."
+      ],
+      "reasoning_chain": [
+        "1. Optional: the main exception paragraph speculates about remedies while omitting the newly added, more informative diagnosis in Appendix H.3.",
+        "2. error_routing_gap.tex:31–57 distinguishes required-skill nonactivation, restrictive predicates, likely checker errors, and mixed late-iteration progress. That is more informative than an untested more-iterations remedy and can replace rather than lengthen the paragraph.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Optional: the main exception paragraph speculates about remedies while omitting the newly added, more informative diagnosis in Appendix H.3.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Optionally replace the remedy sentence with: “Matched ranking-loss cases mainly involve retrieved required skills whose predicates remain false; retrospective inspection points to restrictive predicates in TheoremQA and likely checker errors in MedCalc-Bench (Appendix H.3). These diagnoses do not establish that additional training will close the gaps.”",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Any promoted diagnosis is restricted to the matched ranking-loss subset and labelled retrospective.",
+          "No unrun human-edit or extra-iteration result is asserted.",
+          "Do not recreate the deleted 94.68%/93.75% misinterpretation or demand another duplicate diagnostic."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-001 is resolved; this is an optional use of new evidence, not revival of that major."
+    },
+    {
+      "id": "NAR-E04",
+      "severity": "minor",
+      "category": "claims",
+      "adversarial_pass": "N",
+      "location": {
+        "section": "6.3 Downstream Performance",
+        "page": 6,
+        "figure_or_table": null,
+        "tex_file": "source/sections/results.tex",
+        "line_range": [
+          19,
+          19
+        ],
+        "quoted_text": "This finding suggests expanding selected skills to include dependent skills could improve downstream performance even if the dependent skills are not required.",
+        "anchor_kind": "existing_span",
+        "insertion_point": null
+      },
+      "problem": "Optional: place the already-disclosed unequal skill budgets beside the dependency hypothesis.",
+      "counterevidence_considered": [
+        "Suggests and could already mark the interpretation as a hypothesis; the sentence does not explicitly establish causation.",
+        "§5.5 already says SkillDAG receives ten skills versus RouterBSI top-five, and §6.3 explicitly acknowledges SkillDAG’s stronger downstream result.",
+        "The conclusion states dependency work as future work, not a completed contribution."
+      ],
+      "reasoning_chain": [
+        "1. Optional: place the already-disclosed unequal skill budgets beside the dependency hypothesis.",
+        "2. The graph-method success comparison cannot separate dependency selection from supplying more context, but the draft already has both the budget fact and hypothetical language. A local qualification is sufficient; a major causal-overclaim verdict would overstate current wording.",
+        "3. This is a scientific-description or editorial judgment, not a verified submission-policy violation."
+      ],
+      "predicted_reviewer_objection": "Simulated: Optional: place the already-disclosed unequal skill budgets beside the dependency hypothesis.",
+      "fix": {
+        "type": "rewrite",
+        "instruction": "Optionally add “with SkillDAG using ten supplied skills versus five for RouterBSI, this comparison does not isolate a dependency effect” immediately before the hypothesis, or include the budgets in Figure 4’s caption. Only propose budget-matched interventions if the author chooses a stronger causal claim.",
+        "target_text": null,
+        "required_inputs": [],
+        "acceptance_criteria": [
+          "Budget difference is visible at the point of interpretation.",
+          "Dependency benefit remains a hypothesis, not a measured mechanism.",
+          "No new experiment is imposed merely to support the existing future-work suggestion."
+        ],
+        "estimated_effort": "small",
+        "blocks_submission": false
+      },
+      "fix_window": "unknown",
+      "depends_on": [],
+      "prior_review_relation": "Prior ISSUE-009 downgraded to optional local qualification."
+    }
+  ],
+  "pdf_source_sync_findings": [
+    {
+      "id": "VERSION-N1",
+      "severity": "minor",
+      "category": "writing",
+      "location": {
+        "page": 2,
+        "section": "2.1",
+        "primary_artifact": "reviewed_main.pdf",
+        "quoted_text": "RouterBSI ensures non-decreasing em-\n147\npirical error on the retained set while bounding re-\n148\nplay evaluation costs.",
+        "tex_file": "source/sections/related_works.tex",
+        "line_range": [
+          14,
+          14
+        ]
+      },
+      "current_source_counterevidence": "Source already says “RouterBSI ensures non-increasing empirical error on the retained set while bounding replay evaluation costs.”",
+      "problem": "The reviewed PDF still prints the wrong error direction, but the frozen source already fixes it.",
+      "minimal_proposal": "Include in the parent source/PDF synchronization issue. After explicit build permission, rebuild from the approved current source and verify the PDF says non-increasing. Do not reapply a source edit or add equation caveats.",
+      "acceptance_criteria": [
+        "Approved regenerated PDF matches the corrected non-increasing source wording.",
+        "No changes to the correct empirical-average risk equation."
+      ]
+    },
+    {
+      "id": "VERSION-N2",
+      "severity": "minor",
+      "category": "claims",
+      "location": {
+        "page": 3,
+        "section": "3 Problem Definition",
+        "primary_artifact": "reviewed_main.pdf",
+        "quoted_text": "to correct the observed error without degrading\n204\npreviously learned or unseen routing decisions.",
+        "tex_file": "source/sections/problem_definition.tex",
+        "line_range": [
+          8,
+          8
+        ]
+      },
+      "current_source_counterevidence": "Source already says “to reduce average replay error while using held-out validation to limit regressions..”",
+      "problem": "The reviewed PDF still states a stronger no-degradation objective, while the source has already narrowed it.",
+      "minimal_proposal": "Group with source/PDF synchronization; use the corrected source on an author-approved future build. The duplicate terminal full stop is optional copyediting. Do not revive blanket demands to restate replay-average or initial-predicate-gate caveats.",
+      "acceptance_criteria": [
+        "Approved regenerated PDF contains the narrowed average-error/limit-regressions objective.",
+        "The cold-start comparator and risk equations remain unchanged."
+      ]
+    }
+  ],
+  "narrative_diagnostics": {
+    "recoverable_thesis": "Explicit, editable natural-language skill-applicability predicates can be improved from labeled routing failures using bounded per-skill replay selection and a cold-start held-out gate, while keeping model weights fixed.",
+    "front_page_assessment": "Title and abstract identify feedback refinement, replay and gating; Figure 1 illustrates applicability versus topical similarity with single-day versus date-range coffee-price queries. It does not show optimization, but Figure 2 does. A mandatory Figure-1 redesign is not justified by narrative self-containment.",
+    "substantive_nlp_contribution": "Selecting natural-language procedural context for LLM agents from task language is a concrete language-agent problem. The useful novelty is the specific editable routing state/update/validation combination, not generic recursion or a claimed theorem about Bayesian inference.",
+    "contribution_ladder": [
+      {
+        "claimed_contribution": "We propose RouterBSI, a non-parametric skill-routing framework that evaluates explicit applicability predicates over retrieved candidates, making routing criteria interpretable and directly editable without updating the underlying language model.",
+        "source_file": "source/sections/introduction.tex",
+        "source_line": 42,
+        "page": 2,
+        "delivered_in_section": "§4.1; Appendix A.1/B; Figure 1",
+        "evidenced_by": "Explicit natural-language predicate interface and concrete examples.",
+        "revisited_in_conclusion": true,
+        "asymmetry": "Inspectability/editability is a representation property; no human-edit benefit was measured, and no such experiment is required for this modest claim."
+      },
+      {
+        "claimed_contribution": "We develop a recursive self-improvement procedure that refines predicates from routing failures, selects updates through minimum Bayes risk over a bounded replay of relevant and irrelevant tasks, and rejects updates with higher held-out validation error than the cold-start predicate.",
+        "source_file": "source/sections/introduction.tex",
+        "source_line": 47,
+        "page": 2,
+        "delivered_in_section": "§4.2–4.3; Appendix A; §7.1",
+        "evidenced_by": "Minimum-average-risk equation, initial-predicate gate and four component configurations.",
+        "revisited_in_conclusion": true,
+        "asymmetry": "The core equations are clear; operational main/appendix mismatches are NAR-001. Timing is iteration-end, not necessarily immediately after each local repair."
+      },
+      {
+        "claimed_contribution": "We evaluate RouterBSI on six SRA-Bench datasets with a shared 26K-skill corpus, achieving the highest aggregate nDCG@10 and Hit@1 among evaluated methods while ablations establish the contributions of replay and validation.",
+        "source_file": "source/sections/introduction.tex",
+        "source_line": 52,
+        "page": 2,
+        "delivered_in_section": "§§5–7; Appendices E–G",
+        "evidenced_by": "Table 1 aggregate nDCG@1/nDCG@10; Figures 3,5–7 and detailed tables.",
+        "revisited_in_conclusion": true,
+        "asymmetry": "Observed routing leadership is delivered and benchmark exceptions acknowledged. Hit@1 naming should align with nDCG@1. Downstream leadership is not claimed as this contribution and belongs to SkillDAG in the displayed means."
+      }
+    ],
+    "conclusion_assessment": "All three contribution themes recur in §8. Strongest average routing and retention are claimed, while dependency-aware downstream improvement is future work; no missing conclusion revisit is found.",
+    "space_budget_recommendation": "Replace inaccurate or speculative sentences rather than append boilerplate. Compress repeated opening method summary and generic taxonomy prose before promoting core definitions; do not move central evidence into Limitations or shrink typography. Active budget remains unconfirmed."
+  },
+  "self_containment_audit": {
+    "main_text_stands_alone": false,
+    "qualification": "The central idea and primary results stand alone; exact method execution and experimental protocol do not yet. This is not a claim that all appendix content must be promoted.",
+    "explicit_main_to_appendix_references": [],
+    "reference_check": "Main section TeX files have no active Appendix/app: cross-reference; only provenance comments mention Appendix. Dependencies below are implicit, not fabricated quoted delegations.",
+    "dependencies": [
+      {
+        "content": "Replay-set membership, capacity scope, selected-first ranking and iteration-end rollback",
+        "appendix_location": "A.1–A.5, pp.11–12; procedure_routing.tex:18; procedure_replay.tex:3–13; procedure_validation.tex:3–21",
+        "main_text_location": "§4.2–4.3 p.4 and §5.4–5.5 p.5",
+        "main_text_reference": null,
+        "main_anchor": "For each skill, the replay set contains previously seen relevant and irrelevant tasks:",
+        "explicit_appendix_delegation": false,
+        "risk": "Main-text-only implementation would differ.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "NAR-001"
+        ],
+        "counterevidence_considered": [
+          "§4.2 explicitly defines average Boolean replay error, includes the current predicate in the argmin, and states the correct local non-increase inequality. No rewrite of those equations is requested.",
+          "§4.3 explicitly compares against the INITIAL predicate and rejects validation ties. The comparator is already correct; do not replace it with a previous-policy comparator or append blanket guarantee caveats.",
+          "§5.5 already gives the 50-candidate pool and five-skill downstream budget; Appendix D.1 makes their distinction explicit. The issue is not that these values are absent everywhere."
+        ]
+      },
+      {
+        "content": "Exact prompts and worked repair",
+        "appendix_location": "B.1–B.4, pp.12–16; prompts_initialization.tex, prompts_proposal.tex, prompts_evaluator.tex, prompts_trace.tex",
+        "main_text_location": "§4.1–4.2 pp.3–4",
+        "main_text_reference": null,
+        "main_anchor": "The initial cold-start predicates",
+        "explicit_appendix_delegation": false,
+        "risk": "Exact prompt replication needs appendix, but the essential natural-language interface and update objective are in main.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [],
+        "counterevidence_considered": [
+          "Figure 1 already makes the predicate notion concrete. A second main worked example is optional."
+        ]
+      },
+      {
+        "content": "Constrained global split, exact task counts, rare-skill filtering and represented-skill scope",
+        "appendix_location": "C.1–C.3, pp.16–17; data_splits.tex:3–7,18–25",
+        "main_text_location": "§5.1 pp.4–5",
+        "main_text_reference": null,
+        "main_anchor": "We split each dataset into train, validation, and test splits",
+        "explicit_appendix_delegation": false,
+        "risk": "Protocol and external-validity scope are not stated accurately in main.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "NAR-002"
+        ],
+        "counterevidence_considered": [
+          "The next main-text sentence already discloses filtering/balancing for shared required skills. Therefore the represented-skill evaluation is not wholly hidden, and deliberate skill overlap is not evidence of task leakage.",
+          "Appendix C.1 p.16 explicitly states disjoint task identifiers and held-out tasks involving represented skills."
+        ]
+      },
+      {
+        "content": "Default parameter values, schema/retry/cache/runtime configuration",
+        "appendix_location": "D.1–D.2, pp.17–18; implementation_settings.tex:11–23",
+        "main_text_location": "§4.2 p.4 and §5.5 p.5",
+        "main_text_reference": null,
+        "main_anchor": "To reduce overly long and detailed predicates",
+        "explicit_appendix_delegation": false,
+        "risk": "Most are replication detail. A compact N=5, Mp=3, l=400-character default sentence would make the bounded-cost design concrete.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [],
+        "counterevidence_considered": [
+          "Main already gives default retriever, backbone, temperatures, candidate budget and ten iterations. Do not claim implementation details are absent."
+        ]
+      },
+      {
+        "content": "Definition of the MBR-disabled control: first valid proposal, history still supplied",
+        "appendix_location": "D.3 p.18 and G.1 pp.19–20; implementation_variants.tex:5; ablation_components.tex:2",
+        "main_text_location": "§7.1 p.7; ablations.tex:16",
+        "main_text_reference": null,
+        "main_anchor": "This supports empirical update selection without implying that unchecked updates invariably worsen performance.",
+        "explicit_appendix_delegation": false,
+        "risk": "Ablation removes replay-based selection, not all historical feedback; readers may otherwise overattribute gains to memory presence.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [],
+        "counterevidence_considered": [
+          "Main already shows all four configurations and gains. Recommend one definition sentence, not moving the entire ablation table or claiming no ablations exist."
+        ]
+      },
+      {
+        "content": "Extended benchmark/retriever tables and metric definitions",
+        "appendix_location": "E.1–E.2 pp.18–21; routing_metrics.tex; routing_results.tex",
+        "main_text_location": "Table 1 p.5 and §6.1 pp.5–6",
+        "main_text_reference": null,
+        "main_anchor": "SkillRouter is the strongest routing baseline",
+        "explicit_appendix_delegation": false,
+        "risk": "Detailed rows can stay supplementary because main reports aggregate and benchmark-level nDCG and names exceptions. Selected-set F1 naming requires alignment.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "NAR-005"
+        ],
+        "counterevidence_considered": [
+          "Headline routing evidence is not exclusively in the appendix."
+        ]
+      },
+      {
+        "content": "Retention denominator and ratio-of-task-means aggregation",
+        "appendix_location": "F.1–F.2 pp.18–22; retention_definition.tex; Tables 8–9",
+        "main_text_location": "§5.2 p.5 and §6.2/Figure 3 p.6",
+        "main_text_reference": null,
+        "main_anchor": "We also report retention as Ret@",
+        "explicit_appendix_delegation": false,
+        "risk": "Method-specific expanded coverage affects comparisons.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "NAR-005"
+        ],
+        "counterevidence_considered": [
+          "§5.2 already distinguishes routing from downstream success, and §6.2 explicitly discusses SkillDAG’s higher coverage; retention is not misrepresented as unconditional recall everywhere.",
+          "Appendix E.1 defines selected-set F1 and nDCG@1 clearly; Appendix F.1 defines the ratio-of-means normalization. Thus definitions exist and need only concise main-text alignment.",
+          "Hit@1 in the third contribution equals nDCG@1 under binary nonempty relevance, as Table 10 already notes; this is not an unsupported additional result."
+        ]
+      },
+      {
+        "content": "Component trajectory tables, repeated-run statistics, gate-decision counts",
+        "appendix_location": "G.1 pp.19–24; Tables 10–11; ablation_components.tex:25–31",
+        "main_text_location": "§7.1/Figure 5 p.7",
+        "main_text_reference": null,
+        "main_anchor": "Combining MBR with the held-out gate further improved final performance",
+        "explicit_appendix_delegation": false,
+        "risk": "Main already contains the central component evidence. Experimental scout must resolve current initial-score differences against same-predicate assertions; do not import old unpaired-design prose.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [],
+        "counterevidence_considered": [
+          "Appendix now explicitly says the same initial predicates; the old contrary paragraph is absent."
+        ]
+      },
+      {
+        "content": "Recorded token scope and first-run aggregation; replay capacity and candidate-pool sensitivity",
+        "appendix_location": "G.2–G.3 pp.20–25; ablation_cost_capacity.tex; Table 12",
+        "main_text_location": "§7.2/Figure 6 p.7",
+        "main_text_reference": null,
+        "main_anchor": "while MBR alone reduces token usage by 10.8\\% at the cost of a 7.7\\% relative decrease in nDCG@1 compared with using both.",
+        "explicit_appendix_delegation": false,
+        "risk": "Main cost text can look like the neighboring three-run comparison or complete cost accounting.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "NAR-006"
+        ],
+        "counterevidence_considered": [
+          "Appendix G.2 pp.20–21 now says all configurations use the same initial predicates and explicitly defines recorded totals and excluded unknown usage; do NOT repeat the prior review’s assertion that current prose reports asymmetric initialization.",
+          "Table 12 p.24 supplies total and iteration-only tokens and counts unknown-usage attempts.",
+          "§7.2 reports an observed comparison, not an explicit serving-cost claim or a theorem about efficiency; this warrants a compact qualifier rather than a major new experiment demand."
+        ]
+      },
+      {
+        "content": "Backbone one-run scope and additional F1/nDCG@10",
+        "appendix_location": "G.4 p.22 and Table 14 p.25",
+        "main_text_location": "§7.3 p.7/Figure 7 p.8",
+        "main_text_reference": null,
+        "main_anchor": "They also suggest that predicates reach a plateau that cannot be overcomed with more capable LLMs",
+        "explicit_appendix_delegation": false,
+        "risk": "Main endpoint results are present, but broader ceiling interpretation is unsupported.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "NAR-004"
+        ],
+        "counterevidence_considered": [
+          "No need to promote full Table 14; delete the excess interpretation."
+        ]
+      },
+      {
+        "content": "Model-adjudicated evaluator diagnostic and full semantic error accounting",
+        "appendix_location": "H.1–H.5 pp.22–28; evaluator_validation.tex; error_routing_gap.tex",
+        "main_text_location": "§6.1 p.6 and Limitations p.8",
+        "main_text_reference": null,
+        "main_anchor": "errors in interpreting predicates can lead to incorrect skill selections",
+        "explicit_appendix_delegation": false,
+        "risk": "These are not load-bearing validation claims in the current main text. A concise new H.3 diagnosis can improve discussion, but no mandatory promotion of all diagnostic caveats is warranted.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "NAR-E03"
+        ],
+        "counterevidence_considered": [
+          "The 97.10% agreement is not advertised as human accuracy in main; H.1 explicitly states class imbalance, lack of human validation and nonblinded first review."
+        ]
+      },
+      {
+        "content": "Per-retriever and per-benchmark downstream outcomes",
+        "appendix_location": "H.6 pp.28–29; Tables 21–22",
+        "main_text_location": "§6.3/Figure 4 p.6",
+        "main_text_reference": null,
+        "main_anchor": "RouterBSItop5’s average performance across retrievers",
+        "explicit_appendix_delegation": false,
+        "risk": "Main aggregate outcome is present and SkillDAG advantage acknowledged. Budget caveat near comparison is optional; full rows may stay in appendix.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "NAR-E04"
+        ],
+        "counterevidence_considered": [
+          "The paper does not claim universal downstream dominance."
+        ]
+      }
+    ]
+  },
+  "related_work_assessment": {
+    "already_present": [
+      "JTPRO",
+      "SkillRouter",
+      "SkillDAG",
+      "Skill-Pro",
+      "MemSkill"
+    ],
+    "missing_citations": [
+      {
+        "paper": "Agrawal et al. GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+        "venue": "arXiv record reports accepted to ICLR 2026 (Oral); proceedings not independently inspected",
+        "url_or_arxiv": "https://arxiv.org/abs/2507.19457",
+        "status": "optional verified conceptual addition",
+        "where_to_cite": "§2.1 beside existing JTPRO discussion",
+        "why": "Close reflective prompt-optimization neighbor with proposal testing and Pareto candidate combination; sharper method-family context, not proof a new baseline is mandatory.",
+        "linked_issue": "NAR-E01"
+      }
+    ],
+    "required_new_baselines": [],
+    "conditional_comparison": "A matched GEPA/JTPRO-inspired selector could be useful only for a stronger claim of optimizer-mechanism superiority; current comparisons already include static, trained and non-parametric routers. A fair adaptation would need identical skill-applicability targets, candidate sets, initialization, labels and budgets, not raw upstream tool-calling scores. Not proposed as required here.",
+    "not_proposed": [
+      "No invented bibliography entries.",
+      "No automatic EASYTOOL/MeNTi/MBR-decoding baseline demand.",
+      "No claim that JTPRO is missing or lacks a bounded candidate-context pool."
+    ],
+    "verified_sources": [
+      {
+        "id": 1,
+        "url": "https://aclanthology.org/2026.findings-acl.2017/",
+        "local_file": "external_narrative_sources/source1.txt",
+        "http_status": 200
+      },
+      {
+        "id": 2,
+        "url": "https://arxiv.org/abs/2507.19457",
+        "local_file": "external_narrative_sources/source2.txt",
+        "http_status": 200
+      },
+      {
+        "id": 3,
+        "url": "https://arxiv.org/abs/2603.22455",
+        "local_file": "external_narrative_sources/source3.txt",
+        "http_status": 200
+      },
+      {
+        "id": 4,
+        "url": "https://aclanthology.org/2026.findings-acl.2017.pdf",
+        "local_file": "external_narrative_sources/jtpro.pdf",
+        "pages_read": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "http_status": 200
+      }
+    ]
+  },
+  "prior_review_reconciliation": [
+    {
+      "prior_issue_id": "ISSUE-001",
+      "disposition": "resolved",
+      "reason": "Incorrect 94.68%/93.75% interpretation has been removed from current main; H.3 now adds matched ranking-loss diagnosis. Do not resurrect missing-error-analysis claims.",
+      "current_links": [
+        "NAR-E03"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-002",
+      "disposition": "source_resolved_pdf_sync_needed",
+      "reason": "The wrong error direction and stronger objective persist in PDF but are corrected in frozen source. Core average-risk and initial-predicate equations are already correct.",
+      "current_links": [
+        "VERSION-N1",
+        "VERSION-N2"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-003",
+      "disposition": "partially_retained_narrowed",
+      "reason": "Operational replay/ranking/timing discrepancies remain; blanket risk/gate caveats are redundant.",
+      "current_links": [
+        "NAR-001"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-004",
+      "disposition": "old_rationale_stale_current_question_deferred",
+      "reason": "Current G.1 now says common initial predicates. Table 10 initial metrics still vary; this is a fresh reconciliation question for experiment/provenance scout, not proof the old unpaired-initialization design still applies.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-005",
+      "disposition": "partially_retained_downgraded",
+      "reason": "Current G.2 no longer says only one configuration includes local initialization. Keep single-run known-usage scope; verify artifacts before asserting asymmetry.",
+      "current_links": [
+        "NAR-006"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-006",
+      "disposition": "outside_scope_defer_independent_recheck",
+      "reason": "No audit verdict is copied from old manifests. Current artifact reportability and source binding belong to experimental/provenance scout.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-007",
+      "disposition": "retained_narrowed",
+      "reason": "Per-dataset ratio contradicts current constrained-global counts; shared-skill balancing is partly stated already.",
+      "current_links": [
+        "NAR-002"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-008",
+      "disposition": "retained_in_scope",
+      "reason": "Strongest comparator lacks main baseline specification and retriever train/freeze wording conflicts. Five-model role issue is separately deferred.",
+      "current_links": [
+        "NAR-003"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-009",
+      "disposition": "downgraded_optional",
+      "reason": "Main already uses suggests/could and states budgets in setup; qualify locally rather than assert current text claims a causal proof.",
+      "current_links": [
+        "NAR-E04"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-010",
+      "disposition": "retained_minimal_delete",
+      "reason": "Universal backbone ceiling sentence remains; remove it rather than append a duplicate endpoint paragraph.",
+      "current_links": [
+        "NAR-004"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-011",
+      "disposition": "partially_retained_downgraded",
+      "reason": "Retain selected-set F1/retention/Hit@1 alignment. Appendix openly defines unusual FP/FN labels and neutral descriptions; do not treat labels alone as invalid numbers.",
+      "current_links": [
+        "NAR-005"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-012",
+      "disposition": "major_rejected_optional_positioning",
+      "reason": "Explicit average loss already defines the selection objective. No forced Bayesian posterior derivation, renaming, or MBR-decoding citation. JTPRO is already cited; GEPA is an optional verified conceptual addition.",
+      "current_links": [
+        "NAR-E01",
+        "NAR-E02"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-013",
+      "disposition": "outside_scope_defer",
+      "reason": "No invented paired uncertainty or new statistical results. Parent experimental scout should distinguish point estimates from inferential claims.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-014",
+      "disposition": "outside_scope_except_teaser",
+      "reason": "Figure 1 is a valid task-applicability example; requiring it to carry the full update algorithm is optional editorial redesign. Full rendering audit belongs to layout scout.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-015",
+      "disposition": "retained_minor_editorial",
+      "reason": "Repeated RouterBSI introduction and visible grammatical errors remain. Keep copyediting separate from major scientific issues.",
+      "current_links": []
+    }
+  ],
+  "not_reintroduced": [
+    "No missing average-replay-error definition.",
+    "No missing initial-predicate comparator.",
+    "No guaranteed preservation of each replayed judgment inferred from the average-risk equation.",
+    "No requirement to repeat every appendix warning in main.",
+    "No missing diagnostic claim for the two benchmark exceptions.",
+    "No demand for human-edit effectiveness study to support mere editability.",
+    "No claim of universal downstream superiority attributed to the draft."
+  ],
+  "cross_scout_handoffs": [
+    {
+      "topic": "Version sync",
+      "message": "Group VERSION-N1/N2 with parent PDF/source discrepancy issue. Source already corrected; proposed action is later authorized rebuild, not source re-edit."
+    },
+    {
+      "topic": "Experiments",
+      "message": "Current G.1 common-initial-predicate statement versus differing initial metrics needs fresh reconciliation. Do not copy obsolete unpaired-library explanation."
+    },
+    {
+      "topic": "Experiments",
+      "message": "§5.3 lists five models; §7.3/Table 14 provide three backbones. Ask for model-to-experiment roles; do not invent missing results."
+    },
+    {
+      "topic": "Experiments",
+      "message": "Current token scope still needs main qualification, but old asymmetric-initialization wording is absent. Independently inspect manifests before a stronger charge."
+    },
+    {
+      "topic": "Method/ablations",
+      "message": "Define MBR-disabled selection in one main sentence: first valid current-task proposal, with historical proposal context retained. Do not characterize as memory-free."
+    }
+  ],
+  "open_questions_for_human_author": [
+    "Which actual SkillRouter version/checkpoint, input fields and adaptation protocol produced the tables?",
+    "Which source/PDF snapshot should be authoritative for a later approved synchronization build?",
+    "Which venue, cycle, track and stage govern any future revision?"
+  ],
+  "tool_issues": [
+    "web_search configured ddgs backend unavailable; tool automatically returned Exa search results.",
+    "web_extract unavailable because configured backend is search-only. Browser fallback daemon failed to start. Direct requests to official ACL Anthology/arXiv succeeded with HTTP 200; fetched evidence retained under review dir."
+  ],
+  "verification": {
+    "source_anchors": [
+      {
+        "id": "NAR-001",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-002",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-003",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-004",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-005",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-006",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-E01",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-E02",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-E03",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      },
+      {
+        "id": "NAR-E04",
+        "source_quote_and_lines_verified": true,
+        "normalized_pdf_quote_verified": true
+      }
+    ],
+    "primary_pdf_sync_quotes_verified": true,
+    "prior_issue_coverage": 15,
+    "issue_counts": {
+      "major": 4,
+      "minor": 2
+    },
+    "optional_refinement_count": 4,
+    "appendix_dependency_groups": 12,
+    "no_manuscript_write_or_experiment_performed": true,
+    "full_review_json_contract_note": "This is a focused scout for parent synthesis, not an independent overall/scored REVIEW_JSON."
+  }
+}

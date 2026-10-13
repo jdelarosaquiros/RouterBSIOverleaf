@@ -1,0 +1,10 @@
+{
+  "analysis_root": ".wisc/analysis/skillsight-paired-appendix",
+  "results_csv_sha256": "bb67e228ed8bfd448babf9ff461c35a314e31a7b2ddeba7445fc64a4fd59b23a",
+  "analysis_manifest_sha256": "b12461b0f08a8849533be8dd0f4e8b57404e0ee91d71d236096d69e737fc0c17",
+  "bootstrap_replicates": 50000,
+  "seed": 20261013,
+  "source_status": "completed_noncanonical; analysis_ready=true; reportable=false",
+  "regeneration": "python -B RouterBSIPaper/tables/paired_routing_uncertainty/generate.py",
+  "analysis_verification": "python -B .wisc/analysis/skillsight-paired-appendix/paired_bootstrap.py --verify"
+}

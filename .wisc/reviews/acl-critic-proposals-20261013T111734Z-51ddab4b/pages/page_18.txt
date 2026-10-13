@@ -1,0 +1,198 @@
+brary preserves its catalog and prompt binding.
+1491
+Reproducibility therefore requires matching the
+1492
+initial predicates, split order, replay seed, effective
+1493
+prompts and evaluator settings, not only the model
+1494
+name.
+1495
+D.3
+Controlled Method Variants
+1496
+The replay-capacity settings use N ∈{1, 3, 5, 10}
+1497
+per relevance category while keeping the candi-
+1498
+date count and length limit fixed. Retrieval-budget
+1499
+variants use 10, 25 or 50 candidates. The corre-
+1500
+sponding current-inclusive replay bound is 2N +1,
+1501
+not N total.
+1502
+Disabling the held-out gate retains the provi-
+1503
+sional candidate library without per-skill rollback.
+1504
+Disabling MBR changes selection to the first gen-
+1505
+erated candidate satisfying the current-task checks;
+1506
+the proposal still receives retained positive and neg-
+1507
+ative context. Thus this ablation removes replay-
+1508
+based candidate selection rather than all historical
+1509
+information from generation. Disabling both mech-
+1510
+anisms combines those changes.
+1511
+The alternative replay-F1 objective computes
+1512
+RF1 = 1 −
+2TP
+2TP + FP + FN,
+1513
+with risk one when the denominator is zero. This
+1514
+is distinct from the default mean Boolean error and
+1515
+from the per-task validation predicate-pattern score.
+1516
+An accuracy-labelled validation variant coincides
+1517
+with the default validation score when every skill
+1518
+has exactly one predicate.
+1519
+E
+Extended Skill-Routing Results
+1520
+E.1
+Ranking and Selection Metrics
+1521
+Let Lq = (s1, . . . , sK) be the ordered skill list for
+1522
+task q, and let Gq be its required skill set. Recall at
+1523
+cutoff k measures the fraction of required skills in
+1524
+the first k positions:
+1525
+Recall@ k(q) = |{s1, . . . , sk} ∩Gq|
+|Gq|
+.
+1526
+For nDCG, the relevance of each skill is binary.
+1527
+With yq,j = 1[sj ∈Gq], we compute
+1528
+DCG@ k(q) =
+k
+X
+j=1
+yq,j
+log2(j + 1),
+1529
+1530
+nDCG@ k(q) =
+DCG@ k(q)
+Pmin(k,|Gq|)
+j=1
+1/ log2(j + 1)
+.
+1531
+Thus, nDCG@1 is the fraction of tasks whose first-
+1532
+ranked skill is required. Recall@1 can be lower
+1533
+when a task requires multiple skills, because it di-
+1534
+vides by the size of the required set.
+1535
+We distinguish the ranked list from the selected
+1536
+set Pq. Set-level F1 is
+1537
+F1(q) = 2|Pq ∩Gq|
+|Pq| + |Gq|.
+1538
+For strict predicate routing, Pq contains only skills
+1539
+whose predicates evaluate to true. A top-k routing
+1540
+list also contains predicate-negative skills when
+1541
+they fall within the ranked cutoff. The set-level F1
+1542
+reported for predicate ablations therefore measures
+1543
+the selected set, rather than the first k entries of the
+1544
+complete ranked list.
+1545
+Dataset scores average the corresponding per-
+1546
+task metric. The overall score pools task instances
+1547
+across datasets; it is not an unweighted average of
+1548
+the six dataset scores. When comparing retrievers,
+1549
+we first compute this task-weighted score for each
+1550
+retriever and then average across BM25, Vector,
+1551
+and SkillSight.
+1552
+E.2
+Results by Benchmark and Retriever
+1553
+Tables 5–7 expand the routing comparison into
+1554
+benchmark-level nDCG and recall. Each retriever
+1555
+group includes the base ranking, static selection,
+1556
+the routing baselines, and the initial and optimized
+1557
+RouterBSI predicates. All results use Qwen3.5-4B.
+1558
+The cutoffs of 5 and 10 expose whether a gain in
+1559
+the first-ranked skill also preserves more required
+1560
+skills within a small routing budget.
+1561
+The gains differ across benchmarks. For exam-
+1562
+ple, RouterBSI with SkillSight reaches nDCG@10
+1563
+of 0.771 on BigCodeBench and 0.797 on ToolQA,
+1564
+compared with 0.616 and 0.390 for the base re-
+1565
+triever.
+On TheoremQA, SkillRouter remains
+1566
+stronger in nDCG@10 for all three retrievers.
+1567
+MedCalc-Bench presents a different boundary: the
+1568
+Vector retriever already attains high coverage and
+1569
+ranking quality, leaving less room for improvement.
+1570
+These comparisons separate the effect of predicate
+1571
+refinement from the difficulty of the initial candi-
+1572
+date pool.
+1573
+F
+Retention Under a Skill-Budget
+1574
+Constraint
+1575
+F.1
+Coverage and Retention
+1576
+Retrieval coverage and retention measure differ-
+1577
+ent properties. Recall@50 measures how much
+1578
+18

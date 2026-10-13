@@ -1,0 +1,9 @@
+Cross-retriever average skill routing performance
+Source: BayesGSI/tables/routing_performance/results.csv
+Source SHA256: d3bad67c2d0a27132e38bb28dd1389a7167c02ec4f2d9b870e43d4c0fcfa8f9b
+Aggregation: Native baseline rows unchanged; other rows equal-weight arithmetic mean over BM25, Vector, SkillSight. Dataset Average task-weighted within each retriever, then equal-weight across retrievers.
+Baseline rows: BM25, Vector, SkillSight; averaged methods exclude Progressive Disclosure and Tool-REX, retaining the current table method set.
+N@1 uses the existing verified binary-relevance Hit@1 equivalence, preserved in selection.json.
+Not a controlled shared-candidate comparison.
+Full inherited run provenance and stale Vector input-map caveat: selection.json/provenance.
+Regenerate: uv run --script .wisc/scripts/generate-routing-average-table.py

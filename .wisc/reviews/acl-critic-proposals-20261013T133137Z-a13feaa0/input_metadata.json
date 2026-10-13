@@ -1,0 +1,13 @@
+{
+  "review_date": "2026-10-13",
+  "paper_root": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper",
+  "output_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0",
+  "pdf_sha256": "a13feaa06ce9697e5d4d44119ea46f4403aff73a8743d3bb51bcc616dd3174e5",
+  "pages": 29,
+  "protected_file_count": 332,
+  "revision_mode": "unknown",
+  "authorization": "review and proposals only; no manuscript edits, compilation, experiments, commits, or uploads",
+  "experimental_results": [],
+  "prior_review": "../acl-critic-proposals-20261013T111734Z-51ddab4b",
+  "taskmaster": "tool unavailable; Hermes todo used"
+}

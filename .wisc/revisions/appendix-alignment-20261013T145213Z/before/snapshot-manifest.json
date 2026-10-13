@@ -1,0 +1,491 @@
+{
+  "scope": "Self-contained LaTeX manuscript snapshot; not experiment reproduction.",
+  "files": [
+    {
+      "path": "main.tex",
+      "source_sha256": "d9a4cdb255295c72f6de0b40052d8721845af32884d339f40733b888c866b139",
+      "packaged_sha256": "d9a4cdb255295c72f6de0b40052d8721845af32884d339f40733b888c866b139",
+      "transformation": null
+    },
+    {
+      "path": "acl.sty",
+      "source_sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "packaged_sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "transformation": null
+    },
+    {
+      "path": "acl_natbib.bst",
+      "source_sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+      "packaged_sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+      "transformation": null
+    },
+    {
+      "path": "references.bib",
+      "source_sha256": "dad03b349aebeb5992b0011cfd0ac85e52c322cc2d7f3b0770e53ff870e3ba11",
+      "packaged_sha256": "dad03b349aebeb5992b0011cfd0ac85e52c322cc2d7f3b0770e53ff870e3ba11",
+      "transformation": null
+    },
+    {
+      "path": "sections/ablations.tex",
+      "source_sha256": "a48bf14109a209a0e26b93e433d2341b58279cdff7e80dd6533dfa35206fe720",
+      "packaged_sha256": "a48bf14109a209a0e26b93e433d2341b58279cdff7e80dd6533dfa35206fe720",
+      "transformation": null
+    },
+    {
+      "path": "sections/abstract.tex",
+      "source_sha256": "2fad76a2573d82699c59900145772d8200a5a535efad8bd0480ba3897938efc5",
+      "packaged_sha256": "2fad76a2573d82699c59900145772d8200a5a535efad8bd0480ba3897938efc5",
+      "transformation": null
+    },
+    {
+      "path": "sections/appendix.tex",
+      "source_sha256": "774c1d5caac5ef60eec06e6e015ca11a3625f272f5aeaae0dbec797a583d950b",
+      "packaged_sha256": "774c1d5caac5ef60eec06e6e015ca11a3625f272f5aeaae0dbec797a583d950b",
+      "transformation": null
+    },
+    {
+      "path": "sections/citations.tex",
+      "source_sha256": "b8b53c00fb4b6b7b0b39a18d3999135475e568c4c4d23b168bfadd63123f2823",
+      "packaged_sha256": "b8b53c00fb4b6b7b0b39a18d3999135475e568c4c4d23b168bfadd63123f2823",
+      "transformation": null
+    },
+    {
+      "path": "sections/conclusion.tex",
+      "source_sha256": "d48848c9e6f14aa61c50afd01eb883d059792f61d0a3e29872b9f56d332c839c",
+      "packaged_sha256": "d48848c9e6f14aa61c50afd01eb883d059792f61d0a3e29872b9f56d332c839c",
+      "transformation": null
+    },
+    {
+      "path": "sections/experiments.tex",
+      "source_sha256": "d1e1598f9a09ee48d8753238ec42e969fdde7f22ad23e623c2896ec89d31d10e",
+      "packaged_sha256": "d1e1598f9a09ee48d8753238ec42e969fdde7f22ad23e623c2896ec89d31d10e",
+      "transformation": null
+    },
+    {
+      "path": "sections/introduction.tex",
+      "source_sha256": "7e78e03b656da5c3bca967e0d181bbae840eee5a5eeac9bbf46a1b18eefa08d6",
+      "packaged_sha256": "7e78e03b656da5c3bca967e0d181bbae840eee5a5eeac9bbf46a1b18eefa08d6",
+      "transformation": null
+    },
+    {
+      "path": "sections/limitations.tex",
+      "source_sha256": "5067763fba58c7dce1f50d3eaa509a67208d524d6985a3ed9923bcb38b4e88a3",
+      "packaged_sha256": "5067763fba58c7dce1f50d3eaa509a67208d524d6985a3ed9923bcb38b4e88a3",
+      "transformation": null
+    },
+    {
+      "path": "sections/method.tex",
+      "source_sha256": "8b161fb89fe2fcc7eb0a9d94ae519c602d1b8f25ab7479401fa22c47a3414a15",
+      "packaged_sha256": "8b161fb89fe2fcc7eb0a9d94ae519c602d1b8f25ab7479401fa22c47a3414a15",
+      "transformation": null
+    },
+    {
+      "path": "sections/problem_definition.tex",
+      "source_sha256": "8e99e78d74892c767a3f4fd06e4314cfa420e7b9f15e9c010728a8fb6716829a",
+      "packaged_sha256": "8e99e78d74892c767a3f4fd06e4314cfa420e7b9f15e9c010728a8fb6716829a",
+      "transformation": null
+    },
+    {
+      "path": "sections/related_works.tex",
+      "source_sha256": "4b03635999f5557c218d2926cb633dd9e30b0d27a62a7c48f40b3a9d4a8862ce",
+      "packaged_sha256": "4b03635999f5557c218d2926cb633dd9e30b0d27a62a7c48f40b3a9d4a8862ce",
+      "transformation": null
+    },
+    {
+      "path": "sections/results.tex",
+      "source_sha256": "279901b7d35a91501523b71739276ed55f17939bf1f1ed0401796861bc4699fb",
+      "packaged_sha256": "279901b7d35a91501523b71739276ed55f17939bf1f1ed0401796861bc4699fb",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1/table.tex",
+      "source_sha256": "c05399a79121c71c4eba4d18fc559eaaa9e6ef100306fc2c4ca99c5c399faa82",
+      "packaged_sha256": "c05399a79121c71c4eba4d18fc559eaaa9e6ef100306fc2c4ca99c5c399faa82",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1/preview.pdf",
+      "source_sha256": "f200c33e5ab35c594e179697919cdfd722e6bd390b418f42feac44bf1677834e",
+      "packaged_sha256": "f200c33e5ab35c594e179697919cdfd722e6bd390b418f42feac44bf1677834e",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1/preview.png",
+      "source_sha256": "5005bf0192aeac6d49b5360c184f0abb826f64d99c4da9ab5591e3ea140e758e",
+      "packaged_sha256": "5005bf0192aeac6d49b5360c184f0abb826f64d99c4da9ab5591e3ea140e758e",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1/description.text",
+      "source_sha256": "9f38542ea7dfee1c0561943a233952d3897581523d0fcec3f18382cb4c2a203d",
+      "packaged_sha256": "9f38542ea7dfee1c0561943a233952d3897581523d0fcec3f18382cb4c2a203d",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1/provenance.text",
+      "source_sha256": "99128dab737ffe3fecc6fafc0e8fa23402e39f46bbdd34085a8f5e1d8f5e56c4",
+      "packaged_sha256": "7d1b453a098ef2dcfd40c5181a33de1cead08b8bfa4ce7e7b4eebd8d8cbc331f",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1_all_splits/table.tex",
+      "source_sha256": "f3e7af102b2642645a691fdf80ba0cdeea146de14468c0e166a717d9a102156d",
+      "packaged_sha256": "f3e7af102b2642645a691fdf80ba0cdeea146de14468c0e166a717d9a102156d",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1_all_splits/preview.pdf",
+      "source_sha256": "ff78c2146cc5330078ece56af22394f49df1ae6ec4f52e90d26b016eeb1e9d38",
+      "packaged_sha256": "ff78c2146cc5330078ece56af22394f49df1ae6ec4f52e90d26b016eeb1e9d38",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1_all_splits/preview.png",
+      "source_sha256": "8cc441c8bba14a2b8e1114c276dea637c13666ea6b9d167eea9e00b98b0fb580",
+      "packaged_sha256": "8cc441c8bba14a2b8e1114c276dea637c13666ea6b9d167eea9e00b98b0fb580",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1_all_splits/description.text",
+      "source_sha256": "09072f41b9bea476d8c5cbe39e4471bee1ebab90b3f4e430f3809d00b92cbe24",
+      "packaged_sha256": "09072f41b9bea476d8c5cbe39e4471bee1ebab90b3f4e430f3809d00b92cbe24",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_f1_all_splits/provenance.text",
+      "source_sha256": "39b6968b4a81bbb252f100f17c7e3741953fe4b92bf563dbf3581c975a1f6735",
+      "packaged_sha256": "2d0ff28bdc4a4567b262bff6904c20785a1adbd82ef632b8f8cb7419817b28f4",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/mbr_replay_validation_ndcg/table.tex",
+      "source_sha256": "2417a763c8564bd3b9c4ab84f8a26749264a0b8b5534a2c634e591e9c47f7e3d",
+      "packaged_sha256": "2417a763c8564bd3b9c4ab84f8a26749264a0b8b5534a2c634e591e9c47f7e3d",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_ndcg/preview.pdf",
+      "source_sha256": "56f0a56f383a42999a697be6533c9ddcbeb1abb2cd0e8a42a8cf943aab4e6cae",
+      "packaged_sha256": "56f0a56f383a42999a697be6533c9ddcbeb1abb2cd0e8a42a8cf943aab4e6cae",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_ndcg/preview.png",
+      "source_sha256": "3c5b05794a3795b466a9b9b8787da0360b84c68890d118bfcae6a74dbd8865bf",
+      "packaged_sha256": "3c5b05794a3795b466a9b9b8787da0360b84c68890d118bfcae6a74dbd8865bf",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_ndcg/description.text",
+      "source_sha256": "752784ffa4ff2c85aad6470bcce87de8a29decde5589cbdd94530e7c444558cf",
+      "packaged_sha256": "752784ffa4ff2c85aad6470bcce87de8a29decde5589cbdd94530e7c444558cf",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_ndcg/provenance.text",
+      "source_sha256": "b3a776e7cb2a9646e4e48f79535e894ebb5b948afaa63c57b86ee9d82e0f23da",
+      "packaged_sha256": "ae734f6bf28f7b8ba1cdff269e392758365350e93e5750bca32b23f8f0752c12",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/mbr_replay_validation_std/table.tex",
+      "source_sha256": "f683447eccaef31d967ec92b79fe8d19c4c7cba169cef557bc6c9fe37911db48",
+      "packaged_sha256": "f683447eccaef31d967ec92b79fe8d19c4c7cba169cef557bc6c9fe37911db48",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std/preview.pdf",
+      "source_sha256": "4ab4f3a830057f4c844110a184e82d5689a22902ac45b8a4f09b19a907094ff0",
+      "packaged_sha256": "4ab4f3a830057f4c844110a184e82d5689a22902ac45b8a4f09b19a907094ff0",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std/preview.png",
+      "source_sha256": "f13f61cdb6da1df165e1e7d580a15320052f4850c284b1e3933d5d6638bfc606",
+      "packaged_sha256": "f13f61cdb6da1df165e1e7d580a15320052f4850c284b1e3933d5d6638bfc606",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std/description.text",
+      "source_sha256": "cd438bf49c3ddc7db70c4ee26c117a2c76af199210febcdc9776388936445c55",
+      "packaged_sha256": "cd438bf49c3ddc7db70c4ee26c117a2c76af199210febcdc9776388936445c55",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std/provenance.text",
+      "source_sha256": "ca9a14da35a30e1911148ca0ddecdee5e05cb314e30865d9f46a1ce12ac8e7e0",
+      "packaged_sha256": "8e3c5c79bf0ebca48824a0d47e146f8ae3cba16db97487289d849917be723f31",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/mbr_replay_validation_std_all_splits/table.tex",
+      "source_sha256": "e893ffbb5b2d3f912a2d61f44b59ae069eb8759e765bd1b0c9ef4c62626feab1",
+      "packaged_sha256": "e893ffbb5b2d3f912a2d61f44b59ae069eb8759e765bd1b0c9ef4c62626feab1",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std_all_splits/preview.pdf",
+      "source_sha256": "f6f4eff26168f4476fbac97cab407ddbe43a8d0019a9a891c6fd9703eb81751a",
+      "packaged_sha256": "f6f4eff26168f4476fbac97cab407ddbe43a8d0019a9a891c6fd9703eb81751a",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std_all_splits/preview.png",
+      "source_sha256": "b39e610aa5d4df678086ebb8ec6d611002ef29fad1fc248c512cb54824269626",
+      "packaged_sha256": "b39e610aa5d4df678086ebb8ec6d611002ef29fad1fc248c512cb54824269626",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std_all_splits/description.text",
+      "source_sha256": "3e0c4d762bd168c7083a3e867a24f916535fc806a4b8ccf2d6f3e4c759016e30",
+      "packaged_sha256": "3e0c4d762bd168c7083a3e867a24f916535fc806a4b8ccf2d6f3e4c759016e30",
+      "transformation": null
+    },
+    {
+      "path": "figs/mbr_replay_validation_std_all_splits/provenance.text",
+      "source_sha256": "3a309497f4dbb330a71c0aa19b0bf0ebcc746d2a5d409b2b4e435615b3bc76ed",
+      "packaged_sha256": "5067cf50b1d55cab91bb050a275fa3d1e4c048542e44babeafd328baaa44f498",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/performance_token_usage/table.tex",
+      "source_sha256": "a7c561bc508b6f815d2d4439c928ab8c300e85a7a410704509f015082c54cd3c",
+      "packaged_sha256": "a7c561bc508b6f815d2d4439c928ab8c300e85a7a410704509f015082c54cd3c",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage/preview.pdf",
+      "source_sha256": "977c10d264036273f5d2f69d6b8c671b5afa74bfe383e16651524f49350fef69",
+      "packaged_sha256": "977c10d264036273f5d2f69d6b8c671b5afa74bfe383e16651524f49350fef69",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage/preview.png",
+      "source_sha256": "b0a5d79a06dcb7a73cb72bb1129878f9a1ebe22220d35ebd790e025b7baf9c49",
+      "packaged_sha256": "b0a5d79a06dcb7a73cb72bb1129878f9a1ebe22220d35ebd790e025b7baf9c49",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage/description.text",
+      "source_sha256": "291d8001bd41f9a908e99e006970f9a84f5436753c144e79074af6933a08d625",
+      "packaged_sha256": "291d8001bd41f9a908e99e006970f9a84f5436753c144e79074af6933a08d625",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage/provenance.text",
+      "source_sha256": "613770321c9793173176cc52249f52c862623bd7dc6352a959748e2631f32dd7",
+      "packaged_sha256": "3e4c41e8373b456b812ef7019427099606c32f60c998af282a48d6d0dca3b906",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/performance_token_usage_by_topk/table.tex",
+      "source_sha256": "8d89794355be35ee129b8cdab16fb6ad7abfbec05bfb5186a9b8412f9277a2a4",
+      "packaged_sha256": "8d89794355be35ee129b8cdab16fb6ad7abfbec05bfb5186a9b8412f9277a2a4",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage_by_topk/preview.pdf",
+      "source_sha256": "64db91d35273288fb7cf6bfa102ff45f1416ae5c159d70a6fec7aa6ec8dfa57b",
+      "packaged_sha256": "64db91d35273288fb7cf6bfa102ff45f1416ae5c159d70a6fec7aa6ec8dfa57b",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage_by_topk/preview.png",
+      "source_sha256": "ec9451662f0f34fdf2768cb61ccf1b4bede8c1b891b51d39d9569d97b8fd86ce",
+      "packaged_sha256": "ec9451662f0f34fdf2768cb61ccf1b4bede8c1b891b51d39d9569d97b8fd86ce",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage_by_topk/description.text",
+      "source_sha256": "b21302d19a2eb5700241cbc9e2f971ca9c950fbf8947603e3c780dcec21a9f7d",
+      "packaged_sha256": "b21302d19a2eb5700241cbc9e2f971ca9c950fbf8947603e3c780dcec21a9f7d",
+      "transformation": null
+    },
+    {
+      "path": "figs/performance_token_usage_by_topk/provenance.text",
+      "source_sha256": "efc63f217d6c78a947b513514e34c18cebd68281098af1d9d7e40e77b6a7b1f6",
+      "packaged_sha256": "321136211766e6328dad59c72a5687b4e6689a124717f03fdd44d9d4d11a5def",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/replay_size_performance/table.tex",
+      "source_sha256": "bf20cad87be44862f4a76d0e327985aee8373ed54b52b4a3da13fdf14eddf690",
+      "packaged_sha256": "bf20cad87be44862f4a76d0e327985aee8373ed54b52b4a3da13fdf14eddf690",
+      "transformation": null
+    },
+    {
+      "path": "figs/replay_size_performance/preview.pdf",
+      "source_sha256": "81e3871e0abca58a0ee933ae7a82fb908faacc0ef18301153f39fb7fee4dd106",
+      "packaged_sha256": "81e3871e0abca58a0ee933ae7a82fb908faacc0ef18301153f39fb7fee4dd106",
+      "transformation": null
+    },
+    {
+      "path": "figs/replay_size_performance/preview.png",
+      "source_sha256": "b9d841b4a2f3a5d3015de5211368b7e7759d217ea4432ab79fcf885850cd75ef",
+      "packaged_sha256": "b9d841b4a2f3a5d3015de5211368b7e7759d217ea4432ab79fcf885850cd75ef",
+      "transformation": null
+    },
+    {
+      "path": "figs/replay_size_performance/description.text",
+      "source_sha256": "5639e59d77de532bb209de124a57d11f65779c9c6fe3cef89ffbfbddcf051a88",
+      "packaged_sha256": "5639e59d77de532bb209de124a57d11f65779c9c6fe3cef89ffbfbddcf051a88",
+      "transformation": null
+    },
+    {
+      "path": "figs/replay_size_performance/provenance.text",
+      "source_sha256": "0a2a83da454f060274e5ed1f4a1aadae7962dbd045c7bc620aada1cc9daefa18",
+      "packaged_sha256": "759467687b9c24afd4ca4f5fabf5bc826be9f4d9b438bd3453c6713a339e1514",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/routing_performance_across_llms/table.tex",
+      "source_sha256": "057d1c266780a3255aa14f7bd633e7fef50d9da981391d9a91b8bd98e9c7e86a",
+      "packaged_sha256": "057d1c266780a3255aa14f7bd633e7fef50d9da981391d9a91b8bd98e9c7e86a",
+      "transformation": null
+    },
+    {
+      "path": "figs/routing_performance_across_llms/preview.pdf",
+      "source_sha256": "b40e89a69dca82cb219ca08416af6545dc65740b1674e58b51ea359f6d772f80",
+      "packaged_sha256": "b40e89a69dca82cb219ca08416af6545dc65740b1674e58b51ea359f6d772f80",
+      "transformation": null
+    },
+    {
+      "path": "figs/routing_performance_across_llms/preview.png",
+      "source_sha256": "002c46cc53e9d24bb1e700bd1ad0e7f89b11056185b89c1692e8dab5df858e4a",
+      "packaged_sha256": "002c46cc53e9d24bb1e700bd1ad0e7f89b11056185b89c1692e8dab5df858e4a",
+      "transformation": null
+    },
+    {
+      "path": "figs/routing_performance_across_llms/description.text",
+      "source_sha256": "97b8dbdba7084f0a34a7af1e0e3f08419d0111d6f773efa7ac6eece643b1efd6",
+      "packaged_sha256": "97b8dbdba7084f0a34a7af1e0e3f08419d0111d6f773efa7ac6eece643b1efd6",
+      "transformation": null
+    },
+    {
+      "path": "figs/routing_performance_across_llms/provenance.text",
+      "source_sha256": "9255e0d85dbbf0bede99ef81ed742e0ec0dd0982d43acf845420cee5a6a92816",
+      "packaged_sha256": "62587bfe1dcaf9d4bedd60f7492d6a6e42163bce01442f4e27b4c94a0f6096f5",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "figs/skillsight_recall_degradation/table.tex",
+      "source_sha256": "65d922099d1d0cd6e6e345ac1cd66bf830090f84e7e277fae8c846fcaf65c075",
+      "packaged_sha256": "65d922099d1d0cd6e6e345ac1cd66bf830090f84e7e277fae8c846fcaf65c075",
+      "transformation": null
+    },
+    {
+      "path": "figs/skillsight_recall_degradation/preview.pdf",
+      "source_sha256": "fd6680e7e261e0a4783643038054c03b48d99943ca05fdc8bb788396fe3a285e",
+      "packaged_sha256": "fd6680e7e261e0a4783643038054c03b48d99943ca05fdc8bb788396fe3a285e",
+      "transformation": null
+    },
+    {
+      "path": "figs/skillsight_recall_degradation/preview.png",
+      "source_sha256": "1f2cd9ef990d7afc909915a0e8c15639af258cfb67658d330df178bd53df32ec",
+      "packaged_sha256": "1f2cd9ef990d7afc909915a0e8c15639af258cfb67658d330df178bd53df32ec",
+      "transformation": null
+    },
+    {
+      "path": "figs/skillsight_recall_degradation/description.text",
+      "source_sha256": "0346080f088c54af6a3b487f64115747a53c4d40bff8249a9ef2c7287b15e206",
+      "packaged_sha256": "0346080f088c54af6a3b487f64115747a53c4d40bff8249a9ef2c7287b15e206",
+      "transformation": null
+    },
+    {
+      "path": "figs/skillsight_recall_degradation/provenance.text",
+      "source_sha256": "c8f0b67e6a2c2ca98eb53024ea455ca7d1f4927ebf8f6958a8bb25ad889932d1",
+      "packaged_sha256": "c30d7767c59a607818aeb7cf65cc7bb74d87e98bf55d328fc6449d73fe399f55",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "tables/downstream_performance/table.tex",
+      "source_sha256": "3fef7530fe7b80613046611e9bf8704c1ac9b5ded91826c160ba17510b88fab0",
+      "packaged_sha256": "3fef7530fe7b80613046611e9bf8704c1ac9b5ded91826c160ba17510b88fab0",
+      "transformation": null
+    },
+    {
+      "path": "tables/downstream_performance/preview.pdf",
+      "source_sha256": "70ce647bf64153bd4f13d6a431aeec2eb5b56d69ea2c98199c1945024ffcca64",
+      "packaged_sha256": "70ce647bf64153bd4f13d6a431aeec2eb5b56d69ea2c98199c1945024ffcca64",
+      "transformation": null
+    },
+    {
+      "path": "tables/downstream_performance/preview.png",
+      "source_sha256": "175f92c1f7d14bbc3bde1c7adf8e8e7611ab8f2bbd2e5baf0441828ad6ad1fc1",
+      "packaged_sha256": "175f92c1f7d14bbc3bde1c7adf8e8e7611ab8f2bbd2e5baf0441828ad6ad1fc1",
+      "transformation": null
+    },
+    {
+      "path": "tables/downstream_performance/description.text",
+      "source_sha256": "0108d1d86362899e96e2e870d0fb56d743161a1b9c831900842a8a5e6fe80f40",
+      "packaged_sha256": "0108d1d86362899e96e2e870d0fb56d743161a1b9c831900842a8a5e6fe80f40",
+      "transformation": null
+    },
+    {
+      "path": "tables/downstream_performance/provenance.text",
+      "source_sha256": "9a27f74f4752a51194cbed1d968a49809ad2ebdfa409c082520ac0d6b915a9b7",
+      "packaged_sha256": "8e406a009be1fb2d7f593509aefe8cd4b3d4f98a53d51a1a0f84ecf78ed59166",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "tables/retrieval_and_reranking_performance/table.tex",
+      "source_sha256": "5d7660a45193c4484b54217d8a34a990334d1765cf5e1a1357578117cc0dac95",
+      "packaged_sha256": "5d7660a45193c4484b54217d8a34a990334d1765cf5e1a1357578117cc0dac95",
+      "transformation": null
+    },
+    {
+      "path": "tables/retrieval_and_reranking_performance/preview.pdf",
+      "source_sha256": "c235032672431e0d12b1be8dd4283a3d15b1ac23506c536558ec6a50af6f2adc",
+      "packaged_sha256": "c235032672431e0d12b1be8dd4283a3d15b1ac23506c536558ec6a50af6f2adc",
+      "transformation": null
+    },
+    {
+      "path": "tables/retrieval_and_reranking_performance/preview.png",
+      "source_sha256": "ab64d51161a90d723353b868e5740b78931e1cf3cc3663af34342adec2733f35",
+      "packaged_sha256": "ab64d51161a90d723353b868e5740b78931e1cf3cc3663af34342adec2733f35",
+      "transformation": null
+    },
+    {
+      "path": "tables/retrieval_and_reranking_performance/description.text",
+      "source_sha256": "cf1707b955f737c743db11e5549a9372684a786e2929588b219d7174d35dfa49",
+      "packaged_sha256": "cf1707b955f737c743db11e5549a9372684a786e2929588b219d7174d35dfa49",
+      "transformation": null
+    },
+    {
+      "path": "tables/retrieval_and_reranking_performance/provenance.text",
+      "source_sha256": "5a4f8f5aec51178bcae4c8837a90406752c69f051d4876e417f94550923db8e8",
+      "packaged_sha256": "e4c4b499d396a887f9021873a30b2c6cb05c6bc52df0039dbf67d6b04bcc11a8",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    },
+    {
+      "path": "tables/skill_routing_performance/table.tex",
+      "source_sha256": "50eb99467d9f04d14756a6393fe165cce6c21597fa7f2a9d6d92a7d7c547a69b",
+      "packaged_sha256": "50eb99467d9f04d14756a6393fe165cce6c21597fa7f2a9d6d92a7d7c547a69b",
+      "transformation": null
+    },
+    {
+      "path": "tables/skill_routing_performance/preview.pdf",
+      "source_sha256": "839ab0c9f98cbd6c5cdf3b132c638618b93ff1b9201c2634b5b8590ea29f8f1d",
+      "packaged_sha256": "839ab0c9f98cbd6c5cdf3b132c638618b93ff1b9201c2634b5b8590ea29f8f1d",
+      "transformation": null
+    },
+    {
+      "path": "tables/skill_routing_performance/preview.png",
+      "source_sha256": "13feb95d73916cfa86a97a1b9226f99e7602a606e627369333205b396baf825e",
+      "packaged_sha256": "13feb95d73916cfa86a97a1b9226f99e7602a606e627369333205b396baf825e",
+      "transformation": null
+    },
+    {
+      "path": "tables/skill_routing_performance/description.text",
+      "source_sha256": "b96dbfa720e5b7946fb9e3bffec5f7d4302340b3750458c8168280808a9f7fbb",
+      "packaged_sha256": "b96dbfa720e5b7946fb9e3bffec5f7d4302340b3750458c8168280808a9f7fbb",
+      "transformation": null
+    },
+    {
+      "path": "tables/skill_routing_performance/provenance.text",
+      "source_sha256": "23fdad6db0fb40e4d7758b96bd90c48b2e378e27fae13c35edf088b837c6b894",
+      "packaged_sha256": "21ada5dfe4b9bd9dc398ed76869b2b562e50dcb8d6d38f0561dd4663fcc41aac",
+      "transformation": "Historical path normalization and removal of unavailable regeneration commands."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+\subsection{Shared Skill Corpus and Data Access}
+\label{app:data-corpus}
+The shared SRA-Bench retrieval corpus contains 26,262 distinct skill identifiers: 636 gold skills associated with the unfiltered task collections and 25,626 web-collected distractors~\citep{su2026skillretrieval}. A skill record provides a name, description, and content, which may include instructions, formulas, workflows, or code. All annotated skill identifiers in the task collections resolve to records in this corpus. Filtering the task splits reduces the evaluated gold vocabulary to 306 skills; it does not reduce the shared retrieval corpus to those skills.
+
+The SRA-Bench package is publicly available as \texttt{WeihangSu/SRA-Bench} on Hugging Face, with the accompanying SR-Agents toolkit. The distributed dataset metadata specifies the MIT license. We retain the released skill identifiers and task-to-skill associations, allowing the same required set to be used for retrieval, routing, and oracle-conditioned downstream evaluation.

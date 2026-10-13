@@ -1,0 +1,226 @@
+Iteration
+Both Disabled
+Only Gate
+Only MBR
+Both Enabled
+0
+0.525
+(0.001)
+0.523
+(0.001)
+0.524
+(0.000)
+0.521
+(0.008)
+1
+0.526
+(0.005)
+0.598
+(0.013)
+0.632
+(0.012)
+0.630
+(0.010)
+2
+0.535
+(0.026)
+0.611
+(0.018)
+0.681
+(0.005)
+0.687
+(0.010)
+3
+0.550
+(0.009)
+0.627
+(0.011)
+0.703
+(0.004)
+0.698
+(0.009)
+4
+0.541
+(0.009)
+0.618
+(0.005)
+0.690
+(0.012)
+0.711
+(0.012)
+5
+0.570
+(0.017)
+0.628
+(0.005)
+0.695
+(0.011)
+0.709
+(0.003)
+6
+0.556
+(0.015)
+0.621
+(0.019)
+0.695
+(0.019)
+0.709
+(0.006)
+7
+0.554
+(0.005)
+0.629
+(0.019)
+0.705
+(0.014)
+0.712
+(0.010)
+8
+0.574
+(0.005)
+0.645
+(0.019)
+0.705
+(0.016)
+0.714
+(0.003)
+9
+0.576
+(0.009)
+0.635
+(0.018)
+0.704
+(0.012)
+0.724
+(0.006)
+10
+0.560
+(0.015)
+0.644
+(0.004)
+0.691
+(0.015)
+0.724
+(0.013)
+Table 11: Test nDCG@1 at initialization and each accepted iteration, averaged over three runs. Parentheses below
+each mean give population standard deviation across runs, reconstructed from variances rounded to six decimal
+places as in the plotted bands. These values expand the trajectory and uncertainty bands in Figure 5; they are not
+validation scores.
+Variant
+F1
+nDCG@1
+Total (M)
+Iterations (M)
+Unknown
+Both Disabled
+0.379
+0.553
+840.052
+662.211
+12
+Only Gate
+0.494
+0.643
+866.352
+701.433
+13
+Only MBR
+0.581
+0.684
+1181.026
+1011.920
+20
+Both Enabled
+0.630
+0.742
+1324.251
+1073.904
+16
+Table 12: Single-run final-test quality and known token use for the component configurations in Figure 6. Bold and
+underline mark the best and second-best quality values. M denotes one million tokens. Total includes all recorded
+run-local phases; Iterations includes positive-numbered optimization iterations only. Unknown counts attempts
+whose token use is unavailable.
+the task–predicate pairs blinded to saved labels,
+1779
+first-review verdicts and rationales, and stratum;
+1780
+disagreements were then reconciled against the
+1781
+checker rules. In the incorrect stratum, 17 assess-
+1782
+ments were supported, one was likely incorrect,
+1783
+and two were ambiguous; all 20 correct-stratum
+1784
+assessments were supported. These judgments are
+1785
+AI-assisted qualitative checks, not human valida-
+1786
+tion. All sampled correct-stratum decisions were
+1787
+originally False, so they provide no direct check of
+1788
+approved True decisions. The balanced sample is
+1789
+not prevalence-representative, is not pooled with
+1790
+the earlier audit, and cannot estimate full-cohort
+1791
+adjudicator accuracy.
+1792
+H.2
+False Positives and False Negatives
+1793
+We distinguish the predicate-selected set from
+1794
+the fixed-budget set supplied to the downstream
+1795
+agent. Let Cq be the retrieved candidate set, Pq
+1796
+the predicate-selected set, and Gq the annotated re-
+1797
+quired set. In this error analysis we use the authors’
+1798
+nonstandard error labels: a false positive (FP) is
+1799
+a required skill whose evaluated predicate is false,
+1800
+and a false negative (FN) is a nonrequired skill
+1801
+whose evaluated predicate is true. Thus predicate
+1802
+FP counts |(Gq ∩Cq)\Pq| and predicate FN counts
+1803
+|Pq \ Gq|. We retain standard relevance-based TP
+1804
+as |Pq ∩Gq| and TN as |Cq \ (Pq ∪Gq)|; this
+1805
+hybrid naming is not a standard confusion-matrix
+1806
+convention.
+1807
+For set-level accounting over Cq ∪Gq, FP counts
+1808
+all missing required skills, |Gq \ Pq|, including
+1809
+retrieval misses |Gq \ Cq| listed separately below.
+1810
+A retrieval miss has no evaluated predicate and is
+1811
+not a predicate rejection. Unretrieved non-gold
+1812
+catalog skills do not inflate TN. For a supplied top-
+1813
+five set, the same set-level error labels describe
+1814
+missing required and extra nonrequired skills, not
+1815
+necessarily the underlying predicate decisions.
+1816
+Each retriever is evaluated on 105 TheoremQA
+1817
+tasks and 165 MedCalc-Bench tasks, with one an-
+1818
+notated required skill per task. Table 16 shows
+1819
+24

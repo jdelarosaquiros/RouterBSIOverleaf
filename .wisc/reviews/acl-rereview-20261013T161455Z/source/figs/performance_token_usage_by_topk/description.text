@@ -1,0 +1,1 @@
+Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K settings, which specify how many retrieved candidates are evaluated rather than how many skills are ultimately selected.

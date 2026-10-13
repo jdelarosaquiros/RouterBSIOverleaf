@@ -1,0 +1,8 @@
+\subsection{Results Across Routing Budgets}
+\label{app:retention-results}
+Table~\ref{tab:app-retention-mean} gives the numerical values of the mean retention curve, and Table~\ref{tab:app-retention} separates the retrievers. RouterBSI retains 90.5\% of its cutoff-50 coverage at $k=5$ and 94.6\% at $k=10$, averaged across retrievers. SkillRouter retains 83.9\% and 87.9\%, respectively. The difference is therefore visible at both small budgets, rather than only at the first position.
+
+SkillDAG illustrates the distinction between coverage and ordering. Its expansion increases Recall@50, but retaining only the first five skills discards a larger fraction of the recovered coverage. The observed recall values are nondecreasing with $k$ for every method--retriever pair in the table. This follows from evaluating prefixes of a fixed ranking; it does not require rerunning the predicate updater at each cutoff.
+
+\input{sections/appendix/retention_mean_table}
+\input{sections/appendix/retention_table}

@@ -5,8 +5,6 @@
   "source_manifest_sha256": "cd595e5a77bfcba3b677056f7b007582805d509855303e5636ed40a976ed7f7b",
   "source_csv_hash_verified_against_manifest": true,
   "source_row_count": 1008,
-  "diagnostic_only": true,
-  "reportable": false,
   "source_runs": [
     {
       "Model": "Qwen3.5 4B",
@@ -40,16 +38,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -84,16 +79,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -128,16 +120,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -172,16 +161,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -216,16 +202,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -260,16 +243,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -304,16 +284,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -348,16 +325,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -392,16 +366,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -436,16 +407,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -480,16 +448,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     },
     {
@@ -524,16 +489,13 @@
           "sra": 26262
         },
         "learned_policy_changed": true,
-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
         "passed": true,
-        "reportable": false,
         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
         "split_counts": {
           "test": 748,
           "train": 3491,
           "validation": 748
-        },
-        "status": "completed_noncanonical"
+        }
       }
     }
   ],
