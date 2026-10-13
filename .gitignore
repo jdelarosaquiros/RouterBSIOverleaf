@@ -1,5 +1,6 @@
-# Manuscript build outputs only: figure/table PDFs MUST remain includable.
+# Manuscript build outputs only: required figure/table PDFs stay tracked.
 /main.pdf
+/main_*.pdf
 /*.aux
 /*.bbl
 /*.blg
@@ -9,7 +10,19 @@
 /*.fdb_latexmk
 /*.synctex.gz
 /*.run.xml
+/*.toc
+/*.lof
+/*.lot
+/*.nav
+/*.snm
+
+# Local working artifacts and exports; not manuscript compilation inputs.
+/.temp/
+/.wisc/
+/sections_docs/
+
+# Python caches and OS metadata.
 __pycache__/
 *.pyc
+.pytest_cache/
 .DS_Store
-.temp

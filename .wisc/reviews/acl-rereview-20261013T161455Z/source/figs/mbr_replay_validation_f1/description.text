@@ -1,1 +1,0 @@
-Test-set F1 over successive updates. Each curve represents a replay/gate configuration, with initialization shown at iteration 0. F1 is computed on the full selected skill set per task and then averaged across tasks and datasets; it is not restricted to a ranked cutoff. Curves show recorded checkpoint scores without uncertainty bands.

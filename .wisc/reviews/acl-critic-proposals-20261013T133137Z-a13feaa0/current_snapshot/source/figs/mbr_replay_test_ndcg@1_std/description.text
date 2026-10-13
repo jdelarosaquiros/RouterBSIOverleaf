@@ -1,1 +1,0 @@
-Ablation of MBR replay and held-out validation gate comparing routing performance. The lines and areas represent the standard mean and variation, respectively across three runs starting from the same initial predicates at iteration 0. Combining replay and gating yields the strongest final routing performance.
