@@ -1,6 +1,0 @@
-python3 scripts/check_repository.py
-{
-  "tex_files": 96,
-  "resolved_references": 113,
-  "errors": []
-}

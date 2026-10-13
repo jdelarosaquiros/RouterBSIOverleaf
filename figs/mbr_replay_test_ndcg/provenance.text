@@ -10,7 +10,7 @@ Task-weighted within each split; train=3491, validation=748, test=748 tasks.
 Train=prequential; validation=ledger_accepted_candidate; test=accepted.
 Only numbered checkpoints; initial/final snapshots excluded. No imputation or uncertainty bands.
 Both Enabled and Only Gate use refreshed RouterBSI runs; other series retain historical CSV values.
-Mixed run families.
+Analysis-only/non-reportable: mixed run families and unresolved publication validity.
 Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_ndcg_figures.py
 Exact data, completion snapshots, hashes and coverage: selection.json.
 Historical snapshot-manifest.json is not rewritten.

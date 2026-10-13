@@ -1,1 +1,0 @@
-Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct and Oracle. $\mathrm{RouterBSI}_{\mathrm{top\text{-}5}}$ outperforms strict selection and most other approaches oracle performance.

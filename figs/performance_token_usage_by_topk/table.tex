@@ -1,10 +1,6 @@
-\begin{figure*}[!t]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figs/performance_token_usage_by_topk/preview.pdf}
-% The plain-text description contains literal underscores (n_tasks).
-\begingroup
-\catcode`\_=12
-\caption[Recorded tokens and routing performance at different candidate-pool sizes.]{\input{figs/performance_token_usage_by_topk/description.text}}
+\caption{Performance and token usage by Top-K. Analysis-only (non-reportable or unknown source provenance). Analysis-only known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10 for each source Top-K setting. Distinct blue shades identify Top-K; labels are source Method values. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting. Task-weighted source Dataset=Average values weight individual test tasks, not datasets.}
 \label{fig:performance_token_usage_by_topk}
-\endgroup
-\end{figure*}
+\end{figure}

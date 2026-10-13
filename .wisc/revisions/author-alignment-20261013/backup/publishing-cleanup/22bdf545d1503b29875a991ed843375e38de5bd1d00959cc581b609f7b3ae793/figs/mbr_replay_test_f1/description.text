@@ -1,1 +1,0 @@
-Replay and held-out validation-gate ablation on the test split. Lines show task-weighted F1 at accepted checkpoints. Only Gate ends at iteration 8; other conditions extend through iteration 10. Analysis-only; conditions mix refreshed and historical runs.

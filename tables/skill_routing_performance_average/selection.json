@@ -4457,6 +4457,9 @@
     }
   ],
   "provenance": {
+    "status": "completed_noncanonical",
+    "reportable": false,
+    "use": "analysis-only; publication validity not established",
     "vector_routerbsi": {
       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
       "final_iteration": 10,
@@ -4505,7 +4508,9 @@
         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
       }
     },
+    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
-  }
+  },
+  "reportable": false
 }

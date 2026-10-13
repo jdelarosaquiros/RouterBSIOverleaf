@@ -13,25 +13,33 @@
     "Both Enabled": {
       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
       "sha256": "42041f00e71aaa6cc7b4f585d019f7ddcbd704fab97555b6e77cd31cdfc5246b",
-      "passed": true
+      "status": "completed_noncanonical",
+      "passed": true,
+      "reportable": false
     },
     "Both Disabled": {
       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/completion.json",
       "sha256": "04aa1f004a615fee46fc7c8a8db2ad56a65ffce8ab738985c4ceee1132a37bdf",
-      "passed": true
+      "status": "completed_noncanonical",
+      "passed": true,
+      "reportable": false
     },
     "Only MBR": {
       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/completion.json",
       "sha256": "244ec8a52f3191da96db1ff1ccbf410549c217e5b119428bb79b77f690141476",
-      "passed": true
+      "status": "completed_noncanonical",
+      "passed": true,
+      "reportable": false
     },
     "Only Gate": {
       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1/completion.json",
       "sha256": "9afcda509534ceb23014e51f9efd90caa0e08207af88a088b5aee4273e483e5e",
       "status": "in_progress",
-      "passed": false
+      "passed": false,
+      "reportable": false
     }
   },
+  "reportable": false,
   "aggregation": "source task-weighted Average within split",
   "uncertainty": "not estimated; no bands",
   "missing_data_policy": "fail on missing required points; unavailable series omitted and labeled",

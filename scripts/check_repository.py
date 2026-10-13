@@ -8,7 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 errors = []
 references = []
-tex_files = sorted(ROOT.glob('*.tex')) + sorted((ROOT / 'sections').rglob('*.tex'))
+tex_files = sorted(ROOT.glob('*.tex')) + sorted((ROOT / 'sections').glob('*.tex'))
 tex_files += sorted(ROOT.glob('figs/*/*.tex')) + sorted(ROOT.glob('tables/*/*.tex'))
 pattern = re.compile(r'\\(input|include|includegraphics|bibliography)(?:\[[^\]]*\])?\{([^}]+)\}')
 for source in tex_files:
@@ -27,13 +27,11 @@ for source in tex_files:
             else:
                 references.append(str(found.relative_to(ROOT)))
 for p in ROOT.rglob('*'):
-    if any(part in {'.git', '.temp', '.wisc'} for part in p.relative_to(ROOT).parts):
+    if '.git' in p.parts:
         continue
     if p.is_symlink():
         errors.append(f'Symlink is not allowed: {p.relative_to(ROOT)}')
-    # Provenance sidecars may name external experiment sources; they are not
-    # manuscript compilation dependencies. Check machine paths in TeX only.
-    if p.suffix == '.tex' and p.is_file():
+    if p.suffix in {'.tex', '.text'} and p.is_file():
         text = p.read_text()
         if '/workspace/' in text or '/root/' in text:
             errors.append(f'Machine-specific path: {p.relative_to(ROOT)}')

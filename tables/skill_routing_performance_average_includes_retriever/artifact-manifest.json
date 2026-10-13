@@ -11,6 +11,7 @@
   "rows": 9,
   "cells": 126,
   "source_rows_selected": 147,
+  "reportable": false,
   "outputs": {
     "table.tex": "80c8d196aff24764c2409d28b9a3e2e6fa2d0081dddbdcfe4657ba0a29ae709e",
     "description.text": "40aa4f1e8a472cad43f079fe8acc4ca6740a2e7f4418d94d7b141d8ebbd7c837",

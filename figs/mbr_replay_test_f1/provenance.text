@@ -10,7 +10,7 @@ F1 is full selected-set F1; nDCG@10 is ranked-skill performance.
 No initialization/final snapshots, interpolation, extrapolation, padding, or uncertainty bands.
 This replaces the historical all-splits/three-run nDCG figure with a test-only single-panel figure.
 Both Enabled and Only Gate use refreshed RouterBSI run_1; Both Disabled and Only MBR retain historical CSV rows.
-Mixed run families; Only Gate is incomplete.
+Analysis-only/non-reportable: mixed run families, incomplete Only Gate and unresolved publication validity.
 Completion metadata is a snapshot, not proof that historical CSV rows were regenerated.
 Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_test_figures.py
 See selection.json for completion metadata, source/run-map hashes and exact plotted points.

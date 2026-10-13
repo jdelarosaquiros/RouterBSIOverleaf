@@ -10,7 +10,7 @@ Task-weighted within each split; train=3491, validation=748, test=748 tasks.
 Train=prequential; validation=ledger_accepted_candidate; test=accepted.
 Only Gate has no initial-test snapshot in its refreshed run and therefore starts at iteration 1.
 Initial nDCG computed task-wise from archived ranked_ids and required_ids; see selection.json for hashes.
-Mixed run families.
+Analysis-only/non-reportable: mixed run families and unresolved publication validity.
 Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_ndcg_figures.py --artifact mbr_replay_test_ndcg@5
 Exact data, completion snapshots, hashes and coverage: selection.json.
 Historical snapshot-manifest.json is not rewritten.
