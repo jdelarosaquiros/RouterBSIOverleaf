@@ -1,0 +1,77 @@
+{
+  "scope": "All scout conclusions reconciled against frozen PDF and independently inspected manifests; no manuscript edits.",
+  "method_scout": {
+    "METHOD-01": [
+      "ISSUE-001",
+      "ISSUE-011"
+    ],
+    "METHOD-02": [
+      "ISSUE-004"
+    ],
+    "METHOD-03": [
+      "ISSUE-005"
+    ],
+    "METHOD-04": [
+      "ISSUE-002"
+    ],
+    "METHOD-05": [
+      "ISSUE-003"
+    ],
+    "METHOD-06": [
+      "ISSUE-003"
+    ],
+    "METHOD-07": [
+      "ISSUE-012"
+    ],
+    "METHOD-08": [
+      "ISSUE-010"
+    ]
+  },
+  "compliance_scout": {
+    "SC-01": [
+      "ISSUE-002"
+    ],
+    "SC-02": [
+      "ISSUE-003"
+    ],
+    "SC-03": [
+      "ISSUE-007"
+    ],
+    "SC-04": [
+      "ISSUE-004"
+    ],
+    "SC-05": [
+      "ISSUE-005"
+    ],
+    "SC-06": [
+      "ISSUE-001"
+    ],
+    "SC-07": [
+      "ISSUE-010"
+    ],
+    "SC-08": [
+      "ISSUE-014"
+    ],
+    "SC-09": [
+      "ISSUE-014",
+      "ISSUE-015"
+    ],
+    "SC-10": [
+      "ISSUE-015"
+    ],
+    "SC-11": [
+      "ISSUE-008"
+    ]
+  },
+  "parent_escalation": "ISSUE-006 initially an overlap question. Independent baseline-identical Table1/Figure3-7 manifest inspection proves explicit nonreportable/analysis-only flags on main-result inputs. This establishes missing publication-readiness evidence, not numerical fabrication or automatic scientific invalidity.",
+  "not_escalated": [
+    "Generic unverified portal requirements are compliance gaps, not fabricated anchored violations.",
+    "Shared retained skill vocabulary is task-generalization scope, not proven data leakage.",
+    "Type3 fonts are embedded, not automatic noncompliance.",
+    "Appendix full-width floats are not single-column prose violations.",
+    "MBR argmin is operationally valid; clarify terminology rather than invent missing Bayesian inference.",
+    "Historical ISSUE-001 removed in externally updated later PDF; retained in frozen review with superseded status."
+  ],
+  "numeric_evidence": "parent_numeric_checks.json confirms exact24.9% aggregation and headline nDCG averages; provenance checks are independent of numeric consistency.",
+  "pending_authorization": "All proposed edits, result reclassification/audits, analyses and experiments require author selection/approval."
+}

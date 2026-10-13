@@ -1,0 +1,149 @@
+Variant
+Stage
+F1
+nDCG@1
+nDCG@10
+Both Disabled
+Initial
+0.305
+(0.002)
+0.525
+(0.001)
+0.625
+(0.001)
+Both Disabled
+Final
+0.369
+(0.010)
+0.560
+(0.015)
+0.677
+(0.013)
+Only Gate
+Initial
+0.304
+(0.001)
+0.523
+(0.001)
+0.625
+(0.001)
+Only Gate
+Final
+0.495
+(0.001)
+0.644
+(0.004)
+0.722
+(0.004)
+Only MBR
+Initial
+0.304
+(0.002)
+0.524
+(0.001)
+0.624
+(0.001)
+Only MBR
+Final
+0.594
+(0.013)
+0.691
+(0.015)
+0.776
+(0.010)
+Both Enabled
+Initial
+0.305
+(0.004)
+0.521
+(0.008)
+0.633
+(0.009)
+Both Enabled
+Final
+0.614
+(0.020)
+0.724
+(0.013)
+0.785
+(0.010)
+Table 10: Component ablations with Qwen3.5 4B and SkillSight. Values are task-weighted test means over 748
+tasks per run; parentheses below each mean give population standard deviation across three runs. Bold and underline
+mark the best and second-best final means. F1 uses the predicate-selected set, while ranking metrics use the full
+reordered candidate list. Hit@1 equals nDCG@1 for these binary, nonempty relevance sets.
+700
+800
+900
+1000
+1100
+1200
+1300
+1400
+Total Token Usage (millions)
+0.650
+0.675
+0.700
+0.725
+0.750
+0.775
+0.800
+nDCG@10
+Performance and token usage by Top-K
+Candidate Top-K
+Top-K 50
+Top-K 25
+Top-K 10
+Figure 8: Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K
+settings, which specify how many retrieved candidates are evaluated rather than how many skills are ultimately
+selected.
+occurrences. All occurrences were reviewed, and
+1755
+repeated occurrences retain their original weight.
+1756
+Source checksums, journal-record hashes, request
+1757
+payloads, and occurrence-weighted counts were
+1758
+verified before tabulation.
+1759
+Table 15 reports 36,315 agreements and 1,085
+1760
+disagreements,
+or 97.10% model-adjudicated
+1761
+agreement, not accuracy against human ground
+1762
+truth. Class imbalance substantially affects this
+1763
+aggregate: agreement is 35,606/36,217 for saved
+1764
+False decisions (98.31%) but 709/1,183 for saved
+1765
+True decisions (59.93%).
+Treating the adjudi-
+1766
+cator’s expected Boolean only as a provisional
+1767
+reference, positive recall is 709/1,320 (53.71%),
+1768
+while an always-False predictor would agree on
+1769
+36,080/37,400 occurrences (96.47%). The high
+1770
+pooled rate therefore does not establish reliable
+1771
+recognition of predicate-positive cases or validate
+1772
+the required-skill labels.
+1773
+We additionally inspected 40 distinct reviews,
+1774
+excluding all 20 cases from an earlier audit. With
+1775
+seed 20261014, we sampled 20 reviews from each
+1776
+adjudicator-defined stratum: evaluator incorrect
+1777
+and evaluator correct. A second AI pass assessed
+1778
+23

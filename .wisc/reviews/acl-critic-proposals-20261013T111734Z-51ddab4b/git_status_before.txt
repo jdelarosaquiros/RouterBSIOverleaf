@@ -1,0 +1,34 @@
+ M figs/average_retention_degradation/preview.pdf
+ M figs/average_retention_degradation/preview.png
+ M figs/mbr_replay_test_ndcg@1_std/preview.pdf
+ M figs/mbr_replay_test_ndcg@1_std/preview.png
+ M figs/method_figure.png
+ M figs/performance_token_usage/preview.pdf
+ M figs/performance_token_usage/preview.png
+ M figs/performance_token_usage_by_topk/description.text
+ M figs/performance_token_usage_by_topk/table.tex
+ M figs/routing_performance_across_llms_init/preview.pdf
+ M figs/routing_performance_across_llms_init/preview.png
+ M main.tex
+ M scripts/check_repository.py
+ M sections/ablations.tex
+ D sections/appendix.tex
+ M sections/conclusion.tex
+ M sections/introduction.tex
+ M sections/method.tex
+ M sections/related_works.tex
+ M sections/results.tex
+?? .wisc/
+?? figs/average_retention_degradation/readability_manifest.json
+?? figs/mbr_replay_test_ndcg@1_std/readability_manifest.json
+?? figs/method_figure_old_v3.png
+?? figs/performance_token_usage/readability_manifest.json
+?? figs/routing_performance_across_llms_init/readability_manifest.json
+?? scripts/generate_ablation_figure_tables.py
+?? scripts/generate_evaluator_validation_table.py
+?? scripts/generate_extended_routing_tables.py
+?? scripts/generate_result_figure_tables.py
+?? scripts/render_acl_readable_figures.py
+?? scripts/verify_figure_table_coverage.py
+?? sections/appendix/
+?? sections/ethics_statement.tex

@@ -1,0 +1,246 @@
+Retriever
+Method
+Ret@1
+Ret@5
+Ret@10
+Ret@25
+Recall@50
+BM25
+BM25
+28.3
+55.6
+73.2
+90.1
+0.797
+LLM Select
+53.3
+73.5
+85.3
+94.0
+0.796
+SkillRouter
+69.7
+83.9
+87.2
+92.5
+0.796
+SkillDAG
+23.3
+46.0
+70.0
+94.0
+0.964
+Skill-Pro
+48.2
+74.9
+84.3
+93.2
+0.796
+RouterBSIinit
+41.2
+67.9
+82.2
+94.2
+0.796
+RouterBSI
+66.7
+87.6
+92.6
+97.3
+0.796
+Vector
+Vector
+57.5
+76.2
+83.1
+92.3
+0.788
+LLM Select
+57.7
+80.3
+86.3
+92.8
+0.788
+SkillRouter
+70.7
+85.9
+89.5
+94.5
+0.788
+SkillDAG
+47.1
+62.4
+90.7
+98.0
+0.962
+Skill-Pro
+43.7
+78.6
+85.0
+93.1
+0.788
+RouterBSIinit
+54.8
+75.6
+85.3
+94.1
+0.788
+RouterBSI
+73.7
+92.1
+95.4
+98.3
+0.788
+SkillSight
+SkillSight
+41.7
+74.6
+83.7
+92.7
+0.918
+LLM Select
+53.2
+80.2
+87.5
+94.5
+0.918
+SkillRouter
+64.8
+81.9
+86.9
+93.6
+0.918
+SkillDAG
+39.1
+69.9
+83.5
+96.1
+0.979
+Skill-Pro
+43.5
+79.5
+87.0
+95.0
+0.919
+RouterBSIinit
+48.4
+74.1
+83.2
+94.0
+0.918
+RouterBSI
+68.8
+91.7
+96.0
+99.0
+0.918
+Table 9: Required-skill coverage and retention by retriever. Recall@50 measures coverage before imposing the
+smaller skill budget. Ret@k is the ratio of task-averaged Recall@k to Recall@50, expressed as a percentage;
+Ret@50 is 100 for every row.
+692.788 million known tokens; at K = 25, it is
+1704
+0.742 with 1013.401 million; and at K = 50, it is
+1705
+0.800 with 1324.251 million. Across these three
+1706
+settings, higher observed routing quality accompa-
+1707
+nies higher recorded token use. This comparison
+1708
+describes the observed quality–cost tradeoff; it nei-
+1709
+ther isolates a causal effect of candidate-pool size
+1710
+nor establishes a generally optimal setting.
+1711
+The source marks all three records as non-
+1712
+reportable, incomplete, and known-only. We there-
+1713
+fore treat this figure as analysis-only evidence. To-
+1714
+tals cover recorded run-local usage, exclude ex-
+1715
+ternal or shared initialization, and omit usage that
+1716
+is unavailable. They are not full token accounts
+1717
+or per-query serving costs, and these runs do not
+1718
+provide a controlled, budget-matched comparison.
+1719
+G.4
+Backbone Comparison
+1720
+Table 14 expands the backbone results with
+1721
+selected-set F1 and nDCG@10.
+All three
+1722
+backbones improve over their own initialization.
+1723
+Qwen3.8 27B has the highest final values on all
+1724
+three metrics. Qwen3.5 4B reaches 99.64% of
+1725
+GPT-OSS 120B’s final nDCG@1.
+1726
+H
+Error Analysis and Additional
+1727
+Downstream Outcomes
+1728
+H.1
+Predicate-Evaluator Validation
+1729
+We examine whether saved Boolean decisions fol-
+1730
+low the predicate-checking rules, separately from
+1731
+whether a skill is required. This diagnostic uses the
+1732
+final, tenth-iteration SkillSight/Qwen3.5-4B test
+1733
+run: 748 tasks with 50 candidate-predicate occur-
+1734
+rences each. The source is explicitly noncanonical
+1735
+and nonreportable: source drift was allowed, the
+1736
+final historical audit was disabled, and a runtime
+1737
+judgment cache could bypass exact request recon-
+1738
+struction. The checks below establish consistency
+1739
+of consumed artifacts and saved judgments, not
+1740
+canonical experimental validity.
+1741
+A separate model, gpt-6.1-sol, adjudicated
+1742
+the same public task, predicate, and original
+1743
+checker rules using high reasoning effort in stan-
+1744
+dard mode. It also saw the saved Boolean, but
+1745
+was instructed to determine the expected Boolean
+1746
+independently and return a strict structured ver-
+1747
+dict with a concise evidence rationale. Thus, this
+1748
+first review was not blinded. It evaluated predicate
+1749
+satisfaction rather than skill relevance or down-
+1750
+stream answer correctness; required-skill annota-
+1751
+tions and skill contents were not supplied. Exact
+1752
+task–predicate–Boolean duplicates shared one re-
+1753
+view, yielding 37,350 unique reviews for 37,400
+1754
+22

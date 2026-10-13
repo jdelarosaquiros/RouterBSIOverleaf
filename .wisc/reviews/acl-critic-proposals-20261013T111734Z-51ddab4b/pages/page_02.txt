@@ -1,0 +1,196 @@
+by a failure can correct similar failure cases while
+074
+undoing corrections to previously handled tasks or
+075
+degrading performance on other cases. As interac-
+076
+tion histories grow, retaining all prior examples for
+077
+checking each update also makes continual adap-
+078
+tation increasingly expensive. This creates a need
+079
+for a routing mechanism whose applicability cri-
+080
+teria are explicit and editable, but whose updates
+081
+are efficiencly constrained by prior experience and
+082
+independently checked for generalization. These
+083
+problems of controlling regressions while bound-
+084
+ing used experience serve as the motivation for our
+085
+approach.
+086
+We introduce RouterBSI, a recursive self-
+087
+improving algorithm for skill routing in a black-box
+088
+setting called RouterBSI. It refines task applicabil-
+089
+ity predicates using Minimum Bayes Risk (MBR)
+090
+with bounded replay to minimize errors on seen
+091
+tasks and a held-out validation gate to reduce re-
+092
+gressions on unseen tasks. The router evaluates
+093
+predicates for top-k retrieved skills then selects
+094
+skills if the task satisfies their respective predicate.
+095
+RouterBSI improves its cold-start top-5 recall of
+096
+required skills by an average of 24.9% across dif-
+097
+ferent retrievers on tasks from TheoremQA, Log-
+098
+icBench, ToolQA, MedCalc-Bench, CHAMP, and
+099
+BigCodeBench sharing a 26k skill corpus. On av-
+100
+erage, it retains 90.5% of the required skills in top
+101
+5 from the top 50 skills retrieved. Its top-5 recall
+102
+is 75.5%, with relative recall improvements over
+103
+baselines averaging 7.9% to 33.6% across retriev-
+104
+ers.
+105
+Our contributions are:
+106
+• We propose RouterBSI, a non-parametric skill-
+107
+routing framework that evaluates explicit ap-
+108
+plicability predicates over retrieved candi-
+109
+dates, making routing criteria interpretable
+110
+and directly editable without updating the un-
+111
+derlying language model.
+112
+• We develop a recursive self-improvement pro-
+113
+cedure that refines predicates from routing fail-
+114
+ures, selects updates through minimum Bayes
+115
+risk over a bounded replay of relevant and ir-
+116
+relevant tasks, and rejects updates with higher
+117
+held-out validation error than the cold-start
+118
+predicate.
+119
+• We evaluate RouterBSI on six SRA-Bench
+120
+datasets with a shared 26K-skill corpus,
+121
+achieving the highest aggregate nDCG@10
+122
+and Hit@1 among evaluated methods while
+123
+ablations establish the contributions of replay
+124
+and validation.
+125
+2
+Related Works
+126
+2.1
+Non-Parametric Routing Optimization
+127
+Non-parametric routing optimization updates exter-
+128
+nal routing state from task feedback while keeping
+129
+model weights fixed. Experience-based methods
+130
+revise memories and procedures, but revisions can
+131
+undo earlier improvements (Wang et al., 2025b;
+132
+Ouyang et al., 2026; Guo et al., 2024). Structural
+133
+methods evolve skill relationships, but graph expan-
+134
+sions can introduce many irrelevant skills, reducing
+135
+precision or exceeding context limits (Zhang et al.,
+136
+2025; Bai et al., 2026). Gated updates limit re-
+137
+gressions through surrogate objectives or rollback
+138
+criteria but don’t directly minimizing routing error
+139
+on seen tasks (Mi et al., 2026; Shi et al., 2026).
+140
+Similar to our approach, JTPRO evaluates candi-
+141
+dates on sampled training minibatches and held-out
+142
+validation but does not provide bounded experience
+143
+management for online adaptation (Ghoshal et al.,
+144
+2026). Retaining earlier routing corrections while
+145
+bounding experience and evaluation costs remains
+146
+a challenge. RouterBSI ensures non-decreasing em-
+147
+pirical error on the retained set while bounding re-
+148
+play evaluation costs. A held-out gate additionally
+149
+rejects updates that regress validation performance
+150
+below the cold-start performance.
+151
+2.2
+Parametric Routing Optimization
+152
+Parametric routing optimization updates model
+153
+weights using supervision, preferences, or execu-
+154
+tion feedback. Learned retrievers and rerankers
+155
+score relevance or utility of skill for task (Qin et al.,
+156
+2024; Zheng et al., 2026; Wang et al., 2026c; Li
+157
+et al., 2026b; Zhou et al., 2026), while direct selec-
+158
+tors predict which capability to invoke or whether
+159
+invocation is needed (Wang et al., 2025a; Qian
+160
+et al., 2025; Chen et al., 2026a). Reinforcement-
+161
+learning policies optimize skill routing from down-
+162
+stream rewards (Wang et al., 2026b; Xia et al.,
+163
+2026a; Zhang et al., 2026; Huang et al., 2026; Wu
+164
+et al., 2026). These approaches require large train-
+165
+ing data and encode routing criteria implicitly in
+166
+model weights. RouterBSI keeps the model fixed
+167
+and refines natural-language applicability predi-
+168
+cates that humans can inspect and edit.
+169
+2

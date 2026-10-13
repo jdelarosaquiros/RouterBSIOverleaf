@@ -1,0 +1,270 @@
+{
+  "scope": "Read-only method/evidence scout for parent ACL critic; parent owns final contract and policy assessment. Audited frozen PDF main text and A–D,G–H, plus supporting E–F metric definitions. No experiments or manuscript edits.",
+  "reviewed_sha256": "51ddab4b827e211879ecf8c936083ea5fa2a03f6b34a32d230f98b90f5910d6b",
+  "reviewed_pdf": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T111734Z-51ddab4b/reviewed_main.pdf",
+  "live_pdf_sha256_at_check": "0401ac8acbac22ecefdd7b50d0582895aaa105ea094fa5e23cd42a569b0a27c7",
+  "source_boundary": "Live main.pdf changed externally; all scientific conclusions below concern ONLY frozen reviewed_main.pdf and its supplied page extracts/renders. Live source was not inspected; no source-to-frozen-PDF alignment claimed. Parent must check superseded findings against new PDF.",
+  "quote_convention": "Exact extracted body wording and line-wrap hyphenation preserved. Standalone PDF review-line numbers removed; page is 1-based PDF page. All anchors programmatically located in supplied frozen page extracts.",
+  "revision_mode": "unknown",
+  "fix_window": "unknown",
+  "blocks_submission": "No fundamental validity blocker proven by this scout. Majors are material contradicted definitions/evidence interpretations; fixes are proposals only.",
+  "issues": [
+    {
+      "id": "METHOD-01",
+      "priority": 1,
+      "severity": "major",
+      "category": "claims/errors",
+      "main_anchor": {
+        "page": 6,
+        "quote": "From the samples where RouterBSItop5 failed and\nSkillRouter succeed, 94.68% of TheoremQA and\n93.75% of MedCalc-Bench were cases where pred-\nicate failed to evaluate to true when the skill was\nrequired. The cause of these failures was likely\noverly narrow predicates leading to large percent-\nages of predicates failing to correctly describe all\napplicable tasks. RouterBSI could further improve\nits performance on these cases with more training\niterations or relying on a human to directly edit the\npredicates."
+      },
+      "supporting_appendix": [
+        {
+          "page": 26,
+          "quote": "For the actual supplied top-five sets, TheoremQA\nhas 89 FN and 5 FP occurrences, while MedCalc-\nBench has 90 FN and 6 FP occurrences.\nThe\ncorresponding FN shares of FP+FN are 94.68%\nand 93.75%, respectively. These archived extra-\nselection shares are not rates of required-skill pred-\nicate rejection or proportions of tasks with incorrect\npredicate judgments. Top-five padding can supply\na nonrequired skill even when its predicate is false,\nso a top-five FN need not be a predicate FN. Since\nevery task has one annotated required skill and re-\nceives five skills, even a set containing the required\nskill has four non-gold entries."
+        },
+        {
+          "page": 24,
+          "quote": "In this error analysis we use the authors’\nnonstandard error labels: a false positive (FP) is\na required skill whose evaluated predicate is false,\nand a false negative (FN) is a nonrequired skill\nwhose evaluated predicate is true. Thus predicate\nFP counts |(Gq ∩Cq)\\Pq| and predicate FN counts\n|Pq \\ Gq|. We retain standard relevance-based TP\nas |Pq ∩Gq| and TN as |Cq \\ (Pq ∪Gq)|; this\nhybrid naming is not a standard confusion-matrix\nconvention."
+        }
+      ],
+      "finding": "Section 6.1 attributes 94.68%/93.75% to required predicates failing to activate, but H.4 says these exact percentages are shares of extra nonrequired top-five selections among error occurrences. The main causal diagnosis of narrow predicates therefore uses the wrong event and denominator.",
+      "further_evidence": "H.4 pp26–27 / Table18: required skill is present in 16/21 TheoremQA and 15/21 MedCalc downstream disagreements. H.2–H.3 pp25–26 distinguish checker errors, restrictive predicates and annotation mismatch; Table17 p27 assigns 70/331 TheoremQA selection-error occurrences to restrictive/misdirected predicates, not 94.68%. The subsets and denominators differ, so 70/331 is not a drop-in corrected main percentage.",
+      "fix": "Replace the Section6.1 percentage/causal paragraph with an explicit distinction between top-five extras, missing required skills, predicate rejections and checker errors. Promote the supported H.4 warning and H.3 counterexamples. Remove the claim that these percentages imply narrower predicates or more iterations will fix the failure. Relabel all H.2–H.4 FP/FN prose and Tables16–18 to standard relevance-positive terminology, or use missing-required/extra-nonrequired throughout; do not merely swap one table header.",
+      "acceptance": [
+        "94.68% and 93.75% are never described as rejection rates or fractions of failed tasks.",
+        "Any causal diagnosis cites a matching audited subset/denominator.",
+        "FP/FN definitions and table totals remain internally consistent after relabeling."
+      ]
+    },
+    {
+      "id": "METHOD-02",
+      "priority": 2,
+      "severity": "major",
+      "category": "ablations/uncertainty",
+      "main_anchor": {
+        "page": 7,
+        "quote": "The lines\nand areas represent the standard mean and variation,\nrespectively across three runs starting from the same\ninitial predicates at iteration 0."
+      },
+      "supporting_appendix": [
+        {
+          "page": 20,
+          "quote": "The both-enabled con-\nfiguration uses three separately generated initial li-\nbraries; the other configurations reuse the first both-\nenabled library. All runs record seed 20260324."
+        }
+      ],
+      "finding": "Figure5 says the runs start from the same initial predicates; AppendixG.1 explicitly says both-enabled uses three separately generated libraries while other conditions reuse only the first. These are not matched initialization replicates. The observed component ranking remains evidence, but the claimed control is false and contribution estimates include initialization variation.",
+      "further_evidence": "Table10 p23 has different initial means/SDs (both-enabled nDCG@1 0.521, SD0.008; only-MBR 0.524, SD0.001). Tables10–11 define population SD over three runs, whereas Figure5 only says standard mean and variation. Same replay seed does not imply identical initialization or independent full-run stochastic repeats.",
+      "fix": "Immediately correct Figure5 caption and main ablation description to disclose the asymmetric initialization scheme, define shaded bands as population SD, and qualify causal isolation. If stronger paired attribution is desired, first require author-authorized matched-library reruns with explicit seeds/cache isolation; do not invent them.",
+      "acceptance": [
+        "Caption and G.1 agree on initialization and run pairing.",
+        "Means versus population-SD bands and the source of randomness are explicit.",
+        "No claim of fully controlled paired ablations without matching provenance."
+      ]
+    },
+    {
+      "id": "METHOD-03",
+      "priority": 3,
+      "severity": "major",
+      "category": "cost-comparison",
+      "main_anchor": {
+        "page": 7,
+        "quote": "while MBR alone reduces token usage\nby 10.8% at the cost of a 7.7% relative decrease\nin nDCG@1 compared with using both. Across\nconfigurations with and without the gate, replay\nimproves final routing performance by 15.4% to\n23.7% at the cost of a 40.6% to 52.9% increase in\ntoken usage."
+      },
+      "supporting_appendix": [
+        {
+          "page": 21,
+          "quote": "Only the both-enabled component run\nrecords local initialization; the other component\nruns reuse an external initialization whose gener-\nation cost is excluded. The iteration-only column\nexcludes initialization and initial/final assessment.\nAttempts with unavailable token use are not as-\nsigned zero consumption: they are excluded from\nknown totals and counted separately."
+        }
+      ],
+      "finding": "The 10.8% token reduction and related percentage trade-offs compare known run-local totals with unequal initialization accounting: both-enabled pays local initialization while alternatives reuse free external initialization. Unknown-usage attempts are excluded. These totals do not isolate the cost of the gate/replay and are not complete costs.",
+      "further_evidence": "G.2 p20 says Table12 uses only the first run, not the three-run means. Table12 p24: Both Enabled total1324.251M, iterations1073.904M, unknown16; OnlyMBR total1181.026M, iterations1011.920M, unknown20. Arithmetic verification reproduces the approximate stated 10.8% from unequal total columns; therefore the issue is the comparison basis, not fabricated arithmetic.",
+      "fix": "Relabel Figure6 axis/caption and Section7.2 as recorded known run-local tokens, disclose missing usage and initialization reuse in the main paper, and remove component-causal savings language. A revised fair cost comparison needs the same included phases and a common initialization charge or an explicitly matched optimization-only account from existing verified logs; treat complete unknown usage as unavailable.",
+      "acceptance": [
+        "Every cost percentage names the included phases and denominator.",
+        "No omitted external initialization is implicitly zero cost.",
+        "Single-run cost points are distinguished from three-run quality means."
+      ]
+    },
+    {
+      "id": "METHOD-04",
+      "priority": 4,
+      "severity": "major",
+      "category": "guarantee-scope",
+      "main_anchor": {
+        "page": 2,
+        "quote": "RouterBSI ensures non-decreasing em-\npirical error on the retained set while bounding re-\nplay evaluation costs."
+      },
+      "supporting_appendix": [
+        {
+          "page": 12,
+          "quote": "Including pf ensures that the selected average re-\nplay risk does not increase. The main formulation\ndoes not require correction of the current failure or\npreservation of every previously correct judgment;\na minimum-risk option may trade off individual\nerrors. It also does not require a strict replay-risk\ndecrease or prescribe a tie-break."
+        },
+        {
+          "page": 12,
+          "quote": "Comparing to\npsi does not ensure monotonic validation perfor-\nmance relative to p(i)\ns ."
+        },
+        {
+          "page": 20,
+          "quote": "Of the retained decisions, 262 score be-\nlow the previous predicate while still improving\nover initialization."
+        }
+      ],
+      "finding": "The main text has the literal inequality direction wrong (non-decreasing error), and the broader no-regression motivation lacks the appendix’s crucial boundary: incumbent inclusion guarantees only non-increasing aggregate empirical loss on the particular replay set used for that selection. It does not preserve every earlier correct judgment, global history, later replay sets or unseen tasks. The validation gate compares to cold start, not to the previously accepted predicate.",
+      "further_evidence": "Section4.2 p4 gives R_replay(candidate)<=R_replay(incumbent), so the p2 non-decreasing wording is a typo, not a theoretical proof failure. Section4.3 and A.4 use strict improvement vs cold start, reject ties/no validation support, and revert to iteration-start predicates. G.1 p20 reports 262 retained decisions worse than the previous predicate while better than initialization. A.4 explicitly says test is evaluation-only.",
+      "fix": "Change non-decreasing to non-increasing and add a main-text guarantee paragraph: fixed replay-set empirical non-increase; individual errors may trade off; cold-start-relative strict validation admission; no monotonic previous-policy/test guarantee. Treat repeatedly consulted validation as selection data, with test supplying unseen-task evidence. Specify actual replay tie-breaking if deterministic reproduction is claimed.",
+      "acceptance": [
+        "Main and appendix have the same inequality direction, reference policy, strict tie behavior and no-support behavior.",
+        "No global, historical, per-example or unseen-task guarantee is inferred from the local inequality.",
+        "Cold-start-relative admission is not called iterationwise non-regression."
+      ]
+    },
+    {
+      "id": "METHOD-05",
+      "priority": 5,
+      "severity": "major",
+      "category": "method/ranking",
+      "main_anchor": {
+        "page": 5,
+        "quote": "RouterBSItopk are the top k skills using the sum\nof their predicate label and the retrieval score."
+      },
+      "supporting_appendix": [
+        {
+          "page": 11,
+          "quote": "For a ranked rather than strictly filtered output,\nthe implementation orders candidates lexicograph-\nically by predicate label, retrieval score, and orig-\ninal retrieval order, placing true labels first. This\nis the operational interpretation of the label-based\nprioritization in the main text; it is not an unnormal-\nized arithmetic sum for arbitrary retrieval scores.\nFor SkillSight, the exposed score is 1/j at retrieval\nrank j ≥1, so adding a binary label yields the\nsame selected-first ordering. A fixed-size top-k\noutput may therefore include false-labelled candi-\ndates, unlike strict routing."
+        }
+      ],
+      "finding": "Section5 defines arithmetic label+retrieval-score ranking for all backends, while A.1 defines lexicographic selected-first ranking and explicitly rejects an unnormalized arbitrary-score sum. The implementation guarantee that positives precede negatives depends on this distinction; raw BM25/dense score scales can change the ranked metrics under the main definition.",
+      "fix": "Replace both sum statements in Section5 with lexicographic (Boolean label, retrieval score, original order) sorting and distinguish ranked top-k padding from strict selection. State label+1/rank only as the SkillSight-equivalent special case, not as the general algorithm.",
+      "acceptance": [
+        "Main routing rank equation/prose matches A.1 for every backend.",
+        "Strict routing and padded top-five metrics are never conflated."
+      ]
+    },
+    {
+      "id": "METHOD-06",
+      "priority": 6,
+      "severity": "minor",
+      "category": "bounded-replay-scope",
+      "main_anchor": {
+        "page": 2,
+        "quote": "Retaining earlier routing corrections while\nbounding experience and evaluation costs remains\na challenge."
+      },
+      "supporting_appendix": [
+        {
+          "page": 11,
+          "quote": "Only these per-\nskill buckets are capacity-limited, not the global\nhistory used for lazy materialization."
+        },
+        {
+          "page": 11,
+          "quote": "Thus the\nhistorical bounds are |H+\ns |, |H−\ns | ≤N, while the\ncurrent-inclusive set can have 2N + 1 tasks if q is\nno longer cached. The bounds in the main replay\ndescription apply to the retained history; the current\nfailed task is always included in the implemented\ndecision."
+        }
+      ],
+      "finding": "The bounded-experience motivation and Section4.2 replay formula are broader than the actual implementation: only per-skill history buckets are bounded; a global seen-task history persists, and scoring includes the current task beyond the two N-sized history buckets. The appendix already documents this, so it is a main-text precision gap, not an undisclosed algorithm.",
+      "fix": "Define H+ and H- as N-capacity historical buckets and R=H+ union H- union current task, deduplicated, with |R|<=2N+1. State bounded per-repair replay evaluation, not constant memory or bounded total experience, because global history is retained for lazy materialization.",
+      "acceptance": [
+        "Default N=5 is consistently at most11 current-inclusive tasks, not10.",
+        "No bounded-total-memory/entire-history claim remains."
+      ]
+    },
+    {
+      "id": "METHOD-07",
+      "priority": 7,
+      "severity": "minor",
+      "category": "MBR-terminology",
+      "main_anchor": {
+        "page": 4,
+        "quote": "Our risk function is\nthe average skill selection error on replayed tasks."
+      },
+      "supporting_appendix": [
+        {
+          "page": 12,
+          "quote": "Including pf ensures that the selected average re-\nplay risk does not increase. The main formulation\ndoes not require correction of the current failure or\npreservation of every previously correct judgment;\na minimum-risk option may trade off individual\nerrors. It also does not require a strict replay-risk\ndecrease or prescribe a tie-break."
+        }
+      ],
+      "finding": "The advertised Minimum Bayes Risk operation is fully specified as finite-candidate minimization of mean labeled replay error. No posterior, probabilistic predictive reference distribution or distinction from ordinary empirical-risk minimization is supplied in A–D/G–H. This does not invalidate the argmin, but leaves Bayes terminology and method novelty insufficiently distinguished from replay ERM.",
+      "fix": "Prefer empirical minimum-risk replay selection (or ERM), or explicitly define the empirical distribution and limited decision-theoretic meaning intended by MBR. Explain that balanced/recency-biased retained examples define the selection distribution rather than a calibrated deployment posterior; do not invent a Bayesian inference component. If retaining MBR as a related-work term, supply a verified citation and delimit what is shared.",
+      "acceptance": [
+        "The title/abstract/method use a justified and consistent risk-minimization term.",
+        "No Bayesian posterior inference or probabilistic guarantee is implied without definition."
+      ]
+    },
+    {
+      "id": "METHOD-08",
+      "priority": 8,
+      "severity": "minor",
+      "category": "uncertainty/overclaim",
+      "main_anchor": {
+        "page": 7,
+        "quote": "They also suggest that\npredicates reach a plateau that cannot be over-\ncomed with more capable LLMs, where it’s dif-\nficult for the predicate to be narrow enough to be\nfalse for irrelevant tasks but broad enough to be\ntrue for all relevant tasks"
+      },
+      "supporting_appendix": [
+        {
+          "page": 25,
+          "quote": "Each row\naverages the same 748 test tasks within one run; initial and final refer to the initialized and ten-iteration policies."
+        }
+      ],
+      "finding": "The claim of a predicate plateau that cannot be overcome by more capable LLMs outruns three heterogeneous one-run backbone comparisons; Qwen3.8-27B actually has the highest final scores. Near equality of 4B and120B is descriptive, not statistical equivalence or a demonstrated capacity ceiling.",
+      "further_evidence": "G.4/Table14 pp22,25 explicitly provide one run per backbone; no backbone repeat dispersion or paired confidence interval is reported. Component uncertainty does exist in Tables10–11, so do not claim the paper has no repeats/error bars. Main baseline/downstream point estimates are also not supported by the component-only SDs.",
+      "fix": "Replace the irreducible-plateau claim with observed non-monotonic final performance across these tested checkpoints and state one-run scope. Avoid statistical significance/equivalence language without appropriate uncertainty. If warranted later, request matched-repeat comparisons and task-clustered paired uncertainty, not retriever-as-independent-sample confidence intervals.",
+      "acceptance": [
+        "No universal capacity ceiling or practical/statistical equivalence is claimed from the one-run comparison.",
+        "Uncertainty statements identify whether they refer to tasks, repeats, initializations or retrievers."
+      ]
+    }
+  ],
+  "provenance_questions": [
+    {
+      "anchor": {
+        "page": 22,
+        "quote": "The source is explicitly noncanonical\nand nonreportable: source drift was allowed, the\nfinal historical audit was disabled, and a runtime\njudgment cache could bypass exact request recon-\nstruction. The checks below establish consistency\nof consumed artifacts and saved judgments, not\ncanonical experimental validity."
+      },
+      "question": "H.1 labels the final tenth-iteration SkillSight/Qwen3.5-4B diagnostic source noncanonical and nonreportable because of drift, disabled historical audit and cache reconstruction limits. Is the same source snapshot used by any headline Table1/Figure7 results? The PDF does not supply a canonical run/artifact crosswalk sufficient to establish independence. Request mapping and actual audit status before trusting an extrapolation in either direction. Do not assert all headline experiments are invalid from this diagnostic disclosure alone.",
+      "proposed_fix": "Keep H.1 visibly diagnostic-only. Add a result-to-run/artifact provenance crosswalk and distinguish consumed-artifact consistency from historical canonical validity; if overlap is confirmed, then revise headline evidence status or use already verified independent runs."
+    },
+    {
+      "anchor": {
+        "page": 22,
+        "quote": "The source marks all three records as non-\nreportable, incomplete, and known-only. We there-\nfore treat this figure as analysis-only evidence. To-\ntals cover recorded run-local usage, exclude ex-\nternal or shared initialization, and omit usage that\nis unavailable. They are not full token accounts\nor per-query serving costs, and these runs do not\nprovide a controlled, budget-matched comparison."
+      },
+      "question": "G.3 labels candidate-pool records non-reportable/incomplete/known-only. This correctly limits Figure8; retain this limitation. K=50 shares displayed quality/token values with other tables, but numeric equality does not prove the same source or that all those tables are noncanonical. Author crosswalk required."
+    }
+  ],
+  "leakage_and_scope": [
+    {
+      "anchor": {
+        "page": 16,
+        "quote": "Task identifiers are disjoint across partitions, but\nthe skill vocabulary is deliberately shared: each\npartition contains all 306 retained gold skills. The\nevaluation consequently measures generalization to\nheld-out tasks involving represented skills, rather\nthan to entirely unseen skills."
+      },
+      "assessment": "Skill overlap is intentional in-distribution held-out-task evaluation, not evidence of train/test leakage. A.4 says test is used only for evaluation and no checkpoint selection; no contradictory test-feedback path was found. Repeated held-out validation is adaptive model selection, not an untouched independent guarantee."
+    },
+    {
+      "anchor": {
+        "page": 4,
+        "quote": "We split\neach dataset into train, validation, and test splits\nwith ratios of 70%, 15%, 15%, respectively. To\nevaluate the learning capabilities of baselines, we\nfurther filter and balance splits such that each split\nhas at least one task that share the same required\nskill."
+      },
+      "assessment": "C.1 and Table3 give global target ratios with constrained per-dataset deviations, including TheoremQA 259/106/105 rather than literal per-dataset70/15/15. Main text should label ratios as global targets and promote represented-skill-only evaluation scope. The later balancing sentence partly explains deviations, so avoid treating it as fabricated splits."
+    },
+    {
+      "assessment": "Task identifiers are disjoint, but A–D do not document a content/near-duplicate audit across partitions or task-to-skill-body overlap. This is an unverified contamination/generalization boundary, not a proven leak. Ask for existing overlap audits and corpus version before claiming either absence or presence of contamination."
+    }
+  ],
+  "false_positive_critiques_to_avoid": [
+    "No replay/gate specification: false. A.1–A.5 define lazy history, uniform slot replacement (not reservoir sampling), current-inclusive replay, strict cold-start gate, no-support rollback and final frozen policy.",
+    "Gate compares against immediately previous policy or guarantees monotonic test performance: false. Cold-start reference is explicit, and262 accepted regressions vs previous policy are disclosed.",
+    "All gate ties are accepted: false. Section4.3/A.4 reject ties. Intro higher-than wording is incomplete but the formal rule is strict.",
+    "The old predicate is absent from selection, or replay must fix every historical/current example: false. Incumbent is included; A.3 allows individual error trade-offs and ties.",
+    "No prompts/length/seeds/retries/caching details: false. B and D provide extensive exact templates,400-character cap,3 proposals,N=5,replay seed20260324 and request handling. Tie-break and full run provenance remain narrower questions.",
+    "No uncertainty or repeated experiments anywhere: false. G.1/Tables10–11 report three-run population SD; backbone/capacity/cost evidence is single-run.",
+    "94.68%/93.75% are rejection rates: false. H.4 explicitly says they are extra-selection occurrence shares; this is the main-text contradiction to fix.",
+    "97.10% is human-validated checker accuracy: false. H.1 calls it model agreement, discloses non-blinding,59.93% saved-True agreement,53.71% positive recall,96.47% always-False agreement, and AI-only qualitative follow-up.",
+    "Shared306 skill vocabulary proves leakage or missing skill-disjoint evaluation invalidates all results: false. Task-generalization scope is explicit; unseen-skill claims would require separate evidence.",
+    "Top50 is a selected-skill or downstream budget, or strict and padded-top5 are the same: false. Main/B/D/H distinguish candidates, predicates and supplied context.",
+    "RouterBSI is claimed best downstream everywhere: false. Figure4/Table19 and conclusion acknowledge SkillDAG higher mean success; unequal10-vs5 downstream budgets are disclosed in5.5.",
+    "All cost accounting is complete or budget matched: false. G.2–G.3 explicitly disclose omissions, asymmetry and analysis-only status; promote rather than invent missing appendix detail.",
+    "All headline results are disproven by H.1 noncanonical disclosure: unestablished. Require source crosswalk; do not turn an unverified overlap into a blocker.",
+    "Small percentage differences computed from rounded3-decimal tables prove wrong arithmetic: not necessarily. Rounding/full-precision aggregation can explain discrepancies; main error-event mismatch and cost basis are robust findings."
+  ],
+  "files_changed": [
+    "scout_method.json (this optional note only, in authorized review directory)"
+  ],
+  "verification": "Frozen PDF checksum verified; exact anchors programmatically located; p7 and p26 renders inspected; existing-table arithmetic checked only, no experiment run; no writes outside authorized review dir."
+}

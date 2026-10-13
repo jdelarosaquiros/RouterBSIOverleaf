@@ -1,0 +1,310 @@
+{
+  "scope": "Read-only delegated compliance/rendering/narrative scout, not the parent REVIEW_JSON contract.",
+  "pdf": "reviewed_main.pdf",
+  "pdf_sha256": "51ddab4b827e211879ecf8c936083ea5fa2a03f6b34a32d230f98b90f5910d6b",
+  "source_drift": "Live main.pdf and source changed externally. All substantive conclusions anchored to frozen PDF/page extracts. Source line anchors are navigational, not assertions of a source snapshot matching every frozen page.",
+  "policy": "Supplied NAACL-context ACL/ARR guides only; target venue/year/track/cycle/stage unknown; long paper assumed; no deadline or portal claim verified.",
+  "compliance": {
+    "pdf_pages": 28,
+    "main_content_last_page": 8,
+    "main_content_end": "p8 §8 Conclusion lines483–500, left column, before Limitations.",
+    "limitations": "p8 lines501–518, flows left to right column; distinct section before References; no new experiment/table.",
+    "ethics": "p8 lines519–538; appropriate high-stakes/MedCalc caution, license/sensitive-data and untrusted-content risks; actual compliance actions not proven.",
+    "references": "Begin p8 line539, end p11 lines789–791; appendix A begins p11 line792.",
+    "appendix": "Same PDF, pp11–28, A–H sequential titles; two-column prose. Full-width tables/figures and final all-float p28 are not one-column prose violations.",
+    "page_budget": "Fits assumed long-paper 8-content-page review limit. Active target/stage and long classification remain unconfirmed. Do not budget a ninth page.",
+    "mode": "main.tex has documentclass[11pt]{article}, usepackage[review]{acl}; PDF visibly Anonymous ACL submission, line and page numbers.",
+    "size_fonts": "All pages A4 595.276×841.89pt; pdffonts reports all fonts embedded. Some Matplotlib fonts are embedded Type3, not an automatic violation under supplied embedded-font rule. Body spans approximately11.02pt.",
+    "template_hashes": {
+      "acl.sty": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "acl_natbib.bst": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e"
+    },
+    "template_comparison": "Both files byte-identical to corresponding supplied official-acl-style-files-master.zip members. No modifications to these official files. main.tex additionally defines float wrappers and manual scheduling; introduction has itemsep/parsep=0. No margin/body-font/line-spacing override found. List spacing can be restored conservatively; do not report a style-file tampering blocker.",
+    "anonymity": "PDF title/author metadata anonymous; no identifying author block, acknowledgement or identifying project link found. Bibliography names and third-party model/data repositories are not leaks by themselves. Actual supplement archives, portal authors/preprint status not checked.",
+    "metadata_minor": "PDF metadata title omits Replay although visible title includes it; synchronize for metadata hygiene, not an anonymity leak.",
+    "human_only_unknown": [
+      "Responsible NLP checklist form",
+      "Actual AI writing/coding use and applicable disclosure location",
+      "Supplement archive anonymity",
+      "Target/cycle/stage/deadline/permission",
+      "Author approval/order and portal metadata",
+      "OpenReview profiles and service obligations/exemptions",
+      "Originality/overlap/dual submission",
+      "Prior ARR history and preprint status"
+    ]
+  },
+  "issues": [
+    {
+      "id": "SC-01",
+      "severity": "major",
+      "category": "claims",
+      "page": 2,
+      "review_lines": "147–151",
+      "source_anchor": "sections/related_works.tex:14",
+      "quote": "RouterBSI ensures non-decreasing empirical error on the retained set while bounding replay evaluation costs.",
+      "problem": "The sign is reversed; the statement also needs a fixed-current-replay qualification, not a global history or iterative validation guarantee.",
+      "fix": "Replace with: Including the unchanged predicate guarantees non-increasing empirical error on the current replay set under the recorded checker judgments; the cold-start gate does not guarantee monotonic validation or test performance. Match this scope in the title/abstract/intro and Figure 2.",
+      "acceptance": "Non-decreasing error is removed; the fixed-set/current-judgments scope is stated; no claim of global or test monotonicity remains.",
+      "evidence": "Main §4.2 p4 gives replay-risk <= old risk. A.2 p11 says global history is unbounded; A.4 p12 says cold-start gate is not monotonic against the previous predicate; G.1 p20 reports 262 retained decisions below previous predicate.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-02",
+      "severity": "major",
+      "category": "self_containment",
+      "page": 4,
+      "review_lines": "§4.2–4.3",
+      "source_anchor": "sections/method.tex:27–40,68–84",
+      "quote": "Replay each candidate",
+      "problem": "Main algorithm omits current-task inclusion and replacement semantics, and describes a tighter replay bound than the implemented current-inclusive set; decisive gate qualifications remain appendix-only.",
+      "fix": "State in §4.2 that two per-class histories have N=5 each, effective replay is their union plus current q (at most 2N+1), history uses uniform-slot replacement, and global seen-task storage is not bounded. Put Mp=3 and l=400 characters in §5.5. State end-of-pass per-skill rollback, rejection of ties/no validation support, and fixed cold-start comparator in §4.3.",
+      "acceptance": "Main equations and text agree with A.2/A.4/D.1; bounded means evaluation set, not all retained storage; default capacities and proposal count appear in main.",
+      "evidence": "A.2 p11 lines 836–874; A.4 p12 lines 902–929; Table 4 and D.1 p17. Main §4.3 strict inequality is already present, so do not claim it is wholly missing.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-03",
+      "severity": "major",
+      "category": "self_containment",
+      "page": 4,
+      "review_lines": "§5.1",
+      "source_anchor": "sections/experiments.tex:12",
+      "quote": "We split each dataset into train, validation, and test splits with ratios of 70%, 15%, 15%, respectively.",
+      "problem": "Main split description says per-dataset proportions; appendix says global constrained allocation and represented-skill evaluation, with substantial filtering.",
+      "fix": "Replace the per-dataset-ratio claim with global target allocation; give retained task count 4,987, split counts 3,491/748/748, gold vocabulary 306 versus 26,262 catalog skills, iterative rare-skill filtering, and explicitly state held-out tasks over already represented skills. Point to Table 3 for per-dataset counts.",
+      "acceptance": "No implication of unseen-skill generalization or identical per-dataset ratios; exact global counts and filtering scope appear in main.",
+      "evidence": "C.1–C.3 pp16–17 and Table 3; all three partitions contain every retained gold skill.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-04",
+      "severity": "major",
+      "category": "figures",
+      "page": 7,
+      "review_lines": "Figure 5 caption",
+      "source_anchor": "figs/mbr_replay_test_ndcg@1_std/table.tex",
+      "quote": "starting from the same initial predicates at iteration 0.",
+      "problem": "Figure 5 caption describes matched initial predicates, but G.1 says both-enabled uses three separately generated initial libraries and other configurations reuse the first; uncertainty terminology is also undefined.",
+      "fix": "Correct the caption to identify the actual initialization design, number of runs, task-weighting, and mean ± population SD. Distinguish Fig5 three-run means from Figs6/7 single-run values. For a causal matched-component claim, run paired initializations, otherwise qualify the ablation as not fully initialization-matched.",
+      "acceptance": "Caption matches G.1 pp20, Table10 p23, Table11 p24; plotted band statistic is named; no matched-initialization claim without matched artifacts.",
+      "evidence": "G.1 p20 lines1634–1638; Table10 shows different initialization means/SD; Table11 defines SD reconstructed from rounded variances.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-05",
+      "severity": "major",
+      "category": "self_containment",
+      "page": 7,
+      "review_lines": "§7.2 lines451–459 and Figure6",
+      "source_anchor": "sections/ablations.tex:20",
+      "quote": "MBR alone reduces token usage by 10.8%",
+      "problem": "A main-text efficiency comparison uses unmatched initialization cost and incomplete known-token accounts; decisive exclusions are only in the appendix.",
+      "fix": "Recompute a like-for-like optimization-only token comparison from the existing iteration column, or allocate the same initialization cost to each configuration. In §7.2/Fig6 explicitly label one run per configuration, known-only usage, omitted unknown attempts, and phase coverage. Do not call these per-query inference costs.",
+      "acceptance": "Compared token totals include identical phases and treatment of initialization; caption states the scope and unknown-use handling; percentages are recalculated.",
+      "evidence": "G.2 pp20–21 says only both-enabled includes local initialization and other runs omit external generation; Table12 p24 reports total, iteration-only and unknown attempts.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-06",
+      "severity": "major",
+      "category": "claims",
+      "page": 6,
+      "review_lines": "371–377",
+      "source_anchor": "Frozen PDF only; current results.tex has changed and removed this span",
+      "quote": "94.68% of TheoremQA and 93.75% of MedCalc-Bench were cases where predicate failed to evaluate to true when the skill was required.",
+      "problem": "The frozen main text misinterprets extra-selection error shares as required-skill predicate-rejection rates and attributes them to narrow predicates; appendix explicitly denies this interpretation.",
+      "fix": "Delete the attribution and rejection-rate claim. Replace with the supplied-set facts from H.4: required skill present in 16/21 TheoremQA and 15/21 MedCalc-Bench task–retriever disagreement cases; extra non-gold slots can arise from top-five padding. Separate checker errors, predicate restriction, annotation mismatch and retrieval misses.",
+      "acceptance": "Main text matches H.4 pp26–27; 94.68/93.75 are not described as rejection rates, task rates or narrow-predicate evidence.",
+      "evidence": "H.4 p26 lines1910–1925 explicitly calls those archived extra-selection shares; H.3 pp25–26 contains clear evaluator errors.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-07",
+      "severity": "major",
+      "category": "claims",
+      "page": 7,
+      "review_lines": "475–481",
+      "source_anchor": "sections/ablations.tex:24",
+      "quote": "predicates reach a plateau that cannot be overcomed with more capable LLMs",
+      "problem": "Three endpoint backbones, each with a single run, cannot establish an intrinsic ceiling or irreducible predicate-expressivity limitation.",
+      "fix": "Replace with: All three tested backbones improve over initialization, but final scores are not monotonic in model size; these runs do not establish a capability-independent ceiling. Reserve the expressivity hypothesis for limitations or test it via matched initialization/checker/proposer and repeated backbone runs.",
+      "acceptance": "Cannot-be-overcome and unsupported significance/causality wording removed; Fig7 clearly marks single-run results.",
+      "evidence": "Table14 p25 says each row is a within-one-run mean over 748 tasks. Main p7 itself notes Qwen3.8 has highest final score.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-08",
+      "severity": "minor",
+      "category": "figures",
+      "page": 1,
+      "review_lines": "Figure 1",
+      "source_anchor": "sections/introduction.tex:12–17",
+      "quote": "Skill routing with a task applicability predicate.",
+      "problem": "Figure 1 is a very small raster diagram with dense labels; it shows generic predicate routing rather than the replay-plus-gate contribution.",
+      "fix": "Redraw as vector at final 218pt column width with short task/predicate labels and visibly larger type. Optionally add a small failure→bounded-replay→gate cue or make the caption explicitly identify it as task setup; a teaser is editorial advice, not an ACL mandate.",
+      "acceptance": "All diagram labels can be read at 100% final-column view without zoom; no raster text required; figure/caption does not imply it demonstrates update control.",
+      "evidence": "Frozen p1 rendered image, actual image placement 218.25×59.18pt; raster 3098×840 pixels. High raster resolution does not cure tiny physical text.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-09",
+      "severity": "minor",
+      "category": "figures",
+      "page": 6,
+      "review_lines": "Figure 4",
+      "source_anchor": "figs/downstream_average/table.tex and rendered chart",
+      "quote": "Downstream success rates averaged equally across BM25, Vector, and SkillSight.",
+      "problem": "Bars start at 0.4 rather than zero, magnifying visual differences; method labels and values are small despite full-text width; caption ends in malformed prose.",
+      "fix": "Use a zero-based bar axis or switch to a clearly labeled dot plot; increase labels to approximately 8pt at final size; state task- versus retriever-weighting, budgets k=5 vs SkillDAG k=10, and uncertainty availability. Rewrite caption final sentence without obscuring SkillDAG superiority.",
+      "acceptance": "Bar magnitudes are not visually truncated or chart becomes a dot plot; caption is grammatical and states SkillDAG is highest under its distinct budget.",
+      "evidence": "Rendered p6; chart vector text includes ~6.44pt labels, smaller subscripts; §5.5 p5 states different downstream budgets.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-10",
+      "severity": "minor",
+      "category": "writing",
+      "page": 3,
+      "review_lines": "Figure2 caption",
+      "source_anchor": "sections/related_works.tex:8",
+      "quote": "Routing failures drive revisions selected which are selected",
+      "problem": "Duplicated clause, lowercase bayes, and incomplete description of strict gate rejection weaken the main algorithm caption.",
+      "fix": "Rewrite caption: RouterBSI proposes predicate revisions after routing failures, selects a minimum-error candidate on bounded replay, and retains each changed skill only when its held-out error is strictly below its cold-start error. State end-of-pass gate timing, rather than implying a gate after each task.",
+      "acceptance": "No duplicate phrase; strict inequality/tie rejection and gate timing match §4.3/A.4; main diagram remains readable.",
+      "evidence": "Figure2 p3, §4.3 p4, A.4 p12; diagram already shows a strict passing example.",
+      "fix_window": "unknown"
+    },
+    {
+      "id": "SC-11",
+      "severity": "major",
+      "category": "writing",
+      "page": 5,
+      "review_lines": "315–317 versus331–334",
+      "source_anchor": "sections/experiments.tex:39,47",
+      "quote": "They are trained on training split and frozen on validation and test splits.",
+      "problem": "The baseline description says retrievers are trained, while §5.5 says pretrained/lexical retrievers require no training.",
+      "fix": "Give a compact per-method distinction between frozen pretrained/lexical retrievers, trained rerankers, and feedback-updated routers; identify what was fitted on which split. Remove the blanket trained-retriever statement unless verified.",
+      "acceptance": "Each baseline has one consistent training/tuning/freeze policy; no contradiction between §5.4 and §5.5.",
+      "evidence": "Frozen p5 §5.4 and §5.5.",
+      "fix_window": "unknown"
+    }
+  ],
+  "figures": [
+    {
+      "figure": 1,
+      "page": 1,
+      "assessment": "Tiny raster setup example; limited legibility at one column, no replay/gate story.",
+      "priority": "minor",
+      "issues": [
+        "SC-08"
+      ]
+    },
+    {
+      "figure": 2,
+      "page": 3,
+      "assessment": "Full-width raster method diagram is readable, flow logically identifiable; red/green also use text labels. Caption has duplicated wording and strict-gate/timing imprecision. Full-width float is permitted.",
+      "priority": "minor",
+      "issues": [
+        "SC-10"
+      ]
+    },
+    {
+      "figure": 3,
+      "page": 6,
+      "assessment": "Column-width vector chart readable at roughly 8pt ordinary labels; uses colors plus markers/dashes. Normalization equalizes every method at k=50, hiding their different retrieval coverage; categorical x spacing and per-method Recall@50 denominator should be explicit in caption (A.F currently supplies them). No clipped labels observed.",
+      "priority": "minor",
+      "issues": []
+    },
+    {
+      "figure": 4,
+      "page": 6,
+      "assessment": "Wide vector bar plot visible, but baseline truncated at 0.4, small method labels (~6.44pt), no uncertainty shown, malformed caption ending.",
+      "priority": "minor",
+      "issues": [
+        "SC-09"
+      ]
+    },
+    {
+      "figure": 5,
+      "page": 7,
+      "assessment": "Legible 8–9pt vector chart using style/marker redundancy; bands faint, caption does not name SD and incorrectly says same initial predicates.",
+      "priority": "major",
+      "issues": [
+        "SC-04"
+      ]
+    },
+    {
+      "figure": 6,
+      "page": 7,
+      "assessment": "Legible 8–9pt vector scatter with shape/color redundancy; major problem is unknown/unmatched token scope and single-run status, not font size.",
+      "priority": "major",
+      "issues": [
+        "SC-05"
+      ]
+    },
+    {
+      "figure": 7,
+      "page": 8,
+      "assessment": "Legible 8–9pt vector paired bars; hatching distinguishes initialization, includes standalone SkillSight baseline. No uncertainty; single-run scope absent from main caption, and prose overstates ceiling.",
+      "priority": "major",
+      "issues": [
+        "SC-07"
+      ]
+    }
+  ],
+  "self_containment": {
+    "assessment": "Core motivation, predicate method, primary results and component ablation exist in main; not an appendix-only contribution. However essential protocol qualifications and contradictory claims prevent full main-text self-containment.",
+    "promote": [
+      "A.1 p11: selected-first lexicographic ranking versus main p5 arithmetic sum; specify valid score normalization if calling them equivalent.",
+      "A.2/A.4 pp11–12: effective replay, bounded versus global storage, strict cold-start gate support and rollback.",
+      "C.1/C.3 pp16–17: filtered represented-skill split counts and vocabulary.",
+      "D.1 p17: N=5 per class, Mp=3, l=400 characters.",
+      "G.1 pp20,23–24: actual run/initialization design and variability.",
+      "G.2 pp20–21,24: token-phase exclusions.",
+      "F.1 pp18–19: Ret@k is ratio of task-average recalls, normalized by each method own Recall@50; SkillDAG has expanded candidate coverage.",
+      "H.4 pp26–27: true interpretation of downstream-disagreement error shares."
+    ],
+    "acceptable_appendix": [
+      "Full prompts and worked repair",
+      "Expanded per-dataset/per-retriever result matrices",
+      "Extended sensitivity tables when not used as indispensable main-claim evidence"
+    ],
+    "additional_parent_warning": "H.1 pp22–24 explicitly labels evaluator diagnostic noncanonical/nonreportable and gpt-6.1-sol adjudication unblinded, with 59.93% agreement for saved True cases. Do not extrapolate its 97.10% pooled agreement into accuracy or canonical validity. Its relation to the main result artifacts needs provenance audit, not an assumption that every main run is invalid."
+  },
+  "narrative": {
+    "title": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk Replay and Held-out Gates",
+    "recoverable_thesis": "Fixed-model natural-language applicability predicates can be improved from labeled routing failures via bounded empirical-error selection and a cold-start validation gate, preserving more required skills at small budgets.",
+    "abstract_word_count": 200,
+    "abstract_notes": "Thesis is understandable; roughly half the abstract motivates before naming contribution. 24.9% compares to cold start, while strongest learned-baseline comparison and downstream caveat are absent. Label gains relative and identify the represented-skill held-out setup. Word count is editorial, not policy.",
+    "contribution_map": [
+      {
+        "claim": "Explicit interpretable/editable applicability predicates",
+        "delivery": "§4.1 pp3–4; Fig1; full prompts B",
+        "conclusion": "Revisited p8. Human readability is inspectability, not measured interpretability or editability benefit."
+      },
+      {
+        "claim": "MBR bounded replay and held-out validation procedure",
+        "delivery": "§4.2–4.3 p4; Fig2 p3; Fig5/6 p7; A and G",
+        "conclusion": "Revisited p8. Scope/initialization/token gaps listed above."
+      },
+      {
+        "claim": "Highest aggregate nDCG@10 and Hit@1 on six datasets; ablation contributions",
+        "delivery": "Table1 p5; Figs3–7 pp6–8",
+        "conclusion": "Revisited p8. Hit@1 terminology only equated to nDCG@1 in appendix Table10; define it once in main."
+      }
+    ],
+    "related_work": "Three-way nonparametric/parametric/static taxonomy is useful. Nearest identified analogue JTPRO is acknowledged at p2 lines141–145. Novelty is the combination of per-skill editable state, finite per-label replay and cold-start gate, not the mere presence of candidate evaluation/validation. Avoid blanket assertions all parametric methods need large data; quantitatively substantiate bounded-evaluation advantage with matched cost. Citation truth/coverage requires independent verification; no new missing citations fabricated.",
+    "conclusion": "Frozen p8 explicitly says stronger routing does not consistently yield best downstream performance. Preserve this calibrated limitation; live source read differed, so do not critique frozen conclusion as omitting it.",
+    "writing_examples": [
+      "p2 lines87–89 repeats RouterBSI in the same sentence.",
+      "p2 §2.1: do not directly minimizing → do not directly minimize.",
+      "p4 §4.2 starts Compare difference... and contains candidate-length grammar errors.",
+      "p7 §7.3 overcomed → overcome, but entire unsupported ceiling claim should be narrowed."
+    ]
+  },
+  "files_created": [
+    "scout_compliance.png",
+    "scout_compliance.json"
+  ],
+  "writes": "No manuscript, build, figure, source or configuration writes performed; only these review-dir artifacts."
+}

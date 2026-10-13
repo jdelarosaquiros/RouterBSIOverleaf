@@ -1,0 +1,59 @@
+{
+  "verification_kind": "ad-hoc artifact/contract validation, not canonical test suite or experimental replication",
+  "status": "PASS",
+  "checked_at_utc": "2026-10-13T11:46:21.158030+00:00",
+  "issues": 15,
+  "severity_counts": {
+    "major": 13,
+    "minor": 2
+  },
+  "literal_pdf_anchors_verified": 15,
+  "proposal_log_coverage": 15,
+  "acceptance_criteria_logged": 47,
+  "figures_reviewed_and_proposed": 8,
+  "dependency_and_contract_checks": "PASS",
+  "proposal_only_boundary": "PASS: every action not_executed, no revised manuscript claimed",
+  "frozen_pdf_sha256": "51ddab4b827e211879ecf8c936083ea5fa2a03f6b34a32d230f98b90f5910d6b",
+  "protected_baseline_files": 351,
+  "unchanged_baseline_files": 336,
+  "changed_baseline_files": [
+    "main.tex",
+    "main.out",
+    "main.fdb_latexmk",
+    "main.log",
+    "main.aux",
+    "main.fls",
+    "main.pdf",
+    "scripts/render_acl_readable_figures.py",
+    "sections/appendix/error_analysis.tex",
+    "figs/average_retention_degradation/preview.png",
+    "figs/average_retention_degradation/readability_manifest.json",
+    "figs/average_retention_degradation/preview.pdf",
+    "figs/mbr_replay_test_ndcg@1_std/preview.png",
+    "figs/mbr_replay_test_ndcg@1_std/readability_manifest.json",
+    "figs/mbr_replay_test_ndcg@1_std/preview.pdf"
+  ],
+  "live_pdf_sha256_at_verification": "290490f2af947dfd24dc14bf761a3fde5b6d73699f7f32fc0cf702d487320323",
+  "whole_worktree_unchanged": false,
+  "drift_explanation": "Changes external to review workflow were observed; review binds to frozen PDF. No actor attribution inferred.",
+  "not_run": [
+    "Manuscript build",
+    "Model experiments",
+    "Portal submission",
+    "Full code/provenance audit"
+  ],
+  "deliverable_hashes": {
+    "REVIEW_JSON.json": "4486761232a7c7ef916a7769ec38f1dd73c077d79d0025ed4d3e89289ccf3ffd",
+    "REVIEW.md": "f2e4cb3ce1281ae9908b0c9e63bfe5d62a204050d1b51d02dccb5e4a5454542c",
+    "REVISION_REPORT.json": "b12b082636d327aca2111204c3e817b31058bc3ca57b51c96e4364a99c72103a",
+    "PROPOSALS.md": "df79690b580479b385acf600b6c6d13ff107c1340085ec97516a4986e1325d11",
+    "VERSION_NOTE.md": "6f69b41a4905d3973b7dc70c6c2e9ea20468e4ad970441ab5e793b9db593f03f"
+  },
+  "independent_proposal_span_verification": {
+    "exact_source_spans": 51,
+    "proposed_edit_records": 51,
+    "all_unique_matches": true,
+    "proposal_dependency_order_valid": true,
+    "status": "PASS"
+  }
+}

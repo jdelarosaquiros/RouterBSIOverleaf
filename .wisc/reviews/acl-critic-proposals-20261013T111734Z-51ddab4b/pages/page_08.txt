@@ -1,0 +1,198 @@
+SkillSight Qwen3.5
+4B
+Qwen3.8
+27B
+GPT-OSS
+120B
+0.0
+0.5
+1.0
+nDCG@1
+0.471
+0.520
+0.742
+0.635
+0.802
+0.686
+0.745
+RouterBSIinit
+RouterBSI
+Figure 7:
+Initial and optimized routing perfor-
+mance (nDCG@1) comparison between different LLM-
+backbones using SkillSight as the retriever. Stronger
+backbones improve initialization, while optimization
+brings smaller model Qwen3.5 4B close to the opti-
+mized performance of GPT-OSS 120B.
+8
+Conclusion
+482
+We presented RouterBSI, a non-parametric frame-
+483
+work that refines explicit skill applicability predi-
+484
+cates from routing failures without updating model
+485
+weights. It combines minimum Bayes risk selec-
+486
+tion over bounded replay with held-out validation.
+487
+Experiments on six SRA-Bench datasets show that
+488
+RouterBSI achieves the strongest average routing
+489
+performance among evaluated methods and pre-
+490
+serves more required skills as the selection budget
+491
+decreases. Ablations support the complementary
+492
+contributions of replay and validation and show im-
+493
+provements across model backbones. These find-
+494
+ings demonstrate the value of editable predicates
+495
+for feedback-driven skill routing, although stronger
+496
+routing does not consistently yield the best down-
+497
+stream performance. Future work can incorporate
+498
+skill dependencies to better connect skill selection
+499
+with downstream task requirements.
+500
+Limitations
+501
+Our approach has three limitations. First, training
+502
+is computationally expensive, although optimiza-
+503
+tion converges on the training data and improves
+504
+overall routing performance. Second, we do not
+505
+provide a protocol for determining which skills a
+506
+task requires. The method therefore relies on hu-
+507
+man annotations or an external labeling mechanism,
+508
+making optimization dependent on the availability
+509
+and accuracy of these labels. Third, we keep the
+510
+predicate checker’s instructions fixed, even though
+511
+errors in interpreting predicates can lead to incor-
+512
+rect skill selections. Our algorithm indirectly im-
+513
+proves checking performance by generating and
+514
+selecting predicate formulations that the checker
+515
+evaluates more accurately against labeled tasks;
+516
+however, it does not directly address weaknesses
+517
+in the checker’s instructions.
+518
+Ethics Statement
+519
+Our experiments reuse existing SRA-Bench tasks,
+520
+annotations, and skill content, which may con-
+521
+tain errors, biases, or harmful instructions. Reuse
+522
+should respect dataset, skill, and model licenses,
+523
+while sensitive task data require appropriate ac-
+524
+cess controls and retention policies, particularly
+525
+when using external model services. Incorrect pred-
+526
+icate judgments can omit required skills or admit
+527
+inappropriate ones, propagating errors to down-
+528
+stream decisions. Bounded replay and held-out
+529
+validation assess routing behavior rather than fac-
+530
+tual correctness, fairness, or safety. Results on
+531
+MedCalc-Bench do not establish clinical validity or
+532
+suitability for patient care; high-stakes applications
+533
+require domain-specific validation and qualified
+534
+human oversight. Retrieved instructions and gen-
+535
+erated code should be treated as untrusted content,
+536
+with permission controls and isolated execution
+537
+before use.
+538
+References
+539
+Tong Bai, Zhenglin Wan, Pengfei Zhou, Xingrui Yu,
+540
+Yang You, and Ivor W. Tsang. 2026. SkillDAG: Self-
+541
+evolving typed skill graphs for LLM skill selection
+542
+at scale.
+543
+Chishui Chen, Jiaye Lin, Te Sun, Yi Yang, Junxi Wang,
+544
+Cong Qin, Yangen Hu, Lu Pan, and Ke Zeng. 2026a.
+545
+Skill or skip? learning selective skill invocation in
+546
+agentic tasks via dual-granularity preference learn-
+547
+ing.
+548
+Tianyi Chen, Yinheng Li, Michael Solodko, Sen Wang,
+549
+Nan Jiang, Tingyuan Cui, Junheng Hao, Jongwoo Ko,
+550
+Sara Abdali, Leon Xu, Suzhen Zheng, Hao Fan, Pash-
+551
+mina Cameron, Justin Wagle, and Kazuhito Koishida.
+552
+2026b. CUA-Skill: Develop skills for computer us-
+553
+ing agent.
+554
+Wenhu Chen, Ming Yin, Max Ku, Pan Lu, Yixin Wan,
+555
+Xueguang Ma, Jianyu Xu, Xinyi Wang, and Tony
+556
+Xia. 2023. TheoremQA: A theorem-driven question
+557
+answering dataset. In Proceedings of the 2023 Con-
+558
+ference on Empirical Methods in Natural Language
+559
+Processing, pages 7889–7901, Singapore. Associa-
+560
+tion for Computational Linguistics.
+561
+Sandip Ghoshal, Anshul Mittal, Jyotika Singh, Miguel
+562
+Ballesteros, Weiyi Sun, Fang Tu, Shailender Singh,
+563
+Yassine Benajiba, Fahad Shah, Sujeeth Bharadwaj,
+564
+Sujith Ravi, and Dan Roth. 2026. JTPRO: A joint
+565
+tool–prompt reflective optimization framework for
+566
+8
