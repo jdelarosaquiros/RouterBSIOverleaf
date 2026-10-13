@@ -1,64 +1,56 @@
 # RouterBSI Paper
 
-Standalone, editable ACL manuscript. `main.tex` is at the repository root and builds to `main.pdf`. No sibling project, experiment repository, model service, Python environment, or original Word document is needed to compile it.
+Compilation-only source for the current ACL manuscript, including the appendix.
+The main document is the root `main.tex`; the generated output is `main.pdf`.
 
-## Build
+## Overleaf
 
-Install a complete TeX Live distribution (or equivalent), `latexmk`, and GNU Make. On Debian/Ubuntu, the relevant packages are:
+Pull the `main` branch from `jdelarosaquiros/RouterBSIOverleaf`, select the root
+`main.tex` as the main document, and use pdfLaTeX. Recompile from scratch after
+synchronizing a source update. No Python or shell escape is required.
+
+## Local build
+
+Install a complete TeX Live distribution (or equivalent), `latexmk`, and GNU Make.
+The manuscript uses the ACL style and standard TeX packages, including `dsfont`.
+On Debian/Ubuntu, install:
 
 ```sh
 sudo apt-get install make latexmk texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
 ```
 
-From this repository:
-
 ```sh
 make             # build main.pdf
 make rebuild     # force recompilation
-make watch       # rebuild when source files change
-make check       # dependency/package checks
-make clean       # remove manuscript outputs, never figure/table assets
+make watch       # rebuild as source files change; Ctrl+C to stop
+make clean       # remove manuscript build outputs, not included graphics
 ```
 
-The Makefile prefers system TeX when `/usr/bin/latexmk` exists to avoid an incomplete competing installation. Else it uses TeX on PATH. Standard external TeX packages remain software prerequisites; they are not vendored.
+The Makefile prefers `/usr/bin/latexmk` when available; otherwise it uses PATH.
 
-### Overleaf
+## Included files
 
-Upload the repository files (excluding `.git`), select `main.tex` as the main document, and use pdfLaTeX. All manuscript graphics and local style files are included. No shell escape or Python is required for the LaTeX build. Overleaf itself has not been tested.
+- `main.tex`: manuscript entrypoint and review-format configuration.
+- `sections/`: active main-text and appendix sections, including appendix tables.
+- `figs/`: only graphics, wrappers, and caption files loaded by the manuscript.
+- `tables/`: the two table wrappers loaded from this directory; other active
+  tables are directly defined under `sections/appendix/`.
+- `references.bib`, `acl.sty`, `acl_natbib.bst`: bibliography and local ACL styles.
+- `Makefile` and `.gitignore`: build commands and local-output exclusions.
 
-## Layout
+Captions are edited in the active `.tex` wrapper, except where that wrapper
+explicitly inputs a `description.text` file. Table 1's caption is in
+`tables/skill_routing_performance_average/table.tex`.
 
-- `main.tex`: current manuscript entrypoint and ACL review settings.
-- `sections/`: ten authoritative editable sections; `appendix.tex` and `citations.tex` contain only source-absence comments.
-- `figs/`: refreshed data-backed result figures and the two hero images.
-- `tables/`: three refreshed result tables with previews and provenance; only the skill-routing and downstream tables are active.
-- `acl.sty`, `acl_natbib.bst`: unchanged supplied ACL style files.
-- `references.bib`: existing empty bibliography placeholder; no bibliography is rendered.
-- `snapshot-manifest.json`: historical packaging hashes, not a current manuscript-content manifest.
-- `scripts/check_repository.py`: portable reference, asset and build-log checks.
-
-## Authoritative source and section selection
-
-The manuscript wording now comes from the exact supplied file `project_skill_selection/research-repo-template/paper/.wisc/temp/RouterBSI_Draft_Appendix.docx`, superseding the earlier V1 draft. This source is needed only for provenance, not compilation. Its 78 direct body paragraphs contain 73 nonempty paragraphs/headings, 60 Office Math expressions, and six hyperlinks. All 73 are mapped once to the editable sections using zero-based `% DOCX-P000-BEGIN/END` markers. Nine ordinary-text Unicode display equations and one inline update equation were mechanically converted to LaTeX, separately from the original 60 Office Math nodes. Original wording, literal author-year mentions, emphasis, mathematical notation, and hyperlink destinations are preserved; section/list formatting and bare figure/table references are mechanical integrations.
-
-The source contains Abstract, Introduction, Related Works, Problem Definition, Method, Experiments, Results, Ablations, Limitations, and Conclusion. Despite its filename, it contains no appendix or citation-list section. Superseded appendix/citation prose was archived outside this compilation package and replaced with comment-only files; it is not recoverable by uncommenting an input here.
-
-**Per the latest author instruction, Ablations is updated but disabled in `main.tex`.** Its four figure references and immutable snapshots remain in `sections/ablations.tex`; none are relocated into Results or rendered in the default PDF. The active manuscript therefore has nine source sections, the two early hero figures, and the two Results tables. Contribution bullets use compact local spacing.
-
-Conversion evidence and the pre-edit dirty-tree backup are outside this standalone repository at `project_skill_selection/.wisc/artifacts/routerbsi-authoritative-docx/`: source hash and XML, raw Pandoc AST/LaTeX, per-paragraph raw conversions, source-to-section map, Unicode-equation/run map, reference integrations, and verification artifacts. These are audit material, not build dependencies.
-
-## Scope and caveats
-
-This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating the full result set. The `mbr_replay_test_f1` and `mbr_replay_test_ndcg` snapshots were refreshed from the split-labelled routing table; the other snapshots remain unchanged. External-data generators and experiment data are omitted. Each refreshed figure's `provenance.text` records its external CSV path and hash, test/accepted-row selection, and selection details. `snapshot-manifest.json` remains the historical packaging manifest and was intentionally not rewritten.
-
-Token totals include only recorded usage. The authoritative prose contains literal author-year citations but supplies no bibliography; citation identity/support still needs author review. Source grammatical inconsistencies, the duplicated parametric-routing sentence, and potentially conflicting empirical claims are preserved rather than scientifically rewritten. The source's training description also says both that retrievers are trained and that they do not require training. This package does not certify submission readiness, citation accuracy, or page-limit compliance.
-
-The local Git repository is initialized on `main`; no remote is configured and no commit or publication was made. `main.pdf` is generated and ignored by Git; figure/table PDFs and PNGs are intentionally not ignored. Before publishing, review the full manuscript and result provenance and choose an appropriate licensing policy.
-
-## Paper-facing artifact cleanup
-
-After regenerating figure/table artifacts, use the explicit plan/apply/verify workflow in [`scripts/README_publishing_cleanup.md`](scripts/README_publishing_cleanup.md) before publishing. It removes the author-excluded reportability wording from presentation copies while preserving source checks, numerical data, and archived originals. It does not certify experiments. The author-alignment revision and the two proposal-only Word documents are in `.wisc/revisions/author-alignment-20261013/`.
+This repository contains compilation inputs, not experiment or figure-regeneration
+code. Unused figures/tables, duplicate preview images, analysis metadata, utility
+scripts, generated Word exports, and scratch/review snapshots are excluded.
+The existing manuscript text, numerical content, active captions, and required
+artwork are unchanged by this packaging cleanup. Bibliography processing uses
+BibTeX through `latexmk` or Overleaf.
 
 ## Third-party style
 
-ACL style source: https://github.com/acl-org/acl-style-files/ . This is an independent third-party dependency link, not an external location for required first-party manuscript files. The supplied style files and their original notices are retained; no new license grant is asserted for the manuscript.
+ACL style source: https://github.com/acl-org/acl-style-files/ . The supplied style
+files and their original notices are retained. This repository does not assert a
+new license grant for the manuscript or its third-party assets.

@@ -3,10 +3,9 @@ ifneq ($(wildcard /usr/bin/latexmk),)
 export PATH := /usr/bin:/bin:$(PATH)
 endif
 LATEXMK ?= latexmk
-PYTHON ?= python3
 FLAGS := -pdf -interaction=nonstopmode -halt-on-error -file-line-error
 .DEFAULT_GOAL := build
-.PHONY: build rebuild watch clean check
+.PHONY: build rebuild watch clean
 
 build:
 	$(LATEXMK) $(FLAGS) main.tex
@@ -20,6 +19,3 @@ watch:
 clean:
 	$(LATEXMK) -C main.tex
 	rm -f main.bbl main.run.xml main.synctex.gz
-
-check:
-	$(PYTHON) scripts/check_repository.py
