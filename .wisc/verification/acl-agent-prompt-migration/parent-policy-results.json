@@ -1,0 +1,49 @@
+{
+  "exact_prompt_inventory": true,
+  "01-iclr2027_critics_agent 3.md": {
+    "old_json_keys": true,
+    "old_deadline": true,
+    "old_style": true,
+    "old_review_budget": true,
+    "acl_arr_context": true,
+    "naacl_source_scope": true,
+    "limitations": true,
+    "checklist": true,
+    "two_columns": true,
+    "a4": true,
+    "anonymity": true,
+    "self_containment": true,
+    "acceptance_contract": true,
+    "issue_anchor": true,
+    "dependency_order": true,
+    "review_source": true,
+    "appendix_source": true,
+    "no_fabrication": true
+  },
+  "02-iclr2027_fix-critics_agent 3.md": {
+    "old_json_keys": true,
+    "old_deadline": true,
+    "old_style": true,
+    "old_review_budget": true,
+    "acl_arr_context": true,
+    "naacl_source_scope": true,
+    "limitations": true,
+    "checklist": true,
+    "two_columns": true,
+    "a4": true,
+    "anonymity": true,
+    "self_containment": true,
+    "acceptance_contract": true,
+    "issue_anchor": true,
+    "dependency_order": true,
+    "review_source": true,
+    "appendix_source": true,
+    "no_fabrication": true
+  },
+  "requirements_unchanged": {
+    "requirements_and_examples.md": true,
+    "appendix_requirements.md": true,
+    "appendix_outline.md": true
+  },
+  "passed": true
+}

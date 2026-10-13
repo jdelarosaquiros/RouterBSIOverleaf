@@ -1,0 +1,72 @@
+                                                                  Tasks                                  Unique gold skills
+
+              Benchmark          Source     Removed      Retained       Train       Val.       Test      Source       Retained
+
+              BigCodeBench        1,140           81         1,059       813      123      123        139           70
+          CHAMP              223           55          168       116       26       26         89           43
+              LogicBench           760            0          760       532      114      114         19           19
+              MedCalc-Bench       1,100            0         1,100       770      165      165         55           55
+             TheoremQA           747          277          470       259      106      105        320          105
+             ToolQA               1,430            0         1,430      1,001      214      215         14           14
+
+                 Total                 5,400          413         4,987      3,491      748      748        636          306
+
+              Table 3: Task filtering and exact split sizes. Source counts refer to the SRA-Bench task collections before our
+                  filtering, not necessarily the original full benchmarks. Retained unique gold skills count distinct annotated skill
+                  identifiers, not task–skill occurrences or corpus entries. Every retained skill is represented in each of train, validation,
+             and test.
+
+
+1438        C.3  Shared Skill Corpus and Data Access         tices. Code and content permissions can also differ:        1474
+                                                             a benchmark’s software license does not necessar-        1475
+1439        The shared SRA-Bench retrieval corpus contains
+                                                                            ily cover textbook questions, source corpora, or        1476
+1440         26,262 distinct skill identifiers: 636 gold skills as-
+                                                               every inherited evaluator. Reuse and redistribution        1477
+1441          sociated with the unfiltered task collections and
+                                                        must respect these component-specific conditions        1478
+1442         25,626 web-collected distractors (Su et al., 2026).
+                                                                      rather than treating the complete collection as uni-        1479
+1443      A skill record provides a name, description, and
+                                                            formly MIT-licensed.                                     1480
+1444          content, which may include instructions, formulas,
+                                                      The task package includes medical-calculation        14811445         workflows, or code. All annotated skill identifiers
+                                                                   questions, and the accompanying ToolQA source        14821446           in the task collections resolve to records in this cor-
+                                                                        assets include host and location fields. Public avail-        14831447          pus. Filtering the task splits reduces the evaluated
+                                                                            ability does not certify that these materials are free        14841448         gold vocabulary to 306 skills; it does not reduce
+                                                                of identifying information. Similarly, routing la-        14851449          the shared retrieval corpus to those skills.
+                                                                     bels and held-out validation measure skill-selection        1486
+1450          The SRA-Bench package is publicly available as
+                                                                    behavior, not objectionable-content screening. The        1487
+1451        WeihangSu/SRA-Bench on Hugging Face, with the
+                                                                     retrieved instructions and executable examples re-        1488
+1452         accompanying SR-Agents toolkit. The distributed
+                                                       main untrusted content; routing performance does        1489
+1453          dataset metadata specifies the MIT license. We
+                                                                not certify their safety.                                   1490
+1454           retain the released skill identifiers and task-to-skill
+1455          associations, allowing the same required set to be                                   D  Implementation and Configuration             1491
+1456         used for retrieval, routing, and oracle-conditioned
+1457         downstream evaluation.                         D.1  Shared Configuration                             1492
+
+                                                    The default configuration uses SkillSight with        1493
+1458        C.4  Dataset Coverage and Reuse
+                                                         Qwen3.5-4B. Table 4 specifies the shared optimiza-        1494
+1459        The released SRA-Bench task package is docu-    tion settings. The retrieval budget is distinct from        1495
+1460        mented as English. This metadata does not imply    the downstream skill budget: the main router eval-        1496
+1461         an English-only retrieval corpus: web-collected    uates 50 candidates, whereas the fixed-size down-        1497
+1462            skill text includes non-Latin scripts, and the corpus    stream variant supplies five skills after routing. We        1498
+1463         has no per-record language labels. The six bench-    initialize the entire shared skill catalog and keep        1499
+1464         marks cover theorem application, logical reasoning,     its membership and retrieval representations fixed        1500
+1465           tool workflows, medical calculation, mathematical   while updating predicates.                                1501
+1466         problem solving, and code generation. Our evalua-     The length limit counts characters, including        1502
+1467           tion does not establish multilingual performance or   spaces and punctuation, rather than tokens. Both        1503
+1468         demographic representativeness.           MBR replay and the held-out gate are enabled.        1504
+1469          The MIT declaration in the SRA-Bench meta-   The replay loss is mean Boolean error; the vali-        1505
+1470          data does not supersede the rights of constituent    dation score is the single-predicate specialization        1506
+1471            artifacts. MedCalc-Bench data carry a CC-BY-SA-   described in Appendix A.4. There is no further        1507
+1472          4.0 notice, while individual web-collected skills    truncation of the current-inclusive replay set. With        1508
+1473          include CC-BY-SA, CC-BY-NC-SA, and GPL no-  N = 5, it contains at most 11 distinct tasks.               1509
+
+
+                                                    17

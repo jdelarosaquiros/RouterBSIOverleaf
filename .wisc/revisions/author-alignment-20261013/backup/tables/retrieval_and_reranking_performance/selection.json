@@ -1,0 +1,869 @@
+{
+  "name": "retrieval_and_reranking_performance",
+  "kind": "tables",
+  "source": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_recall/results.csv",
+  "source_sha256": "171044c95856fb2894ba944d05d36ce2c60d691b551af77bc2063a2b30263f45",
+  "source_rows": 168,
+  "metrics": [
+    "Recall@1",
+    "Recall@5",
+    "Recall@10",
+    "Recall@25",
+    "Recall@50"
+  ],
+  "labels": {
+    "Model": [
+      "Qwen3.5 4B"
+    ],
+    "Retriever": [
+      "BM25",
+      "Vector",
+      "SkillSight"
+    ],
+    "Method": [
+      "BM25",
+      "LLM Select",
+      "Progressive Disclosure",
+      "SkillDAG",
+      "Skill-Pro",
+      "RouterBSI_init",
+      "RouterBSI",
+      "Vector",
+      "SkillSight",
+      "SkillRouter"
+    ],
+    "Dataset": [
+      "bigcodebench",
+      "champ",
+      "logicbench",
+      "medcalcbench",
+      "theoremqa",
+      "toolqa",
+      "Average"
+    ]
+  },
+  "provenance": {
+    "status": "non-reportable",
+    "input_mappings": [
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "BM25"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/TopKRetrievers/recomputed/bm25",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "LLM Select"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_bm25_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_bm25_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "678bbce83a72e83951b69159f56af44b43b532694873f5dbdbc389338661a8b9"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "Progressive Disclosure"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_bm25_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_bm25_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "a9e741d35e3d6722b4f093ce06c8a699e8085a8376d50c6c3436ca40c74e9408"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "SkillRouter"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_bm25",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_bm25/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "92e3c5f7f25d5cf2163aa2af06c1d1400dfac622543a39ec8da647c26235576f"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "SkillDAG"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillDag/sra_full_sra_bm25_qwen3.5_4b_topk50",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "Skill-Pro"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/Skill-Pro-Conditioned/sra_full_bm25_qwen3.5_4b_topk50_conditioned_bayesgsi",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "RouterBSI"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": false,
+            "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+            "analysis_ready": true,
+            "sha256": "54da4fd4abfe24ba38f7cd334013ed13579ca749205279772ac9cce9018c9db0"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "BM25",
+          "RouterBSI_init"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": false,
+            "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+            "analysis_ready": true,
+            "sha256": "54da4fd4abfe24ba38f7cd334013ed13579ca749205279772ac9cce9018c9db0"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "Vector"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/TopKRetrievers/recomputed/vector",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "LLM Select"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_vector_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_vector_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "b19f3eb154c76005f7049d16f55c9d11b09b90bb8436476ac961146a94a1c33b"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "Progressive Disclosure"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_vector_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_vector_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "04ec743530678baf699734b8d1d4f9351f522da6b7fa94e61d11655d8250bbd5"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "SkillRouter"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_vector",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_vector/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "0cb83426a0ce16bec6afc3ba454922090758de4b9e9ba1ab682ce44b10b88136"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "SkillDAG"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillDag/sra_full_vector_qwen3.5_4b_topk50",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "Skill-Pro"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/Skill-Pro-Conditioned/sra_full_vector_qwen3.5_4b_topk50_conditioned_bayesgsi",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "RouterBSI"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+            "exists": false,
+            "reportable": null,
+            "passed": null,
+            "status": "unknown"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "Vector",
+          "RouterBSI_init"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+            "exists": false,
+            "reportable": null,
+            "passed": null,
+            "status": "unknown"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "SkillSight"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/TopKRetrievers/recomputed/skillsight",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "LLM Select"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_skillsight_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_skillsight_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "0c5a11efe8b4a4a53fd69f295888862f164d46c9451e29b4169d328d01ddcb04"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "Progressive Disclosure"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_skillsight_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_skillsight_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "e39e18e901368d3da9b3f454b0bebaec1da1247d8f73d589cf8c2c3f4586ec05"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "SkillRouter"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_skillsight",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_skillsight/completion.json",
+            "exists": true,
+            "reportable": null,
+            "passed": null,
+            "status": "completed",
+            "nonreportable_reason": null,
+            "analysis_ready": null,
+            "sha256": "b5d96fba7825b504183f49c1ea92a3e025e45d1ec473ece0e5cec0d2a0907352"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "SkillDAG"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillDag/sra_full_sra_skillsight_qwen3.5_4b_topk50",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "Skill-Pro"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/Skill-Pro-Conditioned/sra_full_skillsight_qwen3.5_4b_topk50_conditioned_bayesgsi",
+        "matches_csv": true,
+        "observed_run_count": null,
+        "completions": []
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "RouterBSI"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": false,
+            "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+            "analysis_ready": true,
+            "sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766"
+          }
+        ]
+      },
+      {
+        "identity": [
+          "Qwen3.5 4B",
+          "SkillSight",
+          "RouterBSI_init"
+        ],
+        "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1",
+        "matches_csv": true,
+        "observed_run_count": 1,
+        "completions": [
+          {
+            "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+            "exists": true,
+            "reportable": false,
+            "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+            "analysis_ready": true,
+            "sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766"
+          }
+        ]
+      }
+    ],
+    "anomalies": [],
+    "csv_identities": [
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "BM25"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "LLM Select"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "Progressive Disclosure"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "SkillDAG"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "Skill-Pro"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "RouterBSI_init"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "RouterBSI"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "Vector"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "LLM Select"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "Progressive Disclosure"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "SkillDAG"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "Skill-Pro"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "RouterBSI_init"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "RouterBSI"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "SkillSight"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "LLM Select"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "Progressive Disclosure"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "SkillDAG"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "Skill-Pro"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "RouterBSI_init"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "RouterBSI"
+      ],
+      [
+        "Qwen3.5 4B",
+        "BM25",
+        "SkillRouter"
+      ],
+      [
+        "Qwen3.5 4B",
+        "Vector",
+        "SkillRouter"
+      ],
+      [
+        "Qwen3.5 4B",
+        "SkillSight",
+        "SkillRouter"
+      ]
+    ],
+    "input_runs": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/tables/routing_recall/input_runs.json",
+    "input_runs_sha256": "260cd9d4ae348552a5863125dc750c1a57da61e084e46ce0b2f0afb4a06b3642",
+    "unknown_mapping_count": 20
+  },
+  "selected_rows": [
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "BM25",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.22578,
+      "Recall@5": 0.443627,
+      "Recall@10": 0.583244,
+      "Recall@25": 0.718004,
+      "Recall@50": 0.797282
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "LLM Select",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.424086,
+      "Recall@5": 0.585272,
+      "Recall@10": 0.678832,
+      "Recall@25": 0.748307,
+      "Recall@50": 0.795945
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "SkillRouter",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.554791,
+      "Recall@5": 0.667892,
+      "Recall@10": 0.693828,
+      "Recall@25": 0.736119,
+      "Recall@50": 0.795945
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "SkillDAG",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.224443,
+      "Recall@5": 0.443627,
+      "Recall@10": 0.674844,
+      "Recall@25": 0.906194,
+      "Recall@50": 0.964416
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "Skill-Pro",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.383556,
+      "Recall@5": 0.59648,
+      "Recall@10": 0.671145,
+      "Recall@25": 0.742068,
+      "Recall@50": 0.795945
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "RouterBSI_init",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.327874,
+      "Recall@5": 0.540174,
+      "Recall@10": 0.654434,
+      "Recall@25": 0.750022,
+      "Recall@50": 0.795945
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "BM25",
+      "Method": "RouterBSI",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.531016,
+      "Recall@5": 0.697438,
+      "Recall@10": 0.736698,
+      "Recall@25": 0.774733,
+      "Recall@50": 0.795945
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "Vector",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.45361,
+      "Recall@5": 0.600869,
+      "Recall@10": 0.655325,
+      "Recall@25": 0.727607,
+      "Recall@50": 0.788391
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "LLM Select",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.454969,
+      "Recall@5": 0.6334,
+      "Recall@10": 0.680169,
+      "Recall@25": 0.731618,
+      "Recall@50": 0.788391
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "SkillRouter",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.557687,
+      "Recall@5": 0.677028,
+      "Recall@10": 0.705927,
+      "Recall@25": 0.745098,
+      "Recall@50": 0.788391
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "SkillDAG",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.45361,
+      "Recall@5": 0.600869,
+      "Recall@10": 0.872772,
+      "Recall@25": 0.943271,
+      "Recall@50": 0.962344
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "Skill-Pro",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.344162,
+      "Recall@5": 0.619184,
+      "Recall@10": 0.669853,
+      "Recall@25": 0.733957,
+      "Recall@50": 0.788057
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "RouterBSI_init",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.432353,
+      "Recall@5": 0.595878,
+      "Recall@10": 0.672594,
+      "Recall@25": 0.74209,
+      "Recall@50": 0.788391
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "Vector",
+      "Method": "RouterBSI",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.580882,
+      "Recall@5": 0.725958,
+      "Recall@10": 0.751849,
+      "Recall@25": 0.774799,
+      "Recall@50": 0.788391
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "SkillSight",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.382955,
+      "Recall@5": 0.684804,
+      "Recall@10": 0.768249,
+      "Recall@25": 0.850579,
+      "Recall@50": 0.917714
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "LLM Select",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.488369,
+      "Recall@5": 0.736252,
+      "Recall@10": 0.803164,
+      "Recall@25": 0.867625,
+      "Recall@50": 0.917714
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "SkillRouter",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.594452,
+      "Recall@5": 0.751716,
+      "Recall@10": 0.797482,
+      "Recall@25": 0.858712,
+      "Recall@50": 0.917714
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "SkillDAG",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.382955,
+      "Recall@5": 0.684804,
+      "Recall@10": 0.817201,
+      "Recall@25": 0.940887,
+      "Recall@50": 0.979167
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "Skill-Pro",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.399688,
+      "Recall@5": 0.730816,
+      "Recall@10": 0.8,
+      "Recall@25": 0.872972,
+      "Recall@50": 0.919051
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "RouterBSI_init",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.444407,
+      "Recall@5": 0.679969,
+      "Recall@10": 0.763993,
+      "Recall@25": 0.863057,
+      "Recall@50": 0.917714
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "RouterBSI",
+      "Dataset": "Average",
+      "n_tasks": 748,
+      "Recall@1": 0.631061,
+      "Recall@5": 0.841555,
+      "Recall@10": 0.880771,
+      "Recall@25": 0.908445,
+      "Recall@50": 0.917714
+    }
+  ],
+  "points": [],
+  "selection": "source Dataset=Average overall summary rows only; no new aggregation; Method=Tool-REX and Progressive Disclosure excluded from paper artifact; Progressive Disclosure excluded; prior paper row order retained",
+  "caveat": "R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Average is the task-weighted mean across test instances, equivalently dataset scores weighted by task count. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.",
+  "rendering": {
+    "renderer": "pdflatex; actual generated table.tex",
+    "pages": 1,
+    "png_dpi": 300,
+    "png_layout": "all PDF pages tiled at native raster scale"
+  },
+  "outputs": {
+    "table.tex": "ab834133a0beb421813bcd9bc85539855a67f490e0a58f547b09752049893b4a",
+    "preview.png": "98a14d677dcc2c7694c340da07492ca62ae856f8e64a67339ac8217e6c5cdac6",
+    "description.text": "040179608499f422c7e30c5ce231f7db32f5e8e7e0a5b452ed6b43ec4e161dfb",
+    "provenance.text": "5923647d9c2de535c7c3ead5706db43d79cec0ea06f4847ce75f8b2702d7ca66",
+    "preview.pdf": "00f7443d022b0ab17a379dd9d8a3d26203552d7ebf4fdcbe70232d67b36e3d2b"
+  }
+}

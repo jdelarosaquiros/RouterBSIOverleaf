@@ -1,0 +1,44 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrrrrrrrr@{}}
+\toprule
+Method & \multicolumn{7}{c}{ToolQA} & \multicolumn{7}{c}{MedCalc-Bench} \\
+\cmidrule(lr){2-8}\cmidrule(lr){9-15}
+ & N@1 & N@10 & R@5 & R@10 & F1 & FC@5 & FC@10 & N@1 & N@10 & R@5 & R@10 & F1 & FC@5 & FC@10 \\
+\midrule
+\multicolumn{15}{l}{\textit{BM25}} \\
+\midrule
+BM25 & 0.070 & 0.271 & 0.349 & 0.558 & 0.031 & 0.349 & 0.558 & 0.315 & 0.462 & 0.503 & 0.697 & 0.038 & 0.503 & 0.697 \\
+LLM Select & 0.507 & 0.595 & 0.591 & 0.740 & 0.507 & 0.591 & 0.740 & 0.533 & 0.633 & 0.648 & 0.782 & 0.533 & 0.648 & 0.782 \\
+SkillRouter & \textbf{0.600} & \textbf{0.696} & \textbf{0.749} & \textbf{0.767} & \underline{0.600} & \textbf{0.749} & \textbf{0.767} & \textbf{0.945} & \textbf{0.953} & \textbf{0.958} & \textbf{0.958} & \textbf{0.945} & \textbf{0.958} & \textbf{0.958} \\
+SkillDAG & 0.070 & 0.303 & 0.349 & 0.651 & 0.023 & 0.349 & 0.651 & 0.309 & 0.461 & 0.503 & 0.697 & 0.076 & 0.503 & 0.697 \\
+Skill-Pro & 0.465 & 0.554 & 0.586 & 0.693 & 0.465 & 0.586 & 0.693 & 0.679 & 0.776 & 0.812 & 0.879 & 0.679 & 0.812 & 0.879 \\
+$\mathrm{RouterBSI}_{\mathrm{init}}$ & 0.256 & 0.413 & 0.498 & 0.637 & 0.209 & 0.498 & 0.637 & 0.642 & 0.720 & 0.752 & 0.836 & 0.469 & 0.752 & 0.836 \\
+RouterBSI & \underline{0.577} & \underline{0.665} & \underline{0.716} & \underline{0.753} & \textbf{0.612} & \underline{0.716} & \underline{0.753} & \underline{0.818} & \underline{0.842} & \underline{0.848} & \underline{0.885} & \underline{0.804} & \underline{0.848} & \underline{0.885} \\
+\midrule
+\multicolumn{15}{l}{\textit{Vector}} \\
+\midrule
+Vector & 0.312 & 0.413 & 0.451 & 0.512 & 0.029 & 0.451 & 0.512 & \underline{0.988} & 0.992 & \underline{0.994} & \textbf{1.000} & 0.039 & \underline{0.994} & \textbf{1.000} \\
+LLM Select & 0.363 & 0.463 & 0.507 & 0.549 & 0.363 & 0.507 & 0.549 & 0.861 & 0.945 & \underline{0.994} & \textbf{1.000} & \underline{0.861} & \underline{0.994} & \textbf{1.000} \\
+SkillRouter & \underline{0.549} & \underline{0.657} & \textbf{0.730} & \underline{0.735} & \underline{0.549} & \textbf{0.730} & \underline{0.735} & \underline{0.988} & \underline{0.996} & \textbf{1.000} & \textbf{1.000} & \textbf{0.988} & \textbf{1.000} & \textbf{1.000} \\
+SkillDAG & 0.312 & 0.563 & 0.451 & \textbf{0.935} & 0.026 & 0.451 & \textbf{0.935} & \underline{0.988} & 0.990 & \underline{0.994} & \underline{0.994} & 0.078 & \underline{0.994} & \underline{0.994} \\
+Skill-Pro & 0.335 & 0.451 & 0.512 & 0.549 & 0.321 & 0.512 & 0.549 & 0.715 & 0.892 & \underline{0.994} & \textbf{1.000} & 0.667 & \underline{0.994} & \textbf{1.000} \\
+$\mathrm{RouterBSI}_{\mathrm{init}}$ & 0.298 & 0.442 & 0.535 & 0.591 & 0.220 & 0.535 & 0.591 & 0.970 & 0.985 & \underline{0.994} & \textbf{1.000} & 0.556 & \underline{0.994} & \textbf{1.000} \\
+RouterBSI & \textbf{0.614} & \textbf{0.673} & \underline{0.707} & 0.712 & \textbf{0.594} & \underline{0.707} & 0.712 & \textbf{0.994} & \textbf{0.997} & \textbf{1.000} & \textbf{1.000} & 0.820 & \textbf{1.000} & \textbf{1.000} \\
+\midrule
+\multicolumn{15}{l}{\textit{SkillSight}} \\
+\midrule
+SkillSight & 0.102 & 0.390 & 0.586 & 0.660 & 0.036 & 0.586 & 0.660 & 0.830 & 0.903 & 0.958 & 0.976 & 0.039 & 0.958 & 0.976 \\
+LLM Select & 0.442 & 0.582 & 0.688 & 0.735 & 0.442 & 0.688 & 0.735 & 0.842 & 0.924 & 0.970 & \underline{0.988} & \underline{0.842} & 0.970 & \underline{0.988} \\
+SkillRouter & \underline{0.651} & \underline{0.782} & \underline{0.856} & \underline{0.879} & \underline{0.651} & \underline{0.856} & \underline{0.879} & \textbf{0.988} & \textbf{0.996} & \textbf{1.000} & \textbf{1.000} & \textbf{0.988} & \textbf{1.000} & \textbf{1.000} \\
+SkillDAG & 0.102 & 0.398 & 0.586 & 0.684 & 0.036 & 0.586 & 0.684 & 0.830 & 0.905 & 0.958 & 0.982 & 0.038 & 0.958 & 0.982 \\
+Skill-Pro & 0.405 & 0.576 & 0.721 & 0.758 & 0.405 & 0.721 & 0.758 & 0.721 & 0.883 & \underline{0.982} & \underline{0.988} & 0.685 & \underline{0.982} & \underline{0.988} \\
+$\mathrm{RouterBSI}_{\mathrm{init}}$ & 0.316 & 0.505 & 0.614 & 0.698 & 0.252 & 0.614 & 0.698 & 0.879 & 0.927 & 0.970 & 0.976 & 0.502 & 0.970 & 0.976 \\
+RouterBSI & \textbf{0.702} & \textbf{0.797} & \textbf{0.865} & \textbf{0.898} & \textbf{0.711} & \textbf{0.865} & \textbf{0.898} & \underline{0.933} & \underline{0.960} & \underline{0.982} & \underline{0.988} & 0.830 & \underline{0.982} & \underline{0.988} \\
+\bottomrule
+\end{tabular*}
+\caption{Test routing performance on ToolQA and MedCalc-Bench with Qwen3.5-4B. N, R, and FC denote nDCG, Recall, and Full Coverage, respectively; F1 is set-level F1. Bold and underlined values indicate the best and second-best scores within each retriever group.}
+\label{tab:app-routing-2}
+\end{table*}

@@ -1,0 +1,1 @@
+Impact of MBR replay and held-out validation gate on routing performance (nDCG@1) and token usage. Both enabled gives the strongest performance. MBR alone uses fewer tokens at a performance cost.

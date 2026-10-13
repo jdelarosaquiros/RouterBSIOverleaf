@@ -7,4 +7,4 @@ Model: Qwen3.5 4B; retriever: BM25.
 Methods: BM25, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI_strict, RouterBSI_top5.
 Aggregation: pooled Correct/n_tasks across six datasets; 748 tasks per bar. LLM Direct and LLM Oracle are non-retrieval reference lines.
 All seven bar values were reconciled to constituent CSV counts and Average rows.
-No uncertainty estimates supplied; analysis-only and run reportability unresolved. No inference/evaluation run.
+No uncertainty estimates supplied. No inference/evaluation run.

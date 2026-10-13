@@ -1,0 +1,2016 @@
+--- before/README.md
++++ README.md
+@@ -49,11 +49,15 @@
+ 
+ ## Scope and caveats
+ 
+-This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating the full result set. The `mbr_replay_test_f1` and `mbr_replay_test_ndcg` snapshots were refreshed from the split-labelled routing table; the other snapshots remain unchanged. External-data generators and experiment data are omitted. Each refreshed figure's `provenance.text` records its external CSV path and hash, test/accepted-row selection, source-run status, and analysis-only caveat. `snapshot-manifest.json` remains the historical packaging manifest and was intentionally not rewritten.
++This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating the full result set. The `mbr_replay_test_f1` and `mbr_replay_test_ndcg` snapshots were refreshed from the split-labelled routing table; the other snapshots remain unchanged. External-data generators and experiment data are omitted. Each refreshed figure's `provenance.text` records its external CSV path and hash, test/accepted-row selection, and selection details. `snapshot-manifest.json` remains the historical packaging manifest and was intentionally not rewritten.
+ 
+-Scientific caveats remain intact: some result snapshots are analysis-only/non-reportable or have unresolved provenance, and token costs are incomplete. The authoritative prose contains literal author-year citations but supplies no bibliography; citation identity/support still needs author review. Source grammatical inconsistencies, the duplicated parametric-routing sentence, and potentially conflicting empirical claims are preserved rather than scientifically rewritten. The source's training description also says both that retrievers are trained and that they do not require training. Snapshot captions/caveats are preserved even when stronger claims appear in the source prose. This package does not certify submission readiness, citation accuracy, or page-limit compliance.
++Token totals include only recorded usage. The authoritative prose contains literal author-year citations but supplies no bibliography; citation identity/support still needs author review. Source grammatical inconsistencies, the duplicated parametric-routing sentence, and potentially conflicting empirical claims are preserved rather than scientifically rewritten. The source's training description also says both that retrievers are trained and that they do not require training. This package does not certify submission readiness, citation accuracy, or page-limit compliance.
+ 
+ The local Git repository is initialized on `main`; no remote is configured and no commit or publication was made. `main.pdf` is generated and ignored by Git; figure/table PDFs and PNGs are intentionally not ignored. Before publishing, review the full manuscript and result provenance and choose an appropriate licensing policy.
++
++## Paper-facing artifact cleanup
++
++After regenerating figure/table artifacts, use the explicit plan/apply/verify workflow in [`scripts/README_publishing_cleanup.md`](scripts/README_publishing_cleanup.md) before publishing. It removes the author-excluded reportability wording from presentation copies while preserving source checks, numerical data, and archived originals. It does not certify experiments. The author-alignment revision and the two proposal-only Word documents are in `.wisc/revisions/author-alignment-20261013/`.
+ 
+ ## Third-party style
+ 
+
+--- before/scripts/generate_evaluator_validation_table.py
++++ scripts/generate_evaluator_validation_table.py
+@@ -159,7 +159,7 @@
+         lines.append(f"{alias} & {reviewed:,} & {correct:,} & {rate}" + r" \\")
+     lines.extend([r"\bottomrule", r"\end{tabular}",
+                   r"\caption{Agreement between saved predicate decisions and model adjudication. "
+-                  r"The pooled rate is 97.10\%; this noncanonical diagnostic is not human-validated accuracy.}",
++                  r"The pooled rate is 97.10\%; this model-adjudicated agreement is not human-validated accuracy.}",
+                   r"\label{tab:app-evaluator-validation}", r"\end{minipage}", r"\end{table*}", ""])
+     return "\n".join(lines), out.getvalue()
+ 
+
+--- before/sections/ethics_statement.tex
++++ sections/ethics_statement.tex
+@@ -1,3 +1,3 @@
+-\section*{Ethics Statement}
++\section*{Ethical Considerations}
+ 
+ Our experiments reuse existing SRA-Bench tasks, annotations, and skill content, which may contain errors, biases, or harmful instructions. Reuse should respect dataset, skill, and model licenses, while sensitive task data require appropriate access controls and retention policies, particularly when using external model services. Incorrect predicate judgments can omit required skills or admit inappropriate ones, propagating errors to downstream decisions. Bounded replay and held-out validation assess routing behavior rather than factual correctness, fairness, or safety. Results on MedCalc-Bench do not establish clinical validity or suitability for patient care; high-stakes applications require domain-specific validation and qualified human oversight. Retrieved instructions and generated code should be treated as untrusted content, with permission controls and isolated execution before use.
+
+--- before/sections/appendix/evaluator_validation_table.tex
++++ sections/appendix/evaluator_validation_table.tex
+@@ -18,7 +18,7 @@
+ Total & 37,400 & 36,315 & 97.10 \\
+ \bottomrule
+ \end{tabular}
+-\caption{Agreement between saved predicate decisions and model adjudication. The pooled rate is 97.10\%; this noncanonical diagnostic is not human-validated accuracy.}
++\caption{Agreement between saved predicate decisions and model adjudication. The pooled rate is 97.10\%; this model-adjudicated agreement is not human-validated accuracy.}
+ \label{tab:app-evaluator-validation}
+ \end{minipage}
+ \end{table*}
+
+--- before/sections/appendix/ablation_candidate_pool.tex
++++ sections/appendix/ablation_candidate_pool.tex
+@@ -4,6 +4,6 @@
+ 
+ At $K=10$, final nDCG@10 is 0.702 with 692.788 million known tokens; at $K=25$, it is 0.742 with 1013.401 million; and at $K=50$, it is 0.800 with 1324.251 million. Across these three settings, higher observed routing quality accompanies higher recorded token use. This comparison describes the observed quality--cost tradeoff; it neither isolates a causal effect of candidate-pool size nor establishes a generally optimal setting.
+ 
+-The source marks all three records as non-reportable, incomplete, and known-only. We therefore treat this figure as analysis-only evidence. Totals cover recorded run-local usage, exclude external or shared initialization, and omit usage that is unavailable. They are not full token accounts or per-query serving costs, and these runs do not provide a controlled, budget-matched comparison.
++All candidate-pool configurations use the same initial predicates. Totals cover recorded run-local usage and omit usage that is unavailable. They are not full token accounts or per-query serving costs, and these runs do not provide a controlled, budget-matched comparison.
+ 
+ \input{figs/performance_token_usage_by_topk/table}
+
+--- before/sections/appendix/ablation_cost_capacity.tex
++++ sections/appendix/ablation_cost_capacity.tex
+@@ -1,5 +1,5 @@
+ \subsection{Token Accounting and Replay Capacity}
+-Table~\ref{tab:app-ablation-tokens} uses the first run of each configuration; it is separate from the three-run means above. We sum recorded input and output tokens, including retries and invalid completions with known usage. Exact-request cache hits incur no additional tokens. The totals cover run-local initialization, initial assessment, optimization, and final assessment when present. Only the both-enabled component run records local initialization; the other component runs reuse an external initialization whose generation cost is excluded. The iteration-only column excludes initialization and initial/final assessment. Attempts with unavailable token use are not assigned zero consumption: they are excluded from known totals and counted separately.
++Table~\ref{tab:app-ablation-tokens} uses the first run of each configuration; it is separate from the three-run means above. We sum recorded input and output tokens, including retries and invalid completions with known usage. Exact-request cache hits incur no additional tokens. The totals cover run-local initialization, initial assessment, optimization, and final assessment when present. All component configurations use the same initial predicates. The totals reflect recorded usage rather than imputed costs. The iteration-only column excludes initialization and initial/final assessment. Attempts with unavailable token use are not assigned zero consumption: they are excluded from known totals and counted separately.
+ 
+ \begin{table*}[t]
+ \centering
+
+--- before/sections/appendix/ablation_components.tex
++++ sections/appendix/ablation_components.tex
+@@ -22,7 +22,7 @@
+ \label{tab:app-ablation-endpoints}
+ \end{table*}
+ 
+-Table~\ref{tab:app-ablation-endpoints} separates each configuration's initialization from its final policy. The both-enabled configuration uses three separately generated initial libraries; the other configurations reuse the first both-enabled library. All runs record seed 20260324. Table~\ref{tab:app-ablation-trajectory} reports the complete nDCG@1 trajectory rather than selecting the highest-scoring iteration. The endpoint is iteration 10. Final F1 and nDCG@1 are highest with both components, although intermediate trajectories need not improve monotonically.
++Table~\ref{tab:app-ablation-endpoints} separates each configuration's initialization from its final policy. All four configurations start from the same initial predicates at iteration 0, as in Figure~\ref{fig:mbr_replay_test_ndcg@1_std}. All runs record seed 20260324. Table~\ref{tab:app-ablation-trajectory} reports the complete nDCG@1 trajectory rather than selecting the highest-scoring iteration. The endpoint is iteration 10. Final F1 and nDCG@1 are highest with both components, although intermediate trajectories need not improve monotonically.
+ 
+ \input{sections/appendix/trajectory_table}
+ 
+
+--- before/sections/appendix/evaluator_validation.tex
++++ sections/appendix/evaluator_validation.tex
+@@ -1,6 +1,6 @@
+ \subsection{Predicate-Evaluator Validation}
+ \label{app:evaluator-validation}
+-We examine whether saved Boolean decisions follow the predicate-checking rules, separately from whether a skill is required. This diagnostic uses the final, tenth-iteration SkillSight/Qwen3.5-4B test run: 748 tasks with 50 candidate-predicate occurrences each. The source is explicitly \emph{noncanonical and nonreportable}: source drift was allowed, the final historical audit was disabled, and a runtime judgment cache could bypass exact request reconstruction. The checks below establish consistency of consumed artifacts and saved judgments, not canonical experimental validity.
++We examine whether saved Boolean decisions follow the predicate-checking rules, separately from whether a skill is required. This diagnostic uses the final, tenth-iteration SkillSight/Qwen3.5-4B test run: 748 tasks with 50 candidate-predicate occurrences each.
+ 
+ A separate model, \texttt{gpt-6.1-sol}, adjudicated the same public task, predicate, and original checker rules using high reasoning effort in standard mode. It also saw the saved Boolean, but was instructed to determine the expected Boolean independently and return a strict structured verdict with a concise evidence rationale. Thus, this first review was not blinded. It evaluated predicate satisfaction rather than skill relevance or downstream answer correctness; required-skill annotations and skill contents were not supplied. Exact task--predicate--Boolean duplicates shared one review, yielding 37,350 unique reviews for 37,400 occurrences. All occurrences were reviewed, and repeated occurrences retain their original weight. Source checksums, journal-record hashes, request payloads, and occurrence-weighted counts were verified before tabulation.
+ 
+
+--- before/sections/appendix/error_routing_gap.tex
++++ sections/appendix/error_routing_gap.tex
+@@ -54,4 +54,4 @@
+ For example, a TheoremQA question requests a P/E ratio from stock price and earnings per share, but the learned predicates additionally require dividend-discount-model inputs such as growth rates and payout ratios. The required skill ranks 22nd, sixth, and third under RouterBSI with BM25, Vector, and SkillSight, respectively, versus first under SkillRouter in each case. Conversely, a MedCalc-Bench question explicitly requests serum osmolality and supplies sodium, blood urea nitrogen, and glucose. Its predicate describes precisely this calculation from these inputs but evaluates false, leaving the required skill at rank 11 under BM25 versus first under SkillRouter. The latter supports a likely checker error rather than an overly narrow predicate.
+ 
+ \paragraph{Implications for refinement.}
+-Additional training or targeted human edits could address restrictive predicates, but neither intervention was tested here, and erroneous judgments of already appropriate predicates also require attention. Accepted-policy test snapshots show mixed late progress: from iteration 5 to 10, MedCalc-Bench nDCG@10 changes by +1.713, 0, and 0 percentage points for BM25, Vector, and SkillSight, while TheoremQA changes by $-0.502$, +0.219, and $-0.542$ points. Thus, simply extending the same training loop is not an established remedy. Predicate edits and checker improvements should be evaluated separately using training/validation data before fresh held-out assessment. The source RouterBSI runs are marked noncanonical and nonreportable; these descriptive checks do not resolve their experiment-provenance limitations.
++Additional training or targeted human edits could address restrictive predicates, but neither intervention was tested here, and erroneous judgments of already appropriate predicates also require attention. Accepted-policy test snapshots show mixed late progress: from iteration 5 to 10, MedCalc-Bench nDCG@10 changes by +1.713, 0, and 0 percentage points for BM25, Vector, and SkillSight, while TheoremQA changes by $-0.502$, +0.219, and $-0.542$ points. Thus, simply extending the same training loop is not an established remedy. Predicate edits and checker improvements should be evaluated separately using training/validation data before fresh held-out assessment.
+
+--- before/sections/appendix/evaluator_validation_data/README.md
++++ sections/appendix/evaluator_validation_data/README.md
+@@ -1,6 +1,6 @@
+ # Predicate-evaluator diagnostic table
+ 
+-This is explicitly **noncanonical, nonreportable diagnostic evidence**, not canonical benchmark performance or human ground truth. Source drift was allowed, the final historical audit was disabled, and a runtime judgment cache could skip exact request reconstruction. Consistency checks do not remove those limitations.
++This diagnostic reports model-adjudicated agreement with saved predicate decisions, not human ground truth.
+ 
+ ## Reproduce (offline; no model calls)
+ 
+
+--- before/sections/appendix/evaluator_validation_data/provenance.json
++++ sections/appendix/evaluator_validation_data/provenance.json
+@@ -55,7 +55,7 @@
+   "paper_table_generator": "scripts/generate_evaluator_validation_table.py",
+   "sampling": "random.Random(seed); error then correct; random.sample 20 per review_id-sorted stratum after excluding prior 20 review IDs",
+   "schema_version": 1,
+-  "scope": "Diagnostic only; completed_noncanonical and reportable=false. Hash checks do not upgrade historical run status.",
++  "scope": "Model-adjudicated agreement diagnostic; not human ground-truth accuracy.",
+   "sha256": {
+     ".wisc/artifacts/predicate-review-audit-35ba430077fc/sample.json": "1177c5f884ad1af1d23bb8b373ad5d3df908b1ea54e631010abf5baaf97cd9b2",
+     ".wisc/artifacts/predicate-review-audit-final-40/audit_details.json": "4ee9103e8729ab1f9fc08c83bce299d84fbf0ab5659992778027ff970ff7a3fa",
+@@ -92,7 +92,6 @@
+     "confusion_matrix",
+     "by_dataset",
+     "by_saved_boolean",
+-    "source_completion",
+     "final_iteration"
+   ]
+ }
+
+--- before/sections/appendix/evaluator_validation_data/summary_excerpt.json
++++ sections/appendix/evaluator_validation_data/summary_excerpt.json
+@@ -100,27 +100,6 @@
+   "pending_occurrences": 0,
+   "reviewed_occurrences": 37400,
+   "selected_occurrences": 37400,
+-  "source_completion": {
+-    "accepted_changed_iteration_count": 10,
+-    "accepted_count": 10,
+-    "analysis_ready": true,
+-    "artifact_manifest_hash": "ea96ee2d3265dcc91927b57d5ae60d3b7bbda26baf76826eda02689140f61ae4",
+-    "audit_hash": "8c2aabf665c5563efc8b1efc188e8702a0ba74dc839f2ae520fc18cf5e36c0e5",
+-    "catalog_counts": {
+-      "sra": 26262
+-    },
+-    "learned_policy_changed": true,
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+-    "passed": true,
+-    "reportable": false,
+-    "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
+-    "split_counts": {
+-      "test": 748,
+-      "train": 3491,
+-      "validation": 748
+-    },
+-    "status": "completed_noncanonical"
+-  },
+   "status": "complete",
+   "total_occurrences": 37400,
+   "unique_reviews_completed": 37350,
+
+--- before/figs/mbr_replay_validation_f1_all_splits/table.tex
++++ figs/mbr_replay_validation_f1_all_splits/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_validation_f1_all_splits/preview.pdf}
+-\caption{Replay and validation-gate F1 across train, validation, and test splits. Analysis-only (non-reportable or unknown source provenance). Task-weighted source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
++\caption{Replay and validation-gate F1 across train, validation, and test splits. Task-weighted source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
+ \label{fig:mbr_replay_validation_f1_all_splits}
+ \end{figure}
+
+--- before/figs/mbr_replay_validation_f1_all_splits/provenance.text
++++ figs/mbr_replay_validation_f1_all_splits/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.
+ Split/evaluation protocol: train=prequential, validation=ledger_accepted_candidate, test=accepted; initial and final are snapshot rows. Average rows are source summaries, not recomputed from task datasets. Source n_runs reports 3 per checkpoint.
+ Lines show source F1 means; shaded bands show mean ± one population standard deviation (square root of supplied F1 variance), not confidence intervals. Axis limits include every mean±SD point without clipping.
+
+--- before/figs/skillsight_recall_degradation/table.tex
++++ figs/skillsight_recall_degradation/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/skillsight_recall_degradation/preview.pdf}
+-\caption{Average recall under progressively smaller ranked cutoffs, with equal weights across BM25, Vector, and SkillSight. The baseline curve averages the three retrievers' native baselines; every other curve averages the corresponding method across retrievers. Curves show absolute Recall@k, not normalized loss, at equally spaced categorical cutoffs 50, 25, 10, 5, and 1. Each retriever's scores are source task-weighted averages over 748 test tasks; no uncertainty is estimated. Recall retention at cutoff 5 is 100 times Recall@5/Recall@50, computed separately for each retriever and then averaged equally across retrievers. It is not mean per-task retention or a count of retained skills. Skill-Pro ranks selected candidates first, then by retrieval score and original rank; SkillRouter uses its full 50-candidate reranking, not its top-1 selected set. Other archived rankings are retained; differing candidate pools are not a controlled shared-candidate comparison. Vector RouterBSI uses final iteration 10 from the fixed run, which is completed\_noncanonical (reportable=false); these results are analysis-only.}
++\caption{Average recall under progressively smaller ranked cutoffs, with equal weights across BM25, Vector, and SkillSight. The baseline curve averages the three retrievers' native baselines; every other curve averages the corresponding method across retrievers. Curves show absolute Recall@k, not normalized loss, at equally spaced categorical cutoffs 50, 25, 10, 5, and 1. Each retriever's scores are source task-weighted averages over 748 test tasks; no uncertainty is estimated. Recall retention at cutoff 5 is 100 times Recall@5/Recall@50, computed separately for each retriever and then averaged equally across retrievers. It is not mean per-task retention or a count of retained skills. Skill-Pro ranks selected candidates first, then by retrieval score and original rank; SkillRouter uses its full 50-candidate reranking, not its top-1 selected set. Other archived rankings are retained; differing candidate pools are not a controlled shared-candidate comparison. Vector RouterBSI uses final iteration 10 from the fixed run.}
+ \label{fig:skillsight_recall_degradation}
+ \end{figure}
+
+--- before/figs/skillsight_recall_degradation/selection.json
++++ figs/skillsight_recall_degradation/selection.json
+@@ -1700,11 +1700,7 @@
+       }
+     }
+   ],
+-  "reportable": false,
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -1753,7 +1749,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/figs/skillsight_recall_degradation/description.text
++++ figs/skillsight_recall_degradation/description.text
+@@ -1 +1 @@
+-Average recall under progressively smaller ranked cutoffs, with equal weights across BM25, Vector, and SkillSight. The baseline curve averages the three retrievers' native baselines; every other curve averages the corresponding method across retrievers. Curves show absolute Recall@k, not normalized loss, at equally spaced categorical cutoffs 50, 25, 10, 5, and 1. Each retriever's scores are source task-weighted averages over 748 test tasks; no uncertainty is estimated. Recall retention at cutoff 5 is 100 times Recall@5/Recall@50, computed separately for each retriever and then averaged equally across retrievers. It is not mean per-task retention or a count of retained skills. Skill-Pro ranks selected candidates first, then by retrieval score and original rank; SkillRouter uses its full 50-candidate reranking, not its top-1 selected set. Other archived rankings are retained; differing candidate pools are not a controlled shared-candidate comparison. Vector RouterBSI uses final iteration 10 from the fixed run, which is completed_noncanonical (reportable=false); these results are analysis-only.
++Average recall under progressively smaller ranked cutoffs, with equal weights across BM25, Vector, and SkillSight. The baseline curve averages the three retrievers' native baselines; every other curve averages the corresponding method across retrievers. Curves show absolute Recall@k, not normalized loss, at equally spaced categorical cutoffs 50, 25, 10, 5, and 1. Each retriever's scores are source task-weighted averages over 748 test tasks; no uncertainty is estimated. Recall retention at cutoff 5 is 100 times Recall@5/Recall@50, computed separately for each retriever and then averaged equally across retrievers. It is not mean per-task retention or a count of retained skills. Skill-Pro ranks selected candidates first, then by retrieval score and original rank; SkillRouter uses its full 50-candidate reranking, not its top-1 selected set. Other archived rankings are retained; differing candidate pools are not a controlled shared-candidate comparison. Vector RouterBSI uses final iteration 10 from the fixed run.
+
+--- before/figs/skillsight_recall_degradation/provenance.text
++++ figs/skillsight_recall_degradation/provenance.text
+@@ -6,8 +6,6 @@
+ Selection: Dataset=Average; equal-weight arithmetic mean across BM25, Vector, and SkillSight for each method/cutoff; native baseline plus five named routing methods; no initialization curve or model-specific panel.
+ Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
+ Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
+-Source status: completed_noncanonical; reportable=false; analysis-only.
+-Nonreportable reason: SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+ Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
+ Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
+ Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.
+
+--- before/figs/skillsight_recall_degradation/artifact-manifest.json
++++ figs/skillsight_recall_degradation/artifact-manifest.json
+@@ -28,9 +28,6 @@
+     }
+   ],
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -79,7 +76,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/figs/mbr_replay_test_std/table.tex
++++ figs/mbr_replay_test_std/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_validation_std/preview.pdf}
+-\caption{Replay and validation-gate ablation across runs. Analysis-only (non-reportable or unknown source provenance). Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.}
++\caption{Replay and validation-gate ablation across runs. Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.}
+ \label{fig:mbr_replay_validation_std}
+ \end{figure}
+
+--- before/figs/mbr_replay_test_std/provenance.text
++++ figs/mbr_replay_test_std/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.
+ Run counts come from direct run_i directories in input_runs.json; source generator requires matching checkpoints across those runs and computes population variance with denominator n. CSV contains no run counts. Missing mapped run metadata remains unknown.
+ 
+
+--- before/figs/mbr_replay_validation_std_all_splits/table.tex
++++ figs/mbr_replay_validation_std_all_splits/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_validation_std_all_splits/preview.pdf}
+-\caption{Replay and validation-gate ablation across train, validation, and test splits. Analysis-only (non-reportable or unknown source provenance). Task-weighted source Dataset=Average rows for train, validation, and test (task-weighted over instances within each split/evaluation); train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show nDCG@10 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
++\caption{Replay and validation-gate ablation across train, validation, and test splits. Task-weighted source Dataset=Average rows for train, validation, and test (task-weighted over instances within each split/evaluation); train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show nDCG@10 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
+ \label{fig:mbr_replay_validation_std_all_splits}
+ \end{figure}
+
+--- before/figs/mbr_replay_validation_std_all_splits/provenance.text
++++ figs/mbr_replay_validation_std_all_splits/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Dataset=Average rows for train, validation, and test (task-weighted over instances within each split/evaluation); train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show nDCG@10 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.
+ Split/evaluation protocol: train=prequential, validation=ledger_accepted_candidate, test=accepted; initial and final are snapshot rows. Average rows are source summaries, not recomputed from task datasets. Source n_runs reports 3 per checkpoint.
+ 
+
+--- before/figs/mbr_replay_test_ndcg/selection.json
++++ figs/mbr_replay_test_ndcg/selection.json
+@@ -13,33 +13,25 @@
+     "Both Enabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+       "sha256": "42041f00e71aaa6cc7b4f585d019f7ddcbd704fab97555b6e77cd31cdfc5246b",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Both Disabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/completion.json",
+       "sha256": "04aa1f004a615fee46fc7c8a8db2ad56a65ffce8ab738985c4ceee1132a37bdf",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only MBR": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/completion.json",
+       "sha256": "244ec8a52f3191da96db1ff1ccbf410549c217e5b119428bb79b77f690141476",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only Gate": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1/completion.json",
+       "sha256": "9afcda509534ceb23014e51f9efd90caa0e08207af88a088b5aee4273e483e5e",
+       "status": "in_progress",
+-      "passed": false,
+-      "reportable": false
++      "passed": false
+     }
+   },
+-  "reportable": false,
+   "aggregation": "source task-weighted Average within split",
+   "uncertainty": "not estimated; no bands",
+   "missing_data_policy": "fail on missing required points; unavailable series omitted and labeled",
+
+--- before/figs/mbr_replay_test_ndcg/description.text
++++ figs/mbr_replay_test_ndcg/description.text
+@@ -1 +1 @@
+-Replay and held-out validation-gate ablation on the test split. Lines show task-weighted nDCG@10 at accepted checkpoints over iterations 1–8. Analysis-only; conditions mix refreshed and historical runs.
++Replay and held-out validation-gate ablation on the test split. Lines show task-weighted nDCG@10 at accepted checkpoints over iterations 1–8. Conditions mix refreshed and historical runs.
+
+--- before/figs/mbr_replay_test_ndcg/provenance.text
++++ figs/mbr_replay_test_ndcg/provenance.text
+@@ -10,7 +10,7 @@
+ Train=prequential; validation=ledger_accepted_candidate; test=accepted.
+ Only numbered checkpoints; initial/final snapshots excluded. No imputation or uncertainty bands.
+ Both Enabled and Only Gate use refreshed RouterBSI runs; other series retain historical CSV values.
+-Analysis-only/non-reportable: mixed run families and unresolved publication validity.
++Mixed run families.
+ Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_ndcg_figures.py
+ Exact data, completion snapshots, hashes and coverage: selection.json.
+ Historical snapshot-manifest.json is not rewritten.
+
+--- before/figs/mbr_replay_validation_std/table.tex
++++ figs/mbr_replay_validation_std/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_validation_std/preview.pdf}
+-\caption{Replay and validation-gate ablation across runs. Analysis-only (non-reportable or unknown source provenance). Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.}
++\caption{Replay and validation-gate ablation across runs. Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.}
+ \label{fig:mbr_replay_validation_std}
+ \end{figure}
+
+--- before/figs/mbr_replay_validation_std/provenance.text
++++ figs/mbr_replay_validation_std/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.
+ Run counts come from direct run_i directories in input_runs.json; source generator requires matching checkpoints across those runs and computes population variance with denominator n. CSV contains no run counts. Missing mapped run metadata remains unknown.
+ 
+
+--- before/figs/mbr_replay_validation_ndcg/table.tex
++++ figs/mbr_replay_validation_ndcg/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_validation_ndcg/preview.pdf}
+-\caption{Replay and validation-gate ablation: nDCG@10. Analysis-only (non-reportable or unknown source provenance). Source Average rows; checkpoint test nDCG@10, not validation performance. Only the latest common contiguous range, iterations 1–5, is plotted. No initial-test score is available for the refreshed RouterBSI runs, so iteration 0 is not plotted. Both Enabled and Only Gate use the refreshed RouterBSI runs; Both Disabled and Only MBR retain their previous source runs, so the four-series comparison mixes source runs and is not a fully controlled single-run-family ablation.}
++\caption{Replay and validation-gate ablation: nDCG@10. Source Average rows; checkpoint test nDCG@10, not validation performance. Only the latest common contiguous range, iterations 1–5, is plotted. No initial-test score is available for the refreshed RouterBSI runs, so iteration 0 is not plotted. Both Enabled and Only Gate use the refreshed RouterBSI runs; Both Disabled and Only MBR retain their previous source runs, so the four-series comparison mixes source runs and is not a fully controlled single-run-family ablation.}
+ \label{fig:mbr_replay_validation_ndcg}
+ \end{figure}
+
+--- before/figs/mbr_replay_validation_ndcg/provenance.text
++++ figs/mbr_replay_validation_ndcg/provenance.text
+@@ -7,6 +7,6 @@
+ Aggregation: task-weighted average over test instances; dataset scores weighted by n_tasks. Scores are fractions.
+ Evaluation: accepted-policy checkpoint test nDCG@10, not validation performance.
+ Latest validated accepted-test checkpoints when staged: Both Enabled iteration 8; Only Gate iteration 5. Plot range is truncated to common support 1–5.
+-Completion/reportability: refreshed runs are in_progress, passed=false, reportable=false; derived values are analysis-only and non-reportable.
++Refreshed runs are in_progress.
+ Both Enabled and Only Gate use the refreshed RouterBSI runs; Both Disabled and Only MBR retain their previous source runs. The four-series plot therefore mixes source runs and is not a fully controlled single-run-family ablation.
+ Other source methods: Both Disabled and Only MBR retain their pre-existing input mappings/results.
+
+--- before/figs/average_retention_degradation/selection.json
++++ figs/average_retention_degradation/selection.json
+@@ -2864,11 +2864,7 @@
+       }
+     }
+   ],
+-  "reportable": false,
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -2917,7 +2913,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/figs/average_retention_degradation/provenance.text
++++ figs/average_retention_degradation/provenance.text
+@@ -6,8 +6,6 @@
+ Selection: Same 18 source rows; each method/retriever Ret@k is 100 * Recall@k / Recall@50; equal-weight mean across BM25, Vector, SkillSight.
+ Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
+ Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
+-Source status: completed_noncanonical; reportable=false; analysis-only.
+-Nonreportable reason: SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+ Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
+ Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
+ Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.
+
+--- before/figs/average_retention_degradation/readability_manifest.json
++++ figs/average_retention_degradation/readability_manifest.json
+@@ -371,7 +371,7 @@
+     "colors_and_series_preserved": true,
+     "captions_labels_and_evidence_unchanged": true
+   },
+-  "historical_metadata": "Existing selection/provenance records remain immutable evidence. This manifest supersedes their PDF/PNG hashes and rendering settings only; it does not promote reportability.",
++  "historical_metadata": "This manifest records the PDF/PNG hashes and rendering settings.",
+   "outputs": {
+     "preview.pdf": "176b949c6ba145cae81a27431ce5f22d1facdfa6d07dc8b303dcd8aca55ddc09",
+     "preview.png": "dbf7eec9b30bd89208cf9cddc7e639ea09390c43a5653b0cb6ff94d2f992965a"
+
+--- before/figs/average_retention_degradation/artifact-manifest.json
++++ figs/average_retention_degradation/artifact-manifest.json
+@@ -28,9 +28,6 @@
+     }
+   ],
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -79,7 +76,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/figs/downstream_average_by_retriever/selection.json
++++ figs/downstream_average_by_retriever/selection.json
+@@ -1,7 +1,5 @@
+ {
+   "schema_version": 1,
+-  "analysis_only": true,
+-  "source_reportability": "unknown",
+   "source": {
+     "path": "BayesGSI/tables/downstream_performance/results.csv",
+     "sha256": "3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690"
+@@ -206,6 +204,5 @@
+     "description.text": "4f769a94f5e1848ae0ed1aad323c019589e82b31b9b9fcc728f161f4d3189afe",
+     "table.tex": "bdbb6f93dbe023dd776d70f9f16bf75a9a0e8f67596e0cecb373f4668ebce8a3",
+     "provenance.text": "14fc24f971b36781905f26ae4bc4cae2227e773fc927c9c0209a5320179f950e"
+-  },
+-  "caveat": "Analysis-only; source provenance unresolved."
++  }
+ }
+
+--- before/figs/downstream_average_by_retriever/description.text
++++ figs/downstream_average_by_retriever/description.text
+@@ -1 +1 @@
+-Task-weighted downstream success rate for Qwen3.5 4B across BM25, Vector, and SkillSight. Grouped bars compare the three retrievers for each of seven methods; Retriever baseline denotes each retriever’s native method. Each value pools correct predictions across six datasets (748 tasks). Horizontal lines show LLM Direct and LLM Oracle without retrieval. Labels show three decimals. No uncertainty estimates are supplied. Analysis-only: source run provenance remains unresolved; publication validity is not certified.
++Task-weighted downstream success rate for Qwen3.5 4B across BM25, Vector, and SkillSight. Grouped bars compare the three retrievers for each of seven methods; Retriever baseline denotes each retriever’s native method. Each value pools correct predictions across six datasets (748 tasks). Horizontal lines show LLM Direct and LLM Oracle without retrieval. Labels show three decimals. No uncertainty estimates are supplied.
+
+--- before/figs/downstream_average_by_retriever/provenance.text
++++ figs/downstream_average_by_retriever/provenance.text
+@@ -1 +1 @@
+-All-retriever downstream task-weighted averages\n\nPaths relative to project_skill_selection.\nCSV: BayesGSI/tables/downstream_performance/results.csv\nSHA256: 3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690\nModel: Qwen3.5 4B; retrievers: BM25, Vector, SkillSight.\nMethod order: Retriever baseline, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI strict, RouterBSI top-5.\nAggregation: pooled Correct/n_tasks across six datasets separately per retriever and method; 748 tasks per bar.\nRetriever baseline denotes each retriever's native method. LLM Direct and LLM Oracle are non-retrieval reference lines.\nAll 21 selected bar values were reconciled to constituent CSV counts and Average rows.\nNo uncertainty estimates supplied; analysis-only and run reportability unresolved. No inference/evaluation run.\n+All-retriever downstream task-weighted averages\n\nPaths relative to project_skill_selection.\nCSV: BayesGSI/tables/downstream_performance/results.csv\nSHA256: 3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690\nModel: Qwen3.5 4B; retrievers: BM25, Vector, SkillSight.\nMethod order: Retriever baseline, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI strict, RouterBSI top-5.\nAggregation: pooled Correct/n_tasks across six datasets separately per retriever and method; 748 tasks per bar.\nRetriever baseline denotes each retriever's native method. LLM Direct and LLM Oracle are non-retrieval reference lines.\nAll 21 selected bar values were reconciled to constituent CSV counts and Average rows.\nNo uncertainty estimates supplied. No inference/evaluation run.\n
+--- before/figs/downstream_average/selection.json
++++ figs/downstream_average/selection.json
+@@ -1,7 +1,5 @@
+ {
+   "schema_version": 1,
+-  "analysis_only": true,
+-  "source_reportability": "includes non-reportable fixed Vector RouterBSI run (reportable=false)",
+   "source": {
+     "path": "BayesGSI/tables/downstream_performance/results.csv",
+     "sha256": "cc6fa0c7f80f38dafe14c50a2f8e0641716dd602e0834d2dbc4484ec112a67c4"
+@@ -1639,5 +1637,5 @@
+     "description.text": "7f0f8be4d619160540aad571b026bad3df37733834530c037392f32057918fdd",
+     "table.tex": "77a383073c24f9ef4aeab6016f3ca7804a91ca532f3af06e5fdded7ad92fd870"
+   },
+-  "caveat": "Analysis-only; fixed Vector RouterBSI run is completed_noncanonical with reportable=false; other run reportability unresolved; no inference or new evaluation."
++  "caveat": "No inference or new evaluation."
+ }
+
+--- before/figs/downstream_average/provenance.text
++++ figs/downstream_average/provenance.text
+@@ -7,4 +7,4 @@
+ Methods: Retriever baseline, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI strict, RouterBSI top-5.
+ Aggregation: one bar per method, arithmetic mean of BM25, Vector, and SkillSight task-weighted accuracies; each underlying score is pooled Correct/n_tasks over six datasets and 748 tasks. Retriever baseline averages native BM25, Vector, and SkillSight baselines. LLM Direct and LLM Oracle are non-retrieval reference lines.
+ All 21 included retriever-method input values were reconciled to constituent counts and Average rows; Vector included.
+-No uncertainty estimates supplied; analysis-only. Fixed Vector RouterBSI source is completed_noncanonical, reportable=false; other run reportability unresolved. No inference/evaluation run.
++No uncertainty estimates supplied. No inference/evaluation run.
+
+--- before/figs/mbr_replay_validation_f1/table.tex
++++ figs/mbr_replay_validation_f1/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_validation_f1/preview.pdf}
+-\caption{Replay and validation-gate ablation: F1. Analysis-only (non-reportable or unknown source provenance). Source Average rows; full selected-set test F1. Only the latest common contiguous range, iterations 1–5, is plotted; no initial-test F1 is available for the refreshed runs. Both Enabled and Only Gate use refreshed RouterBSI runs, whereas Both Disabled and Only MBR retain their previous source runs; the four-series comparison therefore mixes source runs.}
++\caption{Replay and validation-gate ablation: F1. Source Average rows; full selected-set test F1. Only the latest common contiguous range, iterations 1–5, is plotted; no initial-test F1 is available for the refreshed runs. Both Enabled and Only Gate use refreshed RouterBSI runs, whereas Both Disabled and Only MBR retain their previous source runs; the four-series comparison therefore mixes source runs.}
+ \label{fig:mbr_replay_validation_f1}
+ \end{figure}
+
+--- before/figs/mbr_replay_validation_f1/provenance.text
++++ figs/mbr_replay_validation_f1/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows; full selected-set test F1. Only the latest common contiguous range, iterations 1–5, is plotted; no initial-test F1 is available for the refreshed runs. Both Enabled and Only Gate use refreshed RouterBSI runs, whereas Both Disabled and Only MBR retain their previous source runs; the four-series comparison therefore mixes source runs.
+ 
+ From project_skill_selection/ root:
+
+--- before/figs/routing_performance_across_llms/table.tex
++++ figs/routing_performance_across_llms/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/routing_performance_across_llms/preview.pdf}
+-\caption{Routing performance across LLMs. Analysis-only (non-reportable or unknown source provenance). Source task-weighted Dataset=Average rows; test nDCG@10. Model, retriever, and method labels are preserved exactly. The first bar is the Qwen3.5 4B SkillSight baseline; following bars show RouterBSI nDCG@10 by LLM.}
++\caption{Routing performance across LLMs. Source task-weighted Dataset=Average rows; test nDCG@10. Model, retriever, and method labels are preserved exactly. The first bar is the Qwen3.5 4B SkillSight baseline; following bars show RouterBSI nDCG@10 by LLM.}
+ \label{fig:routing_performance_across_llms}
+ \end{figure}
+
+--- before/figs/routing_performance_across_llms/provenance.text
++++ figs/routing_performance_across_llms/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows; test nDCG@10. Model, retriever, and method labels are preserved exactly.
+ 
+ Aggregation: Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.
+
+--- before/figs/average_recall_degradation/selection.json
++++ figs/average_recall_degradation/selection.json
+@@ -1700,11 +1700,7 @@
+       }
+     }
+   ],
+-  "reportable": false,
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -1753,7 +1749,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/figs/average_recall_degradation/provenance.text
++++ figs/average_recall_degradation/provenance.text
+@@ -6,8 +6,6 @@
+ Selection: Dataset=Average; equal-weight arithmetic mean across BM25, Vector, and SkillSight for each method/cutoff; native baseline plus five named routing methods; no initialization curve or model-specific panel.
+ Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
+ Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
+-Source status: completed_noncanonical; reportable=false; analysis-only.
+-Nonreportable reason: SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+ Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
+ Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
+ Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.
+
+--- before/figs/average_recall_degradation/artifact-manifest.json
++++ figs/average_recall_degradation/artifact-manifest.json
+@@ -28,9 +28,6 @@
+     }
+   ],
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -79,7 +76,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/figs/mbr_replay_test_ndcg@5/selection.json
++++ figs/mbr_replay_test_ndcg@5/selection.json
+@@ -13,33 +13,25 @@
+     "Both Enabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+       "sha256": "42041f00e71aaa6cc7b4f585d019f7ddcbd704fab97555b6e77cd31cdfc5246b",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Both Disabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/completion.json",
+       "sha256": "04aa1f004a615fee46fc7c8a8db2ad56a65ffce8ab738985c4ceee1132a37bdf",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only MBR": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/completion.json",
+       "sha256": "244ec8a52f3191da96db1ff1ccbf410549c217e5b119428bb79b77f690141476",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only Gate": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1/completion.json",
+       "sha256": "9afcda509534ceb23014e51f9efd90caa0e08207af88a088b5aee4273e483e5e",
+       "status": "in_progress",
+-      "passed": false,
+-      "reportable": false
++      "passed": false
+     }
+   },
+-  "reportable": false,
+   "aggregation": "source task-weighted Average within split",
+   "uncertainty": "not estimated; no bands",
+   "missing_data_policy": "fail on missing required points; unavailable series omitted and labeled",
+
+--- before/figs/mbr_replay_test_ndcg@5/description.text
++++ figs/mbr_replay_test_ndcg@5/description.text
+@@ -1 +1 @@
+-Replay and held-out validation-gate ablation on the test split. Lines show task-weighted nDCG@5 at iteration 0 (initial, where archived) and accepted checkpoints through iteration 8. The refreshed Only Gate run has no archived initial-test snapshot, so its curve starts at iteration 1. Analysis-only; conditions mix run sources.
++Replay and held-out validation-gate ablation on the test split. Lines show task-weighted nDCG@5 at iteration 0 (initial, where archived) and accepted checkpoints through iteration 8. The refreshed Only Gate run has no archived initial-test snapshot, so its curve starts at iteration 1. Conditions mix run sources.
+
+--- before/figs/mbr_replay_test_ndcg@5/provenance.text
++++ figs/mbr_replay_test_ndcg@5/provenance.text
+@@ -10,7 +10,7 @@
+ Train=prequential; validation=ledger_accepted_candidate; test=accepted.
+ Only Gate has no initial-test snapshot in its refreshed run and therefore starts at iteration 1.
+ Initial nDCG computed task-wise from archived ranked_ids and required_ids; see selection.json for hashes.
+-Analysis-only/non-reportable: mixed run families and unresolved publication validity.
++Mixed run families.
+ Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_ndcg_figures.py --artifact mbr_replay_test_ndcg@5
+ Exact data, completion snapshots, hashes and coverage: selection.json.
+ Historical snapshot-manifest.json is not rewritten.
+
+--- before/figs/performance_token_usage_by_topk/provenance.text
++++ figs/performance_token_usage_by_topk/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+-Analysis-only known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10 for each source Top-K setting. Distinct blue shades identify Top-K; labels are source Method values. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.
++Known token totals: exact Total Tokens / 1,000,000 versus final test nDCG@10 for each source Top-K setting. Distinct blue shades identify Top-K; labels are source Method values. Source flags: Complete=False; Known Only=True. Run-local costs exclude external/shared initialization; this is not full token accounting.
+ 
+ Aggregation: Dataset=Average values are task-instance weighted (dataset means weighted by n_tasks), not an equal-weight mean over datasets.
+
+--- before/figs/downstream_bm25_average/selection.json
++++ figs/downstream_bm25_average/selection.json
+@@ -1,7 +1,5 @@
+ {
+   "schema_version": 1,
+-  "analysis_only": true,
+-  "source_reportability": "unknown",
+   "source": {
+     "path": "BayesGSI/tables/downstream_performance/results.csv",
+     "sha256": "3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690"
+@@ -572,5 +570,5 @@
+     "description.text": "413552e7ee3fe29c3e1287ac8689fda7321379bd6298afb7ad6a76a39014e530",
+     "table.tex": "bd74e9258454b1b37bd3c2a807f370263752b94bf4237000567d001ee5b52eef"
+   },
+-  "caveat": "Analysis-only; inherited unresolved run provenance; no inference or new evaluation."
++  "caveat": "No inference or new evaluation."
+ }
+
+--- before/figs/downstream_bm25_average/description.text
++++ figs/downstream_bm25_average/description.text
+@@ -1 +1 @@
+-Task-weighted downstream success rate for Qwen3.5 4B with BM25 retrieval. Bars show the BM25 baseline and seven comparison methods. Each value pools correct predictions over six datasets (748 tasks). Horizontal lines show LLM Direct and LLM Oracle without retrieval. Labels show three decimals. No uncertainty estimates are supplied. Analysis-only: source run provenance remains unresolved; publication validity is not certified.
++Task-weighted downstream success rate for Qwen3.5 4B with BM25 retrieval. Bars show the BM25 baseline and seven comparison methods. Each value pools correct predictions over six datasets (748 tasks). Horizontal lines show LLM Direct and LLM Oracle without retrieval. Labels show three decimals. No uncertainty estimates are supplied.
+
+--- before/figs/downstream_bm25_average/provenance.text
++++ figs/downstream_bm25_average/provenance.text
+@@ -7,4 +7,4 @@
+ Methods: BM25, LLM Select, SkillRouter, SkillDAG, Skill-Pro, RouterBSI_strict, RouterBSI_top5.
+ Aggregation: pooled Correct/n_tasks across six datasets; 748 tasks per bar. LLM Direct and LLM Oracle are non-retrieval reference lines.
+ All seven bar values were reconciled to constituent CSV counts and Average rows.
+-No uncertainty estimates supplied; analysis-only and run reportability unresolved. No inference/evaluation run.
++No uncertainty estimates supplied. No inference/evaluation run.
+
+--- before/figs/mbr_replay_test_ndcg@1_std/selection_manifest.json
++++ figs/mbr_replay_test_ndcg@1_std/selection_manifest.json
+@@ -5,8 +5,6 @@
+   "source_manifest_sha256": "cd595e5a77bfcba3b677056f7b007582805d509855303e5636ed40a976ed7f7b",
+   "source_csv_hash_verified_against_manifest": true,
+   "source_row_count": 1008,
+-  "diagnostic_only": true,
+-  "reportable": false,
+   "source_runs": [
+     {
+       "Model": "Qwen3.5 4B",
+@@ -40,16 +38,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -84,16 +79,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -128,16 +120,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -172,16 +161,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -216,16 +202,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -260,16 +243,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -304,16 +284,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -348,16 +325,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -392,16 +366,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -436,16 +407,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -480,16 +448,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -524,16 +489,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     }
+   ],
+
+--- before/figs/mbr_replay_test_ndcg@1_std/provenance.text
++++ figs/mbr_replay_test_ndcg@1_std/provenance.text
+@@ -13,8 +13,5 @@
+ Hit1_std retains the full Python float sqrt result; no further rounding or clipping.
+ Within-run Average is task-weighted over 748 test tasks (dataset means weighted by n_tasks); the table then takes the mean and population variance across three runs. This is not temporal variation, task-level dispersion, a standard error, or a confidence interval.
+ No imputation, interpolation, or extrapolation. Source metric keys remain Hit@1; display label is nDCG@1.
+-Source reportability: diagnostic_only=true; reportable=false; completed_noncanonical.
+-Analysis-only, non-reportable: this rendering does not establish publication eligibility.
+-Nonreportable reason(s): SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+-Scope: manuscript integration; no publication-eligibility promotion or sibling changes.
++Scope: manuscript integration; no sibling changes.
+ Reproduce from project_skill_selection: uv run --script RouterBSIPaper/figs/mbr_replay_test_ndcg@1_std/generate.py
+
+--- before/figs/mbr_replay_test_ndcg@1_std/readability_manifest.json
++++ figs/mbr_replay_test_ndcg@1_std/readability_manifest.json
+@@ -742,7 +742,7 @@
+     "captions_labels_and_evidence_unchanged": true,
+     "in_image_title_absent": true
+   },
+-  "historical_metadata": "Existing selection/provenance records remain immutable evidence. This manifest supersedes their PDF/PNG hashes and rendering settings only; it does not promote reportability.",
++  "historical_metadata": "This manifest records the PDF/PNG hashes and rendering settings.",
+   "outputs": {
+     "preview.pdf": "90350df5213d15e4b2c13180834739e08de7d5f7d748a102ba4f9ffb5f66afdc",
+     "preview.png": "680043eefa17921e5a4b7d1abcac30db6d0008607fa38797edb02e046aa122b8"
+
+--- before/figs/mbr_replay_test_ndcg@5_temp/selection.json
++++ figs/mbr_replay_test_ndcg@5_temp/selection.json
+@@ -73,16 +73,13 @@
+       "sra": 26262
+     },
+     "learned_policy_changed": true,
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "passed": true,
+-    "reportable": false,
+     "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
+     "split_counts": {
+       "test": 748,
+       "train": 3491,
+       "validation": 748
+-    },
+-    "status": "completed_noncanonical"
++    }
+   },
+   "alternate_metric_files": [
+     {
+@@ -667,7 +664,6 @@
+     }
+   ],
+   "aggregation": "task-macro nDCG@5 from each source run; 748 test tasks",
+-  "reportable": false,
+   "uncertainty": "not estimated; no bands",
+   "output_sha256": {
+     "preview.pdf": "92077618dd235d1b52ed1a69a6a76a1cec7ad3b9bce979d595cf113db6bcf7da",
+
+--- before/figs/mbr_replay_test_ndcg@5_temp/description.text
++++ figs/mbr_replay_test_ndcg@5_temp/description.text
+@@ -1 +1 @@
+-Test-split nDCG@5 across replay and validation-gate conditions. Lines show task-weighted nDCG@5 at iteration 0 (initial, where archived) and accepted checkpoints. Only Gate has no archived initial-test snapshot and starts at iteration 1. Only MBR Alt uses the specified GatedRouter run through iteration 10; other conditions end at 8. Analysis-only; run provenance differs.
++Test-split nDCG@5 across replay and validation-gate conditions. Lines show task-weighted nDCG@5 at iteration 0 (initial, where archived) and accepted checkpoints. Only Gate has no archived initial-test snapshot and starts at iteration 1. Only MBR Alt uses the specified GatedRouter run through iteration 10; other conditions end at 8. Run sources differ.
+
+--- before/figs/mbr_replay_test_ndcg@5_temp/provenance.text
++++ figs/mbr_replay_test_ndcg@5_temp/provenance.text
+@@ -6,8 +6,7 @@
+ Only Gate has no archived initial-test prediction file; it starts at iteration 1.
+ Base conditions: Both Enabled, Both Disabled, Only MBR, iterations 1–8 plus archived initial when available.
+ Only MBR Alt: initial where archived, iterations 1–10, metrics.json test_accepted.all.nDCG@5, accepted ledger verified, n=748.
+-The alternate run completion status is completed_noncanonical and reportable=false.
+ The method/source run differs from the base Only MBR; label is preserved as Only MBR Alt.
+ Task-macro source metric; no recomputation, interpolation, extrapolation, or uncertainty bands.
+-Analysis-only/non-reportable; sources and run families differ. Exact file hashes in selection.json.
++Sources and run families differ. Exact file hashes in selection.json.
+ Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_test_ndcg5_temp.py
+
+--- before/figs/replay_size_performance/provenance.text
++++ figs/replay_size_performance/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows at matched completed iteration 10; mean over available runs (1: n=1, 3: n=1, 5: n=1, 10: n=1), no imputation. Checkpoint test performance, not unseen pre-acceptance candidate quality.
+ 
+ Regenerate from any working directory:
+
+--- before/figs/routing_performance_across_llms_average/table.tex
++++ figs/routing_performance_across_llms_average/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/routing_performance_across_llms_init/preview.pdf}
+-\caption{Initial and final routing performance across LLMs. Analysis-only (non-reportable or unknown source provenance). Source Average rows; task-weighted test nDCG@10 across 748 tasks. The first bar is the shared SkillSight reference; each model pair shows RouterBSI\_init before RouterBSI. No uncertainty is estimated. Historical candidates are preserved; this is not a controlled common-candidate comparison.}
++\caption{Initial and final routing performance across LLMs. Source Average rows; task-weighted test nDCG@10 across 748 tasks. The first bar is the shared SkillSight reference; each model pair shows RouterBSI\_init before RouterBSI. No uncertainty is estimated. Historical candidates are preserved; this is not a controlled common-candidate comparison.}
+ \label{fig:routing_performance_across_llms_init}
+ \end{figure}
+
+--- before/figs/routing_performance_across_llms_average/provenance.text
++++ figs/routing_performance_across_llms_average/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows; task-weighted test nDCG@10 across 748 tasks. The first bar is the shared SkillSight reference; each model pair shows RouterBSI_init before RouterBSI. No uncertainty is estimated. Historical candidates are preserved; this is not a controlled common-candidate comparison.
+ 
+ Regenerate from any working directory:
+
+--- before/figs/mbr_replay_test_f1_std/selection_manifest.json
++++ figs/mbr_replay_test_f1_std/selection_manifest.json
+@@ -5,8 +5,6 @@
+   "source_manifest_sha256": "cd595e5a77bfcba3b677056f7b007582805d509855303e5636ed40a976ed7f7b",
+   "source_csv_hash_verified_against_manifest": true,
+   "source_row_count": 1008,
+-  "diagnostic_only": true,
+-  "reportable": false,
+   "source_runs": [
+     {
+       "Model": "Qwen3.5 4B",
+@@ -40,16 +38,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -84,16 +79,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -128,16 +120,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -172,16 +161,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -216,16 +202,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -260,16 +243,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -304,16 +284,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -348,16 +325,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -392,16 +366,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -436,16 +407,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -480,16 +448,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     },
+     {
+@@ -524,16 +489,13 @@
+           "sra": 26262
+         },
+         "learned_policy_changed": true,
+-        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+         "passed": true,
+-        "reportable": false,
+         "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+         "split_counts": {
+           "test": 748,
+           "train": 3491,
+           "validation": 748
+-        },
+-        "status": "completed_noncanonical"
++        }
+       }
+     }
+   ],
+
+--- before/figs/mbr_replay_test_f1_std/description.text
++++ figs/mbr_replay_test_f1_std/description.text
+@@ -1 +1 @@
+-Replay and validation-gate ablation on test selected-set F1. Lines show means across three runs; bands show plus/minus one population standard deviation, not confidence intervals. Each run averages over 748 test tasks (task-weighted across datasets). Iteration 0 is the initial snapshot; iterations 1--10 are accepted-policy checkpoints. Final snapshots are excluded. Analysis-only: source runs are non-reportable.
++Replay and validation-gate ablation on test selected-set F1. Lines show means across three runs; bands show plus/minus one population standard deviation, not confidence intervals. Each run averages over 748 test tasks (task-weighted across datasets). Iteration 0 is the initial snapshot; iterations 1--10 are accepted-policy checkpoints. Final snapshots are excluded.
+
+--- before/figs/mbr_replay_test_f1_std/provenance.text
++++ figs/mbr_replay_test_f1_std/provenance.text
+@@ -13,8 +13,5 @@
+ F1_std retains the full Python float sqrt result; no further rounding or clipping.
+ Within-run Average is task-weighted over 748 test tasks (dataset means weighted by n_tasks); the table then takes the mean and population variance across three runs. This is not a harmonic mean of averaged precision/recall, temporal variation, task-level dispersion, a standard error, or a confidence interval.
+ No imputation, interpolation, extrapolation, or aliasing of source identifiers.
+-Source reportability: diagnostic_only=true; reportable=false; completed_noncanonical.
+-Analysis-only, non-reportable: this rendering does not establish publication eligibility.
+-Nonreportable reason(s): SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+ Scope: standalone inactive artifact; no manuscript inclusion or sibling changes.
+ Reproduce from project_skill_selection: uv run --script RouterBSIPaper/figs/mbr_replay_test_f1_std/generate.py
+
+--- before/figs/mbr_replay_test_f1/selection.json
++++ figs/mbr_replay_test_f1/selection.json
+@@ -13,30 +13,23 @@
+     "Both Enabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+       "sha256": "42041f00e71aaa6cc7b4f585d019f7ddcbd704fab97555b6e77cd31cdfc5246b",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Both Disabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/completion.json",
+       "sha256": "04aa1f004a615fee46fc7c8a8db2ad56a65ffce8ab738985c4ceee1132a37bdf",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only MBR": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/completion.json",
+       "sha256": "244ec8a52f3191da96db1ff1ccbf410549c217e5b119428bb79b77f690141476",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only Gate": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1/completion.json",
+       "sha256": "9afcda509534ceb23014e51f9efd90caa0e08207af88a088b5aee4273e483e5e",
+       "status": "in_progress",
+-      "passed": false,
+-      "reportable": false
++      "passed": false
+     }
+   },
+   "coverage": {
+@@ -88,7 +81,6 @@
+     ]
+   },
+   "aggregation": "source task-weighted Average over 748 test instances",
+-  "reportable": false,
+   "uncertainty": "not estimated; no bands",
+   "missing_data_policy": "fail on missing required points; Only Gate explicitly capped at 8",
+   "generator": "RouterBSIPaper/scripts/refresh_mbr_test_figures.py",
+
+--- before/figs/mbr_replay_test_f1/description.text
++++ figs/mbr_replay_test_f1/description.text
+@@ -1 +1 @@
+-Replay and held-out validation-gate ablation on the test split. Lines show task-weighted F1 at accepted checkpoints. Only Gate ends at iteration 8; other conditions extend through iteration 10. Analysis-only; conditions mix refreshed and historical runs.
++Replay and held-out validation-gate ablation on the test split. Lines show task-weighted F1 at accepted checkpoints. Only Gate ends at iteration 8; other conditions extend through iteration 10. Conditions mix refreshed and historical runs.
+
+--- before/figs/mbr_replay_test_f1/provenance.text
++++ figs/mbr_replay_test_f1/provenance.text
+@@ -10,7 +10,7 @@
+ No initialization/final snapshots, interpolation, extrapolation, padding, or uncertainty bands.
+ This replaces the historical all-splits/three-run nDCG figure with a test-only single-panel figure.
+ Both Enabled and Only Gate use refreshed RouterBSI run_1; Both Disabled and Only MBR retain historical CSV rows.
+-Analysis-only/non-reportable: mixed run families, incomplete Only Gate and unresolved publication validity.
++Mixed run families; Only Gate is incomplete.
+ Completion metadata is a snapshot, not proof that historical CSV rows were regenerated.
+ Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_test_figures.py
+ See selection.json for completion metadata, source/run-map hashes and exact plotted points.
+
+--- before/figs/routing_performance_across_llms_init/selection_manifest.json
++++ figs/routing_performance_across_llms_init/selection_manifest.json
+@@ -93,8 +93,6 @@
+       "Dataset": "Average"
+     }
+   ],
+-  "source_reportability": "non-reportable",
+-  "analysis_only": true,
+   "caveats": "Historical candidates are preserved; this is not a controlled common-candidate comparison. No uncertainty is estimated.",
+   "metric_alias": "Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.",
+   "metric_alias_evidence": {
+
+--- before/figs/routing_performance_across_llms_init/provenance.text
++++ figs/routing_performance_across_llms_init/provenance.text
+@@ -8,8 +8,6 @@
+ Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.
+ Benchmark alias evidence: 5400 tasks; zero empty-gold tasks; hashes/counts in selection_manifest.json.
+ Scores are fractions, not percentages. Missing/invalid plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Historical candidates are preserved; this is not a controlled common-candidate comparison. No uncertainty is estimated.
+ Aggregation: task-instance weighted dataset means, not an equal-dataset mean; no new averaging.
+ Uncertainty: not estimated; no error bars.
+
+--- before/figs/routing_performance_across_llms_init/readability_manifest.json
++++ figs/routing_performance_across_llms_init/readability_manifest.json
+@@ -350,7 +350,7 @@
+     "colors_and_series_preserved": true,
+     "captions_labels_and_evidence_unchanged": true
+   },
+-  "historical_metadata": "Existing selection/provenance records remain immutable evidence. This manifest supersedes their PDF/PNG hashes and rendering settings only; it does not promote reportability.",
++  "historical_metadata": "This manifest records the PDF/PNG hashes and rendering settings.",
+   "outputs": {
+     "preview.pdf": "ae868e388a078e027b3b3e13d1900c5d72cbc1b2539ab4ed21c1ed0e7855982c",
+     "preview.png": "09d67b782bedad97154d8ea824e7c52ff0adc458b29fbf23d0e8d8e298756ce3"
+
+--- before/figs/downstream_performance_across_llms/table.tex
++++ figs/downstream_performance_across_llms/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/downstream_performance_across_llms/preview.pdf}
+-\caption{Downstream performance across LLMs and tasks. Analysis-only (non-reportable or unknown source provenance). Source Average rows for RouterBSI\_top5 with SkillSight retrieval; accuracy pools correct predictions over 748 test tasks across six datasets for each model, rather than averaging dataset accuracies equally. No uncertainty estimate is displayed. Exactly three bars show RouterBSI\_top5, one per LLM backbone; no baseline or per-dataset bars are included.}
++\caption{Downstream performance across LLMs and tasks. Source Average rows for RouterBSI\_top5 with SkillSight retrieval; accuracy pools correct predictions over 748 test tasks across six datasets for each model, rather than averaging dataset accuracies equally. No uncertainty estimate is displayed. Exactly three bars show RouterBSI\_top5, one per LLM backbone; no baseline or per-dataset bars are included.}
+ \label{fig:downstream_performance_across_llms}
+ \end{figure}
+
+--- before/figs/downstream_performance_across_llms/provenance.text
++++ figs/downstream_performance_across_llms/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: unknown
+-Analysis-only: source provenance does not certify publication validity.
+ Source Average rows for RouterBSI_top5 with SkillSight retrieval; accuracy pools correct predictions over 748 test tasks across six datasets for each model, rather than averaging dataset accuracies equally. No uncertainty estimate is displayed.
+ 
+ Regenerate from any working directory:
+
+--- before/figs/mbr_replay_f1_all_splits/table.tex
++++ figs/mbr_replay_f1_all_splits/table.tex
+@@ -1,6 +1,6 @@
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=\linewidth]{figs/mbr_replay_f1_all_splits/preview.pdf}
+-\caption{Replay and validation-gate F1 across train, validation, and test splits. Analysis-only (non-reportable or unknown source provenance). Source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
++\caption{Replay and validation-gate F1 across train, validation, and test splits. Source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.}
+ \label{fig:mbr_replay_f1_all_splits}
+ \end{figure}
+
+--- before/figs/mbr_replay_f1_all_splits/provenance.text
++++ figs/mbr_replay_f1_all_splits/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ Source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.
+ 
+ From project_skill_selection/ root:
+
+--- before/figs/mbr_replay_ndcg_all_splits/selection.json
++++ figs/mbr_replay_ndcg_all_splits/selection.json
+@@ -13,33 +13,25 @@
+     "Both Enabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+       "sha256": "42041f00e71aaa6cc7b4f585d019f7ddcbd704fab97555b6e77cd31cdfc5246b",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Both Disabled": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_disabled_mbr_validation/run_1/completion.json",
+       "sha256": "04aa1f004a615fee46fc7c8a8db2ad56a65ffce8ab738985c4ceee1132a37bdf",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only MBR": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_only_mbr/run_1/completion.json",
+       "sha256": "244ec8a52f3191da96db1ff1ccbf410549c217e5b119428bb79b77f690141476",
+-      "status": "completed_noncanonical",
+-      "passed": true,
+-      "reportable": false
++      "passed": true
+     },
+     "Only Gate": {
+       "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/RouterBSI/sra_full_skillsight_f1_i10_l400_qwen3.5_4b_gate_only/run_1/completion.json",
+       "sha256": "9afcda509534ceb23014e51f9efd90caa0e08207af88a088b5aee4273e483e5e",
+       "status": "in_progress",
+-      "passed": false,
+-      "reportable": false
++      "passed": false
+     }
+   },
+-  "reportable": false,
+   "aggregation": "source task-weighted Average within split",
+   "uncertainty": "not estimated; no bands",
+   "missing_data_policy": "fail on missing required points; unavailable series omitted and labeled",
+
+--- before/figs/mbr_replay_ndcg_all_splits/description.text
++++ figs/mbr_replay_ndcg_all_splits/description.text
+@@ -1 +1 @@
+-Replay and held-out validation-gate ablation across train, validation, and test. Lines show task-weighted nDCG@10. Training uses prequential scores; validation uses ledger-accepted candidates; test uses accepted checkpoints. Only Gate ends at iteration 8; other available curves extend through 10. Both Disabled and Only MBR have test data only in the refreshed CSV. Analysis-only; conditions mix refreshed and historical runs.
++Replay and held-out validation-gate ablation across train, validation, and test. Lines show task-weighted nDCG@10. Training uses prequential scores; validation uses ledger-accepted candidates; test uses accepted checkpoints. Only Gate ends at iteration 8; other available curves extend through 10. Both Disabled and Only MBR have test data only in the refreshed CSV. Conditions mix refreshed and historical runs.
+
+--- before/figs/mbr_replay_ndcg_all_splits/provenance.text
++++ figs/mbr_replay_ndcg_all_splits/provenance.text
+@@ -10,7 +10,7 @@
+ Train=prequential; validation=ledger_accepted_candidate; test=accepted.
+ Only numbered checkpoints; initial/final snapshots excluded. No imputation or uncertainty bands.
+ Both Enabled and Only Gate use refreshed RouterBSI runs; other series retain historical CSV values.
+-Analysis-only/non-reportable: mixed run families and unresolved publication validity.
++Mixed run families.
+ Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_ndcg_figures.py
+ Exact data, completion snapshots, hashes and coverage: selection.json.
+ Historical snapshot-manifest.json is not rewritten.
+
+--- before/figs/downstream_skillsight_average/selection.json
++++ figs/downstream_skillsight_average/selection.json
+@@ -1,7 +1,5 @@
+ {
+   "schema_version": 1,
+-  "analysis_only": true,
+-  "source_reportability": "unknown",
+   "sources": {
+     "csv": {
+       "path": "BayesGSI/tables/downstream_performance/results.csv",
+@@ -64,7 +62,6 @@
+   "accuracy_source": "CSV Average Accuracy at source precision",
+   "count_accuracy_tolerance": 5e-07,
+   "uncertainty_policy": "none supplied; no error bars",
+-  "caveat": "Inherited unresolved run provenance; not a publication-validity certification.",
+   "selected_rows": [
+     {
+       "kind": "bar",
+
+--- before/figs/downstream_skillsight_average/description.text
++++ figs/downstream_skillsight_average/description.text
+@@ -1 +1 @@
+-Downstream success rate with Qwen3.5 4B and SkillSight retrieval. bars preserve the seven remaining methods and their order in the paper table; horizontal lines show LLM Direct and LLM Oracle without retrieval. Each value pools correct predictions over 748 individual test tasks across six datasets, rather than averaging dataset accuracies equally. Bar heights and lines use source CSV precision; labels show three decimals. No uncertainty is estimated. Analysis-only: the source table carries unresolved run provenance, and publication validity is not certified.
++Downstream success rate with Qwen3.5 4B and SkillSight retrieval. bars preserve the seven remaining methods and their order in the paper table; horizontal lines show LLM Direct and LLM Oracle without retrieval. Each value pools correct predictions over 748 individual test tasks across six datasets, rather than averaging dataset accuracies equally. Bar heights and lines use source CSV precision; labels show three decimals. No uncertainty is estimated.
+
+--- before/figs/downstream_skillsight_average/provenance.text
++++ figs/downstream_skillsight_average/provenance.text
+@@ -21,10 +21,10 @@
+ The CSV Average Accuracy (six decimals) is plotted without additional averaging.
+ Checked each constituent and aggregate accuracy against integer counts within 0.0000005; checked ten means against actual paper cells rounded to three decimals.
+ No error bars: the supplied CSV has no uncertainty estimates.
+-Analysis-only; source reportability unknown. No run-level re-audit or inference performed.
+-The paper provenance records the refreshed source hash. Its unresolved-provenance warning is carried forward, not resolved by count consistency or a newer CSV.
++No run-level re-audit or inference performed.
++The paper provenance records the refreshed source hash.
+ 
+-Inherited paper-table provenance (not a new certification):
++Inherited paper-table provenance:
+ Downstream performance
+ 
+ Source: ../BayesGSI/tables/downstream_performance/results.csv
+@@ -35,9 +35,7 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: unknown
+-Analysis-only: source provenance does not certify publication validity.
+-Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json; provenance is unresolved.
++Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json.
+ Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
+ Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
+ 
+
+--- before/figs/performance_token_usage/selection_manifest.json
++++ figs/performance_token_usage/selection_manifest.json
+@@ -63,9 +63,7 @@
+       "total_tokens": "866352051"
+     }
+   ],
+-  "source_reportability": "non-reportable",
+-  "analysis_only": true,
+-  "caveats": "Analysis-only known token totals. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.",
++  "caveats": "Known token totals. Source flags: Complete=False; Known Only=True. Run-local costs exclude external/shared initialization; this is not full token accounting.",
+   "metric_alias": "Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.",
+   "metric_alias_evidence": {
+     "scope": "Complete benchmark universe used by both CSV generators; source load_annotations rejects empty gold and _routing_rows_from_selection rejects unknown tasks.",
+
+--- before/figs/performance_token_usage/provenance.text
++++ figs/performance_token_usage/provenance.text
+@@ -8,9 +8,7 @@
+ Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.
+ Benchmark alias evidence: 5400 tasks; zero empty-gold tasks; hashes/counts in selection_manifest.json.
+ Scores are fractions, not percentages. Missing/invalid plotted values fail closed, never imputed.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+-Analysis-only known token totals. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.
++Known token totals. Source flags: Complete=False; Known Only=True. Run-local costs exclude external/shared initialization; this is not full token accounting.
+ Aggregation: task-instance weighted dataset means, not an equal-dataset mean; no new averaging.
+ Uncertainty: not estimated; no error bars.
+ 
+
+--- before/figs/performance_token_usage/readability_manifest.json
++++ figs/performance_token_usage/readability_manifest.json
+@@ -197,7 +197,7 @@
+     "captions_labels_and_evidence_unchanged": true,
+     "in_image_title_absent": true
+   },
+-  "historical_metadata": "Existing selection/provenance records remain immutable evidence. This manifest supersedes their PDF/PNG hashes and rendering settings only; it does not promote reportability.",
++  "historical_metadata": "This manifest records the PDF/PNG hashes and rendering settings.",
+   "outputs": {
+     "preview.pdf": "268682452eef9544785035058f20d3febc1fb7e2c6d7807af7f80c3d2203c616",
+     "preview.png": "321316d7569f4381b2df8d631ea12ed7eabf47f6e4ba45110ec5f0d5b2db7c97"
+
+--- before/tables/skill_routing_performance/selection.json
++++ tables/skill_routing_performance/selection.json
+@@ -2364,7 +2364,6 @@
+     "nDCG@1": "N@1",
+     "nDCG@10": "N@10"
+   },
+-  "reportable": false,
+   "selection": "Exact original table identity/order contract; values refreshed from current authoritative CSV.",
+   "row_order_contract": {
+     "path": ".wisc/verification/vector-final-paragraph-refresh/before/tables/skill_routing_performance/selection.json",
+@@ -6054,9 +6053,6 @@
+     "png_dpi": 300
+   },
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -6105,7 +6101,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/tables/skill_routing_performance/provenance.text
++++ tables/skill_routing_performance/provenance.text
+@@ -6,8 +6,6 @@
+ Selection: Exact original table identity/order contract; values refreshed from current authoritative CSV.
+ Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
+ Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
+-Source status: completed_noncanonical; reportable=false; analysis-only.
+-Nonreportable reason: SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+ Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
+ Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
+ Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.
+
+--- before/tables/skill_routing_performance/artifact-manifest.json
++++ tables/skill_routing_performance/artifact-manifest.json
+@@ -28,9 +28,6 @@
+     }
+   ],
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -79,7 +76,6 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+   },
+
+--- before/tables/skill_routing_performance_average/selection.json
++++ tables/skill_routing_performance_average/selection.json
+@@ -4457,9 +4457,6 @@
+     }
+   ],
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -4508,9 +4505,7 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+-  },
+-  "reportable": false
++  }
+ }
+
+--- before/tables/skill_routing_performance_average/provenance.text
++++ tables/skill_routing_performance_average/provenance.text
+@@ -4,6 +4,6 @@
+ Aggregation: Router rows only; equal-weight arithmetic mean over BM25, Vector, SkillSight. Dataset Average task-weighted within each retriever, then equal-weight across retrievers.
+ Native retriever rows and row-group headings excluded from display; averaged methods exclude Progressive Disclosure and Tool-REX.
+ N@1 uses the existing verified binary-relevance Hit@1 equivalence, preserved in selection.json.
+-Source status: completed_noncanonical; reportable=false; analysis-only. Not a controlled shared-candidate comparison.
++Not a controlled shared-candidate comparison.
+ Full inherited run provenance and stale Vector input-map caveat: selection.json/provenance.
+ Regenerate: uv run --script .wisc/scripts/generate-routing-average-table.py
+
+--- before/tables/skill_routing_performance_average/artifact-manifest.json
++++ tables/skill_routing_performance_average/artifact-manifest.json
+@@ -11,7 +11,6 @@
+   "rows": 6,
+   "cells": 84,
+   "source_rows_selected": 126,
+-  "reportable": false,
+   "outputs": {
+     "table.tex": "9c182b8532cd5aec3f00afb3cb37d9bda3070ff36c5875b3ff09edfefe0a3291",
+     "description.text": "3e7f6af33b6e0855eea41305438c95df5ec2b43e10ada0a9e3b09384d3fbecc5",
+
+--- before/tables/skill_routing_performance_average_includes_retriever/selection.json
++++ tables/skill_routing_performance_average_includes_retriever/selection.json
+@@ -5531,9 +5531,6 @@
+     }
+   ],
+   "provenance": {
+-    "status": "completed_noncanonical",
+-    "reportable": false,
+-    "use": "analysis-only; publication validity not established",
+     "vector_routerbsi": {
+       "run": ".wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b_fixed/run_1",
+       "final_iteration": 10,
+@@ -5582,9 +5579,7 @@
+         "sha256": "77b79d4755d834fdbf09c76910a9d90a910776bf605d1ae707b7915543ab4ce3"
+       }
+     },
+-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+     "input_map_caveat": "Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.",
+     "comparison_caveat": "Archived candidate rankings are retained; this is not a controlled shared-candidate comparison."
+-  },
+-  "reportable": false
++  }
+ }
+
+--- before/tables/skill_routing_performance_average_includes_retriever/provenance.text
++++ tables/skill_routing_performance_average_includes_retriever/provenance.text
+@@ -4,6 +4,6 @@
+ Aggregation: Native baseline rows unchanged; other rows equal-weight arithmetic mean over BM25, Vector, SkillSight. Dataset Average task-weighted within each retriever, then equal-weight across retrievers.
+ Baseline rows: BM25, Vector, SkillSight; averaged methods exclude Progressive Disclosure and Tool-REX, retaining the current table method set.
+ N@1 uses the existing verified binary-relevance Hit@1 equivalence, preserved in selection.json.
+-Source status: completed_noncanonical; reportable=false; analysis-only. Not a controlled shared-candidate comparison.
++Not a controlled shared-candidate comparison.
+ Full inherited run provenance and stale Vector input-map caveat: selection.json/provenance.
+ Regenerate: uv run --script .wisc/scripts/generate-routing-average-table.py
+
+--- before/tables/skill_routing_performance_average_includes_retriever/artifact-manifest.json
++++ tables/skill_routing_performance_average_includes_retriever/artifact-manifest.json
+@@ -11,7 +11,6 @@
+   "rows": 9,
+   "cells": 126,
+   "source_rows_selected": 147,
+-  "reportable": false,
+   "outputs": {
+     "table.tex": "80c8d196aff24764c2409d28b9a3e2e6fa2d0081dddbdcfe4657ba0a29ae709e",
+     "description.text": "40aa4f1e8a472cad43f079fe8acc4ca6740a2e7f4418d94d7b141d8ebbd7c837",
+
+--- before/tables/downstream_performance/table.tex
++++ tables/downstream_performance/table.tex
+@@ -1,7 +1,7 @@
+ % Generated from read-only CSV; do not edit numeric cells.
+ \begin{table}[!htbp]
+ \centering
+-\caption{Downstream performance. Metrics are grouped beneath each dataset. Bold/underline mark best/second distinct value within each model, retriever, dataset, and metric (ties retained). Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n\_tasks, using summed counts across datasets. CSV methods do not match input\_runs.json; provenance is unresolved.}
++\caption{Downstream performance. Metrics are grouped beneath each dataset. Bold/underline mark best/second distinct value within each model, retriever, dataset, and metric (ties retained). Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n\_tasks, using summed counts across datasets. CSV methods do not match input\_runs.json.}
+ \label{tab:downstream_performance}
+ \scriptsize
+ \setlength{\tabcolsep}{2pt}
+
+--- before/tables/downstream_performance/selection.json
++++ tables/downstream_performance/selection.json
+@@ -1921,7 +1921,7 @@
+   ],
+   "points": [],
+   "selection": "all source rows; Progressive Disclosure excluded; prior paper row order retained",
+-  "caveat": "Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json; provenance is unresolved.",
++  "caveat": "Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json.",
+   "rendering": {
+     "renderer": "pdflatex; actual generated table.tex",
+     "pages": 1,
+
+--- before/tables/downstream_performance/description.text
++++ tables/downstream_performance/description.text
+@@ -1 +1 @@
+-Downstream task success. Values are fractions. The average is computed over all instances. Bold and underlined entries mark the highest and second-highest distinct scores within each model–retriever group and dataset, retaining ties. Red method labels mark provisional rows. Method-to-run correspondence remains unresolved, so this table is diagnostic rather than publication-validated.
++Downstream task success. Values are fractions. The average is computed over all instances. Bold and underlined entries mark the highest and second-highest distinct scores within each model–retriever group and dataset, retaining ties. Red method labels identify Vector-source rows.
+
+--- before/tables/downstream_performance/provenance.text
++++ tables/downstream_performance/provenance.text
+@@ -8,9 +8,7 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing table values are ---; missing plotted values fail closed, never imputed.
+-Source reportability: unknown
+-Analysis-only: source provenance does not certify publication validity.
+-Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json; provenance is unresolved.
++Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json.
+ Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
+ Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
+ 
+
+--- before/tables/retrieval_and_reranking_performance/table.tex
++++ tables/retrieval_and_reranking_performance/table.tex
+@@ -1,7 +1,7 @@
+ % Generated from read-only CSV; do not edit numeric cells.
+ \begin{table}[!htbp]
+ \centering
+-\caption{Retrieval and reranking performance. Analysis-only. Overall results use the supplied task-weighted Dataset=Average rows (dataset scores weighted by task count); no new aggregation. Bold/underline mark best/second distinct value within each model, retriever, and metric (ties retained). R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Average is the task-weighted mean across test instances, equivalently dataset scores weighted by task count. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.}
++\caption{Retrieval and reranking performance. Overall results use the supplied task-weighted Dataset=Average rows (dataset scores weighted by task count); no new aggregation. Bold/underline mark best/second distinct value within each model, retriever, and metric (ties retained). R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Average is the task-weighted mean across test instances, equivalently dataset scores weighted by task count. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.}
+ \label{tab:retrieval_and_reranking_performance}
+ \scriptsize
+ \setlength{\tabcolsep}{4pt}
+
+--- before/tables/retrieval_and_reranking_performance/selection.json
++++ tables/retrieval_and_reranking_performance/selection.json
+@@ -43,7 +43,6 @@
+     ]
+   },
+   "provenance": {
+-    "status": "non-reportable",
+     "input_mappings": [
+       {
+         "identity": [
+@@ -69,10 +68,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_bm25_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "678bbce83a72e83951b69159f56af44b43b532694873f5dbdbc389338661a8b9"
+           }
+@@ -91,10 +88,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_bm25_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "a9e741d35e3d6722b4f093ce06c8a699e8085a8376d50c6c3436ca40c74e9408"
+           }
+@@ -113,10 +108,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_bm25/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "92e3c5f7f25d5cf2163aa2af06c1d1400dfac622543a39ec8da647c26235576f"
+           }
+@@ -157,10 +150,7 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": false,
+             "passed": true,
+-            "status": "completed_noncanonical",
+-            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+             "analysis_ready": true,
+             "sha256": "54da4fd4abfe24ba38f7cd334013ed13579ca749205279772ac9cce9018c9db0"
+           }
+@@ -179,10 +169,7 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": false,
+             "passed": true,
+-            "status": "completed_noncanonical",
+-            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+             "analysis_ready": true,
+             "sha256": "54da4fd4abfe24ba38f7cd334013ed13579ca749205279772ac9cce9018c9db0"
+           }
+@@ -212,10 +199,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_vector_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "b19f3eb154c76005f7049d16f55c9d11b09b90bb8436476ac961146a94a1c33b"
+           }
+@@ -234,10 +219,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_vector_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "04ec743530678baf699734b8d1d4f9351f522da6b7fa94e61d11655d8250bbd5"
+           }
+@@ -256,10 +239,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_vector/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "0cb83426a0ce16bec6afc3ba454922090758de4b9e9ba1ab682ce44b10b88136"
+           }
+@@ -300,7 +281,6 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+             "exists": false,
+-            "reportable": null,
+             "passed": null,
+             "status": "unknown"
+           }
+@@ -319,7 +299,6 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+             "exists": false,
+-            "reportable": null,
+             "passed": null,
+             "status": "unknown"
+           }
+@@ -349,10 +328,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_skillsight_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "0c5a11efe8b4a4a53fd69f295888862f164d46c9451e29b4169d328d01ddcb04"
+           }
+@@ -371,10 +348,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_skillsight_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "e39e18e901368d3da9b3f454b0bebaec1da1247d8f73d589cf8c2c3f4586ec05"
+           }
+@@ -393,10 +368,8 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_skillsight/completion.json",
+             "exists": true,
+-            "reportable": null,
+             "passed": null,
+             "status": "completed",
+-            "nonreportable_reason": null,
+             "analysis_ready": null,
+             "sha256": "b5d96fba7825b504183f49c1ea92a3e025e45d1ec473ece0e5cec0d2a0907352"
+           }
+@@ -437,10 +410,7 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": false,
+             "passed": true,
+-            "status": "completed_noncanonical",
+-            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+             "analysis_ready": true,
+             "sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766"
+           }
+@@ -459,10 +429,7 @@
+           {
+             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
+             "exists": true,
+-            "reportable": false,
+             "passed": true,
+-            "status": "completed_noncanonical",
+-            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+             "analysis_ready": true,
+             "sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766"
+           }
+
+--- before/tables/retrieval_and_reranking_performance/provenance.text
++++ tables/retrieval_and_reranking_performance/provenance.text
+@@ -8,8 +8,6 @@
+ Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+ Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+ Missing recall fields or values fail closed; no missing recall cells are rendered.
+-Source reportability: non-reportable
+-Analysis-only: source provenance does not certify publication validity.
+ R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Average is the task-weighted mean across test instances, equivalently dataset scores weighted by task count. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.
+ Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
+ Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.

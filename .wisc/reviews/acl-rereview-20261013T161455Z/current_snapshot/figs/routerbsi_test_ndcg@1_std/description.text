@@ -1,0 +1,1 @@
+RouterBSI test routing performance from cold start through iterations 1--10 and the saved final evaluation (Final duplicates iteration 10, not an additional update). The line shows mean nDCG@1 across three runs; the shaded band shows one population standard deviation. Analysis-only: source runs remain non-reportable.

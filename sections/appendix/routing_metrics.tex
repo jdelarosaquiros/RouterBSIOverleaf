@@ -1,0 +1,25 @@
+\subsection{Ranking and Selection Metrics}
+\label{app:routing-metrics}
+Let $L_q=(s_1,\ldots,s_K)$ be the ordered skill list for task $q$, and let $G_q$ be its required skill set. Recall at cutoff $k$ measures the fraction of required skills in the first $k$ positions:
+\[
+\operatorname{Recall@}k(q)=\frac{|\{s_1,\ldots,s_k\}\cap G_q|}{|G_q|}.
+\]
+For nDCG, the relevance of each skill is binary. With $y_{q,j}=\mathds{1}[s_j\in G_q]$, we compute
+\[
+\operatorname{DCG@}k(q)=\sum_{j=1}^{k}\frac{y_{q,j}}{\log_2(j+1)},
+\]
+\[
+\operatorname{nDCG@}k(q)=\frac{\operatorname{DCG@}k(q)}{\sum_{j=1}^{\min(k,|G_q|)}1/\log_2(j+1)}.
+\]
+Thus, nDCG@1 is the fraction of tasks whose first-ranked skill is required. Recall@1 can be lower when a task requires multiple skills, because it divides by the size of the required set.
+
+We distinguish the ranked list from the selected set $P_q$. Set-level F1 is
+\[
+\operatorname{F1}(q)=\frac{2|P_q\cap G_q|}{|P_q|+|G_q|}.
+\]
+For strict predicate routing, $P_q$ contains only skills whose predicates evaluate to true. A top-$k$ routing list also contains predicate-negative skills when they fall within the ranked cutoff. The set-level F1 reported for predicate ablations therefore measures the selected set, rather than the first $k$ entries of the complete ranked list.
+
+Dataset scores average the corresponding per-task metric. The overall score pools task instances across datasets; it is not an unweighted average of the six dataset scores. When comparing retrievers, we first compute this task-weighted score for each retriever and then average across BM25, Vector, and SkillSight.
+
+\paragraph{Statistical reporting.}
+The main routing, recall/retention, and downstream comparisons use one evaluation per method--retriever setting, rather than an average over repeated runs. Their cross-retriever means average three distinct retrieval conditions, not random-seed repetitions. The token, replay-capacity, candidate-pool, and backbone analyses likewise use one run per configuration. We do not estimate run-to-run uncertainty for these single-run comparisons. The component ablation in Appendix~\ref{app:ablations} instead reports means and population standard deviations over three runs, all with replay-replacement seed 20260324. These deviations describe dispersion among run-level scores, not standard errors or confidence intervals, and the repetitions are not distinct-seed trials. We do not report statistical-significance tests. Appendix~\ref{app:paired-routing} separately reports conditional task-sampling intervals for saved SkillSight-routing comparisons; these do not quantify run-to-run uncertainty.

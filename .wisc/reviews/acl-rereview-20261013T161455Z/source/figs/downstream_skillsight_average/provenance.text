@@ -1,0 +1,45 @@
+SkillSight downstream pooled-average bars
+
+Paths below are relative to project_skill_selection, not the paper root.
+csv: BayesGSI/tables/downstream_performance/results.csv
+SHA256: 3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690
+paper_table: RouterBSIPaper/tables/downstream_performance/table.tex
+SHA256: 52736cb27319f832c406c8f430556fe82d910f445dac418c86a1bbf32848e544
+paper_provenance: RouterBSIPaper/tables/downstream_performance/provenance.text
+SHA256: 32c3f43a198845ccb78a62805a729fa24e01b47e2d21965e4c0d3d6845200414
+source_readme: BayesGSI/tables/downstream_performance/README.md
+SHA256: 45e2363030f5f5fafa5780db77946e2ca78544477b22291053097326c562f96b
+source_input_runs: BayesGSI/tables/downstream_performance/input_runs.json
+SHA256: f614caaedc9b4fd0d768e1de9563e73a46764b8c3bdc6cc0f1adf8178e6be16c
+generator: .wisc/scripts/generate-downstream-skillsight-average.py
+SHA256: cd6c4c7bdedac68c0f6d12175f3334d2a5bbcc2ff6d9add80c655e1ac90fe29d
+
+Reproduce: uv run --script .wisc/scripts/generate-downstream-skillsight-average.py
+Selection: Model=Qwen3.5 4B, Retriever=SkillSight, Dataset=Average, seven remaining paper methods.\nReferences: Retriever=None, Dataset=Average, LLM Direct and LLM Oracle.
+Excluded newer CSV methods: Progressive Disclosure.
+Aggregation: sum(Correct)/sum(n_tasks) across six datasets, 748 tasks per selected method.
+The CSV Average Accuracy (six decimals) is plotted without additional averaging.
+Checked each constituent and aggregate accuracy against integer counts within 0.0000005; checked ten means against actual paper cells rounded to three decimals.
+No error bars: the supplied CSV has no uncertainty estimates.
+No run-level re-audit or inference performed.
+The paper provenance records the refreshed source hash.
+
+Inherited paper-table provenance:
+Downstream performance
+
+Source: ../BayesGSI/tables/downstream_performance/results.csv
+Source SHA256: 3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690
+Source rows: 182; selected rows: 161.
+Selection: all source rows
+Metrics: Accuracy
+Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+Missing table values are ---; missing plotted values fail closed, never imputed.
+Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json.
+Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
+Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
+
+Regenerate from any working directory:
+  uv run --script paper/tables/downstream_performance/generate.py
+Optional fixture arguments: --source /path/results.csv --output /path/output
+Shared selection/provenance manifest: paper/artifact_manifest.json.

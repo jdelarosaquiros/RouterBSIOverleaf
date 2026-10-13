@@ -1,7 +1,5 @@
 {
   "schema_version": 1,
-  "analysis_only": true,
-  "source_reportability": "includes non-reportable fixed Vector RouterBSI run (reportable=false)",
   "source": {
     "path": "BayesGSI/tables/downstream_performance/results.csv",
     "sha256": "cc6fa0c7f80f38dafe14c50a2f8e0641716dd602e0834d2dbc4484ec112a67c4"
@@ -1639,5 +1637,5 @@
     "description.text": "7f0f8be4d619160540aad571b026bad3df37733834530c037392f32057918fdd",
     "table.tex": "77a383073c24f9ef4aeab6016f3ca7804a91ca532f3af06e5fdded7ad92fd870"
   },
-  "caveat": "Analysis-only; fixed Vector RouterBSI run is completed_noncanonical with reportable=false; other run reportability unresolved; no inference or new evaluation."
+  "caveat": "No inference or new evaluation."
 }

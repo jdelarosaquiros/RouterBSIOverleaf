@@ -1,0 +1,115 @@
+{
+  "artifact": "routerbsi_test_ndcg@1_std",
+  "status": "implementation_and_focused_verification_passed",
+  "scope": "Only RouterBSIPaper/figs/routerbsi_test_ndcg@1_std and this implementation_report.json were authored. No raw-run writes, sibling writes, model calls, manuscript changes/build, or commits.",
+  "artifact_directory": "RouterBSIPaper/figs/routerbsi_test_ndcg@1_std",
+  "files_updated": [
+    "generate.py",
+    "test_generate.py",
+    "selected_data.csv",
+    "selection_manifest.json",
+    "preview.pdf",
+    "preview.png",
+    "description.text",
+    "provenance.text",
+    "table.tex",
+    "readability_manifest.json"
+  ],
+  "files_created": ["per_run_data.csv"],
+  "implementation": {
+    "source_root": ".wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b",
+    "runs": ["run_1", "run_2", "run_3"],
+    "checkpoints": ["initial", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "final"],
+    "evaluation_count": 36,
+    "plotted_point_count": 12,
+    "tasks_per_evaluation": 748,
+    "metric": "Binary nDCG@1 = integer top-ranked relevance hits / 748, verified nonempty required_ids; empty rankings score zero.",
+    "aggregation": "Equally weighted task mean per run, arithmetic mean and population SD across the three run means; ddof=0. Exact integer hits and round-trip full-precision floats retained.",
+    "raw_validation": [
+      "exact unique test membership from test_state.task_ids",
+      "stable required_ids, task hashes and tier across all 36 evaluations",
+      "saved policy content hash recomputed and matched to library_hash",
+      "all candidate_statements match saved initial/accepted/final policies",
+      "prediction library hashes match saved policies",
+      "numbered policy ledger iteration, before_hash and accepted_hash chain",
+      "final policy matches iteration10 and test_state",
+      "final prediction bytes duplicate iteration10 in each run",
+      "completion/reportability and run model/retriever/condition configuration",
+      "stored MRR@10 recomputed and checked for every evaluation",
+      "stored Hit@1 checked whenever available"
+    ],
+    "raw_input_files_hashed_and_rechecked": 147,
+    "hit1_crosschecks_verified": 4,
+    "hit1_crosschecks_unavailable_not_stored": 32,
+    "mrr10_crosschecks_verified": 36,
+    "metric_crosscheck_absolute_tolerance": 1e-12,
+    "style": "One green #009E73 RouterBSI mean line, diamond markers, dash-dot line, shaded +/-1 population SD; 218 x 154 PDF points; 8-9pt serif text; all twelve categorical ticks; cold start wrapped and endpoint labels aligned away from adjacent ticks.",
+    "readability_manifest": "Replaced copied stale metadata with current target-specific Agg text bounds, fonts, geometry, line coordinates and band vertices; explicitly does not assert composed-TeX measurements or a manuscript figure number.",
+    "scope_guard": "CLI writes only beside its script; programmatic test outputs must be descendants of the target figure folder. Outputs staged and source hashes rechecked before publication; manifest published last."
+  },
+  "endpoints": {
+    "initial": {"mean": 0.5213903743315508, "population_sd": 0.008241195191134986},
+    "final": {"mean": 0.7237076648841354, "population_sd": 0.013472563687906398}
+  },
+  "source_caveats": [
+    "All three runs remain completed_noncanonical, reportable=false; this is analysis-only.",
+    "Final duplicates iteration10 and is not an extra training update or independent repeat; explicitly stated in caption and provenance.",
+    "All runs use saved seed=20260324 with distinct initial predicate policies/cache files; no claim of three seeds or statistical independence.",
+    "Run1 source_manifest_sha256 differs from runs2/3; completion metadata and provenance preserve the difference without claiming equivalent builds.",
+    "Missing saved Hit@1 values are explicitly flagged unavailable_not_stored, not imputed or used to drop complete raw-prediction evaluations."
+  ],
+  "execution": [
+    {
+      "command": "python -B RouterBSIPaper/figs/routerbsi_test_ndcg@1_std/generate.py",
+      "exit_code": 0,
+      "stdout_summary": "PASS: 36 raw evaluations -> 12 points; 3 runs, 748 test tasks, mean +/- population SD; non-reportable. Endpoint values match independent parent audit."
+    },
+    {
+      "command": "python -B RouterBSIPaper/figs/routerbsi_test_ndcg@1_std/test_generate.py -v",
+      "exit_code": 0,
+      "tests_run": 6,
+      "elapsed_seconds": 33.192,
+      "result": "OK",
+      "tests": [
+        "ArtifactTests.test_renderer_and_reproducible_artifacts",
+        "FailureTests.test_bad_metrics_completion_and_input_hashes_fail",
+        "FailureTests.test_invalid_matrix_or_renderer_statistics_fail",
+        "FailureTests.test_invalid_prediction_evidence_fails_closed",
+        "FailureTests.test_tampered_policy_payload_fails_even_with_unchanged_hash_tag",
+        "RawSourceTests.test_exact_raw_matrix_and_population_statistics"
+      ],
+      "coverage": [
+        "exact ordered 3x12 matrix and 12 means/population moments",
+        "line and band cardinality, colors, labels, all actual artist coordinates and unclipped bounds",
+        "categorical label nonoverlap, canvas containment and point-size/width checks",
+        "generated identity, includes/label, full-precision CSV serialization and output hashes",
+        "byte-identical repeated generation including PDF/PNG and manifests",
+        "missing source leaves previous outputs byte-identical",
+        "missing/duplicate/unknown tasks and invalid/empty/duplicate gold",
+        "invalid ranking, wrong tier/label source, policy tags/statements/content hash",
+        "gold drift, metric mismatches/nonfinite fields, completion/reportability failures",
+        "input mutation/hash drift and missing inputs",
+        "invalid matrix order, nonfinite or inconsistent renderer statistics",
+        "output-scope escape rejection"
+      ]
+    },
+    {
+      "command": "py_compile.compile for generate.py and test_generate.py with doraise=True and disposable target-local cfile paths",
+      "exit_code": 0,
+      "result": "Both scripts compile; disposable bytecode removed with temporary directory."
+    },
+    {
+      "command": "Final published manifest assertions: generator_sha256, test_sha256, all output_sha256 entries, all input-file SHA256 values",
+      "exit_code": 0,
+      "result": "All 8 generated-output hashes, generator/test hashes and 147 raw input hashes matched."
+    }
+  ],
+  "environment": {"execution": "installed Python/matplotlib", "matplotlib": "3.11.2", "script_reproduction": "uv run --script supports pinned matplotlib==3.10.8; executed checks used installed 3.11.2"},
+  "test_first_evidence": [
+    "New raw-source identity test failed against stale copied artifact before replacement, then passed.",
+    "Renderer/publication test failed for missing standalone publisher, then passed.",
+    "Policy-payload tamper regression failed because stale hash tags were accepted, then passed after recomputing policy content hash."
+  ],
+  "parent_owned_verification": "Independent numeric audit, standalone ACL wrapper compilation, visual/PDF-font review, global/raw preservation checks and final WISC report are parent responsibilities. Parent reported these checks passed before this report; this implementation does not claim to have rerun them.",
+  "issues": "No remaining implementation blocker. Source non-reportability and missing stored Hit@1 are retained rather than silently resolved. No further cosmetic changes after parent visual approval."
+}

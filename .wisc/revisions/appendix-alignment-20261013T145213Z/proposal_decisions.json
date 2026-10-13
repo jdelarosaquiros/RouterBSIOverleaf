@@ -1,0 +1,306 @@
+[
+  {
+    "file": "sections/appendix/data_scope.tex",
+    "scout": "A",
+    "proposal": {
+      "old": "\\subsection{Artifact Coverage and Reuse}",
+      "new": "\\subsection{Dataset Coverage and Reuse}",
+      "reason": "Use dataset-focused heading; retain label app:artifact-scope and all scientific coverage/licensing statements."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/data_scope.tex",
+        "old": "\\subsection{Artifact Coverage and Reuse}",
+        "new": "\\subsection{Dataset Coverage and Reuse}",
+        "reason": "Use a scientific coverage heading rather than an artifact-audit heading.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/data_scope.tex",
+    "scout": "A",
+    "proposal": {
+      "old": "Credential-file exclusion from a software archive is distinct from reviewing and de-identifying task content or model traces. ",
+      "new": "",
+      "reason": "Remove redundant code-archive caveat. Adjacent sentences still identify privacy risks and the need not to equate public access with absence of identifying information."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/data_scope.tex",
+        "old": "Credential-file exclusion from a software archive is distinct from reviewing and de-identifying task content or model traces. ",
+        "new": "",
+        "reason": "Remove software-packaging aside while retaining privacy, license and safety scope.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/procedure_algorithm.tex",
+    "scout": "A",
+    "proposal": {
+      "old": "The update loop below follows the main minimum-average-risk formulation in Section~\\ref{app:procedure-mbr}.",
+      "new": "The update loop below follows the minimum-average-risk formulation in Section~\\ref{app:procedure-mbr}.",
+      "reason": "The reference targets an appendix subsection; remove the misleading main designation without changing the algorithm."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/procedure_algorithm.tex",
+        "old": "The update loop below follows the main minimum-average-risk formulation in Section~\\ref{app:procedure-mbr}.",
+        "new": "The update loop below expands the main minimum-average-risk formulation, with candidate selection detailed in Appendix~\\ref{app:procedure-mbr}.",
+        "reason": "Correct a cross-reference that identifies an appendix subsection as the main formulation.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/prompts_initialization.tex",
+    "scout": "A",
+    "proposal": {
+      "old": "We preserve the prompt wording below, with paragraph wrapping for readability. ",
+      "new": "",
+      "reason": "Delete editorial provenance/formatting commentary outside the prompt; preserve the complete literal prompt and schema description."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/prompts_initialization.tex",
+        "old": "We preserve the prompt wording below, with paragraph wrapping for readability. ",
+        "new": "",
+        "reason": "Remove manuscript-production narration; preserve exact prompt and schema.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/evaluator_validation.tex",
+    "scout": "B",
+    "proposal": {
+      "old": " Source checksums, journal-record hashes, request payloads, and occurrence-weighted counts were verified before tabulation.",
+      "new": "",
+      "reason": "This is artifact-verification narration. The separate deduplication and occurrence-weighting sentences already preserve the scientifically necessary denominator semantics."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/evaluator_validation.tex",
+        "old": " Source checksums, journal-record hashes, request payloads, and occurrence-weighted counts were verified before tabulation.",
+        "new": "",
+        "reason": "Remove artifact-integrity assurance from scientific results; preserve sampling, weighting, blinding and agreement scope.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/implementation_runtime.tex",
+    "scout": "B",
+    "proposal": {
+      "old": " In the active proposal branch, the request wrapper sets temperature one explicitly; a legacy proposal-temperature configuration field does not override this branch.",
+      "new": "",
+      "reason": "The immediately preceding sentence already gives the effective temperature. Legacy configuration precedence is code-history narration, not needed to interpret the experiment."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/implementation_runtime.tex",
+        "old": " In the active proposal branch, the request wrapper sets temperature one explicitly; a legacy proposal-temperature configuration field does not override this branch.",
+        "new": "",
+        "reason": "Remove legacy-code commentary; effective temperature already stated.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/implementation_software.tex",
+    "scout": "B",
+    "proposal": {
+      "old": "The in-tree SRA BM25 implementation",
+      "new": "The SRA BM25 implementation",
+      "reason": "Remove repository-local positioning while retaining the specific retrieval implementation."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/implementation_software.tex",
+        "old": "The in-tree SRA BM25 implementation",
+        "new": "The SRA BM25 implementation",
+        "reason": "Remove repository-relative provenance adjective.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/implementation_software.tex",
+    "scout": "B",
+    "proposal": {
+      "old": "We use the in-tree SRA task evaluators",
+      "new": "We use the SRA task evaluators",
+      "reason": "Remove repository-local positioning; preserve benchmark-specific scoring rules."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/implementation_software.tex",
+        "old": "We use the in-tree SRA task evaluators rather than a single exact-match rule for every benchmark.",
+        "new": "We use benchmark-specific SRA task evaluators.",
+        "reason": "State evaluation protocol positively; subsequent exact rules preserve the scientific distinction.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/implementation_software.tex",
+    "scout": "B",
+    "proposal": {
+      "old": "ToolQA's in-tree ReAct prompt",
+      "new": "ToolQA's ReAct prompt",
+      "reason": "Remove repository-local positioning; preserve fixed demonstration counts, order, and inference path."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/implementation_software.tex",
+        "old": "ToolQA's in-tree ReAct prompt",
+        "new": "ToolQA's ReAct prompt",
+        "reason": "Remove repository-relative provenance adjective; retain demonstrations and citation.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/ablation_cost_capacity.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "Quality is measured on the final-test snapshot over 748 tasks.",
+      "new": "Quality is measured for the final policy on the test set of 748 tasks.",
+      "reason": "Describe the measured policy and split directly, without snapshot/artifact terminology; retain sample size and all results."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/ablation_cost_capacity.tex",
+        "old": "Quality is measured on the final-test snapshot over 748 tasks.",
+        "new": "Quality is measured on the final policy over 748 test tasks.",
+        "reason": "Use experimental terminology instead of saved-snapshot terminology.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/ablation_candidate_pool.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "quality is measured on the final-test snapshot over 748 tasks.",
+      "new": "quality is measured for the final policy on the test set of 748 tasks.",
+      "reason": "Replace artifact-oriented snapshot terminology while preserving the measured endpoint and task count."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/ablation_candidate_pool.tex",
+        "old": "quality is measured on the final-test snapshot over 748 tasks",
+        "new": "quality is measured on the final policy over 748 test tasks",
+        "reason": "Use experimental terminology instead of saved-snapshot terminology.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/trajectory_table.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "Test nDCG@1 at initialization and each accepted iteration, averaged over three runs.",
+      "new": "Test nDCG@1 at initialization and each optimization iteration, averaged over three runs.",
+      "reason": "The gate accepts per-skill updates, not entire iterations. This avoids suggesting every iteration is globally accepted or improves quality."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/trajectory_table.tex",
+        "old": "Test nDCG@1 at initialization and each accepted iteration, averaged over three runs.",
+        "new": "Test nDCG@1 at initialization and each optimization iteration, averaged over three runs.",
+        "reason": "The gate accepts individual skill updates, not an entire iteration. Preserve all table values and uncertainty interpretation.",
+        "origin": "audit_C_parent_approved"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/error_routing_gap.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "% Evidence: ../.wisc/verification/routerbsi-exception-investigation/\n% analysis.json, independent_verification.json, theoremqa/summary.json,\n% medcalc/summary.json, and trajectory_spotcheck.json.\n",
+      "new": "",
+      "reason": "Nonrendered evidence-path inventory is workflow provenance, not scientific exposition; no results or interpretation removed."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/error_routing_gap.tex",
+        "old": "% Evidence: ../.wisc/verification/routerbsi-exception-investigation/\n% analysis.json, independent_verification.json, theoremqa/summary.json,\n% medcalc/summary.json, and trajectory_spotcheck.json.\n",
+        "new": "",
+        "reason": "Move task-provenance out of manuscript source; original remains in revision snapshot.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/error_routing_gap.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "These are retrospective archived-run diagnostics, not new intervention results.",
+      "new": "These are retrospective diagnostics, not new intervention results.",
+      "reason": "Remove the archive/provenance adjective while retaining the scientifically important observational-versus-interventional distinction."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/error_routing_gap.tex",
+        "old": "These are retrospective archived-run diagnostics, not new intervention results.",
+        "new": "These are retrospective diagnostics, not intervention results.",
+        "reason": "Remove archive/process qualifier; preserve noncausal status.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/error_downstream.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "These archived extra-selection shares",
+      "new": "These extra-selection shares",
+      "reason": "The archive adjective contributes nothing to the denominator or interpretation; retain all explanatory limitations."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/error_downstream.tex",
+        "old": "These archived extra-selection shares",
+        "new": "These extra-selection shares",
+        "reason": "Remove irrelevant archive qualifier while retaining denominators and interpretation.",
+        "origin": "parent_read"
+      }
+    ]
+  },
+  {
+    "file": "sections/appendix/error_downstream_results.tex",
+    "scout": "C",
+    "proposal": {
+      "old": "The following table reports downstream task-success rates by benchmark and retriever,",
+      "new": "The following tables report downstream task-success rates by benchmark and retriever,",
+      "reason": "Two tables follow; update only singular/plural wording."
+    },
+    "decision": "accepted_or_equivalent_minimal_parent_wording",
+    "applied_replacements": [
+      {
+        "file": "sections/appendix/error_downstream_results.tex",
+        "old": "The following table reports downstream task-success rates by benchmark and retriever,",
+        "new": "The following tables report downstream task-success rates by benchmark and retriever,",
+        "reason": "Two included tables follow; correct the stale singular reference.",
+        "origin": "audit_C_parent_approved"
+      }
+    ]
+  }
+]

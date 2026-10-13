@@ -1,0 +1,16 @@
+\subsection{Candidate Admission and Minimum-Risk Selection}
+\label{app:procedure-mbr}
+For a failed predicate $p_f$, we request $M_p$ distinct replacement strings. Each must be a declarative applicability statement within the shared length limit, distinct from $p_f$, and must preserve the single-predicate structure. The unchanged $p_f$ is evaluated separately rather than requested as a generated candidate.
+
+Let $y_{q,s}=\mathds{1}[s\in G_q]$. We evaluate $p_f$ and each structurally valid candidate $m_p$ on $\mathcal R_s$ and use the binary loss from the main text,
+\[
+R_{\mathrm{replay}}(m_p\mid s)
+=\frac{\sum_{q'\in\mathcal R_s}|m_p(q')-y_{q',s}|}
+{|\mathcal R_s|}.
+\]
+Following the main formulation, we select a minimum-average-risk option from all structurally valid candidates and the unchanged predicate:
+\[
+m_p^*\in\mathop{\arg\min}_{m_p\in M_p\cup\{p_f\}}
+R_{\mathrm{replay}}(m_p\mid s).
+\]
+Including $p_f$ ensures that the selected average replay risk does not increase. The main formulation does not require correction of the current failure or preservation of every previously correct judgment; a minimum-risk option may trade off individual errors. It also does not require a strict replay-risk decrease or prescribe a tie-break. The resulting updates are provisional until the held-out gate at the end of the training pass.

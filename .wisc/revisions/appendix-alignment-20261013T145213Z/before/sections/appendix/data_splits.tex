@@ -1,0 +1,30 @@
+\subsection{Task Filtering and Split Construction}
+\label{app:data-splits}
+We use the six task collections distributed with SRA-Bench~\citep{su2026skillretrieval}. Table~\ref{tab:appendix-data-splits} gives the exact task and gold-skill counts after filtering. Starting from 5,400 annotated instances, we remove any task whose required set contains a skill occurring in fewer than three remaining tasks. We recompute skill frequencies and repeat this operation until no such task remains. Filtering removes whole tasks rather than individual labels from a multi-skill task. This leaves 4,987 tasks associated with 306 distinct gold skills; 413 tasks are excluded.
+
+We target a global train/validation/test allocation of 70\%/15\%/15\%, yielding 3,491/748/748 tasks. A constrained allocation assigns tasks while ensuring that every retained skill occurs in all three partitions. For each skill, split counts lie within floor/ceiling bounds around the target proportions, clipped to leave at least one occurrence in each partition. The allocation minimizes normalized deviations from the target proportions for both skills and datasets, and uses split seed 20260908 to order task identifiers within each dataset--gold-set group. The constraints can shift an individual dataset away from the global proportions, particularly when many skills have few examples; the exact counts therefore take precedence over an assumed per-dataset ratio.
+
+Task identifiers are disjoint across partitions, but the skill vocabulary is deliberately shared: each partition contains all 306 retained gold skills. The evaluation consequently measures generalization to held-out tasks involving represented skills, rather than to entirely unseen skills.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrr@{}}
+\toprule
+& \multicolumn{6}{c}{Tasks} & \multicolumn{2}{c}{Unique gold skills} \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-9}
+Benchmark & Source & Removed & Retained & Train & Val. & Test & Source & Retained \\
+\midrule
+BigCodeBench & 1,140 & 81 & 1,059 & 813 & 123 & 123 & 139 & 70 \\
+CHAMP & 223 & 55 & 168 & 116 & 26 & 26 & 89 & 43 \\
+LogicBench & 760 & 0 & 760 & 532 & 114 & 114 & 19 & 19 \\
+MedCalc-Bench & 1,100 & 0 & 1,100 & 770 & 165 & 165 & 55 & 55 \\
+TheoremQA & 747 & 277 & 470 & 259 & 106 & 105 & 320 & 105 \\
+ToolQA & 1,430 & 0 & 1,430 & 1,001 & 214 & 215 & 14 & 14 \\
+\midrule
+Total & 5,400 & 413 & 4,987 & 3,491 & 748 & 748 & 636 & 306 \\
+\bottomrule
+\end{tabular*}
+\caption{Task filtering and exact split sizes. Source counts refer to the SRA-Bench task collections before our filtering, not necessarily the original full benchmarks. Retained unique gold skills count distinct annotated skill identifiers, not task--skill occurrences or corpus entries. Every retained skill is represented in each of train, validation, and test.}
+\label{tab:appendix-data-splits}
+\end{table*}

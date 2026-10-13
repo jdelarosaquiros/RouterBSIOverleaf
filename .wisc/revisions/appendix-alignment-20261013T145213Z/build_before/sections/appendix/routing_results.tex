@@ -1,0 +1,9 @@
+\subsection{Results by Benchmark and Retriever}
+\label{app:routing-results}
+Tables~\ref{tab:app-routing-1}--\ref{tab:app-routing-3} expand the routing comparison into benchmark-level nDCG and recall. Each retriever group includes the base ranking, static selection, the routing baselines, and the initial and optimized RouterBSI predicates. All results use Qwen3.5-4B. The cutoffs of 5 and 10 expose whether a gain in the first-ranked skill also preserves more required skills within a small routing budget.
+
+The gains differ across benchmarks. For example, RouterBSI with SkillSight reaches nDCG@10 of 0.771 on BigCodeBench and 0.797 on ToolQA, compared with 0.616 and 0.390 for the base retriever. On TheoremQA, SkillRouter remains stronger in nDCG@10 for all three retrievers. MedCalc-Bench presents a different boundary: the Vector retriever already attains high coverage and ranking quality, leaving less room for improvement. These comparisons separate the effect of predicate refinement from the difficulty of the initial candidate pool.
+
+\input{sections/appendix/routing_table_1}
+\input{sections/appendix/routing_table_2}
+\input{sections/appendix/routing_table_3}

@@ -1,0 +1,379 @@
+{
+  "artifact": "average_retention_degradation",
+  "figure_number": 3,
+  "scope": "formatting only; frozen paper selection, unchanged authored caption and label",
+  "regenerate": "python scripts/render_acl_readable_figures.py --artifact average_retention_degradation",
+  "generator": {
+    "path": "scripts/render_acl_readable_figures.py",
+    "sha256": "1810cbb4e7297cbf0f6eac5af3ef81b9c5162069d25e0a26debb5be2ac5359d7"
+  },
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.4.4",
+    "pymupdf": "1.28.0"
+  },
+  "frozen_input": {
+    "path": "figs/average_retention_degradation/selection.json",
+    "sha256": "8fcc09dc76b3172d925e8068cc130e82d8885dbe1aaacdf17fb0d2685a2a25f0"
+  },
+  "protected_hashes": {
+    "figs/average_retention_degradation/table.tex": "b42f763f616d461449aabb99b40294507a7c9594e3ba22d3ab4288b23cca9cd5",
+    "figs/average_retention_degradation/selection.json": "8fcc09dc76b3172d925e8068cc130e82d8885dbe1aaacdf17fb0d2685a2a25f0",
+    "figs/average_retention_degradation/description.text": "dbfe7f936cc31d4f8510008c76f254588c1146523d32dd4139117a9ff105d016",
+    "figs/average_retention_degradation/provenance.text": "2065a094b9aab00af02224f2e79c360da93814e785886ff5c6fc364534a68637",
+    "figs/average_retention_degradation/artifact-manifest.json": "e0ea8fc164c10341703b578723640126d85dcb65d953531a18dfaf3cae8b4876"
+  },
+  "measurements": {
+    "width_pt": 218.0,
+    "height_pt": 114.0,
+    "font_sizes_pt": [
+      8.0,
+      9.0
+    ],
+    "text": [
+      {
+        "text": "50",
+        "size_pt": 8.0,
+        "bbox": [
+          39.0426139831543,
+          88.21412658691406,
+          49.2225227355957,
+          101.7821273803711
+        ]
+      },
+      {
+        "text": "25",
+        "size_pt": 8.0,
+        "bbox": [
+          79.72443389892578,
+          88.21412658691406,
+          89.90433502197266,
+          101.7821273803711
+        ]
+      },
+      {
+        "text": "10",
+        "size_pt": 8.0,
+        "bbox": [
+          120.40625,
+          88.21412658691406,
+          130.58615112304688,
+          101.7821273803711
+        ]
+      },
+      {
+        "text": "5",
+        "size_pt": 8.0,
+        "bbox": [
+          163.63494873046875,
+          88.21412658691406,
+          168.7229461669922,
+          101.7821273803711
+        ]
+      },
+      {
+        "text": "1",
+        "size_pt": 8.0,
+        "bbox": [
+          204.31675720214844,
+          88.21412658691406,
+          209.40475463867188,
+          101.7821273803711
+        ]
+      },
+      {
+        "text": "Top k",
+        "size_pt": 9.0,
+        "bbox": [
+          113.8671875,
+          97.74674987792969,
+          137.1314239501953,
+          113.01074981689453
+        ]
+      },
+      {
+        "text": "30",
+        "size_pt": 8.0,
+        "bbox": [
+          21.8125,
+          81.17506408691406,
+          31.992408752441406,
+          94.7430648803711
+        ]
+      },
+      {
+        "text": "50",
+        "size_pt": 8.0,
+        "bbox": [
+          21.8125,
+          65.97506713867188,
+          31.992408752441406,
+          79.5430679321289
+        ]
+      },
+      {
+        "text": "75",
+        "size_pt": 8.0,
+        "bbox": [
+          21.8125,
+          46.975059509277344,
+          31.992408752441406,
+          60.543060302734375
+        ]
+      },
+      {
+        "text": "100",
+        "size_pt": 8.0,
+        "bbox": [
+          16.71875,
+          27.975065231323242,
+          31.990562438964844,
+          41.54306411743164
+        ]
+      },
+      {
+        "text": "Ret@",
+        "size_pt": 9.0,
+        "bbox": [
+          1.3033905029296875,
+          59.1806640625,
+          16.56739044189453,
+          83.5
+        ]
+      },
+      {
+        "text": "k",
+        "size_pt": 9.0,
+        "bbox": [
+          2.7883901596069336,
+          53.96966552734375,
+          15.559391021728516,
+          59.1806640625
+        ]
+      },
+      {
+        "text": " (%)",
+        "size_pt": 9.0,
+        "bbox": [
+          1.3033905029296875,
+          35.53491973876953,
+          16.56739044189453,
+          53.96875
+        ]
+      },
+      {
+        "text": "Retriever",
+        "size_pt": 8.0,
+        "bbox": [
+          41.307186126708984,
+          0.6749095916748047,
+          77.95153045654297,
+          14.242910385131836
+        ]
+      },
+      {
+        "text": "baseline",
+        "size_pt": 8.0,
+        "bbox": [
+          41.307186126708984,
+          10.276472091674805,
+          74.8270034790039,
+          23.844472885131836
+        ]
+      },
+      {
+        "text": "LLM Select",
+        "size_pt": 8.0,
+        "bbox": [
+          41.307186126708984,
+          20.6772518157959,
+          84.3510971069336,
+          34.2452507019043
+        ]
+      },
+      {
+        "text": "SkillRouter",
+        "size_pt": 8.0,
+        "bbox": [
+          102.35406494140625,
+          6.436628341674805,
+          145.2584991455078,
+          20.004629135131836
+        ]
+      },
+      {
+        "text": "SkillDAG",
+        "size_pt": 8.0,
+        "bbox": [
+          102.35406494140625,
+          16.0366268157959,
+          136.277099609375,
+          29.60462760925293
+        ]
+      },
+      {
+        "text": "Skill-Pro",
+        "size_pt": 8.0,
+        "bbox": [
+          163.26031494140625,
+          6.436628341674805,
+          195.23953247070312,
+          20.004629135131836
+        ]
+      },
+      {
+        "text": "RouterBSI",
+        "size_pt": 8.0,
+        "bbox": [
+          163.26031494140625,
+          16.0366268157959,
+          202.57594299316406,
+          29.60462760925293
+        ]
+      }
+    ]
+  },
+  "actual_artists": {
+    "lines": [
+      {
+        "label": "Retriever baseline",
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "y": [
+          100.0,
+          91.67704230456543,
+          79.99640099577748,
+          68.82588253116107,
+          42.52803871551603
+        ],
+        "color": "#777777",
+        "marker": "o",
+        "linestyle": ":"
+      },
+      {
+        "label": "LLM Select",
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "y": [
+          100.0,
+          93.78525743124851,
+          86.35908250253384,
+          78.0330990945576,
+          54.73506066795362
+        ],
+        "color": "#0072B2",
+        "marker": "s",
+        "linestyle": "--"
+      },
+      {
+        "label": "SkillRouter",
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "y": [
+          100.0,
+          93.521034867101,
+          87.86977024241104,
+          83.89942348064599,
+          68.40494694418331
+        ],
+        "color": "#E69F00",
+        "marker": "^",
+        "linestyle": "-."
+      },
+      {
+        "label": "SkillDAG",
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "y": [
+          100.0,
+          96.0238671790079,
+          81.37515821291166,
+          59.458340591979514,
+          36.5062206502009
+        ],
+        "color": "#009E73",
+        "marker": "D",
+        "linestyle": "--"
+      },
+      {
+        "label": "Skill-Pro",
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "y": [
+          100.0,
+          93.78410684941754,
+          85.45580464364643,
+          77.67645484461984,
+          45.11672877655674
+        ],
+        "color": "#CC79A7",
+        "marker": "v",
+        "linestyle": "-."
+      },
+      {
+        "label": "RouterBSI",
+        "x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "y": [
+          100.0,
+          98.20032147793832,
+          94.6319464524654,
+          90.46869353958586,
+          69.71968159593038
+        ],
+        "color": "#D55E00",
+        "marker": "P",
+        "linestyle": "-"
+      }
+    ],
+    "xlim": [
+      -0.2,
+      4.2
+    ],
+    "ylim": [
+      30.0,
+      105.0
+    ]
+  },
+  "checks": {
+    "numerical_artist_equality": true,
+    "uncertainty_vertices": false,
+    "colors_and_series_preserved": true,
+    "captions_labels_and_evidence_unchanged": true
+  },
+  "historical_metadata": "Existing selection/provenance records remain immutable evidence. This manifest supersedes their PDF/PNG hashes and rendering settings only; it does not promote reportability.",
+  "outputs": {
+    "preview.pdf": "176b949c6ba145cae81a27431ce5f22d1facdfa6d07dc8b303dcd8aca55ddc09",
+    "preview.png": "dbf7eec9b30bd89208cf9cddc7e639ea09390c43a5653b0cb6ff94d2f992965a"
+  }
+}

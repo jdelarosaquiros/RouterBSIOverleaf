@@ -1,0 +1,97 @@
+{
+  "aggregation": "Each saved occurrence has unit weight; exact task/predicate/Boolean duplicates share a review. Total = sum agreements / sum reviewed, not mean dataset rate.",
+  "audit_directory": ".wisc/artifacts/predicate-review-audit-final-40",
+  "audit_summary": {
+    "blinded_disagreements_with_gpt": [
+      "E08",
+      "E15",
+      "E19",
+      "E20"
+    ],
+    "by_stratum": {
+      "assessed_correct": {
+        "ambiguous": 0,
+        "likely_incorrect": 0,
+        "n": 20,
+        "saved_false": 20,
+        "saved_true": 0,
+        "supported": 20
+      },
+      "assessed_error": {
+        "ambiguous": 2,
+        "likely_incorrect": 1,
+        "n": 20,
+        "saved_false": 8,
+        "saved_true": 12,
+        "supported": 17
+      }
+    },
+    "datasets": {
+      "bigcodebench": 6,
+      "champ": 3,
+      "logicbench": 6,
+      "medcalcbench": 6,
+      "theoremqa": 6,
+      "toolqa": 13
+    },
+    "excluded_previous_reviews": 20,
+    "human_ground_truth": false,
+    "overall": {
+      "ambiguous": 2,
+      "likely_incorrect": 1,
+      "supported": 37
+    },
+    "sample_size": 40,
+    "sampling_reproduced": true,
+    "seed": 20261014,
+    "source_complete": true,
+    "source_hashes_unchanged": true,
+    "supported_fraction_of_balanced_sample": 0.925
+  },
+  "metric_mapping": {
+    "accuracy": "agreement proportion",
+    "correct": "agreements"
+  },
+  "paper_table_generator": "scripts/generate_evaluator_validation_table.py",
+  "sampling": "random.Random(seed); error then correct; random.sample 20 per review_id-sorted stratum after excluding prior 20 review IDs",
+  "schema_version": 1,
+  "scope": "Model-adjudicated agreement diagnostic; not human ground-truth accuracy.",
+  "sha256": {
+    ".wisc/artifacts/predicate-review-audit-35ba430077fc/sample.json": "1177c5f884ad1af1d23bb8b373ad5d3df908b1ea54e631010abf5baaf97cd9b2",
+    ".wisc/artifacts/predicate-review-audit-final-40/audit_details.json": "4ee9103e8729ab1f9fc08c83bce299d84fbf0ab5659992778027ff970ff7a3fa",
+    ".wisc/artifacts/predicate-review-audit-final-40/blinded_assessments.json": "b8a2305d9a58957ba0dda7b1cd7abecd70f639f761c2895def8efa6743459d7a",
+    ".wisc/artifacts/predicate-review-audit-final-40/metadata.json": "c622ca410d034939b575e1d5c7215272b181997b19d84a668c56d9ee937caafe",
+    ".wisc/artifacts/predicate-review-audit-final-40/report.md": "f86b203aea28eb4fbf683fac8c378a0c23f8ffff2da153924f347c9ad4c4bafe",
+    ".wisc/artifacts/predicate-review-audit-final-40/sample.json": "124e668d77fa10d74d6a174daf52aa57bb1d5a03e619a8c05f51a68428f8751e",
+    ".wisc/artifacts/predicate-review-audit-final-40/summary.json": "cfccddc520daf9bb90afe6426e4a2e4882e756088bc94494a0f67d3cd4ca32d4",
+    "project_skill_selection/.wisc/results/predicate_reviews/skillsight_run_1/errors.jsonl": "7916baa9c3ccecba158d78433b12c36c262d37982b02a5475bc810bd3fcfb3c9",
+    "project_skill_selection/.wisc/results/predicate_reviews/skillsight_run_1/manifest.json": "bb387670744ed49c618497351b9c45747f6d241749939c769b03a8fb78055871",
+    "project_skill_selection/.wisc/results/predicate_reviews/skillsight_run_1/successes.jsonl": "561f7008224c50f37e1c4cd8e2390f095c592a9eb86f81540c4385e84eb1fa5b",
+    "project_skill_selection/.wisc/results/predicate_reviews/skillsight_run_1/summary.json": "72adb17956c8d06497bf853445f05a263c45379c2fd4d72d94e336d924752011",
+    "project_skill_selection/BayesGSI/scripts/review_predicate_evaluations.py": "e6dc4511c53f615482e2bd86caf8fd659dcf71f63e833459676df1b3d1a073ad"
+  },
+  "source_data_producer": "BayesGSI/scripts/review_predicate_evaluations.py (historical model review; not executed for new requests)",
+  "source_review_directory": "project_skill_selection/.wisc/results/predicate_reviews/skillsight_run_1",
+  "source_summary": "project_skill_selection/.wisc/results/predicate_reviews/skillsight_run_1/summary.json",
+  "source_validation_script": "project_skill_selection/BayesGSI/scripts/review_predicate_evaluations.py",
+  "summary_fields": [
+    "metric",
+    "status",
+    "cohort",
+    "total_occurrences",
+    "selected_occurrences",
+    "reviewed_occurrences",
+    "unique_reviews_total",
+    "unique_reviews_completed",
+    "correct",
+    "incorrect",
+    "accuracy",
+    "coverage",
+    "pending_occurrences",
+    "error_occurrences",
+    "confusion_matrix",
+    "by_dataset",
+    "by_saved_boolean",
+    "final_iteration"
+  ]
+}

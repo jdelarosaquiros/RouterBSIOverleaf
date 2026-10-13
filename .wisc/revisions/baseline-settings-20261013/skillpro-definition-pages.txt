@@ -1,0 +1,273 @@
+Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents
+Skill-augmented Markov Decision Process
+State
+Frozen LLM
+𝜋!"#
+Environment
+Next state
+Reward
+Action
+𝑎$, … , 𝑎$%∆$
+Trajectories 𝒯
+Buffer
+Non-Parametric PPO
+①Semantic Gradient
+②PPO Trust-Region Verification
+New Skill 𝜔’
+(Re-run)
+Old Skill 𝜔
+Trajectories
+𝒯!
+Advantage $𝐴
+clipped
+Trajectories
+𝒯!
+Hindsight attribution:
+𝑔" = (𝑔"
+# , 𝑔"
+$ , 𝑔"
+% )
+Semantic Optimization:
+𝜔’ = 𝜔⨁𝑔&
+Batch-level aggregation:
+𝑔& = 𝐴𝑔𝑔({𝑔"}"'(
+! )
+Per-Trajectory Gradient
+{𝒈𝟏, 𝒈𝟐, … , 𝒈𝑩}
+Stable Gradient 𝒈𝝎
+Skill candidate 𝝎’
+Select
+Sample
+Trajectories
+State
+Skill 𝜔
+Selected Skill 𝝎for ∆𝒕
+Activation 𝜤𝝎: When …
+Procedure 𝝅𝝎:
+Step 1: do action A;
+Step 2: do action B…
+Termination 𝜷𝝎: When … stop
+Procedural Skills
+Skill evolutionary Map
+Skill
+𝜔
+Online
+score
+Skill 𝜔(
+Skill 𝜔-
+Pruning
+Skill 𝜑
+Skill 𝜔.
+③Online Score Maintenance
+Update
+𝑆𝑐𝑜𝑟𝑒(𝜔) = 1
+!
+𝑔𝑎𝑖𝑛(𝜔;𝜏)/1
+!
+𝑓𝑟𝑒𝑞(𝜔;𝜏)
+New
+Refinement
+Lowest
+Duplicate
+Learn
+𝜋𝑎𝑠, 𝜔
+𝐿/012 𝜔’
+Better?
+Verification
+Best of N
+Selection
+PPO
+Gate
+𝜋𝑎𝑠, 𝜔’
+𝑠$, … , 𝑠$%∆$
+Figure 2. Overview of the Skill-Pro framework. (Left) Skill-MDP: The agent selects a Skill ω based on state st and activation
+conditions. A frozen LLM executes ω into primitive actions at over multiple steps until termination. Post-episode trajectories T are
+stored in a buffer. (Middle) Procedural Skills: Skills are dynamically managed via refinement, generation, and score-based pruning to
+maintain pool quality. (Right) Non-Parametric PPO: Evolution proceeds in two stages: 1⃝Semantic Gradient: Derives and aggregates
+per-trajectory gradients through hindsight attribution to generate candidates ω′.
+2⃝PPO Gate: Filters candidates via trust-region
+verification, admitting only the best-performing valid candidate into the Skill pool.
+when control should return.
+Unlike human procedural memory (Cohen & Squire, 1980;
+Squire, 2004), which is largely implicit, our Skills are cur-
+rently represented in an explicit, readable form, similar to
+systems such as Claude Agent Skills (Anthropic, 2025).
+While explicit in representation, Skills can be hidden at the
+system level during execution; directions toward implicit
+procedural representations are discussed in Appendix F.1.
+3.1. Problem Formulation
+We formulate the LLM agent’s decision-making process as a
+Skill-augmented Markov Decision Process (Skill-MDP).
+The Skill-MDP extends the classical Markov Decision Pro-
+cess (MDP) by introducing a dynamic Skill pool Ω, which
+explicitly represents the agent’s procedural memory and or-
+ganizes decision making around the selection and execution
+of reusable procedural Skills. Formally, a Skill-MDP is
+defined as a tuple
+MΩ= (S, A, Ω, P, R, γ),
+where S denotes the semantic state space and A denotes the
+primitive action space, both represented in natural language;
+Ω= {ω(1), . . . , ω(K)} denotes the pool of available Skills,
+which serves as the agent’s procedural memory, with K
+Skills stored; P and R are the state transition and reward
+functions, respectively, and γ ∈(0, 1] is the discount factor.
+In a Skill-MDP, at each time step t, the agent first selects
+a Skill via a Skill-selection policy µ, conditioned on the
+current state st and the current Skill pool Ω:
+ωt ∼µ(ω | st, Ω).
+Conditioned on the active Skill ωt, the agent then generates
+a primitive action using an LLM-driven action policy:
+at ∼πLLM(a | st, ωt).
+(1)
+Accordingly, the hierarchical policy over Skills and primi-
+tive actions factorizes as
+πΩ(ωt, at | st) = µ(ωt | st, Ω) πLLM(at | st, ωt),
+(2)
+After executing at, the agent receives reward rt and tran-
+sitions to next state st+1 until the horizon T is reached.
+While Eq. (2) shares a similar factorization with memory-
+augmented agents (e.g., Memento (Zhou et al., 2025a)),
+which typically optimize the retrieval policy µ, our work
+focuses on autonomously evolving the Skill pool Ω.
+Optimization Objective. We aim to optimize the agent’s
+decision-making performance under the hierarchical policy
+πΩ, measured by the expected cumulative discounted return:
+max
+πΩ
+E
+" T
+X
+t=0
+γtrt
+#
+.
+(3)
+In this paper, we focus on learning the Skill pool Ω, while
+keeping the LLM policy and the Skill-selection mechanism
+fixed. We next specify the internal structure of a Skill, the
+basic reusable procedural unit in the Skill-MDP.
+3.2. Skill Structure
+We define a Skill ω ∈Ωas a reusable, natural-language
+procedural unit that specifies when to activate, how to act
+while active, and when to return control. This enables Skills
+to be reused across similar states. Formally, a Skill is defined
+as the tuple
+ω = ⟨Iω, πω, βω⟩,
+representing its activation condition, execution procedure,
+and termination condition.
+(1) Activation Condition Iω. The activation condition spec-
+ifies when a Skill is invoked. Rather than a learned classifier
+in latent space, Iω is a natural-language description of ob-
+servable context patterns where the Skill applies. During
+3
+
+Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents
+decision making, the Skill-selection policy µ uses Iω to
+select Skills based on the current state or interaction history.
+(2) Execution Procedure πω. The execution procedure
+πω specifies an ordered sequence of actions to be executed
+while the Skill ω is active, expressed as in natural language.
+At each time step t, the LLM generates a primitive action
+conditioned on the current state st and πω (Eq. (1)), enabling
+the agent to reuse procedural steps without re-deriving de-
+liberative reasoning from scratch.
+(3) Termination Condition βω. The termination condition
+specifies when the execution of a Skill should end. Like
+the activation condition, βω is expressed in natural language
+and evaluated on the current state:
+βω(st) = 1 iff st satisfies βω.
+If βω(st) = 1, the Skill ω terminates and µ selects the next
+Skill; otherwise, it remains active.
+Example. We illustrate with an example Skill. A detailed
+case showing how this Skill guides primitive action genera-
+tion during execution is provided in Appendix D.2.
+Name: StrategicPlanning
+Activation Condition Iω: When the task begins and no
+prior information or feedback is available.
+Execution Procedure πω:
+Step 1: Establish an initial hypothesis space based on the
+task constraints.
+Step 2: Generate a diverse exploratory action that maxi-
+mally reduces uncertainty.
+Termination Condition βω: Terminate after the first
+exploratory action is executed and feedback is observed.
+3.3. Skill Selection
+At each decision step t, the agent maintains a Skill pool Ωt.
+A new Skill is selected by the Skill-selection policy µ only
+upon termination of the current Skill. In that case, µ selects
+a Skill ωt ∈Ωt based on the current state st and the pool
+Ωt. We present two simple instantiations of µ.
+(i) Selection by Similarity. This mechanism selects the
+Skill whose activation condition best matches the state st:
+ωt = arg maxω∈Ωt Sim(st, Iω),
+where Sim(st, Iω) measures the similarity between the cur-
+rent state and the activation condition Iω. The similarity
+function Sim(·, ·) can be implemented via cosine similarity
+over embeddings, or LLM as judge.
+(ii) Selection by Value. We also support value-based selec-
+tion to prioritize Skills with higher expected return. We first
+form a candidate set of the top-k Skills by similarity:
+Ω(k)
+t
+= TopKω∈Ωt Sim(st, Iω),
+where Ω(k)
+t
+⊆Ωt and |Ω(k)
+t
+| = k. We then select the Skill
+with the highest estimated value in this set:
+ωt = arg maxω∈Ω(k)
+t
+Q(st, ω).
+Here Q(st, ω) denotes an estimate of the expected return
+obtained by invoking Skill ω from state st.
+These mechanisms are simple instantiations of µ and can
+be replaced by more advanced Skill retrieval policies, e.g.,
+RL-based methods (Zhou et al., 2025a; Zhang et al., 2026).
+Our focus lies on Skill reuse and evolution.
+3.4. Skill Pool Evolution
+The Skill pool is learned from interaction experience and
+evolves over time.
+In our framework, the pool is up-
+dated using trajectories generated under the current pol-
+icy. Given a batch of trajectories T (B) collected under the
+Skill-augmented policy πΩ, we define a Skill pool evolution
+operator E:
+Ωnew = E(Ωold, T (B)),
+(4)
+which synthesizes new Skills, refines existing Skills, and
+prunes those that underperform empirically.
+This paper focuses on Skill pool evolution. The LLM action
+policy πLLM and the Skill-selection policy µ are kept fixed,
+and learning proceeds through repeated application of E.
+Under this setting, optimizing Eq. (3) reduces to optimizing
+the evolution operator E:
+max
+E
+Eτ∼πΩ∗
+" T
+X
+t=0
+γtrt
+#
+,
+where Ω∗= E(N)(Ω0). (5)
+Here, E(N) denotes N successive applications of E, each
+using newly collected experience.
+4. Non-Parametric PPO for Skill Evolution
+In this section, we present a Proximal Policy Optimization
+(PPO)-inspired non-parametric method for Skill pool evo-
+lution, which we refer to as Non-Parametric PPO. This
+method leverages PPO-style trust-region principles to real-
+ize reliable Skill pool evolution as defined in Eq. (4), without
+updating any LLM parameters.
+Standard PPO (Schulman et al., 2017) improves a parame-
+terized stochastic policy through gradient-based optimiza-
+tion of a clipped surrogate objective. In contrast, our Non-
+Parametric PPO replaces parameter updates with Skill re-
+finement, and consists of two components: (1) generating
+candidate Skills via semantic gradients extracted from tra-
+jectories, and (2) accepting candidates only if they satisfy a
+PPO-style trust-region verification under the frozen LLM
+policy. The complete procedure is shown in Algorithm 1.
+4

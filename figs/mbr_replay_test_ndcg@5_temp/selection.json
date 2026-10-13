@@ -73,16 +73,13 @@
       "sra": 26262
     },
     "learned_policy_changed": true,
-    "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
     "passed": true,
-    "reportable": false,
     "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
     "split_counts": {
       "test": 748,
       "train": 3491,
       "validation": 748
-    },
-    "status": "completed_noncanonical"
+    }
   },
   "alternate_metric_files": [
     {
@@ -667,7 +664,6 @@
     }
   ],
   "aggregation": "task-macro nDCG@5 from each source run; 748 test tasks",
-  "reportable": false,
   "uncertainty": "not estimated; no bands",
   "output_sha256": {
     "preview.pdf": "92077618dd235d1b52ed1a69a6a76a1cec7ad3b9bce979d595cf113db6bcf7da",

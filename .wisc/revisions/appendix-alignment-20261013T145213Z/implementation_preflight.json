@@ -1,0 +1,19 @@
+{
+  "protected_count": 334,
+  "targets": [
+    "sections/appendix/ablation_candidate_pool.tex",
+    "sections/appendix/ablation_cost_capacity.tex",
+    "sections/appendix/data_scope.tex",
+    "sections/appendix/data_splits.tex",
+    "sections/appendix/error_downstream.tex",
+    "sections/appendix/error_routing_gap.tex",
+    "sections/appendix/evaluator_validation.tex",
+    "sections/appendix/implementation_runtime.tex",
+    "sections/appendix/implementation_software.tex",
+    "sections/appendix/procedure_algorithm.tex",
+    "sections/appendix/prompts_initialization.tex"
+  ],
+  "replacement_count": 16,
+  "snapshot_match": true,
+  "approved_edits_sha256": "9527fe7e3c70d3a413a23952e76ac88e3bcf9541a2520f26e489eec07aa2f70c"
+}

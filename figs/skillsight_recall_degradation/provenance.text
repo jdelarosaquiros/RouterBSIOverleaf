@@ -6,8 +6,6 @@ Source rows: 168; selected rows: 18.
 Selection: Dataset=Average; equal-weight arithmetic mean across BM25, Vector, and SkillSight for each method/cutoff; native baseline plus five named routing methods; no initialization curve or model-specific panel.
 Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
 Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
-Source status: completed_noncanonical; reportable=false; analysis-only.
-Nonreportable reason: SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
 Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
 Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
 Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.

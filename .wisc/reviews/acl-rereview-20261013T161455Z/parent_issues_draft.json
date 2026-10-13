@@ -1,0 +1,234 @@
+[
+  {
+    "id": "ISSUE-007",
+    "severity": "major",
+    "category": "methodology",
+    "adversarial_pass": "1",
+    "location": {
+      "section": "6 Results",
+      "page": 6,
+      "figure_or_table": null,
+      "tex_file": "sections/results.tex",
+      "line_range": "9",
+      "quoted_text": "SkillRouter is the strongest routing baseline, yet RouterBSI the nDCG@1 and nDCG@10 is 10.9\\% and 8.4\\% higher on average.",
+      "anchor_kind": "existing_span",
+      "insertion_point": null
+    },
+    "problem": "The main comparative advantage is supported by point estimates without paired uncertainty for the reported method comparisons.",
+    "reasoning_chain": [
+      "Observed: Table 1 and Figure 4 report main competitor means; Appendix E.1 explicitly states one evaluation per method\u2013retriever setting and no significance tests.",
+      "Internal scientific standard: task-matched comparisons should distinguish the observed effect from sampling and optimization variability; three retrieval conditions are not independent seed repetitions.",
+      "Counterevidence: the appendix transparently discloses the limitation, and Table 1 aggregates reproduce; the issue is inferential strength, not proven arithmetic error.",
+      "Consequence: the small downstream margins and per-dataset reversals have unknown comparative precision; the separate three-run component ablation does not quantify those gaps."
+    ],
+    "predicted_reviewer_objection": "Simulated objection: The main comparative advantage is supported by point estimates without paired uncertainty for the reported method comparisons.",
+    "fix": {
+      "type": "add_analysis",
+      "instruction": "Where saved task-level outcomes exist, compute paired task-bootstrap intervals for RouterBSI minus SkillRouter routing and downstream metrics, preserving retriever pairing and dataset weights. Report that these intervals condition on the observed fitted policies. State single-run scope in main text. If predictions are unavailable, keep comparisons explicitly descriptive; do not fabricate intervals or require arbitrary additional seeds.",
+      "target_text": null,
+      "required_inputs": [
+        "Saved paired task-level predictions for paired intervals, if available; no model rerun required for this analysis."
+      ],
+      "acceptance_criteria": [
+        "Main comparisons report paired effect uncertainty or are explicitly limited to observed single-run descriptive estimates.",
+        "Task, retriever and seed variability are not conflated.",
+        "No statistical-significance claim without a stated test."
+      ],
+      "estimated_effort": "medium",
+      "blocks_submission": false
+    },
+    "fix_window": "unknown",
+    "depends_on": []
+  },
+  {
+    "id": "ISSUE-009",
+    "severity": "major",
+    "category": "claims",
+    "adversarial_pass": "2",
+    "location": {
+      "section": "7 Ablations",
+      "page": 7,
+      "figure_or_table": null,
+      "tex_file": "sections/ablations.tex",
+      "line_range": "24",
+      "quoted_text": "They also suggest that predicates reach a plateau that cannot be overcomed with more capable LLMs, where it's difficult for the predicate to be narrow enough to be false for irrelevant tasks but broad enough to be true for all relevant tasks",
+      "anchor_kind": "existing_span",
+      "insertion_point": null
+    },
+    "problem": "Three backbone endpoints do not establish an irreducible predicate-capacity ceiling.",
+    "reasoning_chain": [
+      "Observed: Figure 7 reports final nDCG@1 of 0.742, 0.802 and 0.745; the middle backbone has the strongest endpoint.",
+      "Internal scientific standard: a finite, single-run cross-model comparison cannot establish that greater capability cannot overcome a plateau or identify predicate expressivity as its cause.",
+      "Counterevidence: Section 7.3 correctly acknowledges nonmonotonic endpoints, and the 99.6% endpoint ratio is a valid descriptive comparison.",
+      "Consequence: the final mechanistic/scaling inference exceeds what those measurements distinguish from optimization, evaluator, task and model-family effects."
+    ],
+    "predicted_reviewer_objection": "Simulated objection: Three backbone endpoints do not establish an irreducible predicate-capacity ceiling.",
+    "fix": {
+      "type": "rewrite",
+      "instruction": "Replace only the unsupported ceiling sentence with a measured-scope statement; retain the actual endpoints. No new experiment is required if the claim is narrowed.",
+      "target_text": "These results show that final routing performance is not monotonic across the tested backbones; they do not establish an intrinsic ceiling on predicate-based routing.",
+      "required_inputs": [],
+      "acceptance_criteria": [
+        "No claim of an irreducible ceiling from three endpoints.",
+        "Retain nonmonotonic final ordering and restrict generalization to tested models/settings."
+      ],
+      "estimated_effort": "medium",
+      "blocks_submission": false
+    },
+    "fix_window": "unknown",
+    "depends_on": []
+  },
+  {
+    "id": "ISSUE-008",
+    "severity": "minor",
+    "category": "self_containment",
+    "adversarial_pass": "S",
+    "location": {
+      "section": "7 Ablations",
+      "page": 7,
+      "figure_or_table": "Figure 6",
+      "tex_file": "sections/ablations.tex",
+      "line_range": "20",
+      "quoted_text": "MBR alone reduces token usage by 10.8\\% at the cost of a 7.7\\% relative decrease in nDCG@1 compared with using both.",
+      "anchor_kind": "existing_span",
+      "insertion_point": null
+    },
+    "problem": "The main cost trade-off omits the single-run and recorded-token scope that is supplied in Appendix G.2.",
+    "reasoning_chain": [
+      "Observed: Figure 6 says Total Token Usage, while Appendix G.2 distinguishes known usage, unknown-token attempts and a single first run.",
+      "Internal reporting standard: adjacent three-run Figure 5 and single-run Figure 6 must not appear to be the same statistical aggregation or a complete cost account.",
+      "Counterevidence: the appendix already reports the scope and counts; no evidence here that the comparison reverses.",
+      "Consequence: readers of the main paper alone can overinterpret these as complete, repeated-run efficiency estimates."
+    ],
+    "predicted_reviewer_objection": "Simulated objection: The main cost trade-off omits the single-run and recorded-token scope that is supplied in Appendix G.2.",
+    "fix": {
+      "type": "rewrite",
+      "instruction": "Add one sentence to the Figure 6 caption or Section 7.2 identifying single-run endpoints and recorded input/output tokens, with a reference to G.2.",
+      "target_text": "Each point represents one run; token totals include recorded input and output usage, with unavailable usage excluded (Appendix G.2).",
+      "required_inputs": [],
+      "acceptance_criteria": [
+        "Figure 6 states one run per configuration.",
+        "Known token totals are distinguished from a complete cost estimate."
+      ],
+      "estimated_effort": "small",
+      "blocks_submission": false
+    },
+    "fix_window": "unknown",
+    "depends_on": []
+  },
+  {
+    "id": "ISSUE-010",
+    "severity": "minor",
+    "category": "claims",
+    "adversarial_pass": "2",
+    "location": {
+      "section": "6 Results",
+      "page": 6,
+      "figure_or_table": null,
+      "tex_file": "sections/results.tex",
+      "line_range": "19",
+      "quoted_text": "This finding suggests expanding selected skills to include dependent skills could improve downstream performance even if the dependent skills are not required.",
+      "anchor_kind": "existing_span",
+      "insertion_point": null
+    },
+    "problem": "The dependency explanation is not isolated from differing skill budgets and baseline mechanisms.",
+    "reasoning_chain": [
+      "Observed: SkillDAG receives ten skills while RouterBSI top-k receives five; the main text explicitly discloses this.",
+      "Internal causal standard: different context budgets and selection mechanisms prevent attributing the downstream gap specifically to dependency utility.",
+      "Counterevidence: the sentence is already tentative (suggests/could), so this is a minor qualification rather than a demonstrated false empirical result.",
+      "Consequence: present dependency utility as a hypothesis, not a mechanism established by this comparison."
+    ],
+    "predicted_reviewer_objection": "Simulated objection: The dependency explanation is not isolated from differing skill budgets and baseline mechanisms.",
+    "fix": {
+      "type": "rewrite",
+      "instruction": "Keep the future-work hypothesis but append the budget qualification. A matched-budget experiment is optional unless causal attribution is retained.",
+      "target_text": "This motivates testing dependency-aware expansion, although the different supplied-skill budgets prevent this comparison from isolating its benefit.",
+      "required_inputs": [],
+      "acceptance_criteria": [
+        "The hypothesis explicitly acknowledges different supplied-skill budgets.",
+        "No claim that this comparison isolates dependency effects."
+      ],
+      "estimated_effort": "small",
+      "blocks_submission": false
+    },
+    "fix_window": "unknown",
+    "depends_on": []
+  },
+  {
+    "id": "ISSUE-011",
+    "severity": "minor",
+    "category": "writing",
+    "adversarial_pass": "W",
+    "location": {
+      "section": "5 Experiments",
+      "page": 5,
+      "figure_or_table": null,
+      "tex_file": "sections/experiments.tex",
+      "line_range": "20",
+      "quoted_text": "We additionally report F1@\\(k\\) to compare filtering capabilities.",
+      "anchor_kind": "existing_span",
+      "insertion_point": null
+    },
+    "problem": "The main metric shorthand does not distinguish selected-set F1 from ranked-cutoff metrics, and the retention aggregation is defined only in the appendix.",
+    "reasoning_chain": [
+      "Observed: E.1 distinguishes full selected-set F1 from ranked output; F.1 defines retention as a ratio of task-mean recalls, normalized by each method\u2019s own cutoff-50 coverage.",
+      "Internal clarity standard: the main definitions should identify the actual evaluated object and denominator.",
+      "Counterevidence: exact definitions and numerical tables already exist in the appendix; this is terminology/self-containment, not evidence of wrong F1 values.",
+      "Consequence: readers can mistakenly interpret ablation F1 as a fixed-cutoff score or the 90.5% retention as unconditional end-to-end recall."
+    ],
+    "predicted_reviewer_objection": "Simulated objection: The main metric shorthand does not distinguish selected-set F1 from ranked-cutoff metrics, and the retention aggregation is defined only in the appendix.",
+    "fix": {
+      "type": "add_analysis",
+      "instruction": "Replace F1@k with selected-set F1 when describing predicate ablations, and add the retention denominator/aggregation in one compact main-text sentence with appendix references. Preserve values.",
+      "target_text": null,
+      "required_inputs": [],
+      "acceptance_criteria": [
+        "Ablation F1 identified as selected-set rather than cutoff F1.",
+        "Retention identified as per-retriever ratio of task-mean Recall@k to method-specific Recall@50, averaged across retrievers."
+      ],
+      "estimated_effort": "small",
+      "blocks_submission": false
+    },
+    "fix_window": "unknown",
+    "depends_on": []
+  },
+  {
+    "id": "ISSUE-012",
+    "severity": "minor",
+    "category": "writing",
+    "adversarial_pass": "W",
+    "location": {
+      "section": "4 Method",
+      "page": 4,
+      "figure_or_table": null,
+      "tex_file": "sections/method.tex",
+      "line_range": "24",
+      "quoted_text": "Compare difference between \\(P_{q}\\)with \\(G_{q}\\) and identify the any of the following failures: required skill not selected, selected irrelevant skill.",
+      "anchor_kind": "existing_span",
+      "insertion_point": null
+    },
+    "problem": "Persistent grammatical and notation defects reduce clarity of the core method and figure captions.",
+    "reasoning_chain": [
+      "Observed: Section 4.2 contains the quoted malformed instruction, Section 4.3 contains a stray partial symbol before passed, Figure 2 repeats selected, and Figure 4 ends with most other approaches oracle performance.",
+      "Internal editorial standard: core algorithm steps and captions should be parseable without guessing; this is not a policy violation.",
+      "Counterevidence: the formal average-risk selection and strict initial-predicate validation inequalities are now consistent and should not be changed.",
+      "Consequence: avoidable prose/notation defects obscure otherwise understandable method and results."
+    ],
+    "predicted_reviewer_objection": "Simulated objection: Persistent grammatical and notation defects reduce clarity of the core method and figure captions.",
+    "fix": {
+      "type": "rewrite",
+      "instruction": "Perform a narrow copyedit of the quoted method sentence, the stray partial symbol, repeated RouterBSI introduction, Figures 2/4 captions and unresolved variable notation. Define current-task dependence once; use a different dummy task variable in the replay sum. Preserve scientific semantics and correct inequalities.",
+      "target_text": "Compare the predicted set $P_q$ with the required set $G_q$ to identify omitted required skills and selected irrelevant skills.",
+      "required_inputs": [],
+      "acceptance_criteria": [
+        "Named grammar/typographic errors removed.",
+        "Predicate functions are not labeled as numerical error scores in Figure 2.",
+        "Risk equations retain their empirical non-increase and strict cold-start gate meaning."
+      ],
+      "estimated_effort": "small",
+      "blocks_submission": false
+    },
+    "fix_window": "unknown",
+    "depends_on": []
+  }
+]

@@ -1,0 +1,43 @@
+% Generated from read-only CSV; do not edit numeric cells.
+\begin{table}[!htbp]
+\centering
+\caption{Retrieval and reranking performance. Overall results use the supplied task-weighted Dataset=Average rows (dataset scores weighted by task count); no new aggregation. Bold/underline mark best/second distinct value within each model, retriever, and metric (ties retained). R@k denotes Recall@k, the fraction of relevant skills recovered within the top k positions. Average is the task-weighted mean across test instances, equivalently dataset scores weighted by task count. Exact-zero metrics are shown as -. Baseline retrievers select all 50 candidates; raw-baseline F1 is loaded-set F1, not F1@5. These tables do not constitute controlled common-candidate method comparisons.}
+\label{tab:retrieval_and_reranking_performance}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & R@1 & R@5 & R@10 & R@25 & R@50 \\
+\midrule
+\multicolumn{6}{l}{\textit{BM25}} \\
+\midrule
+BM25 & 0.226 & 0.444 & 0.583 & 0.718 & \underline{0.797} \\
+LLM Select & 0.424 & 0.585 & 0.679 & 0.748 & 0.796 \\
+SkillRouter & \textbf{0.555} & \underline{0.668} & \underline{0.694} & 0.736 & 0.796 \\
+SkillDAG & 0.224 & 0.444 & 0.675 & \textbf{0.906} & \textbf{0.964} \\
+Skill-Pro & 0.384 & 0.596 & 0.671 & 0.742 & 0.796 \\
+RouterBSI\_init & 0.328 & 0.540 & 0.654 & 0.750 & 0.796 \\
+RouterBSI & \underline{0.531} & \textbf{0.697} & \textbf{0.737} & \underline{0.775} & 0.796 \\
+\midrule
+\multicolumn{6}{l}{\textit{Vector}} \\
+\midrule
+\textcolor{red}{Vector} & 0.454 & 0.601 & 0.655 & 0.728 & \underline{0.788} \\
+LLM Select & 0.455 & 0.633 & 0.680 & 0.732 & \underline{0.788} \\
+SkillRouter & \underline{0.558} & \underline{0.677} & 0.706 & 0.745 & \underline{0.788} \\
+SkillDAG & 0.454 & 0.601 & \textbf{0.873} & \textbf{0.943} & \textbf{0.962} \\
+Skill-Pro & 0.344 & 0.619 & 0.670 & 0.734 & 0.788 \\
+\textcolor{red}{RouterBSI\_init} & 0.432 & 0.596 & 0.673 & 0.742 & \underline{0.788} \\
+\textcolor{red}{RouterBSI} & \textbf{0.581} & \textbf{0.726} & \underline{0.752} & \underline{0.775} & \underline{0.788} \\
+\midrule
+\multicolumn{6}{l}{\textit{SkillSight}} \\
+\midrule
+SkillSight & 0.383 & 0.685 & 0.768 & 0.851 & 0.918 \\
+LLM Select & 0.488 & 0.736 & 0.803 & 0.868 & 0.918 \\
+SkillRouter & \underline{0.594} & \underline{0.752} & 0.797 & 0.859 & 0.918 \\
+SkillDAG & 0.383 & 0.685 & \underline{0.817} & \textbf{0.941} & \textbf{0.979} \\
+Skill-Pro & 0.400 & 0.731 & 0.800 & 0.873 & \underline{0.919} \\
+RouterBSI\_init & 0.444 & 0.680 & 0.764 & 0.863 & 0.918 \\
+RouterBSI & \textbf{0.631} & \textbf{0.842} & \textbf{0.881} & \underline{0.908} & 0.918 \\
+\bottomrule
+\end{tabular}
+\end{table}

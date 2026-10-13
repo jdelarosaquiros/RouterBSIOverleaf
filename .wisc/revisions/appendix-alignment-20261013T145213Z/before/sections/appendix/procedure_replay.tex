@@ -1,0 +1,13 @@
+\subsection{Bounded Replay Construction}
+\label{app:procedure-replay}
+For each skill, we retain two training-history buckets, $\mathcal H_s^+$ and $\mathcal H_s^-$, containing at most $N$ relevant and $N$ irrelevant tasks. Membership is determined by $s\in G_q$. Before routing, each newly seen training task is registered once in a global seen-task history. After routing, we materialize the bounded buckets for every retrieved or required catalog skill in sorted skill-identifier order, including skills without a routing error. A newly materialized bucket replays the already-seen history; an existing bucket processes the new history entries. Only these per-skill buckets are capacity-limited, not the global history used for lazy materialization.
+
+A bucket is filled until it reaches $N$ entries. Thereafter, every newly seen task of that category replaces a uniformly selected existing slot. This is uniform slot replacement, not reservoir sampling: the new task is always inserted. A seeded random-number generator shared across buckets and the deterministic materialization order determine the replacements. Repeated visits to a task in later iterations do not insert it again.
+
+When repairing the failure on $q$, the effective replay set is
+\[
+\mathcal R_s=\mathcal H_s^+\cup\mathcal H_s^-\cup\{q\},
+\]
+with duplicate task identifiers removed. Thus the historical bounds are $|\mathcal H_s^+|,|\mathcal H_s^-|\leq N$, while the current-inclusive set can have $2N+1$ tasks if $q$ is no longer cached. The bounds in the main replay description apply to the retained history; the current failed task is always included in the implemented decision.
+
+The proposal prompt receives the current task and its relevance label, plus up to the first three entries from each bucket, with their existing predicate judgments. Candidate scoring uses the entire effective replay set, not just these prompt examples. Bucket order, rather than a new random sample, determines the displayed examples.

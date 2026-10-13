@@ -1,0 +1,58 @@
+                         Setting                             Value         Reproducibility therefore requires matching the        1545
+                       Retrieved candidates                  50            initial predicates, split order, replay seed, effective        1546
+                       Training iterations                    10         prompts and evaluator settings, not only the model        1547
+                      Generated replacements Mp             3                                                         name.                                                    1548                       History capacity N per label             5
+                        Predicate limit l (characters)           400       We served Qwen3.5-4B using vLLM on a sin-        1549
+                      Replay-replacement seed         20260324          gle NVIDIA H200 GPU. Two representative ten-        1550
+                           Initialization temperature                1
+                                                                           iteration runs using defaults configurations required        1551                       Proposal temperature                   1
+                        Predicate-evaluation temperature          0         20.45 to 25.47 hours of measured wall-clock time,        1552
+                 Maximum completion tokens          4096         including cold-start of predicates, cold-start eval-        1553
+                 Maximum request attempts              5
+                     SDK-level retries                      0          uation, iterative refinement, per-iteration diagnos-        1554
+                      Concurrent request limit                48            tic evaluation, and final evaluation. Training ac-        1555
+                                                            counted for approximately 19.04 hours.                   1556
+              Table 4: Default RouterBSI optimization settings. The
+             unchanged predicate is an additional selection option,   D.3  Controlled Method Variants                      1557
+               not one of the three generated replacements.
+                                                     The replay-capacity settings use N ∈{1, 3, 5, 10}        1558
+                                                               per relevance category while keeping the candi-        1559
+                                                                  date count and length limit fixed. Retrieval-budget        15601510         D.2  Requests, Caching, and Reproducibility
+                                                                    variants use 10, 25 or 50 candidates. The corre-        1561
+1511           Initialization, proposals, and predicate evaluation   sponding current-inclusive replay bound is 2N +1,        1562
+1512          use a single user message and a separate structured-   not N total.                                              1563
+1513          output schema. The effective temperatures are one      Disabling the held-out gate retains the provi-        1564
+1514           for initialization and proposal generation, and zero    sional candidate library without per-skill rollback.        1565
+1515           for predicate evaluation.                           Disabling MBR changes selection to the first gen-        1566
+1516           For Qwen, requests disable thinking in the chat    erated candidate satisfying the current-task checks;        1567
+1517         template and specify low reasoning effort. Predi-   the proposal still receives retained positive and neg-        1568
+1518          cate evaluation additionally supplies a 512-token    ative context. Thus this ablation removes replay-        1569
+1519          thinking-budget parameter. GPT-OSS predicate   based candidate selection rather than all historical        1570
+1520          evaluation instead uses low reasoning effort with-   information from generation. Disabling both mech-        1571
+1521          out treating it as a hard 512-token cap. We use   anisms combines those changes.                          1572
+1522         a 4096-token completion allowance and a 120-     The alternative replay-F1 objective computes           1573
+1523         second ordinary request timeout. Initialization can
+                                                             2TP
+1524          use a separate 240-second timeout in configurations          RF1 = 1 −                                     1574                                                         2TP + FP + FN,1525          enabling that override.
+1526          Each call permits at most five application-level   with risk one when the denominator is zero. This        1575
+1527          attempts; hidden SDK retries are disabled. Invalid     is distinct from the default mean Boolean error and        1576
+1528          structured responses receive a schema reminder   from the per-task validation predicate-pattern score.        1577
+1529          and, when available, trusted local validation feed-  An accuracy-labelled validation variant coincides        1578
+1530          back. Exhaustion terminates the call rather than cre-   with the default validation score when every skill        1579
+1531          ating a fabricated predicate or Boolean judgment.   has exactly one predicate.                                1580
+1532            If the provider explicitly rejects an initialization
+1533          request for context overflow, the context-recovery   D.4  Retrieval and Evaluation Software               1581
+1534         path can shorten the skill body to a prefix while    Retrieval and reranking.  The SRA BM25 im-        1582
+1535          preserving the name, description, instructions and    plementation (Robertson and Zaragoza, 2009) uses        1583
+1536          response schema.                            NumPy/SciPy sparse operations with k1 = 1.5        1584
+1537              Initialization and frozen-set evaluation each al-   and b = 0.75.  Its tokenizer lowercases text, re-        1585
+1538        low up to 48 workers, and repairs allow up to 48    places non-word/non-whitespace characters with        1586
+1539           distinct-skill jobs for the current task. These set-   spaces, and splits on whitespace. Vector retrieval        1587
+1540          tings do not change the sequential training-task    uses Qwen3-Embedding-0.6B (Zhang et al., 2025a)        1588
+1541           order. Exact-request responses and task–predicate   with L2-normalized embeddings and cosine scor-        1589
+1542         judgments can be cached; generated proposals by-    ing. Its native encoder uses batch size one and a        1590
+1543         pass the response cache.  Reusing an initial li-   32,768-token document limit; the query is an in-        1591
+1544          brary preserves its catalog and prompt binding.   struction followed by the verbatim task question.        1592
+
+
+                                                    18

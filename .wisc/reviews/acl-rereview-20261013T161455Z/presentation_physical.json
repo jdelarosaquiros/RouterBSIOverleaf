@@ -1,0 +1,566 @@
+{
+  "pdf_sha256": "ddd4e45dcc8920cde89966c50e5a12598d73eee2dda1701b67f783057aeb1e63",
+  "page_count": 31,
+  "metadata": {
+    "format": "PDF 1.5",
+    "title": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum Bayes Risk and Held-out Gates",
+    "author": "Anonymous authors",
+    "subject": "",
+    "keywords": "",
+    "creator": "LaTeX with hyperref",
+    "producer": "pdfTeX-1.40.22",
+    "creationDate": "D:20261013161205Z",
+    "modDate": "D:20261013161205Z",
+    "trapped": "",
+    "encryption": null
+  },
+  "pages": [
+    {
+      "page": 1,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 5734,
+      "caption_starts": [
+        "Figure 1: Skill routing with a task applicability pred-"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-01.png",
+      "topic": "Title, abstract, Figure 1 and introduction",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 2,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8032,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-02.png",
+      "topic": "Contributions and related work",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 3,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 4715,
+      "caption_starts": [
+        "Figure 2: RouterBSI’s bayes self-improvement algorithm of predicate psk for the skill sk in top k. Routing failures"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-03.png",
+      "topic": "Figure 2, related work, problem definition and method",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 4,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7134,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-04.png",
+      "topic": "Method equations and experimental setup",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 5,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6464,
+      "caption_starts": [
+        "Table 1: Skill routing performance using Qwen3.5 4B. Each router row is the equal-weight mean across BM25,"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-05.png",
+      "topic": "Table 1 and experimental settings",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 6,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7400,
+      "caption_starts": [
+        "Figure 3: Retention of required skills averaged across"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-06.png",
+      "topic": "Figure 3, results and ablation opening",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 7,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 5191,
+      "caption_starts": [
+        "Figure 4: Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-07.png",
+      "topic": "Figure 4, ablations and conclusion",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 8,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7504,
+      "caption_starts": [
+        "Figure 5: Ablation of MBR replay and held-out vali-",
+        "Figure 6: Impact of MBR replay and held-out valida-",
+        "Figure 7:"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-08.png",
+      "topic": "Figures 5–7; Limitations, Ethical Considerations, AI-only Acknowledgment; References start",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 9,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8407,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-09.png",
+      "topic": "References",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 10,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8646,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-10.png",
+      "topic": "References",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 11,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8430,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-11.png",
+      "topic": "References end and Appendix A start",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 12,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7764,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-12.png",
+      "topic": "Appendix A replay, validation and optimization procedure",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 13,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 9380,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-13.png",
+      "topic": "Appendix A procedure and Appendix B initialization prompt",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense but structurally clean two-column monospaced prompts; principal prompt text about 8.97 pt. No clipping observed."
+    },
+    {
+      "page": 14,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 10482,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-14.png",
+      "topic": "Appendix B initialization and replacement prompts",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense but structurally clean two-column monospaced prompts; principal prompt text about 8.97 pt. No clipping observed."
+    },
+    {
+      "page": 15,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8861,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-15.png",
+      "topic": "Appendix B replacement/evaluation prompts and worked trace",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense but structurally clean two-column monospaced prompts; principal prompt text about 8.97 pt. No clipping observed."
+    },
+    {
+      "page": 16,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8078,
+      "caption_starts": [
+        "Table 2: One repair on five positive and five negative"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-16.png",
+      "topic": "Table 2 trace; Appendix C splits/labels",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 17,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7271,
+      "caption_starts": [
+        "Table 3: Task filtering and exact split sizes. Source counts refer to the SRA-Bench task collections before our"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-17.png",
+      "topic": "Table 3 split counts; data/corpus scope and Appendix D settings",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 18,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7048,
+      "caption_starts": [
+        "Table 4: Default RouterBSI optimization settings. The"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-18.png",
+      "topic": "Table 4 settings; requests/caching and variants",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 19,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 8008,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-19.png",
+      "topic": "Implementation continuation and Appendix E metrics",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 20,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6971,
+      "caption_starts": [],
+      "out_of_page_spans": [],
+      "render": "renders/page-20.png",
+      "topic": "Retention definition/results and Appendix G ablations",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 21,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6231,
+      "caption_starts": [
+        "Table 5: Test routing performance on TheoremQA and LogicBench with Qwen3.5-4B. N, R, and FC denote nDCG,"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-21.png",
+      "topic": "Table 5; gate caveats and token accounting",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense, readable full-width result table with about 8.97-pt principal entries. Figure 8 also checked individually on p23."
+    },
+    {
+      "page": 22,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6111,
+      "caption_starts": [
+        "Table 6: Test routing performance on ToolQA and MedCalc-Bench with Qwen3.5-4B. N, R, and FC denote nDCG,"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-22.png",
+      "topic": "Table 6; candidate pools/backbones and Appendix H evaluator",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense, readable full-width result table with about 8.97-pt principal entries. Figure 8 also checked individually on p23."
+    },
+    {
+      "page": 23,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 4655,
+      "caption_starts": [
+        "Table 7: Test routing performance on CHAMP and BigCodeBench with Qwen3.5-4B. N, R, and FC denote nDCG,",
+        "Figure 8: Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-23.png",
+      "topic": "Table 7; Figure 8 and evaluator continuation",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Dense, readable full-width result table with about 8.97-pt principal entries. Figure 8 also checked individually on p23."
+    },
+    {
+      "page": 24,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6967,
+      "caption_starts": [
+        "Table 8: Mean retention across BM25, Vector, and Skill-"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-24.png",
+      "topic": "Table 8; evaluator and error definitions",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 25,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7517,
+      "caption_starts": [
+        "Table 9: Required-skill coverage and retention by retriever. Recall@50 measures coverage before imposing the"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-25.png",
+      "topic": "Table 9; routing losses against SkillRouter",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 26,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 7221,
+      "caption_starts": [
+        "Table 10: Component ablations with Qwen3.5 4B and SkillSight. Values are task-weighted test means over 748"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-26.png",
+      "topic": "Table 10; representative error cases",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 27,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 6948,
+      "caption_starts": [
+        "Table 11: Test nDCG@1 at initialization and each optimization iteration, averaged over three runs. Parentheses",
+        "Table 12: Single-run final-test quality and known token use for the component configurations in Figure 6. Bold and"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-27.png",
+      "topic": "Tables 11–12; downstream disagreement diagnosis",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 28,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 3951,
+      "caption_starts": [
+        "Table 13: Replay-capacity sensitivity using one run per capacity, Qwen3.5 4B, SkillSight, and both components",
+        "Table 14: Backbone comparison with SkillSight, including the shared retriever reference in Figure 7. Each row"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-28.png",
+      "topic": "Tables 13–14; downstream outcomes",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "No gross clipping/overlap observed; searchable text present."
+    },
+    {
+      "page": 29,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 4313,
+      "caption_starts": [
+        "Table 15: Agreement between saved predicate decisions",
+        "Table 16: Final predicate-selected-set counts with the authors’ nonstandard FP/FN labels and standard relevance-",
+        "Table 17: Retrospective semantic categorization of all 331 TheoremQA task–skill selection errors across the three",
+        "Table 18: Matched nDCG@10 comparisons. Loss-case percentages use the 35 and 66 SkillRouter-better observa-"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-29.png",
+      "topic": "Tables 15–18 float-only appendix page",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Sparse float-only page with full-width tables; not evidence of noncompliant one-column appendix prose. No clipping observed."
+    },
+    {
+      "page": 30,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 3100,
+      "caption_starts": [
+        "Table 19: Retrospective semantic assessment of required-skill rejections within the ranking-loss subset. Percentages",
+        "Table 20: Conditional errors on tasks answered incorrectly by RouterBSItop5 and correctly by SkillRouter, using",
+        "Table 21: Downstream success rates underlying Figure 4. Each retriever column pools 748 test tasks; Mean averages"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-30.png",
+      "topic": "Tables 19–21 float-only appendix page",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Sparse float-only page with full-width tables; not evidence of noncompliant one-column appendix prose. No clipping observed."
+    },
+    {
+      "page": 31,
+      "size": [
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "text_chars": 3015,
+      "caption_starts": [
+        "Table 22: Downstream success rate with Qwen3.5-4B. Each benchmark column reports correct tasks divided by its"
+      ],
+      "out_of_page_spans": [],
+      "render": "renders/page-31.png",
+      "topic": "Table 22 float-only appendix page",
+      "visually_checked": true,
+      "text_layer_checked": true,
+      "inspection_mode": "Rendered contact sheet; extracted text/bounds; targeted detail as needed",
+      "finding": "Sparse float-only page with full-width tables; not evidence of noncompliant one-column appendix prose. No clipping observed."
+    }
+  ],
+  "fonts_report": "pdffonts.txt"
+}

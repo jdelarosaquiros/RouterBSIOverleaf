@@ -8,8 +8,6 @@ Metrics: nDCG@10_mean, nDCG@10_variance
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing table values are ---; missing plotted values fail closed, never imputed.
-Source reportability: non-reportable
-Analysis-only: source provenance does not certify publication validity.
 Source Dataset=Average rows for train, validation, and test (task-weighted over instances within each split/evaluation); train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show nDCG@10 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.
 Split/evaluation protocol: train=prequential, validation=ledger_accepted_candidate, test=accepted; initial and final are snapshot rows. Average rows are source summaries, not recomputed from task datasets. Source n_runs reports 3 per checkpoint.
 

@@ -1,0 +1,69 @@
+563           Tianyi Chen, Yinheng Li, Michael Solodko, Sen Wang,      Yunzhi Yao, Mengru Wang, Shuofei Qiao, Yida Xue,         620
+564          Nan Jiang, Tingyuan Cui, Junheng Hao, Jongwoo Ko,     Xin Xu, Tongtong Wu, Kun Wang, Yang Liu, Zhen         621
+565             Sara Abdali, Leon Xu, Suzhen Zheng, Hao Fan, Pash-       Bi, Jungang Lou, Yuchen Eleanor Jiang, and 31 oth-         622
+566            mina Cameron, Justin Wagle, and Kazuhito Koishida.        ers. 2026. SkillNet: Create, evaluate, and connect AI         623
+567            2026b. CUA-Skill: Develop skills for computer us-        skills.                                                   624
+568             ing agent.
+                                                          Yanming Liu, Xinyue Peng, Jiannan Cao, Yuwei Zhang,         625
+569        Wenhu Chen, Ming Yin, Max Ku, Pan Lu, Yixin Wan,     Xuhong Zhang, Sheng Cheng, Xun Wang, Jianwei         626
+570           Xueguang Ma, Jianyu Xu, Xinyi Wang, and Tony      Yin, and Tianyu Du. 2025. Tool-Planner: Task plan-         627
+571             Xia. 2023. TheoremQA: A theorem-driven question      ning with clusters across multiple tools. In Interna-         628
+572            answering dataset. In Proceedings of the 2023 Con-       tional Conference on Learning Representations.             629
+573              ference on Empirical Methods in Natural Language
+574             Processing, pages 7889–7901, Singapore. Associa-   Yujun Mao, Yoon Kim, and Yilun Zhou. 2024. CHAMP:         630
+575               tion for Computational Linguistics.             A competition-level dataset for fine-grained analyses         631
+                                                                        of LLMs’ mathematical reasoning capabilities. In         632
+576          Sandip Ghoshal, Anshul Mittal, Jyotika Singh, Miguel      Findings of the Association for Computational Lin-         633
+577              Ballesteros, Weiyi Sun, Fang Tu, Shailender Singh,       guistics: ACL 2024, pages 13256–13274, Bangkok,         634
+578             Yassine Benajiba, Fahad Shah, Sujeeth Bharadwaj,      Thailand. Association for Computational Linguistics.         635
+579              Sujith Ravi, and Dan Roth. 2026. JTPRO: A joint
+                                                                Meta. 2024. Llama 3.3 model card.                           636580            tool–prompt reflective optimization framework for
+581            language agents. In Findings of the Association for                                                                     Qirui Mi, Zhijian Ma, Mengyue Yang, Haoxuan Li,         637
+582            Computational Linguistics: ACL 2026, pages 40573–
+                                                                  Yisen Wang, Haifeng Zhang, and Jun Wang. 2026.         638
+583            40595, San Diego, California, United States. Associ-
+                                                                             Skill-Pro: Learning reusable skills from experience         639
+584              ation for Computational Linguistics.                                                                          via non-parametric PPO for LLM agents.  In Pro-         640
+                                                                     ceedings of the 43rd International Conference on         641585          Siyuan Guo, Cheng Deng, Ying Wen, Hechang Chen,
+                                                            Machine Learning, volume 306 of Proceedings of         642586            Yi Chang, and Jun Wang. 2024. DS-Agent: Auto-
+                                                            Machine Learning Research, pages 88574–88595.         643587           mated data science by empowering large language
+                                                   PMLR.                                                  644588            models with case-based reasoning. In Proceedings of
+589              the 41st International Conference on Machine Learn-                                                             OpenAI. 2025. gpt-oss-120b & gpt-oss-20b model card.         645
+590               ing, volume 235 of Proceedings of Machine Learning
+591             Research, pages 16813–16848. PMLR.              OpenAI. 2026. Introducing GPT-5.4. Product release,         646
+                                                           March 5, 2026.                                           647
+592         Shouzheng Huang, Meishan Zhang, Baotian Hu, and
+593          Min Zhang. 2026. ToolOmni: Enabling open-world    Siru Ouyang, Jun Yan, I-Hung Hsu, Yanfei Chen,         648
+594              tool use via agentic learning with proactive retrieval     Ke Jiang, Zifeng Wang, Rujun Han, Long Le, Samira         649
+595            and grounded execution. In Proceedings of the 64th       Daruki, Xiangru Tang, Vishy Tirumalashetty, George         650
+596            Annual Meeting of the Association for Computational      Lee, Mahsan Rofouei, Hangfei Lin, Jiawei Han,         651
+597              Linguistics (Volume 1: Long Papers), pages 37421–     Chen-Yu Lee, and Tomas Pfister. 2026. Reasoning-         652
+598            37439, San Diego, California, United States. Associ-     Bank: Scaling agent self-evolving with reasoning         653
+599              ation for Computational Linguistics.                 memory. In International Conference on Learning         654
+                                                                         Representations, volume 2026, pages 94327–94354.         655
+600          Nikhil Khandekar, Qiao Jin, Guangzhi Xiong, Soren
+601           Dunn, Serina S Applebaum, Zain Anwar, Maame    Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang,         656
+602            Sarfo-Gyamfi, Conrad W Safranek, Abid A An-       Shishir G. Patil, Ion Stoica, and Joseph E. Gonzalez.         657
+603             war, Andrew Zhang, Aidan Gilson, Maxwell B      2023. MemGPT: Towards LLMs as operating sys-         658
+604              Singer, Amisha Dave, Andrew Taylor, Aidong Zhang,      tems.                                                   659
+605           Qingyu Chen, and Zhiyong Lu. 2024.  MedCalc-
+606            Bench: Evaluating large language models for medi-   Mihir Parmar, Nisarg Patel, Neeraj Varshney, Mutsumi         660
+607               cal calculations. In Advances in Neural Information      Nakamura, Man Luo, Santosh Mashetty, Arindam         661
+608             Processing Systems, volume 37, pages 84730–84745.       Mitra, and Chitta Baral. 2024. LogicBench: Towards         662
+609            Curran Associates, Inc.                                  systematic evaluation of logical reasoning ability of         663
+                                                                            large language models. In Proceedings of the 62nd         664
+610        Hao Li, Chunjiang Mu, Jianhao Chen, Siyue Ren,      Annual Meeting of the Association for Computational         665
+611            Zhiyao Cui, Yiqun Zhang, Lei Bai, and Shuyue Hu.      Linguistics (Volume 1: Long Papers), pages 13679–         666
+612             2026a. Organizing, orchestrating, and benchmarking      13707, Bangkok, Thailand. Association for Compu-         667
+613             agent skills at ecosystem scale.                              tational Linguistics.                                      668
+
+614         Yanchao Li, Wanhao Liu, Ben Gao, Jiaqing Xie, Zhe-   Cheng Qian, Emre Can Acikgoz, Hongru Wang, Xiusi         669
+615            hong Ai, Na Zou, Yuqiang Li, and Tianfan Fu. 2026b.     Chen, Avirup Sil, Dilek Hakkani-Tür, Gokhan Tur,         670
+616               SkillsInjector: Dynamic skill context construction      and Heng Ji. 2025. SMART: Self-aware agent for         671
+617               for LLM agents.                                           tool overuse mitigation.  In Findings of the Asso-         672
+                                                                            ciation for Computational Linguistics: ACL 2025,         673
+618         Yuan Liang, Ruobin Zhong, Haoming Xu, Chen Jiang,      pages 4604–4621, Vienna, Austria. Association for         674
+619            Yi Zhong, Runnan Fang, Jia-Chen Gu, Shumin Deng,      Computational Linguistics.                                675
+
+
+                                                    9

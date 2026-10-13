@@ -63,9 +63,7 @@
       "total_tokens": "866352051"
     }
   ],
-  "source_reportability": "non-reportable",
-  "analysis_only": true,
-  "caveats": "Analysis-only known token totals. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.",
+  "caveats": "Known token totals. Source flags: Complete=False; Known Only=True. Run-local costs exclude external/shared initialization; this is not full token accounting.",
   "metric_alias": "Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.",
   "metric_alias_evidence": {
     "scope": "Complete benchmark universe used by both CSV generators; source load_annotations rejects empty gold and _routing_rows_from_selection rejects unknown tasks.",

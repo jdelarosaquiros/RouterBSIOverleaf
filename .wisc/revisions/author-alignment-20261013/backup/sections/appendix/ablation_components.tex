@@ -1,0 +1,31 @@
+\subsection{Replay and Held-Out Gate}
+We compare four configurations: MBR replay and the held-out gate together, MBR alone, the gate alone, and neither component. All use Qwen3.5 4B, SkillSight top-50 candidates, ten iterations, three proposed predicates per repair, a 400-character predicate limit, and a replay capacity of five relevant and five irrelevant tasks per skill. With MBR disabled, update selection uses current-task evidence and the first valid proposal rather than minimum replay risk. Disabling the held-out gate removes per-skill validation admission and rollback, not inference-time predicate evaluation or the calculation of candidate-validation scores.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llrrr}
+\toprule
+Variant & Stage & F1 & nDCG@1 & nDCG@10 \\
+\midrule
+Both Disabled & Initial & \shortstack{0.305\\(0.002)} & \shortstack{0.525\\(0.001)} & \shortstack{0.625\\(0.001)} \\
+Both Disabled & Final & \shortstack{0.369\\(0.010)} & \shortstack{0.560\\(0.015)} & \shortstack{0.677\\(0.013)} \\
+Only Gate & Initial & \shortstack{0.304\\(0.001)} & \shortstack{0.523\\(0.001)} & \shortstack{0.625\\(0.001)} \\
+Only Gate & Final & \shortstack{0.495\\(0.001)} & \shortstack{0.644\\(0.004)} & \shortstack{0.722\\(0.004)} \\
+Only MBR & Initial & \shortstack{0.304\\(0.002)} & \shortstack{0.524\\(0.001)} & \shortstack{0.624\\(0.001)} \\
+Only MBR & Final & \shortstack{\underline{0.594}\\(0.013)} & \shortstack{\underline{0.691}\\(0.015)} & \shortstack{\underline{0.776}\\(0.010)} \\
+Both Enabled & Initial & \shortstack{0.305\\(0.004)} & \shortstack{0.521\\(0.008)} & \shortstack{0.633\\(0.009)} \\
+Both Enabled & Final & \shortstack{\textbf{0.614}\\(0.020)} & \shortstack{\textbf{0.724}\\(0.013)} & \shortstack{\textbf{0.785}\\(0.010)} \\
+\bottomrule
+\end{tabular}
+\caption{Component ablations with Qwen3.5 4B and SkillSight. Values are task-weighted test means over 748 tasks per run; parentheses below each mean give population standard deviation across three runs. Bold and underline mark the best and second-best final means. F1 uses the predicate-selected set, while ranking metrics use the full reordered candidate list. Hit@1 equals nDCG@1 for these binary, nonempty relevance sets.}
+\label{tab:app-ablation-endpoints}
+\end{table*}
+
+Table~\ref{tab:app-ablation-endpoints} separates each configuration's initialization from its final policy. The both-enabled configuration uses three separately generated initial libraries; the other configurations reuse the first both-enabled library. All runs record seed 20260324. Table~\ref{tab:app-ablation-trajectory} reports the complete nDCG@1 trajectory rather than selecting the highest-scoring iteration. The endpoint is iteration 10. Final F1 and nDCG@1 are highest with both components, although intermediate trajectories need not improve monotonically.
+
+\input{sections/appendix/trajectory_table}
+
+The held-out gate evaluates changed skills against their original initialized predicates. In the single-predicate setting, its configured per-skill F1 score reduces to the fraction of correct binary judgments on validation tasks retrieving that skill, including true negatives. A changed skill is kept only on strict improvement over initialization; a tie or missing validation support causes rollback to the previous accepted predicate. This rule does not require improvement over the previous predicate's validation score.
+
+Across the three both-enabled runs, 2,299 of 12,390 changed skill--iteration candidates are retained. The remaining candidates comprise 5,926 ties with initialization, 1,539 lower scores, and 2,626 skills without validation retrieval support. These are skill--iteration decisions, not distinct skills. Of the retained decisions, 262 score below the previous predicate while still improving over initialization. Thus, local update retention and aggregate ranking quality measure different outcomes.

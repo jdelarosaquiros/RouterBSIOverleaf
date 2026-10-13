@@ -6,8 +6,7 @@ Initial-test nDCG@5 computed macro over required_ids/ranked_ids; see initial_poi
 Only Gate has no archived initial-test prediction file; it starts at iteration 1.
 Base conditions: Both Enabled, Both Disabled, Only MBR, iterations 1–8 plus archived initial when available.
 Only MBR Alt: initial where archived, iterations 1–10, metrics.json test_accepted.all.nDCG@5, accepted ledger verified, n=748.
-The alternate run completion status is completed_noncanonical and reportable=false.
 The method/source run differs from the base Only MBR; label is preserved as Only MBR Alt.
 Task-macro source metric; no recomputation, interpolation, extrapolation, or uncertainty bands.
-Analysis-only/non-reportable; sources and run families differ. Exact file hashes in selection.json.
+Sources and run families differ. Exact file hashes in selection.json.
 Regenerate: uv run --script RouterBSIPaper/scripts/refresh_mbr_test_ndcg5_temp.py

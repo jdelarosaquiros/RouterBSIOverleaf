@@ -1,0 +1,63 @@
+                                       Capacity     F1  nDCG@1  nDCG@10   Tokens (M)  Unknown
+
+                                   1          0.534       0.659        0.739      949.061         28
+                                   3          0.579       0.702        0.769     1175.955         27
+                                   5          0.630       0.742        0.800     1324.251         16
+                                   10         0.641       0.730        0.805     1809.623         46
+
+              Table 13: Replay-capacity sensitivity using one run per capacity, Qwen3.5 4B, SkillSight, and both components
+               enabled. Capacity is per relevance class. Quality is measured on the final policy over 748 test tasks. Bold and
+               underline mark the best and second-best quality values.
+
+
+                                      Backbone        Stage        F1  nDCG@1  nDCG@10
+
+                                                SkillSight        Reference   0.051       0.471        0.609
+
+                                     Qwen3.5 4B        Initial       0.300       0.520        0.625
+                                     Qwen3.5 4B      Final       0.630       0.742        0.800
+                                     Qwen3.8 27B      Initial       0.469       0.635        0.716
+                                     Qwen3.8 27B     Final       0.741       0.802        0.844
+                                  GPT-OSS 120B    Initial       0.509       0.686        0.753
+                                  GPT-OSS 120B   Final       0.672       0.745        0.806
+
+              Table 14: Backbone comparison with SkillSight, including the shared retriever reference in Figure 7. Each row
+              averages the same 748 test tasks within one run; initial and final refer to the initialized and ten-iteration policies.
+             Bold and underline mark the best and second-best values across backbones within each stage; the SkillSight
+               reference is excluded from ranking.
+
+
+2121         has one annotated required skill and receives five    their mean used in Figure 4; Table 22 gives the        2150
+2122            skills, even a set containing the required skill has   benchmark-level breakdown.                             2151
+2123          four non-gold entries.
+2124          The required skill is present in 16 of the 21 The-
+2125       oremQA cases and 15 of the 21 MedCalc-Bench
+2126          cases.  All six MedCalc-Bench top-five misses
+2127         occur with BM25, despite the required skill be-
+2128          ing present in its original candidate pool. On the
+2129        same downstream subsets, the predicate-selected
+2130           sets contain 24 FN and 12 FP occurrences for
+2131        TheoremQA, but 0 FN and 8 FP occurrences for
+2132        MedCalc-Bench. SkillRouter succeeds on these
+2133        matched cases with 88 non-gold supplied occur-
+2134          rences for TheoremQA and 84 for MedCalc-Bench.
+2135         Thus, missing required skills cannot explain all fail-
+2136           ures, and the presence of non-gold context alone
+2137         does not demonstrate that it caused an incorrect
+2138          answer.
+
+2139        H.6  Complete Downstream Results
+
+2140        The following tables report downstream task-
+2141          success rates by benchmark and retriever, comple-
+2142         menting the routing-error analysis above. The strict
+2143         RouterBSI variant supplies only predicate-selected
+2144             skills, whereas the top-five variant supplies the five
+2145          highest-ranked skills. Direct and oracle conditions
+2146          respectively omit skill context and supply the an-
+2147          notated required skills. Downstream success is
+2148          evaluated separately from skill-selection correct-
+2149          ness. Table 21 gives the retriever-level rates and
+
+
+                                                    28

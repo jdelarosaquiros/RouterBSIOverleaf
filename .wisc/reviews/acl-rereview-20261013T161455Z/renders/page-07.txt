@@ -1,0 +1,61 @@
+450          gain and 93.0% of the final net nDCG@1 gain had   99.6% of the GPT-OSS 120B performance. Over-         481
+451          accrued. Later iterations added only 0.011 F1 and     all, these results demonstrate that RouterBSI can         482
+452         0.014 nDCG@1, indicating an approximate plateau.    significantly improve the routing performance of         483
+453         This suggest diminishing opportunities for useful    predicates across LLMs. They also suggest that         484
+454          predicate refinement on the plateau: early iterations    predicates reach a plateau that cannot be over-         485
+455          correct broad, frequent routing errors, while later   comed with more capable LLMs, where it’s dif-         486
+456           iterations encounter harder or less common cases.     ficult for the predicate to be narrow enough to be         487
+                                                                      false for irrelevant tasks but broad enough to be         488
+457          7.2  Performance and Token Usage Tradeoff of    true for all relevant tasks                                  489
+458        MBR Replay and Held-out Gate
+
+459         Figure 6 demonstrates that combining replay and
+460          the gate provides the strongest final routing per-                                                 8  Conclusion                                          490
+461         formance, while MBR alone reduces token usage
+462        by 10.8% at the cost of a 7.7% relative decrease
+463          in nDCG@1 compared with using both. Across                                        We presented RouterBSI, a non-parametric opt-         491
+464          configurations with and without the gate, replay    mization algorithm for recursive self-improvement         492
+465         improves final routing performance by 15.4% to                                                                      that refines explicit skill applicability predicates         493
+466        23.7% at the cost of a 40.6% to 52.9% increase in   from routing failures without updating model         494
+467         token usage.                                       weights. It combines minimum Bayes risk selec-         495
+                                                                     tion over bounded replay with held-out validation.         496
+468          7.3   Skill Routing Performance across LLM                                                            Experiments on six SRA-Bench datasets show that         497
+469             Backbones                                                        RouterBSI achieves the strongest average routing         498
+470       As shown in Figure 7, the cold-start nDCG@1   performance among evaluated methods and pre-         499
+471          scores of Qwen3.5 4B, Qwen3.8 27B, and GPT-   serves more required skills as the selection budget         500
+472       OSS 120B are 0.520, 0.635, and 0.686, respectively.   decreases. Ablations support the complementary         501
+473         RouterBSI optimization increases these scores to    contributions of replay and validation and show im-         502
+474          0.742, 0.802, and 0.745, corresponding to relative   provements across model backbones. These find-         503
+475         improvements of 42.7%, 26.3%, and 8.6%. Al-   ings demonstrate the value of editable predicates         504
+476         though the relative gain decreases with model size,   and feedback-driven skill routing.  Future work         505
+477          the final scores are not monotonic: Qwen3.8 27B   can connect skills based on dependencies to im-         506
+478          achieves the highest nDCG@1 among these back-   prove skill routing performance or jointly optimize         507
+479          bones. The optimized RouterBSI with Qwen3.5 4B    predicates and skills to improve downstream per-         508
+480         approaches GPT-OSS 120B performance, reaching   formance.                                                 509
+
+
+
+                                          LLM Direct (0.507)       LLM Oracle (0.638)
+
+
+                   0.7
+
+                                                               0.602          0.631                                         0.611
+
+                                                                                                             0.596
+                             rate 0.6         0.580          0.562
+                                                  Success                                                                           0.551
+                   0.5
+
+
+
+
+                   0.4
+                            baseline                          LLM                                             Select      SkillRouter       SkillDAG         Skill-Pro   RouterBSIstrict   RouterBSItop-5                    Retriever
+
+
+              Figure 4: Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct
+            and Oracle. RouterBSItop-5 outperforms strict selection and most other approaches oracle performance.
+
+
+                                                    7
