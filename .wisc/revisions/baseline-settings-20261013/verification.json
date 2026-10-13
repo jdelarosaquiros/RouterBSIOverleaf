@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "changed_protected_files": [
+    "main.pdf",
+    "sections/appendix/implementation_software.tex"
+  ],
+  "main_first_eight_pages_text_identical": true,
+  "pages_before": 31,
+  "pages_after": 31,
+  "addition_pages": [
+    19
+  ],
+  "rendered_pages": [
+    19,
+    20
+  ],
+  "proposal_unapplied": true,
+  "citation_keys_resolved": true,
+  "fatal_or_undefined_log_lines": [],
+  "pdf_sha256": "ef1f8bce90576ba8703450dd1a6c2bf0b7800581d9723a262cee2d64353a4150"
+}

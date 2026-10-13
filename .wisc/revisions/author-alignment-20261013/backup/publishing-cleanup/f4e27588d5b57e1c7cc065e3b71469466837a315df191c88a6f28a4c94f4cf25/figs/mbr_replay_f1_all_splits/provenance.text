@@ -1,0 +1,18 @@
+Replay and validation-gate F1 across train, validation, and test splits
+
+Source: ../BayesGSI/tables/routing_performance_by_iteration_std_all_splits/results.csv
+Source SHA256: 9a94b8d4b938d0022a6ab3c8b8fea45341f75fc12f6cb346395e220f6e7a3700
+Source rows: 1008; selected rows: 144.
+Selection: Dataset=Average rows only; separate train, validation, and test split trajectories; initial=0 and final=11; no recomputation or averaging
+Metrics: F1_mean, F1_variance
+Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
+Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
+Missing table values are ---; missing plotted values fail closed, never imputed.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
+Source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.
+
+From project_skill_selection/ root:
+  uv run --script research-repo-template/paper/figs/mbr_replay_f1_all_splits/generate.py
+Optional fixture arguments: --source /path/results.csv --output /path/output
+Shared selection/provenance manifest: paper/artifact_manifest.json.

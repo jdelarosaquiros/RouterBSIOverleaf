@@ -1,0 +1,42 @@
+Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents Proceedings of Machine Learning Research Volume 306 JMLR DMLR TMLR MLOSS FAQ Submission Format [ edit ] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents Qirui Mi, Zhijian Ma, Mengyue Yang, Haoxuan Li, Yisen Wang, Haifeng Zhang, Jun Wang Proceedings of the 43rd International Conference on Machine Learning , PMLR 306:88574-88595, 2026. Abstract LLM-driven agents excel at sequential decision-making but often rely on on-the-fly reasoning, re-deriving solutions even in recurring scenarios. This insufficient experience reuse leads to computational redundancy and instability. To bridge this gap, we propose Skill-Pro , a framework enabling agents to autonomously learn reusable procedural skills from interaction experiences without parameter updates. By formalizing a Skill-MDP , Skill-Pro transforms passive episodic narratives into executable Skills defined by activation, execution, and termination conditions to ensure executability. To achieve reliable reusability without capability degradation, we introduce Non-Parametric PPO , which leverages semantic gradients for high-quality candidate generation and a PPO Gate for robust Skill verification. Through score-based maintenance, Skill-Pro sustains compact, high-quality procedural memory. Experimental results across in-domain, cross-task, and cross-agent scenarios demonstrate that Skill-Pro achieves superior reuse rates and significant gains with extreme memory compression. Visualized evolutionary trajectories and Skill distributions further reveal how Skill-Pro transparently accumulates, refines, and reuses procedural knowledge to facilitate long-term autonomy. Cite this Paper BibTeX @InProceedings{pmlr-v306-mi26d,
+  title = 	 {Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric {PPO} for {LLM} Agents},
+  author =       {Mi, Qirui and Ma, Zhijian and Yang, Mengyue and Li, Haoxuan and Wang, Yisen and Zhang, Haifeng and Wang, Jun},
+  booktitle = 	 {Proceedings of the 43rd International Conference on Machine Learning},
+  pages = 	 {88574--88595},
+  year = 	 {2026},
+  editor = 	 {Zhang, Tong and Dudik, Miroslav and Jaggi, Martin and Agarwal, Alekh and Li, Sharon and Schuurmans, Dale and Zhu, Jerry and Berkenkamp, Felix and Dong, Hanze and Bietti, Alberto},
+  volume = 	 {306},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {06--11 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v306/main/assets/mi26d/mi26d.pdf},
+  url = 	 {https://proceedings.mlr.press/v306/mi26d.html},
+  abstract = 	 {LLM-driven agents excel at sequential decision-making but often rely on on-the-fly reasoning, re-deriving solutions even in recurring scenarios. This insufficient experience reuse leads to computational redundancy and instability. To bridge this gap, we propose Skill-Pro , a framework enabling agents to autonomously learn reusable procedural skills from interaction experiences without parameter updates. By formalizing a Skill-MDP , Skill-Pro transforms passive episodic narratives into executable Skills defined by activation, execution, and termination conditions to ensure executability. To achieve reliable reusability without capability degradation, we introduce Non-Parametric PPO , which leverages semantic gradients for high-quality candidate generation and a PPO Gate for robust Skill verification. Through score-based maintenance, Skill-Pro sustains compact, high-quality procedural memory. Experimental results across in-domain, cross-task, and cross-agent scenarios demonstrate that Skill-Pro achieves superior reuse rates and significant gains with extreme memory compression. Visualized evolutionary trajectories and Skill distributions further reveal how Skill-Pro transparently accumulates, refines, and reuses procedural knowledge to facilitate long-term autonomy.}
+} Copy to Clipboard Download Endnote %0 Conference Paper
+%T Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents
+%A Qirui Mi
+%A Zhijian Ma
+%A Mengyue Yang
+%A Haoxuan Li
+%A Yisen Wang
+%A Haifeng Zhang
+%A Jun Wang
+%B Proceedings of the 43rd International Conference on Machine Learning
+%C Proceedings of Machine Learning Research
+%D 2026
+%E Tong Zhang
+%E Miroslav Dudik
+%E Martin Jaggi
+%E Alekh Agarwal
+%E Sharon Li
+%E Dale Schuurmans
+%E Jerry Zhu
+%E Felix Berkenkamp
+%E Hanze Dong
+%E Alberto Bietti	
+%F pmlr-v306-mi26d
+%I PMLR
+%P 88574--88595
+%U https://proceedings.mlr.press/v306/mi26d.html
+%V 306
+%X LLM-driven agents excel at sequential decision-making but often rely on on-the-fly reasoning, re-deriving solutions even in recurring scenarios. This insufficient experience reuse leads to computational redundancy and instability. To bridge this gap, we propose Skill-Pro , a framework enabling agents to autonomously learn reusable procedural skills from interaction experiences without parameter updates. By formalizing a Skill-MDP , Skill-Pro transforms passive episodic narratives into executable Skills defined by activation, execution, and termination conditions to ensure executability. To achieve reliable reusability without capability degradation, we introduce Non-Parametric PPO , which leverages semantic gradients for high-quality candidate generation and a PPO Gate for robust Skill verification. Through score-based maintenance, Skill-Pro sustains compact, high-quality procedural memory. Experimental results across in-domain, cross-task, and cross-agent scenarios demonstrate that Skill-Pro achieves superior reuse rates and significant gains with extreme memory compression. Visualized evolutionary trajectories and Skill distributions further reveal how Skill-Pro transparently accumulates, refines, and reuses procedural knowledge to facilitate long-term autonomy. Copy to Clipboard Download APA Mi, Q., Ma, Z., Yang, M., Li, H., Wang, Y., Zhang, H. & Wang, J.. (2026). Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents. Proceedings of the 43rd International Conference on Machine Learning , in Proceedings of Machine Learning Research 306:88574-88595 Available from https://proceedings.mlr.press/v306/mi26d.html. Copy to Clipboard Download Related Material Download PDF OpenReview This site last compiled Wed, 07 Oct 2026 11:43:44 +0000 Github Account Copyright © The authors and PMLR 2026. MLResearchPress

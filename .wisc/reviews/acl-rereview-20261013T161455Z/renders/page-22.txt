@@ -1,0 +1,68 @@
+              Method                        ToolQA                                  MedCalc-Bench
+
+                   N@1 N@10 R@5 R@10   F1 FC@5 FC@10 N@1 N@10 R@5 R@10   F1 FC@5 FC@10
+
+            BM25
+
+           BM25         0.070  0.271 0.349  0.558 0.031  0.349   0.558 0.315  0.462 0.503  0.697 0.038  0.503   0.697
+          LLM Select    0.507  0.595 0.591  0.740 0.507  0.591   0.740 0.533  0.633 0.648  0.782 0.533  0.648   0.782
+                 SkillRouter     0.600  0.696 0.749  0.767 0.600  0.749   0.767 0.945  0.953 0.958  0.958 0.945  0.958   0.958
+              SkillDAG      0.070  0.303 0.349  0.651 0.023  0.349   0.651 0.309  0.461 0.503  0.697 0.076  0.503   0.697
+                  Skill-Pro       0.465  0.554 0.586  0.693 0.465  0.586   0.693 0.679  0.776 0.812  0.879 0.679  0.812   0.879
+               RouterBSIinit  0.256  0.413 0.498  0.637 0.209  0.498   0.637 0.642  0.720 0.752  0.836 0.469  0.752   0.836
+               RouterBSI     0.577  0.665 0.716  0.753 0.612  0.716   0.753 0.818  0.842 0.848  0.885 0.804  0.848   0.885
+
+                 Vector
+
+                Vector         0.312  0.413 0.451  0.512 0.029  0.451   0.512 0.988  0.992 0.994  1.000 0.039  0.994   1.000
+          LLM Select    0.363  0.463 0.507  0.549 0.363  0.507   0.549 0.861  0.945 0.994  1.000 0.861  0.994   1.000
+                 SkillRouter     0.549  0.657 0.730  0.735 0.549  0.730   0.735 0.988  0.996 1.000  1.000 0.988  1.000   1.000
+              SkillDAG      0.312  0.563 0.451  0.935 0.026  0.451   0.935 0.988  0.990 0.994  0.994 0.078  0.994   0.994
+                  Skill-Pro       0.335  0.451 0.512  0.549 0.321  0.512   0.549 0.715  0.892 0.994  1.000 0.667  0.994   1.000
+               RouterBSIinit  0.298  0.442 0.535  0.591 0.220  0.535   0.591 0.970  0.985 0.994  1.000 0.556  0.994   1.000
+               RouterBSI     0.614  0.673 0.707  0.712 0.594  0.707   0.712 0.994  0.997 1.000  1.000 0.820  1.000   1.000
+
+                   SkillSight
+
+                  SkillSight      0.102  0.390 0.586  0.660 0.036  0.586   0.660 0.830  0.903 0.958  0.976 0.039  0.958   0.976
+          LLM Select    0.442  0.582 0.688  0.735 0.442  0.688   0.735 0.842  0.924 0.970  0.988 0.842  0.970   0.988
+                 SkillRouter     0.651  0.782 0.856  0.879 0.651  0.856   0.879 0.988  0.996 1.000  1.000 0.988  1.000   1.000
+              SkillDAG      0.102  0.398 0.586  0.684 0.036  0.586   0.684 0.830  0.905 0.958  0.982 0.038  0.958   0.982
+                  Skill-Pro       0.405  0.576 0.721  0.758 0.405  0.721   0.758 0.721  0.883 0.982  0.988 0.685  0.982   0.988
+               RouterBSIinit  0.316  0.505 0.614  0.698 0.252  0.614   0.698 0.879  0.927 0.970  0.976 0.502  0.970   0.976
+               RouterBSI     0.702  0.797 0.865  0.898 0.711  0.865   0.898 0.933  0.960 0.982  0.988 0.830  0.982   0.988
+
+               Table 6: Test routing performance on ToolQA and MedCalc-Bench with Qwen3.5-4B. N, R, and FC denote nDCG,
+               Recall, and Full Coverage, respectively; F1 is set-level F1. Bold and underlined values indicate the best and
+               second-best scores within each retriever group.
+
+
+1826            ity five has the highest nDCG@1. The sensitivity    initial predicates. Totals cover recorded run-local        1849
+1827           results therefore depend on which aspect of routing   usage and omit usage that is unavailable. They        1850
+1828          quality is measured.                                 are not full token accounts or per-query serving        1851
+                                                                        costs, and these runs do not provide a controlled,        1852
+1829        G.3  Candidate-Pool Size and Token Usage      budget-matched comparison.                             1853
+
+1830          Figure 8 compares three measured candidate-pool
+                                                      G.4  Backbone Comparison                            1854
+1831          sizes for Qwen3.5 4B with SkillSight. Here, K
+1832            is the number of retrieved candidates evaluated by   Table 14 expands  the backbone  results with        1855
+1833          the router, not the selected skill budget. Each run    selected-set F1 and nDCG@10.    All  three        1856
+1834         completed ten optimization iterations, and qual-   backbones improve over their own initialization.        1857
+1835            ity is measured on the final policy over 748 test   Qwen3.8 27B has the highest final values on all        1858
+1836           tasks. The aggregate nDCG@10 is task-instance    three metrics. Qwen3.5 4B reaches 99.64% of        1859
+1837         weighted rather than an equal-weight mean over   GPT-OSS 120B’s final nDCG@1.                        1860
+1838           datasets.
+1839          At K = 10, final nDCG@10 is 0.702 with  H  Error Analysis and Additional                  1861
+1840         692.788 million known tokens; at K = 25, it is      Downstream Outcomes                          1862
+1841         0.742 with 1013.401 million; and at K = 50, it is
+                                                      H.1  Predicate-Evaluator Validation                   18631842         0.800 with 1324.251 million. Across these three
+1843           settings, higher observed routing quality accompa-  We examine whether saved Boolean decisions fol-        1864
+1844          nies higher recorded token use. This comparison   low the predicate-checking rules, separately from        1865
+1845          describes the observed quality–cost tradeoff; it nei-   whether a skill is required. This diagnostic uses the        1866
+1846           ther isolates a causal effect of candidate-pool size     final, tenth-iteration SkillSight/Qwen3.5-4B test        1867
+1847         nor establishes a generally optimal setting.           run: 748 tasks with 50 candidate-predicate occur-        1868
+1848            All candidate-pool configurations use the same    rences each.                                              1869
+
+
+                                                    22

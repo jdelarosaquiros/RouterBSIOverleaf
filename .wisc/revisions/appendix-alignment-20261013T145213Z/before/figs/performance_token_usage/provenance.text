@@ -1,0 +1,18 @@
+performance_token_usage: nDCG@1
+
+Source: BayesGSI/tables/routing_token_usage/results.csv
+Source SHA256: ba0fc6824888296f67d550a1a579254728eb13e1a3705203bfb448ad82f48e67
+Source rows: 4; selected rows: 4.
+Selection: All four source rows in source order; Qwen3.5 4B / SkillSight, final test (748 tasks); exact Total Tokens / 1,000,000; no aggregation.
+Source metric: Hit@1; display metric: nDCG@1. Exact source identity labels and CSV precision retained.
+Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.
+Benchmark alias evidence: 5400 tasks; zero empty-gold tasks; hashes/counts in selection_manifest.json.
+Scores are fractions, not percentages. Missing/invalid plotted values fail closed, never imputed.
+Known token totals. Source flags: Complete=False; Known Only=True. Run-local costs exclude external/shared initialization; this is not full token accounting.
+Aggregation: task-instance weighted dataset means, not an equal-dataset mean; no new averaging.
+Uncertainty: not estimated; no error bars.
+
+Scoped independent regeneration from project root:
+  /usr/bin/python3 RouterBSIPaper/scripts/figures6_7_ndcg1.py --artifact performance_token_usage
+The absolute script path also works from any working directory. Only the named paper figure is written.
+Current portable provenance: selection_manifest.json beside this figure. The historical snapshot manifest remains unchanged.

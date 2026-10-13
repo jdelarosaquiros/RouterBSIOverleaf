@@ -1,0 +1,35 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrr@{}}
+\toprule
+Retriever & Method & Ret@1 & Ret@5 & Ret@10 & Ret@25 & Recall@50 \\
+\midrule
+BM25 & BM25 & 28.3 & 55.6 & 73.2 & 90.1 & 0.797 \\
+ & LLM Select & 53.3 & 73.5 & 85.3 & 94.0 & 0.796 \\
+ & SkillRouter & 69.7 & 83.9 & 87.2 & 92.5 & 0.796 \\
+ & SkillDAG & 23.3 & 46.0 & 70.0 & 94.0 & 0.964 \\
+ & Skill-Pro & 48.2 & 74.9 & 84.3 & 93.2 & 0.796 \\
+ & $\mathrm{RouterBSI}_{\mathrm{init}}$ & 41.2 & 67.9 & 82.2 & 94.2 & 0.796 \\
+ & RouterBSI & 66.7 & 87.6 & 92.6 & 97.3 & 0.796 \\
+\midrule
+Vector & Vector & 57.5 & 76.2 & 83.1 & 92.3 & 0.788 \\
+ & LLM Select & 57.7 & 80.3 & 86.3 & 92.8 & 0.788 \\
+ & SkillRouter & 70.7 & 85.9 & 89.5 & 94.5 & 0.788 \\
+ & SkillDAG & 47.1 & 62.4 & 90.7 & 98.0 & 0.962 \\
+ & Skill-Pro & 43.7 & 78.6 & 85.0 & 93.1 & 0.788 \\
+ & $\mathrm{RouterBSI}_{\mathrm{init}}$ & 54.8 & 75.6 & 85.3 & 94.1 & 0.788 \\
+ & RouterBSI & 73.7 & 92.1 & 95.4 & 98.3 & 0.788 \\
+\midrule
+SkillSight & SkillSight & 41.7 & 74.6 & 83.7 & 92.7 & 0.918 \\
+ & LLM Select & 53.2 & 80.2 & 87.5 & 94.5 & 0.918 \\
+ & SkillRouter & 64.8 & 81.9 & 86.9 & 93.6 & 0.918 \\
+ & SkillDAG & 39.1 & 69.9 & 83.5 & 96.1 & 0.979 \\
+ & Skill-Pro & 43.5 & 79.5 & 87.0 & 95.0 & 0.919 \\
+ & $\mathrm{RouterBSI}_{\mathrm{init}}$ & 48.4 & 74.1 & 83.2 & 94.0 & 0.918 \\
+ & RouterBSI & 68.8 & 91.7 & 96.0 & 99.0 & 0.918 \\
+\bottomrule
+\end{tabular*}
+\caption{Required-skill coverage and retention by retriever. Recall@50 measures coverage before imposing the smaller skill budget. Ret@k is the ratio of task-averaged Recall@k to Recall@50, expressed as a percentage; Ret@50 is 100 for every row.}
+\label{tab:app-retention}
+\end{table*}

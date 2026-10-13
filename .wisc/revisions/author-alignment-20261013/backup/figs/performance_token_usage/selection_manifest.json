@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "artifact": "performance_token_usage",
+  "artifact_path": "RouterBSIPaper/figs/performance_token_usage",
+  "path_base": "project_skill_selection",
+  "metric": "Hit@1",
+  "display_metric": "nDCG@1",
+  "source": {
+    "path": "BayesGSI/tables/routing_token_usage/results.csv",
+    "sha256": "ba0fc6824888296f67d550a1a579254728eb13e1a3705203bfb448ad82f48e67"
+  },
+  "source_row_count": 4,
+  "selected_row_count": 4,
+  "generator": {
+    "path": "RouterBSIPaper/scripts/figures6_7_ndcg1.py",
+    "sha256": "9bd13c2d1192d313a1aff34bd4053d1f93f485626da4551483bf2f813aaedb5a"
+  },
+  "alias_evidence_file": {
+    "path": "RouterBSIPaper/scripts/figures6_7_alias_evidence.json",
+    "sha256": "6830701a03ca9b415a74f2ca24a0f5dd255b4dcf56c1fe1d623be24f2ee9810f"
+  },
+  "regenerate": "/usr/bin/python3 RouterBSIPaper/scripts/figures6_7_ndcg1.py --artifact performance_token_usage",
+  "selection": "All four source rows in source order; Qwen3.5 4B / SkillSight, final test (748 tasks); exact Total Tokens / 1,000,000; no aggregation.",
+  "points": [
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "Both Enabled",
+      "y": 0.7419786096256684,
+      "metric": "Hit@1",
+      "display_metric": "nDCG@1",
+      "x": 1324.250594,
+      "total_tokens": "1324250594"
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "Both Disabled",
+      "y": 0.553475935828877,
+      "metric": "Hit@1",
+      "display_metric": "nDCG@1",
+      "x": 840.052489,
+      "total_tokens": "840052489"
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "Only MBR",
+      "y": 0.6844919786096256,
+      "metric": "Hit@1",
+      "display_metric": "nDCG@1",
+      "x": 1181.025935,
+      "total_tokens": "1181025935"
+    },
+    {
+      "Model": "Qwen3.5 4B",
+      "Retriever": "SkillSight",
+      "Method": "Only Gate",
+      "y": 0.643048128342246,
+      "metric": "Hit@1",
+      "display_metric": "nDCG@1",
+      "x": 866.352051,
+      "total_tokens": "866352051"
+    }
+  ],
+  "source_reportability": "non-reportable",
+  "analysis_only": true,
+  "caveats": "Analysis-only known token totals. Source flags: Complete=False; Known Only=True; Source Reportable=False. Run-local costs exclude external/shared initialization; this is not full token accounting.",
+  "metric_alias": "Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.",
+  "metric_alias_evidence": {
+    "scope": "Complete benchmark universe used by both CSV generators; source load_annotations rejects empty gold and _routing_rows_from_selection rejects unknown tasks.",
+    "total_tasks": 5400,
+    "empty_gold_tasks": 0,
+    "annotations": [
+      {
+        "path": "BayesGSI/data/bench/instances/bigcodebench.json",
+        "sha256": "0ed01363e2c93134cf8696fea47b6d640f32f0d7ae9d7b478a05595c3f5ae788",
+        "tasks": 1140,
+        "empty_gold_tasks": 0
+      },
+      {
+        "path": "BayesGSI/data/bench/instances/champ.json",
+        "sha256": "d61346716cede953afb352e739e170b96d2bfb98824edd91b8783dc3526c7cec",
+        "tasks": 223,
+        "empty_gold_tasks": 0
+      },
+      {
+        "path": "BayesGSI/data/bench/instances/logicbench.json",
+        "sha256": "af5055caac041ea08cee47622f5d922b47b2ba0a8e3a60b87349599eeff1bdfe",
+        "tasks": 760,
+        "empty_gold_tasks": 0
+      },
+      {
+        "path": "BayesGSI/data/bench/instances/medcalcbench.json",
+        "sha256": "814f6b082f56cf89dd9c50be7ab87b5bcb0e41633138951e42b38d6923c3244e",
+        "tasks": 1100,
+        "empty_gold_tasks": 0
+      },
+      {
+        "path": "BayesGSI/data/bench/instances/theoremqa.json",
+        "sha256": "c969a7291e23361ba9f377e464be76093804deb628b964fb846c6eff6b28deeb",
+        "tasks": 747,
+        "empty_gold_tasks": 0
+      },
+      {
+        "path": "BayesGSI/data/bench/instances/toolqa.json",
+        "sha256": "e41eb4d4b67c1dd8e1178c88e9e8ff15525b31803694e9459d115c274fb04f0e",
+        "tasks": 1430,
+        "empty_gold_tasks": 0
+      }
+    ],
+    "source_evaluator_files": [
+      {
+        "path": "BayesGSI/tables/table_utils.py",
+        "sha256": "4b2d0cc9aed4c404e0d0b35a1aa5903d0ab969a46daeed44dd7c222af1e582bb"
+      },
+      {
+        "path": "BayesGSI/tables/routing_token_usage/generate.py",
+        "sha256": "572cda6108bf86a637b667e7e0b4a906c92d3e2a13041cad4a40c7288487ffaf"
+      },
+      {
+        "path": "BayesGSI/tables/routing_performance_by_LLM/generate.py",
+        "sha256": "c5186bf06036ce91d8cad3bc7983941f18dcf8aea2e1452f3e917520e55f2182"
+      }
+    ],
+    "evaluator_conventions": {
+      "Hit@1_empty_gold": 0,
+      "nDCG@1_empty_gold": 1,
+      "binary_relevance_nonempty_gold": "Both equal 1 iff the first ranked skill is relevant, else 0."
+    }
+  },
+  "aggregation": "stored task-instance-weighted test mean; no new aggregation",
+  "precision": "CSV strings preserved; Figure 7 stored means rounded to six decimals; annotations use three decimals",
+  "missing_data_policy": "fail closed",
+  "uncertainty_policy": "none estimated",
+  "renderer_origin": "research-repo-template/paper/artifact_rendering.py:252-298,337-340,373-375,443-453; faithfully copied target branches",
+  "rendered_artists": {
+    "size_inches": [
+      6.75,
+      3.4
+    ],
+    "ylabel": "nDCG@1",
+    "xlabel": "Total Token Usage (millions)",
+    "title": "Qwen3.5 4B / SkillSight",
+    "ylim": [
+      0.4234090909090909,
+      0.7796791443850267
+    ],
+    "xlim": [
+      781.9487164000001,
+      1382.3543666
+    ],
+    "xtick_labels": [
+      "700",
+      "800",
+      "900",
+      "1000",
+      "1100",
+      "1200",
+      "1300",
+      "1400"
+    ],
+    "legend": [
+      "Both Enabled",
+      "Both Disabled",
+      "Only MBR",
+      "Only Gate"
+    ],
+    "annotations": [],
+    "scatter": [
+      {
+        "xy": [
+          [
+            1324.250594,
+            0.7419786096256684
+          ]
+        ],
+        "color": [
+          [
+            0.0,
+            0.6196078431372549,
+            0.45098039215686275,
+            1.0
+          ]
+        ],
+        "size": [
+          65
+        ],
+        "marker_vertices": [
+          [
+            -5.551115123125783e-17,
+            -0.7071067811865475
+          ],
+          [
+            0.7071067811865475,
+            0.0
+          ],
+          [
+            5.551115123125783e-17,
+            0.7071067811865475
+          ],
+          [
+            -0.7071067811865475,
+            1.1102230246251565e-16
+          ],
+          [
+            -5.551115123125783e-17,
+            -0.7071067811865475
+          ]
+        ]
+      },
+      {
+        "xy": [
+          [
+            840.052489,
+            0.553475935828877
+          ]
+        ],
+        "color": [
+          [
+            0.47843137254901963,
+            0.47843137254901963,
+            0.47843137254901963,
+            1.0
+          ]
+        ],
+        "size": [
+          65
+        ],
+        "marker_vertices": [
+          [
+            0.0,
+            0.5
+          ],
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            0.0,
+            0.5
+          ]
+        ]
+      },
+      {
+        "xy": [
+          [
+            1181.025935,
+            0.6844919786096256
+          ]
+        ],
+        "color": [
+          [
+            0.0,
+            0.4470588235294118,
+            0.6980392156862745,
+            1.0
+          ]
+        ],
+        "size": [
+          65
+        ],
+        "marker_vertices": [
+          [
+            0.0,
+            -0.5
+          ],
+          [
+            0.13260155,
+            -0.5
+          ],
+          [
+            0.25978993539242673,
+            -0.44731684579412084
+          ],
+          [
+            0.3535533905932738,
+            -0.3535533905932738
+          ],
+          [
+            0.44731684579412084,
+            -0.25978993539242673
+          ],
+          [
+            0.5,
+            -0.13260155
+          ],
+          [
+            0.5,
+            0.0
+          ],
+          [
+            0.5,
+            0.13260155
+          ],
+          [
+            0.44731684579412084,
+            0.25978993539242673
+          ],
+          [
+            0.3535533905932738,
+            0.3535533905932738
+          ],
+          [
+            0.25978993539242673,
+            0.44731684579412084
+          ],
+          [
+            0.13260155,
+            0.5
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            -0.13260155,
+            0.5
+          ],
+          [
+            -0.25978993539242673,
+            0.44731684579412084
+          ],
+          [
+            -0.3535533905932738,
+            0.3535533905932738
+          ],
+          [
+            -0.44731684579412084,
+            0.25978993539242673
+          ],
+          [
+            -0.5,
+            0.13260155
+          ],
+          [
+            -0.5,
+            0.0
+          ],
+          [
+            -0.5,
+            -0.13260155
+          ],
+          [
+            -0.44731684579412084,
+            -0.25978993539242673
+          ],
+          [
+            -0.3535533905932738,
+            -0.3535533905932738
+          ],
+          [
+            -0.25978993539242673,
+            -0.44731684579412084
+          ],
+          [
+            -0.13260155,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ]
+        ]
+      },
+      {
+        "xy": [
+          [
+            866.352051,
+            0.643048128342246
+          ]
+        ],
+        "color": [
+          [
+            0.8352941176470589,
+            0.3686274509803922,
+            0.0,
+            1.0
+          ]
+        ],
+        "size": [
+          65
+        ],
+        "marker_vertices": [
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            -0.5
+          ]
+        ]
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "path": "RouterBSIPaper/figs/performance_token_usage/preview.pdf",
+      "sha256": "147e82e8f3811bc0ff4d37ffd3cbb874193dd2c9172f13718d4124a4620a1089"
+    },
+    {
+      "path": "RouterBSIPaper/figs/performance_token_usage/preview.png",
+      "sha256": "39811ec9d38e11c6eb647219954f61bd2f423db7b823c557f7c3a8c23baaf023"
+    },
+    {
+      "path": "RouterBSIPaper/figs/performance_token_usage/selected_data.csv",
+      "sha256": "ba0fc6824888296f67d550a1a579254728eb13e1a3705203bfb448ad82f48e67"
+    },
+    {
+      "path": "RouterBSIPaper/figs/performance_token_usage/provenance.text",
+      "sha256": "6ebbd01f92a5c0d523b83ab213cd8adf6bc4aad2f83230deb9ceac8a7ce4354d"
+    }
+  ],
+  "manuscript_bindings": [
+    {
+      "path": "RouterBSIPaper/figs/performance_token_usage/description.text",
+      "sha256": "9f4545a034040d05b0610d4dc47695112771efed045d3df3f135202470e6354b"
+    },
+    {
+      "path": "RouterBSIPaper/figs/performance_token_usage/table.tex",
+      "sha256": "b9fc03a328fc7aedd312d9294b99bc773be9f50063a2209c6c520ef838a69e25"
+    }
+  ]
+}

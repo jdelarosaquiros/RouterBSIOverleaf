@@ -1,0 +1,2226 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only independent raw-prediction audit; no inference/training; no run or paper assets modified.",
+  "run_root": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b",
+  "run_names": [
+    "run_1",
+    "run_2",
+    "run_3"
+  ],
+  "excluded_archive": ".gatedrouter_interrupted_tails",
+  "metric": {
+    "name": "binary test nDCG@1",
+    "task_score": "1 iff ranked_ids is nonempty and ranked_ids[0] is in required_ids, else 0; all gold lists verified nonempty",
+    "per_run_aggregation": "unweighted arithmetic mean over 748 tasks",
+    "across_run_aggregation": "arithmetic mean and population standard deviation (ddof=0) of three per-run scores",
+    "scale": "0..1"
+  },
+  "verification": {
+    "prediction_files": 36,
+    "checkpoints_per_run": 12,
+    "unique_task_count": 748,
+    "task_ids_identical_all_files": true,
+    "ordered_gold_identical_all_files": true,
+    "task_hashes_identical_all_files": true,
+    "candidate_order_identical_all_files": true,
+    "all_policy_identity_checks_passed": true,
+    "final_equals_iter10_bytes_rows_rankings_policy_each_run": true
+  },
+  "table": [
+    {
+      "checkpoint": "cold_start",
+      "hits_by_run": [
+        389,
+        383,
+        398
+      ],
+      "scores_by_run": [
+        0.5200534759358288,
+        0.5120320855614974,
+        0.5320855614973262
+      ],
+      "mean": 0.5213903743315508,
+      "population_sd": 0.008241195191134986
+    },
+    {
+      "checkpoint": "iter_01",
+      "hits_by_run": [
+        473,
+        461,
+        479
+      ],
+      "scores_by_run": [
+        0.6323529411764706,
+        0.6163101604278075,
+        0.6403743315508021
+      ],
+      "mean": 0.6296791443850267,
+      "population_sd": 0.010004431515438337
+    },
+    {
+      "checkpoint": "iter_02",
+      "hits_by_run": [
+        518,
+        520,
+        503
+      ],
+      "scores_by_run": [
+        0.6925133689839572,
+        0.6951871657754011,
+        0.6724598930481284
+      ],
+      "mean": 0.6867201426024956,
+      "population_sd": 0.010142430193173823
+    },
+    {
+      "checkpoint": "iter_03",
+      "hits_by_run": [
+        531,
+        521,
+        514
+      ],
+      "scores_by_run": [
+        0.7098930481283422,
+        0.696524064171123,
+        0.6871657754010695
+      ],
+      "mean": 0.6978609625668449,
+      "population_sd": 0.009326403536745244
+    },
+    {
+      "checkpoint": "iter_04",
+      "hits_by_run": [
+        524,
+        544,
+        528
+      ],
+      "scores_by_run": [
+        0.7005347593582888,
+        0.7272727272727273,
+        0.7058823529411765
+      ],
+      "mean": 0.7112299465240642,
+      "population_sd": 0.011552122457055005
+    },
+    {
+      "checkpoint": "iter_05",
+      "hits_by_run": [
+        527,
+        533,
+        532
+      ],
+      "scores_by_run": [
+        0.7045454545454546,
+        0.7125668449197861,
+        0.7112299465240641
+      ],
+      "mean": 0.7094474153297683,
+      "population_sd": 0.0035089161648893612
+    },
+    {
+      "checkpoint": "iter_06",
+      "hits_by_run": [
+        534,
+        524,
+        534
+      ],
+      "scores_by_run": [
+        0.713903743315508,
+        0.7005347593582888,
+        0.713903743315508
+      ],
+      "mean": 0.7094474153297683,
+      "population_sd": 0.0063021994758159046
+    },
+    {
+      "checkpoint": "iter_07",
+      "hits_by_run": [
+        543,
+        531,
+        524
+      ],
+      "scores_by_run": [
+        0.7259358288770054,
+        0.7098930481283422,
+        0.7005347593582888
+      ],
+      "mean": 0.7121212121212122,
+      "population_sd": 0.01048895035288754
+    },
+    {
+      "checkpoint": "iter_08",
+      "hits_by_run": [
+        536,
+        535,
+        531
+      ],
+      "scores_by_run": [
+        0.7165775401069518,
+        0.7152406417112299,
+        0.7098930481283422
+      ],
+      "mean": 0.713903743315508,
+      "population_sd": 0.0028880306142637637
+    },
+    {
+      "checkpoint": "iter_09",
+      "hits_by_run": [
+        548,
+        538,
+        538
+      ],
+      "scores_by_run": [
+        0.732620320855615,
+        0.7192513368983957,
+        0.7192513368983957
+      ],
+      "mean": 0.7237076648841355,
+      "population_sd": 0.006302199475815957
+    },
+    {
+      "checkpoint": "iter_10",
+      "hits_by_run": [
+        555,
+        538,
+        531
+      ],
+      "scores_by_run": [
+        0.7419786096256684,
+        0.7192513368983957,
+        0.7098930481283422
+      ],
+      "mean": 0.7237076648841354,
+      "population_sd": 0.013472563687906398
+    },
+    {
+      "checkpoint": "final",
+      "hits_by_run": [
+        555,
+        538,
+        531
+      ],
+      "scores_by_run": [
+        0.7419786096256684,
+        0.7192513368983957,
+        0.7098930481283422
+      ],
+      "mean": 0.7237076648841354,
+      "population_sd": 0.013472563687906398
+    }
+  ],
+  "checkpoints": [
+    {
+      "run": "run_1",
+      "checkpoint": "cold_start",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/predictions/initial_test.jsonl",
+      "prediction_sha256": "384daa354c6ddcaf96bf0930ec8f53cae2b83b22ab460cc6a72ac492c075d70e",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/conditions_initial.json",
+      "policy_sha256": "370fa3dd1cd52b56c7ebeef8ee93a4c58b6d019b39a4df7666f425d1a155e05a",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 389,
+      "ndcg_at_1": 0.5200534759358288,
+      "library_hash": "8b20b4ade8f479938e79477888fc48b840e8a5ee01298f9181d3d1985b6cf636",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_01",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/01/test_accepted_01.jsonl",
+      "prediction_sha256": "1a52c426d64966f2e000e5a5790587e4589c96b3e4cb16bcefec0123fe978b70",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/01/conditions_accepted.json",
+      "policy_sha256": "a4008c8e4d4b755b38966087a302492a40ff231047838590b9e393cf5c0f16a9",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 473,
+      "ndcg_at_1": 0.6323529411764706,
+      "library_hash": "74a907954be261f1847e8191f73e5290d8a93f4f80e9e6e77338c2d091d368b2",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_02",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/02/test_accepted_02.jsonl",
+      "prediction_sha256": "d58a58e300ffda3d324bf5121749625454f4a2e4e1200656b02aa3849f280d33",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/02/conditions_accepted.json",
+      "policy_sha256": "7f7c8f3e931cc70306beafcf0950d00739088ca08ceb4b0f489285706b5a5eae",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 518,
+      "ndcg_at_1": 0.6925133689839572,
+      "library_hash": "c45502423720b0578d7df68668c48d747ad554188a10e5fd09c3e932c84f3c09",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_03",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/03/test_accepted_03.jsonl",
+      "prediction_sha256": "3d9b3a83ed16cf3554f34b2d7c176391cc5d1ee6fcd1b45695053c9fb260217d",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/03/conditions_accepted.json",
+      "policy_sha256": "998d315e0f5595d25529d0e971c15bd54dc9416ce617c58c55743bbe7734a81e",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 531,
+      "ndcg_at_1": 0.7098930481283422,
+      "library_hash": "07e27cb124b444a8b7434f9ddc182cb0075ec06532b89bea8899147fdaf4dd34",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_04",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/04/test_accepted_04.jsonl",
+      "prediction_sha256": "b468f90bcaf53a50f811c06b2647db3b7285a4afa4a5dc2d7b80d0cd0ed44fbe",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/04/conditions_accepted.json",
+      "policy_sha256": "203cf8e01c51ee7a2ff796ef93088a6cf6712980affad020e3b0861d6b84bbaf",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 524,
+      "ndcg_at_1": 0.7005347593582888,
+      "library_hash": "ab7a3c0e79a948525d8801fbc9663d2943e8f8348801bf62dd98693ab515fab4",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_05",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/05/test_accepted_05.jsonl",
+      "prediction_sha256": "66f1527c058ea2b2363d2107734932b484cb3eb71fd307f715d1d49c9285c70f",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/05/conditions_accepted.json",
+      "policy_sha256": "cb77ecdcbaf93ad449299f70a61b204507ec3a2e403ae43314ba1b6b8e591326",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 527,
+      "ndcg_at_1": 0.7045454545454546,
+      "library_hash": "15fc2ab708d1f9d97dfb926bccd837609a3b142f2eff0e557db84d65d6a27c04",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_06",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/06/test_accepted_06.jsonl",
+      "prediction_sha256": "e66727b5d4d1a047e21c9219bde7c0ef03bf62833b1761557c37bee00745b2d3",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/06/conditions_accepted.json",
+      "policy_sha256": "2e199c7b0b17610ef604281836f300c859d2a294fae52844f14a278e83cc8ede",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 534,
+      "ndcg_at_1": 0.713903743315508,
+      "library_hash": "ea5b8c5fd4869481bcfbe2427de80dad1cdcb9947770f94ad6c17465cb8f28c5",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_07",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/07/test_accepted_07.jsonl",
+      "prediction_sha256": "3c28c0c708cf673c6065f904ecb6131faf7cf2e0705ef3c72e51450ec3751f3e",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/07/conditions_accepted.json",
+      "policy_sha256": "58e9d74c7424f82687345d8b86df13211a00f2fa71e92001a869fc8b8affbc36",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 543,
+      "ndcg_at_1": 0.7259358288770054,
+      "library_hash": "47c7c7e44588373098af266e62a0153d600a7a6fad06a08b381f4d5a7a53b6ad",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_08",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/08/test_accepted_08.jsonl",
+      "prediction_sha256": "28dd99c4dc3f18cb066419b03b593cb5fad42f4d75da9b648fc2f6195a0ae6ec",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/08/conditions_accepted.json",
+      "policy_sha256": "019d31df9b5b91ee829ac30fbbebd9116ecc0e801d3d222b10dd36b3ef2d715f",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 536,
+      "ndcg_at_1": 0.7165775401069518,
+      "library_hash": "ebb810f193fa8a0e16b411e1e74d138228479decd14ae4b496a4bb192f5824bf",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_09",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/09/test_accepted_09.jsonl",
+      "prediction_sha256": "e787483e22266e162d74429318f9b17fb2f508d0ffd14915591ef8f9f65a1b1a",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/09/conditions_accepted.json",
+      "policy_sha256": "414f9d5e0c88dfa133ad02b723d7c70a3fe9a44858f8f9a1e0a5763bbcf28ff7",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 548,
+      "ndcg_at_1": 0.732620320855615,
+      "library_hash": "6ef73d730a3682eba6e73d9fde5e4fba840c8ebb2a9e79bae400e59224b6a76d",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "iter_10",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/10/test_accepted_10.jsonl",
+      "prediction_sha256": "23a3cb7b7fb56facbf6e1b71cd7cd366d35e4c82bd69d2d7597c2ea41d9f37f3",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/iterations/10/conditions_accepted.json",
+      "policy_sha256": "844744f38029d14064616627438c036528d55a09b0a82431b61d7380c1046b8e",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 555,
+      "ndcg_at_1": 0.7419786096256684,
+      "library_hash": "c2df4f2600dd8ec54febfe66f4f92b3b6c95a4c43eab7d92b33b2ba5b4aafdef",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_1",
+      "checkpoint": "final",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/predictions/final_test.jsonl",
+      "prediction_sha256": "23a3cb7b7fb56facbf6e1b71cd7cd366d35e4c82bd69d2d7597c2ea41d9f37f3",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/conditions_final.json",
+      "policy_sha256": "844744f38029d14064616627438c036528d55a09b0a82431b61d7380c1046b8e",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 555,
+      "ndcg_at_1": 0.7419786096256684,
+      "library_hash": "c2df4f2600dd8ec54febfe66f4f92b3b6c95a4c43eab7d92b33b2ba5b4aafdef",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "0f8d39596ef6a065f276fbf81dfee5f2afb54e55b99e1c43d1fbc5bef51d4ba5"
+      ],
+      "judgment_identities": [
+        "a7d444418a708ea91676dca209528dbc50c37c025e5e2cc194be396f22adf086"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "cold_start",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/predictions/initial_test.jsonl",
+      "prediction_sha256": "00e0fe90e280a46adb5a9f2864ac34cadd0ee4ced0b0571af3bf84634c251ff2",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/conditions_initial.json",
+      "policy_sha256": "7fbb4c186dd22528940833b3216aae7a7662d6de0d4e6884b4df8656e7ac88d4",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 383,
+      "ndcg_at_1": 0.5120320855614974,
+      "library_hash": "28446b14a05b61dabbc1f6a9be518b77280fe08d07b55b733e0560e2ea66f03c",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_01",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/01/test_accepted_01.jsonl",
+      "prediction_sha256": "f05669b6d63b86cd90a10bd38fee7fc3e645cc6dc3c9011e6eafdd5e3e83d552",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/01/conditions_accepted.json",
+      "policy_sha256": "3d15a6204575b5494a8efd3e5c0b909a979c93636fa7d3e014568ac9d9ce5b4f",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 461,
+      "ndcg_at_1": 0.6163101604278075,
+      "library_hash": "4b907435e8feede2ab7ac1e878296f5ffb1ba538369e76e220510e95e35dbc7c",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_02",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/02/test_accepted_02.jsonl",
+      "prediction_sha256": "fe28a667d5220373f19dbb0782125b35b42a0904c3a0e83a093b9a6acf642cfa",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/02/conditions_accepted.json",
+      "policy_sha256": "e4ef079604c2df6b352dfdd7fb281c630f181a220beaf947c7f5f44ffc049dc5",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 520,
+      "ndcg_at_1": 0.6951871657754011,
+      "library_hash": "b324b7df061c02920113ed77ea0e2a616472b172adcbbc5ac8e2935870d4630e",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_03",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/03/test_accepted_03.jsonl",
+      "prediction_sha256": "9ac9b3ec0254013f689d84ef7de7299b09d2565a55d7c99d92dc0f0d4504241d",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/03/conditions_accepted.json",
+      "policy_sha256": "408b1e66f6ff39cf3abab2860b3a15628c8bb095f81a94fb5dc2a01b97ddfb77",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 521,
+      "ndcg_at_1": 0.696524064171123,
+      "library_hash": "3e279bbab674a890eff4f3f6288f698ce0f81bba04348ab1055d715e41c04a6f",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_04",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/04/test_accepted_04.jsonl",
+      "prediction_sha256": "2953d5cf7479b69cf16c4bb360b0adccd3b9758e67435357c22ec17fe4b2e326",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/04/conditions_accepted.json",
+      "policy_sha256": "c778a97bf0bbceec34056516194cf07b4970aed58b7da0f19fb1425dc2001b0a",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 544,
+      "ndcg_at_1": 0.7272727272727273,
+      "library_hash": "04ed0e7e629c6fe3d1f82554a1829f6402cc11a2d3a2d106a0f7cedf890cbb76",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_05",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/05/test_accepted_05.jsonl",
+      "prediction_sha256": "a06b7b06ce1fa77a8a169ba6001286f091a7247f8d3321823b517b4f036a339f",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/05/conditions_accepted.json",
+      "policy_sha256": "fcc7ee00cfe91c46e6dee178cfbc88a42321116c006c554a4737290b0b4fb268",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 533,
+      "ndcg_at_1": 0.7125668449197861,
+      "library_hash": "58bfe73458da3958e506f8d28d591e00eb6b62866d14c97521d7221f116521a2",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_06",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/06/test_accepted_06.jsonl",
+      "prediction_sha256": "056519c51b77b7d2ccea443227423a397f6d6e8ef18119883ed7f0ffff855812",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/06/conditions_accepted.json",
+      "policy_sha256": "aeb125324c7a4693015c61a9d7390b09f97b66c3916be60723b551739f416ef0",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 524,
+      "ndcg_at_1": 0.7005347593582888,
+      "library_hash": "2457a8f0758ba4595240cd3904b6db30421c1b89a6bd7898647c143f159e53af",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_07",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/07/test_accepted_07.jsonl",
+      "prediction_sha256": "0785fd245d7d879128bcafe149fc34aacd76156adc5fee3a35feda1fc524eccf",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/07/conditions_accepted.json",
+      "policy_sha256": "c77c25cce2984edeadb70ec9446b5eab1bd7e589c323f92be48b5339757c9997",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 531,
+      "ndcg_at_1": 0.7098930481283422,
+      "library_hash": "fc41827bc00b20b43646f395ac9d67cc84c1f238c23f1aeb981c4e2776b16de9",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_08",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/08/test_accepted_08.jsonl",
+      "prediction_sha256": "90e898a3218e09c10838b736033aed533ddb1ee1f758f5b0e12dbca76bc7bbd2",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/08/conditions_accepted.json",
+      "policy_sha256": "34b5778ac257f3670583ee72b425eaf192cb0d72ebf2174dfeedf6c9016995ee",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 535,
+      "ndcg_at_1": 0.7152406417112299,
+      "library_hash": "5e7a8349046c27f5ba79eba2ca8fa28d88df7f3a262d610579c35107a408f001",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_09",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/09/test_accepted_09.jsonl",
+      "prediction_sha256": "c63ed9ada9f726efecab38b12d715f4fcc446b8c9b3d1c0124a0d1ff808076be",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/09/conditions_accepted.json",
+      "policy_sha256": "36c53ec98de46f424e2477595e4c155a88772d5e05c57e82d8dd82e25b2a250e",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 538,
+      "ndcg_at_1": 0.7192513368983957,
+      "library_hash": "68d047f9c07703b7c3329abb8d958b9d55beb6d476c7ca7224821685b2d5490e",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "iter_10",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/10/test_accepted_10.jsonl",
+      "prediction_sha256": "82805b8c23add2d9ca8c59d89e37d4ca0c3fb2b179ebad93e32bbb5bb62a98d7",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/iterations/10/conditions_accepted.json",
+      "policy_sha256": "020f9c296c712328a9be16c1ea23dcd3893e884221832004378176f2024b39da",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 538,
+      "ndcg_at_1": 0.7192513368983957,
+      "library_hash": "39648fb159b1d1dc322796a62cf3f287133061e97435ddc5fceffff18326bd63",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_2",
+      "checkpoint": "final",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/predictions/final_test.jsonl",
+      "prediction_sha256": "82805b8c23add2d9ca8c59d89e37d4ca0c3fb2b179ebad93e32bbb5bb62a98d7",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2/conditions_final.json",
+      "policy_sha256": "020f9c296c712328a9be16c1ea23dcd3893e884221832004378176f2024b39da",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 538,
+      "ndcg_at_1": 0.7192513368983957,
+      "library_hash": "39648fb159b1d1dc322796a62cf3f287133061e97435ddc5fceffff18326bd63",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "aca1e53330fc09facb464a8c2be631b35f12d400676632fd2a9617faf6b8276c"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "cold_start",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/predictions/initial_test.jsonl",
+      "prediction_sha256": "7d94e17451f116a9d7c04d6c5e16e598dec27f9c69b98507772443adcde335ea",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/conditions_initial.json",
+      "policy_sha256": "4c865ec39db8133de472b36a58971c2ce7c5e3ac5faef5cbcc0b5c1fae6901b1",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 398,
+      "ndcg_at_1": 0.5320855614973262,
+      "library_hash": "846a9343ee0a40c46426b0cc534ff96151db16e7cd4da5bf613f2285da65def7",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_01",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/01/test_accepted_01.jsonl",
+      "prediction_sha256": "0a7561652695e82270a4f6500e4944bb73dcb3923ff3d56daf98252cd530f076",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/01/conditions_accepted.json",
+      "policy_sha256": "521438e286af796b348c276c85c2a7a4c716db3b654f4ca004cf4f90071eb8a8",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 479,
+      "ndcg_at_1": 0.6403743315508021,
+      "library_hash": "d1fcca7d9dd206bd35ab8e75bd0ab35b932a34ccdc3fd062a709c3836242b9e4",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_02",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/02/test_accepted_02.jsonl",
+      "prediction_sha256": "a8f8770afe1332bb8b9601a9fbe2fb01c169d7a17a38a72e18f89163bc0e1ee5",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/02/conditions_accepted.json",
+      "policy_sha256": "0d74fab192a47bcec111bb1bb88e3e57c73cd992e39fa2a5bde61c78ede06c62",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 503,
+      "ndcg_at_1": 0.6724598930481284,
+      "library_hash": "11328334615059336d9960f7d2f9932b7792e5db571e318c645ad759fadb4512",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_03",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/03/test_accepted_03.jsonl",
+      "prediction_sha256": "bc6b32f88a9623acd731825a00aa20da21e33eb285a632f2ba7d4ef9664cfc76",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/03/conditions_accepted.json",
+      "policy_sha256": "5bb83ea61018af103443037e061f6fba7564bcee067e007b7d02f5475a196659",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 514,
+      "ndcg_at_1": 0.6871657754010695,
+      "library_hash": "6aa4b132d823ab7eb0731ccd0d3663866ac8a49737268c4b2af699a2c41cf7a3",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_04",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/04/test_accepted_04.jsonl",
+      "prediction_sha256": "0975ed31f071ebceaa39b5e9595cd1206a3c318c44d6fbc8429d9e1e333f1f15",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/04/conditions_accepted.json",
+      "policy_sha256": "bc55987175bae2282a0c291b7a8106d849c77ae5cebf1d01a107d168327f4c23",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 528,
+      "ndcg_at_1": 0.7058823529411765,
+      "library_hash": "3bcdc0331c7853b226a85754ef350c13571ca2fd51c9f1f7a8fb38a28ae2c28e",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_05",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/05/test_accepted_05.jsonl",
+      "prediction_sha256": "05c31f6909bd5974725aa74a24c5774d187cad40e930d571ae1a9141b111fc00",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/05/conditions_accepted.json",
+      "policy_sha256": "c4933b8dec6a24a9b0d97f172d6ce140f41569027ccbf3c0b211a7de779bb828",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 532,
+      "ndcg_at_1": 0.7112299465240641,
+      "library_hash": "37bd61e5f49187af18ffd32cbade52661962d783c751b038b638ffde3bf0bf59",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_06",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/06/test_accepted_06.jsonl",
+      "prediction_sha256": "8ead1230c8bc1ef69cc4c0a6f97991d8aa83a3b8faf5dd723bc09696c2a9ba2f",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/06/conditions_accepted.json",
+      "policy_sha256": "6c5e61c0740f58960c907f1489db035ef6f4cbe9d3c0fd80798f67c089bb71c7",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 534,
+      "ndcg_at_1": 0.713903743315508,
+      "library_hash": "cbb60a449be9e8c0009d02cfeedfd3fba049154faf2356f4b43abc4294a0995e",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_07",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/07/test_accepted_07.jsonl",
+      "prediction_sha256": "5bc28da0048a73a7eb9891658bc5c18ce66e0dc161244f7d83c6b4f7285f5dc7",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/07/conditions_accepted.json",
+      "policy_sha256": "11eb996745e86026537ab823e028f5b7691ea9e27e4a5f5efcf05901ff949e61",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 524,
+      "ndcg_at_1": 0.7005347593582888,
+      "library_hash": "b8ede76ae691fdda773028accd31724e8f88a529a64532e4976a31f79e883d54",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_08",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/08/test_accepted_08.jsonl",
+      "prediction_sha256": "9a419c3f7709eefb2eb07cd5955a1be6b6432b1ac766d9c1bc495ff3910ee971",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/08/conditions_accepted.json",
+      "policy_sha256": "d6115d8605cf7fb6d96b985742bf7d96e0b2454a04722d8dfb79cc177e86113c",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 531,
+      "ndcg_at_1": 0.7098930481283422,
+      "library_hash": "70602c167a0a43691ddceba4442b20a49a6c3ed4e57754029f7a247b1c85f0b3",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_09",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/09/test_accepted_09.jsonl",
+      "prediction_sha256": "46a1cfdb5fea1d10a1df38ab8891d4577a9858235fba1f3e8c38e3e4c8c869c1",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/09/conditions_accepted.json",
+      "policy_sha256": "946d6b03aa4b70065ade6d60180d9371c1ad4b7272458735173fa249334d4bc2",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 538,
+      "ndcg_at_1": 0.7192513368983957,
+      "library_hash": "86181d764c155a4937b947b6cd53b0aeb61c31025db5234e5395c5e8789e8466",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "iter_10",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/10/test_accepted_10.jsonl",
+      "prediction_sha256": "1e14a1372190fb959695464dfbc2a7410e177efc7d480996a4158551891825f9",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/iterations/10/conditions_accepted.json",
+      "policy_sha256": "b4e95d1729c2d416d7e9360092636590e538128671f29af37cad28913e8568cb",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 531,
+      "ndcg_at_1": 0.7098930481283422,
+      "library_hash": "c372d6afdc2fec04f1998752e53dbe3b5c32384c055b6be7bca854dec8435d8f",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true,
+      "ledger_accepted_hash_matches": true
+    },
+    {
+      "run": "run_3",
+      "checkpoint": "final",
+      "prediction_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/predictions/final_test.jsonl",
+      "prediction_sha256": "1e14a1372190fb959695464dfbc2a7410e177efc7d480996a4158551891825f9",
+      "policy_path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3/conditions_final.json",
+      "policy_sha256": "b4e95d1729c2d416d7e9360092636590e538128671f29af37cad28913e8568cb",
+      "rows": 748,
+      "unique_task_ids": 748,
+      "hits_at_1": 531,
+      "ndcg_at_1": 0.7098930481283422,
+      "library_hash": "c372d6afdc2fec04f1998752e53dbe3b5c32384c055b6be7bca854dec8435d8f",
+      "policy_library_hash_matches": true,
+      "candidate_statements_match_policy": true,
+      "gold_order_exact_matches_reference": true,
+      "task_hashes_match_reference": true,
+      "task_ids_sha256": "f7c1824eb92f3ea020f050a3054b9eee0c0af4b69e2000d15c8811fa8a965aec",
+      "gold_sha256": "d4573bf149f2508087715d988d8470e14a3e5422833b0439658c61135a7f0864",
+      "empty_ranked_ids": 0,
+      "encoder_hashes": [
+        "7a4d76cbff1adf800bf96ebb1792e13fef7cce45a52e6750542ae324360d303e"
+      ],
+      "judgment_identities": [
+        "ba80be2f7747b3e86b7c094de06cade33f4090d21171400556f66ea7abfacade"
+      ],
+      "label_sources": [
+        "core_gt_ids"
+      ],
+      "candidate_order_matches_reference": true,
+      "conditions_digest_matches_library_hash": true
+    }
+  ],
+  "runs": [
+    {
+      "run": "run_1",
+      "config": {
+        "cache_limit": 5,
+        "candidates_number": 3,
+        "checker": {
+          "mode": "round11_v3",
+          "thinking_token_budget": 512
+        },
+        "condition_max_chars": 400,
+        "condition_threshold_percent": 100,
+        "evaluation_workers": 48,
+        "implementation": "statements_bm25_v6",
+        "initial_skills_cache": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/initial_skills_cache_1.json",
+        "initialization_mode": "llm_literal_python_prompt_v1",
+        "initialization_prompt": "initialization/uppercase_words_new_param.py",
+        "initialization_workers": 48,
+        "iterations": 10,
+        "max_attempts": 5,
+        "max_completion_tokens": 4096,
+        "model": "Qwen/Qwen3.5-4B",
+        "output_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1",
+        "prepared_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/.wisc/artifacts/sra_gatedrouter_bm25_v6/prepared",
+        "proposal_duplicate_retry_temperature": 1,
+        "proposal_temperature": 0,
+        "repair_limits": {
+          "max_chars": 400,
+          "prompt_set": "prompts"
+        },
+        "repair_mode": "two_step_sectioned_v1",
+        "repair_workers": 48,
+        "replay_evidence_limit": 0,
+        "replay_mbr_enabled": true,
+        "request_cache_policy": "exact_request_v1_nonproposal_temperature0_proposal_temperature0_duplicate_retry_temperature1_uncached",
+        "request_concurrency": 48,
+        "retrieval_backend": "sra_skillsight",
+        "runtime_judgment_lookup_cache": true,
+        "schema_version": 6,
+        "sdk_max_retries": 0,
+        "seed": 20260324,
+        "smoke_tasks": 0,
+        "source_root": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter",
+        "split_config": "skill_balanced_min3",
+        "subset_fraction": 1.0,
+        "temperature": 0,
+        "timeout_seconds": 120,
+        "top_k": 50,
+        "validation_gate_enabled": true,
+        "validation_metric": "f1",
+        "validation_regression_percent": 4,
+        "workspace": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter"
+      },
+      "model_identity": {
+        "expected_model": "Qwen/Qwen3.5-4B",
+        "model_mismatches": 0,
+        "verified_responses": 1815820
+      },
+      "completion": {
+        "accepted_changed_iteration_count": 10,
+        "accepted_count": 10,
+        "analysis_ready": true,
+        "artifact_manifest_hash": "ea96ee2d3265dcc91927b57d5ae60d3b7bbda26baf76826eda02689140f61ae4",
+        "audit_hash": "8c2aabf665c5563efc8b1efc188e8702a0ba74dc839f2ae520fc18cf5e36c0e5",
+        "catalog_counts": {
+          "sra": 26262
+        },
+        "learned_policy_changed": true,
+        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+        "passed": true,
+        "reportable": false,
+        "source_manifest_sha256": "unreviewed-dev:32e089cc6117b091b846c63b8d2d708a3352dedd488fdb59de654cae43720a4c",
+        "split_counts": {
+          "test": 748,
+          "train": 3491,
+          "validation": 748
+        },
+        "status": "completed_noncanonical"
+      },
+      "final_vs_iter10": {
+        "all_prediction_rows_equal_by_task": true,
+        "prediction_bytes_equal": true,
+        "ranked_ids_equal_by_task": true,
+        "top1_outcomes_equal_by_task": true,
+        "policies_equal": true
+      },
+      "policy_keys": [
+        "conditions",
+        "library_hash",
+        "schema_version"
+      ],
+      "policy_skill_count": 26262,
+      "policy_digest_candidates": {
+        "conditions": "c2df4f2600dd8ec54febfe66f4f92b3b6c95a4c43eab7d92b33b2ba5b4aafdef",
+        "sra_conditions": "313f26b3a1f416cb0541cde29c3c2ae9097c500e1157e4863af2dc473fe22bd0",
+        "full_minus_library_hash": "0247655af8602361fa643e55f50c0ffbf01335a583b7b88ef4f9026260d27a24"
+      },
+      "test_state_matches_predictions": true,
+      "test_used_for_selection": false,
+      "evaluate_test_each_iteration": true,
+      "manifest_identities": {
+        "judgment": {
+          "candidates_number": 3,
+          "checker": {
+            "mode": "round11_v3",
+            "thinking_token_budget": 512
+          },
+          "checker_prompt_source_sha256": "84347dd53c9cd760a6ee244848f210d504ed9095b10d89716fea6646c9317a0d",
+          "checker_source_hashes": {
+            "prompts/condition_checker/retry.py": "c56383ce09044376c1ddec42c1fb85d51b635a56a9fc8d4c9ba2ec03cc9e064b",
+            "prompts/condition_checker/round11_v3.py": "84347dd53c9cd760a6ee244848f210d504ed9095b10d89716fea6646c9317a0d"
+          },
+          "engine_version": 6,
+          "exact_contract_hash": "c83068f4a99e072271af75a2f0049a9909d0721e41e0778f5d01a40c5adc4d69",
+          "initialization_temperature": 1,
+          "max_completion_tokens": 4096,
+          "pairs_per_request": 1,
+          "prompt_hash": "6f001ce7d4c95f19770c46f697d1310bf1b739e85bef1ba320fc3cc6c7956273",
+          "proposal_duplicate_retry_temperature": 1,
+          "proposal_temperature": 0,
+          "provider_namespace": "bce63d32b32f3bf0f8b9a631226eed6197098787bf836494ab7f1ba776d5fb30",
+          "repair_limits": {
+            "max_chars": 400,
+            "prompt_set": "prompts"
+          },
+          "repair_prompt_source_sha256": "e9a1e6452cbfc3730e681305766e116a244d305e59fd1887ad64f745c96aefd5",
+          "repair_response_format": {
+            "json_schema": {
+              "name": "slot_candidates",
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "candidates": {
+                    "items": {
+                      "maxLength": 400,
+                      "type": "string"
+                    },
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "candidates"
+                ],
+                "type": "object"
+              },
+              "strict": true
+            },
+            "type": "json_schema"
+          },
+          "repair_source_hashes": {
+            "src/external_baselines/gatedrouter/prompts/__init__.py": "837275729deaf1ec1d3d2ff7131c46a2f60b8c57441d1a0f9a7e492301542a8d",
+            "src/external_baselines/gatedrouter/prompts/step1.py": "c456e2cec3000a566ede1639009550416d465c6dc82415270d3dc77759d57d69",
+            "src/external_baselines/gatedrouter/statement_two_step.py": "3c422a35035b5b6a912f4f223dda697136dd89fe6bc4b6d5160af88a23b3ae47"
+          },
+          "reportability": "nonreportable_dev_fast_path",
+          "request_cache_policy": "exact_request_v1_nonproposal_temperature0_proposal_temperature0_duplicate_retry_temperature1_uncached",
+          "runtime_judgment_lookup_cache": true,
+          "schema_hash": "4893c406d596cceb0e792d9ae0317bebbf5b2ed05d892d5b14780093a68cc2a5",
+          "temperature": 0,
+          "wrapper_source_sha256": "9d2935c16a01dcf62f1ba08f35a1c73b9f1c0951ad01465117fc123cfb0a568a"
+        },
+        "retrieval": {
+          "backend": "sra_skillsight_top50_public_query",
+          "candidate_k": 300,
+          "document_text": "sragents.corpus.skill_text(name,description,content)",
+          "documents_sha256": "6a202b3f3cf7ef945f846da109fc1556924e61cc17207f68d14096a6564e37a2",
+          "embedding_cache": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cache/all_Qwen3-Embedding-0.6B_32768.npy",
+          "inputs": {
+            "backend": "sra_bm25_top50_public_query",
+            "files": {
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/corpus/corpus.json": "16ee509ae5bea8c2e17167dffecd89100a7d8dfa31256c3742426758c7169b5e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/bigcodebench.json": "0ed01363e2c93134cf8696fea47b6d640f32f0d7ae9d7b478a05595c3f5ae788",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/champ.json": "d61346716cede953afb352e739e170b96d2bfb98824edd91b8783dc3526c7cec",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/logicbench.json": "af5055caac041ea08cee47622f5d922b47b2ba0a8e3a60b87349599eeff1bdfe",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/medcalcbench.json": "814f6b082f56cf89dd9c50be7ab87b5bcb0e41633138951e42b38d6923c3244e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/theoremqa.json": "c969a7291e23361ba9f377e464be76093804deb628b964fb846c6eff6b28deeb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/toolqa.json": "e41eb4d4b67c1dd8e1178c88e9e8ff15525b31803694e9459d115c274fb04f0e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/__init__.py": "87334b86e70dc36d00106654c4a52a3c039c61359fd21bf52ef6fa6d63bc6591",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/__init__.py": "586318f108bdbd3ddab0d37fcf1be80ecf3c324657d4e3b03a04048194c887ba",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/_common.py": "4f338e11ad643453e5391ebd74d2bf3ff1879e04d99285e0e803b8899379e55f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/evaluate.py": "36bdee2576533f39e6d0485610d3cd18152f14d129de414c6ce710a9930145bd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/experiment.py": "a9921e70459a53fe9352926367f640e3035ecd8138152394abf65fcc3e26e06c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/hybrid.py": "d2c7381b6a88cb936d7696db45001aff57d70a3541d1a5c08192a38f43d5860b",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/infer.py": "b50e5fcdfa5fa014cb6ce16203bfd2cd22ec9bf09adca235a7533bae4a00eca5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/listing.py": "7d6a8b193d143fba1a1fc752065c2bd2aa3f7b5bebe2180d320ee278ed65f8d6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/main.py": "157a7aadf54ebe3239353392c1919a06cf3111dc1700cf4bbfdec05729c54007",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/rerank.py": "6869232aa4a354c05b1a8730e2c99b421fc2496374b0f91858a74f5e97b35166",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/retrieve.py": "e35bc3da77bcbcb0c6ffc998138ca08d60a39707086a9027987c47076b523b10",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/config.py": "74ed6cb2389c6d59672ff718ab12ac9ba02c75eb9b57c20620b5cc57c1db71a6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/corpus.py": "ce928241913d5b9d46dcea279811639ef918ba9d65b1f8332b22add969eda7b3",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/__init__.py": "1eea26fd85e3140a96be8a3d91ee5346a9717bffe701b497648763abce629ea5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/base.py": "0a7ce44ab1676578fad8f555d7176bea33e855e54a4c7799b3a64f3e1bdd8229",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/common.py": "59fee7c79a7f8d45463ba4df78f83841f8d6ab8e02f26e0acd7a50733ecbfb83",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/__init__.py": "4c164d3069266ecebbb88c700436f9f51e1adff8f8180ae0b710b2e924e4de98",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/__init__.py": "e0703627301dfd450ee12d2ad5dbcacb6078408b87de5b4cdb191cb004cc1fcf",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/execution.py": "351d0768f57d9cf6e55151faf64f1dfa23da5bc8a4fdb30e006494b33010ca2a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/sanitize.py": "4febe4b55c7e40615b2caa1de5a5417b7362d783d6a99c634b39171d2deeab74",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/champ.py": "00d6ef11cc86fe53b676c125d26f44328cfe68d662fdb99625ad388ed26afb6e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/logicbench.py": "cb8f321dcebe77e52ae80c19f014d47e1169d273807735ed6c530bc2a664322a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/medcalcbench.py": "0523d3db5fd62209c8484a8ae59da7ca3747ca225fcc56498a8141cc445db962",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/theoremqa.py": "f899f977e534141c97bdef0b756e30e3e7a41bb9642910644898c2d89897f351",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/toolqa.py": "369a7e8d247460f2e424412a2b136fde9288bdc297de452f40283bfec5795561",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/metrics.py": "dec241349e1965eed15ffc24875f8961b703f6330466e972e7124cc6780ba257",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/__init__.py": "0b1753693208f5e7fff24a2f057b4a43ee2c63070c5d87d555e29a77baa9f2c6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/definitions.py": "5bab9b3a3518a7c5968deebddc8ab344acd3a8520dc30589221f7f5a30c7df95",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/runner.py": "c3193b158436354c48036a2f8a77e815baec51fc35a14afa4fd5dfa957a81b84",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/__init__.py": "d5568c72149e285653c0f7aa5bb955c6695f726e976d64c1f7c5124b4a691dbb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/base.py": "e1c1f07bfe1633a7868ae16ec3ac342f1e2f8562c2663e0edd532f6cbddcf73c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/__init__.py": "7651762af3b03e542da3eba50a4acabc65da48f221c18dc6bc85fe8e81367c6c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/direct.py": "feb9a878f7d500c112f405681669e3080336eb6dcf174f8797a58902f28595bd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/progressive_disclosure.py": "d81c4bb4d21ab0d37a9612a14894c1fd78c23000243098e092728ccecfc3d7ad",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/react.py": "81ced2d9568830fb3ebc108400775b0efcdef042cc5ed416c1451cf45eee50eb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/tool_loop.py": "c2c78f20938a7b0792a2801eca382e05bc10331272b696ab1ee13ccabb206826",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/__init__.py": "7cf6c1d18912890505bbc6bd30c135be1c61869c2344263e2ba58ad3f3e396b2",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/distractor.py": "275c8a7a17b8bb5d262c92da80edfb618a7181219f82a16bd0b711df99e7f6fc",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/llm_select.py": "5b7d40b5c0a4e1a6951c952dd2601ddcf2d376f961fa8c39bd6a9d45f25771e0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/none.py": "ad1a3a927e56b2f6bb49bcb544db33fbb3dc89af0acdc7fe936e3cd1152a004f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/oracle.py": "5ecaf97a439e6aa110125c6cff0d898a142c4909b5db9c99d17d3d49984713c5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/topk.py": "fb5ab827959ca70896b1aaa428f7deaa2c8929a802a964e22151e0428daf8744",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/runner.py": "d4be176f93874c628e2efd9363601b0b4b20f0c0e94c2b2294596c2e211163f5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/schema.py": "57d2baf3c6d2335bcfbedcff40f9eec08c2c9145339db27011dce68bdbcd0430",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/llm.py": "ed73576ec6ba4d4db366b9271569df16082b25055eda3d58fd22d03f2b41e9a4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/prompts.py": "b88112116dc89d5991ed7b32f1f7dba5866a5ad665e2587d20a6f45297a365a0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/__init__.py": "1e44341737b46b26d8baced626eecbf0b162242f219ce136cda87094358146d5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/_sparse_core.py": "09715225645561527ebf003157ba5f018e6cc49c6022ac8b022a25df2db42ecd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/base.py": "2ebc6d23a3b484415894954cff2973744edc12ed46129e768c0ac1965809ceaf",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/bm25.py": "55127d2889cb147ab86d0b7afd35c76516d5e3c2b92fb0bc7bf77fdf9cf4179f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/dense.py": "dd58786d0f38c4955055be97d67aa97d6f9cfd76fa4e7c9ba620a0bb116402ca",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/hybrid.py": "be010cb4124a644c2c13240088aba5d8079dbf20c21b0c1df0e0af54b043c936",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/llm_rerank.py": "3371fba95b326fc85803972f71e0a3f1b221b686c9ff3e071d9b2b1993a1a4ee",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/metrics.py": "015d26997de99ba5992e4236498ac1f8018cb4314462a3d852541cc9277fb5b4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/schema.py": "2cb3759cfb763737467e4e30b1cfa7593f41719ca549856c9a4e1c157d812586",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/skillsight.py": "02de678b0a99b206b6d8ffd583e2b255696213fa7e8dc83688252259c90011e4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/tfidf.py": "ee1c9dcb46bdf98501e91c000b039679182413d5e069f45212a9c7dab2392419",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/splits.py": "4e446061590b96974d4eab77379f8f04d190f1ecf2a3285c6d3b52caacbf3c8e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/__init__.py": "beb8e45912743cac5f564ceb9487a102c4c8d939ec374f25e61644e9cb0bac51",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/fewshots.py": "e64d6c4d51bfd35e8eb2d2099a09355e912fffe658f6cf6da8d34e2f95688660",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/prompts.py": "ce89098dde4e444c7bbf882b41025eaa0471de90aecc5bc6123b5e42a569fdcc",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/__init__.py": "a10569508b642aa46cf5d7841c423f8cbd6ae6f1d17b0501ae54825fc575744a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/calculator.py": "452aa588799d9e980185313125a3782d7477eb8d7d1dcf34e037a1d8b27e5aeb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/code.py": "2c611ae46432bb8af7d89296971b48b2628f0a527e18489f94f89ccd6a16cbe9",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/graph.py": "1a2c4264082821323fd60caba7706768c69f4b17162779546e5bfa8f42af5ae1",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/table.py": "4647a90a0b1a72423aa8e2c2918b22e557cdcfda95055fa50df7c7b94dc40b39",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/text.py": "c9bb3dfe44efbab093a42e19185a4bc9b8bd1e8a0b1b603336ff77d500f53c37",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/__init__.py": "5714cc71e46e68b513b8521172d60045be815d49473e0bb20278584167659037",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cache.py": "6c821dec1bcb370ee5254925af4ff55d254d866dd3a0e26be845e55927cb943e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cli.py": "54e2d9e11123837c272618b68cfcff5def1dd0fc4700c71e25ea147565800e7e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/constants.py": "b4d2cfe692cdf6ca2a395dfd6abb0fc0b8a61d39e81dd6f1844d2ab549526eb0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/data.py": "437bf7a7437c62bb87604403f56d4b7bccfb73267787c01bc7848985ee70be67",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/download_datasets.py": "c1c5b8af2ebd8c5b744c00dd811ed347dec4f9941d4b40f255504551b947e49d",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/encoder.py": "a6923e2087ff89ad883ca148fa3c8d350247c73b7eb2d93fab077471a88dd9fb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/eval_skillsight_e2e.py": "8a492c76639ec17cc9d9325d3e563dfd37589854a862aab668b96c92221eee7c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/evaluation.py": "8abf31d744f8c449bbbfcb2c5e8e8e9924dd99174c683f94a6aae8baf38f5849",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/fusion.py": "34f6d8f06928302405ad087fdbcbc81f153fe8c7fdae2f92ffd70289cc780df1",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/metrics.py": "ab43d8d142f5c76ee8614fc3cf5183f389e30d87dc160dba24e151cfabf44f0b",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/retriever.py": "7c81de6b15dd95abc275d840477828cfdd32f281e88c5b216e7703b05ff52659",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/text_model.py": "22a2b8b9ca4ee962748877c8ae4f4216a2c57cb546da94f032db554db1c74537",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/utils.py": "76fb4833dbefc6910899acee13f1c898f30f75464233b60339e223257bcfee4e"
+            },
+            "top_k": 50
+          },
+          "public_queries_sha256": "15a400e9e0c677864e89e671e347221a196fd5ab8fa7b9b7318d6d03d6dc3a8e",
+          "query_text": "sragents.cli.retrieve._build_query(user,system,toolqa_fewshots)",
+          "score_channel": "rank (1/(1+rank)); native fused score is a per-task z-score, order-only",
+          "top_k": 50
+        }
+      }
+    },
+    {
+      "run": "run_2",
+      "config": {
+        "cache_limit": 5,
+        "candidates_number": 3,
+        "checker": {
+          "mode": "round11_v3",
+          "thinking_token_budget": 512
+        },
+        "condition_max_chars": 400,
+        "condition_threshold_percent": 100,
+        "evaluation_workers": 48,
+        "implementation": "statements_bm25_v6",
+        "initial_skills_cache": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/initial_skills_cache_2.json",
+        "initialization_mode": "llm_literal_python_prompt_v1",
+        "initialization_prompt": "initialization/uppercase_words_new_param.py",
+        "initialization_workers": 48,
+        "iterations": 10,
+        "iterative_event_writer_enabled": false,
+        "max_attempts": 5,
+        "max_completion_tokens": 4096,
+        "model": "Qwen/Qwen3.5-4B",
+        "output_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_2",
+        "prepared_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/.wisc/artifacts/sra_gatedrouter_bm25_v6/prepared_non_mbr_context_v1",
+        "proposal_duplicate_retry_temperature": 1,
+        "proposal_temperature": 0,
+        "repair_limits": {
+          "max_chars": 400,
+          "prompt_set": "prompts"
+        },
+        "repair_mode": "two_step_sectioned_v1",
+        "repair_workers": 48,
+        "replay_evidence_limit": 0,
+        "replay_mbr_enabled": true,
+        "request_cache_policy": "exact_request_v1_nonproposal_temperature0_proposal_temperature0_duplicate_retry_temperature1_uncached",
+        "request_concurrency": 48,
+        "retrieval_backend": "sra_skillsight",
+        "runtime_judgment_lookup_cache": true,
+        "schema_version": 6,
+        "sdk_max_retries": 0,
+        "seed": 20260324,
+        "smoke_tasks": 0,
+        "source_root": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter",
+        "split_config": "skill_balanced_min3",
+        "subset_fraction": 1.0,
+        "temperature": 0,
+        "timeout_seconds": 120,
+        "top_k": 50,
+        "validation_gate_enabled": true,
+        "validation_metric": "f1",
+        "validation_regression_percent": 4,
+        "workspace": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter"
+      },
+      "model_identity": {
+        "expected_model": "Qwen/Qwen3.5-4B",
+        "model_mismatches": 0,
+        "verified_responses": 1136854
+      },
+      "completion": {
+        "accepted_changed_iteration_count": 10,
+        "accepted_count": 10,
+        "analysis_ready": true,
+        "artifact_manifest_hash": "86610907ea6d71042b9f71f07a73d406209d7b2a580c82ac1dcffaccc85e5122",
+        "audit_hash": "ba927d673285cc5a84e517152e51eabe1a1bd4703c704ee5402a7e5746f1925a",
+        "catalog_counts": {
+          "sra": 26262
+        },
+        "learned_policy_changed": true,
+        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+        "passed": true,
+        "reportable": false,
+        "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+        "split_counts": {
+          "test": 748,
+          "train": 3491,
+          "validation": 748
+        },
+        "status": "completed_noncanonical"
+      },
+      "final_vs_iter10": {
+        "all_prediction_rows_equal_by_task": true,
+        "prediction_bytes_equal": true,
+        "ranked_ids_equal_by_task": true,
+        "top1_outcomes_equal_by_task": true,
+        "policies_equal": true
+      },
+      "policy_keys": [
+        "conditions",
+        "library_hash",
+        "schema_version"
+      ],
+      "policy_skill_count": 26262,
+      "policy_digest_candidates": {
+        "conditions": "39648fb159b1d1dc322796a62cf3f287133061e97435ddc5fceffff18326bd63",
+        "sra_conditions": "abe25ca86343a1a849845e80bcf1023b778c0592f3e620f29220f79deea21d65",
+        "full_minus_library_hash": "b4edbf8ddd0ffe709e8a55a11d1d5103484a4ea93cddedb86a68b7c61c9a590b"
+      },
+      "test_state_matches_predictions": true,
+      "test_used_for_selection": false,
+      "evaluate_test_each_iteration": true,
+      "manifest_identities": {
+        "judgment": {
+          "candidates_number": 3,
+          "checker": {
+            "mode": "round11_v3",
+            "thinking_token_budget": 512
+          },
+          "checker_prompt_source_sha256": "84347dd53c9cd760a6ee244848f210d504ed9095b10d89716fea6646c9317a0d",
+          "checker_source_hashes": {
+            "prompts/condition_checker/retry.py": "c56383ce09044376c1ddec42c1fb85d51b635a56a9fc8d4c9ba2ec03cc9e064b",
+            "prompts/condition_checker/round11_v3.py": "84347dd53c9cd760a6ee244848f210d504ed9095b10d89716fea6646c9317a0d"
+          },
+          "engine_version": 6,
+          "exact_contract_hash": "b48749335835e8ee0fd27a89aef4dade63d9347880e321b852202276f0dde2ff",
+          "initialization_temperature": 1,
+          "max_completion_tokens": 4096,
+          "pairs_per_request": 1,
+          "prompt_hash": "6f001ce7d4c95f19770c46f697d1310bf1b739e85bef1ba320fc3cc6c7956273",
+          "proposal_duplicate_retry_temperature": 1,
+          "proposal_temperature": 0,
+          "provider_namespace": "bce63d32b32f3bf0f8b9a631226eed6197098787bf836494ab7f1ba776d5fb30",
+          "repair_limits": {
+            "max_chars": 400,
+            "prompt_set": "prompts"
+          },
+          "repair_prompt_source_sha256": "3249eaee6e12c1a83648d72baad7d43a4bf46705db44f673227e5c8e3462b708",
+          "repair_response_format": {
+            "json_schema": {
+              "name": "slot_candidates",
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "candidates": {
+                    "items": {
+                      "maxLength": 400,
+                      "type": "string"
+                    },
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "candidates"
+                ],
+                "type": "object"
+              },
+              "strict": true
+            },
+            "type": "json_schema"
+          },
+          "repair_source_hashes": {
+            "src/external_baselines/gatedrouter/prompts/__init__.py": "837275729deaf1ec1d3d2ff7131c46a2f60b8c57441d1a0f9a7e492301542a8d",
+            "src/external_baselines/gatedrouter/prompts/step1.py": "c456e2cec3000a566ede1639009550416d465c6dc82415270d3dc77759d57d69",
+            "src/external_baselines/gatedrouter/statement_two_step.py": "a67966bf708afa6c4b59aa471d69b02a37e997404ff4d992570e7654f4fa1380"
+          },
+          "reportability": "nonreportable_dev_fast_path",
+          "request_cache_policy": "exact_request_v1_nonproposal_temperature0_proposal_temperature0_duplicate_retry_temperature1_uncached",
+          "runtime_judgment_lookup_cache": true,
+          "schema_hash": "4893c406d596cceb0e792d9ae0317bebbf5b2ed05d892d5b14780093a68cc2a5",
+          "temperature": 0,
+          "wrapper_source_sha256": "532d5cce9fc59c3cb0e659678ad95165217ae888228d355b6184cb38baa6eac3"
+        },
+        "retrieval": {
+          "backend": "sra_skillsight_top50_public_query",
+          "candidate_k": 300,
+          "document_text": "sragents.corpus.skill_text(name,description,content)",
+          "documents_sha256": "6a202b3f3cf7ef945f846da109fc1556924e61cc17207f68d14096a6564e37a2",
+          "embedding_cache": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cache/all_Qwen3-Embedding-0.6B_32768.npy",
+          "inputs": {
+            "backend": "sra_bm25_top50_public_query",
+            "files": {
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/corpus/corpus.json": "16ee509ae5bea8c2e17167dffecd89100a7d8dfa31256c3742426758c7169b5e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/bigcodebench.json": "0ed01363e2c93134cf8696fea47b6d640f32f0d7ae9d7b478a05595c3f5ae788",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/champ.json": "d61346716cede953afb352e739e170b96d2bfb98824edd91b8783dc3526c7cec",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/logicbench.json": "af5055caac041ea08cee47622f5d922b47b2ba0a8e3a60b87349599eeff1bdfe",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/medcalcbench.json": "814f6b082f56cf89dd9c50be7ab87b5bcb0e41633138951e42b38d6923c3244e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/theoremqa.json": "c969a7291e23361ba9f377e464be76093804deb628b964fb846c6eff6b28deeb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/toolqa.json": "e41eb4d4b67c1dd8e1178c88e9e8ff15525b31803694e9459d115c274fb04f0e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/__init__.py": "87334b86e70dc36d00106654c4a52a3c039c61359fd21bf52ef6fa6d63bc6591",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/__init__.py": "586318f108bdbd3ddab0d37fcf1be80ecf3c324657d4e3b03a04048194c887ba",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/_common.py": "4f338e11ad643453e5391ebd74d2bf3ff1879e04d99285e0e803b8899379e55f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/evaluate.py": "36bdee2576533f39e6d0485610d3cd18152f14d129de414c6ce710a9930145bd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/experiment.py": "a9921e70459a53fe9352926367f640e3035ecd8138152394abf65fcc3e26e06c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/hybrid.py": "d2c7381b6a88cb936d7696db45001aff57d70a3541d1a5c08192a38f43d5860b",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/infer.py": "b50e5fcdfa5fa014cb6ce16203bfd2cd22ec9bf09adca235a7533bae4a00eca5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/listing.py": "7d6a8b193d143fba1a1fc752065c2bd2aa3f7b5bebe2180d320ee278ed65f8d6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/main.py": "157a7aadf54ebe3239353392c1919a06cf3111dc1700cf4bbfdec05729c54007",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/rerank.py": "6869232aa4a354c05b1a8730e2c99b421fc2496374b0f91858a74f5e97b35166",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/retrieve.py": "e35bc3da77bcbcb0c6ffc998138ca08d60a39707086a9027987c47076b523b10",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/config.py": "74ed6cb2389c6d59672ff718ab12ac9ba02c75eb9b57c20620b5cc57c1db71a6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/corpus.py": "ce928241913d5b9d46dcea279811639ef918ba9d65b1f8332b22add969eda7b3",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/__init__.py": "1eea26fd85e3140a96be8a3d91ee5346a9717bffe701b497648763abce629ea5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/base.py": "0a7ce44ab1676578fad8f555d7176bea33e855e54a4c7799b3a64f3e1bdd8229",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/common.py": "59fee7c79a7f8d45463ba4df78f83841f8d6ab8e02f26e0acd7a50733ecbfb83",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/__init__.py": "4c164d3069266ecebbb88c700436f9f51e1adff8f8180ae0b710b2e924e4de98",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/__init__.py": "e0703627301dfd450ee12d2ad5dbcacb6078408b87de5b4cdb191cb004cc1fcf",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/execution.py": "351d0768f57d9cf6e55151faf64f1dfa23da5bc8a4fdb30e006494b33010ca2a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/sanitize.py": "4febe4b55c7e40615b2caa1de5a5417b7362d783d6a99c634b39171d2deeab74",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/champ.py": "00d6ef11cc86fe53b676c125d26f44328cfe68d662fdb99625ad388ed26afb6e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/logicbench.py": "cb8f321dcebe77e52ae80c19f014d47e1169d273807735ed6c530bc2a664322a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/medcalcbench.py": "0523d3db5fd62209c8484a8ae59da7ca3747ca225fcc56498a8141cc445db962",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/theoremqa.py": "f899f977e534141c97bdef0b756e30e3e7a41bb9642910644898c2d89897f351",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/toolqa.py": "369a7e8d247460f2e424412a2b136fde9288bdc297de452f40283bfec5795561",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/metrics.py": "dec241349e1965eed15ffc24875f8961b703f6330466e972e7124cc6780ba257",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/__init__.py": "0b1753693208f5e7fff24a2f057b4a43ee2c63070c5d87d555e29a77baa9f2c6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/definitions.py": "5bab9b3a3518a7c5968deebddc8ab344acd3a8520dc30589221f7f5a30c7df95",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/runner.py": "c3193b158436354c48036a2f8a77e815baec51fc35a14afa4fd5dfa957a81b84",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/__init__.py": "d5568c72149e285653c0f7aa5bb955c6695f726e976d64c1f7c5124b4a691dbb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/base.py": "e1c1f07bfe1633a7868ae16ec3ac342f1e2f8562c2663e0edd532f6cbddcf73c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/__init__.py": "7651762af3b03e542da3eba50a4acabc65da48f221c18dc6bc85fe8e81367c6c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/direct.py": "feb9a878f7d500c112f405681669e3080336eb6dcf174f8797a58902f28595bd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/progressive_disclosure.py": "d81c4bb4d21ab0d37a9612a14894c1fd78c23000243098e092728ccecfc3d7ad",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/react.py": "81ced2d9568830fb3ebc108400775b0efcdef042cc5ed416c1451cf45eee50eb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/tool_loop.py": "c2c78f20938a7b0792a2801eca382e05bc10331272b696ab1ee13ccabb206826",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/__init__.py": "7cf6c1d18912890505bbc6bd30c135be1c61869c2344263e2ba58ad3f3e396b2",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/distractor.py": "275c8a7a17b8bb5d262c92da80edfb618a7181219f82a16bd0b711df99e7f6fc",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/llm_select.py": "5b7d40b5c0a4e1a6951c952dd2601ddcf2d376f961fa8c39bd6a9d45f25771e0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/none.py": "ad1a3a927e56b2f6bb49bcb544db33fbb3dc89af0acdc7fe936e3cd1152a004f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/oracle.py": "5ecaf97a439e6aa110125c6cff0d898a142c4909b5db9c99d17d3d49984713c5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/topk.py": "fb5ab827959ca70896b1aaa428f7deaa2c8929a802a964e22151e0428daf8744",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/runner.py": "d4be176f93874c628e2efd9363601b0b4b20f0c0e94c2b2294596c2e211163f5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/schema.py": "57d2baf3c6d2335bcfbedcff40f9eec08c2c9145339db27011dce68bdbcd0430",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/llm.py": "ed73576ec6ba4d4db366b9271569df16082b25055eda3d58fd22d03f2b41e9a4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/prompts.py": "b88112116dc89d5991ed7b32f1f7dba5866a5ad665e2587d20a6f45297a365a0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/__init__.py": "1e44341737b46b26d8baced626eecbf0b162242f219ce136cda87094358146d5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/_sparse_core.py": "09715225645561527ebf003157ba5f018e6cc49c6022ac8b022a25df2db42ecd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/base.py": "2ebc6d23a3b484415894954cff2973744edc12ed46129e768c0ac1965809ceaf",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/bm25.py": "55127d2889cb147ab86d0b7afd35c76516d5e3c2b92fb0bc7bf77fdf9cf4179f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/dense.py": "dd58786d0f38c4955055be97d67aa97d6f9cfd76fa4e7c9ba620a0bb116402ca",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/hybrid.py": "be010cb4124a644c2c13240088aba5d8079dbf20c21b0c1df0e0af54b043c936",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/llm_rerank.py": "3371fba95b326fc85803972f71e0a3f1b221b686c9ff3e071d9b2b1993a1a4ee",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/metrics.py": "015d26997de99ba5992e4236498ac1f8018cb4314462a3d852541cc9277fb5b4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/schema.py": "2cb3759cfb763737467e4e30b1cfa7593f41719ca549856c9a4e1c157d812586",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/skillsight.py": "bb3a2d3229f48c4322cabe3f7a51e9290dc2f1a8b9ad08b7fc107d3f59392e85",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/tfidf.py": "ee1c9dcb46bdf98501e91c000b039679182413d5e069f45212a9c7dab2392419",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/splits.py": "4e446061590b96974d4eab77379f8f04d190f1ecf2a3285c6d3b52caacbf3c8e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/__init__.py": "beb8e45912743cac5f564ceb9487a102c4c8d939ec374f25e61644e9cb0bac51",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/fewshots.py": "e64d6c4d51bfd35e8eb2d2099a09355e912fffe658f6cf6da8d34e2f95688660",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/prompts.py": "ce89098dde4e444c7bbf882b41025eaa0471de90aecc5bc6123b5e42a569fdcc",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/__init__.py": "a10569508b642aa46cf5d7841c423f8cbd6ae6f1d17b0501ae54825fc575744a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/calculator.py": "452aa588799d9e980185313125a3782d7477eb8d7d1dcf34e037a1d8b27e5aeb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/code.py": "2c611ae46432bb8af7d89296971b48b2628f0a527e18489f94f89ccd6a16cbe9",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/graph.py": "1a2c4264082821323fd60caba7706768c69f4b17162779546e5bfa8f42af5ae1",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/table.py": "4647a90a0b1a72423aa8e2c2918b22e557cdcfda95055fa50df7c7b94dc40b39",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/text.py": "c9bb3dfe44efbab093a42e19185a4bc9b8bd1e8a0b1b603336ff77d500f53c37",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/__init__.py": "5714cc71e46e68b513b8521172d60045be815d49473e0bb20278584167659037",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cache.py": "6c821dec1bcb370ee5254925af4ff55d254d866dd3a0e26be845e55927cb943e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cli.py": "54e2d9e11123837c272618b68cfcff5def1dd0fc4700c71e25ea147565800e7e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/constants.py": "b4d2cfe692cdf6ca2a395dfd6abb0fc0b8a61d39e81dd6f1844d2ab549526eb0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/data.py": "437bf7a7437c62bb87604403f56d4b7bccfb73267787c01bc7848985ee70be67",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/download_datasets.py": "c1c5b8af2ebd8c5b744c00dd811ed347dec4f9941d4b40f255504551b947e49d",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/encoder.py": "a6923e2087ff89ad883ca148fa3c8d350247c73b7eb2d93fab077471a88dd9fb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/eval_skillsight_e2e.py": "8a492c76639ec17cc9d9325d3e563dfd37589854a862aab668b96c92221eee7c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/evaluation.py": "8abf31d744f8c449bbbfcb2c5e8e8e9924dd99174c683f94a6aae8baf38f5849",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/fusion.py": "34f6d8f06928302405ad087fdbcbc81f153fe8c7fdae2f92ffd70289cc780df1",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/metrics.py": "ab43d8d142f5c76ee8614fc3cf5183f389e30d87dc160dba24e151cfabf44f0b",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/retriever.py": "7c81de6b15dd95abc275d840477828cfdd32f281e88c5b216e7703b05ff52659",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/text_model.py": "22a2b8b9ca4ee962748877c8ae4f4216a2c57cb546da94f032db554db1c74537",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/utils.py": "76fb4833dbefc6910899acee13f1c898f30f75464233b60339e223257bcfee4e"
+            },
+            "top_k": 50
+          },
+          "public_queries_sha256": "15a400e9e0c677864e89e671e347221a196fd5ab8fa7b9b7318d6d03d6dc3a8e",
+          "query_text": "sragents.cli.retrieve._build_query(user,system,toolqa_fewshots)",
+          "score_channel": "rank (1/(1+rank)); native fused score is a per-task z-score, order-only",
+          "top_k": 50
+        }
+      }
+    },
+    {
+      "run": "run_3",
+      "config": {
+        "cache_limit": 5,
+        "candidates_number": 3,
+        "checker": {
+          "mode": "round11_v3",
+          "thinking_token_budget": 512
+        },
+        "condition_max_chars": 400,
+        "condition_threshold_percent": 100,
+        "evaluation_workers": 48,
+        "implementation": "statements_bm25_v6",
+        "initial_skills_cache": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/initial_skills_cache_3.json",
+        "initialization_mode": "llm_literal_python_prompt_v1",
+        "initialization_prompt": "initialization/uppercase_words_new_param.py",
+        "initialization_timeout_seconds": 240,
+        "initialization_workers": 48,
+        "iterations": 10,
+        "iterative_event_writer_enabled": false,
+        "max_attempts": 5,
+        "max_completion_tokens": 4096,
+        "model": "Qwen/Qwen3.5-4B",
+        "output_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_3",
+        "prepared_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/.wisc/artifacts/sra_gatedrouter_bm25_v6/prepared_non_mbr_context_v1",
+        "proposal_duplicate_retry_temperature": 1,
+        "proposal_temperature": 0,
+        "repair_limits": {
+          "max_chars": 400,
+          "prompt_set": "prompts"
+        },
+        "repair_mode": "two_step_sectioned_v1",
+        "repair_workers": 48,
+        "replay_evidence_limit": 0,
+        "replay_mbr_enabled": true,
+        "request_cache_policy": "exact_request_v1_nonproposal_temperature0_proposal_temperature0_duplicate_retry_temperature1_uncached",
+        "request_concurrency": 48,
+        "retrieval_backend": "sra_skillsight",
+        "runtime_judgment_lookup_cache": true,
+        "schema_version": 6,
+        "sdk_max_retries": 0,
+        "seed": 20260324,
+        "smoke_tasks": 0,
+        "source_root": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter",
+        "split_config": "skill_balanced_min3",
+        "subset_fraction": 1.0,
+        "temperature": 0,
+        "timeout_seconds": 120,
+        "top_k": 50,
+        "validation_gate_enabled": true,
+        "validation_metric": "f1",
+        "validation_regression_percent": 4,
+        "workspace": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter"
+      },
+      "model_identity": {
+        "expected_model": "Qwen/Qwen3.5-4B",
+        "model_mismatches": 0,
+        "verified_responses": 1819824
+      },
+      "completion": {
+        "accepted_changed_iteration_count": 10,
+        "accepted_count": 10,
+        "analysis_ready": true,
+        "artifact_manifest_hash": "03212d85f6e2178e6f2d3b186e9dda0169fba15505af58402d8680a19a2db8c7",
+        "audit_hash": "ba927d673285cc5a84e517152e51eabe1a1bd4703c704ee5402a7e5746f1925a",
+        "catalog_counts": {
+          "sra": 26262
+        },
+        "learned_policy_changed": true,
+        "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
+        "passed": true,
+        "reportable": false,
+        "source_manifest_sha256": "unreviewed-dev:b3e7da480395b33ef3882a73d0394e43fc47207957bfe16a5698f20b30291032",
+        "split_counts": {
+          "test": 748,
+          "train": 3491,
+          "validation": 748
+        },
+        "status": "completed_noncanonical"
+      },
+      "final_vs_iter10": {
+        "all_prediction_rows_equal_by_task": true,
+        "prediction_bytes_equal": true,
+        "ranked_ids_equal_by_task": true,
+        "top1_outcomes_equal_by_task": true,
+        "policies_equal": true
+      },
+      "policy_keys": [
+        "conditions",
+        "library_hash",
+        "schema_version"
+      ],
+      "policy_skill_count": 26262,
+      "policy_digest_candidates": {
+        "conditions": "c372d6afdc2fec04f1998752e53dbe3b5c32384c055b6be7bca854dec8435d8f",
+        "sra_conditions": "e28d2ddceb3e846354468c1ae9dccdc22c0474a6ed6cb4377796e0b4a1618eb5",
+        "full_minus_library_hash": "7fec976c314fa8010b99ae42aa7122f80b950a8c4eb3133c57c28a162b78f1c0"
+      },
+      "test_state_matches_predictions": true,
+      "test_used_for_selection": false,
+      "evaluate_test_each_iteration": true,
+      "manifest_identities": {
+        "judgment": {
+          "candidates_number": 3,
+          "checker": {
+            "mode": "round11_v3",
+            "thinking_token_budget": 512
+          },
+          "checker_prompt_source_sha256": "84347dd53c9cd760a6ee244848f210d504ed9095b10d89716fea6646c9317a0d",
+          "checker_source_hashes": {
+            "prompts/condition_checker/retry.py": "c56383ce09044376c1ddec42c1fb85d51b635a56a9fc8d4c9ba2ec03cc9e064b",
+            "prompts/condition_checker/round11_v3.py": "84347dd53c9cd760a6ee244848f210d504ed9095b10d89716fea6646c9317a0d"
+          },
+          "engine_version": 6,
+          "exact_contract_hash": "e9d2113cfc1c768b07c5375fb69bc825720141aee8a978874349bd0f9d8869e4",
+          "initialization_temperature": 1,
+          "max_completion_tokens": 4096,
+          "pairs_per_request": 1,
+          "prompt_hash": "6f001ce7d4c95f19770c46f697d1310bf1b739e85bef1ba320fc3cc6c7956273",
+          "proposal_duplicate_retry_temperature": 1,
+          "proposal_temperature": 0,
+          "provider_namespace": "bce63d32b32f3bf0f8b9a631226eed6197098787bf836494ab7f1ba776d5fb30",
+          "repair_limits": {
+            "max_chars": 400,
+            "prompt_set": "prompts"
+          },
+          "repair_prompt_source_sha256": "3249eaee6e12c1a83648d72baad7d43a4bf46705db44f673227e5c8e3462b708",
+          "repair_response_format": {
+            "json_schema": {
+              "name": "slot_candidates",
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "candidates": {
+                    "items": {
+                      "maxLength": 400,
+                      "type": "string"
+                    },
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "candidates"
+                ],
+                "type": "object"
+              },
+              "strict": true
+            },
+            "type": "json_schema"
+          },
+          "repair_source_hashes": {
+            "src/external_baselines/gatedrouter/prompts/__init__.py": "837275729deaf1ec1d3d2ff7131c46a2f60b8c57441d1a0f9a7e492301542a8d",
+            "src/external_baselines/gatedrouter/prompts/step1.py": "c456e2cec3000a566ede1639009550416d465c6dc82415270d3dc77759d57d69",
+            "src/external_baselines/gatedrouter/statement_two_step.py": "a67966bf708afa6c4b59aa471d69b02a37e997404ff4d992570e7654f4fa1380"
+          },
+          "reportability": "nonreportable_dev_fast_path",
+          "request_cache_policy": "exact_request_v1_nonproposal_temperature0_proposal_temperature0_duplicate_retry_temperature1_uncached",
+          "runtime_judgment_lookup_cache": true,
+          "schema_hash": "4893c406d596cceb0e792d9ae0317bebbf5b2ed05d892d5b14780093a68cc2a5",
+          "temperature": 0,
+          "wrapper_source_sha256": "edbadc427f6e7b930fd41fd947b567791305383bf33e0d90df712f94410bd21a"
+        },
+        "retrieval": {
+          "backend": "sra_skillsight_top50_public_query",
+          "candidate_k": 300,
+          "document_text": "sragents.corpus.skill_text(name,description,content)",
+          "documents_sha256": "6a202b3f3cf7ef945f846da109fc1556924e61cc17207f68d14096a6564e37a2",
+          "embedding_cache": "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cache/all_Qwen3-Embedding-0.6B_32768.npy",
+          "inputs": {
+            "backend": "sra_bm25_top50_public_query",
+            "files": {
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/corpus/corpus.json": "16ee509ae5bea8c2e17167dffecd89100a7d8dfa31256c3742426758c7169b5e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/bigcodebench.json": "0ed01363e2c93134cf8696fea47b6d640f32f0d7ae9d7b478a05595c3f5ae788",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/champ.json": "d61346716cede953afb352e739e170b96d2bfb98824edd91b8783dc3526c7cec",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/logicbench.json": "af5055caac041ea08cee47622f5d922b47b2ba0a8e3a60b87349599eeff1bdfe",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/medcalcbench.json": "814f6b082f56cf89dd9c50be7ab87b5bcb0e41633138951e42b38d6923c3244e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/theoremqa.json": "c969a7291e23361ba9f377e464be76093804deb628b964fb846c6eff6b28deeb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/data/bench/instances/toolqa.json": "e41eb4d4b67c1dd8e1178c88e9e8ff15525b31803694e9459d115c274fb04f0e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/__init__.py": "87334b86e70dc36d00106654c4a52a3c039c61359fd21bf52ef6fa6d63bc6591",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/__init__.py": "586318f108bdbd3ddab0d37fcf1be80ecf3c324657d4e3b03a04048194c887ba",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/_common.py": "4f338e11ad643453e5391ebd74d2bf3ff1879e04d99285e0e803b8899379e55f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/evaluate.py": "36bdee2576533f39e6d0485610d3cd18152f14d129de414c6ce710a9930145bd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/experiment.py": "a9921e70459a53fe9352926367f640e3035ecd8138152394abf65fcc3e26e06c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/hybrid.py": "d2c7381b6a88cb936d7696db45001aff57d70a3541d1a5c08192a38f43d5860b",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/infer.py": "b50e5fcdfa5fa014cb6ce16203bfd2cd22ec9bf09adca235a7533bae4a00eca5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/listing.py": "7d6a8b193d143fba1a1fc752065c2bd2aa3f7b5bebe2180d320ee278ed65f8d6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/main.py": "157a7aadf54ebe3239353392c1919a06cf3111dc1700cf4bbfdec05729c54007",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/rerank.py": "6869232aa4a354c05b1a8730e2c99b421fc2496374b0f91858a74f5e97b35166",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/cli/retrieve.py": "e35bc3da77bcbcb0c6ffc998138ca08d60a39707086a9027987c47076b523b10",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/config.py": "74ed6cb2389c6d59672ff718ab12ac9ba02c75eb9b57c20620b5cc57c1db71a6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/corpus.py": "ce928241913d5b9d46dcea279811639ef918ba9d65b1f8332b22add969eda7b3",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/__init__.py": "1eea26fd85e3140a96be8a3d91ee5346a9717bffe701b497648763abce629ea5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/base.py": "0a7ce44ab1676578fad8f555d7176bea33e855e54a4c7799b3a64f3e1bdd8229",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/common.py": "59fee7c79a7f8d45463ba4df78f83841f8d6ab8e02f26e0acd7a50733ecbfb83",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/__init__.py": "4c164d3069266ecebbb88c700436f9f51e1adff8f8180ae0b710b2e924e4de98",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/__init__.py": "e0703627301dfd450ee12d2ad5dbcacb6078408b87de5b4cdb191cb004cc1fcf",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/execution.py": "351d0768f57d9cf6e55151faf64f1dfa23da5bc8a4fdb30e006494b33010ca2a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/bigcodebench/sanitize.py": "4febe4b55c7e40615b2caa1de5a5417b7362d783d6a99c634b39171d2deeab74",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/champ.py": "00d6ef11cc86fe53b676c125d26f44328cfe68d662fdb99625ad388ed26afb6e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/logicbench.py": "cb8f321dcebe77e52ae80c19f014d47e1169d273807735ed6c530bc2a664322a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/medcalcbench.py": "0523d3db5fd62209c8484a8ae59da7ca3747ca225fcc56498a8141cc445db962",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/theoremqa.py": "f899f977e534141c97bdef0b756e30e3e7a41bb9642910644898c2d89897f351",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/datasets/toolqa.py": "369a7e8d247460f2e424412a2b136fde9288bdc297de452f40283bfec5795561",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/evaluate/metrics.py": "dec241349e1965eed15ffc24875f8961b703f6330466e972e7124cc6780ba257",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/__init__.py": "0b1753693208f5e7fff24a2f057b4a43ee2c63070c5d87d555e29a77baa9f2c6",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/definitions.py": "5bab9b3a3518a7c5968deebddc8ab344acd3a8520dc30589221f7f5a30c7df95",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/experiments/runner.py": "c3193b158436354c48036a2f8a77e815baec51fc35a14afa4fd5dfa957a81b84",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/__init__.py": "d5568c72149e285653c0f7aa5bb955c6695f726e976d64c1f7c5124b4a691dbb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/base.py": "e1c1f07bfe1633a7868ae16ec3ac342f1e2f8562c2663e0edd532f6cbddcf73c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/__init__.py": "7651762af3b03e542da3eba50a4acabc65da48f221c18dc6bc85fe8e81367c6c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/direct.py": "feb9a878f7d500c112f405681669e3080336eb6dcf174f8797a58902f28595bd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/progressive_disclosure.py": "d81c4bb4d21ab0d37a9612a14894c1fd78c23000243098e092728ccecfc3d7ad",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/react.py": "81ced2d9568830fb3ebc108400775b0efcdef042cc5ed416c1451cf45eee50eb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/engines/tool_loop.py": "c2c78f20938a7b0792a2801eca382e05bc10331272b696ab1ee13ccabb206826",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/__init__.py": "7cf6c1d18912890505bbc6bd30c135be1c61869c2344263e2ba58ad3f3e396b2",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/distractor.py": "275c8a7a17b8bb5d262c92da80edfb618a7181219f82a16bd0b711df99e7f6fc",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/llm_select.py": "5b7d40b5c0a4e1a6951c952dd2601ddcf2d376f961fa8c39bd6a9d45f25771e0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/none.py": "ad1a3a927e56b2f6bb49bcb544db33fbb3dc89af0acdc7fe936e3cd1152a004f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/oracle.py": "5ecaf97a439e6aa110125c6cff0d898a142c4909b5db9c99d17d3d49984713c5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/providers/topk.py": "fb5ab827959ca70896b1aaa428f7deaa2c8929a802a964e22151e0428daf8744",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/runner.py": "d4be176f93874c628e2efd9363601b0b4b20f0c0e94c2b2294596c2e211163f5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/infer/schema.py": "57d2baf3c6d2335bcfbedcff40f9eec08c2c9145339db27011dce68bdbcd0430",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/llm.py": "ed73576ec6ba4d4db366b9271569df16082b25055eda3d58fd22d03f2b41e9a4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/prompts.py": "b88112116dc89d5991ed7b32f1f7dba5866a5ad665e2587d20a6f45297a365a0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/__init__.py": "1e44341737b46b26d8baced626eecbf0b162242f219ce136cda87094358146d5",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/_sparse_core.py": "09715225645561527ebf003157ba5f018e6cc49c6022ac8b022a25df2db42ecd",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/base.py": "2ebc6d23a3b484415894954cff2973744edc12ed46129e768c0ac1965809ceaf",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/bm25.py": "55127d2889cb147ab86d0b7afd35c76516d5e3c2b92fb0bc7bf77fdf9cf4179f",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/dense.py": "dd58786d0f38c4955055be97d67aa97d6f9cfd76fa4e7c9ba620a0bb116402ca",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/hybrid.py": "be010cb4124a644c2c13240088aba5d8079dbf20c21b0c1df0e0af54b043c936",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/llm_rerank.py": "3371fba95b326fc85803972f71e0a3f1b221b686c9ff3e071d9b2b1993a1a4ee",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/metrics.py": "015d26997de99ba5992e4236498ac1f8018cb4314462a3d852541cc9277fb5b4",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/schema.py": "2cb3759cfb763737467e4e30b1cfa7593f41719ca549856c9a4e1c157d812586",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/skillsight.py": "bb3a2d3229f48c4322cabe3f7a51e9290dc2f1a8b9ad08b7fc107d3f59392e85",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/retrieve/tfidf.py": "ee1c9dcb46bdf98501e91c000b039679182413d5e069f45212a9c7dab2392419",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/splits.py": "4e446061590b96974d4eab77379f8f04d190f1ecf2a3285c6d3b52caacbf3c8e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/__init__.py": "beb8e45912743cac5f564ceb9487a102c4c8d939ec374f25e61644e9cb0bac51",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/fewshots.py": "e64d6c4d51bfd35e8eb2d2099a09355e912fffe658f6cf6da8d34e2f95688660",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/prompts.py": "ce89098dde4e444c7bbf882b41025eaa0471de90aecc5bc6123b5e42a569fdcc",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/__init__.py": "a10569508b642aa46cf5d7841c423f8cbd6ae6f1d17b0501ae54825fc575744a",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/calculator.py": "452aa588799d9e980185313125a3782d7477eb8d7d1dcf34e037a1d8b27e5aeb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/code.py": "2c611ae46432bb8af7d89296971b48b2628f0a527e18489f94f89ccd6a16cbe9",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/graph.py": "1a2c4264082821323fd60caba7706768c69f4b17162779546e5bfa8f42af5ae1",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/table.py": "4647a90a0b1a72423aa8e2c2918b22e557cdcfda95055fa50df7c7b94dc40b39",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SR-Agents/src/sragents/toolqa/tools/text.py": "c9bb3dfe44efbab093a42e19185a4bc9b8bd1e8a0b1b603336ff77d500f53c37",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/__init__.py": "5714cc71e46e68b513b8521172d60045be815d49473e0bb20278584167659037",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cache.py": "6c821dec1bcb370ee5254925af4ff55d254d866dd3a0e26be845e55927cb943e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/cli.py": "54e2d9e11123837c272618b68cfcff5def1dd0fc4700c71e25ea147565800e7e",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/constants.py": "b4d2cfe692cdf6ca2a395dfd6abb0fc0b8a61d39e81dd6f1844d2ab549526eb0",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/data.py": "437bf7a7437c62bb87604403f56d4b7bccfb73267787c01bc7848985ee70be67",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/download_datasets.py": "c1c5b8af2ebd8c5b744c00dd811ed347dec4f9941d4b40f255504551b947e49d",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/encoder.py": "a6923e2087ff89ad883ca148fa3c8d350247c73b7eb2d93fab077471a88dd9fb",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/eval_skillsight_e2e.py": "8a492c76639ec17cc9d9325d3e563dfd37589854a862aab668b96c92221eee7c",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/evaluation.py": "8abf31d744f8c449bbbfcb2c5e8e8e9924dd99174c683f94a6aae8baf38f5849",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/fusion.py": "34f6d8f06928302405ad087fdbcbc81f153fe8c7fdae2f92ffd70289cc780df1",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/metrics.py": "ab43d8d142f5c76ee8614fc3cf5183f389e30d87dc160dba24e151cfabf44f0b",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/retriever.py": "7c81de6b15dd95abc275d840477828cfdd32f281e88c5b216e7703b05ff52659",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/text_model.py": "22a2b8b9ca4ee962748877c8ae4f4216a2c57cb546da94f032db554db1c74537",
+              "/workspace/storage/healthcare_workspace/project_skill_selection/BayesGSI/src/gatedrouter/project_skill_selection/SkillSight/utils.py": "76fb4833dbefc6910899acee13f1c898f30f75464233b60339e223257bcfee4e"
+            },
+            "top_k": 50
+          },
+          "public_queries_sha256": "15a400e9e0c677864e89e671e347221a196fd5ab8fa7b9b7318d6d03d6dc3a8e",
+          "query_text": "sragents.cli.retrieve._build_query(user,system,toolqa_fewshots)",
+          "score_channel": "rank (1/(1+rank)); native fused score is a per-task z-score, order-only",
+          "top_k": 50
+        }
+      }
+    }
+  ],
+  "identity_contract": {
+    "policy": "conditions_{initial,final}.json or iterations/NN/conditions_accepted.json: {conditions:{sra:{skill_id:[predicate strings]}},library_hash,schema_version}",
+    "library_hash": "SHA256 of json.dumps(policy[conditions], sort_keys=True, separators=(comma,colon), ensure_ascii=False).encode(UTF-8); verified for all 36 checkpoints",
+    "prediction_policy_link": "Every row library_hash equals policy library_hash; row candidate_statements equals ordered policy conditions for candidate_ids; all checked",
+    "ledger_link": "Each iteration ledger.accepted_hash matches accepted policy library_hash; all 30 checked",
+    "prediction_fields": [
+      "activations",
+      "candidate_ids",
+      "candidate_scores",
+      "candidate_statements",
+      "encoder_hash",
+      "judgment_identity",
+      "label_source",
+      "library_hash",
+      "ranked_ids",
+      "required_ids",
+      "retrieval_misses",
+      "selected_ids",
+      "task_hash",
+      "task_id",
+      "threshold_percent",
+      "tier",
+      "used_fallback"
+    ],
+    "task_identity": "task_id + task_hash; gold required_ids; label_source core_gt_ids",
+    "metric_warning": "validation_metric=f1 is configured gate metric, not the retrospective plotted nDCG@1"
+  },
+  "rules": {
+    "scoped_rules_found": false,
+    "searched_ancestor_scopes": [
+      "/",
+      "/workspace",
+      "/workspace/storage",
+      "/workspace/storage/healthcare_workspace",
+      "/workspace/storage/healthcare_workspace/project_skill_selection",
+      "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper",
+      "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/figs",
+      "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/figs/routerbsi_test_ndcg@1_std"
+    ],
+    "workspace_guidance_read": "/workspace/storage/healthcare_workspace/AGENTS.md"
+  },
+  "git": {
+    "repository": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper",
+    "target": "figs/routerbsi_test_ndcg@1_std",
+    "exact_target_log_all_refs": "",
+    "target_untracked": true,
+    "working_tree_preexisting_dirty": true,
+    "ownership_check_workaround": "git -c safe.directory=<exact repository path>; no global configuration writes"
+  },
+  "warnings": [
+    "All three completion.json files explicitly mark completed_noncanonical and reportable=false; analysis_ready=true does not override that. Preserve this caveat.",
+    "Runs share seed=20260324 but use distinct initial_skills_cache_N.json and distinct initial policy hashes; do not label these three different random seeds.",
+    "Run 1 prepared_dir/source-manifest hash differs from runs 2/3; raw task hashes, gold, and realized candidate order nonetheless match across all checkpoints.",
+    "Exact target figure is untracked and has no git history; broad paper working tree is already dirty."
+  ]
+}

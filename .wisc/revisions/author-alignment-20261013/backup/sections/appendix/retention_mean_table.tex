@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & @1 & @5 & @10 & @25 & @50 \\
+\midrule
+Retriever & 42.5 & 68.8 & 80.0 & 91.7 & 100.0 \\
+LLM Select & 54.7 & 78.0 & 86.4 & 93.8 & 100.0 \\
+SkillRouter & 68.4 & 83.9 & 87.9 & 93.5 & 100.0 \\
+SkillDAG & 36.5 & 59.5 & 81.4 & 96.0 & 100.0 \\
+Skill-Pro & 45.1 & 77.7 & 85.5 & 93.8 & 100.0 \\
+RouterBSI & 69.7 & 90.5 & 94.6 & 98.2 & 100.0 \\
+\bottomrule
+\end{tabular}
+\caption{Mean retention across BM25, Vector, and SkillSight for all cutoffs in Figure~\ref{fig:average_recall_degradation}. Values are percentages. For each retriever, Ret@$k$ is $100\,\mathrm{Recall}@k/\mathrm{Recall}@50$ using task-mean recalls; the table averages the three ratios equally.}
+\label{tab:app-retention-mean}
+\end{table}

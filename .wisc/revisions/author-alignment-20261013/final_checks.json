@@ -1,0 +1,46 @@
+[
+  {
+    "command": [
+      "make",
+      "check"
+    ],
+    "returncode": 0,
+    "output": "python3 scripts/check_repository.py\n{\n  \"tex_files\": 94,\n  \"resolved_references\": 111,\n  \"errors\": []\n}\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/generate_result_figure_tables.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "Verified retention_mean_table.tex\nVerified downstream_mean_table.tex\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/generate_ablation_figure_tables.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "PASS: 44 trajectory means + population SDs; 7 backbone rows; 4 token x/y pairs; frozen selections and authoritative sources match.\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/generate_extended_routing_tables.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "Verified routing_table_1.tex\nVerified routing_table_2.tex\nVerified routing_table_3.tex\nVerified retention_table.tex\n"
+  },
+  {
+    "command": [
+      "python",
+      "scripts/generate_evaluator_validation_table.py",
+      "--check"
+    ],
+    "returncode": 0,
+    "output": "{\n  \"status\": \"verified\",\n  \"unique_reviews\": 37350,\n  \"error_attempts\": 501,\n  \"consumed_source_hashes\": 15,\n  \"pinned_source_hashes\": 12,\n  \"audit_cases\": 40,\n  \"table_rows\": 7,\n  \"reviewed_occurrences\": 37400,\n  \"agreements\": 36315,\n  \"disagreements\": 1085,\n  \"agreement_percent\": \"97.10\",\n  \"reference_positive_recall_percent\": \"53.71\",\n  \"always_false_agreement_percent\": \"96.47\",\n  \"model_calls\": 0\n}\n"
+  }
+]

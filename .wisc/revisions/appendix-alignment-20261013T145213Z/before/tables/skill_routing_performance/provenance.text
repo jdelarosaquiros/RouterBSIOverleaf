@@ -1,0 +1,24 @@
+tables/skill_routing_performance
+
+Source: BayesGSI/tables/routing_performance/results.csv
+Source SHA256: d3bad67c2d0a27132e38bb28dd1389a7167c02ec4f2d9b870e43d4c0fcfa8f9b
+Source rows: 168; selected rows: 147.
+Selection: Exact original table identity/order contract; values refreshed from current authoritative CSV.
+Vector raw baseline: fixed-run raw retrieval, unchanged by the final/initial refresh.
+Vector RouterBSI: final iteration 10; RouterBSI_init: fixed-run initial_test.jsonl (table only).
+Unchanged input_runs.json still names the older Vector RouterBSI run. The bound CSV-refresh receipt overrides that stale map for Vector RouterBSI and RouterBSI_init only.
+Archived candidate rankings are retained; this is not a controlled shared-candidate comparison.
+Skill-Pro: selected-first, retrieval-score descending, original-rank ascending.
+SkillRouter: archived top-1 selected-set F1; full 50-candidate reranking for rank metrics; downstream top-5 is outside this refresh.
+Task-weighted Dataset=Average source rows are retained, not re-averaged across datasets.
+Historical snapshot-manifest.json is unchanged. No inference, training, or downstream refresh.
+Generator: .wisc/scripts/refresh-vector-final-discussion-artifacts.py
+Generator SHA256: ee10093173bd4a8a47e2d8d6e54a175d50a5f681afacbbb08debec0a7b46a885
+Regenerate: uv run .wisc/scripts/refresh-vector-final-discussion-artifacts.py --apply
+Current bindings and exact values: artifact-manifest.json and selection.json.
+
+Table 1 metric transformation: Binary relevance and nonempty gold sets: DCG@1 is the top-ranked relevance indicator and IDCG@1=1. Thus per-task nDCG@1 equals Hit@1, and identical task-weighted means preserve equality.
+Display columns: N@1 and N@10. Source CSV is unchanged.
+Apply after base regeneration: python -B .wisc/scripts/update-table1-ndcg1.py
+
+Manuscript layout update: top of physical page 6, two-column width, unscaled body font. Preview extracted from compiled manuscript. Numeric cells and source CSV unchanged.

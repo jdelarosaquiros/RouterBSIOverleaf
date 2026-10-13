@@ -1,0 +1,155 @@
+--- before/sections/appendix/error_downstream.tex
++++ after/sections/appendix/error_downstream.tex
+@@ -22,6 +22,6 @@
+ \label{tab:app-conditional-errors}
+ \end{table*}
+ 
+-For the actual supplied top-five sets, TheoremQA has 89 FN and 5 FP occurrences, while MedCalc-Bench has 90 FN and 6 FP occurrences. The corresponding FN shares of FP+FN are 94.68\% and 93.75\%, respectively. These archived extra-selection shares are not rates of required-skill predicate rejection or proportions of tasks with incorrect predicate judgments. Top-five padding can supply a nonrequired skill even when its predicate is false, so a top-five FN need not be a predicate FN. Since every task has one annotated required skill and receives five skills, even a set containing the required skill has four non-gold entries.
++For the actual supplied top-five sets, TheoremQA has 89 FN and 5 FP occurrences, while MedCalc-Bench has 90 FN and 6 FP occurrences. The corresponding FN shares of FP+FN are 94.68\% and 93.75\%, respectively. These extra-selection shares are not rates of required-skill predicate rejection or proportions of tasks with incorrect predicate judgments. Top-five padding can supply a nonrequired skill even when its predicate is false, so a top-five FN need not be a predicate FN. Since every task has one annotated required skill and receives five skills, even a set containing the required skill has four non-gold entries.
+ 
+ The required skill is present in 16 of the 21 TheoremQA cases and 15 of the 21 MedCalc-Bench cases. All six MedCalc-Bench top-five misses occur with BM25, despite the required skill being present in its original candidate pool. On the same downstream subsets, the predicate-selected sets contain 24 FN and 12 FP occurrences for TheoremQA, but 0 FN and 8 FP occurrences for MedCalc-Bench. SkillRouter succeeds on these matched cases with 88 non-gold supplied occurrences for TheoremQA and 84 for MedCalc-Bench. Thus, missing required skills cannot explain all failures, and the presence of non-gold context alone does not demonstrate that it caused an incorrect answer.
+--- before/sections/appendix/data_scope.tex
++++ after/sections/appendix/data_scope.tex
+@@ -1,7 +1,7 @@
+-\subsection{Artifact Coverage and Reuse}
++\subsection{Dataset Coverage and Reuse}
+ \label{app:artifact-scope}
+ The released SRA-Bench task package is documented as English. This metadata does not imply an English-only retrieval corpus: web-collected skill text includes non-Latin scripts, and the corpus has no per-record language labels. The six benchmarks cover theorem application, logical reasoning, tool workflows, medical calculation, mathematical problem solving, and code generation. Our evaluation does not establish multilingual performance or demographic representativeness.
+ 
+ The MIT declaration in the SRA-Bench metadata does not supersede the rights of constituent artifacts. MedCalc-Bench data carry a CC-BY-SA-4.0 notice, while individual web-collected skills include CC-BY-SA, CC-BY-NC-SA, and GPL notices. Code and content permissions can also differ: a benchmark's software license does not necessarily cover textbook questions, source corpora, or every inherited evaluator. Reuse and redistribution must respect these component-specific conditions rather than treating the complete collection as uniformly MIT-licensed.
+ 
+-The task package includes medical-calculation questions, and the accompanying ToolQA source assets include host and location fields. Public availability does not certify that these materials are free of identifying information. Credential-file exclusion from a software archive is distinct from reviewing and de-identifying task content or model traces. Similarly, routing labels and held-out validation measure skill-selection behavior, not objectionable-content screening. The retrieved instructions and executable examples remain untrusted content; routing performance does not certify their safety.
++The task package includes medical-calculation questions, and the accompanying ToolQA source assets include host and location fields. Public availability does not certify that these materials are free of identifying information. Similarly, routing labels and held-out validation measure skill-selection behavior, not objectionable-content screening. The retrieved instructions and executable examples remain untrusted content; routing performance does not certify their safety.
+--- before/sections/appendix/implementation_software.tex
++++ after/sections/appendix/implementation_software.tex
+@@ -1,12 +1,12 @@
+ \subsection{Retrieval and Evaluation Software}
+ \label{app:implementation-software}
+ \paragraph{Retrieval and reranking.}
+-The in-tree SRA BM25 implementation~\citep{robertson2009bm25} uses NumPy/SciPy sparse operations with $k_1=1.5$ and $b=0.75$. Its tokenizer lowercases text, replaces non-word/non-whitespace characters with spaces, and splits on whitespace. Vector retrieval uses Qwen3-Embedding-0.6B~\citep{zhang2025qwen3embedding} with L2-normalized embeddings and cosine scoring. Its native encoder uses batch size one and a 32,768-token document limit; the query is an instruction followed by the verbatim task question. SkillSight uses the same embedding-model family with its background-calibrated dense and lexical scoring implementation~\citep{xiao2026skillsightcalibratinggenericcontent}. Its adapter uses a 300-candidate internal pool and scoring batches of 64 before returning the requested top-$k$ ranking. The routing interface preserves this ranking with scores $1/(1+r)$ for zero-based rank $r$, rather than interpreting the fused scores as calibrated probabilities.
++The SRA BM25 implementation~\citep{robertson2009bm25} uses NumPy/SciPy sparse operations with $k_1=1.5$ and $b=0.75$. Its tokenizer lowercases text, replaces non-word/non-whitespace characters with spaces, and splits on whitespace. Vector retrieval uses Qwen3-Embedding-0.6B~\citep{zhang2025qwen3embedding} with L2-normalized embeddings and cosine scoring. Its native encoder uses batch size one and a 32,768-token document limit; the query is an instruction followed by the verbatim task question. SkillSight uses the same embedding-model family with its background-calibrated dense and lexical scoring implementation~\citep{xiao2026skillsightcalibratinggenericcontent}. Its adapter uses a 300-candidate internal pool and scoring batches of 64 before returning the requested top-$k$ ranking. The routing interface preserves this ranking with scores $1/(1+r)$ for zero-based rank $r$, rather than interpreting the fused scores as calibrated probabilities.
+ 
+ SkillRouter uses the released 0.6B reranker~\citep{zheng2026skillrouter}. Its input retains the query and joins each skill's name, first 500 description characters, and first 2,000 content characters. The implementation uses batch size one, a 4,096-token total input limit, left padding, evaluation mode without gradients, and bfloat16 on CUDA or float32 on CPU. Candidates are ordered by the difference between the \texttt{yes} and \texttt{no} logits, without fusion with the original retrieval score.
+ 
+ \paragraph{Task evaluation.}
+-We use the in-tree SRA task evaluators rather than a single exact-match rule for every benchmark. LogicBench compares normalized extracted labels. ToolQA uses normalized exact match, with a numerical fallback requiring absolute error below $10^{-6}$ and a Boolean-label fallback. MedCalc-Bench applies output-type-specific rules: date and gestational-age equality, rounded integer comparison, or inclusive supplied bounds for decimal answers. CHAMP uses canonical, numerical, and SymPy-based equivalence checks; TheoremQA uses type-aware numerical and list comparisons with \texttt{latex2sympy2} parsing. Their shared numerical-tolerance helper uses 4\% relative tolerance with a $10^{-9}$ absolute floor. BigCodeBench extracts code with tree-sitter and executes the supplied unit tests, with address-space and data limits of 30\,GiB and a stack limit of 10\,MiB.
++We use benchmark-specific SRA task evaluators. LogicBench compares normalized extracted labels. ToolQA uses normalized exact match, with a numerical fallback requiring absolute error below $10^{-6}$ and a Boolean-label fallback. MedCalc-Bench applies output-type-specific rules: date and gestational-age equality, rounded integer comparison, or inclusive supplied bounds for decimal answers. CHAMP uses canonical, numerical, and SymPy-based equivalence checks; TheoremQA uses type-aware numerical and list comparisons with \texttt{latex2sympy2} parsing. Their shared numerical-tolerance helper uses 4\% relative tolerance with a $10^{-9}$ absolute floor. BigCodeBench extracts code with tree-sitter and executes the supplied unit tests, with address-space and data limits of 30\,GiB and a stack limit of 10\,MiB.
+ 
+ \paragraph{Examples and split construction.}
+-ToolQA's in-tree ReAct prompt~\citep{yao2023react} contains eight fixed easy and three fixed hard demonstrations, in that order. These are separate from the training-history examples used for predicate repair in Appendix~\ref{app:procedure-replay}. The downstream runner defaults to this ReAct path for ToolQA and direct-answer inference for the other tasks. The skill-balanced split was constructed with SciPy 1.18.1 and its HiGHS mixed-integer solver, using normalized absolute-deviation objectives and per-skill split-coverage constraints as described in Appendix~\ref{app:data-splits}.
++ToolQA's ReAct prompt~\citep{yao2023react} contains eight fixed easy and three fixed hard demonstrations, in that order. These are separate from the training-history examples used for predicate repair in Appendix~\ref{app:procedure-replay}. The downstream runner defaults to this ReAct path for ToolQA and direct-answer inference for the other tasks. The skill-balanced split was constructed with SciPy 1.18.1 and its HiGHS mixed-integer solver, using normalized absolute-deviation objectives and per-skill split-coverage constraints as described in Appendix~\ref{app:data-splits}.
+--- before/sections/appendix/prompts_initialization.tex
++++ after/sections/appendix/prompts_initialization.tex
+@@ -1,6 +1,6 @@
+ \subsection{Initial Predicate Generation}
+ \label{app:prompt-init}
+-The following template is sent as a single user message. Braced field names denote runtime inputs: the public skill name, description and body, and the shared character limit. Input values are JSON-encoded. We preserve the prompt wording below, with paragraph wrapping for readability. A separate strict response schema requires an object containing a single-string \texttt{predicates} array with maximum string length $l$ and no additional fields.
++The following template is sent as a single user message. Braced field names denote runtime inputs: the public skill name, description and body, and the shared character limit. Input values are JSON-encoded. A separate strict response schema requires an object containing a single-string \texttt{predicates} array with maximum string length $l$ and no additional fields.
+ 
+ \begingroup
+ \small\ttfamily\raggedright
+--- before/sections/appendix/trajectory_table.tex
++++ after/sections/appendix/trajectory_table.tex
+@@ -19,6 +19,6 @@
+ 10 & \shortstack{0.560\\{\scriptsize (0.015)}} & \shortstack{0.644\\{\scriptsize (0.004)}} & \shortstack{0.691\\{\scriptsize (0.015)}} & \shortstack{0.724\\{\scriptsize (0.013)}} \\
+ \bottomrule
+ \end{tabular}
+-\caption{Test nDCG@1 at initialization and each accepted iteration, averaged over three runs. Parentheses below each mean give population standard deviation across runs, reconstructed from variances rounded to six decimal places as in the plotted bands. These values expand the trajectory and uncertainty bands in Figure~\ref{fig:mbr_replay_test_ndcg@1_std}; they are not validation scores.}
++\caption{Test nDCG@1 at initialization and each optimization iteration, averaged over three runs. Parentheses below each mean give population standard deviation across runs, reconstructed from variances rounded to six decimal places as in the plotted bands. These values expand the trajectory and uncertainty bands in Figure~\ref{fig:mbr_replay_test_ndcg@1_std}; they are not validation scores.}
+ \label{tab:app-ablation-trajectory}
+ \end{table*}
+--- before/sections/appendix/procedure_algorithm.tex
++++ after/sections/appendix/procedure_algorithm.tex
+@@ -1,6 +1,6 @@
+ \subsection{Optimization Procedure}
+ \label{app:procedure-algorithm}
+-The update loop below follows the main minimum-average-risk formulation in Section~\ref{app:procedure-mbr}. The retrieval corpus and task partitions remain fixed throughout optimization.
++The update loop below expands the main minimum-average-risk formulation, with candidate selection detailed in Appendix~\ref{app:procedure-mbr}. The retrieval corpus and task partitions remain fixed throughout optimization.
+ \begin{enumerate}
+ \item Initialize one predicate $p_{si}$ per skill, set $p_s\leftarrow p_{si}$, and evaluate the initial predicates on their retrieved validation tasks.
+ \item For iteration $i=1,\ldots,I$, save the iteration-start library $p^{(i)}$.
+--- before/sections/appendix/ablation_candidate_pool.tex
++++ after/sections/appendix/ablation_candidate_pool.tex
+@@ -1,6 +1,6 @@
+ \subsection{Candidate-Pool Size and Token Usage}
+ \label{app:candidate-pool-tokens}
+-Figure~\ref{fig:performance_token_usage_by_topk} compares three measured candidate-pool sizes for Qwen3.5 4B with SkillSight. Here, $K$ is the number of retrieved candidates evaluated by the router, not the selected skill budget. Each run completed ten optimization iterations, and quality is measured on the final-test snapshot over 748 tasks. The aggregate nDCG@10 is task-instance weighted rather than an equal-weight mean over datasets.
++Figure~\ref{fig:performance_token_usage_by_topk} compares three measured candidate-pool sizes for Qwen3.5 4B with SkillSight. Here, $K$ is the number of retrieved candidates evaluated by the router, not the selected skill budget. Each run completed ten optimization iterations, and quality is measured on the final policy over 748 test tasks. The aggregate nDCG@10 is task-instance weighted rather than an equal-weight mean over datasets.
+ 
+ At $K=10$, final nDCG@10 is 0.702 with 692.788 million known tokens; at $K=25$, it is 0.742 with 1013.401 million; and at $K=50$, it is 0.800 with 1324.251 million. Across these three settings, higher observed routing quality accompanies higher recorded token use. This comparison describes the observed quality--cost tradeoff; it neither isolates a causal effect of candidate-pool size nor establishes a generally optimal setting.
+ 
+--- before/sections/appendix/ablation_cost_capacity.tex
++++ after/sections/appendix/ablation_cost_capacity.tex
+@@ -33,6 +33,6 @@
+ 10 & \textbf{0.641} & \underline{0.730} & \textbf{0.805} & 1809.623 & 46 \\
+ \bottomrule
+ \end{tabular}
+-\caption{Replay-capacity sensitivity using one run per capacity, Qwen3.5 4B, SkillSight, and both components enabled. Capacity is per relevance class. Quality is measured on the final-test snapshot over 748 tasks. Bold and underline mark the best and second-best quality values.}
++\caption{Replay-capacity sensitivity using one run per capacity, Qwen3.5 4B, SkillSight, and both components enabled. Capacity is per relevance class. Quality is measured on the final policy over 748 test tasks. Bold and underline mark the best and second-best quality values.}
+ \label{tab:app-replay-capacity}
+ \end{table*}
+--- before/sections/appendix/evaluator_validation.tex
++++ after/sections/appendix/evaluator_validation.tex
+@@ -2,7 +2,7 @@
+ \label{app:evaluator-validation}
+ We examine whether saved Boolean decisions follow the predicate-checking rules, separately from whether a skill is required. This diagnostic uses the final, tenth-iteration SkillSight/Qwen3.5-4B test run: 748 tasks with 50 candidate-predicate occurrences each.
+ 
+-A separate model, \texttt{gpt-6.1-sol}, adjudicated the same public task, predicate, and original checker rules using high reasoning effort in standard mode. It also saw the saved Boolean, but was instructed to determine the expected Boolean independently and return a strict structured verdict with a concise evidence rationale. Thus, this first review was not blinded. It evaluated predicate satisfaction rather than skill relevance or downstream answer correctness; required-skill annotations and skill contents were not supplied. Exact task--predicate--Boolean duplicates shared one review, yielding 37,350 unique reviews for 37,400 occurrences. All occurrences were reviewed, and repeated occurrences retain their original weight. Source checksums, journal-record hashes, request payloads, and occurrence-weighted counts were verified before tabulation.
++A separate model, \texttt{gpt-6.1-sol}, adjudicated the same public task, predicate, and original checker rules using high reasoning effort in standard mode. It also saw the saved Boolean, but was instructed to determine the expected Boolean independently and return a strict structured verdict with a concise evidence rationale. Thus, this first review was not blinded. It evaluated predicate satisfaction rather than skill relevance or downstream answer correctness; required-skill annotations and skill contents were not supplied. Exact task--predicate--Boolean duplicates shared one review, yielding 37,350 unique reviews for 37,400 occurrences. All occurrences were reviewed, and repeated occurrences retain their original weight.
+ 
+ \input{sections/appendix/evaluator_validation_table}
+ 
+--- before/sections/appendix/implementation_runtime.tex
++++ after/sections/appendix/implementation_runtime.tex
+@@ -1,6 +1,6 @@
+ \subsection{Requests, Caching, and Reproducibility}
+ \label{app:implementation-runtime}
+-Initialization, proposals, and predicate evaluation use a single user message and a separate structured-output schema. The effective temperatures are one for initialization and proposal generation, and zero for predicate evaluation. In the active proposal branch, the request wrapper sets temperature one explicitly; a legacy proposal-temperature configuration field does not override this branch.
++Initialization, proposals, and predicate evaluation use a single user message and a separate structured-output schema. The effective temperatures are one for initialization and proposal generation, and zero for predicate evaluation.
+ 
+ For Qwen, requests disable thinking in the chat template and specify low reasoning effort. Predicate evaluation additionally supplies a 512-token thinking-budget parameter. GPT-OSS predicate evaluation instead uses low reasoning effort without treating it as a hard 512-token cap. We use a 4096-token completion allowance and a 120-second ordinary request timeout. Initialization can use a separate 240-second timeout in configurations enabling that override.
+ 
+--- before/sections/appendix/error_downstream_results.tex
++++ after/sections/appendix/error_downstream_results.tex
+@@ -1,5 +1,5 @@
+ \subsection{Complete Downstream Results}
+-The following table reports downstream task-success rates by benchmark and retriever, complementing the routing-error analysis above. The strict RouterBSI variant supplies only predicate-selected skills, whereas the top-five variant supplies the five highest-ranked skills. Direct and oracle conditions respectively omit skill context and supply the annotated required skills. Downstream success is evaluated separately from skill-selection correctness.
++The following tables report downstream task-success rates by benchmark and retriever, complementing the routing-error analysis above. The strict RouterBSI variant supplies only predicate-selected skills, whereas the top-five variant supplies the five highest-ranked skills. Direct and oracle conditions respectively omit skill context and supply the annotated required skills. Downstream success is evaluated separately from skill-selection correctness.
+ Table~\ref{tab:app-downstream-mean} gives the retriever-level rates and their mean used in Figure~\ref{fig:downstream_average}; Table~\ref{tab:app-downstream} gives the benchmark-level breakdown.
+ \input{sections/appendix/downstream_mean_table}
+ \input{sections/appendix/downstream_table}
+--- before/sections/appendix/error_routing_gap.tex
++++ after/sections/appendix/error_routing_gap.tex
+@@ -1,6 +1,3 @@
+-% Evidence: ../.wisc/verification/routerbsi-exception-investigation/
+-% analysis.json, independent_verification.json, theoremqa/summary.json,
+-% medcalc/summary.json, and trajectory_spotcheck.json.
+ \subsection{Why RouterBSI Trails SkillRouter on Two Datasets}
+ \label{app:routing-gap}
+ The mean per-retriever relative nDCG@10 shortfalls against SkillRouter are 5.01\% on MedCalc-Bench and 6.10\% on TheoremQA, using SkillRouter as the denominator. To investigate these gaps, we match the same 165 MedCalc-Bench and 105 TheoremQA test tasks across BM25, Vector, and SkillSight. Both methods receive identical ordered top-50 candidate lists in all 810 task--retriever observations. A \emph{ranking-loss case} is an observation where SkillRouter obtains higher nDCG@10, not a downstream answer failure. Pooling retrievers repeats questions rather than providing independent training replications.
+@@ -23,7 +20,7 @@
+ Gross ranking loss in retrieved-but-rejected cases & 100\% & 86.38\% \\
+ \bottomrule
+ \end{tabular}
+-\caption{Matched nDCG@10 comparisons. Loss-case percentages use the 35 and 66 SkillRouter-better observations, respectively. Gross ranking loss sums positive per-observation SkillRouter-minus-RouterBSI score differences before offsetting RouterBSI's gains; its shares are not shares of the net gap or estimated recoverable improvements. These are retrospective archived-run diagnostics, not new intervention results.}
++\caption{Matched nDCG@10 comparisons. Loss-case percentages use the 35 and 66 SkillRouter-better observations, respectively. Gross ranking loss sums positive per-observation SkillRouter-minus-RouterBSI score differences before offsetting RouterBSI's gains; its shares are not shares of the net gap or estimated recoverable improvements. These are retrospective diagnostics, not intervention results.}
+ \label{tab:app-routing-gap}
+ \end{table*}
+ 
+@@ -54,4 +51,4 @@
+ For example, a TheoremQA question requests a P/E ratio from stock price and earnings per share, but the learned predicates additionally require dividend-discount-model inputs such as growth rates and payout ratios. The required skill ranks 22nd, sixth, and third under RouterBSI with BM25, Vector, and SkillSight, respectively, versus first under SkillRouter in each case. Conversely, a MedCalc-Bench question explicitly requests serum osmolality and supplies sodium, blood urea nitrogen, and glucose. Its predicate describes precisely this calculation from these inputs but evaluates false, leaving the required skill at rank 11 under BM25 versus first under SkillRouter. The latter supports a likely checker error rather than an overly narrow predicate.
+ 
+ \paragraph{Implications for refinement.}
+-Additional training or targeted human edits could address restrictive predicates, but neither intervention was tested here, and erroneous judgments of already appropriate predicates also require attention. Accepted-policy test snapshots show mixed late progress: from iteration 5 to 10, MedCalc-Bench nDCG@10 changes by +1.713, 0, and 0 percentage points for BM25, Vector, and SkillSight, while TheoremQA changes by $-0.502$, +0.219, and $-0.542$ points. Thus, simply extending the same training loop is not an established remedy. Predicate edits and checker improvements should be evaluated separately using training/validation data before fresh held-out assessment.
++Additional training or targeted human edits could address restrictive predicates, but neither intervention was tested here, and erroneous judgments of already appropriate predicates also require attention. Test results for the retained policies show mixed late progress: from iteration 5 to 10, MedCalc-Bench nDCG@10 changes by +1.713, 0, and 0 percentage points for BM25, Vector, and SkillSight, while TheoremQA changes by $-0.502$, +0.219, and $-0.542$ points. Thus, simply extending the same training loop is not an established remedy. Predicate edits and checker improvements should be evaluated separately using training/validation data before fresh held-out assessment.
+--- before/sections/appendix/data_splits.tex
++++ after/sections/appendix/data_splits.tex
+@@ -2,7 +2,7 @@
+ \label{app:data-splits}
+ We use the six task collections distributed with SRA-Bench~\citep{su2026skillretrieval}. Table~\ref{tab:appendix-data-splits} gives the exact task and gold-skill counts after filtering. Starting from 5,400 annotated instances, we remove any task whose required set contains a skill occurring in fewer than three remaining tasks. We recompute skill frequencies and repeat this operation until no such task remains. Filtering removes whole tasks rather than individual labels from a multi-skill task. This leaves 4,987 tasks associated with 306 distinct gold skills; 413 tasks are excluded.
+ 
+-We target a global train/validation/test allocation of 70\%/15\%/15\%, yielding 3,491/748/748 tasks. A constrained allocation assigns tasks while ensuring that every retained skill occurs in all three partitions. For each skill, split counts lie within floor/ceiling bounds around the target proportions, clipped to leave at least one occurrence in each partition. The allocation minimizes normalized deviations from the target proportions for both skills and datasets, and uses split seed 20260908 to order task identifiers within each dataset--gold-set group. The constraints can shift an individual dataset away from the global proportions, particularly when many skills have few examples; the exact counts therefore take precedence over an assumed per-dataset ratio.
++We target a global train/validation/test allocation of 70\%/15\%/15\%, yielding 3,491/748/748 tasks. A constrained allocation assigns tasks while ensuring that every retained skill occurs in all three partitions. For each skill, split counts lie within floor/ceiling bounds around the target proportions, clipped to leave at least one occurrence in each partition. The allocation minimizes normalized deviations from the target proportions for both skills and datasets, and uses split seed 20260908 to order task identifiers within each dataset--gold-set group. The coverage constraints can shift individual datasets away from the target proportions, particularly when many skills have few examples.
+ 
+ Task identifiers are disjoint across partitions, but the skill vocabulary is deliberately shared: each partition contains all 306 retained gold skills. The evaluation consequently measures generalization to held-out tasks involving represented skills, rather than to entirely unseen skills.
+ 

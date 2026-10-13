@@ -1,0 +1,18 @@
+\subsection{Initialization and Online Routing}
+\label{app:procedure-routing}
+We initialize one predicate $p_{si}$ for every skill $s\in S$ from its public name, description, and body. The generator receives no task labels. It produces one reusable applicability statement of at most $l$ characters. This limit also applies to subsequent replacements. Compound statements may contain AND, OR, and NOT, but they are evaluated as one predicate. The improvement procedure neither adds predicates nor decomposes them into separately evaluated clauses.
+
+For a task $q$, we retrieve $S@k$ and evaluate each retrieved predicate against the public task text. Strict routing returns
+\[
+P_q=\{s\in S@k:p_s(q)=\mathrm{True}\}.
+\]
+The evaluator receives only the task and predicate, not $G_q$, a reference answer, or the skill body. During training, required-skill annotations identify the failure set
+\[
+\mathcal F_q=((G_q\cap S@k)\setminus P_q)
+\cup(P_q\setminus G_q).
+\]
+A required skill outside $S@k$ is a retrieval miss and does not trigger a predicate repair.
+
+We traverse the training tasks in their fixed split order for each iteration. For one task, repairs to distinct failed skills can execute in parallel; all results are joined before committing them in skill-identifier order. The next task is routed with the resulting predicates. This preserves sequential online updates across tasks while allowing parallel evaluator calls.
+
+For a ranked rather than strictly filtered output, the implementation orders candidates lexicographically by predicate label, retrieval score, and original retrieval order, placing true labels first. This is the operational interpretation of the label-based prioritization in the main text; it is not an unnormalized arithmetic sum for arbitrary retrieval scores. For SkillSight, the exposed score is $1/j$ at retrieval rank $j\geq1$, so adding a binary label yields the same selected-first ordering. A fixed-size top-$k$ output may therefore include false-labelled candidates, unlike strict routing.

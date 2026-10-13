@@ -1,0 +1,2132 @@
+latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 20 November 2021, version: 4.76.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.tex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)) (./acl.sty
+Conference Style for ACL
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex))))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/abstract.tex
+
+Package lineno Warning: Linenumber reference failed, 
+(lineno)                rerun to get it right.
+
+) (./sections/introduction.tex
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 1 undefined on 
+input line 8.
+
+
+LaTeX Warning: Reference `fig:predicate-routing' on page 1 undefined on input l
+ine 8.
+
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 1 undefined on 
+input line 21.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map} <./figs/routing_figure.png>]
+Underfull \hbox (badness 2359) in paragraph at lines 29--31
+[]\T1/ptm/m/n/10.95 (+20) We in-tro-duce RouterBSI, a re-cur-sive self-
+
+Underfull \hbox (badness 1616) in paragraph at lines 52--54
+\T1/ptm/m/n/10.95 (+20) datasets with a shared 26K-skill cor-pus,
+) (./sections/related_works.tex
+
+Package natbib Warning: Citation `wang2025agentworkflowmemory' on page 2 undefi
+ned on input line 14.
+
+
+Package natbib Warning: Citation `ouyang2026reasoningbank' on page 2 undefined 
+on input line 14.
+
+
+Package natbib Warning: Citation `guo2024dsagent' on page 2 undefined on input 
+line 14.
+
+
+Package natbib Warning: Citation `zhang-etal-2025-toolexpnet' on page 2 undefin
+ed on input line 14.
+
+
+Package natbib Warning: Citation `bai2026skilldag' on page 2 undefined on input
+ line 14.
+
+
+Package natbib Warning: Citation `pmlr-v306-mi26d' on page 2 undefined on input
+ line 14.
+
+
+Package natbib Warning: Citation `shi2026programmatic' on page 2 undefined on i
+nput line 14.
+
+
+Package natbib Warning: Citation `ghoshal-etal-2026-jtpro' on page 2 undefined 
+on input line 14.
+
+
+Package natbib Warning: Citation `qin2024toolllm' on page 2 undefined on input 
+line 17.
+
+
+Package natbib Warning: Citation `zheng2026skillrouter' on page 2 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `wang2026skillisnotdocument' on page 2 undefin
+ed on input line 17.
+
+
+Package natbib Warning: Citation `li2026skillsinjector' on page 2 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `zhou2026mementoskills' on page 2 undefined on
+ input line 17.
+
+
+Package natbib Warning: Citation `ICLR2025_b646bdeb' on page 2 undefined on inp
+ut line 17.
+
+
+Package natbib Warning: Citation `qian-etal-2025-smart' on page 2 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `chen2026skillskiplearningselective' on page 2
+ undefined on input line 17.
+
+
+Package natbib Warning: Citation `wang2026sage' on page 2 undefined on input li
+ne 17.
+
+
+Package natbib Warning: Citation `xia2026skillrl' on page 2 undefined on input 
+line 17.
+
+
+Package natbib Warning: Citation `zhang2026memskill' on page 2 undefined on inp
+ut line 17.
+
+
+Package natbib Warning: Citation `huang-etal-2026-toolomni' on page 2 undefined
+ on input line 17.
+
+
+Package natbib Warning: Citation `wu2026maestro' on page 2 undefined on input l
+ine 17.
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 17--18
+\T1/ptm/m/n/10.95 (+20) Reinforcement-learning poli-cies op-ti-mize skill
+
+Package natbib Warning: Citation `wang2024voyager' on page 2 undefined on input
+ line 20.
+
+
+Package natbib Warning: Citation `xiao2026skillsightcalibratinggenericcontent' 
+on page 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 2 undefined on 
+input line 20.
+
+
+Package natbib Warning: Citation `li2026agentskillos' on page 2 undefined on in
+put line 20.
+
+
+Package natbib Warning: Citation `sun2026corpus2skill' on page 2 undefined on i
+nput line 20.
+
+
+Package natbib Warning: Citation `wang2026graphskill' on page 2 undefined on in
+put line 20.
+
+
+Package natbib Warning: Citation `packer2023memgpt' on page 2 undefined on inpu
+t line 20.
+
+
+Package natbib Warning: Citation `liang2026skillnetcreateevaluateconnect' on pa
+ge 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `liu2025toolplanner' on page 2 undefined on in
+put line 20.
+
+
+Package natbib Warning: Citation `chen2026cuaskill' on page 2 undefined on inpu
+t line 20.
+
+
+Package natbib Warning: Citation `xia2026grasp' on page 2 undefined on input li
+ne 20.
+
+
+Package natbib Warning: Citation `NEURIPS2023_77c33e6a' on page 2 undefined on 
+input line 20.
+
+
+Package natbib Warning: Citation `NEURIPS2024_e41efb03' on page 2 undefined on 
+input line 20.
+
+) (./sections/problem_definition.tex [2]) (./sections/method.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [3 <./figs
+/method_figure.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd))
+(./sections/experiments.tex
+
+Package natbib Warning: Citation `chen-etal-2023-theoremqa' on page 4 undefined
+ on input line 12.
+
+
+Package natbib Warning: Citation `parmar-etal-2024-logicbench' on page 4 undefi
+ned on input line 12.
+
+
+Package natbib Warning: Citation `NEURIPS2023_9cb2a749' on page 4 undefined on 
+input line 12.
+
+
+Package natbib Warning: Citation `mao-etal-2024-champ' on page 4 undefined on i
+nput line 12.
+
+
+Package natbib Warning: Citation `NEURIPS2024_99e81750' on page 4 undefined on 
+input line 12.
+
+
+Package natbib Warning: Citation `ICLR2025_a6a90bcc' on page 4 undefined on inp
+ut line 12.
+
+
+Underfull \hbox (badness 2573) in paragraph at lines 12--14
+\T1/ptm/m/n/10.95 (+20) CHAMP (\T1/ptm/b/n/10.95 (+20) ?\T1/ptm/m/n/10.95 (+20)
+ ), MedCalc-Bench (\T1/ptm/b/n/10.95 (+20) ?\T1/ptm/m/n/10.95 (+20) ), and Big-
+
+(./tables/skill_routing_performance_average/table.tex
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+)
+
+Package natbib Warning: Citation `qwen2026qwen35' on page 4 undefined on input 
+line 31.
+
+
+Package natbib Warning: Citation `qwen2026qwen38' on page 4 undefined on input 
+line 31.
+
+
+Package natbib Warning: Citation `meta2024llama33' on page 4 undefined on input
+ line 31.
+
+
+Package natbib Warning: Citation `openai2025gptoss' on page 4 undefined on inpu
+t line 31.
+
+
+Package natbib Warning: Citation `openai2026gpt54' on page 4 undefined on input
+ line 31.
+
+[4]
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 5 undefined on 
+input line 39.
+
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 5 undefined on 
+input line 39.
+
+
+Package natbib Warning: Citation `pmlr-v306-mi26d' on page 5 undefined on input
+ line 39.
+
+
+Package natbib Warning: Citation `bai2026skilldag' on page 5 undefined on input
+ line 39.
+
+) (./sections/results.tex
+
+LaTeX Warning: Reference `tab:skill_routing_performance_average' on page 5 unde
+fined on input line 9.
+
+
+LaTeX Warning: Reference `fig:average_recall_degradation' on page 5 undefined o
+n input line 15.
+
+[5] (./figs/average_retention_degradation/table.tex)
+(./figs/downstream_average/table.tex
+(./figs/downstream_average/description.text)
+(./figs/downstream_average/description.text))
+
+LaTeX Warning: Reference `fig:downstream_average' on page 6 undefined on input 
+line 19.
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) se-lected skills with some ad-di-tional re-trieved
+
+Underfull \hbox (badness 1668) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) per-for-mance as $[][]$'s av-er-age per-
+) (./sections/ablations.tex (./figs/mbr_replay_test_ndcg@1_std/table.tex
+(./figs/mbr_replay_test_ndcg@1_std/description.text)
+(./figs/mbr_replay_test_ndcg@1_std/description.text))
+
+LaTeX Warning: Reference `fig:mbr_replay_test_ndcg@1_std' on page 6 undefined o
+n input line 16.
+
+[6 <./figs/average_retention_degradation/preview.pdf> <./figs/downstream_averag
+e/preview.pdf>]
+
+LaTeX Warning: Reference `fig:performance_token_usage' on page 7 undefined on i
+nput line 20.
+
+
+LaTeX Warning: Reference `fig:routing_performance_across_llms_init' on page 7 u
+ndefined on input line 24.
+
+(./figs/performance_token_usage/table.tex)) (./sections/conclusion.tex)
+(./sections/limitations.tex) (./sections/ethics_statement.tex [7 <./figs/mbr_re
+play_test_ndcg@1_std/preview.pdf> <./figs/performance_token_usage/preview.pdf>]
+(./figs/routing_performance_across_llms_init/table.tex
+(./figs/routing_performance_across_llms_init/description.text)
+(./figs/routing_performance_across_llms_init/description.text)
+Underfull \hbox (badness 3128) in paragraph at lines 4--4
+[]\T1/ptm/m/n/10 (+20) Figure 7: |Ini-tial and op-ti-mized rout-ing per-for-
+)) (./sections/acknowledgment.tex) (./sections/citations.tex
+No file main.bbl.
+) (./sections/appendix/appendix.tex
+Underfull \vbox (badness 10000) has occurred while \output is active
+(./sections/appendix/procedure.tex (./sections/appendix/procedure_routing.tex)
+(./sections/appendix/procedure_replay.tex [8 <./figs/routing_performance_across
+_llms_init/preview.pdf>]) (./sections/appendix/procedure_mbr.tex
+Underfull \hbox (badness 1014) in paragraph at lines 10--12
+\T1/ptm/m/n/10.95 (+20) Following the main for-mu-la-tion, we se-lect a
+) (./sections/appendix/procedure_validation.tex)
+(./sections/appendix/procedure_algorithm.tex [9]
+
+LaTeX Warning: Reference `app:procedure-mbr' on page 10 undefined on input line
+ 3.
+
+)) (./sections/appendix/prompts.tex
+(./sections/appendix/prompts_initialization.tex
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd) [10])
+(./sections/appendix/prompts_proposal.tex [11])
+(./sections/appendix/prompts_evaluator.tex
+Underfull \hbox (badness 8094) in paragraph at lines 3--4
+\T1/ptm/m/n/10.95 (+20) Each re-quest con-tains ex-actly one public-
+) (./sections/appendix/prompts_trace.tex [12])) (./sections/appendix/data.tex
+(./sections/appendix/data_splits.tex
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 13 undefined on
+ input line 3.
+
+
+LaTeX Warning: Reference `tab:appendix-data-splits' on page 13 undefined on inp
+ut line 3.
+
+) (./sections/appendix/data_labels.tex [13])
+(./sections/appendix/data_corpus.tex
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 14 undefined on
+ input line 3.
+
+) (./sections/appendix/data_scope.tex)) (./sections/appendix/implementation.tex
+[14] (./sections/appendix/implementation_settings.tex
+
+LaTeX Warning: Reference `tab:appendix-settings' on page 15 undefined on input 
+line 3.
+
+
+LaTeX Warning: Reference `app:procedure-validation' on page 15 undefined on inp
+ut line 30.
+
+) (./sections/appendix/implementation_runtime.tex)
+(./sections/appendix/implementation_variants.tex [15])
+(./sections/appendix/implementation_software.tex
+
+Package natbib Warning: Citation `robertson2009bm25' on page 16 undefined on in
+put line 4.
+
+
+Package natbib Warning: Citation `zhang2025qwen3embedding' on page 16 undefined
+ on input line 4.
+
+
+Package natbib Warning: Citation `xiao2026skillsightcalibratinggenericcontent' 
+on page 16 undefined on input line 4.
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 4--5
+ []\T1/ptm/b/n/10.95 (+20) Retrieval and rerank-ing.[] \T1/ptm/m/n/10.95 (+20) 
+The in-tree SRA
+
+Underfull \hbox (badness 1194) in paragraph at lines 4--5
+\T1/ptm/m/n/10.95 (+20) sparse op-er-a-tions with $\OML/cmm/m/it/10.95 k[] \OT1
+/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5$ \T1/ptm/m/n/10.95 
+(+20) and $\OML/cmm/m/it/10.95 b \OT1/cmr/m/n/10.95 =
+
+Package natbib Warning: Citation `zheng2026skillrouter' on page 16 undefined on
+ input line 6.
+
+
+Package natbib Warning: Citation `yao2023react' on page 16 undefined on input l
+ine 12.
+
+
+LaTeX Warning: Reference `app:procedure-replay' on page 16 undefined on input l
+ine 12.
+
+
+LaTeX Warning: Reference `app:data-splits' on page 16 undefined on input line 1
+2.
+
+)) (./sections/appendix/routing.tex (./sections/appendix/routing_metrics.tex
+[16]
+
+LaTeX Warning: Reference `app:ablations' on page 17 undefined on input line 25.
+
+
+) (./sections/appendix/routing_results.tex
+Underfull \hbox (badness 1430) in paragraph at lines 25--1
+ []\T1/ptm/b/n/10.95 (+20) Statistical re-port-ing.[] \T1/ptm/m/n/10.95 (+20) T
+he main rout-ing, re-
+
+LaTeX Warning: Reference `tab:app-routing-1' on page 17 undefined on input line
+ 3.
+
+
+LaTeX Warning: Reference `tab:app-routing-3' on page 17 undefined on input line
+ 3.
+
+(./sections/appendix/routing_table_1.tex)
+(./sections/appendix/routing_table_2.tex)
+(./sections/appendix/routing_table_3.tex))) (./sections/appendix/retention.tex
+(./sections/appendix/retention_definition.tex
+
+LaTeX Warning: Reference `fig:average_recall_degradation' on page 17 undefined 
+on input line 9.
+
+) (./sections/appendix/retention_results.tex
+
+LaTeX Warning: Reference `tab:app-retention-mean' on page 17 undefined on input
+ line 3.
+
+
+LaTeX Warning: Reference `tab:app-retention' on page 17 undefined on input line
+ 3.
+
+(./sections/appendix/retention_mean_table.tex
+
+LaTeX Warning: Reference `fig:average_recall_degradation' on page 17 undefined 
+on input line 17.
+
+
+LaTeX Warning: Reference `fig:average_recall_degradation' on page 17 undefined 
+on input line 17.
+
+) (./sections/appendix/retention_table.tex)))
+(./sections/appendix/ablations.tex (./sections/appendix/ablation_components.tex
+[17]
+
+LaTeX Warning: Reference `tab:app-ablation-endpoints' on page 18 undefined on i
+nput line 25.
+
+
+LaTeX Warning: Reference `fig:mbr_replay_test_ndcg@1_std' on page 18 undefined 
+on input line 25.
+
+
+LaTeX Warning: Reference `tab:app-ablation-trajectory' on page 18 undefined on 
+input line 25.
+
+(./sections/appendix/trajectory_table.tex
+
+LaTeX Warning: Reference `fig:mbr_replay_test_ndcg@1_std' on page 18 undefined 
+on input line 22.
+
+
+LaTeX Warning: Reference `fig:mbr_replay_test_ndcg@1_std' on page 18 undefined 
+on input line 22.
+
+)
+Underfull \hbox (badness 1331) in paragraph at lines 29--30
+[]\T1/ptm/m/n/10.95 (+20) The held-out gate eval-u-ates changed skills
+) (./sections/appendix/ablation_cost_capacity.tex
+Underfull \vbox (badness 6493) has occurred while \output is active [18]
+
+LaTeX Warning: Reference `tab:app-ablation-tokens' on page 19 undefined on inpu
+t line 2.
+
+
+LaTeX Warning: Reference `fig:performance_token_usage' on page 19 undefined on 
+input line 17.
+
+
+LaTeX Warning: Reference `fig:performance_token_usage' on page 19 undefined on 
+input line 17.
+
+
+LaTeX Warning: Reference `tab:app-replay-capacity' on page 19 undefined on inpu
+t line 21.
+
+) (./sections/appendix/ablation_candidate_pool.tex
+
+LaTeX Warning: Reference `fig:performance_token_usage_by_topk' on page 19 undef
+ined on input line 3.
+
+[19] (./figs/performance_token_usage_by_topk/table.tex
+(./figs/performance_token_usage_by_topk/description.text)
+(./figs/performance_token_usage_by_topk/description.text)))
+(./sections/appendix/ablation_backbones.tex
+
+LaTeX Warning: Reference `tab:app-backbone' on page 20 undefined on input line 
+2.
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) Table [] ex-pands the back-bone re-sults with
+
+Underfull \hbox (badness 2744) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) selected-set F1 and nDCG@10. All three
+
+LaTeX Warning: Reference `fig:routing_performance_across_llms_init' on page 20 
+undefined on input line 21.
+
+
+LaTeX Warning: Reference `fig:routing_performance_across_llms_init' on page 20 
+undefined on input line 21.
+
+)) (./sections/appendix/error_analysis.tex
+(./sections/appendix/evaluator_validation.tex [20]
+(./sections/appendix/evaluator_validation_table.tex)
+
+LaTeX Warning: Reference `tab:app-evaluator-validation' on page 21 undefined on
+ input line 9.
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 9--10
+\T1/ptm/m/n/10.95 (+20) dis-agree-ments, or 97.10% model-adjudicated
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [21 <./fig
+s/performance_token_usage_by_topk/preview.pdf>])
+(./sections/appendix/error_counts.tex
+
+LaTeX Warning: Reference `tab:app-error-confusion' on page 22 undefined on inpu
+t line 27.
+
+
+LaTeX Warning: Reference `tab:app-error-attribution' on page 22 undefined on in
+put line 29.
+
+
+Underfull \vbox (badness 2753) has occurred while \output is active [22])
+(./sections/appendix/error_routing_gap.tex
+
+LaTeX Warning: Reference `tab:app-routing-gap' on page 23 undefined on input li
+ne 31.
+
+[23]
+
+LaTeX Warning: Reference `tab:app-routing-gap-attribution' on page 24 undefined
+ on input line 34.
+
+) (./sections/appendix/error_examples.tex [24])
+(./sections/appendix/error_downstream.tex
+Underfull \hbox (badness 6332) in paragraph at lines 14--1
+ []\T1/ptm/b/n/10.95 (+20) Medical-calculator judg-ment.[] \T1/ptm/m/n/10.95 (+
+20) A MedCalc-
+
+LaTeX Warning: Reference `tab:app-conditional-errors' on page 25 undefined on i
+nput line 2.
+
+[25])
+Underfull \vbox (badness 4479) has occurred while \output is active
+(./sections/appendix/error_downstream_results.tex
+
+LaTeX Warning: Reference `tab:app-downstream-mean' on page 26 undefined on inpu
+t line 3.
+
+
+LaTeX Warning: Reference `fig:downstream_average' on page 26 undefined on input
+ line 3.
+
+
+LaTeX Warning: Reference `tab:app-downstream' on page 26 undefined on input lin
+e 3.
+
+(./sections/appendix/downstream_mean_table.tex
+
+LaTeX Warning: Reference `fig:downstream_average' on page 26 undefined on input
+ line 21.
+
+
+LaTeX Warning: Reference `fig:downstream_average' on page 26 undefined on input
+ line 21.
+
+) (./sections/appendix/downstream_table.tex))))
+Underfull \hbox (badness 1097) in paragraph at lines 2--75
+\T1/ptm/m/n/10.95 (+20) The fol-low-ing ta-ble re-ports down-stream task-
+
+Package natbib Warning: There were undefined citations.
+
+[26] [27] [28] (./main.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.52501pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
+inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/incon
+solata/Inconsolata-zi4b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/i
+nconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsro
+m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (28 pages, 1036451 bytes).
+Transcript written on main.log.
+Latexmk: Missing bbl file 'main.bbl' in following:
+ No file main.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: List of undefined refs and citations:
+  Citation `ICLR2025_a6a90bcc' on page 4 undefined on input line 12
+  Citation `ICLR2025_b646bdeb' on page 2 undefined on input line 17
+  Citation `NEURIPS2023_77c33e6a' on page 2 undefined on input line 20
+  Citation `NEURIPS2023_9cb2a749' on page 4 undefined on input line 12
+  Citation `NEURIPS2024_99e81750' on page 4 undefined on input line 12
+  Citation `NEURIPS2024_e41efb03' on page 2 undefined on input line 20
+  Citation `bai2026skilldag' on page 2 undefined on input line 14
+  Citation `bai2026skilldag' on page 5 undefined on input line 39
+  Citation `chen-etal-2023-theoremqa' on page 4 undefined on input line 12
+  Citation `chen2026cuaskill' on page 2 undefined on input line 20
+  Citation `chen2026skillskiplearningselective' on page 2 undefined on input line 17
+  Citation `ghoshal-etal-2026-jtpro' on page 2 undefined on input line 14
+  Citation `guo2024dsagent' on page 2 undefined on input line 14
+  Citation `huang-etal-2026-toolomni' on page 2 undefined on input line 17
+  Citation `li2026agentskillos' on page 2 undefined on input line 20
+  Citation `li2026skillsinjector' on page 2 undefined on input line 17
+  Citation `liang2026skillnetcreateevaluateconnect' on page 2 undefined on input line 20
+  Citation `liu2025toolplanner' on page 2 undefined on input line 20
+  Citation `mao-etal-2024-champ' on page 4 undefined on input line 12
+  Citation `meta2024llama33' on page 4 undefined on input line 31
+  Citation `openai2025gptoss' on page 4 undefined on input line 31
+  Citation `openai2026gpt54' on page 4 undefined on input line 31
+  Citation `ouyang2026reasoningbank' on page 2 undefined on input line 14
+  Citation `packer2023memgpt' on page 2 undefined on input line 20
+  Citation `parmar-etal-2024-logicbench' on page 4 undefined on input line 12
+  Citation `pmlr-v306-mi26d' on page 2 undefined on input line 14
+  Citation `pmlr-v306-mi26d' on page 5 undefined on input line 39
+  Citation `qian-etal-2025-smart' on page 2 undefined on input line 17
+  Citation `qin2024toolllm' on page 2 undefined on input line 17
+  Citation `qwen2026qwen35' on page 4 undefined on input line 31
+  Citation `qwen2026qwen38' on page 4 undefined on input line 31
+  Citation `robertson2009bm25' on page 16 undefined on input line 4
+  Citation `shi2026programmatic' on page 2 undefined on input line 14
+  Citation `su2026skillretrieval' on page 1 undefined on input line 21
+  Citation `su2026skillretrieval' on page 1 undefined on input line 8
+  Citation `su2026skillretrieval' on page 13 undefined on input line 3
+  Citation `su2026skillretrieval' on page 14 undefined on input line 3
+  Citation `su2026skillretrieval' on page 2 undefined on input line 20
+  Citation `su2026skillretrieval' on page 5 undefined on input line 39
+  Citation `sun2026corpus2skill' on page 2 undefined on input line 20
+  Citation `wang2024voyager' on page 2 undefined on input line 20
+  Citation `wang2025agentworkflowmemory' on page 2 undefined on input line 14
+  Citation `wang2026graphskill' on page 2 undefined on input line 20
+  Citation `wang2026sage' on page 2 undefined on input line 17
+  Citation `wang2026skillisnotdocument' on page 2 undefined on input line 17
+  Citation `wu2026maestro' on page 2 undefined on input line 17
+  Citation `xia2026grasp' on page 2 undefined on input line 20
+  Citation `xia2026skillrl' on page 2 undefined on input line 17
+  Citation `xiao2026skillsightcalibratinggenericcontent' on page 16 undefined on input line 4
+  Citation `xiao2026skillsightcalibratinggenericcontent' on page 2 undefined on input line 20
+  Citation `yao2023react' on page 16 undefined on input line 12
+  Citation `zhang-etal-2025-toolexpnet' on page 2 undefined on input line 14
+  Citation `zhang2025qwen3embedding' on page 16 undefined on input line 4
+  Citation `zhang2026memskill' on page 2 undefined on input line 17
+  Citation `zheng2026skillrouter' on page 16 undefined on input line 6
+  Citation `zheng2026skillrouter' on page 2 undefined on input line 17
+  Citation `zhou2026mementoskills' on page 2 undefined on input line 17
+  Reference `app:ablations' on page 17 undefined on input line 25
+  Reference `app:data-splits' on page 16 undefined on input line 12
+  Reference `app:procedure-mbr' on page 10 undefined on input line 3
+  Reference `app:procedure-replay' on page 16 undefined on input line 12
+  Reference `app:procedure-validation' on page 15 undefined on input line 30
+  Reference `fig:average_recall_degradation' on page 17 undefined on input line 17
+  Reference `fig:average_recall_degradation' on page 17 undefined on input line 9
+  Reference `fig:average_recall_degradation' on page 5 undefined on input line 15
+  Reference `fig:downstream_average' on page 26 undefined on input line 21
+  Reference `fig:downstream_average' on page 26 undefined on input line 3
+  Reference `fig:downstream_average' on page 6 undefined on input line 19
+  Reference `fig:mbr_replay_test_ndcg@1_std' on page 18 undefined on input line 22
+  Reference `fig:mbr_replay_test_ndcg@1_std' on page 18 undefined on input line 25
+  Reference `fig:mbr_replay_test_ndcg@1_std' on page 6 undefined on input line 16
+  Reference `fig:performance_token_usage' on page 19 undefined on input line 17
+  Reference `fig:performance_token_usage' on page 7 undefined on input line 20
+  Reference `fig:performance_token_usage_by_topk' on page 19 undefined on input line 3
+  Reference `fig:predicate-routing' on page 1 undefined on input line 8
+  Reference `fig:routing_performance_across_llms_init' on page 20 undefined on input line 21
+  Reference `fig:routing_performance_across_llms_init' on page 7 undefined on input line 24
+  Reference `tab:app-ablation-endpoints' on page 18 undefined on input line 25
+  Reference `tab:app-ablation-tokens' on page 19 undefined on input line 2
+  Reference `tab:app-ablation-trajectory' on page 18 undefined on input line 25
+  Reference `tab:app-backbone' on page 20 undefined on input line 2
+  Reference `tab:app-conditional-errors' on page 25 undefined on input line 2
+  Reference `tab:app-downstream' on page 26 undefined on input line 3
+  Reference `tab:app-downstream-mean' on page 26 undefined on input line 3
+  Reference `tab:app-error-attribution' on page 22 undefined on input line 29
+  Reference `tab:app-error-confusion' on page 22 undefined on input line 27
+  Reference `tab:app-evaluator-validation' on page 21 undefined on input line 9
+  Reference `tab:app-replay-capacity' on page 19 undefined on input line 21
+  Reference `tab:app-retention' on page 17 undefined on input line 3
+  Reference `tab:app-retention-mean' on page 17 undefined on input line 3
+  Reference `tab:app-routing-1' on page 17 undefined on input line 3
+  Reference `tab:app-routing-3' on page 17 undefined on input line 3
+  Reference `tab:app-routing-gap' on page 23 undefined on input line 31
+  Reference `tab:app-routing-gap-attribution' on page 24 undefined on input line 34
+  Reference `tab:appendix-data-splits' on page 13 undefined on input line 3
+  Reference `tab:appendix-settings' on page 15 undefined on input line 3
+  Reference `tab:skill_routing_performance_average' on page 5 undefined on input line 9
+Latexmk: Examining 'main.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Rule 'bibtex main': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.aux'
+------------
+Run number 1 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+Latexmk: applying rule 'bibtex main'...
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+The top-level auxiliary file: main.aux
+The style file: acl_natbib.bst
+Database file #1: references.bib
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.aux'
+      'main.bbl'
+      'main.out'
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)) (./acl.sty
+Conference Style for ACL
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex))))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/abstract.tex) (./sections/introduction.tex
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 1 undefined on 
+input line 8.
+
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 1 undefined on 
+input line 21.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map} <./figs/routing_figure.png>]
+Underfull \hbox (badness 2359) in paragraph at lines 29--31
+[]\T1/ptm/m/n/10.95 (+20) We in-tro-duce RouterBSI, a re-cur-sive self-
+
+Underfull \hbox (badness 1616) in paragraph at lines 52--54
+\T1/ptm/m/n/10.95 (+20) datasets with a shared 26K-skill cor-pus,
+) (./sections/related_works.tex
+
+Package natbib Warning: Citation `wang2025agentworkflowmemory' on page 2 undefi
+ned on input line 14.
+
+
+Package natbib Warning: Citation `ouyang2026reasoningbank' on page 2 undefined 
+on input line 14.
+
+
+Package natbib Warning: Citation `guo2024dsagent' on page 2 undefined on input 
+line 14.
+
+
+Package natbib Warning: Citation `zhang-etal-2025-toolexpnet' on page 2 undefin
+ed on input line 14.
+
+
+Package natbib Warning: Citation `bai2026skilldag' on page 2 undefined on input
+ line 14.
+
+
+Package natbib Warning: Citation `pmlr-v306-mi26d' on page 2 undefined on input
+ line 14.
+
+
+Package natbib Warning: Citation `shi2026programmatic' on page 2 undefined on i
+nput line 14.
+
+
+Package natbib Warning: Citation `ghoshal-etal-2026-jtpro' on page 2 undefined 
+on input line 14.
+
+
+Package natbib Warning: Citation `qin2024toolllm' on page 2 undefined on input 
+line 17.
+
+
+Package natbib Warning: Citation `zheng2026skillrouter' on page 2 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `wang2026skillisnotdocument' on page 2 undefin
+ed on input line 17.
+
+
+Package natbib Warning: Citation `li2026skillsinjector' on page 2 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `zhou2026mementoskills' on page 2 undefined on
+ input line 17.
+
+
+Package natbib Warning: Citation `ICLR2025_b646bdeb' on page 2 undefined on inp
+ut line 17.
+
+
+Package natbib Warning: Citation `qian-etal-2025-smart' on page 2 undefined on 
+input line 17.
+
+
+Package natbib Warning: Citation `chen2026skillskiplearningselective' on page 2
+ undefined on input line 17.
+
+
+Package natbib Warning: Citation `wang2026sage' on page 2 undefined on input li
+ne 17.
+
+
+Package natbib Warning: Citation `xia2026skillrl' on page 2 undefined on input 
+line 17.
+
+
+Package natbib Warning: Citation `zhang2026memskill' on page 2 undefined on inp
+ut line 17.
+
+
+Package natbib Warning: Citation `huang-etal-2026-toolomni' on page 2 undefined
+ on input line 17.
+
+
+Package natbib Warning: Citation `wu2026maestro' on page 2 undefined on input l
+ine 17.
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 17--18
+\T1/ptm/m/n/10.95 (+20) Reinforcement-learning poli-cies op-ti-mize skill
+
+Package natbib Warning: Citation `wang2024voyager' on page 2 undefined on input
+ line 20.
+
+
+Package natbib Warning: Citation `xiao2026skillsightcalibratinggenericcontent' 
+on page 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 2 undefined on 
+input line 20.
+
+
+Package natbib Warning: Citation `li2026agentskillos' on page 2 undefined on in
+put line 20.
+
+
+Package natbib Warning: Citation `sun2026corpus2skill' on page 2 undefined on i
+nput line 20.
+
+
+Package natbib Warning: Citation `wang2026graphskill' on page 2 undefined on in
+put line 20.
+
+
+Package natbib Warning: Citation `packer2023memgpt' on page 2 undefined on inpu
+t line 20.
+
+
+Package natbib Warning: Citation `liang2026skillnetcreateevaluateconnect' on pa
+ge 2 undefined on input line 20.
+
+
+Package natbib Warning: Citation `liu2025toolplanner' on page 2 undefined on in
+put line 20.
+
+
+Package natbib Warning: Citation `chen2026cuaskill' on page 2 undefined on inpu
+t line 20.
+
+
+Package natbib Warning: Citation `xia2026grasp' on page 2 undefined on input li
+ne 20.
+
+
+Package natbib Warning: Citation `NEURIPS2023_77c33e6a' on page 2 undefined on 
+input line 20.
+
+
+Package natbib Warning: Citation `NEURIPS2024_e41efb03' on page 2 undefined on 
+input line 20.
+
+) (./sections/problem_definition.tex [2]) (./sections/method.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [3 <./figs
+/method_figure.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd))
+(./sections/experiments.tex
+
+Package natbib Warning: Citation `chen-etal-2023-theoremqa' on page 4 undefined
+ on input line 12.
+
+
+Package natbib Warning: Citation `parmar-etal-2024-logicbench' on page 4 undefi
+ned on input line 12.
+
+
+Package natbib Warning: Citation `NEURIPS2023_9cb2a749' on page 4 undefined on 
+input line 12.
+
+
+Package natbib Warning: Citation `mao-etal-2024-champ' on page 4 undefined on i
+nput line 12.
+
+
+Package natbib Warning: Citation `NEURIPS2024_99e81750' on page 4 undefined on 
+input line 12.
+
+
+Package natbib Warning: Citation `ICLR2025_a6a90bcc' on page 4 undefined on inp
+ut line 12.
+
+
+Underfull \hbox (badness 2573) in paragraph at lines 12--14
+\T1/ptm/m/n/10.95 (+20) CHAMP (\T1/ptm/b/n/10.95 (+20) ?\T1/ptm/m/n/10.95 (+20)
+ ), MedCalc-Bench (\T1/ptm/b/n/10.95 (+20) ?\T1/ptm/m/n/10.95 (+20) ), and Big-
+
+(./tables/skill_routing_performance_average/table.tex
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+)
+
+Package natbib Warning: Citation `qwen2026qwen35' on page 4 undefined on input 
+line 31.
+
+
+Package natbib Warning: Citation `qwen2026qwen38' on page 4 undefined on input 
+line 31.
+
+
+Package natbib Warning: Citation `meta2024llama33' on page 4 undefined on input
+ line 31.
+
+
+Package natbib Warning: Citation `openai2025gptoss' on page 4 undefined on inpu
+t line 31.
+
+
+Package natbib Warning: Citation `openai2026gpt54' on page 4 undefined on input
+ line 31.
+
+[4]
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 5 undefined on 
+input line 39.
+
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 5 undefined on 
+input line 39.
+
+
+Package natbib Warning: Citation `pmlr-v306-mi26d' on page 5 undefined on input
+ line 39.
+
+
+Package natbib Warning: Citation `bai2026skilldag' on page 5 undefined on input
+ line 39.
+
+) (./sections/results.tex [5] (./figs/average_retention_degradation/table.tex)
+(./figs/downstream_average/table.tex
+(./figs/downstream_average/description.text)
+(./figs/downstream_average/description.text))
+Underfull \hbox (badness 1132) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) se-lected skills with some ad-di-tional re-trieved
+
+Underfull \hbox (badness 1668) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) per-for-mance as $[][]$'s av-er-age per-
+) (./sections/ablations.tex (./figs/mbr_replay_test_ndcg@1_std/table.tex
+(./figs/mbr_replay_test_ndcg@1_std/description.text)
+(./figs/mbr_replay_test_ndcg@1_std/description.text)) [6 <./figs/average_retent
+ion_degradation/preview.pdf> <./figs/downstream_average/preview.pdf>]
+(./figs/performance_token_usage/table.tex)) (./sections/conclusion.tex)
+(./sections/limitations.tex) (./sections/ethics_statement.tex [7 <./figs/mbr_re
+play_test_ndcg@1_std/preview.pdf> <./figs/performance_token_usage/preview.pdf>]
+(./figs/routing_performance_across_llms_init/table.tex
+(./figs/routing_performance_across_llms_init/description.text)
+(./figs/routing_performance_across_llms_init/description.text)
+Underfull \hbox (badness 3128) in paragraph at lines 4--4
+[]\T1/ptm/m/n/10 (+20) Figure 7: |Ini-tial and op-ti-mized rout-ing per-for-
+)) (./sections/acknowledgment.tex) (./sections/citations.tex (./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active [8 <./figs
+/routing_performance_across_llms_init/preview.pdf>]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd) [9]))
+(./sections/appendix/appendix.tex (./sections/appendix/procedure.tex
+(./sections/appendix/procedure_routing.tex [10])
+(./sections/appendix/procedure_replay.tex)
+(./sections/appendix/procedure_mbr.tex
+Underfull \hbox (badness 1014) in paragraph at lines 10--12
+\T1/ptm/m/n/10.95 (+20) Following the main for-mu-la-tion, we se-lect a
+[11]) (./sections/appendix/procedure_validation.tex)
+(./sections/appendix/procedure_algorithm.tex)) (./sections/appendix/prompts.tex
+(./sections/appendix/prompts_initialization.tex [12])
+(./sections/appendix/prompts_proposal.tex [13])
+(./sections/appendix/prompts_evaluator.tex
+Underfull \hbox (badness 8094) in paragraph at lines 3--4
+\T1/ptm/m/n/10.95 (+20) Each re-quest con-tains ex-actly one public-
+[14]) (./sections/appendix/prompts_trace.tex)) (./sections/appendix/data.tex
+[15] (./sections/appendix/data_splits.tex
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 16 undefined on
+ input line 3.
+
+) (./sections/appendix/data_labels.tex) (./sections/appendix/data_corpus.tex
+
+Package natbib Warning: Citation `su2026skillretrieval' on page 16 undefined on
+ input line 3.
+
+) (./sections/appendix/data_scope.tex [16]))
+(./sections/appendix/implementation.tex
+(./sections/appendix/implementation_settings.tex)
+(./sections/appendix/implementation_runtime.tex [17])
+(./sections/appendix/implementation_variants.tex)
+(./sections/appendix/implementation_software.tex
+
+Package natbib Warning: Citation `robertson2009bm25' on page 18 undefined on in
+put line 4.
+
+
+Package natbib Warning: Citation `zhang2025qwen3embedding' on page 18 undefined
+ on input line 4.
+
+
+Package natbib Warning: Citation `xiao2026skillsightcalibratinggenericcontent' 
+on page 18 undefined on input line 4.
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 4--5
+ []\T1/ptm/b/n/10.95 (+20) Retrieval and rerank-ing.[] \T1/ptm/m/n/10.95 (+20) 
+The in-tree SRA
+
+Underfull \hbox (badness 1194) in paragraph at lines 4--5
+\T1/ptm/m/n/10.95 (+20) sparse op-er-a-tions with $\OML/cmm/m/it/10.95 k[] \OT1
+/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5$ \T1/ptm/m/n/10.95 
+(+20) and $\OML/cmm/m/it/10.95 b \OT1/cmr/m/n/10.95 =
+
+Package natbib Warning: Citation `zheng2026skillrouter' on page 18 undefined on
+ input line 6.
+
+[18]
+
+Package natbib Warning: Citation `yao2023react' on page 19 undefined on input l
+ine 12.
+
+)) (./sections/appendix/routing.tex (./sections/appendix/routing_metrics.tex)
+(./sections/appendix/routing_results.tex
+Underfull \hbox (badness 1430) in paragraph at lines 25--1
+ []\T1/ptm/b/n/10.95 (+20) Statistical re-port-ing.[] \T1/ptm/m/n/10.95 (+20) T
+he main rout-ing, re-
+(./sections/appendix/routing_table_1.tex)
+(./sections/appendix/routing_table_2.tex)
+(./sections/appendix/routing_table_3.tex))) (./sections/appendix/retention.tex
+[19] (./sections/appendix/retention_definition.tex)
+(./sections/appendix/retention_results.tex
+(./sections/appendix/retention_mean_table.tex)
+(./sections/appendix/retention_table.tex))) (./sections/appendix/ablations.tex
+[20] (./sections/appendix/ablation_components.tex
+(./sections/appendix/trajectory_table.tex)
+Underfull \hbox (badness 1331) in paragraph at lines 29--30
+[]\T1/ptm/m/n/10.95 (+20) The held-out gate eval-u-ates changed skills
+) (./sections/appendix/ablation_cost_capacity.tex
+Underfull \vbox (badness 6493) has occurred while \output is active [21])
+(./sections/appendix/ablation_candidate_pool.tex [22]
+(./figs/performance_token_usage_by_topk/table.tex
+(./figs/performance_token_usage_by_topk/description.text)
+(./figs/performance_token_usage_by_topk/description.text)))
+(./sections/appendix/ablation_backbones.tex
+Underfull \hbox (badness 1701) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) Table [][]14[][] ex-pands the back-bone re-sults with
+
+Underfull \hbox (badness 2744) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) selected-set F1 and nDCG@10. All three
+)) (./sections/appendix/error_analysis.tex
+(./sections/appendix/evaluator_validation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active
+(./sections/appendix/evaluator_validation_table.tex)
+Underfull \hbox (badness 3407) in paragraph at lines 9--10
+\T1/ptm/m/n/10.95 (+20) dis-agree-ments, or 97.10% model-adjudicated
+
+Package lineno Warning: Linenumber reference failed, 
+(lineno)                rerun to get it right.
+
+[23]
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./sections/appendix/error_counts.tex
+Underfull \vbox (badness 4341) has occurred while \output is active [24 <./figs
+/performance_token_usage_by_topk/preview.pdf>] [25])
+(./sections/appendix/error_routing_gap.tex [26])
+(./sections/appendix/error_examples.tex [27])
+(./sections/appendix/error_downstream.tex
+Underfull \hbox (badness 6332) in paragraph at lines 14--1
+ []\T1/ptm/b/n/10.95 (+20) Medical-calculator judg-ment.[] \T1/ptm/m/n/10.95 (+
+20) A MedCalc-
+[28]) (./sections/appendix/error_downstream_results.tex
+(./sections/appendix/downstream_mean_table.tex)
+(./sections/appendix/downstream_table.tex))))
+Underfull \hbox (badness 1097) in paragraph at lines 2--75
+\T1/ptm/m/n/10.95 (+20) The fol-low-ing ta-ble re-ports down-stream task-
+
+Package natbib Warning: There were undefined citations.
+
+[29] [30] (./main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.52501pt have occurred.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{table.caption.46} has been referenced but does not exist, replaced by a fixed 
+one
+
+pdfTeX warning (dest): name{table.caption.40} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.33} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.32} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.23} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.17} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-di
+st/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/doublestroke/dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (30 pages, 1073717 bytes).
+Transcript written on main.log.
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: List of undefined refs and citations:
+  Citation `ICLR2025_a6a90bcc' on page 4 undefined on input line 12
+  Citation `ICLR2025_b646bdeb' on page 2 undefined on input line 17
+  Citation `NEURIPS2023_77c33e6a' on page 2 undefined on input line 20
+  Citation `NEURIPS2023_9cb2a749' on page 4 undefined on input line 12
+  Citation `NEURIPS2024_99e81750' on page 4 undefined on input line 12
+  Citation `NEURIPS2024_e41efb03' on page 2 undefined on input line 20
+  Citation `bai2026skilldag' on page 2 undefined on input line 14
+  Citation `bai2026skilldag' on page 5 undefined on input line 39
+  Citation `chen-etal-2023-theoremqa' on page 4 undefined on input line 12
+  Citation `chen2026cuaskill' on page 2 undefined on input line 20
+  Citation `chen2026skillskiplearningselective' on page 2 undefined on input line 17
+  Citation `ghoshal-etal-2026-jtpro' on page 2 undefined on input line 14
+  Citation `guo2024dsagent' on page 2 undefined on input line 14
+  Citation `huang-etal-2026-toolomni' on page 2 undefined on input line 17
+  Citation `li2026agentskillos' on page 2 undefined on input line 20
+  Citation `li2026skillsinjector' on page 2 undefined on input line 17
+  Citation `liang2026skillnetcreateevaluateconnect' on page 2 undefined on input line 20
+  Citation `liu2025toolplanner' on page 2 undefined on input line 20
+  Citation `mao-etal-2024-champ' on page 4 undefined on input line 12
+  Citation `meta2024llama33' on page 4 undefined on input line 31
+  Citation `openai2025gptoss' on page 4 undefined on input line 31
+  Citation `openai2026gpt54' on page 4 undefined on input line 31
+  Citation `ouyang2026reasoningbank' on page 2 undefined on input line 14
+  Citation `packer2023memgpt' on page 2 undefined on input line 20
+  Citation `parmar-etal-2024-logicbench' on page 4 undefined on input line 12
+  Citation `pmlr-v306-mi26d' on page 2 undefined on input line 14
+  Citation `pmlr-v306-mi26d' on page 5 undefined on input line 39
+  Citation `qian-etal-2025-smart' on page 2 undefined on input line 17
+  Citation `qin2024toolllm' on page 2 undefined on input line 17
+  Citation `qwen2026qwen35' on page 4 undefined on input line 31
+  Citation `qwen2026qwen38' on page 4 undefined on input line 31
+  Citation `robertson2009bm25' on page 18 undefined on input line 4
+  Citation `shi2026programmatic' on page 2 undefined on input line 14
+  Citation `su2026skillretrieval' on page 1 undefined on input line 21
+  Citation `su2026skillretrieval' on page 1 undefined on input line 8
+  Citation `su2026skillretrieval' on page 16 undefined on input line 3
+  Citation `su2026skillretrieval' on page 2 undefined on input line 20
+  Citation `su2026skillretrieval' on page 5 undefined on input line 39
+  Citation `sun2026corpus2skill' on page 2 undefined on input line 20
+  Citation `wang2024voyager' on page 2 undefined on input line 20
+  Citation `wang2025agentworkflowmemory' on page 2 undefined on input line 14
+  Citation `wang2026graphskill' on page 2 undefined on input line 20
+  Citation `wang2026sage' on page 2 undefined on input line 17
+  Citation `wang2026skillisnotdocument' on page 2 undefined on input line 17
+  Citation `wu2026maestro' on page 2 undefined on input line 17
+  Citation `xia2026grasp' on page 2 undefined on input line 20
+  Citation `xia2026skillrl' on page 2 undefined on input line 17
+  Citation `xiao2026skillsightcalibratinggenericcontent' on page 18 undefined on input line 4
+  Citation `xiao2026skillsightcalibratinggenericcontent' on page 2 undefined on input line 20
+  Citation `yao2023react' on page 19 undefined on input line 12
+  Citation `zhang-etal-2025-toolexpnet' on page 2 undefined on input line 14
+  Citation `zhang2025qwen3embedding' on page 18 undefined on input line 4
+  Citation `zhang2026memskill' on page 2 undefined on input line 17
+  Citation `zheng2026skillrouter' on page 18 undefined on input line 6
+  Citation `zheng2026skillrouter' on page 2 undefined on input line 17
+  Citation `zhou2026mementoskills' on page 2 undefined on input line 17
+Latexmk: Examining 'main.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Rule 'bibtex main': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.aux'
+------------
+Run number 2 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+Latexmk: applying rule 'bibtex main'...
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+The top-level auxiliary file: main.aux
+The style file: acl_natbib.bst
+Database file #1: references.bib
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.aux'
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)) (./acl.sty
+Conference Style for ACL
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex))))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/abstract.tex) (./sections/introduction.tex
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map} <./figs/routing_figure.png>]
+Underfull \hbox (badness 2359) in paragraph at lines 29--31
+[]\T1/ptm/m/n/10.95 (+20) We in-tro-duce RouterBSI, a re-cur-sive self-
+
+Underfull \hbox (badness 1616) in paragraph at lines 52--54
+\T1/ptm/m/n/10.95 (+20) datasets with a shared 26K-skill cor-pus,
+) (./sections/related_works.tex) (./sections/problem_definition.tex
+Underfull \vbox (badness 3471) has occurred while \output is active [2])
+(./sections/method.tex [3 <./figs/method_figure.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd))
+(./sections/experiments.tex
+Underfull \hbox (badness 3108) in paragraph at lines 12--14
+\T1/ptm/m/n/10.95 (+20) mar et al.[][], [][]2024[][]), ToolQA ([][]Zhuang et al
+.[][],
+
+Underfull \hbox (badness 4556) in paragraph at lines 12--14
+\T1/ptm/m/n/10.95 (+20) Bench ([][]Khan-dekar et al.[][], [][]2024[][]), and Bi
+g-
+[4] (./tables/skill_routing_performance_average/table.tex
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+)
+Underfull \hbox (badness 1297) in paragraph at lines 31--33
+\T1/ptm/m/n/10.95 (+20) ([][]Qwen Team[][], [][]2026b[][]), Llama-3.3-70B-Instr
+uct
+) (./sections/results.tex [5] (./figs/average_retention_degradation/table.tex)
+(./figs/downstream_average/table.tex
+(./figs/downstream_average/description.text)
+(./figs/downstream_average/description.text))
+Underfull \hbox (badness 1132) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) se-lected skills with some ad-di-tional re-trieved
+
+Underfull \hbox (badness 1668) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) per-for-mance as $[][]$'s av-er-age per-
+) (./sections/ablations.tex [6 <./figs/average_retention_degradation/preview.pd
+f> <./figs/downstream_average/preview.pdf>]
+(./figs/mbr_replay_test_ndcg@1_std/table.tex
+(./figs/mbr_replay_test_ndcg@1_std/description.text)
+(./figs/mbr_replay_test_ndcg@1_std/description.text))
+(./figs/performance_token_usage/table.tex)) (./sections/conclusion.tex)
+(./sections/limitations.tex [7 <./figs/mbr_replay_test_ndcg@1_std/preview.pdf> 
+<./figs/performance_token_usage/preview.pdf>]
+(./figs/routing_performance_across_llms_init/table.tex
+(./figs/routing_performance_across_llms_init/description.text)
+(./figs/routing_performance_across_llms_init/description.text)
+Underfull \hbox (badness 3128) in paragraph at lines 4--4
+[]\T1/ptm/m/n/10 (+20) Figure 7: |Ini-tial and op-ti-mized rout-ing per-for-
+)) (./sections/ethics_statement.tex) (./sections/acknowledgment.tex)
+(./sections/citations.tex (./main.bbl [8 <./figs/routing_performance_across_llm
+s_init/preview.pdf>]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd) [9] [10]))
+(./sections/appendix/appendix.tex (./sections/appendix/procedure.tex
+(./sections/appendix/procedure_routing.tex)
+(./sections/appendix/procedure_replay.tex)
+(./sections/appendix/procedure_mbr.tex [11]
+Underfull \hbox (badness 1014) in paragraph at lines 10--12
+\T1/ptm/m/n/10.95 (+20) Following the main for-mu-la-tion, we se-lect a
+) (./sections/appendix/procedure_validation.tex)
+(./sections/appendix/procedure_algorithm.tex [12]))
+(./sections/appendix/prompts.tex
+(./sections/appendix/prompts_initialization.tex)
+(./sections/appendix/prompts_proposal.tex [13])
+(./sections/appendix/prompts_evaluator.tex
+Underfull \hbox (badness 8094) in paragraph at lines 3--4
+\T1/ptm/m/n/10.95 (+20) Each re-quest con-tains ex-actly one public-
+[14]) (./sections/appendix/prompts_trace.tex [15]))
+(./sections/appendix/data.tex (./sections/appendix/data_splits.tex)
+(./sections/appendix/data_labels.tex) (./sections/appendix/data_corpus.tex)
+[16] (./sections/appendix/data_scope.tex))
+(./sections/appendix/implementation.tex
+(./sections/appendix/implementation_settings.tex)
+(./sections/appendix/implementation_runtime.tex [17])
+(./sections/appendix/implementation_variants.tex)
+(./sections/appendix/implementation_software.tex
+Underfull \hbox (badness 1838) in paragraph at lines 4--5
+ []\T1/ptm/b/n/10.95 (+20) Retrieval and rerank-ing.[] \T1/ptm/m/n/10.95 (+20) 
+The in-tree SRA
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+[]\T1/ptm/m/n/10.95 (+20) SkillRouter uses the re-leased 0.6B
+
+Underfull \hbox (badness 1286) in paragraph at lines 6--7
+\T1/ptm/m/n/10.95 (+20) reranker ([][]Zheng et al.[][], [][]2026[][]). Its in-p
+ut re-
+[18])) (./sections/appendix/routing.tex
+(./sections/appendix/routing_metrics.tex)
+(./sections/appendix/routing_results.tex
+Underfull \hbox (badness 1430) in paragraph at lines 25--1
+ []\T1/ptm/b/n/10.95 (+20) Statistical re-port-ing.[] \T1/ptm/m/n/10.95 (+20) T
+he main rout-ing, re-
+[19] (./sections/appendix/routing_table_1.tex)
+(./sections/appendix/routing_table_2.tex)
+(./sections/appendix/routing_table_3.tex))) (./sections/appendix/retention.tex
+(./sections/appendix/retention_definition.tex)
+(./sections/appendix/retention_results.tex [20]
+(./sections/appendix/retention_mean_table.tex)
+(./sections/appendix/retention_table.tex))) (./sections/appendix/ablations.tex
+(./sections/appendix/ablation_components.tex
+(./sections/appendix/trajectory_table.tex)
+Underfull \hbox (badness 1331) in paragraph at lines 29--30
+[]\T1/ptm/m/n/10.95 (+20) The held-out gate eval-u-ates changed skills
+
+Underfull \vbox (badness 6493) has occurred while \output is active [21])
+(./sections/appendix/ablation_cost_capacity.tex
+Underfull \vbox (badness 6708) has occurred while \output is active [22])
+(./sections/appendix/ablation_candidate_pool.tex
+(./figs/performance_token_usage_by_topk/table.tex
+(./figs/performance_token_usage_by_topk/description.text)
+(./figs/performance_token_usage_by_topk/description.text)))
+(./sections/appendix/ablation_backbones.tex
+Underfull \hbox (badness 1701) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) Table [][]14[][] ex-pands the back-bone re-sults with
+
+Underfull \hbox (badness 2744) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) selected-set F1 and nDCG@10. All three
+)) (./sections/appendix/error_analysis.tex
+(./sections/appendix/evaluator_validation.tex [23]
+(./sections/appendix/evaluator_validation_table.tex)
+Underfull \hbox (badness 3407) in paragraph at lines 9--10
+\T1/ptm/m/n/10.95 (+20) dis-agree-ments, or 97.10% model-adjudicated
+
+Underfull \vbox (badness 4341) has occurred while \output is active)
+(./sections/appendix/error_counts.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [24 <./fig
+s/performance_token_usage_by_topk/preview.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 4846) has occurred while \output is active [25])
+(./sections/appendix/error_routing_gap.tex [26])
+(./sections/appendix/error_examples.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [27])
+(./sections/appendix/error_downstream.tex
+Underfull \hbox (badness 6332) in paragraph at lines 14--1
+ []\T1/ptm/b/n/10.95 (+20) Medical-calculator judg-ment.[] \T1/ptm/m/n/10.95 (+
+20) A MedCalc-
+[28])
+
+Package lineno Warning: Linenumber reference failed, 
+(lineno)                rerun to get it right.
+
+(./sections/appendix/error_downstream_results.tex
+(./sections/appendix/downstream_mean_table.tex)
+(./sections/appendix/downstream_table.tex))))
+Underfull \hbox (badness 1097) in paragraph at lines 2--75
+\T1/ptm/m/n/10.95 (+20) The fol-low-ing ta-ble re-ports down-stream task-
+[29] [30] (./main.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.52501pt have occurred.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{figure.caption.9} has been referenced but does not exist, replaced by a fixed 
+one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-di
+st/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/doublestroke/dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (30 pages, 1078743 bytes).
+Transcript written on main.log.
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Examining 'main.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Rule 'bibtex main': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.aux'
+------------
+Run number 3 of rule 'bibtex main'
+------------
+------------
+Running 'bibtex  "main.aux"'
+------------
+Latexmk: applying rule 'bibtex main'...
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+The top-level auxiliary file: main.aux
+The style file: acl_natbib.bst
+Database file #1: references.bib
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'main.aux'
+------------
+Run number 4 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder  "main.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo)) (./acl.sty
+Conference Style for ACL
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex))))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/abstract.tex) (./sections/introduction.tex
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map} <./figs/routing_figure.png>]
+Underfull \hbox (badness 2359) in paragraph at lines 29--31
+[]\T1/ptm/m/n/10.95 (+20) We in-tro-duce RouterBSI, a re-cur-sive self-
+
+Underfull \hbox (badness 1616) in paragraph at lines 52--54
+\T1/ptm/m/n/10.95 (+20) datasets with a shared 26K-skill cor-pus,
+) (./sections/related_works.tex) (./sections/problem_definition.tex
+Underfull \vbox (badness 3471) has occurred while \output is active [2])
+(./sections/method.tex [3 <./figs/method_figure.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd))
+(./sections/experiments.tex
+Underfull \hbox (badness 3108) in paragraph at lines 12--14
+\T1/ptm/m/n/10.95 (+20) mar et al.[][], [][]2024[][]), ToolQA ([][]Zhuang et al
+.[][],
+
+Underfull \hbox (badness 4556) in paragraph at lines 12--14
+\T1/ptm/m/n/10.95 (+20) Bench ([][]Khan-dekar et al.[][], [][]2024[][]), and Bi
+g-
+[4] (./tables/skill_routing_performance_average/table.tex
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.47499> not available
+(Font)              size <5> substituted on input line 9.
+
+)
+Underfull \hbox (badness 1297) in paragraph at lines 31--33
+\T1/ptm/m/n/10.95 (+20) ([][]Qwen Team[][], [][]2026b[][]), Llama-3.3-70B-Instr
+uct
+) (./sections/results.tex [5] (./figs/average_retention_degradation/table.tex)
+(./figs/downstream_average/table.tex
+(./figs/downstream_average/description.text)
+(./figs/downstream_average/description.text))
+Underfull \hbox (badness 1132) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) se-lected skills with some ad-di-tional re-trieved
+
+Underfull \hbox (badness 1668) in paragraph at lines 19--20
+\T1/ptm/m/n/10.95 (+20) per-for-mance as $[][]$'s av-er-age per-
+) (./sections/ablations.tex [6 <./figs/average_retention_degradation/preview.pd
+f> <./figs/downstream_average/preview.pdf>]
+(./figs/mbr_replay_test_ndcg@1_std/table.tex
+(./figs/mbr_replay_test_ndcg@1_std/description.text)
+(./figs/mbr_replay_test_ndcg@1_std/description.text))
+(./figs/performance_token_usage/table.tex)) (./sections/conclusion.tex)
+(./sections/limitations.tex [7 <./figs/mbr_replay_test_ndcg@1_std/preview.pdf> 
+<./figs/performance_token_usage/preview.pdf>]
+(./figs/routing_performance_across_llms_init/table.tex
+(./figs/routing_performance_across_llms_init/description.text)
+(./figs/routing_performance_across_llms_init/description.text)
+Underfull \hbox (badness 3128) in paragraph at lines 4--4
+[]\T1/ptm/m/n/10 (+20) Figure 7: |Ini-tial and op-ti-mized rout-ing per-for-
+)) (./sections/ethics_statement.tex) (./sections/acknowledgment.tex)
+(./sections/citations.tex (./main.bbl [8 <./figs/routing_performance_across_llm
+s_init/preview.pdf>]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd) [9] [10]))
+(./sections/appendix/appendix.tex (./sections/appendix/procedure.tex
+(./sections/appendix/procedure_routing.tex)
+(./sections/appendix/procedure_replay.tex)
+(./sections/appendix/procedure_mbr.tex [11]
+Underfull \hbox (badness 1014) in paragraph at lines 10--12
+\T1/ptm/m/n/10.95 (+20) Following the main for-mu-la-tion, we se-lect a
+) (./sections/appendix/procedure_validation.tex)
+(./sections/appendix/procedure_algorithm.tex [12]))
+(./sections/appendix/prompts.tex
+(./sections/appendix/prompts_initialization.tex)
+(./sections/appendix/prompts_proposal.tex [13])
+(./sections/appendix/prompts_evaluator.tex
+Underfull \hbox (badness 8094) in paragraph at lines 3--4
+\T1/ptm/m/n/10.95 (+20) Each re-quest con-tains ex-actly one public-
+[14]) (./sections/appendix/prompts_trace.tex [15]))
+(./sections/appendix/data.tex (./sections/appendix/data_splits.tex)
+(./sections/appendix/data_labels.tex) (./sections/appendix/data_corpus.tex)
+[16] (./sections/appendix/data_scope.tex))
+(./sections/appendix/implementation.tex
+(./sections/appendix/implementation_settings.tex)
+(./sections/appendix/implementation_runtime.tex [17])
+(./sections/appendix/implementation_variants.tex)
+(./sections/appendix/implementation_software.tex
+Underfull \hbox (badness 1838) in paragraph at lines 4--5
+ []\T1/ptm/b/n/10.95 (+20) Retrieval and rerank-ing.[] \T1/ptm/m/n/10.95 (+20) 
+The in-tree SRA
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+[]\T1/ptm/m/n/10.95 (+20) SkillRouter uses the re-leased 0.6B
+
+Underfull \hbox (badness 1286) in paragraph at lines 6--7
+\T1/ptm/m/n/10.95 (+20) reranker ([][]Zheng et al.[][], [][]2026[][]). Its in-p
+ut re-
+[18])) (./sections/appendix/routing.tex
+(./sections/appendix/routing_metrics.tex)
+(./sections/appendix/routing_results.tex
+Underfull \hbox (badness 1430) in paragraph at lines 25--1
+ []\T1/ptm/b/n/10.95 (+20) Statistical re-port-ing.[] \T1/ptm/m/n/10.95 (+20) T
+he main rout-ing, re-
+[19] (./sections/appendix/routing_table_1.tex)
+(./sections/appendix/routing_table_2.tex)
+(./sections/appendix/routing_table_3.tex))) (./sections/appendix/retention.tex
+(./sections/appendix/retention_definition.tex)
+(./sections/appendix/retention_results.tex [20]
+(./sections/appendix/retention_mean_table.tex)
+(./sections/appendix/retention_table.tex))) (./sections/appendix/ablations.tex
+(./sections/appendix/ablation_components.tex
+(./sections/appendix/trajectory_table.tex)
+Underfull \hbox (badness 1331) in paragraph at lines 29--30
+[]\T1/ptm/m/n/10.95 (+20) The held-out gate eval-u-ates changed skills
+
+Underfull \vbox (badness 6493) has occurred while \output is active [21])
+(./sections/appendix/ablation_cost_capacity.tex
+Underfull \vbox (badness 6708) has occurred while \output is active [22])
+(./sections/appendix/ablation_candidate_pool.tex
+(./figs/performance_token_usage_by_topk/table.tex
+(./figs/performance_token_usage_by_topk/description.text)
+(./figs/performance_token_usage_by_topk/description.text)))
+(./sections/appendix/ablation_backbones.tex
+Underfull \hbox (badness 1701) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) Table [][]14[][] ex-pands the back-bone re-sults with
+
+Underfull \hbox (badness 2744) in paragraph at lines 2--3
+\T1/ptm/m/n/10.95 (+20) selected-set F1 and nDCG@10. All three
+)) (./sections/appendix/error_analysis.tex
+(./sections/appendix/evaluator_validation.tex [23]
+(./sections/appendix/evaluator_validation_table.tex)
+Underfull \hbox (badness 3407) in paragraph at lines 9--10
+\T1/ptm/m/n/10.95 (+20) dis-agree-ments, or 97.10% model-adjudicated
+
+Underfull \vbox (badness 4341) has occurred while \output is active)
+(./sections/appendix/error_counts.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [24 <./fig
+s/performance_token_usage_by_topk/preview.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 4846) has occurred while \output is active [25])
+(./sections/appendix/error_routing_gap.tex [26])
+(./sections/appendix/error_examples.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [27])
+(./sections/appendix/error_downstream.tex
+Underfull \hbox (badness 6332) in paragraph at lines 14--1
+ []\T1/ptm/b/n/10.95 (+20) Medical-calculator judg-ment.[] \T1/ptm/m/n/10.95 (+
+20) A MedCalc-
+[28]) (./sections/appendix/error_downstream_results.tex
+(./sections/appendix/downstream_mean_table.tex)
+(./sections/appendix/downstream_table.tex))))
+Underfull \hbox (badness 1097) in paragraph at lines 2--75
+\T1/ptm/m/n/10.95 (+20) The fol-low-ing ta-ble re-ports down-stream task-
+[29] [30] (./main.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.52501pt have occurred.
+
+ )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}{/usr/share/texlive/texmf-dist/font
+s/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/incon
+solata/Inconsolata-zi4b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/i
+nconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsro
+m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (30 pages, 1078442 bytes).
+Transcript written on main.log.
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Examining 'main.log'
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Latexmk: All targets (main.pdf) are up-to-date

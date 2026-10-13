@@ -1,0 +1,15 @@
+{
+  "points_checked": 12,
+  "run_checkpoint_values_checked": 36,
+  "all_values_match_independent_scout": true,
+  "raw_inputs_and_output_hashes_verified": true,
+  "generator_hash_verified": true,
+  "initial": {
+    "mean": 0.5213903743315508,
+    "population_sd": 0.008241195191134986
+  },
+  "final": {
+    "mean": 0.7237076648841354,
+    "population_sd": 0.013472563687906398
+  }
+}

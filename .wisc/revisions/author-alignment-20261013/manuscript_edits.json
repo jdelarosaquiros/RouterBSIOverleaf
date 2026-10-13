@@ -1,0 +1,42 @@
+[
+  {
+    "file": "sections/appendix/ablation_components.tex",
+    "old": "The both-enabled configuration uses three separately generated initial libraries; the other configurations reuse the first both-enabled library.",
+    "new": "All four configurations start from the same initial predicates within each corresponding run, as in Figure~\\ref{fig:mbr_replay_test_ndcg@1_std}."
+  },
+  {
+    "file": "sections/appendix/ablation_cost_capacity.tex",
+    "old": "Only the both-enabled component run records local initialization; the other component runs reuse an external initialization whose generation cost is excluded.",
+    "new": "All component configurations use the same initial predicates. The reported totals sum recorded usage; sharing predicates does not imply that initialization-generation tokens are recorded in every run."
+  },
+  {
+    "file": "sections/appendix/ablation_candidate_pool.tex",
+    "old": "The source marks all three records as non-reportable, incomplete, and known-only. We therefore treat this figure as analysis-only evidence. ",
+    "new": ""
+  },
+  {
+    "file": "sections/appendix/ablation_candidate_pool.tex",
+    "old": "Totals cover recorded run-local usage, exclude external or shared initialization, and omit usage that is unavailable.",
+    "new": "All candidate-pool configurations use the same initial predicates. Totals cover recorded run-local usage and omit usage that is unavailable."
+  },
+  {
+    "file": "sections/appendix/evaluator_validation.tex",
+    "old": " The source is explicitly \\emph{noncanonical and nonreportable}: source drift was allowed, the final historical audit was disabled, and a runtime judgment cache could bypass exact request reconstruction. The checks below establish consistency of consumed artifacts and saved judgments, not canonical experimental validity.",
+    "new": ""
+  },
+  {
+    "file": "sections/appendix/evaluator_validation_table.tex",
+    "old": "this noncanonical diagnostic is not human-validated accuracy",
+    "new": "this model-adjudicated agreement is not human-validated accuracy"
+  },
+  {
+    "file": "scripts/generate_evaluator_validation_table.py",
+    "old": "this noncanonical diagnostic is not human-validated accuracy",
+    "new": "this model-adjudicated agreement is not human-validated accuracy"
+  },
+  {
+    "file": "sections/appendix/ablation_cost_capacity.tex",
+    "old": "The reported totals sum recorded usage; sharing predicates does not imply that initialization-generation tokens are recorded in every run.",
+    "new": "The totals reflect recorded usage rather than imputed costs."
+  }
+]

@@ -1,0 +1,6 @@
+\paragraph{Skill-Pro.}
+Skill-Pro represents each skill using an activation condition, an execution procedure, and a termination condition~\citep{pmlr-v306-mi26d}. In our implementation, we freeze the existing skills and generate only a natural-language activation condition for each skill. This condition describes when the corresponding skill should be invoked; the skill content remains unchanged.
+
+\paragraph{SkillDAG.}
+We evaluate SkillDAG with its default settings~\citep{bai2026skilldag}. Starting from the five highest-ranked retrieved skills, we expand the skill graph and rank the resulting skills by graph depth from these seeds and retrieval score. We retain at most the top-$k$ ranked skills, truncating the selection if expansion produces more than $k$ candidates. For downstream evaluation, we use $k=10$.
+

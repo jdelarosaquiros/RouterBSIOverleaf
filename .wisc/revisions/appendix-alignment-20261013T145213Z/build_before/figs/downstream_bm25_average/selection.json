@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "source": {
+    "path": "BayesGSI/tables/downstream_performance/results.csv",
+    "sha256": "3b3ec768cd176ac7950fc90ac3f50ff65a115f4cf0b8b0dd3dd0928cad022690"
+  },
+  "model": "Qwen3.5 4B",
+  "retriever": "BM25",
+  "methods_in_order": [
+    "BM25",
+    "LLM Select",
+    "SkillRouter",
+    "SkillDAG",
+    "Skill-Pro",
+    "RouterBSI_strict",
+    "RouterBSI_top5"
+  ],
+  "reference_methods": [
+    {
+      "method": "LLM Direct",
+      "accuracy": 0.506684,
+      "correct": 379,
+      "n_tasks": 748,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "None",
+        "Method": "LLM Direct",
+        "Dataset": "Average",
+        "Correct": "379",
+        "n_tasks": "748",
+        "Accuracy": "0.506684"
+      }
+    },
+    {
+      "method": "LLM Oracle",
+      "accuracy": 0.637701,
+      "correct": 477,
+      "n_tasks": 748,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "None",
+        "Method": "LLM Oracle",
+        "Dataset": "Average",
+        "Correct": "477",
+        "n_tasks": "748",
+        "Accuracy": "0.637701"
+      }
+    }
+  ],
+  "source_row_count": 182,
+  "selected_bar_count": 7,
+  "constituent_task_counts": {
+    "bigcodebench": 123,
+    "champ": 26,
+    "logicbench": 114,
+    "medcalcbench": 165,
+    "theoremqa": 105,
+    "toolqa": 215
+  },
+  "aggregation": "sum(Correct)/sum(n_tasks) across six datasets; 748 tasks per method",
+  "selected_rows": [
+    {
+      "method": "BM25",
+      "label": "BM25",
+      "correct": 430,
+      "n_tasks": 748,
+      "accuracy": 0.5748663101604278,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "BM25",
+        "Dataset": "Average",
+        "Correct": "430",
+        "n_tasks": "748",
+        "Accuracy": "0.574866"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "BM25",
+          "Dataset": "bigcodebench",
+          "Correct": "46",
+          "n_tasks": "123",
+          "Accuracy": "0.373984"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "BM25",
+          "Dataset": "champ",
+          "Correct": "18",
+          "n_tasks": "26",
+          "Accuracy": "0.692308"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "BM25",
+          "Dataset": "logicbench",
+          "Correct": "85",
+          "n_tasks": "114",
+          "Accuracy": "0.745614"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "BM25",
+          "Dataset": "medcalcbench",
+          "Correct": "128",
+          "n_tasks": "165",
+          "Accuracy": "0.775758"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "BM25",
+          "Dataset": "theoremqa",
+          "Correct": "79",
+          "n_tasks": "105",
+          "Accuracy": "0.752381"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "BM25",
+          "Dataset": "toolqa",
+          "Correct": "74",
+          "n_tasks": "215",
+          "Accuracy": "0.344186"
+        }
+      ]
+    },
+    {
+      "method": "LLM Select",
+      "label": "LLM Select",
+      "correct": 416,
+      "n_tasks": 748,
+      "accuracy": 0.5561497326203209,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "LLM Select",
+        "Dataset": "Average",
+        "Correct": "416",
+        "n_tasks": "748",
+        "Accuracy": "0.556150"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "LLM Select",
+          "Dataset": "bigcodebench",
+          "Correct": "28",
+          "n_tasks": "123",
+          "Accuracy": "0.227642"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "LLM Select",
+          "Dataset": "champ",
+          "Correct": "17",
+          "n_tasks": "26",
+          "Accuracy": "0.653846"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "LLM Select",
+          "Dataset": "logicbench",
+          "Correct": "83",
+          "n_tasks": "114",
+          "Accuracy": "0.728070"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "LLM Select",
+          "Dataset": "medcalcbench",
+          "Correct": "123",
+          "n_tasks": "165",
+          "Accuracy": "0.745455"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "LLM Select",
+          "Dataset": "theoremqa",
+          "Correct": "72",
+          "n_tasks": "105",
+          "Accuracy": "0.685714"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "LLM Select",
+          "Dataset": "toolqa",
+          "Correct": "93",
+          "n_tasks": "215",
+          "Accuracy": "0.432558"
+        }
+      ]
+    },
+    {
+      "method": "SkillRouter",
+      "label": "SkillRouter",
+      "correct": 432,
+      "n_tasks": 748,
+      "accuracy": 0.5775401069518716,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "SkillRouter",
+        "Dataset": "Average",
+        "Correct": "432",
+        "n_tasks": "748",
+        "Accuracy": "0.577540"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillRouter",
+          "Dataset": "bigcodebench",
+          "Correct": "41",
+          "n_tasks": "123",
+          "Accuracy": "0.333333"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillRouter",
+          "Dataset": "champ",
+          "Correct": "18",
+          "n_tasks": "26",
+          "Accuracy": "0.692308"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillRouter",
+          "Dataset": "logicbench",
+          "Correct": "88",
+          "n_tasks": "114",
+          "Accuracy": "0.771930"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillRouter",
+          "Dataset": "medcalcbench",
+          "Correct": "119",
+          "n_tasks": "165",
+          "Accuracy": "0.721212"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillRouter",
+          "Dataset": "theoremqa",
+          "Correct": "67",
+          "n_tasks": "105",
+          "Accuracy": "0.638095"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillRouter",
+          "Dataset": "toolqa",
+          "Correct": "99",
+          "n_tasks": "215",
+          "Accuracy": "0.460465"
+        }
+      ]
+    },
+    {
+      "method": "SkillDAG",
+      "label": "SkillDAG",
+      "correct": 478,
+      "n_tasks": 748,
+      "accuracy": 0.6390374331550802,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "SkillDAG",
+        "Dataset": "Average",
+        "Correct": "478",
+        "n_tasks": "748",
+        "Accuracy": "0.639037"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillDAG",
+          "Dataset": "bigcodebench",
+          "Correct": "48",
+          "n_tasks": "123",
+          "Accuracy": "0.390244"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillDAG",
+          "Dataset": "champ",
+          "Correct": "22",
+          "n_tasks": "26",
+          "Accuracy": "0.846154"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillDAG",
+          "Dataset": "logicbench",
+          "Correct": "92",
+          "n_tasks": "114",
+          "Accuracy": "0.807018"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillDAG",
+          "Dataset": "medcalcbench",
+          "Correct": "136",
+          "n_tasks": "165",
+          "Accuracy": "0.824242"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillDAG",
+          "Dataset": "theoremqa",
+          "Correct": "77",
+          "n_tasks": "105",
+          "Accuracy": "0.733333"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "SkillDAG",
+          "Dataset": "toolqa",
+          "Correct": "103",
+          "n_tasks": "215",
+          "Accuracy": "0.479070"
+        }
+      ]
+    },
+    {
+      "method": "Skill-Pro",
+      "label": "Skill-Pro",
+      "correct": 426,
+      "n_tasks": 748,
+      "accuracy": 0.56951871657754,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "Skill-Pro",
+        "Dataset": "Average",
+        "Correct": "426",
+        "n_tasks": "748",
+        "Accuracy": "0.569519"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "Skill-Pro",
+          "Dataset": "bigcodebench",
+          "Correct": "36",
+          "n_tasks": "123",
+          "Accuracy": "0.292683"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "Skill-Pro",
+          "Dataset": "champ",
+          "Correct": "18",
+          "n_tasks": "26",
+          "Accuracy": "0.692308"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "Skill-Pro",
+          "Dataset": "logicbench",
+          "Correct": "82",
+          "n_tasks": "114",
+          "Accuracy": "0.719298"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "Skill-Pro",
+          "Dataset": "medcalcbench",
+          "Correct": "122",
+          "n_tasks": "165",
+          "Accuracy": "0.739394"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "Skill-Pro",
+          "Dataset": "theoremqa",
+          "Correct": "68",
+          "n_tasks": "105",
+          "Accuracy": "0.647619"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "Skill-Pro",
+          "Dataset": "toolqa",
+          "Correct": "100",
+          "n_tasks": "215",
+          "Accuracy": "0.465116"
+        }
+      ]
+    },
+    {
+      "method": "RouterBSI_strict",
+      "label": "RouterBSI strict",
+      "correct": 435,
+      "n_tasks": 748,
+      "accuracy": 0.5815508021390374,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "RouterBSI_strict",
+        "Dataset": "Average",
+        "Correct": "435",
+        "n_tasks": "748",
+        "Accuracy": "0.581551"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_strict",
+          "Dataset": "bigcodebench",
+          "Correct": "33",
+          "n_tasks": "123",
+          "Accuracy": "0.268293"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_strict",
+          "Dataset": "champ",
+          "Correct": "19",
+          "n_tasks": "26",
+          "Accuracy": "0.730769"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_strict",
+          "Dataset": "logicbench",
+          "Correct": "86",
+          "n_tasks": "114",
+          "Accuracy": "0.754386"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_strict",
+          "Dataset": "medcalcbench",
+          "Correct": "127",
+          "n_tasks": "165",
+          "Accuracy": "0.769697"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_strict",
+          "Dataset": "theoremqa",
+          "Correct": "70",
+          "n_tasks": "105",
+          "Accuracy": "0.666667"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_strict",
+          "Dataset": "toolqa",
+          "Correct": "100",
+          "n_tasks": "215",
+          "Accuracy": "0.465116"
+        }
+      ]
+    },
+    {
+      "method": "RouterBSI_top5",
+      "label": "RouterBSI top-5",
+      "correct": 453,
+      "n_tasks": 748,
+      "accuracy": 0.6056149732620321,
+      "source_row": {
+        "Model": "Qwen3.5 4B",
+        "Retriever": "BM25",
+        "Method": "RouterBSI_top5",
+        "Dataset": "Average",
+        "Correct": "453",
+        "n_tasks": "748",
+        "Accuracy": "0.605615"
+      },
+      "constituent_rows": [
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_top5",
+          "Dataset": "bigcodebench",
+          "Correct": "40",
+          "n_tasks": "123",
+          "Accuracy": "0.325203"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_top5",
+          "Dataset": "champ",
+          "Correct": "17",
+          "n_tasks": "26",
+          "Accuracy": "0.653846"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_top5",
+          "Dataset": "logicbench",
+          "Correct": "89",
+          "n_tasks": "114",
+          "Accuracy": "0.780702"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_top5",
+          "Dataset": "medcalcbench",
+          "Correct": "130",
+          "n_tasks": "165",
+          "Accuracy": "0.787879"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_top5",
+          "Dataset": "theoremqa",
+          "Correct": "77",
+          "n_tasks": "105",
+          "Accuracy": "0.733333"
+        },
+        {
+          "Model": "Qwen3.5 4B",
+          "Retriever": "BM25",
+          "Method": "RouterBSI_top5",
+          "Dataset": "toolqa",
+          "Correct": "100",
+          "n_tasks": "215",
+          "Accuracy": "0.465116"
+        }
+      ]
+    }
+  ],
+  "output_sha256": {
+    "preview.pdf": "558ac2920e62ed8b5e050eae3e9b45a553e36efc0607eec3ab98c70b9a597511",
+    "preview.png": "1283404f08755203a1aa64dd04b91626f345ee467e721030b107154f69577df2",
+    "description.text": "413552e7ee3fe29c3e1287ac8689fda7321379bd6298afb7ad6a76a39014e530",
+    "table.tex": "bd74e9258454b1b37bd3c2a807f370263752b94bf4237000567d001ee5b52eef"
+  },
+  "caveat": "No inference or new evaluation."
+}

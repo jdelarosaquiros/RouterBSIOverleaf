@@ -1,0 +1,66 @@
+% Authoritative RouterBSI_Draft_Appendix.docx; zero-based direct body paragraph IDs.
+
+% DOCX-P048-BEGIN
+\section{Experiments}
+% DOCX-P048-END
+
+% DOCX-P049-BEGIN
+\subsection{Benchmarks and Skill Corpus.}
+% DOCX-P049-END
+
+% DOCX-P050-BEGIN
+We conduct experiments on SRA-Bench, which comprises six capability-intensive benchmarks: TheoremQA~\citep{chen-etal-2023-theoremqa}, LogicBench~\citep{parmar-etal-2024-logicbench}, ToolQA~\citep{NEURIPS2023_9cb2a749}, CHAMP~\citep{mao-etal-2024-champ}, MedCalc-Bench~\citep{NEURIPS2024_99e81750}, and BigCodeBench~\citep{ICLR2025_a6a90bcc}. These datasets cover diverse task settings, including mathematical reasoning, formal logic, tool use, and code generation. Each instance is paired with annotated gold skill(s) and evaluated against a shared external skill corpus, enabling decomposed analysis of retrieval, incorporation, and end-task execution. We filter tasks and construct skill-balanced train, validation, and test partitions targeting global proportions of 70\%, 15\%, and 15\%. Every retained gold skill occurs in all three partitions. These coverage constraints allow individual datasets\textquoteright{} proportions to differ from the global targets; Appendix~\ref{app:data-splits} reports the exact counts.
+% DOCX-P050-END
+
+% DOCX-P051-BEGIN
+\subsection{Evaluation Metrics.}
+% DOCX-P051-END
+
+% DOCX-P052-BEGIN
+We evaluate skill routing and downstream performance conditioned on the selected skills. For skill routing, we report Recall@\(k\) and nDCG@\(k\). We additionally report F1@\(k\) to compare filtering capabilities. We also report retention as Ret@\(k\) to compare the percentage of required skills retained in top k from the retrieved skills. For downstream performance, each benchmark follows its standard evaluation protocol to measure success rate: rule-based exact match or accuracy for reasoning and QA datasets, and pass@1 based on unit-test execution for BigCodeBench. Averages are measured across task instances.
+% DOCX-P052-END
+
+% Queue the full-width Results table early; let text fill both columns.
+\begin{archivedtables}[!t]\input{tables/skill_routing_performance_average/table}\end{archivedtables}
+
+% DOCX-P053-BEGIN
+\subsection{Selected Models.}
+% DOCX-P053-END
+
+% DOCX-P054-BEGIN
+We evaluate five models spanning four open-weight checkpoints and one proprietary frontier model: Qwen3.5-4B \citep{qwen2026qwen35}, Qwen3.8-27B \citep{qwen2026qwen38}, Llama-3.3-70B-Instruct \citep{meta2024llama33}, gpt-oss-120b \citep{openai2025gptoss}, and GPT-5.4 \citep{openai2026gpt54}.
+% DOCX-P054-END
+
+% DOCX-P055-BEGIN
+\subsection{Baselines}
+% DOCX-P055-END
+
+% DOCX-P056-BEGIN
+We study retrieval, reranker, and selection baselines. The retrievers include sparse and dense retrievers \citep{su2026skillretrieval} and SkillSight, a hybrid retriever. They are trained on training split and frozen on validation and test splits. LLM Select is a static router, and LLM Direct and LLM Oracle are downstream performance baselines representing without skills and with ground-truth skill set, respectively \citep{su2026skillretrieval}. The non-parametric optimization baselines are SkillDag and Skill-Pro \citep{pmlr-v306-mi26d,bai2026skilldag}. $\mathrm{RouterBSI}_{\mathrm{init}}$ and RouterBSI refer to the cold-start and final iteration performance. $\mathrm{RouterBSI}_{\mathrm{strict}}$ selects skills only when their predicate evaluates to true. $\mathrm{RouterBSI}_{\mathrm{top}k}$ are the top k skills using the sum of their predicate label and the normalized retrieval score.
+% DOCX-P056-END
+
+% DOCX-P057-BEGIN
+\subsection{Implementation Details.}
+% DOCX-P057-END
+
+% DOCX-P058-BEGIN
+The retrievers use either pretrained embedding models and/or lexical matching, so they do not require training. Candidate skills are retrieved from the shared external skill corpus in response to the input query. The skill routing baselines are conditioned on a pool of retrieved 50 skills and use some optimization method to improve performance. The exception is SkillDAG where it first retrieves top 5 skills then expands them until reaching top k. Its skills are ranked based on graph depth from top 5 retrieved skills and retrieval score. SkillSight is the default retriever. Qwen3.5-4B is the default model used in our experiments. The non-parametric baselines, including ours, do not output a continuous score like rerankers, so we rank them by the sum of their binary label and the retrieval score normalized to $[0,1]$, where 1 is the label for selected skills and 0 otherwise. Ties favor selected skills. We use a temperature of 1 for proposing candidate predicates and 0 for evaluating predicates and downstream performance. RouterBSI is optimized for 10 iterations. In downstream tasks, we use k = 5 skills for SkillRouter and $\mathrm{RouterBSI}_{\mathrm{top}k}$, and we set k = 10 for SkillDAG because k = 5 would match the retriever's performance.
+% DOCX-P058-END
+
+% Reserve the next page's floats while allowing this page's prose to flow.
+\afterpage{%
+\begingroup
+\let\resultstopfigure\figure
+\renewcommand{\figure}[1][]{\resultstopfigure[!ht]}
+\input{figs/average_retention_degradation/table}
+\endgroup
+% Full-width bottom float; leave the remaining page area for flowing text.
+\begingroup
+\expandafter\let\expandafter\resultsbottomfigure\csname figure*\endcsname
+\expandafter\let\expandafter\endresultsbottomfigure\csname endfigure*\endcsname
+\renewenvironment{figure}[1][]{\resultsbottomfigure[!b]}{\endresultsbottomfigure}
+\input{figs/downstream_average/table}
+\endgroup
+}
+
+

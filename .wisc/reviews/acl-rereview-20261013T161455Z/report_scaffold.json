@@ -1,0 +1,1026 @@
+{
+  "paper_id": "Recursive Self-Improvement of Predicates for Skill Routing via Minimum\nBayes Risk Replay and Held-out Gates",
+  "review_date": "2026-10-13",
+  "venue": "ACL/ARR; target venue/cycle unconfirmed",
+  "venue_context": {
+    "target_venue": "unknown",
+    "year": null,
+    "track": "unknown",
+    "arr_cycle": "unknown",
+    "paper_type": "long",
+    "paper_type_confirmed": false,
+    "policy_source": "Current official ARR CFP, authors, authorchecklist, ACLPUB; saved under policy/. Local NAACL guide is background only.",
+    "current_instructions_verified": true,
+    "deadline": "unknown",
+    "pdf_revision_permission": "unknown",
+    "response_visibility": "unknown",
+    "generic_arr_policy_retrieved": true
+  },
+  "revision_mode": "unknown",
+  "acl_arr_compliance": {
+    "main_text_pages": 8,
+    "submission_page_limit": 8,
+    "accepted_final_page_limit": 9,
+    "active_page_limit": null,
+    "pages_remaining": null,
+    "page_count_compliant": "unknown",
+    "style_file": "acl",
+    "template_compliance": "needs_human_check",
+    "review_mode": true,
+    "a4_two_column_embedded_fonts": "verified",
+    "line_and_page_numbers": "verified",
+    "anonymized": "unknown",
+    "anonymity_risk_in_supplementary": "unknown",
+    "limitations_present_before_references": true,
+    "limitations_contains_only_limitations": true,
+    "ethics_discussion_adequate": "unknown",
+    "responsible_nlp_checklist": "needs_human_check",
+    "ai_disclosure_policy_verified": true,
+    "ai_disclosure_status": "needs_human_check",
+    "reproducibility_details_adequate": false,
+    "appendix_present": true,
+    "appendix_after_references_same_pdf": true,
+    "appendix_format": "two_column",
+    "supplementary_material_present": "unknown",
+    "logistics_gates": {
+      "cycle_eligibility_and_deadline": "needs_human_check",
+      "author_approval_and_metadata": "needs_human_check",
+      "openreview_profiles_complete": "needs_human_check",
+      "reviewer_registration_and_service": "needs_human_check",
+      "author_quota_if_applicable": "needs_human_check",
+      "originality_and_dual_submission": "needs_human_check",
+      "prior_arr_submission_disclosed": "needs_human_check",
+      "preprint_status_accurate": "needs_human_check"
+    },
+    "compliance_gaps": [
+      {
+        "requirement": "Confirm venue/cycle/stage and paper type",
+        "status": "unverified",
+        "evidence": "No confirmed venue, cycle, stage, or portal permission was supplied.",
+        "required_action": "Confirm the exact current call and submission form. The 8-page long-paper budget is only a working assumption.",
+        "owner": "human_author",
+        "linked_issues": []
+      },
+      {
+        "requirement": "Responsible NLP Checklist and truthful AI-use disclosure",
+        "status": "unverified",
+        "evidence": "The PDF has an anonymous AI writing/coding acknowledgment; the completed portal checklist and actual scope are unavailable.",
+        "required_action": "Confirm disclosure truthfulness and required portal responses; do not remove the existing disclosure merely because the section is called Acknowledgment.",
+        "owner": "human_author",
+        "linked_issues": []
+      },
+      {
+        "requirement": "Template source binding and all-supplement anonymity",
+        "status": "unverified",
+        "evidence": "The style matches its bundled ACL archive; the current rebuild resolves identified stale passages. External supplements and build-source closure remain unverified.",
+        "required_action": "After approval, bind final PDF to approved source/style and audit all supplied supplements and metadata.",
+        "owner": "human_author",
+        "linked_issues": []
+      },
+      {
+        "requirement": "Ethics, license/consent, author approval and submission logistics",
+        "status": "unverified",
+        "evidence": "Relevant risk discussion exists; actual licenses, approvals, author profiles, service obligations, overlap and preprint forms are not available.",
+        "required_action": "Verify relevant permissions and the current form; do not infer compliance or a violation from missing access.",
+        "owner": "human_author",
+        "linked_issues": []
+      }
+    ],
+    "evidence_notes": {
+      "main_text_ends_pdf_page": 8,
+      "total_pages": 30,
+      "page_budget": "Pass under unconfirmed 8-page long-review assumption; would not pass short-paper budget. No extra page assumed.",
+      "A4": "All 29 pages are 595.276 x 841.890 PDF points.",
+      "template": "source/main.tex uses documentclass[11pt]{article}, usepackage[review]{acl}. Snapshot acl.sty is byte-identical to bundled official-acl-style-files-master.zip acl.sty.",
+      "style_sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "template_freshness_caveat": "Bundled archive equality checked at initial snapshot; current PDF fixes identified stale passages. Full build-source closure not independently certified.",
+      "layout": "Two-column main and appendix prose; full-width floats are allowed, not one-column appendix violations. Figure pages inspected visually. No full all-page visual typography audit claimed.",
+      "fonts": "pdffonts reports emb=yes for all 28 font resources, including Type3 diagram fonts. Type3 extract_font returned no standalone bytes but embedded CharProcs and pdffonts confirm embedding; not a missing-font violation.",
+      "body_font": "Typical body spans approx. 10.8\u201311.02 PDF points due to TeX units/microtype; caption spans approx. 9.86\u201310.06. No numerical universal figure-font minimum invented.",
+      "line_and_page_numbers": "All 29 pages have correct bottom page numbers. Review marginal line numbers detected on pages 1\u201328; p29 contains only full-width tables and captions, with no marginal prose ruler lines, not treated as missing review mode.",
+      "metadata_anonymity": "Visible Anonymous ACL submission; DocInfo author Anonymous authors; XMP empty; no attachments. Title mismatch is PRES-008, not an identity leak.",
+      "links": "317 PDF link annotations, 46 unique external URIs. Inspected URI inventory consists of citations/model documentation, no Dropbox/Google Drive or obvious author repository URL. Link resolution and author identity relationships not verified.",
+      "limitations": "Distinct Limitations p8 before references; prose discusses compute, labels and checker limitations, with no new figure/table/experiment.",
+      "ethics": "Ethical Considerations p8 acknowledges reuse/bias, privacy/service risks, safety and lack of clinical validity. Adequacy of actual licenses/consent/approvals cannot be inferred from general prose.",
+      "ai_disclosure": "Anonymous Acknowledgment p8 discloses code generation and writing/editing assistance. Current ARR CFP explicitly requires use/scope in Responsible NLP Checklist and says details should be in Acknowledgements. Do not call the generic heading a confirmed anonymity violation. Actual scope accuracy and portal form remain unknown.",
+      "appendix": "Starts p11 after references in same PDF, with sequential lettered A\u2013H sections in source. Appendix remains supplementary by policy; retention/cost/statistical caveats should be promoted for main-text interpretation.",
+      "responsible_nlp_checklist": "needs_human_check",
+      "portal_and_logistics": "Unknown: target/cycle/stage/deadline, PDF replacement permissions, author list/order/approval, profiles, reviewer/service contributor obligations/caps/exemptions, prior ARR disclosure, overlap/dual submission, preprint declaration, portal title/abstract and checklist. Unknown does not mean violation.",
+      "confirmed_policy_violations": [],
+      "policy_risks": [
+        "Figure1 print readability and Figure4 very small variant subscripts deserve checking against ACL legibility guidance; not asserted to be confirmed desk-rejection gates."
+      ],
+      "compliance_gaps": [
+        {
+          "requirement": "Confirm target and stage; verify active form requirements and upload permission",
+          "status": "unverified",
+          "owner": "human_author"
+        },
+        {
+          "requirement": "Verify truthful Responsible NLP Checklist and exact AI use/scope",
+          "status": "unverified",
+          "owner": "human_author"
+        },
+        {
+          "requirement": "Verify all submission eligibility, author/service/profile/overlap/preprint requirements",
+          "status": "unverified",
+          "owner": "human_author"
+        },
+        {
+          "requirement": "Verify separate supplemental files anonymity and presence",
+          "status": "unverified",
+          "owner": "human_author"
+        }
+      ]
+    },
+    "confirmed_policy_violations": [],
+    "page_budget_note": "Current PDF has 30 pages; main content ends on p8. Fits assumed long review budget; active limit unknown.",
+    "anonymity_note": "Anonymous visible author line/metadata, no attachments or obvious identifying/tracking link found; comprehensive identity and external-supplement anonymity remains unverified. Concurrent Appendix C.4 adds explicit component-license and privacy/safety caveats; these do not certify completed compliance checks."
+  },
+  "submission_readiness": {
+    "assessment": "not_ready",
+    "reasoning": "Internal scientific judgment: reconcile ablation initialization and main/appendix method/split differences, clarify primary-comparison uncertainty, remove unsupported ceiling wording, and finish minor model-role alignment. New appendix reproducibility material is credited. No mandatory-policy blocker was confirmed; stage and logistics remain unknown."
+  },
+  "overall_recommendation": "borderline_reject",
+  "headline_verdict": "The paper has a concrete NLP-agent contribution and reproducible headline aggregate arithmetic. The strongest remaining concern is heterogeneous initialization in the nominally common-initialization three-run component study. Main/appendix method and split differences, paired uncertainty and an unsupported backbone ceiling also need attention. A concurrent revision resolved the stale-PDF issue and improved baseline/evaluator/statistical documentation; those improvements are credited rather than reported as absent. This is an internal review, not an official ARR score or acceptance prediction.",
+  "review_form": {
+    "summary": "RouterBSI represents skill applicability as editable natural-language predicates, refines them from labeled routing failures, selects proposals by mean Boolean error on bounded per-skill replay and admits changes through held-out validation relative to the initial predicate. It evaluates routing, retention, downstream success and component/backbone variants across six SRA-Bench datasets.",
+    "strengths": [
+      "Sections 3\u20134 provide a concrete language-agent routing problem and explicit natural-language predicates editable without changing model weights.",
+      "The average replay-loss equation and strict validation comparison against the INITIAL predicate are already correct; Figure 2 makes the update mechanism tangible.",
+      "Table 1 headline aggregate nDCG gains reproduce from saved data: 8.38% over SkillRouter, 29.25% over SkillDAG and 26.73% over Skill-Pro.",
+      "The 75.5% top-five recall and 90.5% relative retention headlines reproduce; the paper acknowledges TheoremQA/MedCalc-Bench exceptions and SkillDAG\u2019s stronger downstream mean.",
+      "The appendix includes prompts, exact global split counts, gate/replay procedures, aggregate and per-dataset results, and a new matched-loss diagnostic. Limitations and ethics discussion are present."
+    ],
+    "weaknesses": [
+      "ISSUE-002: The main replay definition omits the current failed task and does not distinguish bounded per-skill replay from the unbounded global history used by the implementation.",
+      "ISSUE-003: The main ranking rule describes arithmetic addition, while Appendix A.1 specifies selected-first lexicographic ordering.",
+      "ISSUE-004: The main per-dataset 70/15/15 statement contradicts the constrained global split in Appendix C.",
+      "ISSUE-005: The manifest-linked three-run ablation does not use common initial predicates across all configurations, contrary to the PDF and source claim.",
+      "ISSUE-007: The main superiority comparisons report point estimates without paired uncertainty; repeated-run dispersion is confined to a different ablation experiment.",
+      "ISSUE-009: Three backbone endpoints do not establish an irreducible predicate plateau or failure of more capable language models."
+    ],
+    "questions": [
+      "Do the 12 manifest-linked initialization files represent the plotted historical runs? If not, supply immutable bindings; if yes, approve correction of the common-initialization claim.",
+      "Do the frozen retrieval and released SkillRouter descriptions in new Appendix D.4 apply to every reported run, and what are the two remaining main-listed model roles?",
+      "What roles did Llama-3.3-70B-Instruct and GPT-5.4 serve in the reported experiments, and where are their bound configurations?",
+      "Are saved matched per-task predictions available for uncertainty analysis without new model calls?",
+      "What are the intended venue, cycle, submission stage, paper type, deadline and local-PDF/upload permissions?",
+      "Which proposed corrections/redesigns should be applied? Manuscript changes, builds and new experiments remain unapproved."
+    ]
+  },
+  "internal_scores": {
+    "rubric": "internal_1_to_5_not_official_arr",
+    "official_arr_scales_verified": false,
+    "soundness": {
+      "score": 3,
+      "justification": "The method is explicit and aggregate arithmetic checks out; unmatched initialization weakens ablation attribution and baseline uncertainty is absent."
+    },
+    "presentation": {
+      "score": 3,
+      "justification": "Thesis and results are recoverable and the new appendix improves documentation; method/split inconsistencies, captions and label sizes still need attention."
+    },
+    "contribution": {
+      "score": 3,
+      "justification": "An identifiable editable-predicate routing contribution with useful measurements; distinctiveness is primarily the specific representation/update combination rather than a new general risk principle."
+    },
+    "overall": {
+      "score": 2,
+      "justification": "Substantial revision is appropriate before relying on the controlled-ablation, replication and scaling interpretations."
+    },
+    "confidence": {
+      "score": 4,
+      "justification": "Full PDF/source, three independent audits, numeric checks, run-map verification and policy inspection; no live reproduction, historical-source binding or human/portal information."
+    }
+  },
+  "issues": [],
+  "self_containment_audit": {
+    "load_bearing_content_in_appendix": [
+      {
+        "content": "Replay-set membership, capacity scope, selected-first ranking and iteration-end rollback",
+        "appendix_location": "A.1\u2013A.5, pp.11\u201312; procedure_routing.tex:18; procedure_replay.tex:3\u201313; procedure_validation.tex:3\u201321",
+        "main_text_reference": null,
+        "risk": "Main-text-only implementation would differ.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "ISSUE-002",
+          "ISSUE-003"
+        ]
+      },
+      {
+        "content": "Exact prompts and worked repair",
+        "appendix_location": "B.1\u2013B.4, pp.12\u201316; prompts_initialization.tex, prompts_proposal.tex, prompts_evaluator.tex, prompts_trace.tex",
+        "main_text_reference": null,
+        "risk": "Exact prompt replication needs appendix, but the essential natural-language interface and update objective are in main.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": []
+      },
+      {
+        "content": "Constrained global split, exact task counts, rare-skill filtering and represented-skill scope",
+        "appendix_location": "C.1\u2013C.3, pp.16\u201317; data_splits.tex:3\u20137,18\u201325",
+        "main_text_reference": null,
+        "risk": "Protocol and external-validity scope are not stated accurately in main.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "ISSUE-004"
+        ]
+      },
+      {
+        "content": "Default parameter values, schema/retry/cache/runtime configuration",
+        "appendix_location": "D.1\u2013D.2, pp.17\u201318; implementation_settings.tex:11\u201323",
+        "main_text_reference": null,
+        "risk": "Most are replication detail. A compact N=5, Mp=3, l=400-character default sentence would make the bounded-cost design concrete.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": []
+      },
+      {
+        "content": "Definition of the MBR-disabled control: first valid proposal, history still supplied",
+        "appendix_location": "D.3 p.18 and G.1 pp.19\u201320; implementation_variants.tex:5; ablation_components.tex:2",
+        "main_text_reference": null,
+        "risk": "Ablation removes replay-based selection, not all historical feedback; readers may otherwise overattribute gains to memory presence.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "ISSUE-005"
+        ]
+      },
+      {
+        "content": "Extended benchmark/retriever tables and metric definitions",
+        "appendix_location": "E.1\u2013E.2 pp.18\u201321; routing_metrics.tex; routing_results.tex",
+        "main_text_reference": null,
+        "risk": "Detailed rows can stay supplementary because main reports aggregate and benchmark-level nDCG and names exceptions. Selected-set F1 naming requires alignment.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "ISSUE-011"
+        ]
+      },
+      {
+        "content": "Retention denominator and ratio-of-task-means aggregation",
+        "appendix_location": "F.1\u2013F.2 pp.18\u201322; retention_definition.tex; Tables 8\u20139",
+        "main_text_reference": null,
+        "risk": "Method-specific expanded coverage affects comparisons.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "ISSUE-011"
+        ]
+      },
+      {
+        "content": "Component trajectory tables, repeated-run statistics, gate-decision counts",
+        "appendix_location": "G.1 pp.19\u201324; Tables 10\u201311; ablation_components.tex:25\u201331",
+        "main_text_reference": null,
+        "risk": "Main already contains the central component evidence. Experimental scout must resolve current initial-score differences against same-predicate assertions; do not import old unpaired-design prose.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "ISSUE-005"
+        ]
+      },
+      {
+        "content": "Recorded token scope and first-run aggregation; replay capacity and candidate-pool sensitivity",
+        "appendix_location": "G.2\u2013G.3 pp.20\u201325; ablation_cost_capacity.tex; Table 12",
+        "main_text_reference": null,
+        "risk": "Main cost text can look like the neighboring three-run comparison or complete cost accounting.",
+        "recommendation": "summarize_in_main_text",
+        "linked_issues": [
+          "ISSUE-008"
+        ]
+      },
+      {
+        "content": "Backbone one-run scope and additional F1/nDCG@10",
+        "appendix_location": "G.4 p.22 and Table 14 p.25",
+        "main_text_reference": null,
+        "risk": "Main endpoint results are present, but broader ceiling interpretation is unsupported.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "ISSUE-009"
+        ]
+      },
+      {
+        "content": "Model-adjudicated evaluator diagnostic and full semantic error accounting",
+        "appendix_location": "H.1\u2013H.5 pp.22\u201328; evaluator_validation.tex; error_routing_gap.tex",
+        "main_text_reference": null,
+        "risk": "These are not load-bearing validation claims in the current main text. A concise new H.3 diagnosis can improve discussion, but no mandatory promotion of all diagnostic caveats is warranted.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": []
+      },
+      {
+        "content": "Per-retriever and per-benchmark downstream outcomes",
+        "appendix_location": "H.6 pp.28\u201329; Tables 21\u201322",
+        "main_text_reference": null,
+        "risk": "Main aggregate outcome is present and SkillDAG advantage acknowledged. Budget caveat near comparison is optional; full rows may stay in appendix.",
+        "recommendation": "acceptable_as_is",
+        "linked_issues": [
+          "ISSUE-010"
+        ]
+      }
+    ],
+    "main_text_stands_alone": false,
+    "qualification": "The central idea and primary results stand alone; exact method execution and experimental protocol do not yet. This is not a claim that all appendix content must be promoted.",
+    "version_note": "Appendix locations originally mapped on 29-page snapshot; section/table identifiers stay stable. Current PDF adds pages/reflows; exact issue anchors remapped."
+  },
+  "figure_diagnostics": [
+    {
+      "figure_id": "Figure 1",
+      "page": 1,
+      "exact_caption_pdf_text": "Figure 1: Skill routing with a task applicability pred-\nicate. The skill is appropriately selected for task q1\nbecause the task asks about the price for a specific trad-\ning day. The skill is not accepted for task q2 because it\nasks for the price between a range of years.",
+      "render": "renders/page-1.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Column-width raster diagram: two coffee-price tasks flow through Coffee Price Data Single-Day Analysis and its predicate to green Selected/True and red Not Selected/False boxes. The single-day task asks whether May 19, 2021 was bullish or bearish; the multi-year task asks for the highest price between 2019 and 2021. Caption captures the single-day/range distinction. It illustrates applicability, not the proposed replay/gate update.",
+      "measured_fonts_pt": {
+        "exact_font_size": null,
+        "reason": "Raster text, not PDF text spans",
+        "placed_width_pt": 218.2541,
+        "placed_height_pt": 59.178,
+        "source_pixels": [
+          3098,
+          840
+        ]
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Internal task/predicate prose is visibly much smaller than the adjacent 10 pt caption at column width; zoom makes it decipherable but does not establish print readability.",
+        "Color is not the sole encoding: Selected/Not Selected and True/False are redundant labels.",
+        "The contribution is not explained here; making Figure 1 a method teaser is optional editorial advice, not ACL policy."
+      ],
+      "linked_issues": [
+        "ISSUE-013"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Shorten task and predicate labels; allocate more vertical space or redraw as a vector while retaining the same semantics. Optionally add an explicit link to the replay/gate mechanism rather than replacing this explanatory example.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 2",
+      "page": 3,
+      "exact_caption_pdf_text": null,
+      "render": "renders/page-3.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Full-width raster flowchart with Skill Routing, Update Proposal, and Update Selection. Markdown-table formatting falsely activates CSV Data Analysis; failure feedback generates three predicates. MBR box lists pf=0.50, m1=0.25, m2=0.00 selected, m3=0.25; gate displays psi=0.60 > m*=0.45 and Passed. Lower loop returns to predicate evaluation. Both Success and Failure paths are present.",
+      "measured_fonts_pt": {
+        "exact_font_size": null,
+        "reason": "Raster text, no extractable font size",
+        "placed_width_pt": 453.5463,
+        "placed_height_pt": 257.0265,
+        "source_pixels": [
+          3568,
+          2022
+        ]
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Numbers are written as predicates equal to scores instead of explicitly named replay/validation risks, and not identified as illustrative.",
+        "Routing success/failure edge conditions are not explicitly labeled; the shown True decision is not sufficient by itself to establish success.",
+        "Diagram is legible at full width; no clipping observed. Red/green states have text labels."
+      ],
+      "linked_issues": [],
+      "redesign_priority": "minor",
+      "recommendation": "Current caption now includes equality. Optional diagram precision: name replay/validation risk symbols and mark example numbers illustrative. No required gate correction remains.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 3",
+      "page": 6,
+      "exact_caption_pdf_text": "Figure 3: Retention of required skills averaged across\nretrievers: BM25, Vector, and SkillSight. The baseline\naverages the base retrievers used to retrieve the initial\ntop 50 skill. RouterBSI preserves the most required\nskills as the cutoff k decreases.",
+      "render": "renders/page-6.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Six normalized retention curves at equally spaced categorical cutoffs 50,25,10,5,1. RouterBSI stays highest; different colors, markers and line patterns aid identification. Legend above the plotting area, no error bands. All curves begin at 100%.",
+      "measured_fonts_pt": {
+        "tick_and_legend": 8.01,
+        "axis": 9.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Caption does not define Ret@k as a ratio of task-mean recalls normalized by each method/retriever own Recall@50; this definition is relegated to Appendix F.",
+        "SkillDAG uses an expanded pool: normalized retention does not mean a controlled common-candidate comparison or absolute recovery of the full gold set.",
+        "Legend/axes are readable at the reviewed render; no clipping observed."
+      ],
+      "linked_issues": [
+        "ISSUE-011"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Add the normalization and equal-across-retrievers aggregation in the caption or immediate main text; explicitly distinguish absolute recall and method-specific pool coverage. Keep categorical cutoffs labeled.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 4",
+      "page": 6,
+      "exact_caption_pdf_text": "Figure 4: Downstream success rates averaged equally across BM25, Vector, and SkillSight. Lines mark LLM Direct\nand Oracle. RouterBSItop-5 outperforms strict selection and most other approaches oracle performance.",
+      "render": "renders/page-6.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Full-width seven-bar downstream success plot with values 0.580,0.562,0.602,0.631,0.551,0.596,0.611. Dashed Direct=0.507 and dash-dot Oracle=0.638 lines; success-rate axis starts at 0.4. SkillDAG is the highest bar. All bars use the same blue; method identity uses text.",
+      "measured_fonts_pt": {
+        "category_and_value": 6.44,
+        "category_subscript": 4.51,
+        "tick_and_axis": 7.46,
+        "reference_legend": 6.78
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Despite full width, rotated category labels and especially strict/top-5 subscripts are small relative to surrounding body/caption. No clipping seen.",
+        "Truncated bar baseline visually amplifies differences; precise labels make the scale recoverable. A dot plot or zero-based bars would be clearer, but is an editorial recommendation, not a policy violation.",
+        "Caption ends with the malformed phrase most other approaches oracle performance. It should explicitly preserve the SkillDAG exception and not suggest exceeding oracle.",
+        "No uncertainty displayed; do not infer statistical significance from these bars."
+      ],
+      "linked_issues": [
+        "ISSUE-007",
+        "ISSUE-010",
+        "ISSUE-012",
+        "ISSUE-013"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Use a larger-font dot plot or larger-font zero-based bars, spell out strict/top-5 labels, and repair the caption with the displayed means and SkillDAG/oracle comparison.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 5",
+      "page": 7,
+      "exact_caption_pdf_text": "Figure 5: Ablation of MBR replay and held-out vali-\ndation gate comparing routing performance. The lines\nand areas represent the standard mean and variation,\nrespectively across three runs starting from the same\ninitial predicates at iteration 0. Combining replay and\ngating yields the strongest final routing performance.",
+      "render": "renders/page-7.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Four test nDCG@1 trajectories over iterations 0\u201310 with narrow shaded bands. Both Enabled finishes highest, Only MBR next, Only Gate next, Both Disabled lowest. Color, marker and line-style differences provide redundant distinctions. No clipping.",
+      "measured_fonts_pt": {
+        "tick_and_legend": 8.01,
+        "axis": 9.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Caption calls lines/areas standard mean and variation, not an identifiable uncertainty statistic. Source provenance and Appendix Table 11 establish mean \u00b1 one population standard deviation across three runs (not a CI).",
+        "Caption does not identify Qwen3.5 4B, SkillSight, test split or task weighting.",
+        "Parent verification of all 12 manifest-linked predicate libraries confirms heterogeneous initialization across repeats; see ISSUE-005. Do not describe the three-run averages as paired/common-initialization."
+      ],
+      "linked_issues": [
+        "ISSUE-005",
+        "ISSUE-012"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "State test nDCG@1, backbone/retriever, 748-task within-run weighting, three-run mean and \u00b11 population SD using rounded source variance. Do not call bands confidence intervals or runs different seeds. Disclose the verified initialization variation; the common-initialization claim applies to the first-run comparison, pending historical binding.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 6",
+      "page": 7,
+      "exact_caption_pdf_text": "Figure 6: Impact of MBR replay and held-out valida-\ntion gate on routing performance (nDCG@1) and token\nusage. Both enabled gives the strongest performance.\nMBR alone uses fewer tokens at a performance cost.",
+      "render": "renders/page-7.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Four-point performance/token scatter with distinct diamond, triangle, circle and square symbols. Both Enabled is top-right, Only MBR next in quality and cost; Both Disabled and Only Gate lower-left. No error bars; visibly legible 8/9 pt labels.",
+      "measured_fonts_pt": {
+        "tick_and_legend": 8.01,
+        "axis": 9.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Horizontal axis says Total Token Usage although provenance explicitly records known-only incomplete run-local costs excluding external/shared initialization.",
+        "Main caption does not explain this is a single-run comparison, unlike the three-run Figure 5; main text juxtaposes the two without the population distinction. Appendix Table 12 provides single-run status and unknown-attempt counts.",
+        "No uncertainty or complete economic-cost claim is established."
+      ],
+      "linked_issues": [
+        "ISSUE-008"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Rename axis Known recorded tokens (millions), state phase scope/exclusions and unknown usage, and label single-run endpoint evidence in main caption or prose.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 7",
+      "page": 8,
+      "exact_caption_pdf_text": "Figure 7:\nInitial and optimized routing perfor-\nmance (nDCG@1) comparison between different LLM-\nbackbones using SkillSight as the retriever. Stronger\nbackbones improve initialization, while optimization\nbrings smaller model Qwen3.5 4B close to the opti-\nmized performance of GPT-OSS 120B.",
+      "render": "renders/page-8.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Grouped initial/optimized bars for Qwen3.5 4B (0.520/0.742), Qwen3.8 27B (0.635/0.802), GPT-OSS 120B (0.686/0.745), plus shared gray SkillSight reference 0.471. Initial bars hatched, final bars solid; zero-based axis; value labels readable. No error bars.",
+      "measured_fonts_pt": {
+        "tick_category_and_value": 8.01,
+        "axis_and_legend": 9.01,
+        "init_subscript": 6.31
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "No uncertainty estimated; provenance says historical candidates are preserved, not a controlled common-candidate comparison.",
+        "The surrounding claim of a plateau that cannot be overcome by more capable LLMs exceeds what three uncontrolled model endpoints establish. Nonmonotonic optimized scores alone do not prove an inherent capacity ceiling.",
+        "Gray SkillSight reference visually resembles the generic solid optimized legend key; its separate x-axis label prevents a severe ambiguity but a baseline note would help."
+      ],
+      "linked_issues": [
+        "ISSUE-009"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Add single-run/existing-candidate qualification and reference-bar meaning. Replace the capacity-ceiling assertion with the observed nonmonotonicity and need for controlled comparison.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    },
+    {
+      "figure_id": "Figure 8",
+      "page": 24,
+      "exact_caption_pdf_text": "Figure 8: Recorded tokens and routing performance at different candidate-pool sizes. Blue shades distinguish Top-K\nsettings, which specify how many retrieved candidates are evaluated rather than how many skills are ultimately\nselected.",
+      "render": "renders/page-23.png",
+      "visually_inspected": true,
+      "inspection_method": "vision_analyze full-page render; Figures 1 and 2 additionally inspected using cropped zooms",
+      "current_state": "Full-width Appendix scatter: three candidate pool sizes (Top-K 10,25,50) shown by light-to-dark blue circles; larger pools have higher recorded tokens and final nDCG@10. Caption correctly distinguishes number of evaluated candidates from final selected skills. No clipping; comfortably larger labels than most main figures.",
+      "measured_fonts_pt": {
+        "tick_and_legend_title": 9.17,
+        "axis": 10.09,
+        "legend_entries": 8.26,
+        "plot_title": 11.01
+      },
+      "is_teaser_for_contribution": false,
+      "problems": [
+        "Same-color-family circles rely on shade to map Top-K identity; direct labels or distinct shapes would strengthen accessibility.",
+        "Axis Total Token Usage is stronger than caption Recorded tokens; provenance says incomplete known-only run-local totals excluding shared/external initialization.",
+        "No uncertainty displayed; three observed pool sizes do not establish a general scaling law."
+      ],
+      "linked_issues": [
+        "ISSUE-008",
+        "ISSUE-013"
+      ],
+      "redesign_priority": "minor",
+      "recommendation": "Use known-recorded-token wording consistently, state single-run scope if confirmed by the associated result table, and directly label the three points or use three marker shapes.",
+      "render_version": "Initial snapshot; unchanged graphical asset checked against unchanged figure-file hashes. Current page number remapped."
+    }
+  ],
+  "writing_diagnostics": {
+    "abstract_word_count": 200,
+    "abstract_problems": [
+      "At the 200-word ACLPUB guidance under the stated whitespace-token counting convention; not claimed overlength.",
+      "Grammar: skill corpora grows should be skill corpus grows."
+    ],
+    "longest_paragraph_lines": null,
+    "unearned_hedges": [],
+    "overclaims": [
+      {
+        "location": "G.1 Replay and Held-Out Gate; Figure 5",
+        "phrase": "All four configurations start from the same initial predicates at iteration 0, as in Figure 5.",
+        "evidence_gap": "The manifest-linked three-run ablation does not use common initial predicates across all configurations, contrary to the PDF and source claim.",
+        "fix": "First confirm that the manifest-linked files are the plotted historical runs, or supply immutable historical bindings. If confirmed, correct Figure 5 and G.1\u2013G.3 to distinguish the shared-initialization first-run comparison from heterogeneous three-run averages; qualify component attribution and preserve observed scores. Define the MBR-disabled control as first valid current-task proposal, with historical examples still supplied. A matched-initialization repeat study is optional and requires separate approval."
+      },
+      {
+        "location": "7.3 Skill Routing Performance across LLM Backbones",
+        "phrase": "predicates reach a plateau that cannot be overcomed with more capable LLMs",
+        "evidence_gap": "Three backbone endpoints do not establish an irreducible predicate plateau or failure of more capable language models.",
+        "fix": "Delete the final plateau/expressivity sentence in Section 7.3, retaining the already-correct preceding endpoint summary. Replace significantly improve with improve the reported routing scores unless a supporting statistical test is supplied. A short single-run caveat is sufficient; do not duplicate the endpoint paragraph or mandate further sweeps."
+      }
+    ],
+    "sections_lacking_topic_sentence": [],
+    "space_budget": {
+      "current_main_text_pages": 8,
+      "active_page_limit": null,
+      "pages_remaining": null,
+      "compression_opportunities": [
+        "Replace inaccurate split/ranking sentences instead of appending a parallel account.",
+        "Delete the unsupported backbone-ceiling sentence; keep the preceding endpoint summary.",
+        "Remove repeated introductory method wording; do not shrink the ACL style or move results to Limitations."
+      ]
+    },
+    "specific_copyedits": [
+      "Section 4.2 p4 lines225\u2013227: Compare difference between Pqwith Gq and identify the any... -> Compare the predicted and required skill sets and identify missing required skills or selected irrelevant skills.",
+      "Section 4.2 p4 lines238\u2013241: we limit each proposed candidate ... must not exceeds ... -> Limit each proposed predicate to at most l characters.",
+      "Section 6.1 p5\u20136: fragmented percentage comparisons need explicit metric and denominator; do not change numeric values without source validation.",
+      "Section 6.3 p6: SkilDAG -> SkillDAG; remove unsupported causal interpretation that dependent skills explain success without controlled evidence.",
+      "Section 7.1 p7: This suggest -> This suggests; distinguish observed plateau from unverified early/late error-type explanation.",
+      "Section 7.3 p7: overcomed -> overcome and missing final period; substantive capacity claim addressed in PRES-007."
+    ]
+  },
+  "narrative_diagnostics": {
+    "recoverable_thesis": "Explicit, editable natural-language skill-applicability predicates can be improved from labeled routing failures using bounded per-skill replay selection and a cold-start held-out gate, while keeping model weights fixed.",
+    "front_page_assessment": "Title and abstract identify feedback refinement, replay and gating; Figure 1 illustrates applicability versus topical similarity with single-day versus date-range coffee-price queries. It does not show optimization, but Figure 2 does. A mandatory Figure-1 redesign is not justified by narrative self-containment.",
+    "substantive_nlp_contribution": "Selecting natural-language procedural context for LLM agents from task language is a concrete language-agent problem. The useful novelty is the specific editable routing state/update/validation combination, not generic recursion or a claimed theorem about Bayesian inference.",
+    "contribution_ladder": [
+      {
+        "claimed_contribution": "We propose RouterBSI, a non-parametric skill-routing framework that evaluates explicit applicability predicates over retrieved candidates, making routing criteria interpretable and directly editable without updating the underlying language model.",
+        "source_file": "source/sections/introduction.tex",
+        "source_line": 42,
+        "page": 2,
+        "delivered_in_section": "\u00a74.1; Appendix A.1/B; Figure 1",
+        "evidenced_by": "Explicit natural-language predicate interface and concrete examples.",
+        "revisited_in_conclusion": true,
+        "asymmetry": "Inspectability/editability is a representation property; no human-edit benefit was measured, and no such experiment is required for this modest claim."
+      },
+      {
+        "claimed_contribution": "We develop a recursive self-improvement procedure that refines predicates from routing failures, selects updates through minimum Bayes risk over a bounded replay of relevant and irrelevant tasks, and rejects updates with higher held-out validation error than the cold-start predicate.",
+        "source_file": "source/sections/introduction.tex",
+        "source_line": 47,
+        "page": 2,
+        "delivered_in_section": "\u00a74.2\u20134.3; Appendix A; \u00a77.1",
+        "evidenced_by": "Minimum-average-risk equation, initial-predicate gate and four component configurations.",
+        "revisited_in_conclusion": true,
+        "asymmetry": "The core equations are clear; operational main/appendix mismatches are NAR-001. Timing is iteration-end, not necessarily immediately after each local repair."
+      },
+      {
+        "claimed_contribution": "We evaluate RouterBSI on six SRA-Bench datasets with a shared 26K-skill corpus, achieving the highest aggregate nDCG@10 and Hit@1 among evaluated methods while ablations establish the contributions of replay and validation.",
+        "source_file": "source/sections/introduction.tex",
+        "source_line": 52,
+        "page": 2,
+        "delivered_in_section": "\u00a7\u00a75\u20137; Appendices E\u2013G",
+        "evidenced_by": "Table 1 aggregate nDCG@1/nDCG@10; Figures 3,5\u20137 and detailed tables.",
+        "revisited_in_conclusion": true,
+        "asymmetry": "Observed routing leadership is delivered and benchmark exceptions acknowledged. Hit@1 naming should align with nDCG@1. Downstream leadership is not claimed as this contribution and belongs to SkillDAG in the displayed means. Parent verification now establishes heterogeneous initialization in the three-run ablation; qualify establish the contributions rather than treating unmatched means as controlled evidence."
+      }
+    ],
+    "conclusion_assessment": "All three contribution themes recur in \u00a78. Strongest average routing and retention are claimed, while dependency-aware downstream improvement is future work; no missing conclusion revisit is found.",
+    "space_budget_recommendation": "Replace inaccurate or speculative sentences rather than append boilerplate. Compress repeated opening method summary and generic taxonomy prose before promoting core definitions; do not move central evidence into Limitations or shrink typography. Active budget remains unconfirmed.",
+    "narrative_issues": [
+      "Operational definition and split mismatches: ISSUE-002/003/004.",
+      "Ablation contribution overstates controlled isolation pending initialization reconciliation: ISSUE-005.",
+      "New Appendix D.4 addresses baseline detail; remaining main/model-role alignment is ISSUE-006."
+    ]
+  },
+  "missing_citations": [],
+  "required_new_experiments": [],
+  "optional_new_experiments": [
+    {
+      "id": "EXP-001",
+      "name": "Matched-initialization component repetition",
+      "status": "optional_not_run",
+      "motivation": "Strengthen causal component attribution beyond honest narrowing of ISSUE-005.",
+      "design": "Freeze and hash one initial library per predeclared repetition and use it across all four arms. Match task order, candidate lists, prompts, evaluator, caches, iteration budget and validation gate baseline. Analyze paired per-task and per-repeat effects. Report complete measured usage and unknown fields; do not promise equal costs merely from equal iterations.",
+      "expected_outcome": "Hypothetical: component differences persist under matched initialization; no outcome is assumed.",
+      "risk_if_negative": "Report the negative result and narrow component-benefit claims.",
+      "estimated_compute": "unknown",
+      "feasible_before_verified_deadline": "unknown",
+      "permitted_in_current_stage": "unknown",
+      "linked_issues": [
+        "ISSUE-005"
+      ]
+    },
+    {
+      "id": "EXP-002",
+      "name": "Budget-matched dependency intervention",
+      "status": "optional_not_run",
+      "motivation": "Needed only for a stronger causal claim about dependency expansion, not for the current future-work hypothesis.",
+      "design": "Compare dependency expansion on/off at the same supplied-skill budget, candidate evidence, agent model, task set and prompt/token constraints. Predeclare downstream paired differences and analyze actual context usage.",
+      "expected_outcome": "Hypothetical: dependency expansion improves success at fixed budget; no outcome assumed.",
+      "risk_if_negative": "Do not claim dependency expansion explains SkillDAG\u2019s advantage.",
+      "estimated_compute": "unknown",
+      "feasible_before_verified_deadline": "unknown",
+      "permitted_in_current_stage": "unknown",
+      "linked_issues": [
+        "ISSUE-010"
+      ]
+    }
+  ],
+  "analysis_requests": [
+    {
+      "id": "ANALYSIS-001",
+      "name": "Saved-prediction paired uncertainty",
+      "linked_issues": [
+        "ISSUE-007"
+      ],
+      "requires_new_model_calls": false,
+      "status": "proposed_only; prediction availability and comparability unverified",
+      "design": "First reuse saved per-task predictions: report paired task-level differences with dataset-stratified, task-clustered bootstrap intervals for nDCG@10, Recall@5 and downstream success. Keep each task's retriever observations together. State whether estimates condition on one trained checkpoint. If repeats are unavailable, do not describe task-bootstrap intervals as training-seed uncertainty. Remove statistical-significance language without a supporting test."
+    }
+  ],
+  "section_by_section_comments": {
+    "abstract": [
+      "Headline recall and retention arithmetic verified. Fix corpus agreement; no unsupported overlength finding."
+    ],
+    "introduction": [
+      "Concrete contributions; tighten repeated naming and qualify ablations establish after ISSUE-005."
+    ],
+    "related_work": [
+      "JTPRO/SkillRouter already cited; stale error-direction claim is now resolved in current PDF. Optional GEPA positioning remains optional."
+    ],
+    "method": [
+      "Preserve correct average-risk inequality and initial-predicate gate. Align replay membership, gate timing and selected-first ordering."
+    ],
+    "theory": [
+      "No universal unseen-task guarantee or posterior-inference theorem is established; do not fabricate one to justify the MBR label."
+    ],
+    "experiments": [
+      "Correct global split and remaining main train/freeze/model-role statements; new Appendix D.4 now specifies retrieval, baseline inputs and task evaluation."
+    ],
+    "results": [
+      "Preserve verified gains and acknowledged exceptions. Optional local downstream-budget caveat."
+    ],
+    "discussion": [
+      "Remove universal backbone ceiling; annotate single-run known-token accounting."
+    ],
+    "limitations": [
+      "Distinct and substantive, p8 before references; preserve honest caveats."
+    ],
+    "reproducibility_details": [
+      "New software and statistical-reporting paragraphs are useful. Historical initialization binding and paired uncertainty remain unresolved."
+    ],
+    "ethics_discussion": [
+      "Discussion present; actual licenses, consent and checklist truth require author verification."
+    ],
+    "ai_disclosure": [
+      "Anonymous acknowledgment discloses coding/writing assistance. Current policy supports disclosure; portal scope remains unknown."
+    ],
+    "appendix": [
+      "Promote only core operational/split/metric/cost facts; do not duplicate all prompts, diagnostics or tables."
+    ]
+  },
+  "adversarial_pass_findings": {
+    "pass_1_rejection_reasons": [
+      "ISSUE-005: unmatched initialization under a common-initialization claim.",
+      "ISSUE-002/003: main operational algorithm differs from appendix.",
+      "ISSUE-004: actual constrained global split differs from main per-dataset allocation; remaining model-role issue is now minor after Appendix D.4.",
+      "ISSUE-007: no paired uncertainty for primary comparative gains.",
+      "ISSUE-009: unsupported cross-model capacity ceiling."
+    ],
+    "pass_2_claims_outrunning_evidence": [
+      "ISSUE-005: controlled ablation attribution.",
+      "ISSUE-009: backbone ceiling.",
+      "ISSUE-008: cost accounting requires local qualification, not a new complete-cost experiment."
+    ],
+    "pass_3_missing_baselines": [
+      "No additional named baseline is established as universally mandatory. Matched-initialization component evidence is the higher-priority issue.",
+      "GEPA/JTPRO comparisons become relevant only if the author chooses broader optimizer-superiority claims."
+    ],
+    "pass_4_reproducibility_gaps": [
+      "ISSUE-002/003/004/006/007; exact replay/ranking/splits, baseline identities and paired outputs."
+    ],
+    "pass_5_related_work_gaps": [
+      "JTPRO and SkillRouter are already cited. Optional GEPA positioning has a verified source in scout_narrative; not an asserted missing-citation defect."
+    ],
+    "pass_s_self_containment_gaps": [
+      "Core replay/ranking/gate timing, global split, retention definitions, no-MBR control and known-token scope need concise main-text summaries."
+    ]
+  },
+  "author_response_prep": [
+    "Do the 12 manifest-linked initialization files represent the plotted historical runs? If not, supply immutable bindings; if yes, approve correction of the common-initialization claim.",
+    "Do the frozen retrieval and released SkillRouter descriptions in new Appendix D.4 apply to every reported run, and what are the two remaining main-listed model roles?",
+    "What roles did Llama-3.3-70B-Instruct and GPT-5.4 serve in the reported experiments, and where are their bound configurations?",
+    "Are saved matched per-task predictions available for uncertainty analysis without new model calls?"
+  ],
+  "open_questions_for_human_author": [
+    "Do the 12 manifest-linked initialization files represent the plotted historical runs? If not, supply immutable bindings; if yes, approve correction of the common-initialization claim.",
+    "Do the frozen retrieval and released SkillRouter descriptions in new Appendix D.4 apply to every reported run, and what are the two remaining main-listed model roles?",
+    "What roles did Llama-3.3-70B-Instruct and GPT-5.4 serve in the reported experiments, and where are their bound configurations?",
+    "Are saved matched per-task predictions available for uncertainty analysis without new model calls?",
+    "What are the intended venue, cycle, submission stage, paper type, deadline and local-PDF/upload permissions?",
+    "Which proposed corrections/redesigns should be applied? Manuscript changes, builds and new experiments remain unapproved."
+  ],
+  "execution_order": [
+    "ISSUE-005",
+    "ISSUE-002",
+    "ISSUE-003",
+    "ISSUE-004",
+    "ISSUE-006",
+    "ISSUE-007",
+    "ISSUE-008",
+    "ISSUE-009",
+    "ISSUE-010",
+    "ISSUE-011",
+    "ISSUE-012",
+    "ISSUE-013"
+  ],
+  "pre_submission_action_plan": [
+    {
+      "step": "Approve individual proposals and confirm intended stage/source version.",
+      "owner": "human_author",
+      "estimated_time": "unknown",
+      "blocks_submission": false,
+      "deadline_context": "unknown"
+    },
+    {
+      "step": "Resolve ISSUE-005 historical run binding and ISSUE-006 baseline inputs before drafting definitive replacement settings.",
+      "owner": "human_author",
+      "estimated_time": "unknown",
+      "blocks_submission": false,
+      "deadline_context": "unknown"
+    },
+    {
+      "step": "After authorization, apply supported corrections and optional selected edits in dependency order, then rebuild and verify page/figure/source consistency.",
+      "owner": "fixer_agent",
+      "estimated_time": "unknown; no measured ETA",
+      "blocks_submission": false,
+      "deadline_context": "unknown"
+    },
+    {
+      "step": "Run only separately approved saved-output analyses or new experiments; otherwise narrow claims and state missing evidence.",
+      "owner": "fixer_agent",
+      "estimated_time": "unknown",
+      "blocks_submission": false,
+      "deadline_context": "unknown"
+    }
+  ],
+  "provenance": {
+    "review_date": "2026-10-13",
+    "paper_root": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper",
+    "output_dir": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0",
+    "pdf_sha256": "e68ac3a31d892feb1141089312c51d2a70929281cbfb57aa4cf5825088d91779",
+    "pages": 30,
+    "protected_file_count": 332,
+    "revision_mode": "unknown",
+    "authorization": "review and proposals only; no manuscript edits, compilation, experiments, commits, or uploads",
+    "experimental_results": [],
+    "prior_review": "../acl-critic-proposals-20261013T111734Z-51ddab4b",
+    "taskmaster": "tool unavailable; Hermes todo used",
+    "reviewed_pdf_snapshot": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/current_snapshot/main.pdf",
+    "reviewed_source_snapshot": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/current_snapshot/source",
+    "initial_pdf_sha256": "a13feaa06ce9697e5d4d44119ea46f4403aff73a8743d3bb51bcc616dd3174e5",
+    "concurrent_changes_report": "concurrent_changes.json"
+  },
+  "severity_counts": {
+    "major": 6,
+    "minor": 6
+  },
+  "prior_review_reconciliation": [
+    {
+      "prior_issue_id": "ISSUE-001",
+      "disposition": "resolved",
+      "reason": "Incorrect 94.68%/93.75% interpretation has been removed from current main; H.3 now adds matched ranking-loss diagnosis. Do not resurrect missing-error-analysis claims.",
+      "current_links": [
+        "NAR-E03"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-002",
+      "disposition": "source_resolved_pdf_sync_needed",
+      "reason": "The wrong error direction and stronger objective persist in PDF but are corrected in frozen source. Core average-risk and initial-predicate equations are already correct.",
+      "current_links": [
+        "VERSION-N1",
+        "VERSION-N2"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-003",
+      "disposition": "partially_retained_narrowed",
+      "reason": "Operational replay/ranking/timing discrepancies remain; blanket risk/gate caveats are redundant.",
+      "current_links": [
+        "NAR-001"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-004",
+      "disposition": "old_rationale_stale_current_question_deferred",
+      "reason": "Current G.1 now says common initial predicates. Table 10 initial metrics still vary; this is a fresh reconciliation question for experiment/provenance scout, not proof the old unpaired-initialization design still applies.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-005",
+      "disposition": "partially_retained_downgraded",
+      "reason": "Current G.2 no longer says only one configuration includes local initialization. Keep single-run known-usage scope; verify artifacts before asserting asymmetry.",
+      "current_links": [
+        "NAR-006"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-006",
+      "disposition": "outside_scope_defer_independent_recheck",
+      "reason": "No audit verdict is copied from old manifests. Current artifact reportability and source binding belong to experimental/provenance scout.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-007",
+      "disposition": "retained_narrowed",
+      "reason": "Per-dataset ratio contradicts current constrained-global counts; shared-skill balancing is partly stated already.",
+      "current_links": [
+        "NAR-002"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-008",
+      "disposition": "retained_in_scope",
+      "reason": "Strongest comparator lacks main baseline specification and retriever train/freeze wording conflicts. Five-model role issue is separately deferred.",
+      "current_links": [
+        "NAR-003"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-009",
+      "disposition": "downgraded_optional",
+      "reason": "Main already uses suggests/could and states budgets in setup; qualify locally rather than assert current text claims a causal proof.",
+      "current_links": [
+        "NAR-E04"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-010",
+      "disposition": "retained_minimal_delete",
+      "reason": "Universal backbone ceiling sentence remains; remove it rather than append a duplicate endpoint paragraph.",
+      "current_links": [
+        "NAR-004"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-011",
+      "disposition": "partially_retained_downgraded",
+      "reason": "Retain selected-set F1/retention/Hit@1 alignment. Appendix openly defines unusual FP/FN labels and neutral descriptions; do not treat labels alone as invalid numbers.",
+      "current_links": [
+        "NAR-005"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-012",
+      "disposition": "major_rejected_optional_positioning",
+      "reason": "Explicit average loss already defines the selection objective. No forced Bayesian posterior derivation, renaming, or MBR-decoding citation. JTPRO is already cited; GEPA is an optional verified conceptual addition.",
+      "current_links": [
+        "NAR-E01",
+        "NAR-E02"
+      ]
+    },
+    {
+      "prior_issue_id": "ISSUE-013",
+      "disposition": "outside_scope_defer",
+      "reason": "No invented paired uncertainty or new statistical results. Parent experimental scout should distinguish point estimates from inferential claims.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-014",
+      "disposition": "outside_scope_except_teaser",
+      "reason": "Figure 1 is a valid task-applicability example; requiring it to carry the full update algorithm is optional editorial redesign. Full rendering audit belongs to layout scout.",
+      "current_links": []
+    },
+    {
+      "prior_issue_id": "ISSUE-015",
+      "disposition": "retained_minor_editorial",
+      "reason": "Repeated RouterBSI introduction and visible grammatical errors remain. Keep copyediting separate from major scientific issues.",
+      "current_links": []
+    }
+  ],
+  "numeric_checks": {
+    "aggregate_routing": "numeric_checks.json",
+    "recall_retention_downstream": "headline_numeric_checks.json",
+    "initialization": "parent_initial_policy_verification.json"
+  },
+  "no_new_experiments_note": "No model calls or new benchmark runs were performed. Required corrections can use existing evidence and claim narrowing. New experiments listed here are optional, unapproved and unrun.",
+  "resolved_during_review": [
+    {
+      "id": "ISSUE-001",
+      "status": "resolved_by_concurrent_revision_not_by_this_review",
+      "evidence": "New PDF pp2\u20133; concurrent_changes.json",
+      "proposal": "No further source/PDF synchronization fix requested for these passages."
+    }
+  ],
+  "concurrent_revision": {
+    "initial_pdf_sha256": "a13feaa06ce9697e5d4d44119ea46f4403aff73a8743d3bb51bcc616dd3174e5",
+    "initial_pages": 29,
+    "current_pdf_sha256": "e68ac3a31d892feb1141089312c51d2a70929281cbfb57aa4cf5825088d91779",
+    "current_pages": 30,
+    "changed_preexisting_files": [
+      "main.out",
+      "references.bib",
+      "main.fdb_latexmk",
+      "main.log",
+      "main.bbl",
+      "main.aux",
+      "main.fls",
+      "main.blg",
+      "main.pdf",
+      "sections/appendix/data.tex",
+      "sections/appendix/routing_metrics.tex",
+      "sections/appendix/implementation.tex"
+    ],
+    "new_paper_source_files": [
+      "sections/appendix/data_scope.tex",
+      "sections/appendix/implementation_software.tex"
+    ],
+    "review_actions_modified_manuscript": false,
+    "attribution": "Changes were detected outside this review-only action set; actor not inferred.",
+    "resolved_issue_ids": [
+      "ISSUE-001"
+    ],
+    "partially_addressed_issue_ids": [
+      "ISSUE-006",
+      "ISSUE-007"
+    ],
+    "notes": [
+      "New PDF contains already-corrected non-increasing replay wording, narrowed objective and equality-aware Figure 2 caption.",
+      "New Appendix D.4 specifies BM25/vector/SkillSight, SkillRouter input truncation and frozen released 0.6B reranker, task evaluators, ReAct defaults and split software.",
+      "New Appendix E.1 explicitly describes single runs, no significance tests and non-distinct-seed repetitions. Paired uncertainty remains unavailable.",
+      "New Appendix C.4 discusses language scope, constituent licenses and privacy/safety boundaries. Actual compliance and portal forms still need human verification."
+    ]
+  },
+  "reviewed_artifact": {
+    "pdf": "source/main.pdf",
+    "sha256": "ddd4e45dcc8920cde89966c50e5a12598d73eee2dda1701b67f783057aeb1e63",
+    "total_pages": 31,
+    "source_snapshot": "source/",
+    "scope": "Fresh PDF/source review; no experiments or manuscript edits."
+  },
+  "previous_review_comparison": {
+    "previous_overall": 2,
+    "previous_review": "/workspace/storage/healthcare_workspace/project_skill_selection/RouterBSIPaper/.wisc/reviews/acl-critic-proposals-20261013T133137Z-a13feaa0/REVIEW_JSON.json",
+    "resolved_or_narrowed": [
+      {
+        "id": "ISSUE-002",
+        "status": "core finding resolved",
+        "evidence": "Section 4.2 includes current failed task, deduplication and 2N+1 bound; residual sampling/support details remain appendix elaboration."
+      },
+      {
+        "id": "ISSUE-003",
+        "status": "resolved",
+        "evidence": "Main and A.1 now state normalized [0,1] scores and selected-first tie handling; author confirms intended normalization."
+      },
+      {
+        "id": "ISSUE-004",
+        "status": "resolved",
+        "evidence": "Section 5.1 now specifies constrained global proportions and explains skill coverage/adaptation."
+      },
+      {
+        "id": "ISSUE-006",
+        "status": "training contradiction resolved; minor model-role clarity remains",
+        "evidence": "Fixed retrievers and released SkillRouter checkpoint explicitly have no task-split training; author confirmed."
+      },
+      {
+        "id": "ISSUE-005",
+        "status": "separate unresolved artifact-binding question; excluded from manuscript-only score",
+        "evidence": "Figure 5 and G.1 agree textually. Previous inspected saved libraries differed, but historical binding to the plotted experiment was not established. No fresh artifact rerun performed."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+Routing performance by replay capacity using Qwen3.5 4B with SkillSight. Bars show task-weighted test nDCG@10 at iteration 10. These exploratory results use one run per capacity.
