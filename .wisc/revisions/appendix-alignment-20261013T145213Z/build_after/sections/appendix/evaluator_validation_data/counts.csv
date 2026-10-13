@@ -1,8 +1,0 @@
-dataset,display_name,reviewed,agreements,agreement_percent
-theoremqa,TheoremQA,5250,5116,97.45
-logicbench,LogicBench,5700,5462,95.82
-toolqa,ToolQA,10750,10599,98.60
-medcalcbench,MedCalc-Bench,8250,8164,98.96
-champ,CHAMP,1300,1236,95.08
-bigcodebench,BigCodeBench,6150,5738,93.30
-total,Total,37400,36315,97.10

@@ -1,9 +1,0 @@
-% Authoritative RouterBSI_Draft_Appendix.docx; zero-based direct body paragraph IDs.
-
-% DOCX-P020-BEGIN
-\section{Problem Definition}
-% DOCX-P020-END
-
-% DOCX-P021-BEGIN
-We study recursive self-improvement for skill routing, where an agent updates skill applicability predicates from routing failures while avoiding regressions. Each skill \(s\) from skill library \(S\) has a predicate \(p_{s}(q) = \{ True\ or\ False\}\) indicating whether it should be selected for task \(q\). A routing failure occurs when this prediction disagrees with whether \(s\) from predicted skills \(P_{q}\) is in ground-truth set of required skills \(G_{q}\), producing either a missing required skill or a selected irrelevant skill. Since \(S\) is a large library of skills, we only evaluate the predicates from skills in the top k based on retrieval score \(r(q,K_{s})\) between task \(q\) and the skill key \(K_{s}\). Given a failure in top \(k\) skills \(s_{k}\), the objective is to iteratively update the affected predicate \(p_{sk}(q)\) to correct the observed error without degrading previously learned or unseen routing decisions.
-% DOCX-P021-END

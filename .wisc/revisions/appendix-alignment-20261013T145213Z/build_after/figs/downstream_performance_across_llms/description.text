@@ -1,1 +1,0 @@
-Average downstream task accuracy of RouterBSI_top5 with SkillSight retrieval. Three bars compare Qwen3.5 4B, Qwen3.8 27B, and GPT-OSS 120B using the reported pooled Average across 748 test tasks from six datasets. No baseline or per-dataset bars and no uncertainty estimates are shown.

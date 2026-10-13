@@ -49,15 +49,11 @@ Conversion evidence and the pre-edit dirty-tree backup are outside this standalo
 
 ## Scope and caveats
 
-This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating the full result set. The `mbr_replay_test_f1` and `mbr_replay_test_ndcg` snapshots were refreshed from the split-labelled routing table; the other snapshots remain unchanged. External-data generators and experiment data are omitted. Each refreshed figure's `provenance.text` records its external CSV path and hash, test/accepted-row selection, and selection details. `snapshot-manifest.json` remains the historical packaging manifest and was intentionally not rewritten.
+This is **self-contained for manuscript editing and PDF compilation**, not for rerunning experiments or regenerating the full result set. The `mbr_replay_test_f1` and `mbr_replay_test_ndcg` snapshots were refreshed from the split-labelled routing table; the other snapshots remain unchanged. External-data generators and experiment data are omitted. Each refreshed figure's `provenance.text` records its external CSV path and hash, test/accepted-row selection, source-run status, and analysis-only caveat. `snapshot-manifest.json` remains the historical packaging manifest and was intentionally not rewritten.
 
-Token totals include only recorded usage. The authoritative prose contains literal author-year citations but supplies no bibliography; citation identity/support still needs author review. Source grammatical inconsistencies, the duplicated parametric-routing sentence, and potentially conflicting empirical claims are preserved rather than scientifically rewritten. The source's training description also says both that retrievers are trained and that they do not require training. This package does not certify submission readiness, citation accuracy, or page-limit compliance.
+Scientific caveats remain intact: some result snapshots are analysis-only/non-reportable or have unresolved provenance, and token costs are incomplete. The authoritative prose contains literal author-year citations but supplies no bibliography; citation identity/support still needs author review. Source grammatical inconsistencies, the duplicated parametric-routing sentence, and potentially conflicting empirical claims are preserved rather than scientifically rewritten. The source's training description also says both that retrievers are trained and that they do not require training. Snapshot captions/caveats are preserved even when stronger claims appear in the source prose. This package does not certify submission readiness, citation accuracy, or page-limit compliance.
 
 The local Git repository is initialized on `main`; no remote is configured and no commit or publication was made. `main.pdf` is generated and ignored by Git; figure/table PDFs and PNGs are intentionally not ignored. Before publishing, review the full manuscript and result provenance and choose an appropriate licensing policy.
-
-## Paper-facing artifact cleanup
-
-After regenerating figure/table artifacts, use the explicit plan/apply/verify workflow in [`scripts/README_publishing_cleanup.md`](scripts/README_publishing_cleanup.md) before publishing. It removes the author-excluded reportability wording from presentation copies while preserving source checks, numerical data, and archived originals. It does not certify experiments. The author-alignment revision and the two proposal-only Word documents are in `.wisc/revisions/author-alignment-20261013/`.
 
 ## Third-party style
 

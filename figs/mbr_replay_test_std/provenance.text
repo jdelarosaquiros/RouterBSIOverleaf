@@ -8,6 +8,8 @@ Metrics: nDCG@10_mean, nDCG@10_variance
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing table values are ---; missing plotted values fail closed, never imputed.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
 Source Average rows (task-weighted over instances); checkpoint test nDCG@10, mean plus/minus one population standard deviation (sqrt of source variance), not a confidence interval; 3 observed runs per condition. Initial is iteration 0.
 Run counts come from direct run_i directories in input_runs.json; source generator requires matching checkpoints across those runs and computes population variance with denominator n. CSV contains no run counts. Missing mapped run metadata remains unknown.
 

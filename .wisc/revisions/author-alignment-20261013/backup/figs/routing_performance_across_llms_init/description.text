@@ -1,1 +1,0 @@
-Initial and optimized routing performance (nDCG@1) comparison between different LLM-backbones using SkillSight as the retriever. Stronger backbones improve initialization, while optimization brings smaller model Qwen3.5 4B close to the optimized performance of GPT-OSS 120B.

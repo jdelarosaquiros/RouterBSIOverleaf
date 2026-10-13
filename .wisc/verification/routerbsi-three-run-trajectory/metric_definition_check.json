@@ -1,7 +1,0 @@
-{
-  "source": "/workspace/storage/healthcare_workspace/project_skill_selection/GatedRouter/src/gatedrouter/src/metrics.py",
-  "sha256": "54e7c107a8b227959fa11d4dd8c9c4a8eef6ae8761f02e94cca7059cc23730b3",
-  "formula": "1 if ranked_ids[0] in required_ids else 0, for nonempty gold",
-  "cases_verified": 4,
-  "historical_execution_proof": false
-}

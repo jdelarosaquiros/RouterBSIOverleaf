@@ -13,5 +13,8 @@ Band: Hit@1_mean +/- sqrt(Hit@1_variance), using CSV-rounded variance, not raw-r
 Hit1_std retains the full Python float sqrt result; no further rounding or clipping.
 Within-run Average is task-weighted over 748 test tasks (dataset means weighted by n_tasks); the table then takes the mean and population variance across three runs. This is not temporal variation, task-level dispersion, a standard error, or a confidence interval.
 No imputation, interpolation, or extrapolation. Source metric keys remain Hit@1; display label is nDCG@1.
-Scope: manuscript integration; no sibling changes.
+Source reportability: diagnostic_only=true; reportable=false; completed_noncanonical.
+Analysis-only, non-reportable: this rendering does not establish publication eligibility.
+Nonreportable reason(s): SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction
+Scope: manuscript integration; no publication-eligibility promotion or sibling changes.
 Reproduce from project_skill_selection: uv run --script RouterBSIPaper/figs/mbr_replay_test_ndcg@1_std/generate.py

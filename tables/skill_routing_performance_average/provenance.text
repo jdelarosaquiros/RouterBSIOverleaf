@@ -4,6 +4,6 @@ Source SHA256: d3bad67c2d0a27132e38bb28dd1389a7167c02ec4f2d9b870e43d4c0fcfa8f9b
 Aggregation: Router rows only; equal-weight arithmetic mean over BM25, Vector, SkillSight. Dataset Average task-weighted within each retriever, then equal-weight across retrievers.
 Native retriever rows and row-group headings excluded from display; averaged methods exclude Progressive Disclosure and Tool-REX.
 N@1 uses the existing verified binary-relevance Hit@1 equivalence, preserved in selection.json.
-Not a controlled shared-candidate comparison.
+Source status: completed_noncanonical; reportable=false; analysis-only. Not a controlled shared-candidate comparison.
 Full inherited run provenance and stale Vector input-map caveat: selection.json/provenance.
 Regenerate: uv run --script .wisc/scripts/generate-routing-average-table.py

@@ -1,1 +1,0 @@
-Recall of required skills averaged across retrievers: BM25, Vector, and SkillSight. The baseline averages the base retrievers used to retrieve the initial top 50 skill. RouterBSI preserves the most required skills as the cutoff k decreases.

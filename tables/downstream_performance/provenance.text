@@ -8,7 +8,9 @@ Metrics: Accuracy
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing table values are ---; missing plotted values fail closed, never imputed.
-Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json.
+Source reportability: unknown
+Analysis-only: source provenance does not certify publication validity.
+Success Rate is source Accuracy, a fraction. The average is computed over all instances. Average is supplied pooled Correct/n_tasks, using summed counts across datasets. CSV methods do not match input_runs.json; provenance is unresolved.
 Dataset columns group their metrics beneath each dataset header. Retrieval and reranking shows only source Dataset=Average rows, with five recall metrics (R@1, R@5, R@10, R@25, R@50) beneath retriever-only group headings, without Model or Retriever columns; no additional averaging is performed.
 Bold best and underlined second distinct values are scoped to model/retriever/dataset/metric for dataset-grouped tables and model/retriever/metric for overall recall; ties share markers. PDF is actual generated TeX. Multi-page PNG tiles all PDF pages at 300 DPI.
 

@@ -1,1 +1,0 @@
-Test-split nDCG@5 across replay and validation-gate conditions. Lines show task-weighted nDCG@5 at iteration 0 (initial, where archived) and accepted checkpoints. Only Gate has no archived initial-test snapshot and starts at iteration 1. Only MBR Alt uses the specified GatedRouter run through iteration 10; other conditions end at 8. Run sources differ.
