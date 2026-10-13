@@ -8,6 +8,8 @@ Metrics: F1_mean, F1_variance
 Exact source Model/Retriever/Method/Dataset labels are preserved; no aliases.
 Scores are fractions, not percentages. Table cells use three decimals; ranking uses unrounded values.
 Missing table values are ---; missing plotted values fail closed, never imputed.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
 Source Dataset=Average rows for train, validation, and test; train uses prequential scores, validation uses ledger-accepted-candidate scores, and test uses accepted-candidate scores. Initial and final are snapshot checkpoints (plotted at 0 and 11); iterations 1–10 use their source evaluation stage. Lines show F1 means; shaded bands show mean ± one population standard deviation from the supplied variance (not confidence intervals); three observed runs per checkpoint.
 
 From project_skill_selection/ root:

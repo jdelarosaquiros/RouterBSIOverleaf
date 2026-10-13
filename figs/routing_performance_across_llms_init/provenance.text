@@ -8,6 +8,8 @@ Source metric: Hit@1; display metric: nDCG@1. Exact source identity labels and C
 Source metric Hit@1 is displayed as nDCG@1 only for these binary-relevance tasks with nonempty gold. The source evaluator differs on empty gold: Hit@1=0, nDCG@1=1. The pinned complete benchmark annotation universe is checked to contain zero empty-gold tasks; its source loader also rejects empty annotations and unknown task IDs. This is not a universal alias or a graded-relevance claim.
 Benchmark alias evidence: 5400 tasks; zero empty-gold tasks; hashes/counts in selection_manifest.json.
 Scores are fractions, not percentages. Missing/invalid plotted values fail closed, never imputed.
+Source reportability: non-reportable
+Analysis-only: source provenance does not certify publication validity.
 Historical candidates are preserved; this is not a controlled common-candidate comparison. No uncertainty is estimated.
 Aggregation: task-instance weighted dataset means, not an equal-dataset mean; no new averaging.
 Uncertainty: not estimated; no error bars.

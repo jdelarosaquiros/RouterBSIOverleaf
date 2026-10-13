@@ -43,6 +43,7 @@
     ]
   },
   "provenance": {
+    "status": "non-reportable",
     "input_mappings": [
       {
         "identity": [
@@ -68,8 +69,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_bm25_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "678bbce83a72e83951b69159f56af44b43b532694873f5dbdbc389338661a8b9"
           }
@@ -88,8 +91,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_bm25_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "a9e741d35e3d6722b4f093ce06c8a699e8085a8376d50c6c3436ca40c74e9408"
           }
@@ -108,8 +113,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_bm25/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "92e3c5f7f25d5cf2163aa2af06c1d1400dfac622543a39ec8da647c26235576f"
           }
@@ -150,7 +157,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": false,
             "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
             "analysis_ready": true,
             "sha256": "54da4fd4abfe24ba38f7cd334013ed13579ca749205279772ac9cce9018c9db0"
           }
@@ -169,7 +179,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_bm25_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": false,
             "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
             "analysis_ready": true,
             "sha256": "54da4fd4abfe24ba38f7cd334013ed13579ca749205279772ac9cce9018c9db0"
           }
@@ -199,8 +212,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_vector_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "b19f3eb154c76005f7049d16f55c9d11b09b90bb8436476ac961146a94a1c33b"
           }
@@ -219,8 +234,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_vector_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "04ec743530678baf699734b8d1d4f9351f522da6b7fa94e61d11655d8250bbd5"
           }
@@ -239,8 +256,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_vector/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "0cb83426a0ce16bec6afc3ba454922090758de4b9e9ba1ab682ce44b10b88136"
           }
@@ -281,6 +300,7 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
             "exists": false,
+            "reportable": null,
             "passed": null,
             "status": "unknown"
           }
@@ -299,6 +319,7 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_vector_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
             "exists": false,
+            "reportable": null,
             "passed": null,
             "status": "unknown"
           }
@@ -328,8 +349,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/LLMSelection/sra_full_skillsight_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "0c5a11efe8b4a4a53fd69f295888862f164d46c9451e29b4169d328d01ddcb04"
           }
@@ -348,8 +371,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/ProgressiveDisclosure/sra_full_skillsight_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "e39e18e901368d3da9b3f454b0bebaec1da1247d8f73d589cf8c2c3f4586ec05"
           }
@@ -368,8 +393,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/SkillRouter/sra_full/run_1_sra_skillsight/completion.json",
             "exists": true,
+            "reportable": null,
             "passed": null,
             "status": "completed",
+            "nonreportable_reason": null,
             "analysis_ready": null,
             "sha256": "b5d96fba7825b504183f49c1ea92a3e025e45d1ec473ece0e5cec0d2a0907352"
           }
@@ -410,7 +437,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": false,
             "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
             "analysis_ready": true,
             "sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766"
           }
@@ -429,7 +459,10 @@
           {
             "path": "/workspace/storage/healthcare_workspace/project_skill_selection/.wisc/results/GatedRouter/sra_full_skillsight_f1_i10_l400_qwen3.5_4b/run_1/completion.json",
             "exists": true,
+            "reportable": false,
             "passed": true,
+            "status": "completed_noncanonical",
+            "nonreportable_reason": "SRA_GATEDROUTER_ALLOW_SOURCE_DRIFT=1 and final audit disabled; development run is nonreportable; runtime_judgment_lookup_cache enabled, so repeated judgments may skip exact request reconstruction",
             "analysis_ready": true,
             "sha256": "c473d0fb434c65f3f9b90480d008251b0be803447fd4900e35168e0c7439d766"
           }
