@@ -15,8 +15,8 @@ From this repository:
 ```sh
 make             # build main.pdf
 make rebuild     # force recompilation
-make watch       # rebuild when source files change; Ctrl+C to stop
-make check       # dependency/package checks; requires Python 3
+make watch       # rebuild when source files change
+make check       # dependency/package checks
 make clean       # remove manuscript outputs, never figure/table assets
 ```
 
